@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-11 03:30 UTC &nbsp;|&nbsp; **Total:** 46 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 28 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-11 13:05 UTC &nbsp;|&nbsp; **Total:** 45 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 28 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,30 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day
+## 3. 🟠 Zero-Day — Cisco BroadWorks and Openwave Flaws Actively Exploited Despite Available Patches
+
+**CVE:** `CVE-2026-20320` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) Tuesday added two security flaws impacting Cisco BroadWorks and Openwave Messaging Webtop Media Transcoder to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
+
+Details of the vulnerabilities are below -
+
+
+  CVE-2026-20320 (CVSS score: 7.5) - An improper restriction of XML external entity
+
+---
+
+## 4. 🟠 Zero-Day — Able2Shell: Frequently asked questions for reported N-able N-central zero-day vulnerabilities
+
+**CVE:** `CVE-2026-91000` | `CVE-2026-125883` | `CVE-2026-125881` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://www.tenable.com/blog/able2shell-frequently-asked-questions-for-reported-n-able-n-central-zero-day-vulnerabilities>
+
+> N-able released a hotfix for N-central that fixes seven CVEs after a researcher published proof-of-concept code for 33 alleged zero-day vulnerabilities. The researcher says one attack chain needs no credentials. Key Takeaways Able2Shell is a set of 33 alleged vulnerabilities in N-able N-central, published with proof-of-concept code. The researcher says one chain lets an unauthenticated attacker ru…
+
+---
+
+## 5. 🟠 Zero-Day — Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/>
@@ -29,7 +52,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Microsoft’s November 2026 Patch Tuesday addresses 1093 CVEs (CVE-2026-124194)
+## 6. 🟠 Zero-Day — Microsoft’s November 2026 Patch Tuesday addresses 1093 CVEs (CVE-2026-124194)
 
 **CVE:** `CVE-2026-124194` | `CVE-2026-118146` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.tenable.com/blog/microsoft-november-2026-patch-tuesday-addresses-1093-cves-cve-2026-124194>
@@ -38,7 +61,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access
+## 7. 🟠 Zero-Day — Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html>
@@ -51,7 +74,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 6. 🟠 Zero-Day — Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers
+## 8. 🟠 Zero-Day — Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/>
@@ -60,16 +83,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 7. 🟠 Zero-Day — N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/>
-
-> Attackers could exploit the flaws for remote code execution, credential theft, and administrator account creation. The post N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days appeared first on SecurityWeek .
-
----
-
-## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -78,7 +92,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -87,7 +101,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -96,7 +110,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -105,7 +119,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -114,7 +128,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -123,7 +137,25 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 14. 🟠 Zero-Day — AG2: Newline injection in SandboxShellTool bypasses allowed=[...] and readonly=True, enabling arbitrary command execution
+## 15. 🟠 Zero-Day — N-able releases security hotfixes for zero-day vulnerabilities
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/>
+
+> N-able released hotfixes to address zero-day bugs affecting its N-central remote monitoring and management (RMM) platform, which were publicly disclosed over the weekend and forced it to take vulnerable hosted environments offline. [...]
+
+---
+
+## 16. 🟠 Zero-Day — CISA flags Cisco BroadWorks flaw as actively exploited in attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/>
+
+> The US Cybersecurity and Infrastructure Security Agency (CISA) warned on Tuesday that hackers are now exploiting a high-severity Cisco BroadWorks vulnerability in attacks. [...]
+
+---
+
+## 17. 🟠 Zero-Day — AG2: Newline injection in SandboxShellTool bypasses allowed=[...] and readonly=True, enabling arbitrary command execution
 
 **CVE:** `CVE-2026-113663` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-2h4w-29cv-2cmv>
@@ -133,51 +165,7 @@ SandboxShellTool&#x27;s restricted modes — allowed=[...] (explicit command all
 
 ---
 
-## 15. 🟠 Zero-Day — Russian Turla Hackers Use New Cereal Malware to Steal Emails From Government Exchange Servers
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://thehackernews.com/2026/11/russian-turla-hackers-use-new-cereal.html>
-
-> The Russia-aligned state-sponsored threat actor known as Turla (aka Snake) is wielding a previously undocumented cyber espionage toolset called Cereal that&#x27;s used to break into victims&#x27; Microsoft Exchange servers with an aim to surreptitiously collect emails.
-
-According to an ESET report shared with The Hacker News ahead of publication, the sophisticated and modular tool is designed for
-
----
-
-## 16. 🟠 Zero-Day — Google patches eighth Chrome zero-day exploited in attacks this year
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/>
-
-> Google has released emergency security updates to patch a new Chrome vulnerability exploited in zero-day attacks, the eighth such flaw since the start of the year. [...]
-
----
-
-## 17. 🟠 Zero-Day — Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026
-
-**CVE:** `CVE-2026-125350` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://thehackernews.com/2026/11/google-issues-chrome-security-update.html>
-
-> Google on Monday released updates to patch nine security vulnerabilities, including one that has come under active exploitation in the wild.
-
-The high-severity vulnerability, assigned the CVE identifier CVE-2026-125350 (CVSS score: N/A), has been described as a use-after-free bug in the XML component.
-
-Use-after-free bugs typically occur when a program attempts to access a memory location after
-
----
-
-## 18. 🟠 Zero-Day — N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html>
-
-> N-able said it has taken N-central Hosted Environments offline and is urging on-premises customers to shut down their servers until further notice following the public disclosure of over 30 vulnerabilities collectively tracked as Able2Shell.
-
-&quot;As a precautionary measure, we are temporarily taking our Hosted N-central environment offline while we take the necessary actions to secure the
-
----
-
-## 19. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 18. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -186,12 +174,21 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 20. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 19. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
 
 > Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…
+
+---
+
+## 20. 🟡 High Severity — Threat Actors Exploit Openwave, Cisco BroadWorks Vulnerabilities
+
+**CVE:** `CVE-2026-111793` | `CVE-2026-20320` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://www.securityweek.com/threat-actors-exploit-openwave-cisco-broadworks-vulnerabilities/>
+
+> The flaws, CVE-2026-111793 and CVE-2026-20320, let attackers leak sensitive information, including configuration data. The post Threat Actors Exploit Openwave, Cisco BroadWorks Vulnerabilities appeared first on SecurityWeek .
 
 ---
 
@@ -532,21 +529,7 @@ The fix for CVE-2…
 
 ---
 
-## 45. 🟡 High Severity — CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws
-
-**CVE:** `CVE-2026-123218` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added four security flaws impacting GPUStack, SignalWire FreeSwitch, OpenBSD OpenSSH, and IBM Aspera Faspex to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
-
-The vulnerabilities are listed below -
-
-
-  CVE-2026-123218 (CVSS score: 9.8) - An incorrect authorization vulnerability
-
----
-
-## 46. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 45. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

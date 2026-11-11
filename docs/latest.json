@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-11T03:30:02.227822+00:00",
-  "total": 46,
+  "generated": "2026-11-11T13:05:07.135317+00:00",
+  "total": 45,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,43 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html",
+      "title": "Cisco BroadWorks and Openwave Flaws Actively Exploited Despite Available Patches",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) Tuesday added two security flaws impacting Cisco BroadWorks and Openwave Messaging Webtop Media Transcoder to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nDetails of the vulnerabilities are below -\n\n\n  CVE-2026-20320 (CVSS score: 7.5) - An improper restriction of XML external entity",
+      "link": "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html",
+      "published": "2026-11-11T06:04:02+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-20320"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/able2shell-frequently-asked-questions-for-reported-n-able-n-central-zero-day-vulnerabilities",
+      "title": "Able2Shell: Frequently asked questions for reported N-able N-central zero-day vulnerabilities",
+      "summary": "N-able released a hotfix for N-central that fixes seven CVEs after a researcher published proof-of-concept code for 33 alleged zero-day vulnerabilities. The researcher says one attack chain needs no credentials. Key Takeaways Able2Shell is a set of 33 alleged vulnerabilities in N-able N-central, published with proof-of-concept code. The researcher says one chain lets an unauthenticated attacker run commands on the server. Security firms report exploitation attempts against N-central honeypots, but as of November 10, no confirmed compromise of a customer server has been reported. N-able released N-central 2026.4 Hotfix 2 on November 10. It fixes seven CVEs. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding Able2Shell, a set of reported zero-day vulnerabilities in N-able N-central. FAQ When was Able2Shell first disclosed? A researcher operating under the GitHub account \u201cOracle-Security\u201d published a write-up titled \u201cAble2Shell\u201d in the account\u2019s CVEs repository. It describes 33 alleged N-central vulnerabilities with proof-of-concept code. The earliest README commit is dated November 9, 2026 at 04:14 UTC. N-able described the release as a public disclosure by an independent security researcher. N-able does not state whether it was notified in advance and does not name the researcher. What are the vulnerabilities associated with Able2Shell? On November 10, N-able published seven CVE records for vulnerabilities fixed in N-central 2026.4 Hotfix 2. On its status page, N-able says the release addresses \u201cthe most critical November 9 vulnerabilities\u201d and that a follow-up hotfix will provide further security updates. The page lists all seven as related CVEs. One, CVE-2026-91000 , had been reserved on September 14, before the public Able2Shell disclosure. CVE Description (per N-able) CVSSv4 CVE-2026-125883 Multiple XML external entity (XXE) vulnerabilities 9.3 CVE-2026-125881 Schema-hint server-",
+      "link": "https://www.tenable.com/blog/able2shell-frequently-asked-questions-for-reported-n-able-n-central-zero-day-vulnerabilities",
+      "published": "2026-11-11T05:55:43+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-91000",
+        "CVE-2026-125883",
+        "CVE-2026-125881"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -95,21 +132,6 @@
       "tags": [
         "news",
         "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/",
-      "title": "N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days",
-      "summary": "Attackers could exploit the flaws for remote code execution, credential theft, and administrator account creation. The post N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/",
-      "published": "2026-11-10T09:56:28+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -213,6 +235,36 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/",
+      "title": "N-able releases security hotfixes for zero-day vulnerabilities",
+      "summary": "N-able released hotfixes to address zero-day bugs affecting its N-central remote monitoring and management (RMM) platform, which were publicly disclosed over the weekend and forced it to take vulnerable hosted environments offline. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/",
+      "published": "2026-11-11T12:32:27+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/",
+      "title": "CISA flags Cisco BroadWorks flaw as actively exploited in attacks",
+      "summary": "The US Cybersecurity and Infrastructure Security Agency (CISA) warned on Tuesday that hackers are now exploiting a high-severity Cisco BroadWorks vulnerability in attacks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/",
+      "published": "2026-11-11T10:12:08+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-113663",
       "title": "AG2: Newline injection in SandboxShellTool bypasses allowed=[...] and readonly=True, enabling arbitrary command execution",
       "summary": "### Summary\nSandboxShellTool's restricted modes \u2014 allowed=[...] (explicit command allowlist) and readonly=True (implicit READONLY_COMMANDS allowlist) \u2014 can both be bypassed by embedding a newline character inside the command string. The filter only inspects a single-line set of shell metacharacters, but execution runs the raw string through `sh -c`, where a shell treats an embedded newline exactly like a `;` statement separator. An agent (or content that steers the agent, e.g. via prompt injection) can therefore run arbitrary shell commands even when the tool was configured to allow only a specific command prefix or only read-only commands. With the default LocalEnvironment() backend this is a real host subprocess (its own docstring: \"Commands run via subprocess on the host, so there is no real isolation\"), not an isolated container, so this is full host command execution, not merely an escape from an already-sandboxed environment.\n\n### Details\nBoth restricted modes are enforced by `ShellAdapter._filter()` in `ag2/tools/sandbox/adapter/shell.py`:\n\n```python\ndef _filter(self, command: str) -> str | None:\n    if self._allowed is not None:\n        if not any(matches(p, command) for p in self._allowed):\n            return f\"Command not allowed: {command!r}\"\n        if contains_shell_operator(command):\n            return f\"Command not allowed (shell operators are not permitted in restricted mode): {command!r}\"\n    ...\n```\n\n`readonly=True` reuses this exact same branch: `SandboxShellTool.__init__` / `ShellAdapter.__init__` sets `self._allowed = list(READONLY_COMMANDS)` when `readonly` is set and no explicit `allowed` is given, so both modes share one filter and one bypass.\n\n`contains_shell_operator()` in `ag2/tools/sandbox/filter.py` checks the command against:\n\n```python\n_SHELL_OPERATORS: tuple[str, ...] = (\">\", \">>\", \"|\", \";\", \"&&\", \"||\", \"`\", \"$(\")\n```\n\nThis tuple has no entry for `\\n` (or `\\r`). `matches()` only checks that the command starts with an allowed prefix fo",
@@ -227,68 +279,6 @@
       "cve_ids": [
         "CVE-2026-113663"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/russian-turla-hackers-use-new-cereal.html",
-      "title": "Russian Turla Hackers Use New Cereal Malware to Steal Emails From Government Exchange Servers",
-      "summary": "The Russia-aligned state-sponsored threat actor known as Turla (aka Snake) is wielding a previously undocumented cyber espionage toolset called Cereal that's used to break into victims' Microsoft Exchange servers with an aim to surreptitiously collect emails.\n\nAccording to an ESET report shared with The Hacker News ahead of publication, the sophisticated and modular tool is designed for",
-      "link": "https://thehackernews.com/2026/11/russian-turla-hackers-use-new-cereal.html",
-      "published": "2026-11-10T10:07:29+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/",
-      "title": "Google patches eighth Chrome zero-day exploited in attacks this year",
-      "summary": "Google has released emergency security updates to patch a new\u00a0Chrome vulnerability exploited in zero-day attacks, the eighth such flaw since the start of the year. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/",
-      "published": "2026-11-10T08:51:25+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html",
-      "title": "Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026",
-      "summary": "Google on Monday released updates to patch nine security vulnerabilities, including one that has come under active exploitation in the wild.\n\nThe high-severity vulnerability, assigned the CVE identifier CVE-2026-125350 (CVSS score: N/A), has been described as a use-after-free bug in the XML component.\n\nUse-after-free bugs typically occur when a program attempts to access a memory location after",
-      "link": "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html",
-      "published": "2026-11-10T06:52:54+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-125350"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
-      "title": "N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits",
-      "summary": "N-able said it has taken N-central Hosted Environments offline and is urging on-premises customers to shut down their servers until further notice following the public disclosure of over 30 vulnerabilities collectively tracked as Able2Shell.\n\n\"As a precautionary measure, we are temporarily taking our Hosted N-central environment offline while we take the necessary actions to secure the",
-      "link": "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
-      "published": "2026-11-10T06:44:36+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -333,6 +323,24 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/threat-actors-exploit-openwave-cisco-broadworks-vulnerabilities/",
+      "title": "Threat Actors Exploit Openwave, Cisco BroadWorks Vulnerabilities",
+      "summary": "The flaws, CVE-2026-111793 and CVE-2026-20320, let attackers leak sensitive information, including configuration data. The post Threat Actors Exploit Openwave, Cisco BroadWorks Vulnerabilities appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/threat-actors-exploit-openwave-cisco-broadworks-vulnerabilities/",
+      "published": "2026-11-11T09:01:07+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-111793",
+        "CVE-2026-20320"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -765,23 +773,6 @@
       ],
       "cve_ids": [
         "CVE-2026-102943"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html",
-      "title": "CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added four security flaws impacting GPUStack, SignalWire FreeSwitch, OpenBSD OpenSSH, and IBM Aspera Faspex to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-123218 (CVSS score: 9.8) - An incorrect authorization vulnerability",
-      "link": "https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html",
-      "published": "2026-11-10T06:31:42+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-123218"
       ],
       "is_zero_day": false,
       "is_high_severity": true
