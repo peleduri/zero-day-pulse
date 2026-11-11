@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-11T13:05:07.135317+00:00",
-  "total": 45,
+  "generated": "2026-11-11T23:47:15.303694+00:00",
+  "total": 24,
   "kev": 0,
-  "zero_day": 17,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -70,70 +70,6 @@
         "CVE-2026-125883",
         "CVE-2026-125881"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/",
-      "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
-      "summary": "Today is Microsoft's November 2026 Patch Tuesday, with security updates addressing a record-breaking 1,235 flaws, including one actively exploited Microsoft Outlook zero-day vulnerability. [...]",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/",
-      "published": "2026-11-10T19:07:36+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.tenable.com/blog/microsoft-november-2026-patch-tuesday-addresses-1093-cves-cve-2026-124194",
-      "title": "Microsoft\u2019s November 2026 Patch Tuesday addresses 1093 CVEs (CVE-2026-124194)",
-      "summary": "63 Critical 1029 Important 1 Moderate 0 Low Microsoft addresses 1093 CVEs in the eleventh Patch Tuesday of 2026. Microsoft patched 1093 CVEs in its November 2026 Patch Tuesday release, with 63 rated critical, 1029 rated as important, and one rated as moderate. This month\u2019s update includes patches for 287 products and components. The following table lists the products with the most CVEs patched this month. A full list of patched products is available in the appendix. Rank Product CVE Count 1 Microsoft Office Word 65 2 Microsoft Office Excel 64 3 SQL Server 53 4 Windows Advanced Rasterization Platform 37 5 Windows Installer 36 6 Windows Graphics Kernel 35 7 Windows Kernel 28 8 Microsoft Office SharePoint 27 9 Windows DNS 22 10 (Tie) Microsoft Office Outlook 20 10 (Tie) Windows Print Spooler Components 20 Elevation of Privilege (EoP) vulnerabilities accounted for 48.9% of the vulnerabilities patched this month, followed by remote code execution (RCE) vulnerabilities at 27.1%. Moderate CVE-2026-124194 | Microsoft Outlook spoofing vulnerability CVE-2026-124194 is a spoofing vulnerability in Microsoft Outlook. It received a CVSSv3 score of 6.5 and is rated moderate. An attacker could exploit this vulnerability by convincing a target to open a crafted Microsoft Office file. Successful exploitation would allow an attacker to obtain the target\u2019s valid NTLMv2 hash, which can then be used to impersonate that user in follow-on attacks. According to Microsoft, this vulnerability was exploited in the wild as a zero-day. Additionally, the advisory credits this discovery to a security researcher that used Claude, the large language model (LLM) from Anthropic, though no specific version of Claude was noted in the advisory. Critical CVE-2026-118146 | Windows Active Directory Domain Services remote code execution vulnerability CVE-2026-118146 is an RCE vulnerability affecting Windows Active Directory Domain Services. It received a CVSSv3 score of 8.8 and is rated as critical. An authe",
-      "link": "https://www.tenable.com/blog/microsoft-november-2026-patch-tuesday-addresses-1093-cves-cve-2026-124194",
-      "published": "2026-11-10T19:01:34+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2026-124194",
-        "CVE-2026-118146"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
-      "title": "Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access",
-      "summary": "French software company Vates VMS has warned of a critical security vulnerability in Xen Orchestra that it said is being actively exploited in the wild.\n\nThe authentication bypass flaw, which does not yet have a CVE identifier, is tracked as VSA-2026-062.\n\n\"REST cookie parsing turns authenticationToken=j:%7B%7D into {},\" Vates VMS said in an alert. \"REST authentication passes that object to the",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
-      "published": "2026-11-10T18:12:21+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/",
-      "title": "Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers",
-      "summary": "A critical authentication bypass vulnerability in Xen Orchestra is being actively exploited in attacks that could grant administrator privileges and allow takeover of XCP-ng virtualization hosts. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/",
-      "published": "2026-11-10T16:17:16+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -265,24 +201,6 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-113663",
-      "title": "AG2: Newline injection in SandboxShellTool bypasses allowed=[...] and readonly=True, enabling arbitrary command execution",
-      "summary": "### Summary\nSandboxShellTool's restricted modes \u2014 allowed=[...] (explicit command allowlist) and readonly=True (implicit READONLY_COMMANDS allowlist) \u2014 can both be bypassed by embedding a newline character inside the command string. The filter only inspects a single-line set of shell metacharacters, but execution runs the raw string through `sh -c`, where a shell treats an embedded newline exactly like a `;` statement separator. An agent (or content that steers the agent, e.g. via prompt injection) can therefore run arbitrary shell commands even when the tool was configured to allow only a specific command prefix or only read-only commands. With the default LocalEnvironment() backend this is a real host subprocess (its own docstring: \"Commands run via subprocess on the host, so there is no real isolation\"), not an isolated container, so this is full host command execution, not merely an escape from an already-sandboxed environment.\n\n### Details\nBoth restricted modes are enforced by `ShellAdapter._filter()` in `ag2/tools/sandbox/adapter/shell.py`:\n\n```python\ndef _filter(self, command: str) -> str | None:\n    if self._allowed is not None:\n        if not any(matches(p, command) for p in self._allowed):\n            return f\"Command not allowed: {command!r}\"\n        if contains_shell_operator(command):\n            return f\"Command not allowed (shell operators are not permitted in restricted mode): {command!r}\"\n    ...\n```\n\n`readonly=True` reuses this exact same branch: `SandboxShellTool.__init__` / `ShellAdapter.__init__` sets `self._allowed = list(READONLY_COMMANDS)` when `readonly` is set and no explicit `allowed` is given, so both modes share one filter and one bypass.\n\n`contains_shell_operator()` in `ag2/tools/sandbox/filter.py` checks the command against:\n\n```python\n_SHELL_OPERATORS: tuple[str, ...] = (\">\", \">>\", \"|\", \";\", \"&&\", \"||\", \"`\", \"$(\")\n```\n\nThis tuple has no entry for `\\n` (or `\\r`). `matches()` only checks that the command starts with an allowed prefix fo",
-      "link": "https://github.com/advisories/GHSA-2h4w-29cv-2cmv",
-      "published": "2026-11-10T15:57:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113663"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -323,6 +241,41 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability",
+      "title": "Critical RCE Vulnerability in Apache HTTP Server: Everything You Need To Know",
+      "summary": "Detect and mitigate CVE-2026-119618, a critical RCE vulnerability in Apache HTTP Server. According to Wiz data, 64% of cloud environments have resources vulnerable to CVE-2026-119618. Immediate patching is advised.",
+      "link": "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability",
+      "published": "2026-11-11T19:49:10+00:00",
+      "source": "Wiz Research",
+      "tags": [
+        "cloud",
+        "research",
+        "misconfig"
+      ],
+      "cve_ids": [
+        "CVE-2026-119618"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html",
+      "title": "Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation",
+      "summary": "Zoom has released software updates to address two security flaws impacting Zoom Workplace for Windows, including a critical bug that could result in privilege escalation on affected systems.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-108186 (CVSS score: 9.6) - An improper input validation vulnerability that could allow an unauthenticated user to conduct an escalation of privilege via",
+      "link": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html",
+      "published": "2026-11-11T16:12:46+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-108186"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -449,330 +402,6 @@
       ],
       "cve_ids": [
         "CVE-2026-114146"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126187",
-      "title": "React: Unauthenticated Remote Code Execution in React Server Components",
-      "summary": "### Impact\n\nCrafted payloads targeting frameworks supporting React Server Components can lead to remote code execution. This only affects extremely rare cases where responses transport multiple typed arrays and an attacker-controlled value.\n\nUpdating immediately is recommended.\n\nThe vulnerability exists in versions 19.0.0 through 19.0.8, 19.1.0 through 19.1.9, 19.2.0 through 19.2.8 and 19.3.0 of:\n\n- react-server-dom-webpack\n- react-server-dom-parcel\n- react-server-dom-turbopack\n\n### Patches\n\nFixes were back ported to versions 19.0.09, 19.1.10, 19.2.9, and 19.3.1.\n\nIf applications are using any of the above packages please upgrade to any of the fixed versions immediately.\n\nIf an app\u2019s React code does not use a server, the app is not affected by this vulnerability. If an app does not use a framework, bundler, or bundler plugin that supports React Server Components, the app is not affected by this vulnerability.",
-      "link": "https://github.com/advisories/GHSA-xqc2-xf4c-x3h3",
-      "published": "2026-11-10T22:44:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126187"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126186",
-      "title": "Active Storage: Possible arbitrary file read and remote code execution in video previews, analysis and image processing",
-      "summary": "### Impact\n`ActiveStorage::Blob#open` writes a blob to a tempfile whose name carries the extension of the uploaded filename, and hands that path to `ffprobe` (`VideoAnalyzer`, `AudioAnalyzer`), `ffmpeg` (`VideoPreviewer`) and ImageMagick (`ImageAnalyzer`, the `:mini_magick` variant processor). These tools select a decoder from the file extension when the content does not identify its own format, so an attacker who chooses the filename and declares the content type of an upload chooses which decoder processes it. An FFmpeg built with AviSynth support treats a file with the `.avs` extension as an AviSynth script and evaluates it, which could disclose files readable by the application process through the preview image, or load a native library the attacker has also uploaded, possibly leading to remote code execution in the FFmpeg process. ImageMagick selects its coders and delegates from the extension in the same way.\n\n### Details\nThe fixed releases keep the uploaded extension on the tempfile only when Marcel maps that extension to the blob's recorded content type, and name the tempfile with no extension otherwise. A form upload whose Rack tempfile fails the same check is copied to a correctly named tempfile before processing. Files whose uploaded extension disagrees with their content type are still processed; the external tool detects their format from the content. The Active Storage CHANGELOG describes the change.\n\n### Affected applications\nAn application is affected if it meets all of these requirements:\n- Accepts uploads from untrusted users.\n- Analyzes video or audio attachments (which Active Storage does on attach by default), generates video previews, or processes images with ImageMagick.\n\nThe AviSynth attack additionally requires an FFmpeg built with `--enable-avisynth` and the AviSynthPlus runtime on the host. Upstream FFmpeg and the common Linux distribution and Homebrew packages do not enable it; the GPL builds distributed for Windows and Linux from ffmpeg.",
-      "link": "https://github.com/advisories/GHSA-v924-7rp8-4mxh",
-      "published": "2026-11-10T21:38:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126186"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126076",
-      "title": "Action Pack: Possible restoration of destroyed sessions in Action Dispatch CacheStore",
-      "summary": "### Impact\n`ActionDispatch::Session::CacheStore` writes a session back to the cache at the end of each request that loaded it, without checking that the session's cache entry still exists. When a concurrent request destroys the session, through `reset_session` on logout or by deleting its cache entry on the server, a request that loaded the session earlier and finishes later restores it under its original session ID. Logout and server-side revocation could therefore fail to end a session, and an attacker who holds a stolen session cookie could keep that session valid across the victim's logout.\n\nApplications that use `config.session_store :cache_store` are affected, with any cache backend. `ActionDispatch::Session::CookieStore` is not affected, nor is `ActionDispatch::Session::MemCacheStore` with Dalli 4.0.0 or later, whose session store does not write back a session that was deleted.\n\n### Details\nThe fixed releases record which session a request loaded and skip the write when that session's cache entry no longer exists. Changes that such a request makes to the destroyed session are discarded, and Rack logs a warning that the session could not be saved. Each request that writes back a session it loaded makes one additional cache read.\n\n### Releases\nThe fixed releases are available at the normal locations.\n\nPatches for those who cannot upgrade at once:\n- 8.1: https://github.com/rails/rails/commit/d479192cf88a8b30a335a8bc25188a2d8e0f8d9f.patch\n- 8.0: https://github.com/rails/rails/commit/5bb5ec66ed8faaf590ffe1222d7a5eb6e9d050f5.patch\n\n### Credit\nFound by the team during internal code review.",
-      "link": "https://github.com/advisories/GHSA-2586-8ghr-69fj",
-      "published": "2026-11-10T21:19:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126076"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126062",
-      "title": "JRuby: NONET is bypassed for external DTDs and entities when the systemId uses a short-form IPv4 host",
-      "summary": "### Summary\n\nOn JRuby, the `NONET` parse option did not block an external DTD or entity whose system identifier used a short-form IPv4 host, such as `http://127.1/` or `http://169.254.43518/`, or was an absolute path such as `/x.dtd` in a document parsed from a network URL. An application that parses untrusted XML with `DTDLOAD`, `DTDVALID` or `NOENT` could be made to send network requests, potentially enabling SSRF.\n\nNokogiri 1.19.5 applies the `XML::Schema` check from [GHSA-8678-w3jw-xfc2](https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-8678-w3jw-xfc2): with `NONET` set, only local resources are loaded.\n\nOnly JRuby is affected. Default parse options are not affected.\n\n### Severity\n\nThe Nokogiri maintainers have evaluated this as low severity.\n\n### Mitigation\n\nUpgrade to Nokogiri 1.19.5 or later, or do not enable `DTDLOAD`, `DTDVALID` or `NOENT` for untrusted input.\n\n### Credit\n\nThis issue was responsibly reported by @arpitjain099.",
-      "link": "https://github.com/advisories/GHSA-v995-44v6-5fqm",
-      "published": "2026-11-10T20:52:38Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126062"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-125108",
-      "title": "Rack: Multipart boundary ambiguity guard in Rack::Multipart::Parser can be bypassed with a quoted boundary value, allowing WAF bypass",
-      "summary": "## Summary\n\nThe guard added for CVE-2026-26961 (GHSA-vgpv-f759-9wx3), which rejects multipart requests with more than one `boundary` parameter, only inspects the part of the `Content-Type` header after the boundary it extracts. A `Content-Type` whose first `boundary` parameter is empty or begins with a quote, semicolon, or comma is skipped by the extraction pattern, so a second `boundary` parameter is accepted silently and Rack parses the body with a boundary that a conforming parser would not derive from the header.\n\n## Details\n\n`Rack::Multipart::Parser.parse_boundary` extracts the boundary with a regular expression that uses a lazy prefix and a value class excluding `\"`, `;`, and `,`. For a header such as `multipart/form-data; boundary=\";boundary=AaB03x\"` or `multipart/form-data; boundary=; boundary=AaB03x`, the pattern skips the first `boundary=` and anchors on the second, and the subsequent check for another `boundary=` in the remaining text finds nothing. Rack then uses `AaB03x`.\n\nRFC 9110 parses the first header as a single parameter whose value is `;boundary=AaB03x`, which is not a legal boundary under RFC 2046, so the only conformant outcome is rejection. Inspecting intermediaries that implement the standard grammar, such as ModSecurity, see a different boundary or no multipart body at all.\n\nThe fix counts `boundary=` occurrences across the entire header value and rejects the request when there is more than one.\n\n## Impact\n\nAs with CVE-2026-26961, an attacker can craft a multipart request that a web application firewall or other inspecting proxy in front of a Rack application interprets differently from Rack, so form fields and file uploads reach the application without inspection. Rack itself grants no capability beyond that of a well-formed request with the same body. All supported versions, including 2.2, are affected.\n\n## Mitigation\n\n* Update to a patched version of Rack.\n* Reject requests whose `Content-Type` contains more than one `boundary` parameter ",
-      "link": "https://github.com/advisories/GHSA-p8x9-v4hv-2w4g",
-      "published": "2026-11-10T19:26:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-125108"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-79914",
-      "title": "NocoBase: @nocobase/plugin-action-custom-request allows server-side request forgery through runtime URL overrides",
-      "summary": "### Summary\n\nA Server-Side Request Forgery vulnerability exists in NocoBase v2.1.10 in the `@nocobase/plugin-action-custom-request` plugin.\n\nA low-privileged authenticated user can call the `customRequests:send` endpoint and override the stored request URL at runtime using `options.url`. This causes the NocoBase server to perform outbound HTTP requests to attacker-controlled or internal URLs.\n\n* Product: NocoBase\n* Version: v2.1.10\n* Component: `@nocobase/plugin-action-custom-request`\n* Severity: Moderate\n* Required privilege: authenticated low-privileged user / member\n\nTesting was performed only in a local Docker lab environment at `http://127.0.0.1:13000`. No public NocoBase instance was tested.\n\nLab environment:\n\n* Docker image: `nocobase/nocobase:latest-full`\n* Commit: `23e2bd35625439594e4757bac31d57c9e8e695b9`\n* Database: PostgreSQL 16\n* Containers: `nocobase-lab`, `nocobase-postgres`\n* Docker network: `172.19.0.0/16`\n* Important environment variable: `SERVER_REQUEST_WHITELIST` was not set\n\n---\n\n### Details\n\nThe vulnerable endpoint is:\n\n```http\nPOST /api/customRequests:send?filterByTk=<key>\n```\n\nThe `customRequests:send` action is allowed for any logged-in user:\n\n```ts\n// plugin-action-custom-request/src/server/plugin.ts\nthis.app.acl.allow('customRequests', ['send', 'listByCurrentRole'], 'loggedIn');\n```\n\nThe request options supplied at runtime are merged into the stored request configuration. This allows a low-privileged user to override the stored URL:\n\n```ts\n// plugin-action-custom-request/src/server/actions/send.ts\nconst mergedOptions = {\n  ...(requestConfig.options || {}),\n  ...omitNullAndUndefined(runtimeOptions || {}),\n};\n\nconst { url, ...options } = mergedOptions;\n```\n\nThe URL is therefore attacker-controlled when the low-privileged user sends a request body such as:\n\n```json\n{\n  \"options\": {\n    \"url\": \"http://attacker-controlled-host:18080/ssrf-proof\",\n    \"method\": \"GET\"\n  }\n}\n```\n\nIf `SERVER_REQUEST_WHITELIST` is not configured, the server-side requ",
-      "link": "https://github.com/advisories/GHSA-wrr5-j383-f7h2",
-      "published": "2026-11-10T19:20:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-79914"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-125121",
-      "title": "compose-lint: Text in a pull request can still issue CI workflow commands through compose-lint 0.31.0's output",
-      "summary": "### Impact\n\n0.31.0 fixed GHSA-6f4g-xm8v-pgv6, where text from a Compose file became GitHub Actions workflow commands in compose-lint's output. The fix escapes the command openers in everything compose-lint prints, and the 0.31.0 changelog says the report \"escapes both openers (also covering Azure Pipelines)\". Five paths were left open:\n\n- **Unicode whitespace before a line-leading `::`.** The runner strips all Unicode whitespace from the start of a line before it looks for a command. compose-lint only accounted for spaces and tabs, so a no-break space or another Unicode space ahead of `::` is not escaped. It can come from a Compose value, or from a file name: the text report's file heading and per-file summary, and the `fix` summary on stderr, start with the path as given, so a directory named with a leading no-break space followed by `::` puts a command at the start of a line. This reaches those lines, the text report's fix guidance, the `fix` dry-run diff, and continuation lines of stderr diagnostics.\n- **JSON and SARIF printed to stdout.** `--format json` and `--format sarif` output never passed through the sanitizer, so `##[` inside a service name or other value reaches the log intact when the output isn't redirected to a file.\n- **Command-line errors.** When a repository path reaches compose-lint's arguments without a `--` before it, the argument parser prints it raw in its error message. That includes a carriage return, which the runner treats as a line break, so a command can also start a new line there.\n- **Azure Pipelines.** `##vso[` logging commands were not escaped on any path, despite the changelog's Azure claim.\n- **An error message in the GitHub Action (0.30.0 and 0.31.0).** When `sarif-file:` names a file in a subdirectory that can't be created, the Action prints the directory's resolved path in an error message, outside the window in which it turns command processing off. A pull request can commit a symlink on that path to a directory whose name cont",
-      "link": "https://github.com/advisories/GHSA-r7j4-crjv-h467",
-      "published": "2026-11-10T18:28:35Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-125121"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/attackers-exploit-ahsaycbs-flaws-to.html",
-      "title": "Attackers Exploit AhsayCBS Flaws to Deploy Sandbox-Evading Python Backdoor",
-      "summary": "Cybersecurity researchers have disclosed details of an attack that exploited two now-patched vulnerabilities in AhsayCBS to deliver a Python-based implant.\n\nThe activity, observed by Huntress in early October 2026, involves the exploitation of a chain comprising CVE-2026-105133 and CVE-2026-105134 to bypass authentication and execute arbitrary commands on affected systems. Patches for the two",
-      "link": "https://thehackernews.com/2026/11/attackers-exploit-ahsaycbs-flaws-to.html",
-      "published": "2026-11-10T16:00:55+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-105133",
-        "CVE-2026-105134"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118776",
-      "title": "Forge: Incomplete PKCS#7 padding validation in AES/DES CBC and ECB decryption",
-      "summary": "### Summary\n`decipher.finish()` in CBC and ECB mode accepted malformed PKCS#7 padding: only the last byte was checked, against a limit of four blocks, so mismatched padding bytes, a zero count and oversized counts were accepted and up to four blocks of plaintext could be silently removed. Fixed in node-forge 1.4.1.\n\n### Details\n`modes.cbc.prototype.unpad()` and `modes.ecb.prototype.unpad()` in `lib/cipherModes.js` read the last decrypted byte as the PKCS#7 padding count, rejected it only if it was larger than `blockSize << 2` (64 for AES, 32 for DES), and then removed that many bytes. They did not reject a count of 0 or a count larger than one block, and did not check that every padding byte equals the count, as PKCS#7 (RFC 5652 section 6.3) requires. On the Wycheproof AES-CBC-PKCS5 test vectors, 69 of 144 invalid vectors decrypted successfully.\n\nCBC and ECB without a MAC do not provide integrity: an attacker who can modify ciphertext can already make the final block decrypt to any padding. The effect of this bug is that malformed ciphertext is accepted as valid and that oversized counts silently truncate up to four blocks of plaintext. The fix does not protect against padding oracle attacks; applications that decrypt untrusted CBC data need to authenticate it (for example with an HMAC) or use AES-GCM.\n\nThe fix requires a count from 1 to the block size and checks every padding byte. Data with other padding schemes that only use the last byte as the count (ANSI X.923, ISO 10126, XML Encryption) now fails to decrypt with default unpadding; set `decipher.mode.unpad = false` before `finish()` and remove such padding in application code.\n\n#### Patches\nFixed in node-forge 1.4.1. CBC and ECB decryption requires valid PKCS#7 padding.\n\n#### Workarounds\nAuthenticate CBC/ECB ciphertext before decrypting it, or use AES-GCM. To check padding on 1.4.0, set `decipher.mode.unpad = false` and validate the padding in application code.\n\n#### References\n- https://www.rfc-editor.org/rfc",
-      "link": "https://github.com/advisories/GHSA-2vgq-wchc-25w7",
-      "published": "2026-11-10T15:57:46Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118776"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-119191",
-      "title": "Forge: ASN.1 resource exhaustion via BIT STRING decoding in asn1.fromDer",
-      "summary": "### Summary\n`asn1.fromDer()` decodes the contents of BIT STRINGs as ASN.1 by default. That decode ignored the `maxDepth` recursion limit (an incomplete fix of CVE-2025-66031) and also decoded nested BIT STRINGs, keeping a full copy of the decoded contents at each level, so small crafted DER or PEM inputs (certificates, keys, PKCS structures) use excessive CPU time and memory and can abort the Node.js process. Fixed in node-forge 1.4.1.\n\n### Details\n`asn1.fromDer()` attempts by default to decode the contents of primitive BIT STRINGs as ASN.1 (`decodeBitStrings`, default `true`). Two flaws in that decode in `lib/asn1.js` allow resource exhaustion:\n\n1. `_fromDer()` started the BIT STRING decode with a new options object, `{strict: true, decodeBitStrings: true}`, that did not include `maxDepth`. Inside that decode the depth check compared against `undefined` and never triggered, so the recursion limit added for CVE-2025-66031 (GHSA-554w-wpv2-vw27) was not enforced for anything below a decoded BIT STRING. Both the global `asn1.maxDepth` (default 256) and the per-call `maxDepth` option were ignored there. Errors in this speculative decode, including stack overflows, are caught and the contents kept as raw bytes, so deep nesting is parsed instead of rejected. This is an incomplete fix of CVE-2025-66031.\n2. BIT STRINGs nested inside decoded BIT STRING contents were decoded as well, and `asn1.create()` gives each decoded BIT STRING a deep copy of its decoded contents (`obj.original`, used by `toDer()` to detect changes). Memory use therefore grows quadratically with the nesting depth, even within the default depth limit.\n\nNo specification is violated; the parser lacks a resource limit.\n\nThe fix passes `maxDepth` to the BIT STRING decode, and decodes BIT STRING contents with `decodeBitStrings: false`, so only one level of BIT STRING contents is decoded. Contents that would exceed the limit, and BIT STRINGs inside decoded BIT STRING contents, are kept as undecoded BIT STRING v",
-      "link": "https://github.com/advisories/GHSA-rhr8-3pm8-cq29",
-      "published": "2026-11-10T15:57:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-119191"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-123796",
-      "title": "compose-lint: Incomplete fix for GHSA-jf3h-8jvx-vcrg: a run stopped at the finding limit quotes a secret from a CI-generated `.env`",
-      "summary": "### Impact\n\nThis is an incomplete fix for GHSA-jf3h-8jvx-vcrg. 0.32.0 made findings quote the `${NAME}` a sibling `.env` filled in, instead of its value. The same release added a stop at 20,000 findings per document, and that stop is checked before the quoting step. A run that hits it reports the findings graded so far with the resolved values still in them, in text, JSON and SARIF output. That happens with or without `--allow-partial-coverage`.\n\nThe attack is the one GHSA-jf3h-8jvx-vcrg describes. In a CI workflow that writes secrets into the `.env` beside the Compose file, a pull request changes a line to `image: \"${DB_PASSWORD}\"`. It also pushes the document past 20,000 findings, which a few hundred lines can do, because an aliased list is graded once for each service that uses it. The secret's value is quoted in a finding that reaches the job log, the JSON output and the SARIF uploaded to Code Scanning. GitHub masks registered secrets in the job log, but not in uploaded JSON or SARIF artifacts or in Code Scanning alert text. The run exits 2, or 0 with `--allow-partial-coverage`, after the output has been written.\n\nThe preconditions are the same as for GHSA-jf3h-8jvx-vcrg. The workflow writes secrets into the `.env` beside the Compose file *and* runs on pull requests from authors who should not see them, such as a `pull_request_target` workflow that lints the pull request's files. Pull requests from forks normally run without secrets, so the common setup is not exposed. The inflated document is visible in the pull request, but the workflow runs before anyone reviews it.\n\nFound during an internal pre-1.0 security review.\n\n**Python package.** `compose-lint` 0.32.0. Earlier releases have no finding limit, and their quoting gap is GHSA-jf3h-8jvx-vcrg itself.\n\n**GitHub Action.** Action tag v0.32.0 is affected. Tags before v0.22.0 install the newest release unless `version:` is set, so they currently install 0.32.0.\n\n**pre-commit hook.** `rev: v0.32.0`.\n\n**Docker image",
-      "link": "https://github.com/advisories/GHSA-rm8w-w798-g545",
-      "published": "2026-11-10T15:57:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-123796"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-103002",
-      "title": "GPUStack: Missing authorization on several cluster and resource endpoints allows cross-user access and cluster takeover",
-      "summary": "### Impact\n\nAn authenticated non-administrative user could access a Kubernetes cluster they are not authorized to access through GPUStack's Kubernetes API proxy.\n\nThe `cluster_apiserver_proxy` handler did not perform a resource-level authorization check before forwarding requests to the selected cluster. Requests were forwarded through a worker using its Kubernetes ServiceAccount credentials.\n\nDepending on the permissions granted to that ServiceAccount, an attacker could read sensitive Kubernetes resources, create or modify workloads, or delete resources and disrupt services. Creating attacker-controlled workloads could result in code execution in the target cluster.\n\nExploitation requires a Kubernetes-provider cluster with a reachable worker. The operations available to the attacker are limited by the worker's ServiceAccount permissions.\n\n### Patches\n\nFixed in `gpustack` `v2.2.2`.\n\n### Workarounds\n\nRestrict access to the GPUStack instance to trusted administrator accounts until upgrading.",
-      "link": "https://github.com/advisories/GHSA-3hch-x692-6qj3",
-      "published": "2026-11-10T15:57:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-103002"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-123371",
-      "title": "compose-lint: A `.compose-lint.yml` symlinked outside the project is read, and a parse error quotes part of the target",
-      "summary": "### Impact\n\ncompose-lint automatically reads a `.compose-lint.yml` policy file beside the Compose file. It is meant to read nothing outside the project directory, but it follows that file if it is a symlink, wherever it points.\n\nA pull request can commit `.compose-lint.yml` as a symlink to a file on the CI runner. If the target is not valid YAML, the error compose-lint reports quotes part of the line the parser failed on. That quote reaches the job log (standard error), JSON `errors[]`, and the SARIF `toolExecutionNotifications`, which the Action uploads to Code Scanning. The run exits 2.\n\nWhat can be read is small. The quote is cut to about 30 characters around the error position, and the attacker cannot choose which line of the target the parser fails on. For an INI-style credentials file, this was the start of the second line (`aws_access_key_id = ` followed by the first characters of the value). Targets in `KEY=value` form, and YAML files that parse, disclosed no values in testing. The pass/fail result is not affected. On a public repository, the job log is visible to the pull request's author.\n\nThe Compose file loader stopped quoting source lines in parse errors in 0.25.0 (GHSA-whr6-fgpq-fpv9). The policy loader did not.\n\nFound during an internal pre-1.0 security review.\n\n**GitHub Action.** Action tags v0.18.0 through v0.31.0 install their own compose-lint version and are affected. Earlier tags install the newest release unless `version:` is set, and so currently install an affected one.\n\n**Docker image.** `composelint/compose-lint` tags 0.3.3 through 0.31.0, the matching minor tags, and `latest` are affected. Inside the container, a symlink resolves within the container, so what can be read is the container's own files and anything mounted into it.\n\n### Patches\n\nFixed in 0.32.0. A `.compose-lint.yml` discovered in the working directory that resolves outside it is refused with exit 2 rather than read, and a policy parse error no longer quotes the line it failed",
-      "link": "https://github.com/advisories/GHSA-88f4-frh5-gmcr",
-      "published": "2026-11-10T15:57:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-123371"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-123372",
-      "title": "compose-lint: A pull request can make compose-lint quote a secret from a CI-generated `.env` into its findings",
-      "summary": "### Impact\n\nSince 0.22.0, compose-lint fills in `${VAR}` references from the `.env` beside the Compose file, as Compose does. The documentation says values under `environment:` are never resolved from a `.env`, \"that is where secrets live\". But `image:` values are resolved, and CL-0004 and CL-0019 quote the resolved image in their message and fix text.\n\nSome CI workflows write secrets into that `.env` before linting or building. In such a workflow, a pull request that changes one line to `image: \"${DB_PASSWORD}\"`, or `image: \"nginx:${DB_PASSWORD}\"`, gets the secret's value quoted in a finding. The finding reaches the job log, JSON output, and the SARIF uploaded to Code Scanning. GitHub masks registered secrets in the job log, but not in uploaded JSON or SARIF artifacts or in Code Scanning alert text. The pass/fail result is not affected.\n\nThis needs a workflow that writes secrets into the `.env` beside the Compose file *and* runs on pull requests from authors who should not see them. Pull requests from forks normally run without secrets, so the common setup is not exposed, which is why this is scored as low confidentiality impact. Where the conditions hold, such as a `pull_request_target` workflow, pull requests from branches in the same repository, or a self-hosted runner that keeps a populated `.env` in the checkout, the whole value is disclosed.\n\nFound during an internal pre-1.0 security review.\n\n**GitHub Action.** Action tags v0.22.0 through v0.31.0 install their own compose-lint version and are affected. Earlier tags install the newest release unless `version:` is set, and so currently install an affected one.\n\n**Docker image.** `composelint/compose-lint` tags 0.22.0 through 0.31.0, the matching minor tags, and `latest` are affected when the `.env` is mounted with the project.\n\n### Patches\n\nFixed in 0.32.0. Rules still grade the value the sibling `.env` substituted, but findings, fix guidance and notes quote the `${NAME}` reference in its place, in text, JSON a",
-      "link": "https://github.com/advisories/GHSA-jf3h-8jvx-vcrg",
-      "published": "2026-11-10T15:57:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-123372"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-123370",
-      "title": "compose-lint: `fix --apply` can delete a line the user did not select, including a security setting",
-      "summary": "### Impact\n\n`compose-lint fix --apply` converts the line numbers its fixers work with into positions in the file. The YAML parser treats a lone carriage return, U+0085, U+2028 and U+2029 as line breaks, but the conversion counted only `\\n`. One of those characters inside a quoted value, which most editors and diff views don't show, shifted every later edit down by one line.\n\nA Compose file from a pull request can use this to make a fix delete the line after the one it meant to change. For example, fixing CL-0014 (`logging: driver: none`) instead removes `driver: none` and the following `networks: [internal]`, moving the service off an internal-only network onto the default bridge. The result is still valid Compose, every check `fix` runs after editing passes, and the command reports `applied 1 fix(es)` and exits 0. A later `compose-lint check` passes too, because no rule requires `networks:`. The dry-run diff (without `--apply`) does show the removed lines, but `--apply` prints only the note for the fix that was selected.\n\nA related crash on the same files could empty the SARIF output for every file in the run. GitHub Code Scanning rejects an empty SARIF upload, which fails the step, so that part does not report a false clean result there.\n\nFound during an internal pre-1.0 security review.\n\n**Docker image.** `composelint/compose-lint` tags 0.9.0 through 0.17.0, and the matching minor tags, are affected when used to run `fix --apply`. Fixed from `0.18.0`.\n\nThe GitHub Action does not run `fix` and is not affected.\n\n### Patches\n\nFixed in 0.18.0. Line splitting and position conversion now share one definition of a line break, so they can't disagree. A Compose file containing an ambiguous line break (a lone `\\r`, U+0085, U+2028 or U+2029) is refused with exit code 2, because no line numbering is correct for both the parser and the editor. CRLF and LF files are unaffected.\n\n### Workarounds\n\n- Upgrade to 0.18.0 or later.\n- On older versions, review the dry-run diff before ",
-      "link": "https://github.com/advisories/GHSA-65v8-q222-64xx",
-      "published": "2026-11-10T15:57:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-123370"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-123369",
-      "title": "compose-lint: Compose file text can issue GitHub Actions workflow commands through the compose-lint Action",
-      "summary": "### Impact\n\nThe GitHub Actions runner treats certain text in a step's output as commands. The legacy form, `##[command]`, is recognized anywhere in a line. compose-lint's text report prints service names, environment keys and lines of the Compose file, and it does not neutralize `##[`. Inside the compose-lint Action, a Compose file from a pull request can therefore:\n\n- create fake error or warning annotations on the pull request (`##[error]`, `##[warning]`)\n- fold the rest of the log, including the real verdict, out of sight (`##[group]`)\n- blank out chosen strings for the rest of the log (`##[add-mask]`)\n\nGitHub has postponed removing the deprecated `set-output` log command, so the runner still honors it. A test run of the Action on a GitHub-hosted runner confirmed that a `::set-output` line from a Compose file is processed. Whether it can override the Action's own `sarif-written` output, which decides whether the SARIF upload step runs, has not been tested.\n\nThe exit code and the pass/fail result are not affected. Azure Pipelines parses the same `##[` syntax, so the pip package is listed for anyone printing the text report in other CI systems.\n\nFound during an internal pre-1.0 security review.\n\n### Patches\n\nFixed in 0.31.0. The Action stops the runner from processing workflow commands while compose-lint's output is printed, using a random `stop-commands` token. The text report also escapes `##[`, and `::` at the start of a line, in anything taken from the Compose file.\n\n### Workarounds\n\n- In your own workflow, wrap the compose-lint step in `::stop-commands::<random token>` and `::<random token>::`.\n- Use `--format json` or `--format sarif` rather than the text report when linting untrusted pull requests.\n\n### Reproduction\n\n```yaml\nservices:\n  web:\n    image: \"nginx:1.25\"\n    environment:\n      \"##[error]DB_PASSWORD\": placeholder\n  \"##[group]svc\":\n    image: \"nginx:1.25\"\n    privileged: true\n```\n\nRun through the Action, this produces a fake error annotation and fol",
-      "link": "https://github.com/advisories/GHSA-6f4g-xm8v-pgv6",
-      "published": "2026-11-10T15:56:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-123369"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-123368",
-      "title": "compose-lint: .env read through a symlink outside the project can expose the CI job's environment",
-      "summary": "### Impact\n\ncompose-lint fills in `${VAR}` references from the `.env` file next to the Compose file. It is meant to read nothing outside the project directory, and `env_file:`, `include:` and `extends:` paths are checked for that. The `.env` read is not. If `.env` is a symlink, compose-lint follows it wherever it points.\n\nA pull request can add a `.env` symlink to any file on the CI runner and a Compose file that references a variable from it. compose-lint substitutes the value and quotes it in finding messages, which go to the log and to JSON and SARIF output.\n\nThe worst target is `/proc/self/environ`, the linter's own environment. The Compose file only needs to reference the name of the first variable in it: because that file separates variables with NUL bytes rather than newlines, the substituted value is the entire rest of the environment. On a CI runner that environment holds whatever the workflow put there, including secrets. GitHub masks registered secrets in the job log, but not in uploaded JSON or SARIF artifacts or in Code Scanning alert text.\n\nAn `include:` entry's `project_directory:` has the same gap from 0.28.0: a directory symlink named there makes compose-lint read `.env` from wherever the link points.\n\nPull requests from forks normally run without secrets, and GitHub masks registered secrets in the job log, so in the common setup what can be read is runner metadata and whatever unmasked values the job's environment holds. That is why this is scored as low confidentiality impact. The impact is high in a job that runs untrusted pull requests with secrets in its environment, such as a `pull_request_target` workflow, or on a CI system that does not mask secrets, and also wherever the JSON or SARIF output is uploaded. The pass/fail result is not affected.\n\nFound during an internal pre-1.0 security review.\n\n### Patches\n\nFixed in 0.31.0. Every `.env` read now applies the same containment check as `env_file:`. A `.env` that resolves outside the project is t",
-      "link": "https://github.com/advisories/GHSA-6wcv-rj3c-mhv3",
-      "published": "2026-11-10T15:56:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-123368"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102943",
-      "title": "Dagu MCP DAG specification read bypasses path containment and workspace isolation",
-      "summary": "## Summary\n\nThe traversal fix for CVE-2026-33344 was implemented as HTTP middleware installed only in the chi handler chain, but the MCP service calls the same API method in process, so arbitrary YAML file read is reachable again through the MCP tool surface with a viewer-role key. Read-only, limited to .yaml/.yml targets. Confirmed at HEAD f6c039f (post v2.10.7).\n\n## The defect\n\nThe fix for CVE-2026-33344 is a reflection-based HTTP middleware (internal/frontend/.../api.go, roughly lines 553-597) that inspects a request field named FileName and rejects anything that is not a plain name. It is installed in exactly one place: the chi strict-handler chain (api.go around line 419).\n\nThe MCP service does not go through that chain. internal/service/mcp/server.go calls the API method directly as an in-process Go call:\n\n```go\nfunc (svc *Service) getDAGSpec(ctx context.Context, name string) (map[string]any, error) {   // line 307\n    resp, err := svc.api.GetDAGSpec(ctx, daguapi.GetDAGSpecRequestObject{\n        FileName: daguapi.DAGFileName(name),                                                 // line 309\n    })\n```\n\nNo HTTP request is constructed, so no middleware executes, and the underlying resolver is still uncontained:\n\n```go\nfunc (store *Storage) locateDAG(nameOrPath string) (string, error) {                 // line 1041\n    if strings.Contains(nameOrPath, string(filepath.Separator)) {                    // line 1042\n        foundPath, err := findDAGFile(nameOrPath)\n        if err == nil {\n            return foundPath, nil                                                    // line 1045, no containment check\n        }\n    }\n```\n\nAn absolute path contains a separator, so it takes the first branch and is returned as-is, with no check that it falls under store.baseDir or any entry in store.searchPaths.\n\n## Verification\n\nVerified end to end using the project's own conformance/mcptest harness against a real running HTTP server, not by source reading:\n\n```\ndagu_read {\"target\"",
-      "link": "https://github.com/advisories/GHSA-5m6c-38r8-5w76",
-      "published": "2026-11-10T15:56:49Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102943"
       ],
       "is_zero_day": false,
       "is_high_severity": true
