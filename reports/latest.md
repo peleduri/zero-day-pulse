@@ -1,64 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-10 22:37 UTC &nbsp;|&nbsp; **Total:** 48 &nbsp;|&nbsp; 🔴 KEV: 6 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 25 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-11 03:30 UTC &nbsp;|&nbsp; **Total:** 46 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 28 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-124194 — Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability
-
-**CVE:** `CVE-2026-124194` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-124194>
-
-> Vendor: Microsoft | Product: Office. Microsoft Office Outlook contains a missing user interaction for potentially unsafe action vulnerability that allows an unauthorized attacker to perform spoofing over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guida…
-
----
-
-## 2. 🔴 CISA KEV — CVE-2026-111793 — Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability
-
-**CVE:** `CVE-2026-111793` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-111793>
-
-> Vendor: Openwave Messaging Limited | Product: Webtop Media Transcoder. Openwave Messaging Limited Webtop Media Transcoder contains an incorrect resource transfer between spheres vulnerability that may allow an authenticated user to process and convert unintended document types if bypassing the Webmail experience. Required action: Apply mitigations in accordance with vendor instructions, ensuring c…
-
----
-
-## 3. 🔴 CISA KEV — CVE-2026-20320 — Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability
-
-**CVE:** `CVE-2026-20320` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-20320>
-
-> Vendor: Cisco | Product: BroadWorks. Cisco BroadWorks contains an improper restriction of XML external entity reference vulnerability that could allow an unauthenticated, remote attacker to read sensitive configuration information on an affected system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates…
-
----
-
-## 4. 🔴 CISA KEV — CVE-2026-111560 — Barracuda Networks Multiple Products OS Command Injection Vulnerability
-
-**CVE:** `CVE-2026-111560` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-111560>
-
-> Vendor: Barracuda Networks | Product: Multiple Products. Barracuda Networks Email Security Gateway (ESG), Load Balancer, Application Delivery Controller (ADC), Message Archiver (BMA), WAF Control Center (WCC), Web Application Firewall (WAF), and Web Security Gateway (WSG) contain an OS command injection vulnerability. This vulnerability could allow an authenticated administrator to inject OS comma…
-
----
-
-## 5. 🔴 CISA KEV — CVE-2026-116606 — Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability
-
-**CVE:** `CVE-2026-116606` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-116606>
-
-> Vendor: Barracuda Networks | Product: Barracuda Email Security Gateway (ESG). Barracuda Networks Email Security Gateway (ESG) contains an authentication bypass using an alternate path or channel that could allow an unauthenticated remote attacker to invoke a configuration-import function and restore a crafted, compatible backup archive, resulting in unauthorized modification of the appliance’s glo…
-
----
-
-## 6. 🔴 CISA KEV — CVE-2026-125350 — Google Chromium Use-After-Free Vulnerability
-
-**CVE:** `CVE-2026-125350` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-125350>
-
-> Vendor: Google | Product: Chromium. Google Chromium contains a use-after-free vulnerability in the XML component that could allow a remote attacker to execute arbitrary code inside the sandbox via a specially crafted webpage. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera. Required action: Apply m…
-
----
-
-## 7. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -67,7 +13,14 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day
+## 2. 🟠 Zero-Day — November 2026 Patch Tuesday: 1,252 CVEs Include One Zero-Day and 68 Critical Vulnerabilities
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Nov 10, 20
+**Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-november-2026/>
+
+---
+
+## 3. 🟠 Zero-Day — Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/>
@@ -76,7 +29,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Microsoft’s November 2026 Patch Tuesday addresses 1093 CVEs (CVE-2026-124194)
+## 4. 🟠 Zero-Day — Microsoft’s November 2026 Patch Tuesday addresses 1093 CVEs (CVE-2026-124194)
 
 **CVE:** `CVE-2026-124194` | `CVE-2026-118146` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.tenable.com/blog/microsoft-november-2026-patch-tuesday-addresses-1093-cves-cve-2026-124194>
@@ -85,7 +38,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access
+## 5. 🟠 Zero-Day — Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html>
@@ -98,7 +51,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 11. 🟠 Zero-Day — Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers
+## 6. 🟠 Zero-Day — Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/>
@@ -107,7 +60,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 12. 🟠 Zero-Day — N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days
+## 7. 🟠 Zero-Day — N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/>
@@ -116,7 +69,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 13. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -125,7 +78,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 14. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -134,7 +87,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 15. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -143,7 +96,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 16. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -152,7 +105,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 17. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -161,7 +114,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 18. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -170,7 +123,7 @@ The authentication bypass flaw, which does not yet have a CVE identifier, is tra
 
 ---
 
-## 19. 🟠 Zero-Day — AG2: Newline injection in SandboxShellTool bypasses allowed=[...] and readonly=True, enabling arbitrary command execution
+## 14. 🟠 Zero-Day — AG2: Newline injection in SandboxShellTool bypasses allowed=[...] and readonly=True, enabling arbitrary command execution
 
 **CVE:** `CVE-2026-113663` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-2h4w-29cv-2cmv>
@@ -180,7 +133,7 @@ SandboxShellTool&#x27;s restricted modes — allowed=[...] (explicit command all
 
 ---
 
-## 20. 🟠 Zero-Day — Russian Turla Hackers Use New Cereal Malware to Steal Emails From Government Exchange Servers
+## 15. 🟠 Zero-Day — Russian Turla Hackers Use New Cereal Malware to Steal Emails From Government Exchange Servers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/russian-turla-hackers-use-new-cereal.html>
@@ -191,7 +144,7 @@ According to an ESET report shared with The Hacker News ahead of publication, th
 
 ---
 
-## 21. 🟠 Zero-Day — Google patches eighth Chrome zero-day exploited in attacks this year
+## 16. 🟠 Zero-Day — Google patches eighth Chrome zero-day exploited in attacks this year
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/>
@@ -200,7 +153,7 @@ According to an ESET report shared with The Hacker News ahead of publication, th
 
 ---
 
-## 22. 🟠 Zero-Day — Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026
+## 17. 🟠 Zero-Day — Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026
 
 **CVE:** `CVE-2026-125350` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/google-issues-chrome-security-update.html>
@@ -213,7 +166,7 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 23. 🟠 Zero-Day — N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits
+## 18. 🟠 Zero-Day — N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html>
@@ -224,7 +177,7 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 24. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 19. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -233,7 +186,7 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 25. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 20. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -242,7 +195,136 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 26. 🟡 High Severity — Active Storage: Possible arbitrary file read and remote code execution in video previews, analysis and image processing
+## 21. 🟡 High Severity — Microsoft Security Advisory CVE-2026-118745 - Visual Studio Remote Code Execution Vulnerability
+
+**CVE:** `CVE-2026-118745` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://github.com/advisories/GHSA-x8x8-p968-x646>
+
+> ## Executive summary
+
+Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
+
+Crafted PDB line metadata can exceed the caller-provided buffer and cause a heap out-of-bounds write.
+
+## CVSS Details
+
+- **Version:** 3.1
+- **Severity:** High
+- **Score:** 8.8 (base score)
+- **V…
+
+---
+
+## 22. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114152 - Visual Studio Remote Code Execution Vulnerability
+
+**CVE:** `CVE-2026-114152` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://github.com/advisories/GHSA-xf35-v9jh-g65w>
+
+> ## Executive summary
+
+Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
+
+Attacker-controlled COFF relocation offsets can cause an out-of-bounds stack write in `DiaObjectFile::ApplyFixup`.
+
+## CVSS Details
+
+- **Version:** 3.1
+- **Severity:** High
+- **Score:** 8.8 (base…
+
+---
+
+## 23. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114151 - Visual Studio Remote Code Execution Vulnerability
+
+**CVE:** `CVE-2026-114151` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://github.com/advisories/GHSA-fpxj-5c99-g7vj>
+
+> ## Executive summary
+
+Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
+
+A crafted PDB `LF_DECIMAL` payload can trigger an out-of-bounds stack write when processed by DIA.
+
+## CVSS Details
+
+- **Version:** 3.1
+- **Severity:** High
+- **Score:** 8.8 (base score)
+- **Vect…
+
+---
+
+## 24. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114158 - Visual Studio Remote Code Execution Vulnerability
+
+**CVE:** `CVE-2026-114158` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://github.com/advisories/GHSA-r8h3-p8p6-ggp7>
+
+> ## Executive summary
+
+Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
+
+A Portable PDB `EmbeddedSource` record with parent RID 0 can trigger an out-of-bounds write.
+
+## CVSS Details
+
+- **Version:** 3.1
+- **Severity:** High
+- **Score:** 8.8 (base score)
+- **Vector:** …
+
+---
+
+## 25. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114159 - Visual Studio Remote Code Execution Vulnerability
+
+**CVE:** `CVE-2026-114159` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://github.com/advisories/GHSA-3cgx-w6gm-fqrx>
+
+> ## Executive summary
+
+Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
+
+An oversized Portable PDB document name can be truncated during allocation and cause a heap out-of-bounds write.
+
+## CVSS Details
+
+- **Version:** 3.1
+- **Severity:** High
+- **Score:** 8.8 (base s…
+
+---
+
+## 26. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114146 - ASP.NET Core Elevation of Privilege Vulnerability
+
+**CVE:** `CVE-2026-114146` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
+**Reference:** <https://github.com/advisories/GHSA-67wp-ghc2-fw2g>
+
+> ## Executive summary
+
+Microsoft is releasing this security advisory to provide information about a vulnerability in ASP.NET Core. This advisory provides guidance on updating affected applications and components.
+
+SignalR connections are not consistently bound to the identity negotiated at connection establishment, allowing injected messages to execute Hub invocations as the victim.
+
+## Announcemen…
+
+---
+
+## 27. 🟡 High Severity — React: Unauthenticated Remote Code Execution in React Server Components
+
+**CVE:** `CVE-2026-126187` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-xqc2-xf4c-x3h3>
+
+> ### Impact
+
+Crafted payloads targeting frameworks supporting React Server Components can lead to remote code execution. This only affects extremely rare cases where responses transport multiple typed arrays and an attacker-controlled value.
+
+Updating immediately is recommended.
+
+The vulnerability exists in versions 19.0.0 through 19.0.8, 19.1.0 through 19.1.9, 19.2.0 through 19.2.8 and 19.3.0 of:
+…
+
+---
+
+## 28. 🟡 High Severity — Active Storage: Possible arbitrary file read and remote code execution in video previews, analysis and image processing
 
 **CVE:** `CVE-2026-126186` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-v924-7rp8-4mxh>
@@ -252,7 +334,7 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 27. 🟡 High Severity — Action Pack: Possible restoration of destroyed sessions in Action Dispatch CacheStore
+## 29. 🟡 High Severity — Action Pack: Possible restoration of destroyed sessions in Action Dispatch CacheStore
 
 **CVE:** `CVE-2026-126076` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-2586-8ghr-69fj>
@@ -262,7 +344,7 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 28. 🟡 High Severity — JRuby: NONET is bypassed for external DTDs and entities when the systemId uses a short-form IPv4 host
+## 30. 🟡 High Severity — JRuby: NONET is bypassed for external DTDs and entities when the systemId uses a short-form IPv4 host
 
 **CVE:** `CVE-2026-126062` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-v995-44v6-5fqm>
@@ -273,7 +355,7 @@ On JRuby, the `NONET` parse option did not block an external DTD or entity whose
 
 ---
 
-## 29. 🟡 High Severity — Rack: Multipart boundary ambiguity guard in Rack::Multipart::Parser can be bypassed with a quoted boundary value, allowing WAF bypass
+## 31. 🟡 High Severity — Rack: Multipart boundary ambiguity guard in Rack::Multipart::Parser can be bypassed with a quoted boundary value, allowing WAF bypass
 
 **CVE:** `CVE-2026-125108` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-p8x9-v4hv-2w4g>
@@ -284,7 +366,7 @@ The guard added for CVE-2026-26961 (GHSA-vgpv-f759-9wx3), which rejects multipar
 
 ---
 
-## 30. 🟡 High Severity — NocoBase: @nocobase/plugin-action-custom-request allows server-side request forgery through runtime URL overrides
+## 32. 🟡 High Severity — NocoBase: @nocobase/plugin-action-custom-request allows server-side request forgery through runtime URL overrides
 
 **CVE:** `CVE-2026-79914` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-wrr5-j383-f7h2>
@@ -299,7 +381,7 @@ A low-privileged authenticated user can call the `customRequests:send` endpoint 
 
 ---
 
-## 31. 🟡 High Severity — compose-lint: Text in a pull request can still issue CI workflow commands through compose-lint 0.31.0's output
+## 33. 🟡 High Severity — compose-lint: Text in a pull request can still issue CI workflow commands through compose-lint 0.31.0's output
 
 **CVE:** `CVE-2026-125121` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-r7j4-crjv-h467>
@@ -312,7 +394,7 @@ A low-privileged authenticated user can call the `customRequests:send` endpoint 
 
 ---
 
-## 32. 🟡 High Severity — Attackers Exploit AhsayCBS Flaws to Deploy Sandbox-Evading Python Backdoor
+## 34. 🟡 High Severity — Attackers Exploit AhsayCBS Flaws to Deploy Sandbox-Evading Python Backdoor
 
 **CVE:** `CVE-2026-105133` | `CVE-2026-105134` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/attackers-exploit-ahsaycbs-flaws-to.html>
@@ -323,7 +405,7 @@ The activity, observed by Huntress in early October 2026, involves the exploitat
 
 ---
 
-## 33. 🟡 High Severity — Forge: Incomplete PKCS#7 padding validation in AES/DES CBC and ECB decryption
+## 35. 🟡 High Severity — Forge: Incomplete PKCS#7 padding validation in AES/DES CBC and ECB decryption
 
 **CVE:** `CVE-2026-118776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-2vgq-wchc-25w7>
@@ -336,7 +418,7 @@ The activity, observed by Huntress in early October 2026, involves the exploitat
 
 ---
 
-## 34. 🟡 High Severity — Forge: ASN.1 resource exhaustion via BIT STRING decoding in asn1.fromDer
+## 36. 🟡 High Severity — Forge: ASN.1 resource exhaustion via BIT STRING decoding in asn1.fromDer
 
 **CVE:** `CVE-2026-119191` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-rhr8-3pm8-cq29>
@@ -346,7 +428,7 @@ The activity, observed by Huntress in early October 2026, involves the exploitat
 
 ---
 
-## 35. 🟡 High Severity — compose-lint: Incomplete fix for GHSA-jf3h-8jvx-vcrg: a run stopped at the finding limit quotes a secret from a CI-generated `.env`
+## 37. 🟡 High Severity — compose-lint: Incomplete fix for GHSA-jf3h-8jvx-vcrg: a run stopped at the finding limit quotes a secret from a CI-generated `.env`
 
 **CVE:** `CVE-2026-123796` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-rm8w-w798-g545>
@@ -357,7 +439,7 @@ This is an incomplete fix for GHSA-jf3h-8jvx-vcrg. 0.32.0 made findings quote th
 
 ---
 
-## 36. 🟡 High Severity — GPUStack: Missing authorization on several cluster and resource endpoints allows cross-user access and cluster takeover
+## 38. 🟡 High Severity — GPUStack: Missing authorization on several cluster and resource endpoints allows cross-user access and cluster takeover
 
 **CVE:** `CVE-2026-103002` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-3hch-x692-6qj3>
@@ -370,7 +452,7 @@ The `cluster_apiserver_proxy` handler did not perform a resource-level authoriza
 
 ---
 
-## 37. 🟡 High Severity — compose-lint: A `.compose-lint.yml` symlinked outside the project is read, and a parse error quotes part of the target
+## 39. 🟡 High Severity — compose-lint: A `.compose-lint.yml` symlinked outside the project is read, and a parse error quotes part of the target
 
 **CVE:** `CVE-2026-123371` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-88f4-frh5-gmcr>
@@ -383,7 +465,7 @@ A pull request can commit `.compose-lint.yml` as a symlink to a file on the CI r
 
 ---
 
-## 38. 🟡 High Severity — compose-lint: A pull request can make compose-lint quote a secret from a CI-generated `.env` into its findings
+## 40. 🟡 High Severity — compose-lint: A pull request can make compose-lint quote a secret from a CI-generated `.env` into its findings
 
 **CVE:** `CVE-2026-123372` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-jf3h-8jvx-vcrg>
@@ -396,7 +478,7 @@ Some CI workflows write secrets in…
 
 ---
 
-## 39. 🟡 High Severity — compose-lint: `fix --apply` can delete a line the user did not select, including a security setting
+## 41. 🟡 High Severity — compose-lint: `fix --apply` can delete a line the user did not select, including a security setting
 
 **CVE:** `CVE-2026-123370` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-65v8-q222-64xx>
@@ -409,7 +491,7 @@ A Compose file fr…
 
 ---
 
-## 40. 🟡 High Severity — compose-lint: Compose file text can issue GitHub Actions workflow commands through the compose-lint Action
+## 42. 🟡 High Severity — compose-lint: Compose file text can issue GitHub Actions workflow commands through the compose-lint Action
 
 **CVE:** `CVE-2026-123369` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-6f4g-xm8v-pgv6>
@@ -422,7 +504,7 @@ The GitHub Actions runner treats certain text in a step&#x27;s output as command
 
 ---
 
-## 41. 🟡 High Severity — compose-lint: .env read through a symlink outside the project can expose the CI job's environment
+## 43. 🟡 High Severity — compose-lint: .env read through a symlink outside the project can expose the CI job's environment
 
 **CVE:** `CVE-2026-123368` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-6wcv-rj3c-mhv3>
@@ -435,7 +517,7 @@ A pull request can add a `.env` symlink to any file on the CI runner and a C…
 
 ---
 
-## 42. 🟡 High Severity — Dagu MCP DAG specification read bypasses path containment and workspace isolation
+## 44. 🟡 High Severity — Dagu MCP DAG specification read bypasses path containment and workspace isolation
 
 **CVE:** `CVE-2026-102943` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://github.com/advisories/GHSA-5m6c-38r8-5w76>
@@ -450,7 +532,7 @@ The fix for CVE-2…
 
 ---
 
-## 43. 🟡 High Severity — CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws
+## 45. 🟡 High Severity — CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws
 
 **CVE:** `CVE-2026-123218` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html>
@@ -464,63 +546,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 44. 🟡 High Severity — Kubeflow Pipelines: Reflected XSS in the frontend pod information and events error responses
-
-**CVE:** `CVE-2026-88986` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-g3qx-frcg-j979>
-
-> ## Summary
-
-The Kubeflow Pipelines frontend reflected untrusted pod names and namespaces into HTML error responses from the pod-information and pod-events routes. An attacker could craft a link that causes JavaScript to execute in the frontend&#x27;s origin when a user follows it and reaches an affected error response.
-
-Affected routes include `/pipeline/k8s/pod` and `/pipeline/k8s/pod/events` (th…
-
----
-
-## 45. 🟡 High Severity — Kubeflow Pipelines: RBAC bypass on shared pipelines allows any authenticated user to delete or modify global pipelines
-
-**CVE:** `CVE-2026-88984` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-ghgh-57qv-h687>
-
-> ## Summary
-
-In multi-user mode, the Kubeflow Pipelines API server skipped authorization checks for shared/global pipelines with an empty namespace. This exception applied to write and delete operations as well as reads, allowing an authenticated user to modify or delete shared pipelines without the required Kubernetes RBAC permissions.
-
-## Impact
-
-Unauthorized modification compromises the integrit…
-
----
-
-## 46. 🟡 High Severity — Kubeflow Pipelines — API server fetches a caller-supplied pipelineURL without host validation
-
-**CVE:** `CVE-2026-88983` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-f7vj-6669-qvv4>
-
-> ## Summary
-
-The Kubeflow Pipelines API server fetched caller-supplied pipeline package URLs without restricting the destination. A caller authorized to create a pipeline or pipeline version could cause requests to originate from the API server&#x27;s network position, including to internal services that the caller could not otherwise reach.
-
-## Impact
-
-The reported evidence demonstrates blind serv…
-
----
-
-## 47. 🟡 High Severity — Kubeflow Pipelines: Cross-tenant execution-cache poisoning / output substitution via a namespace-blind cache key in the cache webhook (multi-user)
-
-**CVE:** `CVE-2026-88982` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-2xwh-426q-42c5>
-
-> ## Summary
-
-The legacy Kubeflow Pipelines V1/raw-Argo execution cache does not separate cached results by Kubernetes namespace. In multi-user deployments where tenants share the cache service, a tenant can receive another tenant&#x27;s cached outputs or seed outputs that are subsequently substituted into another tenant&#x27;s step.
-
-This affects the Argo-template cache mutating webhook and its cac…
-
----
-
-## 48. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 46. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
