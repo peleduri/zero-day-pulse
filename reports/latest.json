@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-12T14:07:39.678850+00:00",
-  "total": 16,
+  "generated": "2026-11-12T22:56:23.800577+00:00",
+  "total": 26,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -134,6 +134,51 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+      "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+      "summary": "Hackers are actively exploiting a newly disclosed N-able N-central zero-day vulnerability dubbed \"4EverAble2Shell\" to compromise servers and deploy cryptocurrency miners, with researchers reporting at least 21 affected systems, including 19 running the company's latest security update. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+      "published": "2026-11-12T19:51:16+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html",
+      "title": "New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access",
+      "summary": "Public exploit code released earlier this week claims that a local Windows user can gain SYSTEM privileges through the Common Log File System driver.\n\nThe proof of concept, called SignDrop, targets a log-authentication feature added to the driver last year. It abuses how clfs.sys creates companion files when a privileged process opens a prepared log, using path redirection to take control of",
+      "link": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html",
+      "published": "2026-11-12T17:50:27+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/",
+      "title": "New Windows SignDrop zero-day gives hackers SYSTEM privileges",
+      "summary": "Security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) has released a new Windows zero-day exploit that can let attackers gain SYSTEM privileges. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/",
+      "published": "2026-11-12T16:04:00+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches/",
       "title": "Hackers Target N-central Zero-Days as N-able Rushes Patches",
       "summary": "The malicious activity started shortly after a researcher dropped over 30 zero-days. N-able patched the unauthenticated ones. The post Hackers Target N-central Zero-Days as N-able Rushes Patches appeared first on SecurityWeek .",
@@ -194,6 +239,148 @@
       "is_high_severity": true
     },
     {
+      "id": "CVE-2026-126354",
+      "title": "Addressable URI normalization resolves some dotted path segments to the wrong path",
+      "summary": "### Summary\n\n`Addressable::URI.normalize_path` resolves some paths containing `..` segments to a different path than RFC 3986 does. When a path climbs above the root before any other `..` is resolved, the segments that later `..` segments should remove are instead kept: `/../../public/x/../../secret` normalizes to `/public/x/secret` instead of `/secret`. `URI#normalize`, `URI#join`, `URI#==` and `URI#===` all use this normalization. An application that checks a normalized Addressable path against an allowlist, but sends the original URI to something that resolves it according to RFC 3986, can be made to allow a request for a path outside the allowlist.\n\n### Details\n\n`normalize_path` in 2.9.0 (`lib/addressable/uri.rb`) removes dot segments by repeating a set of rewrites until nothing changes. On each pass it finds the first `/segment/../` pair with `RULE_2B_2C`, then replaces every textual copy of that pair in the path with `/`:\n\n```ruby\npair = normalized_path.match(RULE_2B_2C)\n...\nregexp = \"/#{Regexp.escape(parent.to_s)}/\\\\.\\\\./|\"\nregexp += \"(/#{Regexp.escape(current.to_s)}/\\\\.\\\\.$)\"\n...\nmod ||= normalized_path.gsub!(Regexp.new(regexp), SLASH)\n```\n\nWhen the first pair found is `/../../`, where the \"segment\" is itself `..`, every `/../../` in the path is replaced with `/`. That includes copies later in the path, where each `..` should have removed the segment before it. For `/../../public/x/../../secret`:\n\n- RFC 3986 \u00a75.2.4 drops the two leading `..` segments, which can't go above the root, then removes `x` and `public`, giving `/secret`.\n- 2.9.0 replaces both copies of `/../../` with `/` in one step, giving `/public/x/secret`.\n\nPaths where an ordinary `/segment/../` pair comes first, such as `/a/../../b/c/../../d`, are resolved correctly.\n\nThis was introduced in 2.2.5. Versions 2.0.0 through 2.2.4 and earlier versions resolve these paths correctly. It is fixed in 2.9.1, which replaces the rewrite loop with a single pass that correctly follows RFC 3986 \u00a75.2.4.\n\n### P",
+      "link": "https://github.com/advisories/GHSA-8gmh-2hhj-2hv9",
+      "published": "2026-11-12T22:27:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-126354"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-126210",
+      "title": "@hono/node-server: Backslash in the request path is parsed as a path separator, bypassing path-based access control at a reverse proxy",
+      "summary": "### Summary\n\n`@hono/node-server` passes the raw request-target to the WHATWG URL parser, which treats a backslash in the path as `/` and then resolves `..` segments. A request for `/admin\\secret` or `/public\\..\\admin/secret` reaches the application as `/admin/secret`. A reverse proxy that follows RFC 3986 forwards the backslash unchanged and applies its path-based rules to the original path, so the request reaches a route the proxy is meant to block.\n\n### Details\n\nA raw backslash is not allowed in a request-target (RFC 3986, RFC 9112 Section 3.2.1), and RFC 9112 Section 3.2 says a recipient should reject such a request rather than correct it. Proxies such as nginx on Linux, HAProxy and Envoy keep the backslash as an ordinary character, so they and the application see different paths.\n\nThe fix responds with `400 Bad Request` to a request whose path contains a raw backslash, for HTTP/1.1, HTTP/2, absolute-form request-targets and WebSocket upgrades. A percent-encoded backslash and a backslash in the query string are still accepted.\n\n### Impact\n\nAn unauthenticated client can reach a route that a reverse proxy, load balancer or WAF in front of the application blocks by path.\n\nThis affects applications served by `@hono/node-server` behind a front component that makes path-based decisions and forwards a backslash unchanged. Access control inside the Hono application, such as middleware on `/admin/*`, runs on the rewritten path and is not affected.",
+      "link": "https://github.com/advisories/GHSA-jpvv-r467-5p4w",
+      "published": "2026-11-12T21:28:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-126210"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-126208",
+      "title": "Loofah: SVG `<textPath>` and `<mpath>` bypass local-reference restriction",
+      "summary": "## Summary\n\nLoofah restricts `href` and `xlink:href` on certain SVG elements to same-document references. Two elements escaped the restriction:\n\n- `<textPath>`: `SVG_ALLOW_LOCAL_HREF` listed it in lowercase as `textpath`, but the HTML5 parser names the element `textPath` inside `<svg>`, so the check never matched on the HTML5 path.\n- `<mpath>`: absent from `SVG_ALLOW_LOCAL_HREF`, so its references were never restricted on either path.\n\n`rails-html-sanitizer` reuses this safelist in its `PermitScrubber`, so it is affected too.\n\n## Impact\n\nAn external `href` or `xlink:href` on `<textPath>` or `<mpath>` survives sanitization. Firefox fetches the URL when rendering the content, which leaks the viewer's IP address, user agent, and referrer, and can reach hosts routable only from the viewer's network. Chrome and WebKit do not fetch external references on these elements. The impact is a network request to an attacker-chosen URL, not script execution.\n\nApplications that sanitize user-supplied SVG, directly or inside HTML, with Loofah's default allowlist or with `rails-html-sanitizer` with SVG elements permitted are affected.\n\n## Mitigation\n\nUpgrade to Loofah >= 2.25.3.",
+      "link": "https://github.com/advisories/GHSA-345x-3rq2-jfrm",
+      "published": "2026-11-12T21:26:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-126208"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-126207",
+      "title": "Loofah: CSS url() sanitization bypass via escaped parentheses",
+      "summary": "## Summary\n\n`Loofah::HTML5::Scrub.scrub_css` rejected any property whose top-level Crass tokens included a `:url` or `:bad_url`, and left `url` out of the allowed CSS functions. Both checks ran only against the first parse of the `style` attribute. When `scrub_css` rebuilt each property it emitted identifiers with their CSS escapes decoded, so parentheses written as escapes \u2014 `url\\28 \u2026\\29` \u2014 hid the `url` token from the checks, and the rebuilt value was re-parsed into a live `url()` that nothing checked again. An escaped property name, six-digit escapes, escaped comments and escaped quotes all reached the same place.\n\n## Impact\n\nA sanitized `style` attribute could make a viewer's browser issue a request to an attacker-chosen URL. `list-style` fetches on render with no interaction, `cursor` on hover. That leaks the viewer's IP address, user agent and access timing, and can reach hosts routable only from the viewer's network. No script survives sanitization and the attacker cannot read the response, so the request itself is the whole impact.\n\nApplications that sanitize user-supplied HTML with Loofah's default allowlist and display it to other people are affected.\n\n## Mitigation\n\nUpgrade to Loofah >= 2.25.3.\n\n## Credit\n\nReported by NotAFlightRisk through GitHub's private vulnerability reporting.",
+      "link": "https://github.com/advisories/GHSA-m3x9-938q-5767",
+      "published": "2026-11-12T21:05:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-126207"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-84974",
+      "title": "code16/sharp: Arbitrary class instantiation through the embed_key API parameter",
+      "summary": "### Impact\n\nAn authenticated attacker can instantiate any class in the PHP application by using the `embed_key` parameter across multiple API endpoints. The instantiation is performed by the Laravel container. As a result, the `__construct()` method of the class is called and all constructor dependencies are resolved. The attacker cannot specify parameter values and cannot call any arbitrary method.\n\n### Patches\n\nThe problem has been patched in 9.23.0 and pre-release version 10.0.0-beta.4. An additional check was added to verify that `embed_key` is a class extending `SharpFormEditorEmbed` before any instantiation.\n\n### Workarounds\n\nNo known workarounds.",
+      "link": "https://github.com/advisories/GHSA-h24v-f482-8cwf",
+      "published": "2026-11-12T18:18:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84974"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-118740",
+      "title": "Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Aspire. This advisory provides guidance on updating affected applications and components.\n\nAspire Dashboard's unauthenticated NotFound route can permit telemetry deletion in both standalone and AppHost-hosted deployments. In standalone deployments using browser-token authentication, it can also expose the browser token.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/526\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Critical\n- **Score:** 9.1\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N`\n- **Weakness:** CWE-862\n\n## Affected Platforms\n\n- **Platforms:** Any supported OS\n- **Architectures:** x64, Arm64\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\n### Standalone Aspire Dashboard\n\nPackage | Affected version | Patched version\n--- | --- | ---\nAspire Dashboard | < 13.6.5 | 13.6.5\n\nBoth 13.6.3 and 13.6.4 contain the unauthenticated NotFound route.\n\n### Aspire Dashboard SDK packages\n\nPackage | Affected version | Patched version\n--- | --- | ---\n[Aspire.Dashboard.Sdk.linux-x64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.linux-x64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.linux-arm64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.linux-arm64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.linux-musl-x64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.linux-musl-x64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.osx-x64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.osx-x64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.osx-arm64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.osx-arm64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.win-x64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.win-x64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.win-arm64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.win-arm64) | < 13.6.5 | 13.6.5\n\n## Advisory FAQ\n\n### <a n",
+      "link": "https://github.com/advisories/GHSA-4g86-54fm-h9h8",
+      "published": "2026-11-12T17:17:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-118740"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+      "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
+      "summary": "Citrix has released patches for multiple critical security flaws impacting NetScaler ADC, Citrix NetScaler Gateway, and NetScaler Console that could lead to denial-of-service (DoS) or an authentication bypass.\n\nThe critical vulnerabilities that impact NetScaler ADC and NetScaler Gateway are listed below -\n\n\n  CVE-2026-120868 (CVSS score: 9.3) - A memory overflow vulnerability in Packet",
+      "link": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+      "published": "2026-11-12T15:38:49+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-120868"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html",
+      "title": "SCKit Malware Turns ScreenConnect Support Sessions Into Potential MSP Attack Paths",
+      "summary": "The ongoing campaign targeting ConnectWise ScreenConnect deployments involves the exploitation of a now-patched critical security flaw in the remote access software, and not a new vulnerability, it has emerged.\n\nBlackpoint Cyber's Adversary Pursuit Group (APG), which shared the details with The Hacker News, said the recovered attacker toolkit exploits CVE-2026-84869 (CVSS score: 9.9), an",
+      "link": "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html",
+      "published": "2026-11-12T13:08:28+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-84869"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html",
       "title": "PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution",
       "summary": "PTC has released patches for a new critical vulnerability impacting Windchill and FlexPLM software that, if successfully exploited, could result in remote code execution.\n\nThe security flaw, tracked as CVE-2026-126325, carries a CVSS v4 score of 9.2 out of a maximum of 10.0.\n\nIt has been described as a case of improper input validation and deserialization of untrusted data that could result in",
@@ -228,36 +415,18 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability",
-      "title": "Critical RCE Vulnerability in Apache HTTP Server: Everything You Need To Know",
-      "summary": "Detect and mitigate CVE-2026-119618, a critical RCE vulnerability in Apache HTTP Server. According to Wiz data, 64% of cloud environments have resources vulnerable to CVE-2026-119618. Immediate patching is advised.",
-      "link": "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability",
-      "published": "2026-11-11T19:49:10+00:00",
-      "source": "Wiz Research",
-      "tags": [
-        "cloud",
-        "research",
-        "misconfig"
-      ],
-      "cve_ids": [
-        "CVE-2026-119618"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html",
-      "title": "Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation",
-      "summary": "Zoom has released software updates to address two security flaws impacting Zoom Workplace for Windows, including a critical bug that could result in privilege escalation on affected systems.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-108186 (CVSS score: 9.6) - An improper input validation vulnerability that could allow an unauthenticated user to conduct an escalation of privilege via",
-      "link": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html",
-      "published": "2026-11-11T16:12:46+00:00",
+      "id": "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html",
+      "title": "Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely",
+      "summary": "A critical flaw in Apache HTTP Server's HTTP/2 module, mod_http2, can let a remote attacker run code on the server. Tracked as CVE-2026-119618, it affects versions 2.4.55 through 2.4.70 and is fixed in version 2.4.71, released yesterday.\n\nOnly servers with HTTP/2 enabled are affected, according to Red Hat, which ships the server as part of Red Hat Enterprise Linux.\n\nAn attacker who can reach the",
+      "link": "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html",
+      "published": "2026-11-12T05:12:26+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-108186"
+        "CVE-2026-119618"
       ],
       "is_zero_day": false,
       "is_high_severity": true

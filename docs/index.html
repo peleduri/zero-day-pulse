@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">16</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">26</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-12 14:07 UTC</div>
+            <div class="generated">Updated 2026-11-12 22:56 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -248,6 +248,56 @@
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/" target="_blank" rel="noopener">New N-able &quot;4EverAble2Shell&quot; zero-day exploited hours after PoC released</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-12</span>
+  </div>
+  <p class='summary'>Hackers are actively exploiting a newly disclosed N-able N-central zero-day vulnerability dubbed &quot;4EverAble2Shell&quot; to compromise servers and deploy cryptocurrency miners, with researchers reporting at least 21 affected systems, including 19 running the company&#x27;s latest security update. [...]</p>
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html" target="_blank" rel="noopener">New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>Public exploit code released earlier this week claims that a local Windows user can gain SYSTEM privileges through the Common Log File System driver.
+
+The proof of concept, called SignDrop, targets a log-authentication feature added to the driver last year. It abuses how clfs.sys creates companion files when a privileged process opens a prepared log, using path redirection to take control of</p>
+
+        </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/" target="_blank" rel="noopener">New Windows SignDrop zero-day gives hackers SYSTEM privileges</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-12</span>
+  </div>
+  <p class='summary'>Security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) has released a new Windows zero-day exploit that can let attackers gain SYSTEM privileges. [...]</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches/" target="_blank" rel="noopener">Hackers Target N-central Zero-Days as N-able Rushes Patches</a></h2>
   </div>
   <div class="card-meta">
@@ -296,6 +346,158 @@
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8gmh-2hhj-2hv9" target="_blank" rel="noopener">Addressable URI normalization resolves some dotted path segments to the wrong path</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-126354</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>### Summary
+
+`Addressable::URI.normalize_path` resolves some paths containing `..` segments to a different path than RFC 3986 does. When a path climbs above the root before any other `..` is resolved, the segments that later `..` segments should remove are instead kept: `/../../public/x/../../secret` normalizes to `/public/x/secret` instead of `/secret`. `URI#normalize`, `URI#join`, `URI#==` and `…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jpvv-r467-5p4w" target="_blank" rel="noopener">@hono/node-server: Backslash in the request path is parsed as a path separator, bypassing path-based access control at a reverse proxy</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-126210</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>### Summary
+
+`@hono/node-server` passes the raw request-target to the WHATWG URL parser, which treats a backslash in the path as `/` and then resolves `..` segments. A request for `/admin\secret` or `/public\..\admin/secret` reaches the application as `/admin/secret`. A reverse proxy that follows RFC 3986 forwards the backslash unchanged and applies its path-based rules to the original path, so th…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-345x-3rq2-jfrm" target="_blank" rel="noopener">Loofah: SVG `&lt;textPath&gt;` and `&lt;mpath&gt;` bypass local-reference restriction</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-126208</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>## Summary
+
+Loofah restricts `href` and `xlink:href` on certain SVG elements to same-document references. Two elements escaped the restriction:
+
+- `&lt;textPath&gt;`: `SVG_ALLOW_LOCAL_HREF` listed it in lowercase as `textpath`, but the HTML5 parser names the element `textPath` inside `&lt;svg&gt;`, so the check never matched on the HTML5 path.
+- `&lt;mpath&gt;`: absent from `SVG_ALLOW_LOCAL_HREF`, so its references…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m3x9-938q-5767" target="_blank" rel="noopener">Loofah: CSS url() sanitization bypass via escaped parentheses</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-126207</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>## Summary
+
+`Loofah::HTML5::Scrub.scrub_css` rejected any property whose top-level Crass tokens included a `:url` or `:bad_url`, and left `url` out of the allowed CSS functions. Both checks ran only against the first parse of the `style` attribute. When `scrub_css` rebuilt each property it emitted identifiers with their CSS escapes decoded, so parentheses written as escapes — `url\28 …\29` — hid t…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h24v-f482-8cwf" target="_blank" rel="noopener">code16/sharp: Arbitrary class instantiation through the embed_key API parameter</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-84974</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>### Impact
+
+An authenticated attacker can instantiate any class in the PHP application by using the `embed_key` parameter across multiple API endpoints. The instantiation is performed by the Laravel container. As a result, the `__construct()` method of the class is called and all constructor dependencies are resolved. The attacker cannot specify parameter values and cannot call any arbitrary metho…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4g86-54fm-h9h8" target="_blank" rel="noopener">Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-118740</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>## Executive summary
+
+Microsoft is releasing this security advisory to provide information about a vulnerability in Aspire. This advisory provides guidance on updating affected applications and components.
+
+Aspire Dashboard&#x27;s unauthenticated NotFound route can permit telemetry deletion in both standalone and AppHost-hosted deployments. In standalone deployments using browser-token authentication, …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html" target="_blank" rel="noopener">Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-120868</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>Citrix has released patches for multiple critical security flaws impacting NetScaler ADC, Citrix NetScaler Gateway, and NetScaler Console that could lead to denial-of-service (DoS) or an authentication bypass.
+
+The critical vulnerabilities that impact NetScaler ADC and NetScaler Gateway are listed below -
+
+
+  CVE-2026-120868 (CVSS score: 9.3) - A memory overflow vulnerability in Packet</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html" target="_blank" rel="noopener">SCKit Malware Turns ScreenConnect Support Sessions Into Potential MSP Attack Paths</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-84869</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>The ongoing campaign targeting ConnectWise ScreenConnect deployments involves the exploitation of a now-patched critical security flaw in the remote access software, and not a new vulnerability, it has emerged.
+
+Blackpoint Cyber&#x27;s Adversary Pursuit Group (APG), which shared the details with The Hacker News, said the recovered attacker toolkit exploits CVE-2026-84869 (CVSS score: 9.9), an</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html" target="_blank" rel="noopener">PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution</a></h2>
           </div>
           <div class="card-meta">
@@ -333,40 +535,23 @@ The affected servers are members of a replica</p>
 
         </article>
 
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability" target="_blank" rel="noopener">Critical RCE Vulnerability in Apache HTTP Server: Everything You Need To Know</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-119618</code>
-    <span class="meta-sep">·</span>
-    <span>Wiz Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-11</span>
-  </div>
-  <p class='summary'>Detect and mitigate CVE-2026-119618, a critical RCE vulnerability in Apache HTTP Server. According to Wiz data, 64% of cloud environments have resources vulnerable to CVE-2026-119618. Immediate patching is advised.</p>
-
-</article>
-
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html" target="_blank" rel="noopener">Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation</a></h2>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html" target="_blank" rel="noopener">Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-108186</code>
+            <code class="cve">CVE-2026-119618</code>
             <span class="meta-sep">·</span>
             <span>The Hacker News Security</span>
             <span class="meta-sep">·</span>
-            <span>2026-11-11</span>
+            <span>2026-11-12</span>
           </div>
-          <p class='summary'>Zoom has released software updates to address two security flaws impacting Zoom Workplace for Windows, including a critical bug that could result in privilege escalation on affected systems.
+          <p class='summary'>A critical flaw in Apache HTTP Server&#x27;s HTTP/2 module, mod_http2, can let a remote attacker run code on the server. Tracked as CVE-2026-119618, it affects versions 2.4.55 through 2.4.70 and is fixed in version 2.4.71, released yesterday.
 
-The vulnerabilities are listed below -
+Only servers with HTTP/2 enabled are affected, according to Red Hat, which ships the server as part of Red Hat Enterprise Linux.
 
-
-  CVE-2026-108186 (CVSS score: 9.6) - An improper input validation vulnerability that could allow an unauthenticated user to conduct an escalation of privilege via</p>
+An attacker who can reach the</p>
 
         </article>
 
