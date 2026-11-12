@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-11T23:47:15.303694+00:00",
-  "total": 24,
+  "generated": "2026-11-12T04:39:38.047210+00:00",
+  "total": 18,
   "kev": 0,
   "zero_day": 12,
   "enriched": 0,
@@ -294,114 +294,6 @@
       "cve_ids": [
         "CVE-2026-111793",
         "CVE-2026-20320"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118745",
-      "title": "Microsoft Security Advisory CVE-2026-118745 - Visual Studio Remote Code Execution Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.\n\nCrafted PDB line metadata can exceed the caller-provided buffer and cause a heap out-of-bounds write.\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8 (base score)\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`\n- **Weakness:** CWE-122\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** x86, x64, Arm64\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nOn Windows x86, x64, and Arm64, Microsoft.DiaSymReader.Native versions earlier than 18.9.1-beta1.26515.1 are affected when reading crafted native PDBs.\n\n### .NET on Windows\n\nProduct | Affected version | Patched version\n--- | --- | ---\n.NET 8.0 installed on Windows | >= 8.0.0, < 8.0.34 | 8.0.34\n.NET 9.0 installed on Windows | >= 9.0.0, < 9.0.23 | 9.0.23\n.NET 10.0 installed on Windows | >= 10.0.0, < 10.0.15 | 10.0.15\n.NET 11.0 installed on Windows | >= 11.0.0-preview.1, < 11.0.0 | 11.0.0\n\n### Windows self-contained runtime packs\n\nThese runtime packs deliver the .NET runtime for Windows self-contained applications.\n\nPackage | Affected version | Patched version\n--- | --- | ---\n[Microsoft.NETCore.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x86) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x64) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-arm64) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x86) | >= 9.0.0, < 9.0.23 | 9.0.23\n[Microsoft.NETCore.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x64) | >= 9.0.",
-      "link": "https://github.com/advisories/GHSA-x8x8-p968-x646",
-      "published": "2026-11-11T00:47:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118745"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-114152",
-      "title": "Microsoft Security Advisory CVE-2026-114152 - Visual Studio Remote Code Execution Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.\n\nAttacker-controlled COFF relocation offsets can cause an out-of-bounds stack write in `DiaObjectFile::ApplyFixup`.\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8 (base score)\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`\n- **Weakness:** CWE-121, CWE-822\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** x86, x64, Arm64\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nMicrosoft.DiaSymReader.Native versions earlier than 18.9.1-beta1.26515.1 are affected when loading document specifications from a PDB that references an attacker-influenced COFF object.\n\n### .NET on Windows\n\nProduct | Affected version | Patched version\n--- | --- | ---\n.NET 8.0 installed on Windows | >= 8.0.0, < 8.0.34 | 8.0.34\n.NET 9.0 installed on Windows | >= 9.0.0, < 9.0.23 | 9.0.23\n.NET 10.0 installed on Windows | >= 10.0.0, < 10.0.15 | 10.0.15\n.NET 11.0 installed on Windows | >= 11.0.0-preview.1, < 11.0.0 | 11.0.0\n\n### Windows self-contained runtime packs\n\nThese runtime packs deliver the .NET runtime for Windows self-contained applications.\n\nPackage | Affected version | Patched version\n--- | --- | ---\n[Microsoft.NETCore.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x86) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x64) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-arm64) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x86) | >= 9.0.0, < 9.0.23 | 9.0.23\n[Microsoft.NETCore.App.Runtime.win-x64](https://www.nuget.org/p",
-      "link": "https://github.com/advisories/GHSA-xf35-v9jh-g65w",
-      "published": "2026-11-11T00:46:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-114152"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-114151",
-      "title": "Microsoft Security Advisory CVE-2026-114151 - Visual Studio Remote Code Execution Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.\n\nA crafted PDB `LF_DECIMAL` payload can trigger an out-of-bounds stack write when processed by DIA.\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8 (base score)\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`\n- **Weakness:** CWE-502, CWE-121\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** x86, x64, Arm64\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nMicrosoft.DiaSymReader.Native versions earlier than 18.9.1-beta1.26515.1 are affected when reading constants from attacker-supplied PDBs through `ISymUnmanagedConstant.GetValue`. The .NET runtime's native stack-trace reading path does not call `ISymUnmanagedConstant.GetValue`. This excludes that invocation, not the .NET product as a whole.\n\n### .NET on Windows\n\nProduct | Affected version | Patched version\n--- | --- | ---\n.NET 8.0 installed on Windows | >= 8.0.0, < 8.0.34 | 8.0.34\n.NET 9.0 installed on Windows | >= 9.0.0, < 9.0.23 | 9.0.23\n.NET 10.0 installed on Windows | >= 10.0.0, < 10.0.15 | 10.0.15\n.NET 11.0 installed on Windows | >= 11.0.0-preview.1, < 11.0.0 | 11.0.0\n\n### Windows self-contained runtime packs\n\nThese runtime packs deliver the .NET runtime for Windows self-contained applications.\n\nPackage | Affected version | Patched version\n--- | --- | ---\n[Microsoft.NETCore.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x86) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x64) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-arm64) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-x86](https://www.nuget.org/p",
-      "link": "https://github.com/advisories/GHSA-fpxj-5c99-g7vj",
-      "published": "2026-11-11T00:35:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-114151"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-114158",
-      "title": "Microsoft Security Advisory CVE-2026-114158 - Visual Studio Remote Code Execution Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.\n\nA Portable PDB `EmbeddedSource` record with parent RID 0 can trigger an out-of-bounds write.\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8 (base score)\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`\n- **Weakness:** CWE-122\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** x86, x64, Arm64\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nMicrosoft.DiaSymReader.Native components bundled with the affected .NET versions listed below are affected when initializing the native reader with a crafted Portable PDB containing an `EmbeddedSource` record with parent RID 0. The Windows runtime's native stack-trace reader can reach this initialization through its native-reader fallback.\n\n### .NET on Windows\n\nProduct | Affected version | Patched version\n--- | --- | ---\n.NET 8.0 installed on Windows | >= 8.0.0, < 8.0.34 | 8.0.34\n.NET 9.0 installed on Windows | >= 9.0.0, < 9.0.23 | 9.0.23\n.NET 10.0 installed on Windows | >= 10.0.0, < 10.0.15 | 10.0.15\n.NET 11.0 installed on Windows | >= 11.0.0-preview.1, < 11.0.0 | 11.0.0\n\n### Windows runtime packages for self-contained applications\n\nThe following packages deliver the affected .NET native reader. Exposure requires the PDB-reading operation described above; the presence of the reader does not make every application or symbol-reading path vulnerable.\n\nPackage | Affected version | Patched version\n--- | --- | ---\n[Microsoft.NETCore.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x86) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x64) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-arm64](https://www.nuget.org/packa",
-      "link": "https://github.com/advisories/GHSA-r8h3-p8p6-ggp7",
-      "published": "2026-11-11T00:34:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-114158"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-114159",
-      "title": "Microsoft Security Advisory CVE-2026-114159 - Visual Studio Remote Code Execution Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.\n\nAn oversized Portable PDB document name can be truncated during allocation and cause a heap out-of-bounds write.\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8 (base score)\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`\n- **Weakness:** CWE-122\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** x86, x64, Arm64\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nMicrosoft.DiaSymReader.Native components bundled with the affected .NET versions listed below are affected when initializing the native reader with a Portable PDB containing an oversized document name. The Windows runtime's native stack-trace reader can reach this initialization through its native-reader fallback.\n\n### .NET on Windows\n\nProduct | Affected version | Patched version\n--- | --- | ---\n.NET 8.0 installed on Windows | >= 8.0.0, < 8.0.34 | 8.0.34\n.NET 9.0 installed on Windows | >= 9.0.0, < 9.0.23 | 9.0.23\n.NET 10.0 installed on Windows | >= 10.0.0, < 10.0.15 | 10.0.15\n.NET 11.0 installed on Windows | >= 11.0.0-preview.1, < 11.0.0 | 11.0.0\n\n### Windows runtime packages for self-contained applications\n\nThe following packages deliver the affected .NET native reader. Exposure requires the PDB-reading operation described above; the presence of the reader does not make every application or symbol-reading path vulnerable.\n\nPackage | Affected version | Patched version\n--- | --- | ---\n[Microsoft.NETCore.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x86) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x64) | >= 8.0.0, < 8.0.34 | 8.0.34\n[Microsoft.NETCore.App.Runtime.win-arm64](https://www.nuget.org/packages/Mi",
-      "link": "https://github.com/advisories/GHSA-3cgx-w6gm-fqrx",
-      "published": "2026-11-11T00:32:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-114159"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-114146",
-      "title": "Microsoft Security Advisory CVE-2026-114146 - ASP.NET Core Elevation of Privilege Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in ASP.NET Core. This advisory provides guidance on updating affected applications and components.\n\nSignalR connections are not consistently bound to the identity negotiated at connection establishment, allowing injected messages to execute Hub invocations as the victim.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/504\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Critical\n- **Score:** 9.0 (base score)\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C`\n- **Weakness:** CWE-863\n\n## Affected Platforms\n\n- **Platforms:** Windows, Linux, macOS\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe tables list affected version ranges and fixed package versions. Runtime and standalone deliveries are listed separately.\n\n### ASP.NET Core 2.3 - standalone packages\n\nPackage | Affected version | Patched version\n--- | --- | ---\n[Microsoft.AspNetCore.Http.Connections](https://www.nuget.org/packages/Microsoft.AspNetCore.Http.Connections) | >= 1.2.0, <= 1.2.13 | 1.2.14\n\n### .NET 8.0 - affected runtime packages\n\nPackage | Affected version | Patched version\n--- | --- | ---\n[Microsoft.AspNetCore.App.Runtime.linux-arm](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-arm) | >= 8.0.0-preview.1.23112.2, <= 8.0.33 | 8.0.34\n[Microsoft.AspNetCore.App.Runtime.linux-arm64](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-arm64) | >= 8.0.0-preview.1.23112.2, <= 8.0.33 | 8.0.34\n[Microsoft.AspNetCore.App.Runtime.linux-musl-arm](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-musl-arm) | >= 8.0.0-preview.1.23112.2, <= 8.0.33 | 8.0.34\n[Microsoft.AspNetCore.App.Runtime.linux-musl-arm64](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-musl-arm64) | >= 8.0.0-preview.1.23112.2, <= 8.0.",
-      "link": "https://github.com/advisories/GHSA-67wp-ghc2-fw2g",
-      "published": "2026-11-11T00:21:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-114146"
       ],
       "is_zero_day": false,
       "is_high_severity": true

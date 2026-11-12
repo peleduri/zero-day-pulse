@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-11 23:47 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-12 04:39 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -165,120 +165,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 18. 🟡 High Severity — Microsoft Security Advisory CVE-2026-118745 - Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-118745` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://github.com/advisories/GHSA-x8x8-p968-x646>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
-
-Crafted PDB line metadata can exceed the caller-provided buffer and cause a heap out-of-bounds write.
-
-## CVSS Details
-
-- **Version:** 3.1
-- **Severity:** High
-- **Score:** 8.8 (base score)
-- **V…
-
----
-
-## 19. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114152 - Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-114152` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://github.com/advisories/GHSA-xf35-v9jh-g65w>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
-
-Attacker-controlled COFF relocation offsets can cause an out-of-bounds stack write in `DiaObjectFile::ApplyFixup`.
-
-## CVSS Details
-
-- **Version:** 3.1
-- **Severity:** High
-- **Score:** 8.8 (base…
-
----
-
-## 20. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114151 - Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-114151` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://github.com/advisories/GHSA-fpxj-5c99-g7vj>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
-
-A crafted PDB `LF_DECIMAL` payload can trigger an out-of-bounds stack write when processed by DIA.
-
-## CVSS Details
-
-- **Version:** 3.1
-- **Severity:** High
-- **Score:** 8.8 (base score)
-- **Vect…
-
----
-
-## 21. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114158 - Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-114158` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://github.com/advisories/GHSA-r8h3-p8p6-ggp7>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
-
-A Portable PDB `EmbeddedSource` record with parent RID 0 can trigger an out-of-bounds write.
-
-## CVSS Details
-
-- **Version:** 3.1
-- **Severity:** High
-- **Score:** 8.8 (base score)
-- **Vector:** …
-
----
-
-## 22. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114159 - Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-114159` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://github.com/advisories/GHSA-3cgx-w6gm-fqrx>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in .NET. This advisory provides guidance on updating affected applications and components.
-
-An oversized Portable PDB document name can be truncated during allocation and cause a heap out-of-bounds write.
-
-## CVSS Details
-
-- **Version:** 3.1
-- **Severity:** High
-- **Score:** 8.8 (base s…
-
----
-
-## 23. 🟡 High Severity — Microsoft Security Advisory CVE-2026-114146 - ASP.NET Core Elevation of Privilege Vulnerability
-
-**CVE:** `CVE-2026-114146` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://github.com/advisories/GHSA-67wp-ghc2-fw2g>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in ASP.NET Core. This advisory provides guidance on updating affected applications and components.
-
-SignalR connections are not consistently bound to the identity negotiated at connection establishment, allowing injected messages to execute Hub invocations as the victim.
-
-## Announcemen…
-
----
-
-## 24. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
