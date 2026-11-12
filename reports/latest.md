@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-12 04:39 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-12 14:07 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,30 +20,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Cisco BroadWorks and Openwave Flaws Actively Exploited Despite Available Patches
-
-**CVE:** `CVE-2026-20320` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) Tuesday added two security flaws impacting Cisco BroadWorks and Openwave Messaging Webtop Media Transcoder to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
-
-Details of the vulnerabilities are below -
-
-
-  CVE-2026-20320 (CVSS score: 7.5) - An improper restriction of XML external entity
-
----
-
-## 4. 🟠 Zero-Day — Able2Shell: Frequently asked questions for reported N-able N-central zero-day vulnerabilities
-
-**CVE:** `CVE-2026-91000` | `CVE-2026-125883` | `CVE-2026-125881` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://www.tenable.com/blog/able2shell-frequently-asked-questions-for-reported-n-able-n-central-zero-day-vulnerabilities>
-
-> N-able released a hotfix for N-central that fixes seven CVEs after a researcher published proof-of-concept code for 33 alleged zero-day vulnerabilities. The researcher says one attack chain needs no credentials. Key Takeaways Able2Shell is a set of 33 alleged vulnerabilities in N-able N-central, published with proof-of-concept code. The researcher says one chain lets an unauthenticated attacker ru…
-
----
-
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -52,7 +29,7 @@ Details of the vulnerabilities are below -
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -61,7 +38,7 @@ Details of the vulnerabilities are below -
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -70,7 +47,7 @@ Details of the vulnerabilities are below -
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -79,7 +56,7 @@ Details of the vulnerabilities are below -
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -88,7 +65,7 @@ Details of the vulnerabilities are below -
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -97,25 +74,16 @@ Details of the vulnerabilities are below -
 
 ---
 
-## 11. 🟠 Zero-Day — N-able releases security hotfixes for zero-day vulnerabilities
+## 9. 🟠 Zero-Day — Hackers Target N-central Zero-Days as N-able Rushes Patches
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-12
+**Reference:** <https://www.securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches/>
 
-> N-able released hotfixes to address zero-day bugs affecting its N-central remote monitoring and management (RMM) platform, which were publicly disclosed over the weekend and forced it to take vulnerable hosted environments offline. [...]
-
----
-
-## 12. 🟠 Zero-Day — CISA flags Cisco BroadWorks flaw as actively exploited in attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/>
-
-> The US Cybersecurity and Infrastructure Security Agency (CISA) warned on Tuesday that hackers are now exploiting a high-severity Cisco BroadWorks vulnerability in attacks. [...]
+> The malicious activity started shortly after a researcher dropped over 30 zero-days. N-able patched the unauthenticated ones. The post Hackers Target N-central Zero-Days as N-able Rushes Patches appeared first on SecurityWeek .
 
 ---
 
-## 13. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 10. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -124,7 +92,7 @@ Details of the vulnerabilities are below -
 
 ---
 
-## 14. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 11. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -133,7 +101,33 @@ Details of the vulnerabilities are below -
 
 ---
 
-## 15. 🟡 High Severity — Critical RCE Vulnerability in Apache HTTP Server: Everything You Need To Know
+## 12. 🟡 High Severity — PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution
+
+**CVE:** `CVE-2026-126325` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
+**Reference:** <https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html>
+
+> PTC has released patches for a new critical vulnerability impacting Windchill and FlexPLM software that, if successfully exploited, could result in remote code execution.
+
+The security flaw, tracked as CVE-2026-126325, carries a CVSS v4 score of 9.2 out of a maximum of 10.0.
+
+It has been described as a case of improper input validation and deserialization of untrusted data that could result in
+
+---
+
+## 13. 🟡 High Severity — Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover
+
+**CVE:** `CVE-2026-118383` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
+**Reference:** <https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html>
+
+> A critical flaw in MongoDB Server allows an unauthenticated attacker to send two requests that trigger a crash on the database server. The crash occurs only if that server is later chosen to take over as the main server while it still lacks some recent changes.
+
+MongoDB, the company that makes the database, released fixed versions earlier this week.
+
+The affected servers are members of a replica
+
+---
+
+## 14. 🟡 High Severity — Critical RCE Vulnerability in Apache HTTP Server: Everything You Need To Know
 
 **CVE:** `CVE-2026-119618` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-11-11
 **Reference:** <https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability>
@@ -142,7 +136,7 @@ Details of the vulnerabilities are below -
 
 ---
 
-## 16. 🟡 High Severity — Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation
+## 15. 🟡 High Severity — Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation
 
 **CVE:** `CVE-2026-108186` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-11
 **Reference:** <https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html>
@@ -156,16 +150,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 17. 🟡 High Severity — Threat Actors Exploit Openwave, Cisco BroadWorks Vulnerabilities
-
-**CVE:** `CVE-2026-111793` | `CVE-2026-20320` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-11
-**Reference:** <https://www.securityweek.com/threat-actors-exploit-openwave-cisco-broadworks-vulnerabilities/>
-
-> The flaws, CVE-2026-111793 and CVE-2026-20320, let attackers leak sensitive information, including configuration data. The post Threat Actors Exploit Openwave, Cisco BroadWorks Vulnerabilities appeared first on SecurityWeek .
-
----
-
-## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
