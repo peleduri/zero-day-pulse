@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-13 03:52 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-13 13:32 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 16 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,18 @@
 
 ---
 
-## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — Hackers Exploit PHP2Shell Flaws in Check Point Gateways to Deploy TSGA Backdoor and Wipe ESXi Files
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-13
+**Reference:** <https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html>
+
+> An unknown threat actor has been observed targeting unpatched Check Point Security Gateways to obtain initial access via the PHP2Shell vulnerabilities and then a previously unreported local privilege escalation flaw in Gaia OS  to deploy a backdoor called TSGA.
+
+The activity, detailed by Check Point, began on October 30, 2026, and targeted Israeli organizations, with a broader follow-up
+
+---
+
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -29,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -38,7 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -47,7 +58,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -56,7 +67,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -65,7 +76,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -74,7 +85,34 @@
 
 ---
 
-## 9. 🟠 Zero-Day — New N-able "4EverAble2Shell" zero-day exploited hours after PoC released
+## 10. 🟠 Zero-Day — Check Point warns of zero-day flaw exploited for root access
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-13
+**Reference:** <https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/>
+
+> Check Point Software has released emergency hotfixes to address a high-severity flaw that hackers have been exploiting to gain root privileges and establish persistence on vulnerable devices since late October. [...]
+
+---
+
+## 11. 🟠 Zero-Day — Nightmare Eclipse Drops Windows Zero-Day Exploit ‘SignDrop’
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-13
+**Reference:** <https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-signdrop/>
+
+> It abuses CLFS and Windows Defender to trigger arbitrary file creation in the context of the antimalware process. The post Nightmare Eclipse Drops Windows Zero-Day Exploit ‘SignDrop’ appeared first on SecurityWeek .
+
+---
+
+## 12. 🟠 Zero-Day — Hackers Exploit New N-central Zero-Day Hours After PoC Publication
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-13
+**Reference:** <https://www.securityweek.com/hackers-exploit-new-n-central-zero-day-hours-after-poc-publication/>
+
+> Dubbed 4EverAble2Shell, the flaw could allow remote, unauthenticated attackers to execute code with root privileges. The post Hackers Exploit New N-central Zero-Day Hours After PoC Publication appeared first on SecurityWeek .
+
+---
+
+## 13. 🟠 Zero-Day — New N-able "4EverAble2Shell" zero-day exploited hours after PoC released
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/>
@@ -83,7 +121,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access
+## 14. 🟠 Zero-Day — New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html>
@@ -94,7 +132,7 @@ The proof of concept, called SignDrop, targets a log-authentication feature adde
 
 ---
 
-## 11. 🟠 Zero-Day — New Windows SignDrop zero-day gives hackers SYSTEM privileges
+## 15. 🟠 Zero-Day — New Windows SignDrop zero-day gives hackers SYSTEM privileges
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/>
@@ -103,16 +141,7 @@ The proof of concept, called SignDrop, targets a log-authentication feature adde
 
 ---
 
-## 12. 🟠 Zero-Day — Hackers Target N-central Zero-Days as N-able Rushes Patches
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-12
-**Reference:** <https://www.securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches/>
-
-> The malicious activity started shortly after a researcher dropped over 30 zero-days. N-able patched the unauthenticated ones. The post Hackers Target N-central Zero-Days as N-able Rushes Patches appeared first on SecurityWeek .
-
----
-
-## 13. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 16. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -121,7 +150,7 @@ The proof of concept, called SignDrop, targets a log-authentication feature adde
 
 ---
 
-## 14. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 17. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -130,7 +159,7 @@ The proof of concept, called SignDrop, targets a log-authentication feature adde
 
 ---
 
-## 15. 🟡 High Severity — Open WebUI: the Windows installer mints the master key from the install second — CVE-2025-15603 was rejected; here is the measurement
+## 18. 🟡 High Severity — Open WebUI: the Windows installer mints the master key from the install second — CVE-2025-15603 was rejected; here is the measurement
 
 **CVE:** `CVE-2025-15603` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-11-13
 **Reference:** <https://seclists.org/fulldisclosure/2026/Nov/21>
@@ -139,7 +168,7 @@ The proof of concept, called SignDrop, targets a log-authentication feature adde
 
 ---
 
-## 16. 🟡 High Severity — Active Storage: Possible arbitrary file write and read in image analysis
+## 19. 🟡 High Severity — Active Storage: Possible arbitrary file write and read in image analysis
 
 **CVE:** `CVE-2026-122006` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-f3w6-w445-fwh9>
@@ -149,7 +178,7 @@ A Rails application that processes attachments with ImageMagick may allow an una
 
 ---
 
-## 17. 🟡 High Severity — Action Pack: Possible sensitive session information leak in Active Storage proxy mode
+## 20. 🟡 High Severity — Action Pack: Possible sensitive session information leak in Active Storage proxy mode
 
 **CVE:** `CVE-2026-126077` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-x6mj-8jx9-qhqv>
@@ -159,7 +188,7 @@ When `ActionDispatch::Cookies` reads a signed or encrypted cookie that was writt
 
 ---
 
-## 18. 🟡 High Severity — Pillow: Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data
+## 21. 🟡 High Severity — Pillow: Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data
 
 **CVE:** `CVE-2026-128066` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-wqgw-9xfh-qf2g>
@@ -177,7 +206,7 @@ A sma…
 
 ---
 
-## 19. 🟡 High Severity — Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size
+## 22. 🟡 High Severity — Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size
 
 **CVE:** `CVE-2026-128067` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-xcvg-w56q-r89m>
@@ -192,7 +221,7 @@ Commit:   a707c6b21c313880d0771e54965d142dd42358b6
 
 ---
 
-## 20. 🟡 High Severity — Hono: `mount()` and `app.mount()` can forward a path that bypasses middleware scoped inside the mount prefix
+## 23. 🟡 High Severity — Hono: `mount()` and `app.mount()` can forward a path that bypasses middleware scoped inside the mount prefix
 
 **CVE:** `CVE-2026-126357` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-4m76-xfj5-7975>
@@ -203,7 +232,7 @@ Commit:   a707c6b21c313880d0771e54965d142dd42358b6
 
 ---
 
-## 21. 🟡 High Severity — Addressable URI normalization resolves some dotted path segments to the wrong path
+## 24. 🟡 High Severity — Addressable URI normalization resolves some dotted path segments to the wrong path
 
 **CVE:** `CVE-2026-126354` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-8gmh-2hhj-2hv9>
@@ -214,7 +243,7 @@ Commit:   a707c6b21c313880d0771e54965d142dd42358b6
 
 ---
 
-## 22. 🟡 High Severity — @hono/node-server: Backslash in the request path is parsed as a path separator, bypassing path-based access control at a reverse proxy
+## 25. 🟡 High Severity — @hono/node-server: Backslash in the request path is parsed as a path separator, bypassing path-based access control at a reverse proxy
 
 **CVE:** `CVE-2026-126210` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-jpvv-r467-5p4w>
@@ -225,7 +254,7 @@ Commit:   a707c6b21c313880d0771e54965d142dd42358b6
 
 ---
 
-## 23. 🟡 High Severity — Loofah: SVG `<textPath>` and `<mpath>` bypass local-reference restriction
+## 26. 🟡 High Severity — Loofah: SVG `<textPath>` and `<mpath>` bypass local-reference restriction
 
 **CVE:** `CVE-2026-126208` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-345x-3rq2-jfrm>
@@ -239,7 +268,7 @@ Loofah restricts `href` and `xlink:href` on certain SVG elements to same-documen
 
 ---
 
-## 24. 🟡 High Severity — Loofah: CSS url() sanitization bypass via escaped parentheses
+## 27. 🟡 High Severity — Loofah: CSS url() sanitization bypass via escaped parentheses
 
 **CVE:** `CVE-2026-126207` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-m3x9-938q-5767>
@@ -250,7 +279,7 @@ Loofah restricts `href` and `xlink:href` on certain SVG elements to same-documen
 
 ---
 
-## 25. 🟡 High Severity — code16/sharp: Arbitrary class instantiation through the embed_key API parameter
+## 28. 🟡 High Severity — code16/sharp: Arbitrary class instantiation through the embed_key API parameter
 
 **CVE:** `CVE-2026-84974` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-h24v-f482-8cwf>
@@ -261,7 +290,7 @@ An authenticated attacker can instantiate any class in the PHP application by us
 
 ---
 
-## 26. 🟡 High Severity — Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability
+## 29. 🟡 High Severity — Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability
 
 **CVE:** `CVE-2026-118740` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-4g86-54fm-h9h8>
@@ -274,7 +303,7 @@ Aspire Dashboard&#x27;s unauthenticated NotFound route can permit telemetry dele
 
 ---
 
-## 27. 🟡 High Severity — Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass
+## 30. 🟡 High Severity — Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass
 
 **CVE:** `CVE-2026-120868` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html>
@@ -288,57 +317,7 @@ The critical vulnerabilities that impact NetScaler ADC and NetScaler Gateway are
 
 ---
 
-## 28. 🟡 High Severity — SCKit Malware Turns ScreenConnect Support Sessions Into Potential MSP Attack Paths
-
-**CVE:** `CVE-2026-84869` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
-**Reference:** <https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html>
-
-> The ongoing campaign targeting ConnectWise ScreenConnect deployments involves the exploitation of a now-patched critical security flaw in the remote access software, and not a new vulnerability, it has emerged.
-
-Blackpoint Cyber&#x27;s Adversary Pursuit Group (APG), which shared the details with The Hacker News, said the recovered attacker toolkit exploits CVE-2026-84869 (CVSS score: 9.9), an
-
----
-
-## 29. 🟡 High Severity — PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution
-
-**CVE:** `CVE-2026-126325` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
-**Reference:** <https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html>
-
-> PTC has released patches for a new critical vulnerability impacting Windchill and FlexPLM software that, if successfully exploited, could result in remote code execution.
-
-The security flaw, tracked as CVE-2026-126325, carries a CVSS v4 score of 9.2 out of a maximum of 10.0.
-
-It has been described as a case of improper input validation and deserialization of untrusted data that could result in
-
----
-
-## 30. 🟡 High Severity — Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover
-
-**CVE:** `CVE-2026-118383` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
-**Reference:** <https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html>
-
-> A critical flaw in MongoDB Server allows an unauthenticated attacker to send two requests that trigger a crash on the database server. The crash occurs only if that server is later chosen to take over as the main server while it still lacks some recent changes.
-
-MongoDB, the company that makes the database, released fixed versions earlier this week.
-
-The affected servers are members of a replica
-
----
-
-## 31. 🟡 High Severity — Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely
-
-**CVE:** `CVE-2026-119618` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
-**Reference:** <https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html>
-
-> A critical flaw in Apache HTTP Server&#x27;s HTTP/2 module, mod_http2, can let a remote attacker run code on the server. Tracked as CVE-2026-119618, it affects versions 2.4.55 through 2.4.70 and is fixed in version 2.4.71, released yesterday.
-
-Only servers with HTTP/2 enabled are affected, according to Red Hat, which ships the server as part of Red Hat Enterprise Linux.
-
-An attacker who can reach …
-
----
-
-## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
