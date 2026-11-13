@@ -1,10 +1,48 @@
 {
-  "generated": "2026-11-13T13:32:02.799287+00:00",
-  "total": 31,
-  "kev": 0,
-  "zero_day": 15,
+  "generated": "2026-11-13T22:58:28.327386+00:00",
+  "total": 29,
+  "kev": 2,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-123039",
+      "title": "CVE-2026-123039 \u2014 Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+      "summary": "Vendor: Check Point | Product: Multiple Products. Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when the Gaia OS DynamicCLI daemon runs as root and listens on a world-writable local socket without authenticating connecting processes. An authenticated local user can send a command to the socket and have it executed as root. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-16)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123039",
+      "published": "2026-11-13",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-123039"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-114713",
+      "title": "CVE-2026-114713 \u2014 UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+      "summary": "Vendor: UnrealIRCd | Product: UnrealIRCd. UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-16)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-114713",
+      "published": "2026-11-13",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-114713"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -179,66 +217,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/hackers-exploit-new-n-central-zero-day-hours-after-poc-publication/",
-      "title": "Hackers Exploit New N-central Zero-Day Hours After PoC Publication",
-      "summary": "Dubbed 4EverAble2Shell, the flaw could allow remote, unauthenticated attackers to execute code with root privileges. The post Hackers Exploit New N-central Zero-Day Hours After PoC Publication appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/hackers-exploit-new-n-central-zero-day-hours-after-poc-publication/",
-      "published": "2026-11-13T07:20:50+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
-      "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
-      "summary": "Hackers are actively exploiting a newly disclosed N-able N-central zero-day vulnerability dubbed \"4EverAble2Shell\" to compromise servers and deploy cryptocurrency miners, with researchers reporting at least 21 affected systems, including 19 running the company's latest security update. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
-      "published": "2026-11-12T19:51:16+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html",
-      "title": "New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access",
-      "summary": "Public exploit code released earlier this week claims that a local Windows user can gain SYSTEM privileges through the Common Log File System driver.\n\nThe proof of concept, called SignDrop, targets a log-authentication feature added to the driver last year. It abuses how clfs.sys creates companion files when a privileged process opens a prepared log, using path redirection to take control of",
-      "link": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html",
-      "published": "2026-11-12T17:50:27+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/",
-      "title": "New Windows SignDrop zero-day gives hackers SYSTEM privileges",
-      "summary": "Security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) has released a new Windows zero-day exploit that can let attackers gain SYSTEM privileges. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/",
-      "published": "2026-11-12T16:04:00+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -279,6 +257,131 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-128077",
+      "title": "Nuxt: Incomplete fix for GHSA-9v7c-q64q-vv33: a leading `//` in the request path bypasses `server/middleware` path checks and server route rules on page routes",
+      "summary": "### Summary\n\nSince `4.6.0`, Nuxt parses a request path that starts with `//` as a URL with a host before rendering a page, so `//x/admin` renders the page at `/admin`. Nitro's routing, Nitro's route rules and `server/middleware` see the path as `//x/admin`, so server-side checks keyed on `/admin` do not apply. The fix for [GHSA-9v7c-q64q-vv33](https://github.com/nuxt/nuxt/security/advisories/GHSA-9v7c-q64q-vv33) in `4.6.3` covered dot segments but not this form.\n\n### Impact\n\nAn unauthenticated attacker can bypass server-side controls that match on the request path of a page route.\n\nA route-scoped server handler is skipped:\n\n```ts\n// nuxt.config.ts\nexport default defineNuxtConfig({\n  serverHandlers: [{ route: '/admin', middleware: true, handler: '~~/server/admin-guard.ts' }],\n})\n```\n\n```ts\n// server/admin-guard.ts\nexport default defineEventHandler((event) => {\n  if (!isAuthenticated(event)) {\n    throw createError({ statusCode: 401 })\n  }\n})\n```\n\nWith this handler, `/admin` returns 401, but `//x/admin` and `///x/admin` render `app/pages/admin.vue` along with the data it fetches during server rendering. `server/middleware` that checks `event.path.startsWith('/admin')` is skipped in the same way.\n\nServer-side `redirect` and `headers` route rules are also skipped, so `'/admin/**': { redirect: '/login' }` does not redirect `//x/admin/secret`, and per-route security headers such as `Content-Security-Policy` are not sent.\n\nBrowsers send a path such as `//x/admin` as written, so a plain link is enough to reach the page.\n\nNot affected:\n\n- API handlers in `server/api` and `server/routes`, which Nitro does not match for these paths.\n- `appMiddleware` route rules and middleware declared with `definePageMeta`, which are matched against the resolved route.\n- Nuxt `3.x` and `4.0.0` to `4.5.x`, which pass the path to the page router unchanged, so these requests 404.\n\n### Patches\n\nFixed in `@nuxt/nitro-server@4.6.4`, which `nuxt@4.6.4` depends on. The renderer now uses the request p",
+      "link": "https://github.com/advisories/GHSA-r99w-jh2x-3mg9",
+      "published": "2026-11-13T19:32:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-128077"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-128080",
+      "title": "OpenTelemetry JavaScript: Insertion of Sensitive Information into Log File and Exposure of Sensitive Information to an Unauthorized Actor in @opentelemetry/instrumentation-http",
+      "summary": "### Summary\n\n`@opentelemetry/instrumentation-http` redacts sensitive URL query parameters on **outgoing (client) spans** but not on **incoming (server) spans**. The server-span path writes the raw query string verbatim into the `url.query` attribute, so credentials embedded in inbound request URLs \u2014 AWS presigned-URL signatures, Azure SAS tokens (`sig`), GCS signed-URL signatures \u2014 are exported in plaintext to the configured tracing backend.\n\nConfiguring the `redactedQueryParams` option **does not change this**, as this applies only to outgoing (client) spans.\n\n### Impact\n\n**Information disclosure / credential leakage** (CWE-200; CWE-532, insertion of sensitive information into telemetry data).\n\n**Who is impacted:** any Node.js service instrumented with `@opentelemetry/instrumentation-http` \u2014 directly or transitively via `@opentelemetry/auto-instrumentations-node` \u2014 that receives inbound requests carrying credentials in the query string. Common cases: services fronting presigned S3/GCS downloads, Azure SAS-token URLs, and signature-authenticated webhooks.\n\n**Consequence:** clients' still-valid credentials are written into server spans and stored by the tracing backend, readable by anyone with span-read access \u2014 observability vendor infrastructure, dashboard users, and internal audiences far broader than the credential's intended scope. Presigned-URL signatures typically remain valid for minutes to days after capture, so this is not merely historical exposure.\n\n**Severity:** Moderate. Exploitation requires read access to the telemetry backend, and inbound URLs must actually carry signed credentials. However, the gap is a documented mitigation that silently fails to apply, which defeats the mitigation operators would reach for.\n\n### Patches\n\nThis vulnerability has been patched in `@opentelemetry/instrumentation-http` version `0.222.0`.\nKnown sensitive query string values (as defined by Semantic Conventions) are redacted by default from span data for incoming spans.\nTh",
+      "link": "https://github.com/advisories/GHSA-3v2p-hm54-8qcq",
+      "published": "2026-11-13T19:29:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-128080"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-128087",
+      "title": "russh kex_done: Shared-secret callback runs before server host-key verification",
+      "summary": "### Summary\n\nA malicious SSH server whose host key is rejected can still cause russh's `client::Handler::kex_done()` callback to execute with the raw key-exchange shared secret. Applications using the callback for its documented protocol-bridging purpose may derive keys, initialize a secondary data channel, or perform another externally visible action before russh calls `check_server_key()` and rejects the server.\n\n### Details\n\nDuring the initial key exchange, russh calls `kex_done()` immediately after the server proves possession of the presented host key, but before the application decides whether that key belongs to the intended server:\n\n```rust\nlet shared_secret = newkeys.kex.shared_secret_bytes();\nhandler\n    .kex_done(shared_secret, &newkeys.names, session)\n    .await?;\n\n// Initial KEX only checks trust afterwards.\nif let Some(certificate) = server_host_certificate {\n    if !handler.check_server_key(&certificate.into()).await? {\n        return Err(crate::Error::UnknownKey.into());\n    }\n} else if let Some(server_host_key) = server_host_key {\n    let check = handler.check_server_key(&server_host_key.into()).await?;\n    if !check {\n        return Err(crate::Error::UnknownKey.into());\n    }\n}\n```\n\nThis is in `russh/src/client/mod.rs` at lines 2036-2078 of commit `183a22e8f8f490fa09b6eb7bd044ef99d8c4414f`.\n\nThe API documentation describes `check_server_key()` as the important trust decision that prevents man-in-the-middle attacks. It describes `kex_done()` as the callback for deriving keys for secondary encrypted channels. The feature request that introduced the callback specifically lists VPN-over-SSH, UDP data planes, file transfer, and custom enterprise transports as intended uses.\n\nCryptographic verification of the KEX signature does not establish peer identity: an attacker operating its own SSH server can always produce a valid signature with its own host key. Identity is established only when `check_server_key()` accepts that key or certificate.\n\n### Expecte",
+      "link": "https://github.com/advisories/GHSA-9264-jvgf-6w2f",
+      "published": "2026-11-13T19:20:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-128087"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-128083",
+      "title": "Laravel: Task Output Injection - Concurrency Process",
+      "summary": "### Summary\n\nIf a concurrency task prints user-controlled text, an attacker can forge the framework's internal result message and achieve remote code execution in certain conditions\n\n### Pre-reqs\n\nInsecure code and insecure handling of user provided input (devs trust user-provided input) :\n\n1. App has a route that reaches Concurrency::run() (Not by default, it requires app code)\n\n2. The task writes user-controlled data to stdout (echo/print/`dd` of input, hand-built JSON via string concat, passthrough of tool output), and the user-controlled bytes can be made to start the child's stdout and form a complete JSON document followed by \\x1f\\x8b  (Not by default, requires the specific coding pattern in the app code)\n\n### Patches\n* 13.40.0\n* 12.71.0",
+      "link": "https://github.com/advisories/GHSA-63hm-g96r-2m2q",
+      "published": "2026-11-13T18:54:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-128083"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-126364",
+      "title": "Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems",
+      "summary": "## Summary\n\nThe `/_image` endpoint used by the `@astrojs/node` adapter checks that a requested local image is inside the build output directory before reading it from disk. That check compared paths case-insensitively. On case-sensitive filesystems (such as Linux), a directory whose path differs from the output directory only by letter case is a different directory, but it passed the check.\n\nFor example, with the client output directory at `/srv/app/dist/client/`, a request such as:\n\n```text\n/_image?href=/../../DIST/client/secret.png&w=32&f=png\n```\n\nresolved to `/srv/app/DIST/client/secret.png` and was served, even though that file is outside the output directory.\n\n## Impact\n\nAn unauthenticated attacker can read image files from outside the output directory, but only when all of the following are true:\n\n- The site uses on-demand rendering with the `@astrojs/node` adapter.\n- The server runs on a case-sensitive filesystem.\n- A directory exists whose path matches the output directory except for letter case (for example `DIST/client` next to `dist/client`). Such a layout is unusual, and the attacker cannot create it.\n\nOnly files the image service accepts can be read. Raster images are returned after resizing; SVG files are returned unchanged. Other file types fail during processing. Plain path traversal outside the output directory (for example `/../../secret.png`) was already rejected and is not affected.\n\n## Affected versions\n\n`astro` >= 5.14.3, <= 7.4.6, when used with `@astrojs/node` (all versions up to 11.1.11). The vulnerable image endpoint is provided by `astro` and used by the `@astrojs/node` adapter.\n\n## Patches\n\nFixed in `astro` 7.4.7. The path check now compares paths exactly, and only ignores letter case for Windows drive-letter paths. The fix ships in `astro`, so upgrading `@astrojs/node` alone is not enough.\n\n## Workarounds\n\nUpgrade to `astro` 7.4.7 or later. Before upgrading, make sure no directory next to the build output directory has a path that differ",
+      "link": "https://github.com/advisories/GHSA-r3h5-4585-7x3w",
+      "published": "2026-11-13T18:35:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-126364"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-128069",
+      "title": "rails-html-sanitizer: Possible XSS via shared scrubber state in concurrent calls",
+      "summary": "## Summary\n\n`Rails::HTML::SafeListSanitizer` (both the HTML4 and HTML5 variants) shares one `Rails::HTML::PermitScrubber` across every `sanitize` call on the same instance, assigning its `tags` and `attributes` on each call without synchronization. Two concurrent `sanitize` calls with different `tags:` or `attributes:` options can interleave, so one call is scrubbed with the other call's allowlist.\n\n- Versions affected: `< 1.7.2`\n- Not affected: none\n- Fixed versions: `1.7.2`\n\n## Impact\n\nAction View memoizes a single `SafeListSanitizer` per helper module and uses it for every `sanitize` call in the process, so in a multi-threaded server (for example Puma) all requests share the same `PermitScrubber`. If any code path calls `sanitize` with a more permissive allowlist, an attacker who can trigger that path concurrently with another request can cause the other request to be sanitized with the permissive allowlist. If the permissive allowlist admits `script` or an event-handler attribute, the strict call emits it unchanged, which is a cross-site scripting vector when the strict output is stored or rendered to other users.\n\nApplications are affected only if they run more than one thread per process and some `sanitize` call passes `tags:` or `attributes:` options that differ from another call's, including a call that passes no options and so uses the defaults. Applications that use a single configuration everywhere, pass their own `scrubber:`, or run single-threaded are not affected.\n\n## Workarounds\n\nUse the same allowlist for every `sanitize` call, or pass a `scrubber:` built per call (`Rails::HTML::PermitScrubber.new` with `tags=` and `attributes=` set) instead of `tags:` and `attributes:` options.\n\n## Credit\n\nReported by hiumee via HackerOne.",
+      "link": "https://github.com/advisories/GHSA-h7wh-q2qr-458c",
+      "published": "2026-11-13T18:09:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-128069"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html",
+      "title": "PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE",
+      "summary": "A type confusion flaw in PostgreSQL lets a database user who can create objects run code on the server. Updates released yesterday fix it, along with 51 other security flaws. Full protection from this flaw also requires rebuilding any C-language extensions installed on the server.\n\nThe flaw, tracked as CVE-2026-6460, has a CVSS score of 8.8. Any code run this way has the rights of the operating",
+      "link": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html",
+      "published": "2026-11-13T16:53:08+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-6460"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -386,131 +489,6 @@
       ],
       "cve_ids": [
         "CVE-2026-126357"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126354",
-      "title": "Addressable URI normalization resolves some dotted path segments to the wrong path",
-      "summary": "### Summary\n\n`Addressable::URI.normalize_path` resolves some paths containing `..` segments to a different path than RFC 3986 does. When a path climbs above the root before any other `..` is resolved, the segments that later `..` segments should remove are instead kept: `/../../public/x/../../secret` normalizes to `/public/x/secret` instead of `/secret`. `URI#normalize`, `URI#join`, `URI#==` and `URI#===` all use this normalization. An application that checks a normalized Addressable path against an allowlist, but sends the original URI to something that resolves it according to RFC 3986, can be made to allow a request for a path outside the allowlist.\n\n### Details\n\n`normalize_path` in 2.9.0 (`lib/addressable/uri.rb`) removes dot segments by repeating a set of rewrites until nothing changes. On each pass it finds the first `/segment/../` pair with `RULE_2B_2C`, then replaces every textual copy of that pair in the path with `/`:\n\n```ruby\npair = normalized_path.match(RULE_2B_2C)\n...\nregexp = \"/#{Regexp.escape(parent.to_s)}/\\\\.\\\\./|\"\nregexp += \"(/#{Regexp.escape(current.to_s)}/\\\\.\\\\.$)\"\n...\nmod ||= normalized_path.gsub!(Regexp.new(regexp), SLASH)\n```\n\nWhen the first pair found is `/../../`, where the \"segment\" is itself `..`, every `/../../` in the path is replaced with `/`. That includes copies later in the path, where each `..` should have removed the segment before it. For `/../../public/x/../../secret`:\n\n- RFC 3986 \u00a75.2.4 drops the two leading `..` segments, which can't go above the root, then removes `x` and `public`, giving `/secret`.\n- 2.9.0 replaces both copies of `/../../` with `/` in one step, giving `/public/x/secret`.\n\nPaths where an ordinary `/segment/../` pair comes first, such as `/a/../../b/c/../../d`, are resolved correctly.\n\nThis was introduced in 2.2.5. Versions 2.0.0 through 2.2.4 and earlier versions resolve these paths correctly. It is fixed in 2.9.1, which replaces the rewrite loop with a single pass that correctly follows RFC 3986 \u00a75.2.4.\n\n### P",
-      "link": "https://github.com/advisories/GHSA-8gmh-2hhj-2hv9",
-      "published": "2026-11-12T22:27:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126354"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126210",
-      "title": "@hono/node-server: Backslash in the request path is parsed as a path separator, bypassing path-based access control at a reverse proxy",
-      "summary": "### Summary\n\n`@hono/node-server` passes the raw request-target to the WHATWG URL parser, which treats a backslash in the path as `/` and then resolves `..` segments. A request for `/admin\\secret` or `/public\\..\\admin/secret` reaches the application as `/admin/secret`. A reverse proxy that follows RFC 3986 forwards the backslash unchanged and applies its path-based rules to the original path, so the request reaches a route the proxy is meant to block.\n\n### Details\n\nA raw backslash is not allowed in a request-target (RFC 3986, RFC 9112 Section 3.2.1), and RFC 9112 Section 3.2 says a recipient should reject such a request rather than correct it. Proxies such as nginx on Linux, HAProxy and Envoy keep the backslash as an ordinary character, so they and the application see different paths.\n\nThe fix responds with `400 Bad Request` to a request whose path contains a raw backslash, for HTTP/1.1, HTTP/2, absolute-form request-targets and WebSocket upgrades. A percent-encoded backslash and a backslash in the query string are still accepted.\n\n### Impact\n\nAn unauthenticated client can reach a route that a reverse proxy, load balancer or WAF in front of the application blocks by path.\n\nThis affects applications served by `@hono/node-server` behind a front component that makes path-based decisions and forwards a backslash unchanged. Access control inside the Hono application, such as middleware on `/admin/*`, runs on the rewritten path and is not affected.",
-      "link": "https://github.com/advisories/GHSA-jpvv-r467-5p4w",
-      "published": "2026-11-12T21:28:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126210"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126208",
-      "title": "Loofah: SVG `<textPath>` and `<mpath>` bypass local-reference restriction",
-      "summary": "## Summary\n\nLoofah restricts `href` and `xlink:href` on certain SVG elements to same-document references. Two elements escaped the restriction:\n\n- `<textPath>`: `SVG_ALLOW_LOCAL_HREF` listed it in lowercase as `textpath`, but the HTML5 parser names the element `textPath` inside `<svg>`, so the check never matched on the HTML5 path.\n- `<mpath>`: absent from `SVG_ALLOW_LOCAL_HREF`, so its references were never restricted on either path.\n\n`rails-html-sanitizer` reuses this safelist in its `PermitScrubber`, so it is affected too.\n\n## Impact\n\nAn external `href` or `xlink:href` on `<textPath>` or `<mpath>` survives sanitization. Firefox fetches the URL when rendering the content, which leaks the viewer's IP address, user agent, and referrer, and can reach hosts routable only from the viewer's network. Chrome and WebKit do not fetch external references on these elements. The impact is a network request to an attacker-chosen URL, not script execution.\n\nApplications that sanitize user-supplied SVG, directly or inside HTML, with Loofah's default allowlist or with `rails-html-sanitizer` with SVG elements permitted are affected.\n\n## Mitigation\n\nUpgrade to Loofah >= 2.25.3.",
-      "link": "https://github.com/advisories/GHSA-345x-3rq2-jfrm",
-      "published": "2026-11-12T21:26:53Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126208"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126207",
-      "title": "Loofah: CSS url() sanitization bypass via escaped parentheses",
-      "summary": "## Summary\n\n`Loofah::HTML5::Scrub.scrub_css` rejected any property whose top-level Crass tokens included a `:url` or `:bad_url`, and left `url` out of the allowed CSS functions. Both checks ran only against the first parse of the `style` attribute. When `scrub_css` rebuilt each property it emitted identifiers with their CSS escapes decoded, so parentheses written as escapes \u2014 `url\\28 \u2026\\29` \u2014 hid the `url` token from the checks, and the rebuilt value was re-parsed into a live `url()` that nothing checked again. An escaped property name, six-digit escapes, escaped comments and escaped quotes all reached the same place.\n\n## Impact\n\nA sanitized `style` attribute could make a viewer's browser issue a request to an attacker-chosen URL. `list-style` fetches on render with no interaction, `cursor` on hover. That leaks the viewer's IP address, user agent and access timing, and can reach hosts routable only from the viewer's network. No script survives sanitization and the attacker cannot read the response, so the request itself is the whole impact.\n\nApplications that sanitize user-supplied HTML with Loofah's default allowlist and display it to other people are affected.\n\n## Mitigation\n\nUpgrade to Loofah >= 2.25.3.\n\n## Credit\n\nReported by NotAFlightRisk through GitHub's private vulnerability reporting.",
-      "link": "https://github.com/advisories/GHSA-m3x9-938q-5767",
-      "published": "2026-11-12T21:05:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126207"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84974",
-      "title": "code16/sharp: Arbitrary class instantiation through the embed_key API parameter",
-      "summary": "### Impact\n\nAn authenticated attacker can instantiate any class in the PHP application by using the `embed_key` parameter across multiple API endpoints. The instantiation is performed by the Laravel container. As a result, the `__construct()` method of the class is called and all constructor dependencies are resolved. The attacker cannot specify parameter values and cannot call any arbitrary method.\n\n### Patches\n\nThe problem has been patched in 9.23.0 and pre-release version 10.0.0-beta.4. An additional check was added to verify that `embed_key` is a class extending `SharpFormEditorEmbed` before any instantiation.\n\n### Workarounds\n\nNo known workarounds.",
-      "link": "https://github.com/advisories/GHSA-h24v-f482-8cwf",
-      "published": "2026-11-12T18:18:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84974"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118740",
-      "title": "Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Aspire. This advisory provides guidance on updating affected applications and components.\n\nAspire Dashboard's unauthenticated NotFound route can permit telemetry deletion in both standalone and AppHost-hosted deployments. In standalone deployments using browser-token authentication, it can also expose the browser token.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/526\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Critical\n- **Score:** 9.1\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N`\n- **Weakness:** CWE-862\n\n## Affected Platforms\n\n- **Platforms:** Any supported OS\n- **Architectures:** x64, Arm64\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\n### Standalone Aspire Dashboard\n\nPackage | Affected version | Patched version\n--- | --- | ---\nAspire Dashboard | < 13.6.5 | 13.6.5\n\nBoth 13.6.3 and 13.6.4 contain the unauthenticated NotFound route.\n\n### Aspire Dashboard SDK packages\n\nPackage | Affected version | Patched version\n--- | --- | ---\n[Aspire.Dashboard.Sdk.linux-x64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.linux-x64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.linux-arm64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.linux-arm64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.linux-musl-x64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.linux-musl-x64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.osx-x64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.osx-x64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.osx-arm64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.osx-arm64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.win-x64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.win-x64) | < 13.6.5 | 13.6.5\n[Aspire.Dashboard.Sdk.win-arm64](https://www.nuget.org/packages/Aspire.Dashboard.Sdk.win-arm64) | < 13.6.5 | 13.6.5\n\n## Advisory FAQ\n\n### <a n",
-      "link": "https://github.com/advisories/GHSA-4g86-54fm-h9h8",
-      "published": "2026-11-12T17:17:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118740"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
-      "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
-      "summary": "Citrix has released patches for multiple critical security flaws impacting NetScaler ADC, Citrix NetScaler Gateway, and NetScaler Console that could lead to denial-of-service (DoS) or an authentication bypass.\n\nThe critical vulnerabilities that impact NetScaler ADC and NetScaler Gateway are listed below -\n\n\n  CVE-2026-120868 (CVSS score: 9.3) - A memory overflow vulnerability in Packet",
-      "link": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
-      "published": "2026-11-12T15:38:49+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-120868"
       ],
       "is_zero_day": false,
       "is_high_severity": true
