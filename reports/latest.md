@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-12 22:56 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-13 03:52 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -130,7 +130,80 @@ The proof of concept, called SignDrop, targets a log-authentication feature adde
 
 ---
 
-## 15. 🟡 High Severity — Addressable URI normalization resolves some dotted path segments to the wrong path
+## 15. 🟡 High Severity — Open WebUI: the Windows installer mints the master key from the install second — CVE-2025-15603 was rejected; here is the measurement
+
+**CVE:** `CVE-2025-15603` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-11-13
+**Reference:** <https://seclists.org/fulldisclosure/2026/Nov/21>
+
+> Posted by theknell--- via Fulldisclosure on Nov 12 Open WebUI&#x27;s Windows installer (start_windows.bat) generates WEBUI_SECRET_KEY — the master secret that signs every session token — from the C library&#x27;s rand(), a linear congruential generator seeded once with the current time in seconds. The key&#x27;s entire entropy is the second in which the software was installed. From any ordinary us…
+
+---
+
+## 16. 🟡 High Severity — Active Storage: Possible arbitrary file write and read in image analysis
+
+**CVE:** `CVE-2026-122006` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
+**Reference:** <https://github.com/advisories/GHSA-f3w6-w445-fwh9>
+
+> ### Impact
+A Rails application that processes attachments with ImageMagick may allow an unauthenticated attacker to write arbitrary files on the server and, when attachments are stored with the Disk service, to read arbitrary files readable by the application process. Those files typically include `secret_key_base` and credentials for external systems, which may in turn allow escalation to remote …
+
+---
+
+## 17. 🟡 High Severity — Action Pack: Possible sensitive session information leak in Active Storage proxy mode
+
+**CVE:** `CVE-2026-126077` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
+**Reference:** <https://github.com/advisories/GHSA-x6mj-8jx9-qhqv>
+
+> ### Impact
+When `ActionDispatch::Cookies` reads a signed or encrypted cookie that was written under a rotated secret (`config.action_dispatch.cookies_rotations`) or in the format that a `:hybrid` cookie serializer migrates from, it writes the cookie back to the response in the current format, and that write ignores `request.session_options[:skip]`. `ActiveStorage::DisableSession` relies on that op…
+
+---
+
+## 18. 🟡 High Severity — Pillow: Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data
+
+**CVE:** `CVE-2026-128066` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
+**Reference:** <https://github.com/advisories/GHSA-wqgw-9xfh-qf2g>
+
+> ```
+============================================================================
+ANT-2026-D7STJUWL  [medium]  CWE-770  dos
+Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data
+Location: src/PIL/TiffImagePlugin.py:927  in ImageFileDirectory_v2.load()
+Commit:   a707c6b21c313880d0771e54965d142dd42358b6
+============================================================================
+```
+
+A sma…
+
+---
+
+## 19. 🟡 High Severity — Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size
+
+**CVE:** `CVE-2026-128067` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
+**Reference:** <https://github.com/advisories/GHSA-xcvg-w56q-r89m>
+
+> ```
+============================================================================
+ANT-2026-CS7N494P  [high]  CWE-787  memory-safety
+Heap buffer overflow saving TIFF with libtiff when tags override image size
+Location: src/libImaging/TiffDecode.c:1035  in ImagingLibTiffEncode()
+Commit:   a707c6b21c313880d0771e54965d142dd42358b6
+========================================================================…
+
+---
+
+## 20. 🟡 High Severity — Hono: `mount()` and `app.mount()` can forward a path that bypasses middleware scoped inside the mount prefix
+
+**CVE:** `CVE-2026-126357` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
+**Reference:** <https://github.com/advisories/GHSA-4m76-xfj5-7975>
+
+> ### Summary
+
+`mount()` and `app.mount()` remove the mount prefix from the request path and forward the rest to the mounted application. Two mistakes in that step let a crafted request reach a route of the mounted application that the outer application protects with path-scoped middleware, such as an authentication check on `/app/admin/*`. The outer application routes on the original path, so the m…
+
+---
+
+## 21. 🟡 High Severity — Addressable URI normalization resolves some dotted path segments to the wrong path
 
 **CVE:** `CVE-2026-126354` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-8gmh-2hhj-2hv9>
@@ -141,7 +214,7 @@ The proof of concept, called SignDrop, targets a log-authentication feature adde
 
 ---
 
-## 16. 🟡 High Severity — @hono/node-server: Backslash in the request path is parsed as a path separator, bypassing path-based access control at a reverse proxy
+## 22. 🟡 High Severity — @hono/node-server: Backslash in the request path is parsed as a path separator, bypassing path-based access control at a reverse proxy
 
 **CVE:** `CVE-2026-126210` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-jpvv-r467-5p4w>
@@ -152,7 +225,7 @@ The proof of concept, called SignDrop, targets a log-authentication feature adde
 
 ---
 
-## 17. 🟡 High Severity — Loofah: SVG `<textPath>` and `<mpath>` bypass local-reference restriction
+## 23. 🟡 High Severity — Loofah: SVG `<textPath>` and `<mpath>` bypass local-reference restriction
 
 **CVE:** `CVE-2026-126208` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-345x-3rq2-jfrm>
@@ -166,7 +239,7 @@ Loofah restricts `href` and `xlink:href` on certain SVG elements to same-documen
 
 ---
 
-## 18. 🟡 High Severity — Loofah: CSS url() sanitization bypass via escaped parentheses
+## 24. 🟡 High Severity — Loofah: CSS url() sanitization bypass via escaped parentheses
 
 **CVE:** `CVE-2026-126207` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-m3x9-938q-5767>
@@ -177,7 +250,7 @@ Loofah restricts `href` and `xlink:href` on certain SVG elements to same-documen
 
 ---
 
-## 19. 🟡 High Severity — code16/sharp: Arbitrary class instantiation through the embed_key API parameter
+## 25. 🟡 High Severity — code16/sharp: Arbitrary class instantiation through the embed_key API parameter
 
 **CVE:** `CVE-2026-84974` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-h24v-f482-8cwf>
@@ -188,7 +261,7 @@ An authenticated attacker can instantiate any class in the PHP application by us
 
 ---
 
-## 20. 🟡 High Severity — Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability
+## 26. 🟡 High Severity — Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability
 
 **CVE:** `CVE-2026-118740` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://github.com/advisories/GHSA-4g86-54fm-h9h8>
@@ -201,7 +274,7 @@ Aspire Dashboard&#x27;s unauthenticated NotFound route can permit telemetry dele
 
 ---
 
-## 21. 🟡 High Severity — Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass
+## 27. 🟡 High Severity — Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass
 
 **CVE:** `CVE-2026-120868` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html>
@@ -215,7 +288,7 @@ The critical vulnerabilities that impact NetScaler ADC and NetScaler Gateway are
 
 ---
 
-## 22. 🟡 High Severity — SCKit Malware Turns ScreenConnect Support Sessions Into Potential MSP Attack Paths
+## 28. 🟡 High Severity — SCKit Malware Turns ScreenConnect Support Sessions Into Potential MSP Attack Paths
 
 **CVE:** `CVE-2026-84869` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html>
@@ -226,7 +299,7 @@ Blackpoint Cyber&#x27;s Adversary Pursuit Group (APG), which shared the details 
 
 ---
 
-## 23. 🟡 High Severity — PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution
+## 29. 🟡 High Severity — PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution
 
 **CVE:** `CVE-2026-126325` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html>
@@ -239,7 +312,7 @@ It has been described as a case of improper input validation and deserialization
 
 ---
 
-## 24. 🟡 High Severity — Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover
+## 30. 🟡 High Severity — Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover
 
 **CVE:** `CVE-2026-118383` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html>
@@ -252,7 +325,7 @@ The affected servers are members of a replica
 
 ---
 
-## 25. 🟡 High Severity — Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely
+## 31. 🟡 High Severity — Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely
 
 **CVE:** `CVE-2026-119618` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-12
 **Reference:** <https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html>
@@ -265,7 +338,7 @@ An attacker who can reach …
 
 ---
 
-## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

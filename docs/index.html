@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">26</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-12 22:56 UTC</div>
+            <div class="generated">Updated 2026-11-13 03:52 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -342,6 +342,121 @@ The proof of concept, called SignDrop, targets a log-authentication feature adde
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://seclists.org/fulldisclosure/2026/Nov/21" target="_blank" rel="noopener">Open WebUI: the Windows installer mints the master key from the install second — CVE-2025-15603 was rejected; here is the measurement</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2025-15603</code>
+    <span class="meta-sep">·</span>
+    <span>Full Disclosure</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-13</span>
+  </div>
+  <p class='summary'>Posted by theknell--- via Fulldisclosure on Nov 12 Open WebUI&#x27;s Windows installer (start_windows.bat) generates WEBUI_SECRET_KEY — the master secret that signs every session token — from the C library&#x27;s rand(), a linear congruential generator seeded once with the current time in seconds. The key&#x27;s entire entropy is the second in which the software was installed. From any ordinary user&#x27;s own token,…</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f3w6-w445-fwh9" target="_blank" rel="noopener">Active Storage: Possible arbitrary file write and read in image analysis</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-122006</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>### Impact
+A Rails application that processes attachments with ImageMagick may allow an unauthenticated attacker to write arbitrary files on the server and, when attachments are stored with the Disk service, to read arbitrary files readable by the application process. Those files typically include `secret_key_base` and credentials for external systems, which may in turn allow escalation to remote …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x6mj-8jx9-qhqv" target="_blank" rel="noopener">Action Pack: Possible sensitive session information leak in Active Storage proxy mode</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-126077</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>### Impact
+When `ActionDispatch::Cookies` reads a signed or encrypted cookie that was written under a rotated secret (`config.action_dispatch.cookies_rotations`) or in the format that a `:hybrid` cookie serializer migrates from, it writes the cookie back to the response in the current format, and that write ignores `request.session_options[:skip]`. `ActiveStorage::DisableSession` relies on that op…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wqgw-9xfh-qf2g" target="_blank" rel="noopener">Pillow: Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-128066</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>```
+============================================================================
+ANT-2026-D7STJUWL  [medium]  CWE-770  dos
+Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data
+Location: src/PIL/TiffImagePlugin.py:927  in ImageFileDirectory_v2.load()
+Commit:   a707c6b21c313880d0771e54965d142dd42358b6
+============================================================================
+```
+
+A sma…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xcvg-w56q-r89m" target="_blank" rel="noopener">Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-128067</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>```
+============================================================================
+ANT-2026-CS7N494P  [high]  CWE-787  memory-safety
+Heap buffer overflow saving TIFF with libtiff when tags override image size
+Location: src/libImaging/TiffDecode.c:1035  in ImagingLibTiffEncode()
+Commit:   a707c6b21c313880d0771e54965d142dd42358b6
+========================================================================…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4m76-xfj5-7975" target="_blank" rel="noopener">Hono: `mount()` and `app.mount()` can forward a path that bypasses middleware scoped inside the mount prefix</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-126357</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-12</span>
+          </div>
+          <p class='summary'>### Summary
+
+`mount()` and `app.mount()` remove the mount prefix from the request path and forward the rest to the mounted application. Two mistakes in that step let a crafted request reach a route of the mounted application that the outer application protects with path-scoped middleware, such as an authentication check on `/app/admin/*`. The outer application routes on the original path, so the m…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
