@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-14T03:50:28.810685+00:00",
-  "total": 22,
+  "generated": "2026-11-14T12:38:13.077866+00:00",
+  "total": 19,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 8,
   "enriched": 0,
   "findings": [
     {
@@ -31,21 +31,6 @@
         "cloud",
         "threat-intel",
         "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
-      "title": "Hackers Exploit PHP2Shell Flaws in Check Point Gateways to Deploy TSGA Backdoor and Wipe ESXi Files",
-      "summary": "An unknown threat actor has been observed targeting unpatched Check Point Security Gateways to obtain initial access via the PHP2Shell vulnerabilities and then a previously unreported local privilege escalation flaw in Gaia OS\u00a0 to deploy a backdoor called TSGA.\n\nThe activity, detailed by Check Point, began on October 30, 2026, and targeted Israeli organizations, with a broader follow-up",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
-      "published": "2026-11-13T08:05:49+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -145,36 +130,6 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/",
-      "title": "Check Point warns of zero-day flaw exploited for root access",
-      "summary": "Check Point Software has released emergency hotfixes to address a high-severity flaw that hackers have been exploiting to gain root privileges and establish persistence on vulnerable devices since\u00a0late October. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/",
-      "published": "2026-11-13T10:44:22+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-signdrop/",
-      "title": "Nightmare Eclipse Drops Windows Zero-Day Exploit \u2018SignDrop\u2019",
-      "summary": "It abuses CLFS and Windows Defender to trigger arbitrary file creation in the context of the antimalware process. The post Nightmare Eclipse Drops Windows Zero-Day Exploit \u2018SignDrop\u2019 appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-signdrop/",
-      "published": "2026-11-13T08:50:36+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },

@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-14 03:50 UTC &nbsp;|&nbsp; **Total:** 22 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-14 12:38 UTC &nbsp;|&nbsp; **Total:** 19 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,18 +20,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Hackers Exploit PHP2Shell Flaws in Check Point Gateways to Deploy TSGA Backdoor and Wipe ESXi Files
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html>
-
-> An unknown threat actor has been observed targeting unpatched Check Point Security Gateways to obtain initial access via the PHP2Shell vulnerabilities and then a previously unreported local privilege escalation flaw in Gaia OS  to deploy a backdoor called TSGA.
-
-The activity, detailed by Check Point, began on October 30, 2026, and targeted Israeli organizations, with a broader follow-up
-
----
-
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +29,7 @@ The activity, detailed by Check Point, began on October 30, 2026, and targeted I
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +38,7 @@ The activity, detailed by Check Point, began on October 30, 2026, and targeted I
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +47,7 @@ The activity, detailed by Check Point, began on October 30, 2026, and targeted I
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +56,7 @@ The activity, detailed by Check Point, began on October 30, 2026, and targeted I
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +65,7 @@ The activity, detailed by Check Point, began on October 30, 2026, and targeted I
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,25 +74,7 @@ The activity, detailed by Check Point, began on October 30, 2026, and targeted I
 
 ---
 
-## 10. 🟠 Zero-Day — Check Point warns of zero-day flaw exploited for root access
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/>
-
-> Check Point Software has released emergency hotfixes to address a high-severity flaw that hackers have been exploiting to gain root privileges and establish persistence on vulnerable devices since late October. [...]
-
----
-
-## 11. 🟠 Zero-Day — Nightmare Eclipse Drops Windows Zero-Day Exploit ‘SignDrop’
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-signdrop/>
-
-> It abuses CLFS and Windows Defender to trigger arbitrary file creation in the context of the antimalware process. The post Nightmare Eclipse Drops Windows Zero-Day Exploit ‘SignDrop’ appeared first on SecurityWeek .
-
----
-
-## 12. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 9. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -112,7 +83,7 @@ The activity, detailed by Check Point, began on October 30, 2026, and targeted I
 
 ---
 
-## 13. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 10. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -121,7 +92,7 @@ The activity, detailed by Check Point, began on October 30, 2026, and targeted I
 
 ---
 
-## 14. 🟡 High Severity — File Browser: Trailing-slash directory deletion leaves public shares active for recreated paths
+## 11. 🟡 High Severity — File Browser: Trailing-slash directory deletion leaves public shares active for recreated paths
 
 **CVE:** `CVE-2026-62683` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
 **Reference:** <https://github.com/advisories/GHSA-pp88-jhwj-5qh5>
@@ -132,7 +103,7 @@ File Browser v2.63.15 can leave a public directory share behind when the shared 
 
 ---
 
-## 15. 🟡 High Severity — Nuxt: Incomplete fix for GHSA-9v7c-q64q-vv33: a leading `//` in the request path bypasses `server/middleware` path checks and server route rules on page routes
+## 12. 🟡 High Severity — Nuxt: Incomplete fix for GHSA-9v7c-q64q-vv33: a leading `//` in the request path bypasses `server/middleware` path checks and server route rules on page routes
 
 **CVE:** `CVE-2026-128077` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
 **Reference:** <https://github.com/advisories/GHSA-r99w-jh2x-3mg9>
@@ -143,7 +114,7 @@ Since `4.6.0`, Nuxt parses a request path that starts with `//` as a URL with a 
 
 ---
 
-## 16. 🟡 High Severity — OpenTelemetry JavaScript: Insertion of Sensitive Information into Log File and Exposure of Sensitive Information to an Unauthorized Actor in @opentelemetry/instrumentation-http
+## 13. 🟡 High Severity — OpenTelemetry JavaScript: Insertion of Sensitive Information into Log File and Exposure of Sensitive Information to an Unauthorized Actor in @opentelemetry/instrumentation-http
 
 **CVE:** `CVE-2026-128080` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
 **Reference:** <https://github.com/advisories/GHSA-3v2p-hm54-8qcq>
@@ -154,7 +125,7 @@ Since `4.6.0`, Nuxt parses a request path that starts with `//` as a URL with a 
 
 ---
 
-## 17. 🟡 High Severity — russh kex_done: Shared-secret callback runs before server host-key verification
+## 14. 🟡 High Severity — russh kex_done: Shared-secret callback runs before server host-key verification
 
 **CVE:** `CVE-2026-128087` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
 **Reference:** <https://github.com/advisories/GHSA-9264-jvgf-6w2f>
@@ -165,7 +136,7 @@ A malicious SSH server whose host key is rejected can still cause russh&#x27;s `
 
 ---
 
-## 18. 🟡 High Severity — Laravel: Task Output Injection - Concurrency Process
+## 15. 🟡 High Severity — Laravel: Task Output Injection - Concurrency Process
 
 **CVE:** `CVE-2026-128083` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
 **Reference:** <https://github.com/advisories/GHSA-63hm-g96r-2m2q>
@@ -184,7 +155,7 @@ Insecure code and insecure handling of user provided input (devs trust user-prov
 
 ---
 
-## 19. 🟡 High Severity — Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems
+## 16. 🟡 High Severity — Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems
 
 **CVE:** `CVE-2026-126364` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
 **Reference:** <https://github.com/advisories/GHSA-r3h5-4585-7x3w>
@@ -197,7 +168,7 @@ For e…
 
 ---
 
-## 20. 🟡 High Severity — rails-html-sanitizer: Possible XSS via shared scrubber state in concurrent calls
+## 17. 🟡 High Severity — rails-html-sanitizer: Possible XSS via shared scrubber state in concurrent calls
 
 **CVE:** `CVE-2026-128069` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
 **Reference:** <https://github.com/advisories/GHSA-h7wh-q2qr-458c>
@@ -208,7 +179,7 @@ For e…
 
 ---
 
-## 21. 🟡 High Severity — PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE
+## 18. 🟡 High Severity — PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE
 
 **CVE:** `CVE-2026-6460` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-13
 **Reference:** <https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html>
@@ -219,7 +190,7 @@ The flaw, tracked as CVE-2026-6460, has a CVSS score of 8.8. Any code run this w
 
 ---
 
-## 22. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 19. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
