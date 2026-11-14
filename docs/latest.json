@@ -1,48 +1,10 @@
 {
-  "generated": "2026-11-13T22:58:28.327386+00:00",
-  "total": 29,
-  "kev": 2,
+  "generated": "2026-11-14T03:50:28.810685+00:00",
+  "total": 22,
+  "kev": 0,
   "zero_day": 11,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-123039",
-      "title": "CVE-2026-123039 \u2014 Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
-      "summary": "Vendor: Check Point | Product: Multiple Products. Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when the Gaia OS DynamicCLI daemon runs as root and listens on a world-writable local socket without authenticating connecting processes. An authenticated local user can send a command to the socket and have it executed as root. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-16)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123039",
-      "published": "2026-11-13",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-123039"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-114713",
-      "title": "CVE-2026-114713 \u2014 UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
-      "summary": "Vendor: UnrealIRCd | Product: UnrealIRCd. UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-16)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-114713",
-      "published": "2026-11-13",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-114713"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -262,6 +224,24 @@
       "is_high_severity": true
     },
     {
+      "id": "CVE-2026-62683",
+      "title": "File Browser: Trailing-slash directory deletion leaves public shares active for recreated paths",
+      "summary": "## Summary\n\nFile Browser v2.63.15 can leave a public directory share behind when the shared directory is deleted through a path with a trailing slash. The share cleanup path calls `DeleteWithPathPrefix(file.Path, userID)`, but the Bolt backend performs the database prefix query with the unnormalized argument before trimming the slash for boundary checks. For a stored share at `/a`, deleting `/a/` queries for paths prefixed by `/a/`, so the exact `/a` share is never loaded and never deleted.\n\nIf a directory with the same path is later recreated, the stale public share becomes active again and exposes the new directory contents through the old public URL.\n\n## Impact\n\nAn authenticated user with share, download, and delete permissions can create a valid public share, delete the shared path with a trailing slash, and leave the public link in storage. The link is dormant while the path does not exist, but it exposes future content if the same path is recreated later. The final data exposure is unauthenticated through the public share URL.\n\nThis bypasses the intended lifecycle cleanup around public shares and is adjacent to the recent public-share path-existence and prefix-boundary fixes.\n\n## Reproduction\n\nThe following test was run against v2.63.15, commit `be23ab3a15bf957928ecfed88de5ab67850c1b9c`.\n\n1. Create a scoped user with share, download, and delete permissions.\n2. Create `/a/old.txt` in that user's scope.\n3. Store a valid public share row with `Hash: \"h\"`, `UserID: 1`, and `Path: \"/a\"`.\n4. Send an authenticated delete request for `/a/` through the resource delete handler.\n5. Confirm the directory is deleted.\n6. Confirm share hash `h` still exists in storage.\n7. Recreate `/a/future.txt`.\n8. Request the public share handler at `h/` and observe that the unauthenticated response includes `future.txt`.\n\nCommand used for the local proof:\n\n```bash\ngo test ./http -run TestValidationTrailingSlashDeleteLeavesExactDirectoryShare -count=1 -v\n```\n\nObserved result:\n\n```text\n===",
+      "link": "https://github.com/advisories/GHSA-pp88-jhwj-5qh5",
+      "published": "2026-11-13T23:12:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62683"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-128077",
       "title": "Nuxt: Incomplete fix for GHSA-9v7c-q64q-vv33: a leading `//` in the request path bypasses `server/middleware` path checks and server route rules on page routes",
       "summary": "### Summary\n\nSince `4.6.0`, Nuxt parses a request path that starts with `//` as a URL with a host before rendering a page, so `//x/admin` renders the page at `/admin`. Nitro's routing, Nitro's route rules and `server/middleware` see the path as `//x/admin`, so server-side checks keyed on `/admin` do not apply. The fix for [GHSA-9v7c-q64q-vv33](https://github.com/nuxt/nuxt/security/advisories/GHSA-9v7c-q64q-vv33) in `4.6.3` covered dot segments but not this form.\n\n### Impact\n\nAn unauthenticated attacker can bypass server-side controls that match on the request path of a page route.\n\nA route-scoped server handler is skipped:\n\n```ts\n// nuxt.config.ts\nexport default defineNuxtConfig({\n  serverHandlers: [{ route: '/admin', middleware: true, handler: '~~/server/admin-guard.ts' }],\n})\n```\n\n```ts\n// server/admin-guard.ts\nexport default defineEventHandler((event) => {\n  if (!isAuthenticated(event)) {\n    throw createError({ statusCode: 401 })\n  }\n})\n```\n\nWith this handler, `/admin` returns 401, but `//x/admin` and `///x/admin` render `app/pages/admin.vue` along with the data it fetches during server rendering. `server/middleware` that checks `event.path.startsWith('/admin')` is skipped in the same way.\n\nServer-side `redirect` and `headers` route rules are also skipped, so `'/admin/**': { redirect: '/login' }` does not redirect `//x/admin/secret`, and per-route security headers such as `Content-Security-Policy` are not sent.\n\nBrowsers send a path such as `//x/admin` as written, so a plain link is enough to reach the page.\n\nNot affected:\n\n- API handlers in `server/api` and `server/routes`, which Nitro does not match for these paths.\n- `appMiddleware` route rules and middleware declared with `definePageMeta`, which are matched against the resolved route.\n- Nuxt `3.x` and `4.0.0` to `4.5.x`, which pass the path to the page router unchanged, so these requests 404.\n\n### Patches\n\nFixed in `@nuxt/nitro-server@4.6.4`, which `nuxt@4.6.4` depends on. The renderer now uses the request p",
@@ -382,113 +362,6 @@
       ],
       "cve_ids": [
         "CVE-2026-6460"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Nov/21",
-      "title": "Open WebUI: the Windows installer mints the master key from the install second \u2014 CVE-2025-15603 was rejected; here is the measurement",
-      "summary": "Posted by theknell--- via Fulldisclosure on Nov 12 Open WebUI's Windows installer (start_windows.bat) generates WEBUI_SECRET_KEY \u2014 the master secret that signs every session token \u2014 from the C library's rand(), a linear congruential generator seeded once with the current time in seconds. The key's entire entropy is the second in which the software was installed. From any ordinary user's own token, the master key is recoverable blind in ~2.1 seconds across a \u00b11-day...",
-      "link": "https://seclists.org/fulldisclosure/2026/Nov/21",
-      "published": "2026-11-13T01:45:08+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [
-        "CVE-2025-15603"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-122006",
-      "title": "Active Storage: Possible arbitrary file write and read in image analysis",
-      "summary": "### Impact\nA Rails application that processes attachments with ImageMagick may allow an unauthenticated attacker to write arbitrary files on the server and, when attachments are stored with the Disk service, to read arbitrary files readable by the application process. Those files typically include `secret_key_base` and credentials for external systems, which may in turn allow escalation to remote code execution or lateral movement to those systems.\n\n### Details\nImageMagick selects a coder from the content of the file it is given, and some coders act on files named inside the image rather than on the image itself. Active Storage constrained none of ImageMagick's coders, and the ImageMagick analyzer runs when a file is attached, so an attacker who can upload a crafted file may be able to invoke one. Attaching the upload is sufficient; no variant, preview, or `analyze` call is required. One specific attack chain has been reported to us, but we do not assume it is the only one that exists.\n\nThe fixed versions ship an ImageMagick security policy and prepend its directory to `MAGICK_CONFIGURE_PATH` through `MiniMagick.cli_env`, so every ImageMagick process that MiniMagick spawns applies it. The policy denies the `MSL` scripting coder, the coders that read or delete files other than the image, fetch remote or local references, or display to a screen, every coder backed by Ghostscript together with the `gs` delegate, and `@filename` indirection. ImageMagick applies every `policy.xml` on its search path, so the shipped policy adds to the host's policy rather than replacing it. The policy applies to every ImageMagick command that MiniMagick runs, not only those of Active Storage. See the `activestorage` CHANGELOG and \"ImageMagick Security Policy\" in the Active Storage guide.\n\n### Affected applications\nAn application is affected if it meets all of these requirements:\n- Uses ImageMagick for Active Storage image processing. This is `config.active_storage.variant_processor = :min",
-      "link": "https://github.com/advisories/GHSA-f3w6-w445-fwh9",
-      "published": "2026-11-12T23:46:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-122006"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126077",
-      "title": "Action Pack: Possible sensitive session information leak in Active Storage proxy mode",
-      "summary": "### Impact\nWhen `ActionDispatch::Cookies` reads a signed or encrypted cookie that was written under a rotated secret (`config.action_dispatch.cookies_rotations`) or in the format that a `:hybrid` cookie serializer migrates from, it writes the cookie back to the response in the current format, and that write ignores `request.session_options[:skip]`. `ActiveStorage::DisableSession` relies on that option to keep the session cookie off the public, immutable responses of the Active Storage proxy controllers, but those controllers still load the session, so a request carrying an old-format session cookie could receive the rewritten session cookie in `Set-Cookie` on a cacheable response. A shared cache that stores such a response together with its `Set-Cookie` header could then serve one user's session to later requesters of the same URL, or serve an attacker's session to other users.\n\nApplications are affected when they serve Active Storage files through the proxy controllers, have a cookie rotation or a `:hybrid` serializer migration configured, and run behind a cache that stores `Set-Cookie` on public responses. This is a path around the fix for [CVE-2024-26144](https://github.com/advisories/GHSA-8h22-8cf7-hq6g).\n\n### Details\nIn the fixed releases, a response that skips the session leaves an old-format signed or encrypted cookie unchanged, and the next request that does not skip the session upgrades it. An application that skips the session on every request no longer upgrades its signed or encrypted cookies. Cookies that the application sets explicitly are still written. See the Action Pack CHANGELOG.\n\n### Workarounds\nConfigure caching proxies not to store responses that carry a `Set-Cookie` header, or complete the cookie rotation or serializer migration and remove it from the configuration.\n\n### Releases\nThe fixed releases are available at the normal locations.\n\nPatches for those who cannot upgrade at once:\n- 8.1: https://github.com/rails/rails/commit/849a6c30eacbb6ca4",
-      "link": "https://github.com/advisories/GHSA-x6mj-8jx9-qhqv",
-      "published": "2026-11-12T23:44:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126077"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-128066",
-      "title": "Pillow: Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data",
-      "summary": "```\n============================================================================\nANT-2026-D7STJUWL  [medium]  CWE-770  dos\nMemory DoS in TIFF and EXIF IFD parsing via overlapping tag data\nLocation: src/PIL/TiffImagePlugin.py:927  in ImageFileDirectory_v2.load()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nA small, crafted image file can make Pillow use thousands of times its own size in memory while the file is only being opened, which lets anyone who can submit an image crash or stall the process handling it. A 144 KB TIFF makes `Image.open()` return normally while holding 1.6 GiB of memory. The largest such standard TIFF, about 786 KB, asks for roughly 48 GiB, which in practice gets the worker killed by the operating system. The file declares a 1\u00d71 image, so the decompression-bomb check never triggers and no warning is raised. There is no memory corruption; the impact is denial of service.\n\nThe bug is in `ImageFileDirectory_v2.load()` in `src/PIL/TiffImagePlugin.py` (around line 927). For every directory entry whose value is stored elsewhere in the file, it reads that value into a new `bytes` object with `ImageFile._safe_read(fp, count * unit_size)` and keeps it in `_tagdata`. `_safe_read()` only checks that the bytes exist. Nothing limits the total read across entries, and nothing stops every entry from pointing at the same bytes. An attacker can therefore give each of N distinct private tags an offset and count that covers the whole file, at a cost of 12 bytes per entry. Memory grows as N \u00d7 file size, which is quadratic in the file size, and BigTIFF removes the 65,535-entry ceiling.\n\nThe same loop parses EXIF data, so the problem reaches beyond TIFF:\n\n* A 66 KB JPEG APP1 segment costs about 340 MiB inside `Image.open()` itself, via `_read_dpi_from_exif()`.\n* A 96 KB PNG `eXIf` chunk costs 754 MiB on `getexif()` or `ImageOps.exif_transpose()`.\n* WebP EXIF and MPO reach the sam",
-      "link": "https://github.com/advisories/GHSA-wqgw-9xfh-qf2g",
-      "published": "2026-11-12T23:35:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-128066"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-128067",
-      "title": "Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size",
-      "summary": "```\n============================================================================\nANT-2026-CS7N494P  [high]  CWE-787  memory-safety\nHeap buffer overflow saving TIFF with libtiff when tags override image size\nLocation: src/libImaging/TiffDecode.c:1035  in ImagingLibTiffEncode()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nWhen Pillow saves an image as a compressed TIFF, size information taken from the image's metadata can make the encoder read past the end of a heap buffer. Someone who uploads an image can use this to get the server process's memory, including pointers, copied into the saved file, or to crash the process. When the metadata also enables TIFF \"Predictor=2\" compression, the encoder writes past the buffer instead, corrupting the heap and aborting the process. This affects applications that write TIFF through libtiff (any `compression=` other than raw) and either carry the source metadata across with `exif=im.getexif()` / `tiffinfo=`, or simply re-save a crafted palette TIFF with `Image.open(f).save(out, \"TIFF\")`, which inherits its compression and predictor from the upload.\n\nIn `TiffImagePlugin._save`'s libtiff branch, only `BitsPerSample` is pinned to the real image when the tag list for the encoder is built (`src/PIL/TiffImagePlugin.py:1955`). `ImageWidth`, `ImageLength` and `PlanarConfiguration` are set from `im.size` but are then overwritten by the `exif=`/`tiffinfo=` merge loop at `:1768-1772`. `SamplesPerPixel` is never set for single-band modes, so a value from the caller's tags or from the source TIFF's own IFD reaches `TIFFSetField`. `ImagingLibTiffEncode` then passes a row buffer sized from the actual image (`src/encode.c:291`) to `TIFFWriteScanline` (`src/libImaging/TiffDecode.c:1035`) with no check against `TIFFScanlineSize()`, and libtiff consumes a full scanline of the tag-described width from it.\n\nThe attached reproducer demonstrates the read case. A 64x",
-      "link": "https://github.com/advisories/GHSA-xcvg-w56q-r89m",
-      "published": "2026-11-12T23:34:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-128067"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-126357",
-      "title": "Hono: `mount()` and `app.mount()` can forward a path that bypasses middleware scoped inside the mount prefix",
-      "summary": "### Summary\n\n`mount()` and `app.mount()` remove the mount prefix from the request path and forward the rest to the mounted application. Two mistakes in that step let a crafted request reach a route of the mounted application that the outer application protects with path-scoped middleware, such as an authentication check on `/app/admin/*`. The outer application routes on the original path, so the middleware does not run.\n\n### Details\n\n1. **Dynamic prefix** (all affected versions): for a mount such as `/api/:tenant/*`, the prefix was removed by the length of the route pattern, not of the matched prefix. A request with a longer or shorter first segment is cut in the middle, so `/api/a/xxxxx/admin/secret` reaches the mounted application as `/admin/secret`.\n2. **Re-normalization** (since 4.12.21): the forwarded path was built from the decoded request path and assigned to `url.pathname`, which turns a decoded backslash into `/` and collapses `..`. `/app/public%5C..%5Cadmin/secret` reaches the mounted application as `/admin/secret`.\n\nThe fix removes the prefix segment by segment from the raw pathname, using the matched parameter values for its length. Route patterns that cannot be handled safely now throw: duplicate parameter names and a wildcard inside the last segment such as `/assets*`. A trailing slash in an `app.mount()` prefix no longer removes an extra segment.\n\n### Impact\n\nAn unauthenticated client can reach a route of a mounted application that the outer application protects with path-scoped middleware.\n\nThis affects applications that use `mount()` or `app.mount()` and rely on middleware registered on a sub-path inside the mount prefix for authentication or authorization.\n\n### Workarounds\n\nRegister the authentication middleware inside the mounted application.",
-      "link": "https://github.com/advisories/GHSA-4m76-xfj5-7975",
-      "published": "2026-11-12T23:24:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-126357"
       ],
       "is_zero_day": false,
       "is_high_severity": true

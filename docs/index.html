@@ -109,47 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">29</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">22</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-13 22:58 UTC</div>
+            <div class="generated">Updated 2026-11-14 03:50 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-123039" target="_blank" rel="noopener">CVE-2026-123039 — Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-123039</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-13</span>
-  </div>
-  <p class='summary'>Vendor: Check Point | Product: Multiple Products. Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when the Gaia OS DynamicCLI daemon runs as root and listens on a world-writable local socket without authenticating connecting processes.…</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-114713" target="_blank" rel="noopener">CVE-2026-114713 — UnrealIRCd Improper Neutralization of Delimiters Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-114713</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-13</span>
-  </div>
-  <p class='summary'>Vendor: UnrealIRCd | Product: UnrealIRCd. UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -362,6 +330,24 @@ The activity, detailed by Check Point, began on October 30, 2026, and targeted I
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pp88-jhwj-5qh5" target="_blank" rel="noopener">File Browser: Trailing-slash directory deletion leaves public shares active for recreated paths</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62683</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-13</span>
+          </div>
+          <p class='summary'>## Summary
+
+File Browser v2.63.15 can leave a public directory share behind when the shared directory is deleted through a path with a trailing slash. The share cleanup path calls `DeleteWithPathPrefix(file.Path, userID)`, but the Bolt backend performs the database prefix query with the unnormalized argument before trimming the slash for boundary checks. For a stored share at `/a`, deleting `/a/` …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r99w-jh2x-3mg9" target="_blank" rel="noopener">Nuxt: Incomplete fix for GHSA-9v7c-q64q-vv33: a leading `//` in the request path bypasses `server/middleware` path checks and server route rules on page routes</a></h2>
           </div>
           <div class="card-meta">
@@ -492,121 +478,6 @@ For e…</p>
           <p class='summary'>A type confusion flaw in PostgreSQL lets a database user who can create objects run code on the server. Updates released yesterday fix it, along with 51 other security flaws. Full protection from this flaw also requires rebuilding any C-language extensions installed on the server.
 
 The flaw, tracked as CVE-2026-6460, has a CVSS score of 8.8. Any code run this way has the rights of the operating</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://seclists.org/fulldisclosure/2026/Nov/21" target="_blank" rel="noopener">Open WebUI: the Windows installer mints the master key from the install second — CVE-2025-15603 was rejected; here is the measurement</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2025-15603</code>
-    <span class="meta-sep">·</span>
-    <span>Full Disclosure</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-13</span>
-  </div>
-  <p class='summary'>Posted by theknell--- via Fulldisclosure on Nov 12 Open WebUI&#x27;s Windows installer (start_windows.bat) generates WEBUI_SECRET_KEY — the master secret that signs every session token — from the C library&#x27;s rand(), a linear congruential generator seeded once with the current time in seconds. The key&#x27;s entire entropy is the second in which the software was installed. From any ordinary user&#x27;s own token,…</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f3w6-w445-fwh9" target="_blank" rel="noopener">Active Storage: Possible arbitrary file write and read in image analysis</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-122006</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-12</span>
-          </div>
-          <p class='summary'>### Impact
-A Rails application that processes attachments with ImageMagick may allow an unauthenticated attacker to write arbitrary files on the server and, when attachments are stored with the Disk service, to read arbitrary files readable by the application process. Those files typically include `secret_key_base` and credentials for external systems, which may in turn allow escalation to remote …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x6mj-8jx9-qhqv" target="_blank" rel="noopener">Action Pack: Possible sensitive session information leak in Active Storage proxy mode</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-126077</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-12</span>
-          </div>
-          <p class='summary'>### Impact
-When `ActionDispatch::Cookies` reads a signed or encrypted cookie that was written under a rotated secret (`config.action_dispatch.cookies_rotations`) or in the format that a `:hybrid` cookie serializer migrates from, it writes the cookie back to the response in the current format, and that write ignores `request.session_options[:skip]`. `ActiveStorage::DisableSession` relies on that op…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wqgw-9xfh-qf2g" target="_blank" rel="noopener">Pillow: Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-128066</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-12</span>
-          </div>
-          <p class='summary'>```
-============================================================================
-ANT-2026-D7STJUWL  [medium]  CWE-770  dos
-Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data
-Location: src/PIL/TiffImagePlugin.py:927  in ImageFileDirectory_v2.load()
-Commit:   a707c6b21c313880d0771e54965d142dd42358b6
-============================================================================
-```
-
-A sma…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xcvg-w56q-r89m" target="_blank" rel="noopener">Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-128067</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-12</span>
-          </div>
-          <p class='summary'>```
-============================================================================
-ANT-2026-CS7N494P  [high]  CWE-787  memory-safety
-Heap buffer overflow saving TIFF with libtiff when tags override image size
-Location: src/libImaging/TiffDecode.c:1035  in ImagingLibTiffEncode()
-Commit:   a707c6b21c313880d0771e54965d142dd42358b6
-========================================================================…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4m76-xfj5-7975" target="_blank" rel="noopener">Hono: `mount()` and `app.mount()` can forward a path that bypasses middleware scoped inside the mount prefix</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-126357</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-12</span>
-          </div>
-          <p class='summary'>### Summary
-
-`mount()` and `app.mount()` remove the mount prefix from the request path and forward the rest to the mounted application. Two mistakes in that step let a crafted request reach a route of the mounted application that the outer application protects with path-scoped middleware, such as an authentication check on `/app/admin/*`. The outer application routes on the original path, so the m…</p>
 
         </article>
 
