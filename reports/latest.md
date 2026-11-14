@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-14 12:38 UTC &nbsp;|&nbsp; **Total:** 19 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-14 21:45 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -103,94 +103,7 @@ File Browser v2.63.15 can leave a public directory share behind when the shared 
 
 ---
 
-## 12. 🟡 High Severity — Nuxt: Incomplete fix for GHSA-9v7c-q64q-vv33: a leading `//` in the request path bypasses `server/middleware` path checks and server route rules on page routes
-
-**CVE:** `CVE-2026-128077` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://github.com/advisories/GHSA-r99w-jh2x-3mg9>
-
-> ### Summary
-
-Since `4.6.0`, Nuxt parses a request path that starts with `//` as a URL with a host before rendering a page, so `//x/admin` renders the page at `/admin`. Nitro&#x27;s routing, Nitro&#x27;s route rules and `server/middleware` see the path as `//x/admin`, so server-side checks keyed on `/admin` do not apply. The fix for [GHSA-9v7c-q64q-vv33](https://github.com/nuxt/nuxt/security/adviso…
-
----
-
-## 13. 🟡 High Severity — OpenTelemetry JavaScript: Insertion of Sensitive Information into Log File and Exposure of Sensitive Information to an Unauthorized Actor in @opentelemetry/instrumentation-http
-
-**CVE:** `CVE-2026-128080` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://github.com/advisories/GHSA-3v2p-hm54-8qcq>
-
-> ### Summary
-
-`@opentelemetry/instrumentation-http` redacts sensitive URL query parameters on **outgoing (client) spans** but not on **incoming (server) spans**. The server-span path writes the raw query string verbatim into the `url.query` attribute, so credentials embedded in inbound request URLs — AWS presigned-URL signatures, Azure SAS tokens (`sig`), GCS signed-URL signatures — are exported in…
-
----
-
-## 14. 🟡 High Severity — russh kex_done: Shared-secret callback runs before server host-key verification
-
-**CVE:** `CVE-2026-128087` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://github.com/advisories/GHSA-9264-jvgf-6w2f>
-
-> ### Summary
-
-A malicious SSH server whose host key is rejected can still cause russh&#x27;s `client::Handler::kex_done()` callback to execute with the raw key-exchange shared secret. Applications using the callback for its documented protocol-bridging purpose may derive keys, initialize a secondary data channel, or perform another externally visible action before russh calls `check_server_key()` a…
-
----
-
-## 15. 🟡 High Severity — Laravel: Task Output Injection - Concurrency Process
-
-**CVE:** `CVE-2026-128083` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://github.com/advisories/GHSA-63hm-g96r-2m2q>
-
-> ### Summary
-
-If a concurrency task prints user-controlled text, an attacker can forge the framework&#x27;s internal result message and achieve remote code execution in certain conditions
-
-### Pre-reqs
-
-Insecure code and insecure handling of user provided input (devs trust user-provided input) :
-
-1. App has a route that reaches Concurrency::run() (Not by default, it requires app code)
-
-2. The task …
-
----
-
-## 16. 🟡 High Severity — Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems
-
-**CVE:** `CVE-2026-126364` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://github.com/advisories/GHSA-r3h5-4585-7x3w>
-
-> ## Summary
-
-The `/_image` endpoint used by the `@astrojs/node` adapter checks that a requested local image is inside the build output directory before reading it from disk. That check compared paths case-insensitively. On case-sensitive filesystems (such as Linux), a directory whose path differs from the output directory only by letter case is a different directory, but it passed the check.
-
-For e…
-
----
-
-## 17. 🟡 High Severity — rails-html-sanitizer: Possible XSS via shared scrubber state in concurrent calls
-
-**CVE:** `CVE-2026-128069` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://github.com/advisories/GHSA-h7wh-q2qr-458c>
-
-> ## Summary
-
-`Rails::HTML::SafeListSanitizer` (both the HTML4 and HTML5 variants) shares one `Rails::HTML::PermitScrubber` across every `sanitize` call on the same instance, assigning its `tags` and `attributes` on each call without synchronization. Two concurrent `sanitize` calls with different `tags:` or `attributes:` options can interleave, so one call is scrubbed with the other call&#x27;s allo…
-
----
-
-## 18. 🟡 High Severity — PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE
-
-**CVE:** `CVE-2026-6460` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html>
-
-> A type confusion flaw in PostgreSQL lets a database user who can create objects run code on the server. Updates released yesterday fix it, along with 51 other security flaws. Full protection from this flaw also requires rebuilding any C-language extensions installed on the server.
-
-The flaw, tracked as CVE-2026-6460, has a CVSS score of 8.8. Any code run this way has the rights of the operating
-
----
-
-## 19. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

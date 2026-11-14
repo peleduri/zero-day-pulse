@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">8</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">19</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">12</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-14 12:38 UTC</div>
+            <div class="generated">Updated 2026-11-14 21:45 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -292,142 +292,6 @@
           <p class='summary'>## Summary
 
 File Browser v2.63.15 can leave a public directory share behind when the shared directory is deleted through a path with a trailing slash. The share cleanup path calls `DeleteWithPathPrefix(file.Path, userID)`, but the Bolt backend performs the database prefix query with the unnormalized argument before trimming the slash for boundary checks. For a stored share at `/a`, deleting `/a/` …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r99w-jh2x-3mg9" target="_blank" rel="noopener">Nuxt: Incomplete fix for GHSA-9v7c-q64q-vv33: a leading `//` in the request path bypasses `server/middleware` path checks and server route rules on page routes</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-128077</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-13</span>
-          </div>
-          <p class='summary'>### Summary
-
-Since `4.6.0`, Nuxt parses a request path that starts with `//` as a URL with a host before rendering a page, so `//x/admin` renders the page at `/admin`. Nitro&#x27;s routing, Nitro&#x27;s route rules and `server/middleware` see the path as `//x/admin`, so server-side checks keyed on `/admin` do not apply. The fix for [GHSA-9v7c-q64q-vv33](https://github.com/nuxt/nuxt/security/advisories/GHSA-…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3v2p-hm54-8qcq" target="_blank" rel="noopener">OpenTelemetry JavaScript: Insertion of Sensitive Information into Log File and Exposure of Sensitive Information to an Unauthorized Actor in @opentelemetry/instrumentation-http</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-128080</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-13</span>
-          </div>
-          <p class='summary'>### Summary
-
-`@opentelemetry/instrumentation-http` redacts sensitive URL query parameters on **outgoing (client) spans** but not on **incoming (server) spans**. The server-span path writes the raw query string verbatim into the `url.query` attribute, so credentials embedded in inbound request URLs — AWS presigned-URL signatures, Azure SAS tokens (`sig`), GCS signed-URL signatures — are exported in…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9264-jvgf-6w2f" target="_blank" rel="noopener">russh kex_done: Shared-secret callback runs before server host-key verification</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-128087</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-13</span>
-          </div>
-          <p class='summary'>### Summary
-
-A malicious SSH server whose host key is rejected can still cause russh&#x27;s `client::Handler::kex_done()` callback to execute with the raw key-exchange shared secret. Applications using the callback for its documented protocol-bridging purpose may derive keys, initialize a secondary data channel, or perform another externally visible action before russh calls `check_server_key()` and re…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-63hm-g96r-2m2q" target="_blank" rel="noopener">Laravel: Task Output Injection - Concurrency Process</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-128083</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-13</span>
-          </div>
-          <p class='summary'>### Summary
-
-If a concurrency task prints user-controlled text, an attacker can forge the framework&#x27;s internal result message and achieve remote code execution in certain conditions
-
-### Pre-reqs
-
-Insecure code and insecure handling of user provided input (devs trust user-provided input) :
-
-1. App has a route that reaches Concurrency::run() (Not by default, it requires app code)
-
-2. The task write…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r3h5-4585-7x3w" target="_blank" rel="noopener">Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-126364</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-13</span>
-          </div>
-          <p class='summary'>## Summary
-
-The `/_image` endpoint used by the `@astrojs/node` adapter checks that a requested local image is inside the build output directory before reading it from disk. That check compared paths case-insensitively. On case-sensitive filesystems (such as Linux), a directory whose path differs from the output directory only by letter case is a different directory, but it passed the check.
-
-For e…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h7wh-q2qr-458c" target="_blank" rel="noopener">rails-html-sanitizer: Possible XSS via shared scrubber state in concurrent calls</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-128069</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-13</span>
-          </div>
-          <p class='summary'>## Summary
-
-`Rails::HTML::SafeListSanitizer` (both the HTML4 and HTML5 variants) shares one `Rails::HTML::PermitScrubber` across every `sanitize` call on the same instance, assigning its `tags` and `attributes` on each call without synchronization. Two concurrent `sanitize` calls with different `tags:` or `attributes:` options can interleave, so one call is scrubbed with the other call&#x27;s allowlist…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html" target="_blank" rel="noopener">PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-6460</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-13</span>
-          </div>
-          <p class='summary'>A type confusion flaw in PostgreSQL lets a database user who can create objects run code on the server. Updates released yesterday fix it, along with 51 other security flaws. Full protection from this flaw also requires rebuilding any C-language extensions installed on the server.
-
-The flaw, tracked as CVE-2026-6460, has a CVSS score of 8.8. Any code run this way has the rights of the operating</p>
 
         </article>
 
