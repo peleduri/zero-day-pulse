@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-14 21:45 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-15 03:30 UTC &nbsp;|&nbsp; **Total:** 11 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -92,18 +92,7 @@
 
 ---
 
-## 11. 🟡 High Severity — File Browser: Trailing-slash directory deletion leaves public shares active for recreated paths
-
-**CVE:** `CVE-2026-62683` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-13
-**Reference:** <https://github.com/advisories/GHSA-pp88-jhwj-5qh5>
-
-> ## Summary
-
-File Browser v2.63.15 can leave a public directory share behind when the shared directory is deleted through a path with a trailing slash. The share cleanup path calls `DeleteWithPathPrefix(file.Path, userID)`, but the Bolt backend performs the database prefix query with the unnormalized argument before trimming the slash for boundary checks. For a stored share at `/a`, deleting `/a/` …
-
----
-
-## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 11. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
