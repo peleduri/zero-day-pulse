@@ -1,17 +1,23 @@
 import html as _html_mod
 import json
 import logging
-import re
 import textwrap
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List
 
+from pulse.urls import safe_url
+
 logger = logging.getLogger(__name__)
 
 
+def _is_kev(f: Dict) -> bool:
+    # in_kev: any cited CVE is in the KEV catalog; is_kev: came from the KEV feed
+    return bool(f.get("in_kev") or f.get("is_kev"))
+
+
 def _severity_badge(f: Dict) -> str:
-    if f.get("is_kev"):
+    if _is_kev(f):
         return "🔴 CISA KEV"
     if f.get("is_zero_day"):
         return "🟠 Zero-Day"
@@ -46,8 +52,8 @@ def _render_enrichment_md(enrichment: Dict | None) -> str:
 
 
 def generate_markdown_report(findings: List[Dict], timestamp: str) -> str:
-    kev_n = sum(1 for f in findings if f.get("is_kev"))
-    zd_n  = sum(1 for f in findings if f.get("is_zero_day") and not f.get("is_kev"))
+    kev_n = sum(1 for f in findings if _is_kev(f))
+    zd_n  = sum(1 for f in findings if f.get("is_zero_day") and not _is_kev(f))
     hs_n  = sum(1 for f in findings if f.get("is_high_severity") and not f.get("is_zero_day"))
     en_n  = sum(1 for f in findings if f.get("enrichment"))
 
@@ -82,6 +88,8 @@ def generate_markdown_report(findings: List[Dict], timestamp: str) -> str:
 
         lines += [f"## {i}. {badge} — {title}", ""]
         lines += [f"**CVE:** {cve_str} &nbsp;|&nbsp; **Source:** {source} &nbsp;|&nbsp; **Published:** {pub}"]
+        if isinstance(f.get("epss"), (int, float)):
+            lines += [f"**EPSS:** {f['epss']:.1%} (percentile {f.get('epss_percentile') or 0:.0%})"]
         if link:
             lines += [f"**Reference:** <{link}>"]
         if summary:
@@ -105,7 +113,7 @@ _HTML_BADGE = {
 }
 
 def _badge_key(f: Dict) -> str:
-    if f.get("is_kev"):       return "kev"
+    if _is_kev(f):            return "kev"
     if f.get("is_zero_day"):  return "zeroday"
     if f.get("is_high_severity"): return "high"
     return "info"
@@ -116,11 +124,8 @@ def _esc(text: str) -> str:
     return _html_mod.escape(str(text), quote=True)
 
 
-_SAFE_URL_RE = re.compile(r'^https?://', re.IGNORECASE)
-
-def _safe_url(url: str) -> str:
-    # H1: block javascript: and other non-http schemes
-    return url if _SAFE_URL_RE.match(url) else ""
+# H1: block javascript: and other non-http schemes (shared with enrich.py)
+_safe_url = safe_url
 
 
 def _enrichment_html(enrichment: Dict | None) -> str:
@@ -195,8 +200,8 @@ def _finding_card(f: Dict) -> str:
 
 
 def generate_html_report(findings: List[Dict], timestamp: str, repo_url: str = "") -> str:
-    kev_n = sum(1 for f in findings if f.get("is_kev"))
-    zd_n  = sum(1 for f in findings if f.get("is_zero_day") and not f.get("is_kev"))
+    kev_n = sum(1 for f in findings if _is_kev(f))
+    zd_n  = sum(1 for f in findings if f.get("is_zero_day") and not _is_kev(f))
     en_n  = sum(1 for f in findings if f.get("enrichment"))
     total = len(findings)
 
@@ -351,8 +356,8 @@ def save_reports(findings: List[Dict], output_dir: str,
     payload = {
         "generated": ts.isoformat(),
         "total":     len(findings),
-        "kev":       sum(1 for f in findings if f.get("is_kev")),
-        "zero_day":  sum(1 for f in findings if f.get("is_zero_day") and not f.get("is_kev")),
+        "kev":       sum(1 for f in findings if _is_kev(f)),
+        "zero_day":  sum(1 for f in findings if f.get("is_zero_day") and not _is_kev(f)),
         "enriched":  sum(1 for f in findings if f.get("enrichment")),
         "findings":  findings,
     }

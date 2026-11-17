@@ -35,27 +35,40 @@ def main() -> int:
 
     # Lazy imports so errors surface clearly
     from pulse.feeds  import collect_all_feeds
-    from pulse.filter import filter_zero_days
+    from pulse.intel  import load_kev_catalog, fetch_epss, annotate_kev, annotate_epss
+    from pulse.filter import attach_cve_ids, filter_zero_days, sort_findings
     from pulse.enrich import enrich_with_parallel
     from pulse.report import save_reports
 
     logger.info(f"Starting Zero Day Pulse  lookback={args.lookback_hours}h  max_enrich={args.max_enrich}")
 
-    entries = collect_all_feeds(lookback_hours=args.lookback_hours)
+    # One KEV catalog download per run: feeds "new KEV additions" + the CVE lookup.
+    kev_catalog = load_kev_catalog()
+    kev_records, kev_lookup = kev_catalog if kev_catalog is not None else (None, None)
+
+    entries = collect_all_feeds(lookback_hours=args.lookback_hours, kev_records=kev_records)
     if not entries:
         logger.error("No entries collected — check network connectivity")
         return 1
 
+    # Pre-gate: CVE ids for every entry, then KEV lookup so old KEV CVEs pass the gate.
+    attach_cve_ids(entries)
+    annotate_kev(entries, kev_lookup)
+
     findings = filter_zero_days(entries)
     logger.info(f"Findings after filter: {len(findings)}")
+
+    epss = fetch_epss(c for f in findings for c in f.get("cve_ids") or [])
+    annotate_epss(findings, epss)
+    findings = sort_findings(findings)
 
     if not args.skip_enrichment and findings:
         findings = enrich_with_parallel(findings, max_items=args.max_enrich)
 
     paths = save_reports(findings, args.output_dir)
 
-    kev = sum(1 for f in findings if f.get("is_kev"))
-    zd  = sum(1 for f in findings if f.get("is_zero_day") and not f.get("is_kev"))
+    kev = sum(1 for f in findings if f.get("in_kev") or f.get("is_kev"))
+    zd  = sum(1 for f in findings if f.get("is_zero_day") and not (f.get("in_kev") or f.get("is_kev")))
     en  = sum(1 for f in findings if f.get("enrichment"))
 
     print(f"\nZero Day Pulse complete")
