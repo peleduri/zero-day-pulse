@@ -10,10 +10,17 @@ CONFIG_PATH = Path(__file__).parent.parent / "config" / "feeds.yaml"
 CVE_RE = re.compile(r"CVE-\d{4}-\d{4,}", re.IGNORECASE)
 
 
-def _load_keywords() -> tuple[List[str], List[str]]:
+def _load_keywords() -> tuple[List[str], List[str], List[str]]:
+    """(zero-day, high-severity, priority-product) keywords, lowercased once here
+    so ``_matches_any`` doesn't re-lower every keyword per entry. A missing
+    section (e.g. an older config without ``priority_product_keywords``) is []."""
     with open(CONFIG_PATH) as f:
-        cfg = yaml.safe_load(f)
-    return cfg.get("zero_day_keywords", []), cfg.get("high_severity_keywords", [])
+        cfg = yaml.safe_load(f) or {}
+    return (
+        [str(kw).lower() for kw in cfg.get("zero_day_keywords") or []],
+        [str(kw).lower() for kw in cfg.get("high_severity_keywords") or []],
+        [str(kw).lower() for kw in cfg.get("priority_product_keywords") or []],
+    )
 
 
 def load_my_stack() -> List[str]:
@@ -93,15 +100,18 @@ def attach_cve_ids(entries: List[Dict]) -> List[Dict]:
 
 def _matches_any(text: str, keywords: List[str]) -> bool:
     lower = text.lower()
-    return any(kw.lower() in lower for kw in keywords)
+    return any(kw in lower for kw in keywords)  # keywords pre-lowercased in _load_keywords
 
 
-def _score_entry(entry: Dict, zd_keywords: List[str], hs_keywords: List[str]) -> tuple[bool, bool]:
+def _score_entry(
+    entry: Dict, zd_keywords: List[str], hs_keywords: List[str], pp_keywords: List[str]
+) -> tuple[bool, bool, bool]:
     text = f"{entry.get('title', '')} {entry.get('summary', '')}"
     # in_kev (any cited CVE is anywhere in the KEV catalog) counts as a zero-day signal
     is_zd = bool(entry.get("is_kev") or entry.get("in_kev") or _matches_any(text, zd_keywords))
     is_hs = _matches_any(text, hs_keywords)
-    return is_zd, is_hs
+    is_pp = _matches_any(text, pp_keywords)
+    return is_zd, is_hs, is_pp
 
 
 def _is_kev(entry: Dict) -> bool:
@@ -110,29 +120,48 @@ def _is_kev(entry: Dict) -> bool:
 
 def filter_zero_days(entries: List[Dict]) -> List[Dict]:
     """Gate + dedup. Expects ``attach_cve_ids`` and KEV annotation to have run. No sort."""
-    zd_keywords, hs_keywords = _load_keywords()
+    zd_keywords, hs_keywords, pp_keywords = _load_keywords()
     filtered: List[Dict] = []
-    seen_cves: set[str] = set()
+    seen_cves: set[str] = set()     # CVEs claimed by any kept entry
+    seen_zd_cves: set[str] = set()  # CVEs claimed by a kept zero-day / KEV entry
     seen_ids: set[str] = set()
+
+    # KEV-feed entries (is_kev) are appended LAST during collection; process them
+    # first so the CVE dedup below actually prefers them (stable sort keeps feed
+    # order otherwise).
+    entries = sorted(entries, key=lambda e: not e.get("is_kev", False))
 
     for entry in entries:
         cve_ids = entry.get("cve_ids") or []
 
-        is_zd, is_hs = _score_entry(entry, zd_keywords, hs_keywords)
+        is_zd, is_hs, is_pp = _score_entry(entry, zd_keywords, hs_keywords, pp_keywords)
         entry["is_zero_day"] = is_zd
         entry["is_high_severity"] = is_hs
+        entry["is_priority_product"] = is_pp
 
-        # Require at least zero-day signal OR (high severity + CVE reference)
-        if not is_zd and not (is_hs and cve_ids):
+        # Survival gate:
+        #   is_kev / in_kev / zero-day keyword ─────────────► KEEP (zero-day)
+        #   else no CVE id ─────────────────────────────────► DROP
+        #   else severity keyword (is_hs) ──────────────────► KEEP (high-severity)
+        #   else priority-product keyword (is_pp) ──────────► KEEP (product watch,
+        #                                                      NOT high-severity)
+        #   else ───────────────────────────────────────────► DROP
+        if not is_zd and not ((is_hs or is_pp) and cve_ids):
             continue
 
-        # Deduplicate: prefer CISA KEV entries; skip duplicates from other sources
+        # Deduplicate by CVE. KEV-feed entries are never dropped and win ties
+        # (processed first, above). A zero-day entry is only a duplicate of an
+        # earlier zero-day/KEV entry: a non-zero-day multi-CVE roll-up must not
+        # swallow an "exploited in the wild" article about one of its CVEs, but
+        # ten news copies of the same zero-day still collapse to one.
         primary_key = cve_ids[0] if cve_ids else entry.get("id", "")
         if cve_ids:
-            new_cves = [c for c in cve_ids if c not in seen_cves]
-            if not new_cves and not entry.get("is_kev"):
+            claimed = seen_zd_cves if is_zd else seen_cves
+            if not entry.get("is_kev") and all(c in claimed for c in cve_ids):
                 continue
             seen_cves.update(cve_ids)
+            if is_zd:
+                seen_zd_cves.update(cve_ids)
         else:
             if primary_key in seen_ids:
                 continue
@@ -145,13 +174,16 @@ def filter_zero_days(entries: List[Dict]) -> List[Dict]:
 
 
 def sort_findings(findings: List[Dict]) -> List[Dict]:
-    """Sort: KEV (catalog or feed) → zero-day → high-severity, then recency descending."""
+    """Sort: KEV (catalog or feed) → zero-day → high-severity → priority-product,
+    then recency descending. ``is_priority_product`` is ordering only — it never
+    claims severity."""
     return sorted(
         findings,
         key=lambda e: (
             _is_kev(e),
             e.get("is_zero_day", False),
             e.get("is_high_severity", False),
+            e.get("is_priority_product", False),
             e.get("published") or "",
         ),
         reverse=True,

@@ -87,7 +87,7 @@ class KevGateTests(unittest.TestCase):
                         return_value=_resp({"vulnerabilities": KEV_RECORDS})):
             return intel.load_kev_catalog()[1]
 
-    @mock.patch("pulse.filter._load_keywords", return_value=(["zero-day"], ["remote code execution"]))
+    @mock.patch("pulse.filter._load_keywords", return_value=(["zero-day"], ["remote code execution"], []))
     def test_keywordless_rss_entry_citing_old_kev_cve_passes_gate(self, _kw):
         rss_entry = {  # shape produced by feeds._parse_rss: no cve_ids, no keyword
             "id": "https://blog.example/post", "title": "Patch roundup for this week",
@@ -109,7 +109,7 @@ class KevGateTests(unittest.TestCase):
         self.assertEqual(f["kev_due_date"], "2021-12-24")
         self.assertTrue(f["kev_ransomware"])
 
-    @mock.patch("pulse.filter._load_keywords", return_value=(["zero-day"], []))
+    @mock.patch("pulse.filter._load_keywords", return_value=(["zero-day"], [], []))
     def test_kev_catalog_unavailable_leaves_in_kev_false(self, _kw):
         entries = [{"id": "x", "title": "t", "summary": "CVE-2021-44228", "published": ""}]
         attach_cve_ids(entries)
