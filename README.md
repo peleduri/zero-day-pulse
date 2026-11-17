@@ -17,7 +17,8 @@ Every 6 hours a GitHub Action:
 1. **Collects** vulnerability signals from 20+ public RSS/Atom feeds and the [CISA Known Exploited Vulnerabilities (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) catalog, including [GitHub Security Advisories](https://github.com/advisories) via the REST API
 2. **Filters** for zero-day keywords, actively-exploited indicators, and CVE references — deduplicating across sources. Any CVE cited by any feed is checked against the full CISA KEV catalog (`in_kev`) and scored with [FIRST EPSS](https://www.first.org/epss/), no API key needed
 3. **Enriches** the top findings using `parallel-cli enrich`: CVSS score, PoC availability, patch status, threat actors, and mitigations — all researched automatically
-4. **Publishes** a Markdown + JSON report committed to this repo, an HTML dashboard deployed to GitHub Pages, and a comment on a pinned tracking issue
+4. **Tracks what changed** since the last run: a rolling 14-day watchlist (`state/last_run.json`) is re-checked every run, and a CVE you already saw that **entered KEV**, whose **EPSS crossed 10% or 50%**, or that is a **new My Stack hit** is listed under "Changed since last run"
+5. **Publishes** a Markdown + JSON report committed to this repo, an HTML dashboard deployed to GitHub Pages, and updates the body of one tracking issue in place, commenting only when something changed
 
 ```
 RSS feeds + CISA KEV
@@ -178,6 +179,7 @@ python -m unittest -v
 | `--max-enrich` | `10` | Max findings to enrich with Parallel AI |
 | `--output-dir` | `reports` | Output directory for reports |
 | `--skip-enrichment` | off | Skip Parallel AI enrichment |
+| `--state-file` | `$PULSE_STATE_PATH` or `state/last_run.json` | Watchlist state for "what changed" (no file = baseline run, no changes) |
 
 ---
 
@@ -195,13 +197,17 @@ zero-day-pulse/
 │   ├── filter.py            # Zero-day signal detection, dedup & sort
 │   ├── enrich.py            # Parallel AI CLI enrichment wrapper
 │   ├── report.py            # HTML dashboard + MD/JSON generation
+│   ├── state.py             # Watchlist state + "what changed" diff
 │   └── urls.py              # Shared http/https-only URL check
 ├── tests/                   # unittest suite (python -m unittest)
 ├── docs/
 │   └── index.html           # GitHub Pages dashboard (auto-generated)
 ├── reports/
 │   ├── latest.md            # Latest report (Markdown)
-│   └── latest.json          # Latest report (JSON)
+│   ├── latest.json          # Latest report (JSON, includes `changes`)
+│   └── changes.json         # This run's change list, stamped with run_id
+├── state/
+│   └── last_run.json        # Rolling 14-day CVE watchlist (created by the first run)
 └── main.py                  # CLI entry point
 ```
 
