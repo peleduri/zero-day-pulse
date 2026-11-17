@@ -52,8 +52,11 @@ class StackMatchTests(unittest.TestCase):
             with mock.patch("pulse.filter.yaml.safe_load", return_value=cfg):
                 self.assertEqual(pfilter.load_my_stack(), expected, cfg)
 
-    def test_shipped_config_my_stack_is_empty(self):
-        self.assertEqual(pfilter.load_my_stack(), [])
+    def test_shipped_config_my_stack_is_valid(self):
+        terms = pfilter.load_my_stack()
+        self.assertIsInstance(terms, list)
+        self.assertTrue(all(isinstance(t, str) and t.strip() == t and t for t in terms))
+        self.assertEqual(len(terms), len({t.lower() for t in terms}), "duplicate my_stack terms")
 
 
 if __name__ == "__main__":

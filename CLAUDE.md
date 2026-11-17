@@ -49,7 +49,7 @@ All feed URLs and keywords live in `config/feeds.yaml` — no code changes neede
 - `feeds`: list of URLs with tags
 - `zero_day_keywords`: high-confidence signals (23 terms)
 - `high_severity_keywords`: broader triage keywords (65 terms)
-- `my_stack`: products/vendors/languages you run (empty by default); when non-empty, matching findings get a My Stack section, badges and stat. Empty means no stack-related output
+- `my_stack`: products/vendors/languages you run (ships with a fictional example stack — replace it); when non-empty, matching findings get a My Stack section, badges and stat. Empty means no stack-related output
 - `cisa_kev_url`: CISA Known Exploited Vulnerabilities JSON endpoint
 
 ## Output artifacts

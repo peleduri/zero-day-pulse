@@ -113,7 +113,7 @@ RSS feeds + CISA KEV
 
 Feed list and all keywords are fully configurable in [`config/feeds.yaml`](config/feeds.yaml) — no code changes needed.
 
-To highlight what you actually run, list products, vendors or languages under `my_stack` in the same file (e.g. `nginx`, `eks`, `openssl`). Matching is case-insensitive and whole-word (`eks` matches "Amazon EKS", not "weeks") against the title, summary, tags, KEV vendor/product and AI-reported affected products. Matches get a **My Stack** section at the top of the dashboard and Markdown report; with `my_stack: []` (the default) nothing stack-related is shown.
+To highlight what you actually run, list products, vendors or languages under `my_stack` in the same file (e.g. `nginx`, `eks`, `openssl`). Matching is case-insensitive and whole-word (`eks` matches "Amazon EKS", not "weeks") against the title, summary, tags, KEV vendor/product and AI-reported affected products. Matches get a **My Stack** section at the top of the dashboard and Markdown report. The repo ships with a fictional example stack; replace it with yours. With `my_stack: []` nothing stack-related is shown.
 
 ---
 
