@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-16T14:08:46.100905+00:00",
-  "total": 13,
+  "generated": "2026-11-17T01:13:09.108401+00:00",
+  "total": 24,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,57 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-129235",
+      "title": "Kubeshark: MCP `download_file` writes fetched bytes to an unvalidated destination path",
+      "summary": "**Ecosystem / package:** Go \u2014 `github.com/kubeshark/kubeshark` (the `kubeshark`\nCLI, `kubeshark mcp` subcommand)\n**Affected component:** `cmd/mcpRunner.go`, MCP tool `download_file`\n**Affected versions:** `>= v53.1.0`, `< v53.4.0` (the flaw shipped with the\ntool's first release; v53.3.0 was the last affected release)\n**Patched version:** `v53.4.0`\n**Credit:** novice-22 (Urim), via private coordinated disclosure.\n\n## Summary\nThe `download_file` MCP tool fetches a caller-supplied `path` from the Kubeshark\nHub API and writes the response body to a caller-supplied `dest` on the local\nfilesystem with no validation of `dest`. An attacker who can influence the MCP\ntool arguments \u2014 e.g. via indirect prompt injection against an AI agent driving\n`kubeshark mcp` \u2014 can write attacker-controlled bytes to an arbitrary path\nwritable by the user running the MCP server (e.g. `~/.ssh/authorized_keys`,\n`~/.kube/config`, `~/.bashrc`), and can request arbitrary Hub API endpoints.\n`download_file` is registered unconditionally (available in the default,\nnon-`--allow-destructive` posture).\n\n## Introduced in\nCommit `eb7dc42b` \u2014 \"Add get_file_url and download_file MCP tools (#1853)\",\n2026-03-04 \u2014 first released in **v53.1.0** (`v53.1.0~1`). An earlier attempt\n(`dbfd17d9`) was reverted (`a46f05c4`) before any release, so no tag before\nv53.1.0 is affected.\n\n## Details\nIn `callDownloadFile` (`cmd/mcpRunner.go`), both `path` and `dest` come straight\nfrom the tool arguments:\n- `dest` was passed directly to `os.Create(dest)` with no confinement \u2014 no\n  `filepath.Clean`, no base-directory containment, no rejection of absolute\n  paths or `../` traversal. Any path the process can write is reachable.\n- `path` was concatenated onto the Hub API base URL with no allowlist, so any\n  Hub endpoint (including captured-traffic exports) is reachable.\n\n## Auth context (CWE-306 / CWE-200)\nThe tool originally issued the fetch with no authentication. The authentication\ngap was addressed by the gated-Hub authenticat",
+      "link": "https://github.com/advisories/GHSA-gj7r-p794-hhq5",
+      "published": "2026-11-16T22:18:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-129235"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-129236",
+      "title": "Kubeshark: MCP `start_kubeshark` argument injection via `pod_regex` \u2192 image redirect \u2192 cluster takeover",
+      "summary": "**Ecosystem / package:** Go \u2014 `github.com/kubeshark/kubeshark` (the `kubeshark`\nCLI, `kubeshark mcp` subcommand)\n**Affected component:** `cmd/mcpRunner.go`, MCP tool `start_kubeshark`\n**Affected versions:** `>= v53.1.0`, `< v53.4.0` (the flaw shipped with the MCP\ncommand's first release; v53.3.0 was the last affected release)\n**Patched version:** `v53.4.0`\n**Credit:** novice-22 (Urim), via private coordinated disclosure.\n\n## Summary\nThe `start_kubeshark` MCP tool builds a `kubeshark tap` command by appending the\ncaller-supplied `pod_regex` as a bare positional argument, with no `--`\nend-of-options separator. Because `tap` is a cobra command, a `pod_regex` that\nbegins with `-`/`--set=` is parsed as a **flag**, not as the pod regex. An\nattacker who can influence the tool arguments (e.g. indirect prompt injection\nagainst an agent driving `kubeshark mcp --allow-destructive`) can inject\narbitrary `--set` Helm value overrides \u2014 notably `tap.docker.registry` /\n`tap.docker.tag` \u2014 redirecting the deployed worker/hub/front images to an\nattacker-controlled registry. The worker DaemonSet runs privileged with\n`hostNetwork` and the host filesystem mounted, so an attacker image yields node\nand cluster-admin compromise.\n\n## Introduced in\nCommit `0bbbb473` \u2014 \"[1] Add MCP (Model Context Protocol) server command\n(#1832)\", 2026-02-06 \u2014 first released in **v53.1.0** (`v53.1.0~23`). The\n`pod_regex` argument has been appended as a bare positional since the tool's\nintroduction; there is no regression window, every MCP-capable release is\naffected.\n\n## Details\nIn `callStartKubeshark` (`cmd/mcpRunner.go`), the command was built as\n`[\"tap\", <pod_regex>, \"-n\", \u2026, \"--set\", \u2026, \"--set\", \"headless=true\"]` with\n`pod_regex` inserted as a raw element. cobra parses flags positionally-agnostic\nand there was no `--` guard, so `pod_regex=\"--set=tap.docker.registry=\u2026,tap.docker.tag=\u2026\"`\nbecame a real `--set`. The tool is only registered when\n`kubeshark mcp --allow-destructive` is set.\n\n## Proof of concept (",
+      "link": "https://github.com/advisories/GHSA-8vf2-hxg5-crqh",
+      "published": "2026-11-16T22:17:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-129236"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/weekly-recap-n-able-0-days-windows-0.html",
+      "title": "\u26a1 Weekly Recap: N-able 0-Days, Windows 0-Days, Chrome 0-Days, Fridge 0-Days, and More Bad Days",
+      "summary": "A default password opened doors it never should have. A trusted update delivered malware. Even a security feature became a way to break in. Different stories, same problem: the things meant to protect us aren't always doing their job.\n\nMeanwhile, AI is making bug hunting faster, old flaws are still paying off, and attackers keep finding easy ways in. Some attacks take real skill. Others barely",
+      "link": "https://thehackernews.com/2026/11/weekly-recap-n-able-0-days-windows-0.html",
+      "published": "2026-11-16T13:27:20+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -149,6 +200,36 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/",
+      "title": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
+      "summary": "Hackers who breached the cloud environment of network and email security company Barracuda earlier this month used a stolen cloud access key and the ARTEX AI penetration testing framework. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/",
+      "published": "2026-11-16T19:57:13+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/google-project-zero-sets-course-for-30-day-disclosure-deadline/",
+      "title": "Google Project Zero Sets Course for 30-Day Disclosure Deadline",
+      "summary": "It will move to a 60-day vulnerability disclosure window in February 2027 and to a 30-day window in January 2028. The post Google Project Zero Sets Course for 30-Day Disclosure Deadline appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/google-project-zero-sets-course-for-30-day-disclosure-deadline/",
+      "published": "2026-11-16T15:31:25+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -189,6 +270,114 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-91112",
+      "title": "Silverstripe Framework: CMS_ACCESS_SecurityAdmin privilege escalation",
+      "summary": "### Impact\nA user with access to the Security section (CMS_ACCESS_SecurityAdmin) but without the ADMIN permission could edit a group that grants ADMIN through a role or a parent group, and use it to escalate their own privileges.\n\n### Reported by\nLachlan Davidson, Carapace",
+      "link": "https://github.com/advisories/GHSA-rg72-5958-c65m",
+      "published": "2026-11-16T22:30:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-91112"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-68934",
+      "title": "code-review-mcp-server: Command injection via unsanitized folderPath/baseBranch parameters",
+      "summary": "### Impact\n\n`code-review-mcp-server` exposes MCP tools (`getLocalGitDiff`, `codeReview`, `createPR`, `getPRTemplate`) that accept `folderPath` and `baseBranch` string parameters. These caller-controlled values were interpolated directly into shell command strings executed via `child_process.execSync()`, which runs commands through `/bin/sh`.\n\nA crafted value such as `baseBranch = \"main; <arbitrary command> #\"` (or a `$(...)` command substitution, or a `folderPath` that breaks out of the surrounding quotes) results in **arbitrary command execution** on the host running the MCP server.\n\n### Patches\n\nFixed in **1.5.3**. Every `execSync()` call was replaced with `execFileSync()` using argument arrays, so inputs are passed directly to `git` / `gh` without going through a shell, eliminating the injection at its root.\n\n### Workarounds\n\nNone. Upgrade to `code-review-mcp-server@1.5.3` or later.",
+      "link": "https://github.com/advisories/GHSA-jq3q-62jc-fqq9",
+      "published": "2026-11-16T22:09:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-68934"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-119790",
+      "title": "Next.js: Information disclosure across root params when a 'use cache' function is called through unstable_cache()",
+      "summary": "Next.js applications with `'use cache'` can disclose cached data across root params when the same `'use cache'` function is called both directly during rendering and through `unstable_cache()`, and that function reads a root param. Root params are route parameters of the root layout, and applications commonly use them to scope data, for example per locale.\n\nDuring a cold process start, a cross-request deduplication race allowed an `unstable_cache()` call to join the in-flight fill of a concurrent direct call and receive its result, bypassing the root param check that would normally reject it. `unstable_cache()` then stored that result under a cache key without root params, so subsequent requests for other root param values received the same entry until it is revalidated or evicted. Cached data produced for one root param value is returned to requests for other values.\n\nExploitation requires the `unstable_cache()` request to arrive while the function's first fill after a process start is still in flight. Outside this race, the nesting already throws an error: `'use cache' inside unstable_cache() is unsupported`, and avoiding it is a complete workaround.",
+      "link": "https://github.com/advisories/GHSA-mfr8-8qww-v76h",
+      "published": "2026-11-16T18:51:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119790"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-128134",
+      "title": "NLTK dot2img runs Graphviz 'dot' without the trusted-exec chokepoint, enabling local code execution via a writable PATH element",
+      "summary": "## Summary\n\n`nltk.parse.dependencygraph.dot2img` invokes the Graphviz `dot` executable without the trusted-execution guarantees that NLTK applies to its other native-tool wrappers. The function resolves `dot` by bare name and then runs the resolved absolute path with a raw `subprocess.run`, omitting the ownership/writability check and the loader-environment scrub that `nltk.pathsec.spawn_trusted` provides. On a POSIX host, a local, unprivileged actor who can write to any group/world-writable directory that appears on the victim's `PATH` can plant a trojan `dot`; when the victim later renders a `DependencyGraph` (for example in a Jupyter notebook, which auto-invokes `_repr_svg_`) or calls `dot2img` directly, the planted binary executes as the victim. The advisory GHSA-6hwm-xvph-95vm (CVE-2026-78680) addressed the same untrusted-search-path class for the Graphviz `dot` invoker in `nltk/translate/api.py`, but `dot2img` received only part of that remediation and remains exploitable.\n\n## Root Cause\n\nNLTK's native-tool security model layers four defenses (documented in `nltk/EXTERNAL_TOOL_SECURITY.md`): (1) `find_binary` refuses a current-working-directory-relative match; (2) `resolve_trusted_executable` verifies the resolved file is a regular file that no other unprivileged user can replace (private parent directories, owner is the user or root, no group/world write bit); (3) shell execution is refused; (4) `safe_env` scrubs loader and interpreter environment variables before exec. Layers 2, 3, and 4 are reached only through `nltk.pathsec.spawn_trusted`. `dot2img` calls `find_binary(\"dot\")` (layer 1 only), then executes the result with `subprocess.run([dot_binary, ...])` and no `env=` argument. Layer 1 rejects only non-absolute matches, so an absolute path returned by the `which` search stage survives even when the file lives in a writable directory. Because `dot2img` never calls `spawn_trusted`, the ownership check and environment scrub never run.\n\n```text\nnltk/parse/de",
+      "link": "https://github.com/advisories/GHSA-7mxv-7h3q-9324",
+      "published": "2026-11-16T18:45:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-128134"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-128071",
+      "title": "Nuxt: Incomplete fix for GHSA-6gq8-jgmh-3ffp: an encoded slash (`%2F`) in the request path bypasses route rules on catch-all page routes",
+      "summary": "### Summary\n\nNuxt matches route rules against the request path with encoded slashes (`%2F`) left encoded, while the page router decodes them into route params. A request that spells a slash as `%2F` can therefore render a page through a catch-all route without the route rules configured for the path it resolves to. The fix for [GHSA-6gq8-jgmh-3ffp](https://github.com/nuxt/nuxt/security/advisories/GHSA-6gq8-jgmh-3ffp) deliberately left reserved escapes such as `%2F` encoded, so it did not cover this form.\n\n### Impact\n\nAn unauthenticated attacker can bypass route rules that protect paths served by a catch-all page route, or by a custom route whose param can span several segments.\n\n```ts\nexport default defineNuxtConfig({\n  routeRules: {\n    '/docs/internal/**': { appMiddleware: 'auth', headers: { 'X-Frame-Options': 'DENY' } },\n    '/admin/**': { redirect: '/login' },\n  },\n})\n```\n\nWith `app/pages/docs/[...slug].vue`, `/docs/internal/guide` runs `auth`, but `/docs/internal%2Fguide` renders the same page without running `auth` and without the header. With a root `app/pages/[...slug].vue`, `/admin%2Fsecret` is rendered instead of redirected.\n\nThe rules skipped include server-side `redirect`, `headers`, `proxy`, `ssr` and `noScripts`, and `appMiddleware`, `appLayout` and `redirect` as matched in the app during server rendering and client navigation. `getRouteRules` returns the same incomplete result.\n\nWhether the page then shows protected content depends on how it reads the route:\n\n- With a route such as `definePageMeta({ path: '/docs/:path(.*)' })`, `route.params.path` is `internal/guide` for both requests.\n- With a repeatable catch-all (`[...slug].vue`), `route.params.slug` is `['internal/guide']` instead of `['internal', 'guide']`, so a page that joins the segments (`slug.join('/')`) to load content loads the protected resource.\n- `route.path` keeps the encoding (`/docs/internal%2Fguide`), so a page that loads content by `route.path` does not resolve it.\n\nNot affected:\n\n",
+      "link": "https://github.com/advisories/GHSA-f3x9-2chm-73c8",
+      "published": "2026-11-16T14:59:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-128071"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-128118",
+      "title": "SvelteKit: Build-time server-only module import guard could fail, resulting in server secrets being statically replaced in client bundle",
+      "summary": "Under certain circumstances, server-only imports, which typically cannot be included in the client bundle, could make their way into it, potentially exposing secrets. This could only occur when those server-only imports were made through `src/params.js`.",
+      "link": "https://github.com/advisories/GHSA-m9j8-jcmv-hp69",
+      "published": "2026-11-16T14:59:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-128118"
       ],
       "is_zero_day": false,
       "is_high_severity": true
