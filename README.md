@@ -18,7 +18,8 @@ Every 6 hours a GitHub Action:
 2. **Filters** for zero-day keywords, actively-exploited indicators, and CVE references — deduplicating across sources. Any CVE cited by any feed is checked against the full CISA KEV catalog (`in_kev`) and scored with [FIRST EPSS](https://www.first.org/epss/), no API key needed
 3. **Enriches** the top findings using `parallel-cli enrich`: CVSS score, PoC availability, patch status, threat actors, and mitigations — all researched automatically
 4. **Tracks what changed** since the last run: a rolling 14-day watchlist (`state/last_run.json`) is re-checked every run, and a CVE you already saw that **entered KEV**, whose **EPSS crossed 10% or 50%**, or that is a **new My Stack hit** is listed under "Changed since last run"
-5. **Publishes** a Markdown + JSON report committed to this repo, an HTML dashboard deployed to GitHub Pages, and updates the body of one tracking issue in place, commenting only when something changed
+5. **Keeps score against CISA KEV** ("Beat KEV"): every KEV addition since go-live is checked against the first time a zero-day article named that CVE, and the panel at the top of the report and dashboard says how often, and by how many days, Zero Day Pulse saw it first (see [Beat KEV scoreboard](#beat-kev-scoreboard))
+6. **Publishes** a Markdown + JSON report committed to this repo, an HTML dashboard deployed to GitHub Pages, and updates the body of one tracking issue in place, commenting only when something changed
 
 ```
 RSS feeds + CISA KEV
@@ -38,6 +39,18 @@ RSS feeds + CISA KEV
   HTML dashboard + MD/JSON report
   → GitHub Pages + repo commit
 ```
+
+---
+
+## Beat KEV scoreboard
+
+Measures one claim: *does Zero Day Pulse see exploitation before CISA KEV lists it?*
+
+- **Signal:** a non-KEV entry whose own title + summary matches a zero-day keyword, citing at most 2 CVEs, for a CVE not yet in KEV. The first one per CVE is stored in `state/first_signal.json` (180 days, max 5000).
+- **Rows:** every run walks the whole KEV catalog; each CVE added on or after the go-live date gets one write-once row in `state/kev_scoreboard.jsonl`: **earlier** (seen ≥ 1 day before `dateAdded`), **same day/late**, or **missed**.
+- **Numbers:** All and Edge (Fortinet, Ivanti, Cisco, Palo Alto Networks, Citrix, SonicWall, Check Point, F5, Juniper) over 30 and 90 days: % earlier, median/max lead, same day/late and missed. The first 14 days after go-live and old CVEs (CVE year more than 1 year before the KEV year) are excluded but counted. Windows with fewer than 10 counted additions show "collecting data since <go-live>".
+- **Caveats:** zero-days reported before a CVE ID exists can't be matched and count as missed; so do signals pruned before KEV lists the CVE. Lead is in whole days (±1).
+- **Raw numbers:** [`scoreboard.json`](https://peleduri.github.io/zero-day-pulse/scoreboard.json) on Pages.
 
 ---
 
@@ -184,6 +197,8 @@ python -m pytest tests/
 | `--output-dir` | `reports` | Output directory for reports |
 | `--skip-enrichment` | off | Skip Parallel AI enrichment |
 | `--state-file` | `$PULSE_STATE_PATH` or `state/last_run.json` | Watchlist state for "what changed" (no file = baseline run, no changes) |
+| `--signals-file` | `$PULSE_SIGNALS_PATH` or `state/first_signal.json` | Beat KEV first signal per CVE |
+| `--scoreboard-file` | `$PULSE_SCOREBOARD_PATH` or `state/kev_scoreboard.jsonl` | Beat KEV rows (no file = go-live today) |
 
 ---
 
@@ -202,16 +217,20 @@ zero-day-pulse/
 │   ├── enrich.py            # Parallel AI CLI enrichment wrapper
 │   ├── report.py            # HTML dashboard + MD/JSON generation
 │   ├── state.py             # Watchlist state + "what changed" diff
+│   ├── scoreboard.py        # Beat KEV lead-time scoreboard
 │   └── urls.py              # Shared http/https-only URL check
 ├── tests/                   # test suite (python -m pytest tests/)
 ├── docs/
-│   └── index.html           # GitHub Pages dashboard (auto-generated)
+│   ├── index.html           # GitHub Pages dashboard (auto-generated)
+│   └── scoreboard.json      # Beat KEV numbers (auto-generated)
 ├── reports/
 │   ├── latest.md            # Latest report (Markdown)
 │   ├── latest.json          # Latest report (JSON, includes `changes`)
 │   └── changes.json         # This run's change list, stamped with run_id
 ├── state/
-│   └── last_run.json        # Rolling 14-day CVE watchlist (created by the first run)
+│   ├── last_run.json        # Rolling 14-day CVE watchlist (created by the first run)
+│   ├── first_signal.json    # Beat KEV: first zero-day signal per CVE
+│   └── kev_scoreboard.jsonl # Beat KEV: go-live header + one row per KEV addition
 └── main.py                  # CLI entry point
 ```
 
