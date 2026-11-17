@@ -31,16 +31,16 @@ There is no Makefile or build step.
 
 ## Architecture
 
-The pipeline is linear: **KEV catalog + collect → CVE ids + KEV lookup → filter → EPSS → sort → enrich → report**.
+The pipeline is linear: **KEV catalog + collect → CVE ids + KEV lookup → filter → EPSS → sort → enrich → stack match → report**.
 
 | Module | Role |
 |--------|------|
 | `pulse/feeds.py` | Fetches RSS/Atom/JSON feeds and builds new-KEV entries from the catalog records; uses `defusedxml` to prevent XXE; strips HTML from descriptions |
 | `pulse/intel.py` | Downloads the CISA KEV catalog once per run (lookup for every CVE, `in_kev`) and FIRST EPSS scores (batches of 100); failures return `None`, never fatal |
-| `pulse/filter.py` | CVE-ID extraction for every entry (pre-gate), keyword matching against `config/feeds.yaml`, `in_kev` counts as a zero-day signal, deduplication (KEV-feed entries preferred), separate sort by KEV (`in_kev or is_kev`) → zero-day → severity → recency |
+| `pulse/filter.py` | CVE-ID extraction for every entry (pre-gate), keyword matching against `config/feeds.yaml`, `in_kev` counts as a zero-day signal, deduplication (KEV-feed entries preferred), separate sort by KEV (`in_kev or is_kev`) → zero-day → severity → recency; `stack_match` (whole-word, case-insensitive match of `my_stack` terms) |
 | `pulse/enrich.py` | Shells out to `parallel-cli enrich` (input via temp JSON file); normalizes results (`_normalize_enrichment`); logs the stderr/stdout tail on failure; graceful fallback if key/CLI absent |
 | `pulse/urls.py` | `safe_url` (http/https only), shared by report rendering and enrichment parsing |
-| `pulse/report.py` | Writes timestamped + `latest.*` Markdown/JSON; generates `docs/index.html` dark-mode dashboard |
+| `pulse/report.py` | Writes timestamped + `latest.*` Markdown/JSON; generates `docs/index.html` dark-mode dashboard (EPSS/KEV badges, PoC/Advisory buttons, My Stack section) |
 | `main.py` | CLI entry point; lazy imports for clear error surfacing |
 
 ## Configuration
@@ -49,6 +49,7 @@ All feed URLs and keywords live in `config/feeds.yaml` — no code changes neede
 - `feeds`: list of URLs with tags
 - `zero_day_keywords`: high-confidence signals (23 terms)
 - `high_severity_keywords`: broader triage keywords (65 terms)
+- `my_stack`: products/vendors/languages you run (empty by default); when non-empty, matching findings get a My Stack section, badges and stat. Empty means no stack-related output
 - `cisa_kev_url`: CISA Known Exploited Vulnerabilities JSON endpoint
 
 ## Output artifacts
