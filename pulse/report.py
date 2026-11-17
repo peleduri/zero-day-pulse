@@ -204,8 +204,60 @@ def _stack_highlights_md(findings: List[Dict]) -> List[str]:
     return lines + ["", "---", ""]
 
 
+# ── "Changed since last run" (shared by Markdown, HTML and the tracker comment) ──
+
+def _no_mention(text: str) -> str:
+    # zero-width space after "@" so external text can never @-mention anyone on GitHub
+    return text.replace("@", "@\u200b")
+
+
+def _fmt_epss(v) -> str:
+    return _epss_pct(float(v)) if isinstance(v, (int, float)) and not isinstance(v, bool) else "n/a"
+
+
+def _change_text(c: Dict) -> tuple[str, str]:
+    """(icon, plain-text description) for one change; NOT escaped."""
+    kind = c.get("kind")
+    cve = str(c.get("cve") or "")
+    if kind == "entered_kev":
+        due = f" (due {c['kev_due_date']})" if c.get("kev_due_date") else ""
+        ransom = " · known ransomware use" if c.get("kev_ransomware") else ""
+        return "🔴", f"{cve} entered KEV{due}{ransom}"
+    if kind == "epss_crossed":
+        return "📈", (f"{cve} EPSS {_fmt_epss(c.get('old_epss'))} → {_fmt_epss(c.get('new_epss'))}"
+                      f" (crossed {_fmt_epss(c.get('threshold'))})")
+    if kind == "new_stack_hit":
+        terms = ", ".join(str(t) for t in c.get("stack_match") or [])
+        return "🎯", f"New My Stack hit: {cve} [{terms}]"
+    return "•", f"{cve} {kind}"
+
+
+def _changes_md(changes: Optional[List[Dict]]) -> List[str]:
+    """Markdown "Changed since last run" section; [] when there are no changes."""
+    if not changes:
+        return []
+    lines = [f"## ⚡ Changed since last run ({len(changes)})", ""]
+    for c in changes:
+        icon, text = _change_text(c)
+        line = f"- {icon} {_html_mod.escape(_no_mention(text))}"
+        title = _text(c.get("title"))
+        if title:
+            line += f" — {_html_mod.escape(_no_mention(title))}"
+        link = _md_url(c.get("link"))
+        if link:
+            line += f" <{link}>"
+        lines.append(line)
+    return lines + ["", "---", ""]
+
+
+def generate_changes_markdown(changes: Optional[List[Dict]]) -> str:
+    """Concise change list for the tracker-issue comment ("" when empty)."""
+    return "\n".join(_changes_md(changes))
+
+
 def generate_markdown_report(findings: List[Dict], timestamp: str,
-                             my_stack: Optional[List[str]] = None) -> str:
+                             my_stack: Optional[List[str]] = None,
+                             changes: Optional[List[Dict]] = None) -> str:
     stack_on = bool(my_stack)
     kev_n = sum(1 for f in findings if _is_kev(f))
     zd_n  = sum(1 for f in findings if f.get("is_zero_day") and not _is_kev(f))
@@ -231,6 +283,7 @@ def generate_markdown_report(findings: List[Dict], timestamp: str,
         "---",
         "",
     ]
+    lines += _changes_md(changes)
 
     if not findings:
         lines += ["_No actionable findings in this period._", ""]
@@ -370,6 +423,28 @@ def _card_extras_html(f: Dict) -> str:
     return "".join(out)
 
 
+def _changes_html(changes: Optional[List[Dict]]) -> str:
+    """Dashboard "Changed since last run" section; "" when there are no changes."""
+    if not changes:
+        return ""
+    items = []
+    for c in changes:
+        icon, text = _change_text(c)
+        item = f'<span class="change-icon">{icon}</span> {_esc(text)}'
+        title = _text(c.get("title"))
+        link = _safe_url(c.get("link"))
+        if title and link:
+            item += (f' — <a href="{_esc(link)}" target="_blank" rel="noopener noreferrer">'
+                     f'{_esc(title)}</a>')
+        elif title:
+            item += f" — {_esc(title)}"
+        items.append(f'<li class="change change-{_esc(c.get("kind", ""))}">{item}</li>')
+    return ('<section class="section changes-section">'
+            f'<h2 class="section-head changes-head">⚡ Changed since last run '
+            f'<span class="section-count">{len(changes)}</span></h2>'
+            '<ul class="changes">' + "".join(items) + '</ul></section>\n')
+
+
 def _finding_card(f: Dict, stack_on: bool = False) -> str:
     bkey = _badge_key(f)
     badge_html, card_cls = _HTML_BADGE[bkey]
@@ -406,7 +481,8 @@ def _finding_card(f: Dict, stack_on: bool = False) -> str:
 
 
 def generate_html_report(findings: List[Dict], timestamp: str, repo_url: str = "",
-                         my_stack: Optional[List[str]] = None) -> str:
+                         my_stack: Optional[List[str]] = None,
+                         changes: Optional[List[Dict]] = None) -> str:
     stack_on = bool(my_stack)
     kev_n = sum(1 for f in findings if _is_kev(f))
     zd_n  = sum(1 for f in findings if f.get("is_zero_day") and not _is_kev(f))
@@ -432,6 +508,8 @@ def generate_html_report(findings: List[Dict], timestamp: str, repo_url: str = "
                 f'<h2 class="section-head">All Findings <span class="section-count">{total}</span></h2>'
                 + cards_html + '</section>'
             )
+
+    cards_html = _changes_html(changes) + cards_html
 
     safe_repo = _safe_url(repo_url)
     source_link = (f'<a href="{_esc(safe_repo)}" target="_blank" rel="noopener noreferrer">GitHub</a>'
@@ -540,6 +618,11 @@ def generate_html_report(findings: List[Dict], timestamp: str, repo_url: str = "
                              color: var(--muted); padding-bottom: .35rem; border-bottom: 1px solid var(--border); }}
             .stack-head {{ color: var(--amber); border-bottom-color: var(--amber); }}
             .section-count {{ font-weight: 400; color: var(--muted); }}
+            .changes-head {{ color: var(--blue); border-bottom-color: var(--blue); }}
+            .changes {{ list-style: none; display: flex; flex-direction: column; gap: .4rem;
+                        background: var(--surface); border: 1px solid var(--border);
+                        border-radius: 8px; padding: .9rem 1.25rem; font-size: .88rem; }}
+            .change-icon {{ display: inline-block; width: 1.4em; }}
 
             .card-title {{ font-size: .95rem; font-weight: 600; line-height: 1.4; }}
             .card-meta  {{ font-size: .78rem; color: var(--muted); margin-bottom: .6rem;
@@ -602,7 +685,13 @@ def generate_html_report(findings: List[Dict], timestamp: str, repo_url: str = "
 
 def save_reports(findings: List[Dict], output_dir: str,
                  repo_url: str = "https://github.com/peleduri/zero-day-pulse",
-                 my_stack: Optional[List[str]] = None) -> Dict[str, str]:
+                 my_stack: Optional[List[str]] = None,
+                 changes: Optional[List[Dict]] = None,
+                 run_id: Optional[str] = None) -> Dict[str, str]:
+    from pulse.state import current_run_id
+
+    changes = list(changes or [])
+    run_id = str(run_id or current_run_id())
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
 
@@ -620,22 +709,31 @@ def save_reports(findings: List[Dict], output_dir: str,
     }
     if my_stack:
         payload["my_stack"] = sum(1 for f in findings if f.get("stack_match"))
+    payload["run_id"] = run_id
+    payload["changes"] = changes
     payload["findings"] = findings
 
     json_path = out / f"pulse_{stamp}.json"
     md_path   = out / f"pulse_{stamp}.md"
     json_path.write_text(json.dumps(payload, indent=2, default=str))
-    md_path.write_text(generate_markdown_report(findings, human_ts, my_stack))
+    md_path.write_text(generate_markdown_report(findings, human_ts, my_stack, changes))
 
     (out / "latest.json").write_text(json_path.read_text())
     (out / "latest.md").write_text(md_path.read_text())
 
+    # "What changed" for this run, stamped with run_id so the workflow never re-posts a stale file
+    changes_path = out / "changes.json"
+    changes_path.write_text(json.dumps(
+        {"run_id": run_id, "generated_at": ts.isoformat(), "changes": changes}, indent=2, default=str))
+    (out / "changes.md").write_text(generate_changes_markdown(changes))
+
     # HTML dashboard → docs/index.html (served by GitHub Pages)
     docs = Path(output_dir).parent / "docs"
     docs.mkdir(exist_ok=True)
-    html = generate_html_report(findings, human_ts, repo_url, my_stack)
+    html = generate_html_report(findings, human_ts, repo_url, my_stack, changes)
     (docs / "index.html").write_text(html)
     (docs / "latest.json").write_text(json_path.read_text())
 
     logger.info(f"Reports saved → {json_path}, {md_path}, {docs / 'index.html'}")
-    return {"json": str(json_path), "markdown": str(md_path), "html": str(docs / "index.html")}
+    return {"json": str(json_path), "markdown": str(md_path), "html": str(docs / "index.html"),
+            "changes": str(changes_path)}

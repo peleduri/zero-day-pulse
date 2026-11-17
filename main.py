@@ -11,7 +11,7 @@ logging.basicConfig(
 logger = logging.getLogger("zero-day-pulse")
 
 
-def main() -> int:
+def main(argv=None) -> int:
     parser = argparse.ArgumentParser(
         description="Zero Day Pulse — public security vulnerability monitor"
     )
@@ -31,7 +31,12 @@ def main() -> int:
         "--skip-enrichment", action="store_true",
         help="Skip Parallel AI enrichment (useful for testing without an API key)",
     )
-    args = parser.parse_args()
+    parser.add_argument(
+        "--state-file", default=None,
+        help="Watchlist state file for 'what changed' alerts "
+             "(default: $PULSE_STATE_PATH or state/last_run.json)",
+    )
+    args = parser.parse_args(argv)
 
     # Lazy imports so errors surface clearly
     from pulse.feeds  import collect_all_feeds
@@ -40,12 +45,17 @@ def main() -> int:
                               load_my_stack, annotate_stack)
     from pulse.enrich import enrich_with_parallel
     from pulse.report import save_reports
+    from pulse.state  import load_state, save_state, diff_state, watched_cves, current_run_id
 
     logger.info(f"Starting Zero Day Pulse  lookback={args.lookback_hours}h  max_enrich={args.max_enrich}")
 
     # One KEV catalog download per run: feeds "new KEV additions" + the CVE lookup.
     kev_catalog = load_kev_catalog()
     kev_records, kev_lookup = kev_catalog if kev_catalog is not None else (None, None)
+
+    # Rolling watchlist from the last run (None = baseline: no state file, or corrupt).
+    state = load_state(args.state_file)
+    watchlist = watched_cves(state)
 
     entries = collect_all_feeds(lookback_hours=args.lookback_hours, kev_records=kev_records)
     if not entries:
@@ -59,7 +69,9 @@ def main() -> int:
     findings = filter_zero_days(entries)
     logger.info(f"Findings after filter: {len(findings)}")
 
-    epss = fetch_epss(c for f in findings for c in f.get("cve_ids") or [])
+    # ONE EPSS fetch covers this run's CVEs and the whole watchlist:
+    # at most ceil((1000 + new CVEs) / 100) requests.
+    epss = fetch_epss([c for f in findings for c in f.get("cve_ids") or []] + watchlist)
     annotate_epss(findings, epss)
     findings = sort_findings(findings)
 
@@ -70,7 +82,12 @@ def main() -> int:
     my_stack = load_my_stack()
     annotate_stack(findings, my_stack)
 
-    paths = save_reports(findings, args.output_dir, my_stack=my_stack)
+    run_id = current_run_id()
+    new_state, changes = diff_state(state, findings, kev_lookup, epss, my_stack, run_id=run_id)
+
+    paths = save_reports(findings, args.output_dir, my_stack=my_stack, changes=changes, run_id=run_id)
+    # State last: if anything above failed, the next run still diffs against the previous state.
+    state_file = save_state(new_state, args.state_file)
 
     kev = sum(1 for f in findings if f.get("in_kev") or f.get("is_kev"))
     zd  = sum(1 for f in findings if f.get("is_zero_day") and not (f.get("in_kev") or f.get("is_kev")))
@@ -83,8 +100,10 @@ def main() -> int:
     print(f"  Enriched       : {en}")
     if my_stack:
         print(f"  My Stack       : {sum(1 for f in findings if f.get('stack_match'))}")
+    print(f"  Changes        : {len(changes)}{' (baseline run)' if state is None else ''}")
     print(f"  JSON report    : {paths['json']}")
     print(f"  Markdown report: {paths['markdown']}")
+    print(f"  State file     : {state_file}")
 
     return 0
 
