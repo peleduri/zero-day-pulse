@@ -9,3 +9,8 @@ build/
 # M2: only latest.* is committed; timestamped archives stay local
 reports/pulse_*.json
 reports/pulse_*.md
+
+# Rendered only for the tracker-issue comment (changes.json is committed)
+reports/changes.md
+# Temp file from the atomic state write
+state/*.tmp
