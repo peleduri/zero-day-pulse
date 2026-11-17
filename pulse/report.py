@@ -257,7 +257,8 @@ def generate_changes_markdown(changes: Optional[List[Dict]]) -> str:
 
 def generate_markdown_report(findings: List[Dict], timestamp: str,
                              my_stack: Optional[List[str]] = None,
-                             changes: Optional[List[Dict]] = None) -> str:
+                             changes: Optional[List[Dict]] = None,
+                             scoreboard: Optional[Dict] = None) -> str:
     stack_on = bool(my_stack)
     kev_n = sum(1 for f in findings if _is_kev(f))
     zd_n  = sum(1 for f in findings if f.get("is_zero_day") and not _is_kev(f))
@@ -283,6 +284,7 @@ def generate_markdown_report(findings: List[Dict], timestamp: str,
         "---",
         "",
     ]
+    lines += _scoreboard_md(scoreboard)
     lines += _changes_md(changes)
 
     if not findings:
@@ -445,6 +447,98 @@ def _changes_html(changes: Optional[List[Dict]]) -> str:
             '<ul class="changes">' + "".join(items) + '</ul></section>\n')
 
 
+# ── "Beat KEV" scoreboard panel (Markdown + HTML; numbers from pulse.scoreboard) ──
+
+def _sb_days(v) -> str:
+    return f"{v}d" if v is not None else "—"
+
+
+def _sb_line(label: str, pop: Dict, go_live: str) -> str:
+    """One population line, NOT escaped (all values are numbers + go_live date)."""
+    tail = (f"Earlier {pop.get('earlier', 0)} · Same day/late {pop.get('same_day_or_late', 0)}"
+            f" · Missed {pop.get('missed', 0)}")
+    if pop.get("collecting"):
+        return f"{label}: collecting data since {go_live} — Counted {pop.get('counted', 0)} · {tail}"
+    pct = pop.get("earlier_pct")
+    pct_s = f" ({pct:.0f}%)" if isinstance(pct, (int, float)) else ""
+    return (f"{label}: Counted {pop.get('counted', 0)} · Earlier {pop.get('earlier', 0)}{pct_s}"
+            f" · Median lead {_sb_days(pop.get('median_lead'))} · Max lead {_sb_days(pop.get('max_lead'))}"
+            f" · Same day/late {pop.get('same_day_or_late', 0)} · Missed {pop.get('missed', 0)}")
+
+
+def _sb_windows(sb: Dict):
+    """[(days, window)] for each window present, in order."""
+    wins = sb.get("windows") or {}
+    return [(d, wins[d]) for d in sorted(wins, key=lambda k: int(k)) if isinstance(wins[d], dict)]
+
+
+def _sb_lead_text(lead: Dict) -> str:
+    vendor = _text(lead.get("vendor"))
+    src = _text(lead.get("source"))
+    return (f"{lead.get('cve', '')}{' ' + vendor if vendor else ''} "
+            f"+{lead.get('lead_days')}d{' ← ' + src if src else ''}")
+
+
+def _scoreboard_md(sb: Optional[Dict]) -> List[str]:
+    """Markdown "Beat KEV" panel; [] when there is no scoreboard."""
+    if not sb:
+        return []
+    go_live = _html_mod.escape(str(sb.get("go_live") or "?"))
+    lines = ["## 🏁 Beat KEV", ""]
+    for days, w in _sb_windows(sb):
+        ex = w.get("excluded") or {}
+        lines.append(f"**Last {_html_mod.escape(str(days))} days**  ")
+        lines.append(f"- {_sb_line('All', w.get('all') or {}, go_live)}")
+        lines.append(f"- {_sb_line('Edge devices', w.get('edge') or {}, go_live)}")
+        lines.append(f"- Excluded: {ex.get('warm_up', 0)} warm-up, {ex.get('old_cve', 0)} old CVEs")
+        lines.append("")
+    leads = sb.get("top_leads") or []
+    if leads:
+        lines.append(f"**Biggest leads ({_html_mod.escape(str(sb.get('top_leads_window', '')))} days)**")
+        lines.append("")
+        for lead in leads:
+            line = f"- {_html_mod.escape(_no_mention(_sb_lead_text(lead)))}"
+            link = _md_url(lead.get("link"))
+            if link:
+                line += f" <{link}>"
+            lines.append(line)
+        lines.append("")
+    lines += [f"_{_html_mod.escape(str(sb.get('caveat') or ''), quote=False)}_", "", "---", ""]
+    return lines
+
+
+def _scoreboard_html(sb: Optional[Dict]) -> str:
+    """Dashboard "Beat KEV" panel; "" when there is no scoreboard."""
+    if not sb:
+        return ""
+    go_live = str(sb.get("go_live") or "?")
+    parts = []
+    for days, w in _sb_windows(sb):
+        ex = w.get("excluded") or {}
+        parts.append(
+            f'<div class="sb-window"><div class="sb-title">Last {_esc(days)} days</div>'
+            f'<div class="sb-line">{_esc(_sb_line("All", w.get("all") or {}, go_live))}</div>'
+            f'<div class="sb-line">{_esc(_sb_line("Edge devices", w.get("edge") or {}, go_live))}</div>'
+            f'<div class="sb-muted">Excluded: {_esc(ex.get("warm_up", 0))} warm-up, '
+            f'{_esc(ex.get("old_cve", 0))} old CVEs</div></div>')
+    leads = sb.get("top_leads") or []
+    if leads:
+        items = []
+        for lead in leads:
+            text = _esc(_sb_lead_text(lead))
+            link = _safe_url(lead.get("link"))
+            if link:
+                text = f'<a href="{_esc(link)}" target="_blank" rel="noopener noreferrer">{text}</a>'
+            items.append(f"<li>{text}</li>")
+        parts.append(f'<div class="sb-window"><div class="sb-title">Biggest leads '
+                     f'({_esc(sb.get("top_leads_window", ""))} days)</div>'
+                     f'<ul class="sb-leads">{"".join(items)}</ul></div>')
+    parts.append(f'<div class="sb-muted">{_esc(sb.get("caveat") or "")}</div>')
+    return ('<section class="section scoreboard-section">'
+            '<h2 class="section-head scoreboard-head">🏁 Beat KEV</h2>'
+            '<div class="scoreboard">' + "".join(parts) + '</div></section>\n')
+
+
 def _finding_card(f: Dict, stack_on: bool = False) -> str:
     bkey = _badge_key(f)
     badge_html, card_cls = _HTML_BADGE[bkey]
@@ -482,7 +576,8 @@ def _finding_card(f: Dict, stack_on: bool = False) -> str:
 
 def generate_html_report(findings: List[Dict], timestamp: str, repo_url: str = "",
                          my_stack: Optional[List[str]] = None,
-                         changes: Optional[List[Dict]] = None) -> str:
+                         changes: Optional[List[Dict]] = None,
+                         scoreboard: Optional[Dict] = None) -> str:
     stack_on = bool(my_stack)
     kev_n = sum(1 for f in findings if _is_kev(f))
     zd_n  = sum(1 for f in findings if f.get("is_zero_day") and not _is_kev(f))
@@ -509,7 +604,7 @@ def generate_html_report(findings: List[Dict], timestamp: str, repo_url: str = "
                 + cards_html + '</section>'
             )
 
-    cards_html = _changes_html(changes) + cards_html
+    cards_html = _scoreboard_html(scoreboard) + _changes_html(changes) + cards_html
 
     safe_repo = _safe_url(repo_url)
     source_link = (f'<a href="{_esc(safe_repo)}" target="_blank" rel="noopener noreferrer">GitHub</a>'
@@ -627,6 +722,14 @@ def generate_html_report(findings: List[Dict], timestamp: str, repo_url: str = "
                         background: var(--surface); border: 1px solid var(--border);
                         border-radius: 8px; padding: .9rem 1.25rem; font-size: .88rem; }}
             .change-icon {{ display: inline-block; width: 1.4em; }}
+            .scoreboard-head {{ color: var(--green); border-bottom-color: var(--green); }}
+            .scoreboard {{ display: flex; flex-direction: column; gap: .6rem;
+                           background: var(--surface); border: 1px solid var(--border);
+                           border-radius: 8px; padding: .9rem 1.25rem; font-size: .88rem;
+                           overflow-wrap: anywhere; }}
+            .sb-title {{ font-weight: 600; }}
+            .sb-muted {{ color: var(--muted); font-size: .8rem; }}
+            .sb-leads {{ list-style: none; display: flex; flex-direction: column; gap: .2rem; }}
 
             .card-title {{ font-size: .95rem; font-weight: 600; line-height: 1.4; }}
             .card-meta  {{ font-size: .78rem; color: var(--muted); margin-bottom: .6rem;
@@ -691,7 +794,8 @@ def save_reports(findings: List[Dict], output_dir: str,
                  repo_url: str = "https://github.com/peleduri/zero-day-pulse",
                  my_stack: Optional[List[str]] = None,
                  changes: Optional[List[Dict]] = None,
-                 run_id: Optional[str] = None) -> Dict[str, str]:
+                 run_id: Optional[str] = None,
+                 scoreboard: Optional[Dict] = None) -> Dict[str, str]:
     from pulse.state import current_run_id
 
     changes = list(changes or [])
@@ -720,7 +824,7 @@ def save_reports(findings: List[Dict], output_dir: str,
     json_path = out / f"pulse_{stamp}.json"
     md_path   = out / f"pulse_{stamp}.md"
     json_path.write_text(json.dumps(payload, indent=2, default=str))
-    md_path.write_text(generate_markdown_report(findings, human_ts, my_stack, changes))
+    md_path.write_text(generate_markdown_report(findings, human_ts, my_stack, changes, scoreboard))
 
     (out / "latest.json").write_text(json_path.read_text())
     (out / "latest.md").write_text(md_path.read_text())
@@ -734,10 +838,16 @@ def save_reports(findings: List[Dict], output_dir: str,
     # HTML dashboard → docs/index.html (served by GitHub Pages)
     docs = Path(output_dir).parent / "docs"
     docs.mkdir(exist_ok=True)
-    html = generate_html_report(findings, human_ts, repo_url, my_stack, changes)
+    html = generate_html_report(findings, human_ts, repo_url, my_stack, changes, scoreboard)
     (docs / "index.html").write_text(html)
     (docs / "latest.json").write_text(json_path.read_text())
+    paths_extra = {}
+    if scoreboard:
+        # Raw numbers for Pages: https://peleduri.github.io/zero-day-pulse/scoreboard.json
+        sb_path = docs / "scoreboard.json"
+        sb_path.write_text(json.dumps(scoreboard, indent=2, default=str))
+        paths_extra["scoreboard"] = str(sb_path)
 
     logger.info(f"Reports saved → {json_path}, {md_path}, {docs / 'index.html'}")
     return {"json": str(json_path), "markdown": str(md_path), "html": str(docs / "index.html"),
-            "changes": str(changes_path)}
+            "changes": str(changes_path), **paths_extra}

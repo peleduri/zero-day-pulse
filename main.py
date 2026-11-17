@@ -36,6 +36,16 @@ def main(argv=None) -> int:
         help="Watchlist state file for 'what changed' alerts "
              "(default: $PULSE_STATE_PATH or state/last_run.json)",
     )
+    parser.add_argument(
+        "--signals-file", default=None,
+        help="Beat KEV first-signal state "
+             "(default: $PULSE_SIGNALS_PATH or state/first_signal.json)",
+    )
+    parser.add_argument(
+        "--scoreboard-file", default=None,
+        help="Beat KEV scoreboard rows "
+             "(default: $PULSE_SCOREBOARD_PATH or state/kev_scoreboard.jsonl)",
+    )
     args = parser.parse_args(argv)
 
     # Lazy imports so errors surface clearly
@@ -66,6 +76,17 @@ def main(argv=None) -> int:
     attach_cve_ids(entries)
     annotate_kev(entries, kev_lookup)
 
+    # Beat KEV: signals come from EVERY entry, before dedup drops repeat copies.
+    # Never fatal — a scoreboard failure only loses the panel for this run.
+    scoreboard = None
+    try:
+        from pulse.scoreboard import run_scoreboard
+        scoreboard = run_scoreboard(entries, kev_records, kev_lookup,
+                                    signals_file=args.signals_file,
+                                    scoreboard_file=args.scoreboard_file)
+    except Exception as e:
+        logger.warning(f"[scoreboard] skipped: {e}")
+
     findings = filter_zero_days(entries)
     logger.info(f"Findings after filter: {len(findings)}")
 
@@ -85,7 +106,8 @@ def main(argv=None) -> int:
     run_id = current_run_id()
     new_state, changes = diff_state(state, findings, kev_lookup, epss, my_stack, run_id=run_id)
 
-    paths = save_reports(findings, args.output_dir, my_stack=my_stack, changes=changes, run_id=run_id)
+    paths = save_reports(findings, args.output_dir, my_stack=my_stack, changes=changes, run_id=run_id,
+                         scoreboard=scoreboard)
     # State last: if anything above failed, the next run still diffs against the previous state.
     state_file = save_state(new_state, args.state_file)
 
@@ -104,6 +126,8 @@ def main(argv=None) -> int:
     print(f"  JSON report    : {paths['json']}")
     print(f"  Markdown report: {paths['markdown']}")
     print(f"  State file     : {state_file}")
+    if paths.get("scoreboard"):
+        print(f"  Scoreboard     : {paths['scoreboard']}")
 
     return 0
 
