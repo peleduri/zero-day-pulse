@@ -21,17 +21,25 @@ python main.py --lookback-hours 24 --max-enrich 10
 
 All CLI flags: `--lookback-hours` (default 24), `--max-enrich` (default 10), `--output-dir` (default `reports`), `--skip-enrichment`.
 
-There is no test suite, Makefile, or build step.
+Tests use stdlib `unittest` (HTTP is mocked, no network or API key needed):
+
+```bash
+python -m unittest -v
+```
+
+There is no Makefile or build step.
 
 ## Architecture
 
-The pipeline is linear: **collect → filter → enrich → report**.
+The pipeline is linear: **KEV catalog + collect → CVE ids + KEV lookup → filter → EPSS → sort → enrich → report**.
 
 | Module | Role |
 |--------|------|
-| `pulse/feeds.py` | Fetches RSS/Atom/JSON feeds and CISA KEV; uses `defusedxml` to prevent XXE; strips HTML from descriptions |
-| `pulse/filter.py` | Keyword matching against `config/feeds.yaml`, CVE-ID extraction via regex, deduplication (KEV entries preferred), sort by KEV → zero-day → severity → recency |
-| `pulse/enrich.py` | Shells out to `parallel-cli enrich`; merges results back into findings; graceful fallback if key/CLI absent |
+| `pulse/feeds.py` | Fetches RSS/Atom/JSON feeds and builds new-KEV entries from the catalog records; uses `defusedxml` to prevent XXE; strips HTML from descriptions |
+| `pulse/intel.py` | Downloads the CISA KEV catalog once per run (lookup for every CVE, `in_kev`) and FIRST EPSS scores (batches of 100); failures return `None`, never fatal |
+| `pulse/filter.py` | CVE-ID extraction for every entry (pre-gate), keyword matching against `config/feeds.yaml`, `in_kev` counts as a zero-day signal, deduplication (KEV-feed entries preferred), separate sort by KEV (`in_kev or is_kev`) → zero-day → severity → recency |
+| `pulse/enrich.py` | Shells out to `parallel-cli enrich` (input via temp JSON file); normalizes results (`_normalize_enrichment`); logs the stderr/stdout tail on failure; graceful fallback if key/CLI absent |
+| `pulse/urls.py` | `safe_url` (http/https only), shared by report rendering and enrichment parsing |
 | `pulse/report.py` | Writes timestamped + `latest.*` Markdown/JSON; generates `docs/index.html` dark-mode dashboard |
 | `main.py` | CLI entry point; lazy imports for clear error surfacing |
 
