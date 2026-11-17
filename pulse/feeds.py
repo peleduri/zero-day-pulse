@@ -60,6 +60,7 @@ logger = logging.getLogger(__name__)
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "feeds.yaml"
 REQUEST_HEADERS = {"User-Agent": "zero-day-pulse/1.0 (github.com/peleduri/zero-day-pulse)"}
 REQUEST_TIMEOUT = 20
+KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 
 # XML namespace shortcuts
 NS = {
@@ -194,41 +195,41 @@ def fetch_feed(name: str, url: str, tags: List[str], lookback_hours: int, extra_
         return []
 
 
-def fetch_cisa_kev(lookback_hours: int) -> List[Dict]:
+def fetch_cisa_kev(lookback_hours: int, raw_records: List[Dict] | None) -> List[Dict]:
+    """Build "new KEV additions" entries from the raw KEV catalog records.
+
+    ``raw_records`` comes from ``pulse.intel.load_kev_catalog()`` (one download
+    per run). If the catalog could not be loaded (``None``) this returns [].
+    """
+    if raw_records is None:
+        logger.warning("[CISA KEV] catalog unavailable — no new-KEV entries this run")
+        return []
     cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
-    url = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
     entries = []
-    try:
-        resp = requests.get(url, headers=REQUEST_HEADERS, timeout=30)
-        resp.raise_for_status()
-        data = resp.json()
+    for v in raw_records:
+        date_added = v.get("dateAdded", "")
+        added_dt = _parse_date(date_added)
+        if added_dt and added_dt < cutoff:
+            continue
 
-        for v in data.get("vulnerabilities", []):
-            date_added = v.get("dateAdded", "")
-            added_dt = _parse_date(date_added)
-            if added_dt and added_dt < cutoff:
-                continue
+        cve_id = v.get("cveID", "")
+        entries.append({
+            "id":      cve_id,
+            "title":   f"{cve_id} — {v.get('vulnerabilityName', '')}",
+            "summary": (
+                f"Vendor: {v.get('vendorProject','')} | Product: {v.get('product','')}. "
+                f"{v.get('shortDescription','')} "
+                f"Required action: {v.get('requiredAction','')} (due {v.get('dueDate','TBD')})"
+            ).strip(),
+            "link":      f"https://nvd.nist.gov/vuln/detail/{cve_id}",
+            "published": date_added,
+            "source":    "CISA KEV",
+            "tags":      ["cisa", "kev", "actively-exploited"],
+            "cve_ids":   [cve_id] if cve_id else [],
+            "is_kev":    True,
+        })
 
-            cve_id = v.get("cveID", "")
-            entries.append({
-                "id":      cve_id,
-                "title":   f"{cve_id} — {v.get('vulnerabilityName', '')}",
-                "summary": (
-                    f"Vendor: {v.get('vendorProject','')} | Product: {v.get('product','')}. "
-                    f"{v.get('shortDescription','')} "
-                    f"Required action: {v.get('requiredAction','')} (due {v.get('dueDate','TBD')})"
-                ).strip(),
-                "link":      f"https://nvd.nist.gov/vuln/detail/{cve_id}",
-                "published": date_added,
-                "source":    "CISA KEV",
-                "tags":      ["cisa", "kev", "actively-exploited"],
-                "cve_ids":   [cve_id] if cve_id else [],
-                "is_kev":    True,
-            })
-
-        logger.info(f"[CISA KEV] {len(entries)} entries (cutoff {lookback_hours}h)")
-    except Exception as e:
-        logger.warning(f"[CISA KEV] failed: {e}")
+    logger.info(f"[CISA KEV] {len(entries)} new entries (cutoff {lookback_hours}h)")
     return entries
 
 
@@ -270,7 +271,12 @@ def load_config() -> Dict:
         return yaml.safe_load(f)
 
 
-def collect_all_feeds(lookback_hours: int = 24) -> List[Dict]:
+def collect_all_feeds(lookback_hours: int = 24, kev_records: List[Dict] | None = None) -> List[Dict]:
+    """Fetch every configured feed plus GitHub advisories.
+
+    ``kev_records`` is the raw KEV catalog already downloaded by the caller
+    (``pulse.intel.load_kev_catalog``), or None if that download failed.
+    """
     config = load_config()
     all_entries: List[Dict] = []
 
@@ -285,7 +291,7 @@ def collect_all_feeds(lookback_hours: int = 24) -> List[Dict]:
         all_entries.extend(entries)
         time.sleep(0.3)
 
-    all_entries.extend(fetch_cisa_kev(lookback_hours))
+    all_entries.extend(fetch_cisa_kev(lookback_hours, kev_records))
     all_entries.extend(fetch_github_advisories(lookback_hours))
     logger.info(f"Total raw entries: {len(all_entries)}")
     return all_entries

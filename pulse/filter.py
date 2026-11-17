@@ -20,6 +20,19 @@ def extract_cve_ids(text: str) -> List[str]:
     return list(dict.fromkeys(m.upper() for m in CVE_RE.findall(text)))
 
 
+def attach_cve_ids(entries: List[Dict]) -> List[Dict]:
+    """Pre-gate step: give EVERY raw entry (RSS/Atom included) its ``cve_ids``.
+
+    Entries that already carry ids from a structured source (KEV, GHSA) keep
+    them; all others get the CVEs cited in their title + summary.
+    """
+    for entry in entries:
+        if not entry.get("cve_ids"):
+            text = f"{entry.get('title', '')} {entry.get('summary', '')}"
+            entry["cve_ids"] = extract_cve_ids(text)
+    return entries
+
+
 def _matches_any(text: str, keywords: List[str]) -> bool:
     lower = text.lower()
     return any(kw.lower() in lower for kw in keywords)
@@ -27,21 +40,25 @@ def _matches_any(text: str, keywords: List[str]) -> bool:
 
 def _score_entry(entry: Dict, zd_keywords: List[str], hs_keywords: List[str]) -> tuple[bool, bool]:
     text = f"{entry.get('title', '')} {entry.get('summary', '')}"
-    is_zd = entry.get("is_kev", False) or _matches_any(text, zd_keywords)
+    # in_kev (any cited CVE is anywhere in the KEV catalog) counts as a zero-day signal
+    is_zd = bool(entry.get("is_kev") or entry.get("in_kev") or _matches_any(text, zd_keywords))
     is_hs = _matches_any(text, hs_keywords)
     return is_zd, is_hs
 
 
+def _is_kev(entry: Dict) -> bool:
+    return bool(entry.get("in_kev") or entry.get("is_kev"))
+
+
 def filter_zero_days(entries: List[Dict]) -> List[Dict]:
+    """Gate + dedup. Expects ``attach_cve_ids`` and KEV annotation to have run. No sort."""
     zd_keywords, hs_keywords = _load_keywords()
     filtered: List[Dict] = []
     seen_cves: set[str] = set()
     seen_ids: set[str] = set()
 
     for entry in entries:
-        text = f"{entry.get('title', '')} {entry.get('summary', '')}"
-        cve_ids = entry.get("cve_ids") or extract_cve_ids(text)
-        entry["cve_ids"] = cve_ids
+        cve_ids = entry.get("cve_ids") or []
 
         is_zd, is_hs = _score_entry(entry, zd_keywords, hs_keywords)
         entry["is_zero_day"] = is_zd
@@ -65,16 +82,19 @@ def filter_zero_days(entries: List[Dict]) -> List[Dict]:
 
         filtered.append(entry)
 
-    # Sort: CISA KEV → zero-day → high-severity, then by recency descending
-    filtered.sort(
+    logger.info(f"Filtered to {len(filtered)} actionable findings ({sum(1 for e in filtered if _is_kev(e))} KEV)")
+    return filtered
+
+
+def sort_findings(findings: List[Dict]) -> List[Dict]:
+    """Sort: KEV (catalog or feed) → zero-day → high-severity, then recency descending."""
+    return sorted(
+        findings,
         key=lambda e: (
-            e.get("is_kev", False),
+            _is_kev(e),
             e.get("is_zero_day", False),
             e.get("is_high_severity", False),
             e.get("published") or "",
         ),
         reverse=True,
     )
-
-    logger.info(f"Filtered to {len(filtered)} actionable findings ({sum(1 for e in filtered if e.get('is_kev'))} KEV)")
-    return filtered

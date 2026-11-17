@@ -15,7 +15,7 @@
 Every 6 hours a GitHub Action:
 
 1. **Collects** vulnerability signals from 20+ public RSS/Atom feeds and the [CISA Known Exploited Vulnerabilities (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) catalog, including [GitHub Security Advisories](https://github.com/advisories) via the REST API
-2. **Filters** for zero-day keywords, actively-exploited indicators, and CVE references — deduplicating across sources
+2. **Filters** for zero-day keywords, actively-exploited indicators, and CVE references — deduplicating across sources. Any CVE cited by any feed is checked against the full CISA KEV catalog (`in_kev`) and scored with [FIRST EPSS](https://www.first.org/epss/), no API key needed
 3. **Enriches** the top findings using `parallel-cli enrich`: CVSS score, PoC availability, patch status, threat actors, and mitigations — all researched automatically
 4. **Publishes** a Markdown + JSON report committed to this repo, an HTML dashboard deployed to GitHub Pages, and a comment on a pinned tracking issue
 
@@ -162,6 +162,12 @@ python main.py --lookback-hours 24 --max-enrich 10
 
 Reports are written to `reports/latest.md` and `reports/latest.json`.
 
+Run the unit tests (stdlib `unittest`, HTTP mocked):
+
+```bash
+python -m unittest -v
+```
+
 ### CLI options
 
 | Flag | Default | Description |
@@ -183,9 +189,12 @@ zero-day-pulse/
 │   └── feeds.yaml           # Feed URLs and zero-day keywords
 ├── pulse/
 │   ├── feeds.py             # RSS/Atom + CISA KEV collection
-│   ├── filter.py            # Zero-day signal detection & dedup
+│   ├── intel.py             # CISA KEV catalog lookup + FIRST EPSS scores
+│   ├── filter.py            # Zero-day signal detection, dedup & sort
 │   ├── enrich.py            # Parallel AI CLI enrichment wrapper
-│   └── report.py            # HTML dashboard + MD/JSON generation
+│   ├── report.py            # HTML dashboard + MD/JSON generation
+│   └── urls.py              # Shared http/https-only URL check
+├── tests/                   # unittest suite (python -m unittest)
 ├── docs/
 │   └── index.html           # GitHub Pages dashboard (auto-generated)
 ├── reports/
