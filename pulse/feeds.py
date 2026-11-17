@@ -35,6 +35,9 @@ import requests
 import yaml
 from pathlib import Path
 
+# filter.py imports nothing from pulse.*, so this cannot form an import cycle.
+from pulse.filter import extract_cve_ids
+
 
 class _HTMLStripper(HTMLParser):
     def __init__(self):
@@ -74,16 +77,42 @@ DATE_FORMATS = [
     "%a, %d %b %Y %H:%M:%S %Z",
     "%Y-%m-%dT%H:%M:%S%z",
     "%Y-%m-%dT%H:%M:%SZ",
+    "%Y-%m-%dT%H:%M:%S.%fZ",   # Palo Alto PSIRT: 2026-07-08T20:30:00.000Z
+    "%Y-%m-%dT%H:%M:%S.%f%z",  # Blogger/Atom (Google Security Blog): 2026-04-23T17:38:00.001-04:00
+    "%Y-%m-%d %H:%M:%S.%f",    # Cisco PSIRT: 2026-07-21 16:01:27.0 (no tz; stamped UTC)
+    "%b %d, %Y %H:%M:%S%z",    # CrowdStrike Blog: Jun 30, 2026 00:00:00-0500
     "%Y-%m-%d",
 ]
+
+# Python's %Z only reliably matches UTC/GMT — named US zones (CISA US-CERT uses
+# "EDT") must be normalized to numeric offsets before strptime.
+_TZ_ABBREVIATIONS = {
+    "UT": "+0000", "EDT": "-0400", "EST": "-0500", "CDT": "-0500", "CST": "-0600",
+    "MDT": "-0600", "MST": "-0700", "PDT": "-0700", "PST": "-0800",
+}
+_TZ_ABBR_RE = re.compile(r"\b(" + "|".join(_TZ_ABBREVIATIONS) + r")\b")
+
+# Single truncation limit for entry summaries — also load-bearing for CVE
+# extraction (ids beyond this cut survive only via the raw-element extraction).
+SUMMARY_MAX_LEN = 2000
+
+# Raw-element extraction sees every CVE a post links to, so a monthly round-up
+# ("Patch Tuesday") can claim hundreds. That is wrong twice over: dedup treats
+# every claimed id as covered, silently dropping later advisories about those
+# CVEs, and the report renders the whole list. An entry naming more than this
+# many CVEs is a round-up, not an advisory — keep the first few and stop.
+# Note: a capped round-up that cites a KEV CVE still becomes in_kev (and so a
+# zero-day finding) — it IS about an exploited CVE.
+MAX_CVE_IDS_PER_ENTRY = 10
 
 
 def _parse_date(raw: str | None) -> datetime | None:
     if not raw:
         return None
     raw = raw.strip()
-    # Normalise "GMT" → "+0000"
+    # Normalise "GMT" and named US timezones → numeric offsets
     raw = re.sub(r"\bGMT\b", "+0000", raw)
+    raw = _TZ_ABBR_RE.sub(lambda m: _TZ_ABBREVIATIONS[m.group(1)], raw)
     for fmt in DATE_FORMATS:
         try:
             dt = datetime.strptime(raw, fmt)
@@ -91,6 +120,23 @@ def _parse_date(raw: str | None) -> datetime | None:
         except ValueError:
             continue
     return None
+
+
+def _parse_date_logged(raw: str | None, feed_name: str) -> datetime | None:
+    """_parse_date + drift alarm: an unparseable date silently bypasses the
+    lookback cutoff, so vendor date-format drift must be visible on day one."""
+    parsed = _parse_date(raw)
+    if raw and parsed is None:
+        logger.warning(f"[{feed_name}] unparseable date {raw!r} — entry bypasses lookback cutoff")
+    return parsed
+
+
+def _raw_cve_ids(el: ET.Element) -> List[str]:
+    """CVE ids from the full serialized element (title, description including
+    <a href> URLs, guid/link, Atom xhtml attributes), BEFORE strip_html and the
+    SUMMARY_MAX_LEN cut, capped at MAX_CVE_IDS_PER_ENTRY. Serialization only —
+    parsing still goes through defusedxml."""
+    return extract_cve_ids(ET.tostring(el, encoding="unicode"))[:MAX_CVE_IDS_PER_ENTRY]
 
 
 def _text(el: ET.Element | None, *tags: str, ns: Dict | None = None) -> str:
@@ -117,7 +163,7 @@ def _parse_rss(root: ET.Element, name: str, tags: List[str], cutoff: datetime) -
     entries = []
     for item in root.findall(".//item"):
         pub_raw = _text(item, "pubDate", "dc:date", ns=NS)
-        published = _parse_date(pub_raw)
+        published = _parse_date_logged(pub_raw, name)
         if published and published < cutoff:
             continue
 
@@ -127,11 +173,14 @@ def _parse_rss(root: ET.Element, name: str, tags: List[str], cutoff: datetime) -
         entries.append({
             "id":        link or _text(item, "guid"),
             "title":     _text(item, "title"),
-            "summary":   summary[:2000],
+            "summary":   summary[:SUMMARY_MAX_LEN],
             "link":      link,
             "published": published.isoformat() if published else pub_raw,
             "source":    name,
             "tags":      tags,
+            # Some vendors (Ivanti) carry CVE ids only inside link hrefs or past
+            # the truncation point; attach_cve_ids keeps these.
+            "cve_ids":   _raw_cve_ids(item),
         })
     return entries
 
@@ -144,7 +193,7 @@ def _parse_atom(root: ET.Element, name: str, tags: List[str], cutoff: datetime) 
             _text(entry, f"{{{a}}}published")
             or _text(entry, f"{{{a}}}updated")
         )
-        published = _parse_date(pub_raw)
+        published = _parse_date_logged(pub_raw, name)
         if published and published < cutoff:
             continue
 
@@ -164,11 +213,14 @@ def _parse_atom(root: ET.Element, name: str, tags: List[str], cutoff: datetime) 
         entries.append({
             "id":        _text(entry, f"{{{a}}}id") or link,
             "title":     _text(entry, f"{{{a}}}title"),
-            "summary":   summary[:2000],
+            "summary":   summary[:SUMMARY_MAX_LEN],
             "link":      link,
             "published": published.isoformat() if published else pub_raw,
             "source":    name,
             "tags":      tags,
+            # Some vendors (Ivanti) carry CVE ids only inside link hrefs or past
+            # the truncation point; attach_cve_ids keeps these.
+            "cve_ids":   _raw_cve_ids(entry),
         })
     return entries
 
@@ -253,7 +305,7 @@ def fetch_github_advisories(lookback_hours: int) -> List[Dict]:
             entries.append({
                 "id":        cve_id or ghsa_id,
                 "title":     adv.get("summary", ghsa_id),
-                "summary":   (adv.get("description") or "")[:2000],
+                "summary":   (adv.get("description") or "")[:SUMMARY_MAX_LEN],
                 "link":      adv.get("html_url", f"https://github.com/advisories/{ghsa_id}"),
                 "published": published_raw,
                 "source":    "GitHub Security Advisories",

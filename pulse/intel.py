@@ -10,7 +10,7 @@ from typing import Dict, List, Optional, Tuple
 
 import requests
 
-from pulse.feeds import KEV_URL, REQUEST_HEADERS
+from pulse.feeds import KEV_URL, REQUEST_HEADERS, load_config
 
 logger = logging.getLogger(__name__)
 
@@ -27,6 +27,16 @@ EpssScores = Dict[str, Dict]
 
 # ── CISA KEV ──────────────────────────────────────────────────────────────────
 
+def kev_url() -> str:
+    """``cisa_kev_url`` from config/feeds.yaml, falling back to ``KEV_URL``."""
+    try:
+        url = (load_config() or {}).get("cisa_kev_url")
+    except Exception as e:
+        logger.warning(f"[CISA KEV] could not read cisa_kev_url from config ({e}); using default")
+        url = None
+    return url.strip() if isinstance(url, str) and url.strip() else KEV_URL
+
+
 def load_kev_catalog() -> Optional[Tuple[List[Dict], KevLookup]]:
     """Download the full CISA KEV catalog once.
 
@@ -35,7 +45,7 @@ def load_kev_catalog() -> Optional[Tuple[List[Dict], KevLookup]]:
     failure (network, HTTP status, or unexpected shape).
     """
     try:
-        resp = requests.get(KEV_URL, headers=REQUEST_HEADERS, timeout=KEV_TIMEOUT)
+        resp = requests.get(kev_url(), headers=REQUEST_HEADERS, timeout=KEV_TIMEOUT)
         resp.raise_for_status()
         data = resp.json()
         records = data.get("vulnerabilities") if isinstance(data, dict) else None
