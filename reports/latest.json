@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-17T01:13:09.108401+00:00",
-  "total": 24,
+  "generated": "2026-11-17T15:01:50.065246+00:00",
+  "total": 21,
   "kev": 0,
   "zero_day": 14,
   "enriched": 0,
@@ -73,32 +73,19 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/11/weekly-recap-n-able-0-days-windows-0.html",
-      "title": "\u26a1 Weekly Recap: N-able 0-Days, Windows 0-Days, Chrome 0-Days, Fridge 0-Days, and More Bad Days",
-      "summary": "A default password opened doors it never should have. A trusted update delivered malware. Even a security feature became a way to break in. Different stories, same problem: the things meant to protect us aren't always doing their job.\n\nMeanwhile, AI is making bug hunting faster, old flaws are still paying off, and attackers keep finding easy ways in. Some attacks take real skill. Others barely",
-      "link": "https://thehackernews.com/2026/11/weekly-recap-n-able-0-days-windows-0.html",
-      "published": "2026-11-16T13:27:20+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.rapid7.com/blog/post/etr-rapid7-detected-exploitation-of-cve-2026-90436-against-atlassian-confluence-data-center-n-able-n-central-also-exploited",
+      "title": "Rapid7 Detected Exploitation of CVE-2026-90436 against Atlassian Confluence Data Center, N-able N-central also Exploited",
+      "summary": "Overview On November 6, 2026, the Apache Software Foundation disclosed CVE-2026-90436 , a critical unsafe reflection vulnerability ( CWE-470 ) in Axis 1.x that allows for unauthenticated remote code execution (RCE). Apache Axis is a Simple Object Access Protocol (SOAP) implementation used for the creation of Java Web services. CISA has assigned CVE-2026-90436 a CVSS score of 9.8 Critical . Since the initial November 6 disclosure, it has transpired that some versions of Atlassian Confluence Data Center and N-able N-central use the affected Axis library and are vulnerable to CVE-2026-90436. Both products require a non-default configuration in order to be vulnerable. CVE-2026-90436 is now being actively exploited in the wild against both known affected products. On November 13, 2026, Rapid7 MDR detected exploitation of CVE-2026-90436 against Atlassian Confluence Data Center in a customer environment. Separately, on November 13, 2026, N-able reported exploitation in the wild against N-central for a vulnerability that strongly correlates to CVE-2026-90436. A proof-of-concept exploit that leverages CVE-2026-90436 and targets N-central was published on November 12, 2026, as part of a series of public zero-day disclosures against N-central. Rapid7 recommends remediating exposed systems on an emergency basis outside of normal patching cycles. Mitigation guidance Prioritize internet-accessible instances with the relevant APIs enabled, and check internal deployments as well. Apply the product-specific actions below, then investigate systems that were exposed for evidence of compromise. Axis 1.x through 1.4 is affected but has reached end of life (EOL) and Apache does not plan to publish a fixed Axis 1.x release. Apache recommends moving to another SOAP engine (for example, Apache Axis 2) or using an Axis 1.x build with this patch applied. Organizations using products that are affected by this issue should follow the product vendor's specific remediation instructions. Atlassian",
+      "link": "https://www.rapid7.com/blog/post/etr-rapid7-detected-exploitation-of-cve-2026-90436-against-atlassian-confluence-data-center-n-able-n-central-also-exploited",
+      "published": "2026-11-16T18:14:14+00:00",
+      "source": "Rapid7 Blog",
       "tags": [
-        "news",
-        "zeroday"
+        "research",
+        "metasploit"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/six-unpatched-danfoss-refrigeration.html",
-      "title": "Six Unpatched Danfoss Refrigeration Controller Flaws Could Allow Remote Takeover Without Login",
-      "summary": "Six flaws in Danfoss AK-SM800A refrigeration controllers could let a remote attacker take over a controller without logging in, Dutch security consultancy Midnight Blue said earlier this week.\n\nNo patch is available, and the researchers say the newest firmware, version 5.4.0, does not fix the flaws.\n\nGovernment cybersecurity agencies in Belgium, Ireland and Germany told operators this week to",
-      "link": "https://thehackernews.com/2026/11/six-unpatched-danfoss-refrigeration.html",
-      "published": "2026-11-16T12:34:21+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
+      "cve_ids": [
+        "CVE-2026-90436"
       ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -200,6 +187,36 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.securityweek.com/n-able-kills-legacy-apis-patches-17-n-central-zero-days/",
+      "title": "N-able Kills Legacy APIs, Patches 17 N-central Zero-Days",
+      "summary": "The patches target recently disclosed zero-days, as well as vulnerabilities already exploited in the wild. The post N-able Kills Legacy APIs, Patches 17 N-central Zero-Days appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/n-able-kills-legacy-apis-patches-17-n-central-zero-days/",
+      "published": "2026-11-17T12:28:45+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html",
+      "title": "ConnectWise Warns ScreenConnect Attacks Continue as SCKit Targets Unpatched Systems",
+      "summary": "ConnectWise on Monday said it completed its investigation into unauthorized access targeting partner ScreenConnect environments, and recommended customers to ensure that the technician client is running version 26.6.5 or later.\n\nThe company said additional activity targeting on-premises environments continues to be reported where the identified third-party extensions remain enabled, and",
+      "link": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html",
+      "published": "2026-11-17T06:29:27+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/",
       "title": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
       "summary": "Hackers who breached the cloud environment of network and email security company Barracuda earlier this month used a stolen cloud access key and the ARTEX AI penetration testing framework. [...]",
@@ -209,21 +226,6 @@
       "tags": [
         "news",
         "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/google-project-zero-sets-course-for-30-day-disclosure-deadline/",
-      "title": "Google Project Zero Sets Course for 30-Day Disclosure Deadline",
-      "summary": "It will move to a 60-day vulnerability disclosure window in February 2027 and to a 30-day window in January 2028. The post Google Project Zero Sets Course for 30-Day Disclosure Deadline appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/google-project-zero-sets-course-for-30-day-disclosure-deadline/",
-      "published": "2026-11-16T15:31:25+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -342,60 +344,6 @@
       ],
       "cve_ids": [
         "CVE-2026-128134"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-128071",
-      "title": "Nuxt: Incomplete fix for GHSA-6gq8-jgmh-3ffp: an encoded slash (`%2F`) in the request path bypasses route rules on catch-all page routes",
-      "summary": "### Summary\n\nNuxt matches route rules against the request path with encoded slashes (`%2F`) left encoded, while the page router decodes them into route params. A request that spells a slash as `%2F` can therefore render a page through a catch-all route without the route rules configured for the path it resolves to. The fix for [GHSA-6gq8-jgmh-3ffp](https://github.com/nuxt/nuxt/security/advisories/GHSA-6gq8-jgmh-3ffp) deliberately left reserved escapes such as `%2F` encoded, so it did not cover this form.\n\n### Impact\n\nAn unauthenticated attacker can bypass route rules that protect paths served by a catch-all page route, or by a custom route whose param can span several segments.\n\n```ts\nexport default defineNuxtConfig({\n  routeRules: {\n    '/docs/internal/**': { appMiddleware: 'auth', headers: { 'X-Frame-Options': 'DENY' } },\n    '/admin/**': { redirect: '/login' },\n  },\n})\n```\n\nWith `app/pages/docs/[...slug].vue`, `/docs/internal/guide` runs `auth`, but `/docs/internal%2Fguide` renders the same page without running `auth` and without the header. With a root `app/pages/[...slug].vue`, `/admin%2Fsecret` is rendered instead of redirected.\n\nThe rules skipped include server-side `redirect`, `headers`, `proxy`, `ssr` and `noScripts`, and `appMiddleware`, `appLayout` and `redirect` as matched in the app during server rendering and client navigation. `getRouteRules` returns the same incomplete result.\n\nWhether the page then shows protected content depends on how it reads the route:\n\n- With a route such as `definePageMeta({ path: '/docs/:path(.*)' })`, `route.params.path` is `internal/guide` for both requests.\n- With a repeatable catch-all (`[...slug].vue`), `route.params.slug` is `['internal/guide']` instead of `['internal', 'guide']`, so a page that joins the segments (`slug.join('/')`) to load content loads the protected resource.\n- `route.path` keeps the encoding (`/docs/internal%2Fguide`), so a page that loads content by `route.path` does not resolve it.\n\nNot affected:\n\n",
-      "link": "https://github.com/advisories/GHSA-f3x9-2chm-73c8",
-      "published": "2026-11-16T14:59:45Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-128071"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-128118",
-      "title": "SvelteKit: Build-time server-only module import guard could fail, resulting in server secrets being statically replaced in client bundle",
-      "summary": "Under certain circumstances, server-only imports, which typically cannot be included in the client bundle, could make their way into it, potentially exposing secrets. This could only occur when those server-only imports were made through `src/params.js`.",
-      "link": "https://github.com/advisories/GHSA-m9j8-jcmv-hp69",
-      "published": "2026-11-16T14:59:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-128118"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://isc.sans.edu/diary/rss/33522",
-      "title": "Scans for LiteLLM/Starlette (CVE-2026-42271, CVE-2026-48710), (Mon, Nov 16th)",
-      "summary": "This weekend, we started seeing requests for /mcp-rest/test/tools/list hitting our honeypots. These requests appear to attempt to exploit CVE-2026-42271 and CVE-2026-48710. Horizon3.ai published a short write-up about how these vulnerabilities can be chained to achieve remote code execution without authentication [Horizon3]",
-      "link": "https://isc.sans.edu/diary/rss/33522",
-      "published": "2026-11-16T13:11:04+00:00",
-      "source": "SANS Internet Storm Center",
-      "tags": [
-        "sans",
-        "isc"
-      ],
-      "cve_ids": [
-        "CVE-2026-42271",
-        "CVE-2026-48710"
       ],
       "is_zero_day": false,
       "is_high_severity": true
