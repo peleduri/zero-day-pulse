@@ -36,7 +36,8 @@ def main() -> int:
     # Lazy imports so errors surface clearly
     from pulse.feeds  import collect_all_feeds
     from pulse.intel  import load_kev_catalog, fetch_epss, annotate_kev, annotate_epss
-    from pulse.filter import attach_cve_ids, filter_zero_days, sort_findings
+    from pulse.filter import (attach_cve_ids, filter_zero_days, sort_findings,
+                              load_my_stack, annotate_stack)
     from pulse.enrich import enrich_with_parallel
     from pulse.report import save_reports
 
@@ -65,7 +66,11 @@ def main() -> int:
     if not args.skip_enrichment and findings:
         findings = enrich_with_parallel(findings, max_items=args.max_enrich)
 
-    paths = save_reports(findings, args.output_dir)
+    # After enrichment so AI affected_products counts toward stack matches.
+    my_stack = load_my_stack()
+    annotate_stack(findings, my_stack)
+
+    paths = save_reports(findings, args.output_dir, my_stack=my_stack)
 
     kev = sum(1 for f in findings if f.get("in_kev") or f.get("is_kev"))
     zd  = sum(1 for f in findings if f.get("is_zero_day") and not (f.get("in_kev") or f.get("is_kev")))
@@ -76,6 +81,8 @@ def main() -> int:
     print(f"  CISA KEV       : {kev}")
     print(f"  Zero-days      : {zd}")
     print(f"  Enriched       : {en}")
+    if my_stack:
+        print(f"  My Stack       : {sum(1 for f in findings if f.get('stack_match'))}")
     print(f"  JSON report    : {paths['json']}")
     print(f"  Markdown report: {paths['markdown']}")
 

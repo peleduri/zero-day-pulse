@@ -16,6 +16,64 @@ def _load_keywords() -> tuple[List[str], List[str]]:
     return cfg.get("zero_day_keywords", []), cfg.get("high_severity_keywords", [])
 
 
+def load_my_stack() -> List[str]:
+    """``my_stack`` terms from config (empty list when absent, empty or malformed)."""
+    with open(CONFIG_PATH) as f:
+        cfg = yaml.safe_load(f) or {}
+    terms = cfg.get("my_stack") or []
+    if not isinstance(terms, list):
+        logger.warning("config my_stack is not a list; ignoring it")
+        return []
+    return [str(t).strip() for t in terms if t is not None and str(t).strip()]
+
+
+def _term_pattern(term: str) -> "re.Pattern":
+    # Word-boundary match that also works for terms with non-word edge chars
+    # ("c++", ".net"): \b would fail there, so use (?<!\w) / (?!\w) lookarounds.
+    return re.compile(r"(?<!\w)" + re.escape(term) + r"(?!\w)", re.IGNORECASE)
+
+
+def _stack_text(finding: Dict) -> str:
+    parts = [finding.get("title"), finding.get("summary"),
+             finding.get("kev_vendor"), finding.get("kev_product")]
+    tags = finding.get("tags")
+    if isinstance(tags, (list, tuple)):
+        parts.extend(tags)
+    enrichment = finding.get("enrichment")
+    if isinstance(enrichment, dict):
+        products = enrichment.get("affected_products")
+        if isinstance(products, (list, tuple)):
+            parts.extend(products)
+        else:
+            parts.append(products)
+    # newline separator so a term can't match across two fields
+    return "\n".join(str(p) for p in parts if p)
+
+
+def stack_match(finding: Dict, terms: List[str]) -> List[str]:
+    """Return the ``terms`` found in ``finding`` (config order, de-duplicated, case-insensitive)."""
+    if not terms:
+        return []
+    text = _stack_text(finding)
+    matched: List[str] = []
+    seen: set[str] = set()
+    for term in terms:
+        key = term.lower()
+        if not term or key in seen:
+            continue
+        if _term_pattern(term).search(text):
+            matched.append(term)
+            seen.add(key)
+    return matched
+
+
+def annotate_stack(findings: List[Dict], terms: List[str]) -> List[Dict]:
+    """Set ``stack_match`` on every finding (in place); [] when nothing matches."""
+    for f in findings:
+        f["stack_match"] = stack_match(f, terms)
+    return findings
+
+
 def extract_cve_ids(text: str) -> List[str]:
     return list(dict.fromkeys(m.upper() for m in CVE_RE.findall(text)))
 
