@@ -111,6 +111,9 @@ RSS feeds + CISA KEV
 | [SANS Internet Storm Center](https://isc.sans.edu) | RSS | Daily threat intel |
 | [Rapid7](https://blog.rapid7.com) | RSS | Metasploit & research |
 | [Google Project Zero](https://googleprojectzero.blogspot.com) | Atom | In-depth zero-day research |
+| Palo Alto, Cisco PSIRT, Fortinet PSIRT, Ivanti, Check Point Research | RSS | Network-edge vendor advisories |
+
+A `priority_product_keywords` watchlist (PAN-OS, FortiOS, Junos, NetScaler, BIG-IP, ...) keeps any entry that names a watched product **and** cites a CVE, ranked below high-severity findings and above everything else, without marking it high-severity.
 
 Feed list and all keywords are fully configurable in [`config/feeds.yaml`](config/feeds.yaml) — no code changes needed.
 
@@ -165,10 +168,11 @@ python main.py --lookback-hours 24 --max-enrich 10
 
 Reports are written to `reports/latest.md` and `reports/latest.json`.
 
-Run the unit tests (stdlib `unittest`, HTTP mocked):
+Run the tests (offline, HTTP mocked; pytest runs both the pytest and the `unittest` suites — CI runs this before the pipeline):
 
 ```bash
-python -m unittest -v
+pip install -r requirements-dev.txt
+python -m pytest tests/
 ```
 
 ### CLI options
@@ -199,7 +203,7 @@ zero-day-pulse/
 │   ├── report.py            # HTML dashboard + MD/JSON generation
 │   ├── state.py             # Watchlist state + "what changed" diff
 │   └── urls.py              # Shared http/https-only URL check
-├── tests/                   # unittest suite (python -m unittest)
+├── tests/                   # test suite (python -m pytest tests/)
 ├── docs/
 │   └── index.html           # GitHub Pages dashboard (auto-generated)
 ├── reports/
