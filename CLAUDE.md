@@ -19,7 +19,7 @@ export PARALLEL_API_KEY=<key>
 python main.py --lookback-hours 24 --max-enrich 10
 ```
 
-All CLI flags: `--lookback-hours` (default 24), `--max-enrich` (default 10), `--output-dir` (default `reports`), `--skip-enrichment`, `--state-file` (default `$PULSE_STATE_PATH` or `state/last_run.json`; point it at a temp path for local experiments so you don't touch the committed watchlist).
+All CLI flags: `--lookback-hours` (default 24), `--max-enrich` (default 10), `--output-dir` (default `reports`), `--skip-enrichment`, `--state-file` (default `$PULSE_STATE_PATH` or `state/last_run.json`; point it at a temp path for local experiments so you don't touch the committed watchlist), `--signals-file` (default `$PULSE_SIGNALS_PATH` or `state/first_signal.json`), `--scoreboard-file` (default `$PULSE_SCOREBOARD_PATH` or `state/kev_scoreboard.jsonl`) — point both at temp paths locally too.
 
 ## Testing
 
@@ -40,7 +40,7 @@ There is no Makefile or build step.
 
 ## Architecture
 
-The pipeline is linear: **KEV catalog + state load → collect → CVE ids + KEV lookup → filter → EPSS (findings + watchlist, one call) → sort → enrich → stack match → state diff → report → state save**.
+The pipeline is linear: **KEV catalog + state load → collect → CVE ids + KEV lookup → Beat KEV scoreboard (all entries, pre-dedup) → filter → EPSS (findings + watchlist, one call) → sort → enrich → stack match → state diff → report → state save**.
 
 | Module | Role |
 |--------|------|
@@ -49,8 +49,9 @@ The pipeline is linear: **KEV catalog + state load → collect → CVE ids + KEV
 | `pulse/filter.py` | CVE-ID extraction for every entry (pre-gate; keeps ids a parser/structured source already set), keyword matching against `config/feeds.yaml`, `in_kev` counts as a zero-day signal, gate + deduplication (see below), separate sort by KEV (`in_kev or is_kev`) → zero-day → severity → priority product → recency; `stack_match` (whole-word, case-insensitive match of `my_stack` terms) |
 | `pulse/enrich.py` | Shells out to `parallel-cli enrich` (input via temp JSON file); normalizes results (`_normalize_enrichment`); logs the stderr/stdout tail on failure; graceful fallback if key/CLI absent |
 | `pulse/state.py` | Rolling 14-day CVE watchlist in `state/last_run.json` (cap 1000, oldest `first_seen` pruned after the diff). Per-CVE diff emits `entered_kev`, `epss_crossed` (0.1 / 0.5) and `new_stack_hit`; first-seen CVEs only emit stack hits; KEV/EPSS fetch failure keeps stored values and emits nothing; a `my_stack` edit (per-CVE `stack_terms_hash`) re-baselines silently; missing/corrupt state = baseline run |
+| `pulse/scoreboard.py` | "Beat KEV" lead-time scoreboard (`design/beat-kev-scoreboard.md`). Signal = non-`is_kev` entry whose title+summary matches a zero-day keyword (reuses `filter._load_keywords`/`_matches_any`; never `in_kev`/`is_zero_day`), citing ≤ 2 CVEs, CVE not in this run's KEV lookup (recorded anyway if the catalog failed); earliest `published` wins per CVE. First signal per CVE in `state/first_signal.json` (180 days / 5000 cap, oldest `observed_at` pruned; a pruned signal later counts as missed). Rows: whole-catalog walk for `dateAdded ≥ go_live` into write-once `state/kev_scoreboard.jsonl` (line 1 `{"go_live": ...}` header, no `cve` key; bad/duplicate lines skipped and the file rewritten atomically; lost header rebuilt from the earliest `kev_date_added`). Buckets `earlier` (lead ≥ 1) / `same_day_or_late` / `missed`; lead = `dateAdded` − UTC date of `observed_at`. Excludes warm-up (first 14 days) and old CVEs (year < `dateAdded` year − 1). All/Edge (case-insensitive vendorProject prefix match, `EDGE_VENDORS`) × 30/90 days. Any error is logged, never fatal |
 | `pulse/urls.py` | `safe_url` (http/https only), shared by report rendering and enrichment parsing |
-| `pulse/report.py` | Writes timestamped + `latest.*` Markdown/JSON; generates `docs/index.html` dark-mode dashboard (EPSS/KEV badges, PoC/Advisory buttons, My Stack section) |
+| `pulse/report.py` | Writes timestamped + `latest.*` Markdown/JSON; generates `docs/index.html` dark-mode dashboard (Beat KEV panel first, EPSS/KEV badges, PoC/Advisory buttons, My Stack section) and `docs/scoreboard.json` |
 | `main.py` | CLI entry point; lazy imports for clear error surfacing |
 
 ## Configuration
@@ -76,7 +77,9 @@ Survival gate (`filter_zero_days`): an entry is kept if it is zero-day (`is_kev`
 | `docs/latest.json` | JSON copy served by Pages |
 | `reports/changes.json` | `{run_id, generated_at, changes}` for this run (committed; `run_id` = `$GITHUB_RUN_ID` or `local`) |
 | `reports/changes.md` | Change list rendered for the tracker comment (gitignored) |
+| `docs/scoreboard.json` | Beat KEV numbers + rows, served at `https://peleduri.github.io/zero-day-pulse/scoreboard.json` |
 | `state/last_run.json` | Watchlist state (committed by the workflow; never commit a locally generated one) |
+| `state/first_signal.json`, `state/kev_scoreboard.jsonl` | Beat KEV state (committed by the workflow; never commit locally generated ones) |
 
 ## GitHub Actions
 

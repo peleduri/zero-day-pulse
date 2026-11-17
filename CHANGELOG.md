@@ -3,6 +3,16 @@
 All notable changes to Zero Day Pulse are documented in this file.
 Format: [X.Y.Z.W] - YYYY-MM-DD, newest first.
 
+## [0.3.0.0] - 2026-11-17
+
+### Added
+- **"Beat KEV" lead-time scoreboard** (`pulse/scoreboard.py`, design in `design/beat-kev-scoreboard.md`): measures how often, and by how many days, Zero Day Pulse sees a CVE being exploited before CISA adds it to KEV.
+  - The first zero-day keyword signal per CVE (title + summary, at most 2 CVEs per entry, CVE not yet in KEV) is stored in `state/first_signal.json` (180 days, max 5000).
+  - Every run walks the full KEV catalog and writes one write-once row per addition since go-live to `state/kev_scoreboard.jsonl`: earlier, same day/late, or missed. Corrupt or duplicate lines are skipped and the file rewritten atomically; a lost go-live header is rebuilt from the earliest row.
+  - A "Beat KEV" panel at the top of `latest.md` and the dashboard shows All and Edge-vendor numbers for 30 and 90 days, the biggest leads, and excluded counts (14-day warm-up, old CVEs). Raw numbers go to `docs/scoreboard.json` (served by Pages).
+  - New CLI flags `--signals-file` / `--scoreboard-file` (env `PULSE_SIGNALS_PATH` / `PULSE_SCOREBOARD_PATH`).
+  - Scoreboard errors are logged and never fail the pipeline.
+
 ## [0.2.0.0] - 2026-11-17
 
 First versioned release. It covers the intel layer (#11), dashboard cards and My Stack (#12), "what changed" alerts (#13), and the network-edge vendor work first proposed in July as 0.1.0.0 (#9). That 0.1.0.0 was never merged on its own; it is ported onto the current pipeline here.
