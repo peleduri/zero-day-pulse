@@ -47,6 +47,22 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("state/", add.split())
         self.assertIn("reports/changes.json", add.split())
 
+    def test_tests_run_before_pipeline(self):
+        names = [s.get("id") or s["name"] for s in _steps(self.wf)]
+        self.assertIn("Run tests", names)
+        self.assertLess(names.index("Run tests"), names.index("pulse"))
+        self.assertEqual(self.steps["Run tests"]["run"].strip(), "python -m pytest tests/")
+        install = self.steps["Install dependencies"]["run"]
+        self.assertIn("-r requirements-dev.txt", install)
+        self.assertLess(names.index("Install dependencies"), names.index("Run tests"))
+
+    def test_dev_requirements_pinned(self):
+        req = WORKFLOW.parent.parent.parent / "requirements-dev.txt"
+        lines = [l.strip() for l in req.read_text().splitlines() if l.strip() and not l.startswith("#")]
+        self.assertTrue(lines)
+        for l in lines:
+            self.assertRegex(l, r"^[A-Za-z0-9_.\[\]-]+==[\w.]+$", l)
+
     def test_state_not_gitignored(self):
         ignore = (WORKFLOW.parent.parent.parent / ".gitignore").read_text().splitlines()
         rules = [l.strip() for l in ignore if l.strip() and not l.startswith("#")]
