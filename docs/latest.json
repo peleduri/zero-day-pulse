@@ -1,14 +1,149 @@
 {
-  "generated": "2026-11-18T00:07:12.176989+00:00",
-  "total": 13,
-  "kev": 2,
-  "zero_day": 2,
+  "generated": "2026-11-18T14:42:46.250770+00:00",
+  "total": 12,
+  "kev": 3,
+  "zero_day": 0,
   "enriched": 0,
-  "high_epss": 1,
-  "my_stack": 8,
-  "run_id": "44205019087",
-  "changes": [],
+  "high_epss": 2,
+  "my_stack": 9,
+  "run_id": "44327074455",
+  "changes": [
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2012-0507",
+      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
+      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "stack_match": [
+        "jenkins",
+        "jira"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2012-1723",
+      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
+      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "stack_match": [
+        "jenkins",
+        "jira"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2012-4681",
+      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
+      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "stack_match": [
+        "jenkins",
+        "jira"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2013-0422",
+      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
+      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "stack_match": [
+        "jenkins",
+        "jira"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2013-0431",
+      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
+      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "stack_match": [
+        "jenkins",
+        "jira"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2013-2465",
+      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
+      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "stack_match": [
+        "jenkins",
+        "jira"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-114938",
+      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
+      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "stack_match": [
+        "jenkins",
+        "jira"
+      ]
+    }
+  ],
   "findings": [
+    {
+      "id": "https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html",
+      "title": "Hackers Exploiting Critical Puppet RCE Flaw Affecting Enterprise Management Servers",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a critical security flaw impacting Perforce Puppet, an enterprise infrastructure-as-code (IaC) and configuration management platform, to its Known Exploited Vulnerabilities (KEV) catalog, citing reports of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-115731 (CVSS score: 9.4), is a case of",
+      "link": "https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html",
+      "published": "2026-11-18T08:24:31+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-115731"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-17",
+      "kev_due_date": "2026-12-01",
+      "kev_vendor": "Perforce",
+      "kev_product": "Puppet Enterprise",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00691,
+      "epss_percentile": 0.53546,
+      "stack_match": []
+    },
+    {
+      "id": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
+      "summary": "Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Key takeaways CVE-2026-114938, dubbed Java4Shell, is an OpenJDK memory corruption vulnerability that Oracle scores 8.1 on CVSS 3.1, and Calif says its testing showed attackers could run code without logging in on applications such as Atlassian Jira and Jenkins. As of November 17, Tenable is not aware of any reports that attackers have exploited this flaw, though Calif has published a PoC that triggers the bug without taking control of the system and a second researcher reports building a working exploit. Oracle released fixed builds on November 17, and according to Calif, only systems running an affected Java version on x86-64 processors that support AVX-512 VBMI can be affected. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding Java4Shell, a vulnerability in OpenJDK that was patched on November 17, 2026. FAQ When was Java4Shell first disclosed? On November 17, security firm Calif said on X that it had found and reported the flaw, and that details of Java4Shell, as Calif named it, had leaked ahead of a fix. Later that day, Oracle released its November 2026 Critical Security Patch Update (CSPU) , and the OpenJDK Vulnerability Group published its own advisory. Calif then published its technical write-up . Oracle credits Quang Luong of Calif.io and Albert Yang for reporting the vulnerability. Since the vulnerability has leaked: Calif discovered and reported Java4Shell (CVE-2026-114938). We're publishing technical details by 1 PM Pacific today, after Oracle releases a patch. Stay tuned! https://t.co/No5hJXK1Zx \u2014 Calif (@calif_io) November 17, 2026 What is CVE-2026-114938? CVE Description CVSSv3.1 CVE-",
+      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "published": "2026-11-18T02:49:16+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-114938",
+        "CVE-2013-0431",
+        "CVE-2013-0422",
+        "CVE-2013-2465",
+        "CVE-2012-4681",
+        "CVE-2012-1723",
+        "CVE-2012-0507"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2022-03-03",
+      "kev_due_date": "2022-03-24",
+      "kev_vendor": "Oracle",
+      "kev_product": "Java SE",
+      "kev_ransomware": true,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.98773,
+      "epss_percentile": 0.99927,
+      "stack_match": [
+        "jenkins",
+        "jira"
+      ]
+    },
     {
       "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1",
       "title": "Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026",
@@ -38,91 +173,14 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.82641,
-      "epss_percentile": 0.99673,
+      "epss_percentile": 0.99674,
       "stack_match": [
         "node.js"
       ]
     },
     {
-      "id": "https://www.securityweek.com/msp-screenconnect-servers-targeted-in-month-long-campaign/",
-      "title": "MSP ScreenConnect Servers Targeted in Month-Long Campaign",
-      "summary": "More than 40 servers received over 688,000 requests exploiting CVE-2026-84869 to execute guest-pushed files. The post MSP ScreenConnect Servers Targeted in Month-Long Campaign appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/msp-screenconnect-servers-targeted-in-month-long-campaign/",
-      "published": "2026-11-17T13:24:43+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-84869"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-09-11",
-      "kev_due_date": "2026-09-14",
-      "kev_vendor": "ConnectWise",
-      "kev_product": "ScreenConnect",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": 0.01173,
-      "epss_percentile": 0.68014,
-      "stack_match": []
-    },
-    {
-      "id": "https://www.securityweek.com/n-able-kills-legacy-apis-patches-17-n-central-zero-days/",
-      "title": "N-able Kills Legacy APIs, Patches 17 N-central Zero-Days",
-      "summary": "The patches target recently disclosed zero-days, as well as vulnerabilities already exploited in the wild. The post N-able Kills Legacy APIs, Patches 17 N-central Zero-Days appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/n-able-kills-legacy-apis-patches-17-n-central-zero-days/",
-      "published": "2026-11-17T12:28:45+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html",
-      "title": "ConnectWise Warns ScreenConnect Attacks Continue as SCKit Targets Unpatched Systems",
-      "summary": "ConnectWise on Monday said it completed its investigation into unauthorized access targeting partner ScreenConnect environments, and recommended customers to ensure that the technician client is running version 26.6.5 or later.\n\nThe company said additional activity targeting on-premises environments continues to be reported where the identified third-party extensions remain enabled and",
-      "link": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html",
-      "published": "2026-11-17T06:29:27+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
       "id": "https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk",
-      "title": "CVE-2026-114938 RCE in OpenJDK: Everything You Need to Know",
+      "title": "CVE-2026-114938 OpenJDK RCE (Java4Shell): Everything You Need to Know",
       "summary": "Detect and mitigate Java4Shell (CVE-2026-114938), a critical 9.2 RCE vulnerability affecting OpenJDK and major Java-based applications.",
       "link": "https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk",
       "published": "2026-11-17T22:29:57+00:00",
@@ -144,8 +202,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00734,
+      "epss_percentile": 0.55119,
       "stack_match": []
     },
     {
@@ -172,8 +230,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.0063,
+      "epss_percentile": 0.50915,
       "stack_match": [
         "github"
       ]
@@ -202,8 +260,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00335,
+      "epss_percentile": 0.27292,
       "stack_match": [
         "github"
       ]
@@ -263,7 +321,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.001,
-      "epss_percentile": 0.00844,
+      "epss_percentile": 0.00842,
       "stack_match": [
         "github"
       ]
@@ -293,7 +351,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.00727,
-      "epss_percentile": 0.54779,
+      "epss_percentile": 0.54888,
       "stack_match": [
         "aws",
         "redis",
@@ -325,7 +383,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.00356,
-      "epss_percentile": 0.29858,
+      "epss_percentile": 0.29915,
       "stack_match": [
         "python",
         "github"
@@ -356,7 +414,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.00431,
-      "epss_percentile": 0.37875,
+      "epss_percentile": 0.37974,
       "stack_match": []
     },
     {
@@ -384,7 +442,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.0024,
-      "epss_percentile": 0.15279,
+      "epss_percentile": 0.15293,
       "stack_match": [
         "github"
       ]

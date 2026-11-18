@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-18 00:07 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 📈 High EPSS: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 2 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; 🎯 My Stack: 8 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-18 14:42 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 3 &nbsp;|&nbsp; 📈 High EPSS: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 0 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; 🎯 My Stack: 9 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,20 +20,58 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
+## ⚡ Changed since last run (7)
+
+- 🎯 New My Stack hit: CVE-2012-0507 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
+- 🎯 New My Stack hit: CVE-2012-1723 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
+- 🎯 New My Stack hit: CVE-2012-4681 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
+- 🎯 New My Stack hit: CVE-2013-0422 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
+- 🎯 New My Stack hit: CVE-2013-0431 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
+- 🎯 New My Stack hit: CVE-2013-2465 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
+- 🎯 New My Stack hit: CVE-2026-114938 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
+
+---
+
 ## 🎯 My Stack Highlights
 
+- 🔴 CISA KEV — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability — `CVE-2026-114938`, `CVE-2013-0431`, `CVE-2013-0422`, `CVE-2013-2465`, `CVE-2012-4681`, `CVE-2012-1723`, `CVE-2012-0507` — EPSS 99% — `jenkins`, `jira`
 - 🔴 CISA KEV — Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026 — `CVE-2026-111497`, `CVE-2026-105482`, `CVE-2026-105483`, `CVE-2026-106069` — EPSS 83% — `node.js`
 - 🟡 High Severity — AWS-advanced-jdbc-wrapper: Java Deserialization RCE via Cache Poisoning — `CVE-2026-14265` — EPSS 1% — `aws`, `redis`, `github`
+- 🟡 High Severity — libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth — `CVE-2026-110789` — EPSS 1% — `github`
 - 🟡 High Severity — Phoenix: Format String Injection in applyChatTemplate — `CVE-2026-53998` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding) — `CVE-2026-110782` — EPSS <1% — `github`
 - 🟡 High Severity — Next.js: Cache leak across root param values in nested &#x27;use cache&#x27; functions via delayed inner stream metadata — `CVE-2026-119351` — EPSS <1% — `github`
 - 🟡 High Severity — qbee-agent: Local Privilege Escalation and Arbitrary File Tampering via Symlink Following in createFile helper — `CVE-2026-62336` — EPSS <1% — `github`
-- 🟡 High Severity — libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth — `CVE-2026-110789` — EPSS n/a — `github`
-- 🟡 High Severity — SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding) — `CVE-2026-110782` — EPSS n/a — `github`
 - 🟡 High Severity — Filament Curator: Cross-tenant media metadata disclosure via Curator picker search — `CVE-2026-63389` — EPSS n/a — `github`
 
 ---
 
-## 1. 🔴 CISA KEV — Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026
+## 1. 🔴 CISA KEV — Hackers Exploiting Critical Puppet RCE Flaw Affecting Enterprise Management Servers
+
+**CVE:** `CVE-2026-115731` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-18
+**EPSS:** 0.7% (percentile 54%)
+**KEV:** in catalog, due 2026-12-01
+**Reference:** <https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a critical security flaw impacting Perforce Puppet, an enterprise infrastructure-as-code (IaC) and configuration management platform, to its Known Exploited Vulnerabilities (KEV) catalog, citing reports of active exploitation.
+
+The vulnerability, tracked as CVE-2026-115731 (CVSS score: 9.4), is a case of
+
+---
+
+## 2. 🔴 CISA KEV — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability
+
+**CVE:** `CVE-2026-114938` | `CVE-2013-0431` | `CVE-2013-0422` | `CVE-2013-2465` | `CVE-2012-4681` | `CVE-2012-1723` | `CVE-2012-0507` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-11-18
+**EPSS:** 98.8% (percentile 100%)
+**KEV:** in catalog, due 2022-03-24 · ☠️ known ransomware use
+**My Stack:** `jenkins`, `jira`
+**Reference:** <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
+
+> Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Key takeaways CVE-2026-114938, dubbed Java4Shell, is an OpenJDK memory corruption vulnerability that Oracle sc…
+
+---
+
+## 3. 🔴 CISA KEV — Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026
 
 **CVE:** `CVE-2026-111497` | `CVE-2026-105482` | `CVE-2026-105483` | `CVE-2026-106069` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-17
 **EPSS:** 82.6% (percentile 100%)
@@ -45,49 +83,20 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
-## 2. 🔴 CISA KEV — MSP ScreenConnect Servers Targeted in Month-Long Campaign
-
-**CVE:** `CVE-2026-84869` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-17
-**EPSS:** 1.2% (percentile 68%)
-**KEV:** in catalog, due 2026-09-14
-**Reference:** <https://www.securityweek.com/msp-screenconnect-servers-targeted-in-month-long-campaign/>
-
-> More than 40 servers received over 688,000 requests exploiting CVE-2026-84869 to execute guest-pushed files. The post MSP ScreenConnect Servers Targeted in Month-Long Campaign appeared first on SecurityWeek .
-
----
-
-## 3. 🟠 Zero-Day — N-able Kills Legacy APIs, Patches 17 N-central Zero-Days
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-17
-**Reference:** <https://www.securityweek.com/n-able-kills-legacy-apis-patches-17-n-central-zero-days/>
-
-> The patches target recently disclosed zero-days, as well as vulnerabilities already exploited in the wild. The post N-able Kills Legacy APIs, Patches 17 N-central Zero-Days appeared first on SecurityWeek .
-
----
-
-## 4. 🟠 Zero-Day — ConnectWise Warns ScreenConnect Attacks Continue as SCKit Targets Unpatched Systems
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-17
-**Reference:** <https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html>
-
-> ConnectWise on Monday said it completed its investigation into unauthorized access targeting partner ScreenConnect environments, and recommended customers to ensure that the technician client is running version 26.6.5 or later.
-
-The company said additional activity targeting on-premises environments continues to be reported where the identified third-party extensions remain enabled and
-
----
-
-## 5. 🟡 High Severity — CVE-2026-114938 RCE in OpenJDK: Everything You Need to Know
+## 4. 🟡 High Severity — CVE-2026-114938 OpenJDK RCE (Java4Shell): Everything You Need to Know
 
 **CVE:** `CVE-2026-114938` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-11-17
+**EPSS:** 0.7% (percentile 55%)
 **Reference:** <https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk>
 
 > Detect and mitigate Java4Shell (CVE-2026-114938), a critical 9.2 RCE vulnerability affecting OpenJDK and major Java-based applications.
 
 ---
 
-## 6. 🟡 High Severity — libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth
+## 5. 🟡 High Severity — libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth
 
 **CVE:** `CVE-2026-110789` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
+**EPSS:** 0.6% (percentile 51%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-rvfr-cqwq-rc4j>
 
@@ -99,9 +108,10 @@ A remote peer can stall a js-libp2p node&#x27;s entire event loop for ~4–5 sec
 
 ---
 
-## 7. 🟡 High Severity — SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding)
+## 6. 🟡 High Severity — SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding)
 
 **CVE:** `CVE-2026-110782` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
+**EPSS:** 0.3% (percentile 27%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-r7hw-jx6r-756g>
 
@@ -112,7 +122,7 @@ CVE-2026-49283 / GHSA-6929-8p9f-26jx (&quot;HTTP-Artifact TLS validator confusio
 
 ---
 
-## 8. 🟡 High Severity — Filament Curator: Cross-tenant media metadata disclosure via Curator picker search
+## 7. 🟡 High Severity — Filament Curator: Cross-tenant media metadata disclosure via Curator picker search
 
 **CVE:** `CVE-2026-63389` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
 **My Stack:** `github`
@@ -131,7 +141,7 @@ CVE-2026-49283 / GHSA-6929-8p9f-26jx (&quot;HTTP-Artifact TLS validator confusio
 
 ---
 
-## 9. 🟡 High Severity — qbee-agent: Local Privilege Escalation and Arbitrary File Tampering via Symlink Following in createFile helper
+## 8. 🟡 High Severity — qbee-agent: Local Privilege Escalation and Arbitrary File Tampering via Symlink Following in createFile helper
 
 **CVE:** `CVE-2026-62336` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
 **EPSS:** 0.1% (percentile 1%)
@@ -148,7 +158,7 @@ Any managed device running qbee-agent up to the affected versions. The impact ma
 
 ---
 
-## 10. 🟡 High Severity — AWS-advanced-jdbc-wrapper: Java Deserialization RCE via Cache Poisoning
+## 9. 🟡 High Severity — AWS-advanced-jdbc-wrapper: Java Deserialization RCE via Cache Poisoning
 
 **CVE:** `CVE-2026-14265` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
 **EPSS:** 0.7% (percentile 55%)
@@ -160,7 +170,7 @@ The AWS Advanced JDBC Wrapper is an open-source JDBC driver wrapper that extends
 
 ---
 
-## 11. 🟡 High Severity — Phoenix: Format String Injection in applyChatTemplate
+## 10. 🟡 High Severity — Phoenix: Format String Injection in applyChatTemplate
 
 **CVE:** `CVE-2026-53998` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
 **EPSS:** 0.4% (percentile 30%)
@@ -173,7 +183,7 @@ A format string injection vulnerability in the applyChatTemplate GraphQL endpoin
 
 ---
 
-## 12. 🟡 High Severity — SAPBleed: Pre-Auth Memory Disclosure and RCE in SAP NetWeaver, Web Dispatcher and HANA XS (CVE-2026-76964, CVE-2026-89126)
+## 11. 🟡 High Severity — SAPBleed: Pre-Auth Memory Disclosure and RCE in SAP NetWeaver, Web Dispatcher and HANA XS (CVE-2026-76964, CVE-2026-89126)
 
 **CVE:** `CVE-2026-76964` | `CVE-2026-89126` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-11-17
 **EPSS:** 0.4% (percentile 38%)
@@ -183,7 +193,7 @@ A format string injection vulnerability in the applyChatTemplate GraphQL endpoin
 
 ---
 
-## 13. 🟡 High Severity — Next.js: Cache leak across root param values in nested &#x27;use cache&#x27; functions via delayed inner stream metadata
+## 12. 🟡 High Severity — Next.js: Cache leak across root param values in nested &#x27;use cache&#x27; functions via delayed inner stream metadata
 
 **CVE:** `CVE-2026-119351` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
 **EPSS:** 0.2% (percentile 15%)
