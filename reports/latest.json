@@ -1,81 +1,29 @@
 {
-  "generated": "2026-11-18T14:42:46.250770+00:00",
-  "total": 12,
-  "kev": 3,
-  "zero_day": 0,
+  "generated": "2026-11-18T23:40:14.042703+00:00",
+  "total": 9,
+  "kev": 7,
+  "zero_day": 1,
   "enriched": 0,
   "high_epss": 2,
-  "my_stack": 9,
-  "run_id": "44327074455",
+  "my_stack": 3,
+  "run_id": "44422574189",
   "changes": [
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2012-0507",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "cve": "CVE-2026-123007",
+      "title": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
+      "link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
       "stack_match": [
-        "jenkins",
-        "jira"
+        "nginx"
       ]
     },
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2012-1723",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "cve": "CVE-2026-123633",
+      "title": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
+      "link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
       "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2012-4681",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2013-0422",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2013-0431",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2013-2465",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-114938",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
+        "nginx"
       ]
     }
   ],
@@ -110,7 +58,7 @@
     {
       "id": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
       "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "summary": "Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Key takeaways CVE-2026-114938, dubbed Java4Shell, is an OpenJDK memory corruption vulnerability that Oracle scores 8.1 on CVSS 3.1, and Calif says its testing showed attackers could run code without logging in on applications such as Atlassian Jira and Jenkins. As of November 17, Tenable is not aware of any reports that attackers have exploited this flaw, though Calif has published a PoC that triggers the bug without taking control of the system and a second researcher reports building a working exploit. Oracle released fixed builds on November 17, and according to Calif, only systems running an affected Java version on x86-64 processors that support AVX-512 VBMI can be affected. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding Java4Shell, a vulnerability in OpenJDK that was patched on November 17, 2026. FAQ When was Java4Shell first disclosed? On November 17, security firm Calif said on X that it had found and reported the flaw, and that details of Java4Shell, as Calif named it, had leaked ahead of a fix. Later that day, Oracle released its November 2026 Critical Security Patch Update (CSPU) , and the OpenJDK Vulnerability Group published its own advisory. Calif then published its technical write-up . Oracle credits Quang Luong of Calif.io and Albert Yang for reporting the vulnerability. Since the vulnerability has leaked: Calif discovered and reported Java4Shell (CVE-2026-114938). We're publishing technical details by 1 PM Pacific today, after Oracle releases a patch. Stay tuned! https://t.co/No5hJXK1Zx \u2014 Calif (@calif_io) November 17, 2026 What is CVE-2026-114938? CVE Description CVSSv3.1 CVE-",
+      "summary": "Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Change log Update November 18: Added reports of exploitation attempts and a working exploit, alerts from CISA and the Canadian Centre for Cyber Security, fixed builds from other Java distributions, mitigation guidance from Keycloak and an example Tenable Hexa AI prompt. Click here to review the change log history Update November 18: Added reports of exploitation attempts and a working exploit, alerts from CISA and the Canadian Centre for Cyber Security, fixed builds from other Java distributions, mitigation guidance from Keycloak and an example Tenable Hexa AI prompt. November 17: Original publication. Key takeaways CVE-2026-114938, dubbed Java4Shell, is an OpenJDK memory corruption vulnerability that Oracle scores 8.1 on CVSS 3.1, and Calif says its testing showed attackers could run code without logging in on applications such as Atlassian Jira and Jenkins. As of November 18, GreyNoise has reported exploitation attempts against this flaw but has not confirmed any successful exploitation against its sensors, and VulnCheck says a working exploit is available to its customers, while Kevin Breen of Immersive reports building one. Oracle released fixed builds on November 17, and according to Calif, only systems running an affected Java version on x86-64 processors that support AVX-512 VBMI can be affected. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding Java4Shell, a vulnerability in OpenJDK that was patched on November 17, 2026. FAQ When was Java4Shell first disclosed? On November 17, security firm Calif said on X that it had found and reported the flaw, and that details of Java4Shell, as Calif na",
       "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
       "published": "2026-11-18T02:49:16+00:00",
       "source": "Tenable Security Research",
@@ -179,11 +127,154 @@
       ]
     },
     {
-      "id": "https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk",
-      "title": "CVE-2026-114938 OpenJDK RCE (Java4Shell): Everything You Need to Know",
-      "summary": "Detect and mitigate Java4Shell (CVE-2026-114938), a critical 9.2 RCE vulnerability affecting OpenJDK and major Java-based applications.",
-      "link": "https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk",
-      "published": "2026-11-17T22:29:57+00:00",
+      "id": "CVE-2024-10441",
+      "title": "CVE-2024-10441 \u2014 Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
+      "summary": "Vendor: Synology | Product: DiskStation Manager (DSM). Synology DSM contains an improper encoding or escaping of output vulnerability in the system plugin daemon in Synology BeeStation OS (BSM) that could allow a remote attacker to execute arbitrary code via unspecified vectors. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-21)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2024-10441",
+      "published": "2026-11-18",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2024-10441"
+      ],
+      "is_kev": true,
+      "in_kev": true,
+      "kev_date_added": "2026-11-18",
+      "kev_due_date": "2026-11-21",
+      "kev_vendor": "Synology",
+      "kev_product": "DiskStation Manager (DSM)",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": 0.01251,
+      "epss_percentile": 0.70014,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-40217",
+      "title": "CVE-2026-40217 \u2014 BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
+      "summary": "Vendor: BerriAI | Product: LiteLLM. BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-12-02)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-40217",
+      "published": "2026-11-18",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-40217"
+      ],
+      "is_kev": true,
+      "in_kev": true,
+      "kev_date_added": "2026-11-18",
+      "kev_due_date": "2026-12-02",
+      "kev_vendor": "BerriAI",
+      "kev_product": "LiteLLM",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": 0.1702,
+      "epss_percentile": 0.97134,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-90817",
+      "title": "CVE-2026-90817 \u2014 Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability",
+      "summary": "Vendor: Vanderbilt University | Product: Research Electronic Data Capture (REDCap). Vanderbilt University Research Electronic Data Capture (REDCap) contains a code injection vulnerability which could allow an unauthenticated attacker to execute arbitrary code on the server. An attacker could exploit this via crafted HTTP requests that access an unintended controller route from a public survey context and supply a crafted file-path or stream parameter during data import processing. Exploitation requires knowledge of a valid public survey hash. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-21)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-90817",
+      "published": "2026-11-18",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-90817"
+      ],
+      "is_kev": true,
+      "in_kev": true,
+      "kev_date_added": "2026-11-18",
+      "kev_due_date": "2026-11-21",
+      "kev_vendor": "Vanderbilt University",
+      "kev_product": "Research Electronic Data Capture (REDCap)",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": 0.03749,
+      "epss_percentile": 0.90092,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-90436",
+      "title": "CVE-2026-90436 \u2014 Apache Axis Unsafe Reflection Vulnerability",
+      "summary": "Vendor: Apache | Product: Axis. Apache Axis contains an unsafe reflection vulnerability that could allow an unauthenticated remote attacker to execute arbitrary code via a crafted SOAP fault message that causes Axis to load and instantiate an attacker-specified class when a suitable class is available on the application classpath. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-21)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-90436",
+      "published": "2026-11-18",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-90436"
+      ],
+      "is_kev": true,
+      "in_kev": true,
+      "kev_date_added": "2026-11-18",
+      "kev_due_date": "2026-11-21",
+      "kev_vendor": "Apache",
+      "kev_product": "Axis",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": 0.01128,
+      "epss_percentile": 0.67007,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
+      "title": "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required",
+      "summary": "A critical security flaw in Apache Roller, an open-source, Java-based blogging platform, has come under active exploitation in the wild, according to the Apache Software Foundation (ASF)\n\nThe vulnerability, tracked as CVE-2026-129448 (CVSS score: 9.8), is a case of unauthenticated deserialization in the XML-RPC endpoint that could lead to remote code execution.\n\n\"Deserialization of Untrusted",
+      "link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
+      "published": "2026-11-18T17:10:45+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-129448"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.0164,
+      "epss_percentile": 0.7686,
+      "stack_match": []
+    },
+    {
+      "id": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+      "title": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
+      "summary": "Two critical HTTP/2 flaws can allow attackers to compromise NGINX servers, putting the websites, APIs, and sensitive data they handle at risk.",
+      "link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+      "published": "2026-11-18T15:13:20+00:00",
       "source": "Wiz Research",
       "tags": [
         "cloud",
@@ -191,95 +282,8 @@
         "misconfig"
       ],
       "cve_ids": [
-        "CVE-2026-114938"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00734,
-      "epss_percentile": 0.55119,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-110789",
-      "title": "libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth",
-      "summary": "### Summary\nA remote peer can stall a js-libp2p node's entire event loop for ~4\u20135 seconds per connection (and transiently allocate ~2 GB) by sending a ~15-byte crafted `publicKey` inside an Identify message. The malformed key reaches the DER decoder before any peer-id/signature check, so the attack is pre-auth and repeatable indefinitely by reconnecting.\n\n### Details\n`packages/crypto/src/keys/rsa/der.ts` `readLength()` parses DER long-form lengths with no comparison to `buf.byteLength`, and `readInteger()` then loops over the attacker-claimed length:\n\n```ts\nfunction readInteger (buf, context) {\n  const length = readLength(buf, context)   // attacker-controlled, claims up to 2^64\n  const end = context.offset + length\n  for (let i = context.offset; i < end; i++) // runs far past buf.byteLength\n    vals.push(buf[i])                         // pushes `undefined` past the end\n}\n```\n\nThe blob reaches the parser pre-auth: Identify runs on every `connection:open` and calls `publicKeyFromProtobuf(publicKey)` (`packages/protocol-identify/src/identify.ts:85`) before the `connection.remotePeer.equals(id)` check at `identify.ts:88`. The `MAX_RSA_JWK_SIZE` guard in `pkixToRSAPublicKey` only bounds the total blob size, not the inner length field, so a 15-byte payload defeats it; the ECDSA path (`unmarshalECDSAPublicKey`) has no cap at all. The decode runs in a single synchronous tick, so no `AbortSignal` \u2014 including Identify's 5 s timeout \u2014 can interrupt it. Verified on js-libp2p commit `a04f5e0`, where `@libp2p/crypto` reads `5.1.21`.\n\n### PoC\nFull PoC attached (`libp2p-crypto-der-eventloop-dos-poc.tar.gz`). Build the js-libp2p monorepo at the affected version (`npm install --ignore-scripts && npm run build`), extract the package inside the monorepo root (sibling of `packages/`), then `cd libp2p-crypto-der-eventloop-dos-poc && node attack.mjs`. Expected:\n\n```\n[*] round 1: payload sent=true, victim event-loop stall = 4s, peak RSS ~1980 MB\n[*] round 2: payload sent=true, victim eve",
-      "link": "https://github.com/advisories/GHSA-rvfr-cqwq-rc4j",
-      "published": "2026-11-17T21:05:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-110789"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0063,
-      "epss_percentile": 0.50915,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-110782",
-      "title": "SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding)",
-      "summary": "## Summary\nCVE-2026-49283 / GHSA-6929-8p9f-26jx (\"HTTP-Artifact TLS validator confusion allows cross-IdP authentication bypass\") was fixed so that `HTTPArtifact::receive()` verifies the embedded SAML `Response` using the IdP metadata signing keys. The current implementation (master `31c72c1d`, released **v6.2.3**) reaches that verification **only when the embedded Response is signed**:\n\n```php\n// src/Binding/HTTPArtifact.php  (receive())\nif (!$samlResponse->isSigned()) {\n    return $samlResponse;                         // \u2190 unsigned embedded Response returned UNVERIFIED\n}\nreturn $this->verifyMessageSignature($samlResponse, $idpMetadata);   // only runs when signed\n```\n\nAn attacker who controls one trusted-federation IdP therefore returns a **validly-signed outer `ArtifactResponse`** (signed with their own real key, which passes the mandatory outer check) that **wraps an *unsigned* `<samlp:Response>` whose `<Issuer>` names a *different* IdP**. `isSigned()` is false, so `verifyMessageSignature()` never runs and the forged Response is returned as successfully received. Additionally, even on the signed path `verifyMessageSignature()` verifies against the **artifact issuer's** metadata keys but **never asserts that the embedded Response's `<Issuer>` equals the artifact issuer** \u2014 the same cross-IdP confusion the CVE was assigned for is not closed by identity binding.\n\nThis is an incomplete implementation of the fix's own stated goal (\"verify signatures using IdP metadata signing keys\", commit `dac0b4b6` / #419), and a regression introduced by the `#414` refactor (v6.2.2) \u2014 the official CVE fix in **v6.2.1 did not contain this short-circuit**.\n\n## Affected component\n- `src/Binding/HTTPArtifact.php`\n  - `receive()` line **206-207**: `if (!$samlResponse->isSigned()) { return $samlResponse; }` \u2014 the bypassed guard.\n  - `receive()` line 210: `verifyMessageSignature($samlResponse, $idpMetadata)` \u2014 only reached when signed.\n  - `verifyMessageSignature()` lines 230-286: verifie",
-      "link": "https://github.com/advisories/GHSA-r7hw-jx6r-756g",
-      "published": "2026-11-17T21:00:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-110782"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00335,
-      "epss_percentile": 0.27292,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-63389",
-      "title": "Filament Curator: Cross-tenant media metadata disclosure via Curator picker search",
-      "summary": "Summary\n\n  In multitenant Filament panels, an authenticated user could retrieve media metadata belonging to other tenants\n  by typing in the Curator media-picker search box. The search query omitted the tenant ownership scope that the\n  normal file listing applies.\n\n  Details\n\n  CuratorPanel::updatedSearch() built its Eloquent query independently of getFiles() and did not apply the\n  filament()->hasTenancy() && $isTenantAware tenant-ownership where clause. As a result, the search matched media\n  across all tenants. A secondary flaw compounded it: the orWhere('title'\u2026) chain was not wrapped in a nested\n  group, so the OR conditions also broke out of the isLimitedToDirectory constraint.\n\n  The issue was introduced in v3.2.4, when multitenancy support was added to the media picker.\n\n  Impact\n\n  - Who: any authenticated user with access to a panel that uses the Curator picker.\n  - What: disclosure of other tenants' media metadata (name, title, alt, caption, description, path, etc.)\n  returned by the search.\n  - Conditions: only affects deployments using Filament multitenancy with Curator's tenant awareness enabled.\n  Single-tenant installs are not affected.\n\n  Patches\n\n  Fixed in 3.7.8, 4.1.1, and 5.1.1 by applying the tenant scope to the search query and grouping the search terms\n  so they cannot escape the directory/tenant constraints. Upgrade to a patched version.\n\n  Workarounds\n\n  None other than upgrading. Disabling tenant awareness does not help (it removes the boundary entirely).\n\n  Credit\n\n  Reported via coordinated disclosure by [Afsana Alijabarova](https://github.com/afa114).",
-      "link": "https://github.com/advisories/GHSA-828w-6qgx-3rcf",
-      "published": "2026-11-17T20:49:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63389"
+        "CVE-2026-123633",
+        "CVE-2026-123007"
       ],
       "in_kev": false,
       "kev_date_added": null,
@@ -293,158 +297,7 @@
       "epss": null,
       "epss_percentile": null,
       "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-62336",
-      "title": "qbee-agent: Local Privilege Escalation and Arbitrary File Tampering via Symlink Following in createFile helper",
-      "summary": "This is a Local Privilege Escalation (LPE) vulnerability stemming from improper symlink handling (CWE-59: Link Following) and improper ownership management (CWE-282) inside the qbee-agent file manager logic.\n\n### Impact\n\nAny managed device running qbee-agent up to the affected versions. The impact manifests in three distinct vectors:\n\n1. **Primary Vector (Full Privilege Escalation to Root - Default Configuration)**: If an unprivileged user's account is managed by the SSH Keys bundle, they can replace or remove their own `~/.ssh` directory and create a symlink pointing to `/root/.ssh`. On the next configuration apply, qbee-agent follows the symlink and writes the user's server-provisioned public key directly into `/root/.ssh/authorized_keys`. Since the symlink resides inside the user's own home directory, kernel protections like `fs.protected_symlinks` do not block this execution. The attacker can then instantly log in as root via SSH.\n\n2. **Secondary Vector (Arbitrary File Overwrite / DoS via RAUC Staging)**: On devices utilizing RAUC download mode, the agent uses a predictable, world-writable staging path (`/tmp/.bundle.raucb.part`). If `fs.protected_symlinks` is disabled `(0)`, an unprivileged user can symlink this path to a vital system file (e.g., `/etc/shadow` or `/etc/pam.d/*`), causing the agent to truncate or overwrite it with server-supplied update data during a RAUC update deployment.\n\n3. **Tertiary Vector (Arbitrary File Re-ownership via File Distribution)**: If an operator configures a file-distribution/template destination under a directory owned by an unprivileged user, the attacker can create a symlink at the partial download path targeting a sensitive system file. The agent will then inadvertently execute `file.Chown()` on the targeted file, handing ownership over to the unprivileged attacker.\n\n### Patches\n\nThe vulnerability has been addressed by hardening file creation and directory traversal inside `app/configuration/file_manager.go`. Specifically,",
-      "link": "https://github.com/advisories/GHSA-xhv5-8fpq-g7hf",
-      "published": "2026-11-17T20:48:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62336"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.001,
-      "epss_percentile": 0.00842,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-14265",
-      "title": "AWS-advanced-jdbc-wrapper: Java Deserialization RCE via Cache Poisoning",
-      "summary": "### Impact\nThe AWS Advanced JDBC Wrapper is an open-source JDBC driver wrapper that extends a JDBC driver to enable Amazon Aurora and AWS Cloud features such as failover handling and caching. We identified CVE-2026-14265, an issue in the RemoteQueryCachePlugin of the AWS Advanced JDBC Wrapper. When this plugin is enabled, query results read from the shared Redis/Valkey cache are deserialized without class filtering. An actor with write access to the shared cache infrastructure could insert a crafted serialized Java object that, when read by an application, results in execution of arbitrary code on the application server.\n\n### Workarounds\nThe RemoteQueryCachePlugin is not enabled by default. Customers who cannot immediately upgrade can mitigate this issue by disabling the RemoteQueryCachePlugin, and by restricting write access to the Redis/Valkey cache infrastructure to trusted principals.",
-      "link": "https://github.com/advisories/GHSA-c5q4-97jw-jggh",
-      "published": "2026-11-17T20:39:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-14265"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00727,
-      "epss_percentile": 0.54888,
-      "stack_match": [
-        "aws",
-        "redis",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-53998",
-      "title": "Phoenix: Format String Injection in applyChatTemplate",
-      "summary": "- Summary\n\nA format string injection vulnerability in the applyChatTemplate GraphQL endpoint allows an attacker to read server-side environment variables, cryptographic secrets, and internal module attributes directly from the API response. On default Phoenix installations where authentication is disabled the endpoint is reachable with no credentials. On auth-enabled deployments, any account regardless of privilege level is sufficient to exploit it.\n\n- Impact\nServer filesystem paths, loaded Python module names, and internal configuration constants are fully disclosed, an attacker with network access can read the full server `os.environ` including the admin credentials hardcoded in `phoenix.auth`.\n\nSuccessful exploitation allows an attacker to extract PHOENIX_SECRET, the master key used to sign all JWTs and derive the Fernet encryption key protecting stored credentials (LLM API keys, OAuth tokens). With this key, an attacker can forge admin-level session tokens and decrypt all secrets stored in the database.\n\n- Affected Versions\n\nFirst vulnerable release: arize-phoenix-v13.0.0 (2026-02-13)\nLatest confirmed vulnerable release: arize-phoenix-v14.8.0 (2026-04-17)\n\n- Affected Component\n `applyChatTemplate` GraphQL query endpoint (`src/phoenix/server/api/queries.py:1638`)\n `FStringTemplateFormatter._format()` template rendering function (`src/phoenix/utilities/template_formatters.py:272`)\n `DotDict.__getattr__()` ineffective attribute access control (`src/phoenix/utilities/template_formatters.py:90`)\n\n- Proof of Concept\npayload as txt with an image performing the exploit below.\n<img width=\"1574\" height=\"766\" alt=\"PoC-Phoenix\" src=\"https://github.com/user-attachments/assets/55f56325-4c26-4c96-8aa9-89e44ff1ba53\" />\n- Payload:\n\n```\n{\n  \"query\": \"query($t: PromptChatTemplateInput!, $o: PromptTemplateOptions!) { applyChatTemplate(template: $t, templateOptions: $o) { messages { content { ... on TextContentPart { text { text } } } } } }\",\n  \"variables\": {\n    \"t\": { \"messages\": ",
-      "link": "https://github.com/advisories/GHSA-gfv3-m769-5xm3",
-      "published": "2026-11-17T20:02:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53998"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00356,
-      "epss_percentile": 0.29915,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Nov/36",
-      "title": "SAPBleed: Pre-Auth Memory Disclosure and RCE in SAP NetWeaver, Web Dispatcher and HANA XS (CVE-2026-76964, CVE-2026-89126)",
-      "summary": "Posted by Raschin Tavakoli via Fulldisclosure on Nov 17 nullFaktor Security Advisory < 2026-11-12 > =========================================================== Title: SAPBleed: Pre-Auth Process Memory Leak and RCE in SAP ICM and Web Dispatcher, including the internal Web Dispatcher in SAP HANA XS Vulnerability: Heap Buffer Overflow / Memory Leak / RCE CVE (ICM): CVE-2026-76964 CVE (Web Disp): CVE-2026-89126 Impact:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Nov/36",
-      "published": "2026-11-17T19:15:53+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-76964",
-        "CVE-2026-89126"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00431,
-      "epss_percentile": 0.37974,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-119351",
-      "title": "Next.js: Cache leak across root param values in nested 'use cache' functions via delayed inner stream metadata",
-      "summary": "With Cache Components enabled, an outer `'use cache'` function can be keyed incorrectly even when its inner `'use cache'` call generates a fresh entry. If the inner function reads a root param (via `next/root-params`) and returns a value that still contains pending promises \u2014 for example an object with data that is ready immediately alongside slower data \u2014 React Flight delivers the ready portion to the outer function before the inner entry has finished publishing its root param dependencies. The outer function can then finish, and its cache entry is persisted under a key that omits that root param. The entry is written once and reused for all root param values, so a response for one root param value can serve content produced for a different value. Entries written this way can also ignore tag invalidation and cache lifetimes of the nested caches they consumed.\n\nWhat values are leaked cannot be attacker controlled. Which value's content is served depends only on which invocation wrote the entry first.\n\nThis is a variant of https://github.com/advisories/GHSA-h694-7cp9-m8p3 that the fix for that advisory does not cover: it does not require the inner call to be served from an existing entry, and it does not depend on a slow cache handler.",
-      "link": "https://github.com/advisories/GHSA-vc7v-qv4w-wrv8",
-      "published": "2026-11-17T16:13:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-119351"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0024,
-      "epss_percentile": 0.15293,
-      "stack_match": [
-        "github"
+        "nginx"
       ]
     }
   ]

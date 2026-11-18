@@ -1,1 +1,8 @@
-{}
+{
+  "CVE-2026-129448": {
+    "link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
+    "observed_at": "2026-11-18T23:40:03.305427+00:00",
+    "published": "2026-11-18T17:10:45+00:00",
+    "source": "The Hacker News Security"
+  }
+}

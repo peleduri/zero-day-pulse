@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-18 14:42 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 3 &nbsp;|&nbsp; 📈 High EPSS: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 0 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; 🎯 My Stack: 9 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-18 23:40 UTC &nbsp;|&nbsp; **Total:** 9 &nbsp;|&nbsp; 🔴 KEV: 7 &nbsp;|&nbsp; 📈 High EPSS: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 1 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; 🎯 My Stack: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -9,26 +9,21 @@
 **Last 30 days**  
 - All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
 - Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
-- Excluded: 0 warm-up, 0 old CVEs
+- Excluded: 4 warm-up, 0 old CVEs
 
 **Last 90 days**  
 - All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
 - Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
-- Excluded: 0 warm-up, 0 old CVEs
+- Excluded: 4 warm-up, 0 old CVEs
 
 _Zero-days reported before a CVE ID exists can't be matched and count as missed._
 
 ---
 
-## ⚡ Changed since last run (7)
+## ⚡ Changed since last run (2)
 
-- 🎯 New My Stack hit: CVE-2012-0507 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
-- 🎯 New My Stack hit: CVE-2012-1723 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
-- 🎯 New My Stack hit: CVE-2012-4681 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
-- 🎯 New My Stack hit: CVE-2013-0422 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
-- 🎯 New My Stack hit: CVE-2013-0431 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
-- 🎯 New My Stack hit: CVE-2013-2465 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
-- 🎯 New My Stack hit: CVE-2026-114938 [jenkins, jira] — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
+- 🎯 New My Stack hit: CVE-2026-123007 [nginx] — Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007 <https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities>
+- 🎯 New My Stack hit: CVE-2026-123633 [nginx] — Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007 <https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities>
 
 ---
 
@@ -36,13 +31,7 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 - 🔴 CISA KEV — Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability — `CVE-2026-114938`, `CVE-2013-0431`, `CVE-2013-0422`, `CVE-2013-2465`, `CVE-2012-4681`, `CVE-2012-1723`, `CVE-2012-0507` — EPSS 99% — `jenkins`, `jira`
 - 🔴 CISA KEV — Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026 — `CVE-2026-111497`, `CVE-2026-105482`, `CVE-2026-105483`, `CVE-2026-106069` — EPSS 83% — `node.js`
-- 🟡 High Severity — AWS-advanced-jdbc-wrapper: Java Deserialization RCE via Cache Poisoning — `CVE-2026-14265` — EPSS 1% — `aws`, `redis`, `github`
-- 🟡 High Severity — libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth — `CVE-2026-110789` — EPSS 1% — `github`
-- 🟡 High Severity — Phoenix: Format String Injection in applyChatTemplate — `CVE-2026-53998` — EPSS <1% — `python`, `github`
-- 🟡 High Severity — SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding) — `CVE-2026-110782` — EPSS <1% — `github`
-- 🟡 High Severity — Next.js: Cache leak across root param values in nested &#x27;use cache&#x27; functions via delayed inner stream metadata — `CVE-2026-119351` — EPSS <1% — `github`
-- 🟡 High Severity — qbee-agent: Local Privilege Escalation and Arbitrary File Tampering via Symlink Following in createFile helper — `CVE-2026-62336` — EPSS <1% — `github`
-- 🟡 High Severity — Filament Curator: Cross-tenant media metadata disclosure via Curator picker search — `CVE-2026-63389` — EPSS n/a — `github`
+- 🟡 High Severity — Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007 — `CVE-2026-123633`, `CVE-2026-123007` — EPSS n/a — `nginx`
 
 ---
 
@@ -67,7 +56,7 @@ The vulnerability, tracked as CVE-2026-115731 (CVSS score: 9.4), is a case of
 **My Stack:** `jenkins`, `jira`
 **Reference:** <https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability>
 
-> Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Key takeaways CVE-2026-114938, dubbed Java4Shell, is an OpenJDK memory corruption vulnerability that Oracle sc…
+> Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Change log Update November 18: Added reports of exploitation attempts and a working exploit, alerts from CISA …
 
 ---
 
@@ -83,123 +72,70 @@ The vulnerability, tracked as CVE-2026-115731 (CVSS score: 9.4), is a case of
 
 ---
 
-## 4. 🟡 High Severity — CVE-2026-114938 OpenJDK RCE (Java4Shell): Everything You Need to Know
+## 4. 🔴 CISA KEV — CVE-2024-10441 — Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability
 
-**CVE:** `CVE-2026-114938` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-11-17
-**EPSS:** 0.7% (percentile 55%)
-**Reference:** <https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk>
+**CVE:** `CVE-2024-10441` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-18
+**EPSS:** 1.3% (percentile 70%)
+**KEV:** in catalog, due 2026-11-21
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2024-10441>
 
-> Detect and mitigate Java4Shell (CVE-2026-114938), a critical 9.2 RCE vulnerability affecting OpenJDK and major Java-based applications.
-
----
-
-## 5. 🟡 High Severity — libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth
-
-**CVE:** `CVE-2026-110789` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
-**EPSS:** 0.6% (percentile 51%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-rvfr-cqwq-rc4j>
-
-> ### Summary
-A remote peer can stall a js-libp2p node&#x27;s entire event loop for ~4–5 seconds per connection (and transiently allocate ~2 GB) by sending a ~15-byte crafted `publicKey` inside an Identify message. The malformed key reaches the DER decoder before any peer-id/signature check, so the attack is pre-auth and repeatable indefinitely by reconnecting.
-
-### Details
-`packages/crypto/src/keys…
+> Vendor: Synology | Product: DiskStation Manager (DSM). Synology DSM contains an improper encoding or escaping of output vulnerability in the system plugin daemon in Synology BeeStation OS (BSM) that could allow a remote attacker to execute arbitrary code via unspecified vectors. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Pri…
 
 ---
 
-## 6. 🟡 High Severity — SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding)
+## 5. 🔴 CISA KEV — CVE-2026-40217 — BerriAI LiteLLM Unprotected Alternate Channel Vulnerability
 
-**CVE:** `CVE-2026-110782` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
-**EPSS:** 0.3% (percentile 27%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-r7hw-jx6r-756g>
+**CVE:** `CVE-2026-40217` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-18
+**EPSS:** 17.0% (percentile 97%)
+**KEV:** in catalog, due 2026-12-02
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-40217>
 
-> ## Summary
-CVE-2026-49283 / GHSA-6929-8p9f-26jx (&quot;HTTP-Artifact TLS validator confusion allows cross-IdP authentication bypass&quot;) was fixed so that `HTTPArtifact::receive()` verifies the embedded SAML `Response` using the IdP metadata signing keys. The current implementation (master `31c72c1d`, released **v6.2.3**) reaches that verification **only when the embedded Response is signed**:
-
-…
+> Vendor: BerriAI | Product: LiteLLM. BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see UR…
 
 ---
 
-## 7. 🟡 High Severity — Filament Curator: Cross-tenant media metadata disclosure via Curator picker search
+## 6. 🔴 CISA KEV — CVE-2026-90817 — Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability
 
-**CVE:** `CVE-2026-63389` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-828w-6qgx-3rcf>
+**CVE:** `CVE-2026-90817` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-18
+**EPSS:** 3.7% (percentile 90%)
+**KEV:** in catalog, due 2026-11-21
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-90817>
 
-> Summary
-
-  In multitenant Filament panels, an authenticated user could retrieve media metadata belonging to other tenants
-  by typing in the Curator media-picker search box. The search query omitted the tenant ownership scope that the
-  normal file listing applies.
-
-  Details
-
-  CuratorPanel::updatedSearch() built its Eloquent query independently of getFiles() and did not apply the
-  filament()-&g…
+> Vendor: Vanderbilt University | Product: Research Electronic Data Capture (REDCap). Vanderbilt University Research Electronic Data Capture (REDCap) contains a code injection vulnerability which could allow an unauthenticated attacker to execute arbitrary code on the server. An attacker could exploit this via crafted HTTP requests that access an unintended controller route from a public survey cont…
 
 ---
 
-## 8. 🟡 High Severity — qbee-agent: Local Privilege Escalation and Arbitrary File Tampering via Symlink Following in createFile helper
+## 7. 🔴 CISA KEV — CVE-2026-90436 — Apache Axis Unsafe Reflection Vulnerability
 
-**CVE:** `CVE-2026-62336` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
-**EPSS:** 0.1% (percentile 1%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-xhv5-8fpq-g7hf>
+**CVE:** `CVE-2026-90436` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-18
+**EPSS:** 1.1% (percentile 67%)
+**KEV:** in catalog, due 2026-11-21
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-90436>
 
-> This is a Local Privilege Escalation (LPE) vulnerability stemming from improper symlink handling (CWE-59: Link Following) and improper ownership management (CWE-282) inside the qbee-agent file manager logic.
-
-### Impact
-
-Any managed device running qbee-agent up to the affected versions. The impact manifests in three distinct vectors:
-
-1. **Primary Vector (Full Privilege Escalation to Root - Defaul…
+> Vendor: Apache | Product: Axis. Apache Axis contains an unsafe reflection vulnerability that could allow an unauthenticated remote attacker to execute arbitrary code via a crafted SOAP fault message that causes Axis to load and instantiate an attacker-specified class when a suitable class is available on the application classpath. The impacted product(s) could be end-of-life (EoL) and/or end-of-se…
 
 ---
 
-## 9. 🟡 High Severity — AWS-advanced-jdbc-wrapper: Java Deserialization RCE via Cache Poisoning
+## 8. 🟠 Zero-Day — Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required
 
-**CVE:** `CVE-2026-14265` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
-**EPSS:** 0.7% (percentile 55%)
-**My Stack:** `aws`, `redis`, `github`
-**Reference:** <https://github.com/advisories/GHSA-c5q4-97jw-jggh>
+**CVE:** `CVE-2026-129448` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-18
+**EPSS:** 1.6% (percentile 77%)
+**Reference:** <https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html>
 
-> ### Impact
-The AWS Advanced JDBC Wrapper is an open-source JDBC driver wrapper that extends a JDBC driver to enable Amazon Aurora and AWS Cloud features such as failover handling and caching. We identified CVE-2026-14265, an issue in the RemoteQueryCachePlugin of the AWS Advanced JDBC Wrapper. When this plugin is enabled, query results read from the shared Redis/Valkey cache are deserialized witho…
+> A critical security flaw in Apache Roller, an open-source, Java-based blogging platform, has come under active exploitation in the wild, according to the Apache Software Foundation (ASF)
 
----
+The vulnerability, tracked as CVE-2026-129448 (CVSS score: 9.8), is a case of unauthenticated deserialization in the XML-RPC endpoint that could lead to remote code execution.
 
-## 10. 🟡 High Severity — Phoenix: Format String Injection in applyChatTemplate
-
-**CVE:** `CVE-2026-53998` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
-**EPSS:** 0.4% (percentile 30%)
-**My Stack:** `python`, `github`
-**Reference:** <https://github.com/advisories/GHSA-gfv3-m769-5xm3>
-
-> - Summary
-
-A format string injection vulnerability in the applyChatTemplate GraphQL endpoint allows an attacker to read server-side environment variables, cryptographic secrets, and internal module attributes directly from the API response. On default Phoenix installations where authentication is disabled the endpoint is reachable with no credentials. On auth-enabled deployments, any account regar…
+&quot;Deserialization of Untrusted
 
 ---
 
-## 11. 🟡 High Severity — SAPBleed: Pre-Auth Memory Disclosure and RCE in SAP NetWeaver, Web Dispatcher and HANA XS (CVE-2026-76964, CVE-2026-89126)
+## 9. 🟡 High Severity — Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007
 
-**CVE:** `CVE-2026-76964` | `CVE-2026-89126` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-11-17
-**EPSS:** 0.4% (percentile 38%)
-**Reference:** <https://seclists.org/fulldisclosure/2026/Nov/36>
+**CVE:** `CVE-2026-123633` | `CVE-2026-123007` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-11-18
+**My Stack:** `nginx`
+**Reference:** <https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities>
 
-> Posted by Raschin Tavakoli via Fulldisclosure on Nov 17 nullFaktor Security Advisory &lt; 2026-11-12 &gt; =========================================================== Title: SAPBleed: Pre-Auth Process Memory Leak and RCE in SAP ICM and Web Dispatcher, including the internal Web Dispatcher in SAP HANA XS Vulnerability: Heap Buffer Overflow / Memory Leak / RCE CVE (ICM): CVE-2026-76964 CVE (Web Disp)…
-
----
-
-## 12. 🟡 High Severity — Next.js: Cache leak across root param values in nested &#x27;use cache&#x27; functions via delayed inner stream metadata
-
-**CVE:** `CVE-2026-119351` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-17
-**EPSS:** 0.2% (percentile 15%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-vc7v-qv4w-wrv8>
-
-> With Cache Components enabled, an outer `&#x27;use cache&#x27;` function can be keyed incorrectly even when its inner `&#x27;use cache&#x27;` call generates a fresh entry. If the inner function reads a root param (via `next/root-params`) and returns a value that still contains pending promises — for example an object with data that is ready immediately alongside slower data — React Flight delivers…
+> Two critical HTTP/2 flaws can allow attackers to compromise NGINX servers, putting the websites, APIs, and sensitive data they handle at risk.
 
 ---

@@ -1,75 +1,23 @@
 {
-  "run_id": "44327074455",
-  "generated_at": "2026-11-18T14:42:46.250770+00:00",
+  "run_id": "44422574189",
+  "generated_at": "2026-11-18T23:40:14.042703+00:00",
   "changes": [
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2012-0507",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "cve": "CVE-2026-123007",
+      "title": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
+      "link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
       "stack_match": [
-        "jenkins",
-        "jira"
+        "nginx"
       ]
     },
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2012-1723",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+      "cve": "CVE-2026-123633",
+      "title": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
+      "link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
       "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2012-4681",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2013-0422",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2013-0431",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2013-2465",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-114938",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "stack_match": [
-        "jenkins",
-        "jira"
+        "nginx"
       ]
     }
   ]

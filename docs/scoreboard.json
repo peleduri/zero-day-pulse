@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:42:32.636548+00:00",
+  "generated_at": "2026-11-18T23:40:03.317649+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -38,7 +38,7 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 0,
+        "warm_up": 4,
         "old_cve": 0
       }
     },
@@ -64,18 +64,67 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 0,
+        "warm_up": 4,
         "old_cve": 0
       }
     }
   },
   "top_leads_window": 90,
   "top_leads": [],
-  "total_rows": 0,
-  "rows": [],
+  "total_rows": 4,
+  "rows": [
+    {
+      "cve": "CVE-2024-10441",
+      "kev_date_added": "2026-11-18",
+      "vendor": "Synology",
+      "product": "DiskStation Manager (DSM)",
+      "cve_year": 2024,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-40217",
+      "kev_date_added": "2026-11-18",
+      "vendor": "BerriAI",
+      "product": "LiteLLM",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-90436",
+      "kev_date_added": "2026-11-18",
+      "vendor": "Apache",
+      "product": "Axis",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-90817",
+      "kev_date_added": "2026-11-18",
+      "vendor": "Vanderbilt University",
+      "product": "Research Electronic Data Capture (REDCap)",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    }
+  ],
   "run": {
-    "new_signals": 0,
-    "new_rows": 0,
+    "new_signals": 1,
+    "new_rows": 4,
     "capped_entries": 0
   }
 }

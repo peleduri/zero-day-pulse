@@ -1,1 +1,5 @@
 {"go_live": "2026-11-18"}
+{"bucket": "missed", "cve": "CVE-2024-10441", "cve_year": 2024, "kev_date_added": "2026-11-18", "lead_days": null, "link": null, "observed_at": null, "product": "DiskStation Manager (DSM)", "source": null, "vendor": "Synology"}
+{"bucket": "missed", "cve": "CVE-2026-40217", "cve_year": 2026, "kev_date_added": "2026-11-18", "lead_days": null, "link": null, "observed_at": null, "product": "LiteLLM", "source": null, "vendor": "BerriAI"}
+{"bucket": "missed", "cve": "CVE-2026-90436", "cve_year": 2026, "kev_date_added": "2026-11-18", "lead_days": null, "link": null, "observed_at": null, "product": "Axis", "source": null, "vendor": "Apache"}
+{"bucket": "missed", "cve": "CVE-2026-90817", "cve_year": 2026, "kev_date_added": "2026-11-18", "lead_days": null, "link": null, "observed_at": null, "product": "Research Electronic Data Capture (REDCap)", "source": null, "vendor": "Vanderbilt University"}
