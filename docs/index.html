@@ -14,6 +14,8 @@
               --yellow: #d29922; --yellow-dim: rgba(210,153,34,.15);
               --blue: #58a6ff; --blue-dim: rgba(88,166,255,.15);
               --green: #3fb950;
+              --amber: #e3b341; --amber-dim: rgba(227,179,65,.15);
+              --grey: #6e7681;
             }
             *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
             body { background: var(--bg); color: var(--text);
@@ -48,6 +50,8 @@
             .stat-value.kev     { color: var(--red); }
             .stat-value.zeroday { color: var(--orange); }
             .stat-value.enriched { color: var(--green); }
+            .stat-value.epss    { color: var(--red); }
+            .stat-value.stack   { color: var(--amber); }
             .stat-label { font-size: .65rem; text-transform: uppercase;
                            letter-spacing: .05em; color: var(--muted); margin-top: .15rem; }
             .generated { margin-left: auto; font-size: .8rem; color: var(--muted); }
@@ -60,18 +64,59 @@
               background: var(--surface); border: 1px solid var(--border);
               border-radius: 8px; padding: 1.1rem 1.25rem;
               border-left: 3px solid var(--border);
+              /* Feed titles and summaries carry unbreakable tokens (long dotted
+                 identifiers, bare URLs) that otherwise push the page wider than a
+                 phone viewport and make the whole dashboard scroll sideways. */
+              overflow-wrap: anywhere;
             }
             .card-kev     { border-left-color: var(--red);    background: linear-gradient(90deg, var(--red-dim) 0%, var(--surface) 60%); }
             .card-zeroday { border-left-color: var(--orange); background: linear-gradient(90deg, var(--orange-dim) 0%, var(--surface) 60%); }
             .card-high    { border-left-color: var(--yellow); background: linear-gradient(90deg, var(--yellow-dim) 0%, var(--surface) 60%); }
 
-            .card-top { display: flex; align-items: flex-start; gap: .6rem; margin-bottom: .5rem; }
+            .card-top { display: flex; flex-direction: column; gap: .4rem; margin-bottom: .5rem; }
+            .badges { display: flex; flex-wrap: wrap; gap: .35rem; }
             .badge { font-size: .68rem; font-weight: 700; padding: .2rem .5rem;
                       border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: .15rem; }
             .badge-kev     { background: var(--red);    color: #fff; }
             .badge-zeroday { background: var(--orange); color: #fff; }
             .badge-high    { background: var(--yellow); color: #fff; }
             .badge-info    { background: var(--border); color: var(--muted); }
+            .epss-red      { background: var(--red);    color: #fff; }
+            .epss-yellow   { background: var(--yellow); color: #fff; }
+            .epss-grey     { background: var(--grey);   color: #fff; }
+            .badge-kevdue  { background: var(--red-dim); color: var(--red); border: 1px solid var(--red); }
+            .badge-ransom  { background: #8e1519; color: #fff; }
+            .badge-stack   { background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber); }
+
+            /* ── versions + action buttons ── */
+            .versions { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; }
+            .versions code { color: var(--text); }
+            .actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .25rem; }
+            .btn { font-size: .75rem; font-weight: 600; padding: .3rem .7rem;
+                    border-radius: 6px; color: #fff; }
+            .btn:hover { text-decoration: none; filter: brightness(1.15); }
+            .btn-poc      { background: var(--red); }
+            .btn-advisory { background: #1f6feb; }
+
+            /* ── sections ── */
+            .section { display: flex; flex-direction: column; gap: .875rem; }
+            .section-head { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em;
+                             color: var(--muted); padding-bottom: .35rem; border-bottom: 1px solid var(--border); }
+            .stack-head { color: var(--amber); border-bottom-color: var(--amber); }
+            .section-count { font-weight: 400; color: var(--muted); }
+            .changes-head { color: var(--blue); border-bottom-color: var(--blue); }
+            .changes { list-style: none; display: flex; flex-direction: column; gap: .4rem;
+                        background: var(--surface); border: 1px solid var(--border);
+                        border-radius: 8px; padding: .9rem 1.25rem; font-size: .88rem; }
+            .change-icon { display: inline-block; width: 1.4em; }
+            .scoreboard-head { color: var(--green); border-bottom-color: var(--green); }
+            .scoreboard { display: flex; flex-direction: column; gap: .6rem;
+                           background: var(--surface); border: 1px solid var(--border);
+                           border-radius: 8px; padding: .9rem 1.25rem; font-size: .88rem;
+                           overflow-wrap: anywhere; }
+            .sb-title { font-weight: 600; }
+            .sb-muted { color: var(--muted); font-size: .8rem; }
+            .sb-leads { list-style: none; display: flex; flex-direction: column; gap: .2rem; }
 
             .card-title { font-size: .95rem; font-weight: 600; line-height: 1.4; }
             .card-meta  { font-size: .78rem; color: var(--muted); margin-bottom: .6rem;
@@ -109,206 +154,217 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">14</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">21</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">In KEV</span></div>
+              <div class="stat"><span class="stat-value epss">1</span><span class="stat-label">High EPSS</span></div>
+              <div class="stat"><span class="stat-value zeroday">2</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value stack">8</span><span class="stat-label">My Stack</span></div>
+              <div class="stat"><span class="stat-value">13</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-17 15:01 UTC</div>
+            <div class="generated">Updated 2026-11-18 00:07 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <section class="section scoreboard-section"><h2 class="section-head scoreboard-head">🏁 Beat KEV</h2><div class="scoreboard"><div class="sb-window"><div class="sb-title">Last 30 days</div><div class="sb-line">All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-line">Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-muted">Excluded: 0 warm-up, 0 old CVEs</div></div><div class="sb-window"><div class="sb-title">Last 90 days</div><div class="sb-line">All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-line">Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-muted">Excluded: 0 warm-up, 0 old CVEs</div></div><div class="sb-muted">Zero-days reported before a CVE ID exists can&#x27;t be matched and count as missed.</div></div></section>
+<section class="section stack-section"><h2 class="section-head stack-head">🎯 My Stack <span class="section-count">8</span></h2><article class="card card-kev">
   <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
+    <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-red">EPSS 83%</span><span class="badge badge-kevdue">KEV due 2026-11-10</span><span class="badge badge-stack">node.js</span></div>
+    <h2 class="card-title"><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1" target="_blank" rel="noopener noreferrer">Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026</a></h2>
   </div>
   <div class="card-meta">
-    <span class="no-cve">No CVE</span>
+    <code class="cve">CVE-2026-111497</code> <code class="cve">CVE-2026-105482</code> <code class="cve">CVE-2026-105483</code> <code class="cve">CVE-2026-106069</code>
     <span class="meta-sep">·</span>
-    <span>CISA US-CERT Alerts</span>
+    <span>Cisco Security Advisories (PSIRT)</span>
     <span class="meta-sep">·</span>
-    <span>Wed, 08 Ju</span>
+    <span>2026-11-17</span>
   </div>
-  <p class='summary'>Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) build…</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-november-2026/" target="_blank" rel="noopener">November 2026 Patch Tuesday: 1,252 CVEs Include One Zero-Day and 68 Critical Vulnerabilities</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>CrowdStrike Blog</span>
-    <span class="meta-sep">·</span>
-    <span>Nov 10, 20</span>
-  </div>
+  <p class='summary'>On October 21, 2026, Node.js announced the availability of fixes for multiple vulnerabilities across the following supported release lines: 22.x, 24.x, and 26.x. These vulnerabilities impact critical operations such as the Brotli decoder, DNS resolution, and TLS certificate validation. The vulnerabilities pose risks for remote code execution and traffic interception. For more information, see Node…</p>
 
 
 </article>
 
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gj7r-p794-hhq5" target="_blank" rel="noopener">Kubeshark: MCP `download_file` writes fetched bytes to an unvalidated destination path</a></h2>
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS 1%</span><span class="badge badge-stack">aws</span><span class="badge badge-stack">redis</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c5q4-97jw-jggh" target="_blank" rel="noopener noreferrer">AWS-advanced-jdbc-wrapper: Java Deserialization RCE via Cache Poisoning</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-129235</code>
+            <code class="cve">CVE-2026-14265</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-11-16</span>
+            <span>2026-11-17</span>
           </div>
-          <p class='summary'>**Ecosystem / package:** Go — `github.com/kubeshark/kubeshark` (the `kubeshark`
-CLI, `kubeshark mcp` subcommand)
-**Affected component:** `cmd/mcpRunner.go`, MCP tool `download_file`
-**Affected versions:** `&gt;= v53.1.0`, `&lt; v53.4.0` (the flaw shipped with the
-tool&#x27;s first release; v53.3.0 was the last affected release)
-**Patched version:** `v53.4.0`
-**Credit:** novice-22 (Urim), via private coordina…</p>
+          <p class='summary'>### Impact
+The AWS Advanced JDBC Wrapper is an open-source JDBC driver wrapper that extends a JDBC driver to enable Amazon Aurora and AWS Cloud features such as failover handling and caching. We identified CVE-2026-14265, an issue in the RemoteQueryCachePlugin of the AWS Advanced JDBC Wrapper. When this plugin is enabled, query results read from the shared Redis/Valkey cache are deserialized witho…</p>
+
 
         </article>
 
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8vf2-hxg5-crqh" target="_blank" rel="noopener">Kubeshark: MCP `start_kubeshark` argument injection via `pod_regex` → image redirect → cluster takeover</a></h2>
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS &lt;1%</span><span class="badge badge-stack">python</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gfv3-m769-5xm3" target="_blank" rel="noopener noreferrer">Phoenix: Format String Injection in applyChatTemplate</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-129236</code>
+            <code class="cve">CVE-2026-53998</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-11-16</span>
+            <span>2026-11-17</span>
           </div>
-          <p class='summary'>**Ecosystem / package:** Go — `github.com/kubeshark/kubeshark` (the `kubeshark`
-CLI, `kubeshark mcp` subcommand)
-**Affected component:** `cmd/mcpRunner.go`, MCP tool `start_kubeshark`
-**Affected versions:** `&gt;= v53.1.0`, `&lt; v53.4.0` (the flaw shipped with the MCP
-command&#x27;s first release; v53.3.0 was the last affected release)
-**Patched version:** `v53.4.0`
-**Credit:** novice-22 (Urim), via private…</p>
+          <p class='summary'>- Summary
+
+A format string injection vulnerability in the applyChatTemplate GraphQL endpoint allows an attacker to read server-side environment variables, cryptographic secrets, and internal module attributes directly from the API response. On default Phoenix installations where authentication is disabled the endpoint is reachable with no credentials. On auth-enabled deployments, any account regar…</p>
+
 
         </article>
 
-<article class="card card-zeroday">
+<article class="card card-high">
   <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-rapid7-detected-exploitation-of-cve-2026-90436-against-atlassian-confluence-data-center-n-able-n-central-also-exploited" target="_blank" rel="noopener">Rapid7 Detected Exploitation of CVE-2026-90436 against Atlassian Confluence Data Center, N-able N-central also Exploited</a></h2>
+    <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS &lt;1%</span><span class="badge badge-stack">github</span></div>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vc7v-qv4w-wrv8" target="_blank" rel="noopener noreferrer">Next.js: Cache leak across root param values in nested &#x27;use cache&#x27; functions via delayed inner stream metadata</a></h2>
   </div>
   <div class="card-meta">
-    <code class="cve">CVE-2026-90436</code>
+    <code class="cve">CVE-2026-119351</code>
     <span class="meta-sep">·</span>
-    <span>Rapid7 Blog</span>
+    <span>GitHub Security Advisories</span>
     <span class="meta-sep">·</span>
-    <span>2026-11-16</span>
+    <span>2026-11-17</span>
   </div>
-  <p class='summary'>Overview On November 6, 2026, the Apache Software Foundation disclosed CVE-2026-90436 , a critical unsafe reflection vulnerability ( CWE-470 ) in Axis 1.x that allows for unauthenticated remote code execution (RCE). Apache Axis is a Simple Object Access Protocol (SOAP) implementation used for the creation of Java Web services. CISA has assigned CVE-2026-90436 a CVSS score of 9.8 Critical . Since t…</p>
+  <p class='summary'>With Cache Components enabled, an outer `&#x27;use cache&#x27;` function can be keyed incorrectly even when its inner `&#x27;use cache&#x27;` call generates a fresh entry. If the inner function reads a root param (via `next/root-params`) and returns a value that still contains pending promises — for example an object with data that is ready immediately alongside slower data — React Flight delivers the ready portion t…</p>
+
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS &lt;1%</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xhv5-8fpq-g7hf" target="_blank" rel="noopener noreferrer">qbee-agent: Local Privilege Escalation and Arbitrary File Tampering via Symlink Following in createFile helper</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62336</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-17</span>
+          </div>
+          <p class='summary'>This is a Local Privilege Escalation (LPE) vulnerability stemming from improper symlink handling (CWE-59: Link Following) and improper ownership management (CWE-282) inside the qbee-agent file manager logic.
+
+### Impact
+
+Any managed device running qbee-agent up to the affected versions. The impact manifests in three distinct vectors:
+
+1. **Primary Vector (Full Privilege Escalation to Root - Defaul…</p>
+
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rvfr-cqwq-rc4j" target="_blank" rel="noopener noreferrer">libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-110789</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-17</span>
+          </div>
+          <p class='summary'>### Summary
+A remote peer can stall a js-libp2p node&#x27;s entire event loop for ~4–5 seconds per connection (and transiently allocate ~2 GB) by sending a ~15-byte crafted `publicKey` inside an Identify message. The malformed key reaches the DER decoder before any peer-id/signature check, so the attack is pre-auth and repeatable indefinitely by reconnecting.
+
+### Details
+`packages/crypto/src/keys/rsa/…</p>
+
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r7hw-jx6r-756g" target="_blank" rel="noopener noreferrer">SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-110782</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-17</span>
+          </div>
+          <p class='summary'>## Summary
+CVE-2026-49283 / GHSA-6929-8p9f-26jx (&quot;HTTP-Artifact TLS validator confusion allows cross-IdP authentication bypass&quot;) was fixed so that `HTTPArtifact::receive()` verifies the embedded SAML `Response` using the IdP metadata signing keys. The current implementation (master `31c72c1d`, released **v6.2.3**) reaches that verification **only when the embedded Response is signed**:
+
+```php
+// …</p>
+
+
+        </article>
+
+      <article class="card card-high">
+        <div class="card-top">
+          <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">github</span></div>
+          <h2 class="card-title"><a href="https://github.com/advisories/GHSA-828w-6qgx-3rcf" target="_blank" rel="noopener noreferrer">Filament Curator: Cross-tenant media metadata disclosure via Curator picker search</a></h2>
+        </div>
+        <div class="card-meta">
+          <code class="cve">CVE-2026-63389</code>
+          <span class="meta-sep">·</span>
+          <span>GitHub Security Advisories</span>
+          <span class="meta-sep">·</span>
+          <span>2026-11-17</span>
+        </div>
+        <p class='summary'>Summary
+
+In multitenant Filament panels, an authenticated user could retrieve media metadata belonging to other tenants
+by typing in the Curator media-picker search box. The search query omitted the tenant ownership scope that the
+normal file listing applies.
+
+Details
+
+CuratorPanel::updatedSearch() built its Eloquent query independently of getFiles() and did not apply the
+filament()-&gt;h…</p>
+
+
+      </article>
+</section>
+<section class="section"><h2 class="section-head">All Findings <span class="section-count">13</span></h2><article class="card card-kev">
+  <div class="card-top">
+    <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-red">EPSS 83%</span><span class="badge badge-kevdue">KEV due 2026-11-10</span><span class="badge badge-stack">node.js</span></div>
+    <h2 class="card-title"><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1" target="_blank" rel="noopener noreferrer">Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-111497</code> <code class="cve">CVE-2026-105482</code> <code class="cve">CVE-2026-105483</code> <code class="cve">CVE-2026-106069</code>
+    <span class="meta-sep">·</span>
+    <span>Cisco Security Advisories (PSIRT)</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-17</span>
+  </div>
+  <p class='summary'>On October 21, 2026, Node.js announced the availability of fixes for multiple vulnerabilities across the following supported release lines: 22.x, 24.x, and 26.x. These vulnerabilities impact critical operations such as the Brotli decoder, DNS resolution, and TLS certificate validation. The vulnerabilities pose risks for remote code execution and traffic interception. For more information, see Node…</p>
+
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-grey">EPSS 1%</span><span class="badge badge-kevdue">KEV due 2026-09-14</span></div>
+    <h2 class="card-title"><a href="https://www.securityweek.com/msp-screenconnect-servers-targeted-in-month-long-campaign/" target="_blank" rel="noopener noreferrer">MSP ScreenConnect Servers Targeted in Month-Long Campaign</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-84869</code>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-17</span>
+  </div>
+  <p class='summary'>More than 40 servers received over 688,000 requests exploiting CVE-2026-84869 to execute guest-pushed files. The post MSP ScreenConnect Servers Targeted in Month-Long Campaign appeared first on SecurityWeek .</p>
+
 
 </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html" target="_blank" rel="noopener">AI threats in the wild: The current state of prompt injections on the web</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Google Security Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-04-23</span>
-  </div>
-  <p class='summary'>Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise …</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html" target="_blank" rel="noopener">Google Workspace’s continuous approach to mitigating indirect prompt injections</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Google Security Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-04-02</span>
-  </div>
-  <p class='summary'>Posted by Adam Gavish, Google GenAI Security Team Indirect prompt injection (IPI) is an evolving threat vector targeting users of complex AI applications with multiple data sources, such as Workspace with Gemini. This technique enables the attacker to influence the behavior of an LLM by injecting malicious instructions into the data or tools used by the LLM as it completes the user’s query. This m…</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="http://security.googleblog.com/2025/12/architecting-security-for-agentic.html" target="_blank" rel="noopener">Architecting Security for Agentic Capabilities in Chrome</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Google Security Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2025-12-08</span>
-  </div>
-  <p class='summary'>Posted by Nathan Parker, Chrome security team Chrome has been advancing the web’s security for well over 15 years, and we’re committed to meeting new challenges and opportunities with AI. Billions of people trust Chrome to keep them safe by default, and this is a responsibility we take seriously. Following the recent launch of Gemini in Chrome and the preview of agentic capabilities , we want to s…</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html" target="_blank" rel="noopener">Rust in Android: move fast and fix things</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Google Security Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2025-11-13</span>
-  </div>
-  <p class='summary'>Posted by Jeff Vander Stoep, Android Last year, we wrote about why a memory safety strategy that focuses on vulnerability prevention in new code quickly yields durable and compounding gains. This year we look at how this approach isn’t just fixing things, but helping us move faster . The 2025 data continues to validate the approach, with memory safety vulnerabilities falling below 20% of total vul…</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html" target="_blank" rel="noopener">Mitigating prompt injection attacks with a layered defense strategy</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Google Security Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2025-06-13</span>
-  </div>
-  <p class='summary'>Posted by Adam Gavish, Google GenAI Security Team With the rapid adoption of generative AI, a new wave of threats is emerging across the industry with the aim of manipulating the AI systems themselves. One such emerging attack vector is indirect prompt injections. Unlike direct prompt injections, where an attacker directly inputs malicious commands into a prompt, indirect prompt injections involve…</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a" target="_blank" rel="noopener">Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2025-66376</code>
-    <span class="meta-sep">·</span>
-    <span>CISA US-CERT Alerts</span>
-    <span class="meta-sep">·</span>
-    <span>Tue, 21 Ju</span>
-  </div>
-  <p class='summary'>Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/n-able-kills-legacy-apis-patches-17-n-central-zero-days/" target="_blank" rel="noopener">N-able Kills Legacy APIs, Patches 17 N-central Zero-Days</a></h2>
+    <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span></div>
+    <h2 class="card-title"><a href="https://www.securityweek.com/n-able-kills-legacy-apis-patches-17-n-central-zero-days/" target="_blank" rel="noopener noreferrer">N-able Kills Legacy APIs, Patches 17 N-central Zero-Days</a></h2>
   </div>
   <div class="card-meta">
     <span class="no-cve">No CVE</span>
@@ -319,12 +375,13 @@ command&#x27;s first release; v53.3.0 was the last affected release)
   </div>
   <p class='summary'>The patches target recently disclosed zero-days, as well as vulnerabilities already exploited in the wild. The post N-able Kills Legacy APIs, Patches 17 N-central Zero-Days appeared first on SecurityWeek .</p>
 
+
 </article>
 
         <article class="card card-zeroday">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html" target="_blank" rel="noopener">ConnectWise Warns ScreenConnect Attacks Continue as SCKit Targets Unpatched Systems</a></h2>
+            <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span></div>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html" target="_blank" rel="noopener noreferrer">ConnectWise Warns ScreenConnect Attacks Continue as SCKit Targets Unpatched Systems</a></h2>
           </div>
           <div class="card-meta">
             <span class="no-cve">No CVE</span>
@@ -335,153 +392,193 @@ command&#x27;s first release; v53.3.0 was the last affected release)
           </div>
           <p class='summary'>ConnectWise on Monday said it completed its investigation into unauthorized access targeting partner ScreenConnect environments, and recommended customers to ensure that the technician client is running version 26.6.5 or later.
 
-The company said additional activity targeting on-premises environments continues to be reported where the identified third-party extensions remain enabled, and</p>
+The company said additional activity targeting on-premises environments continues to be reported where the identified third-party extensions remain enabled and</p>
+
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/" target="_blank" rel="noopener">Barracuda links cloud breach to ARTEX AI-powered cyberattack</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-16</span>
-  </div>
-  <p class='summary'>Hackers who breached the cloud environment of network and email security company Barracuda earlier this month used a stolen cloud access key and the ARTEX AI penetration testing framework. [...]</p>
-
-</article>
 
 <article class="card card-high">
   <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a" target="_blank" rel="noopener">Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data</a></h2>
+    <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS n/a</span></div>
+    <h2 class="card-title"><a href="https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk" target="_blank" rel="noopener noreferrer">CVE-2026-114938 RCE in OpenJDK: Everything You Need to Know</a></h2>
   </div>
   <div class="card-meta">
-    <code class="cve">CVE-2014-6278</code> <code class="cve">CVE-2015-3306</code> <code class="cve">CVE-2015-5477</code> <code class="cve">CVE-2016-3081</code> <code class="cve">CVE-2019-11510</code> <code class="cve">CVE-2021-22205</code> <code class="cve">CVE-2021-3199</code> <code class="cve">CVE-2023-22894</code>
+    <code class="cve">CVE-2026-114938</code>
     <span class="meta-sep">·</span>
-    <span>CISA US-CERT Alerts</span>
+    <span>Wiz Research</span>
     <span class="meta-sep">·</span>
-    <span>Tue, 06 Oc</span>
+    <span>2026-11-17</span>
   </div>
-  <p class='summary'>Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and s…</p>
+  <p class='summary'>Detect and mitigate Java4Shell (CVE-2026-114938), a critical 9.2 RCE vulnerability affecting OpenJDK and major Java-based applications.</p>
 
-</article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a" target="_blank" rel="noopener">#StopRansomware: SafePay Ransomware</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2020-3259</code> <code class="cve">CVE-2023-20269</code> <code class="cve">CVE-2023-27532</code> <code class="cve">CVE-2024-40711</code> <code class="cve">CVE-2024-40766</code>
-    <span class="meta-sep">·</span>
-    <span>CISA US-CERT Alerts</span>
-    <span class="meta-sep">·</span>
-    <span>Mon, 19 Oc</span>
-  </div>
-  <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
 
         <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rg72-5958-c65m" target="_blank" rel="noopener">Silverstripe Framework: CMS_ACCESS_SecurityAdmin privilege escalation</a></h2>
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rvfr-cqwq-rc4j" target="_blank" rel="noopener noreferrer">libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-91112</code>
+            <code class="cve">CVE-2026-110789</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-11-16</span>
+            <span>2026-11-17</span>
           </div>
-          <p class='summary'>### Impact
-A user with access to the Security section (CMS_ACCESS_SecurityAdmin) but without the ADMIN permission could edit a group that grants ADMIN through a role or a parent group, and use it to escalate their own privileges.
+          <p class='summary'>### Summary
+A remote peer can stall a js-libp2p node&#x27;s entire event loop for ~4–5 seconds per connection (and transiently allocate ~2 GB) by sending a ~15-byte crafted `publicKey` inside an Identify message. The malformed key reaches the DER decoder before any peer-id/signature check, so the attack is pre-auth and repeatable indefinitely by reconnecting.
 
-### Reported by
-Lachlan Davidson, Carapace</p>
+### Details
+`packages/crypto/src/keys/rsa/…</p>
+
 
         </article>
 
         <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jq3q-62jc-fqq9" target="_blank" rel="noopener">code-review-mcp-server: Command injection via unsanitized folderPath/baseBranch parameters</a></h2>
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r7hw-jx6r-756g" target="_blank" rel="noopener noreferrer">SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding)</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-68934</code>
+            <code class="cve">CVE-2026-110782</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-11-16</span>
-          </div>
-          <p class='summary'>### Impact
-
-`code-review-mcp-server` exposes MCP tools (`getLocalGitDiff`, `codeReview`, `createPR`, `getPRTemplate`) that accept `folderPath` and `baseBranch` string parameters. These caller-controlled values were interpolated directly into shell command strings executed via `child_process.execSync()`, which runs commands through `/bin/sh`.
-
-A crafted value such as `baseBranch = &quot;main; &lt;arbitrary…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mfr8-8qww-v76h" target="_blank" rel="noopener">Next.js: Information disclosure across root params when a &#x27;use cache&#x27; function is called through unstable_cache()</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-119790</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-16</span>
-          </div>
-          <p class='summary'>Next.js applications with `&#x27;use cache&#x27;` can disclose cached data across root params when the same `&#x27;use cache&#x27;` function is called both directly during rendering and through `unstable_cache()`, and that function reads a root param. Root params are route parameters of the root layout, and applications commonly use them to scope data, for example per locale.
-
-During a cold process start, a cross-req…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7mxv-7h3q-9324" target="_blank" rel="noopener">NLTK dot2img runs Graphviz &#x27;dot&#x27; without the trusted-exec chokepoint, enabling local code execution via a writable PATH element</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-128134</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-16</span>
+            <span>2026-11-17</span>
           </div>
           <p class='summary'>## Summary
+CVE-2026-49283 / GHSA-6929-8p9f-26jx (&quot;HTTP-Artifact TLS validator confusion allows cross-IdP authentication bypass&quot;) was fixed so that `HTTPArtifact::receive()` verifies the embedded SAML `Response` using the IdP metadata signing keys. The current implementation (master `31c72c1d`, released **v6.2.3**) reaches that verification **only when the embedded Response is signed**:
 
-`nltk.parse.dependencygraph.dot2img` invokes the Graphviz `dot` executable without the trusted-execution guarantees that NLTK applies to its other native-tool wrappers. The function resolves `dot` by bare name and then runs the resolved absolute path with a raw `subprocess.run`, omitting the ownership/writability check and the loader-environment scrub that `nltk.pathsec.spawn_trusted` …</p>
+```php
+// …</p>
+
+
+        </article>
+
+      <article class="card card-high">
+        <div class="card-top">
+          <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">github</span></div>
+          <h2 class="card-title"><a href="https://github.com/advisories/GHSA-828w-6qgx-3rcf" target="_blank" rel="noopener noreferrer">Filament Curator: Cross-tenant media metadata disclosure via Curator picker search</a></h2>
+        </div>
+        <div class="card-meta">
+          <code class="cve">CVE-2026-63389</code>
+          <span class="meta-sep">·</span>
+          <span>GitHub Security Advisories</span>
+          <span class="meta-sep">·</span>
+          <span>2026-11-17</span>
+        </div>
+        <p class='summary'>Summary
+
+In multitenant Filament panels, an authenticated user could retrieve media metadata belonging to other tenants
+by typing in the Curator media-picker search box. The search query omitted the tenant ownership scope that the
+normal file listing applies.
+
+Details
+
+CuratorPanel::updatedSearch() built its Eloquent query independently of getFiles() and did not apply the
+filament()-&gt;h…</p>
+
+
+      </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS &lt;1%</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xhv5-8fpq-g7hf" target="_blank" rel="noopener noreferrer">qbee-agent: Local Privilege Escalation and Arbitrary File Tampering via Symlink Following in createFile helper</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62336</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-17</span>
+          </div>
+          <p class='summary'>This is a Local Privilege Escalation (LPE) vulnerability stemming from improper symlink handling (CWE-59: Link Following) and improper ownership management (CWE-282) inside the qbee-agent file manager logic.
+
+### Impact
+
+Any managed device running qbee-agent up to the affected versions. The impact manifests in three distinct vectors:
+
+1. **Primary Vector (Full Privilege Escalation to Root - Defaul…</p>
+
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS 1%</span><span class="badge badge-stack">aws</span><span class="badge badge-stack">redis</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c5q4-97jw-jggh" target="_blank" rel="noopener noreferrer">AWS-advanced-jdbc-wrapper: Java Deserialization RCE via Cache Poisoning</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-14265</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-17</span>
+          </div>
+          <p class='summary'>### Impact
+The AWS Advanced JDBC Wrapper is an open-source JDBC driver wrapper that extends a JDBC driver to enable Amazon Aurora and AWS Cloud features such as failover handling and caching. We identified CVE-2026-14265, an issue in the RemoteQueryCachePlugin of the AWS Advanced JDBC Wrapper. When this plugin is enabled, query results read from the shared Redis/Valkey cache are deserialized witho…</p>
+
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS &lt;1%</span><span class="badge badge-stack">python</span><span class="badge badge-stack">github</span></div>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gfv3-m769-5xm3" target="_blank" rel="noopener noreferrer">Phoenix: Format String Injection in applyChatTemplate</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-53998</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-17</span>
+          </div>
+          <p class='summary'>- Summary
+
+A format string injection vulnerability in the applyChatTemplate GraphQL endpoint allows an attacker to read server-side environment variables, cryptographic secrets, and internal module attributes directly from the API response. On default Phoenix installations where authentication is disabled the endpoint is reachable with no credentials. On auth-enabled deployments, any account regar…</p>
+
 
         </article>
 
 <article class="card card-high">
   <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html" target="_blank" rel="noopener">Bringing Rust to the Pixel Baseband</a></h2>
+    <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS &lt;1%</span></div>
+    <h2 class="card-title"><a href="https://seclists.org/fulldisclosure/2026/Nov/36" target="_blank" rel="noopener noreferrer">SAPBleed: Pre-Auth Memory Disclosure and RCE in SAP NetWeaver, Web Dispatcher and HANA XS (CVE-2026-76964, CVE-2026-89126)</a></h2>
   </div>
   <div class="card-meta">
-    <code class="cve">CVE-2024-27227</code>
+    <code class="cve">CVE-2026-76964</code> <code class="cve">CVE-2026-89126</code>
     <span class="meta-sep">·</span>
-    <span>Google Security Blog</span>
+    <span>Full Disclosure</span>
     <span class="meta-sep">·</span>
-    <span>2026-04-10</span>
+    <span>2026-11-17</span>
   </div>
-  <p class='summary'>Posted by Jiacheng Lu, Software Engineer, Google Pixel Team Google is continuously advancing the security of Pixel devices. We have been focusing on hardening the cellular baseband modem against exploitation. Recognizing the risks associated within the complex modem firmware, Pixel 9 shipped with mitigations against a range of memory-safety vulnerabilities. For Pixel 10, Google is advancing its pr…</p>
+  <p class='summary'>Posted by Raschin Tavakoli via Fulldisclosure on Nov 17 nullFaktor Security Advisory &lt; 2026-11-12 &gt; =========================================================== Title: SAPBleed: Pre-Auth Process Memory Leak and RCE in SAP ICM and Web Dispatcher, including the internal Web Dispatcher in SAP HANA XS Vulnerability: Heap Buffer Overflow / Memory Leak / RCE CVE (ICM): CVE-2026-76964 CVE (Web Disp): CVE-…</p>
+
 
 </article>
 
+<article class="card card-high">
+  <div class="card-top">
+    <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS &lt;1%</span><span class="badge badge-stack">github</span></div>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vc7v-qv4w-wrv8" target="_blank" rel="noopener noreferrer">Next.js: Cache leak across root param values in nested &#x27;use cache&#x27; functions via delayed inner stream metadata</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-119351</code>
+    <span class="meta-sep">·</span>
+    <span>GitHub Security Advisories</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-17</span>
+  </div>
+  <p class='summary'>With Cache Components enabled, an outer `&#x27;use cache&#x27;` function can be keyed incorrectly even when its inner `&#x27;use cache&#x27;` call generates a fresh entry. If the inner function reads a root param (via `next/root-params`) and returns a value that still contains pending promises — for example an object with data that is ready immediately alongside slower data — React Flight delivers the ready portion t…</p>
+
+
+</article>
+</section>
           </main>
           <footer>
-            Powered by <a href="https://github.com/peleduri/zero-day-pulse" target="_blank" rel="noopener">GitHub</a> · <a href="https://parallel.ai" target="_blank" rel="noopener">Parallel AI</a>
+            Powered by <a href="https://github.com/peleduri/zero-day-pulse" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://parallel.ai" target="_blank" rel="noopener noreferrer">Parallel AI</a>
             · refreshes every 30 min
           </footer>
         </body>

@@ -1,190 +1,74 @@
 {
-  "generated": "2026-11-17T15:01:50.065246+00:00",
-  "total": 21,
-  "kev": 0,
-  "zero_day": 14,
+  "generated": "2026-11-18T00:07:12.176989+00:00",
+  "total": 13,
+  "kev": 2,
+  "zero_day": 2,
   "enriched": 0,
+  "high_epss": 1,
+  "my_stack": 8,
+  "run_id": "44205019087",
+  "changes": [],
   "findings": [
     {
-      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
-      "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
-      "summary": "Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) builds on FBI\u2019s Russian Government Cyber Actors Targeting Networking Devices, Critical Infrastructure Public Service Announcement of the decade-plus FSB Center 16 cyber activity by providing additional tactics, techniques, and procedures (TTPs) to enable defenders to more fully understand and counter the threat. [ 1 ] This CSA is being released by the following authoring and co-sealing agencies: United States National Security Agency (NSA) United States Cybersecurity and Infrastructure Security Agency (CISA) United States Federal Bureau of Investigation (FBI) United States Department of Defense Cyber Crime Center (DC3) Australian Signals Directorate\u2019s Australian Cyber Security Centre (ASD\u2019s ACSC) Communications Security Establishment Canada\u2019s (CSE\u2019s) Canadian Centre for Cyber Security (Cyber Centre) New Zealand National Cyber Security Centre (NCSC-NZ) United Kingdom National Cyber Security Centre (NCSC-UK) Czech Republic National Cyber and Information Security Agency (N\u00daKIB) 1 Danish Defence Intelligence Service (DDIS) 2 Estonian Foreign Intelligence Service (EFIS) 3 Estonian Information System Authority (RIA) 4 Finnish Defence Intelligence (FDI) 5 Finnish Security and Intelligence Service (SUPO) 6 French National Cybersecurity Agency (ANSSI) 7 Italian External Intelligence and Security Agency (AISE) 8 Italian Internal Intelligence and Security Agency (AISI) 9 The Military Counterintelligence Service of Poland (SKW) 10 Sweden National Cyber Security Centre (NCSC-SE) 11 The authoring and co-sealing agencies strongly urge device owners and network defenders to take mitigation and ",
-      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
-      "published": "Wed, 08 Jul 2026 14:43:49 EDT",
-      "source": "CISA US-CERT Alerts",
+      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1",
+      "title": "Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026",
+      "summary": "On October 21, 2026, Node.js announced the availability of fixes for multiple vulnerabilities across the following supported release lines: 22.x, 24.x, and 26.x. These vulnerabilities impact critical operations such as the Brotli decoder, DNS resolution, and TLS certificate validation. The vulnerabilities pose risks for remote code execution and traffic interception. For more information, see Node.js Security Release . The following vulnerabilities have a Security Impact Rating (SIR) of High and are addressed in this advisory: CVE-2026-111497 - Brotli decoder out-of-bounds write; potential remote code execution CVE-2026-105482 - DNS resolution truncation involving embedded NUL characters CVE-2026-105483 - TLS hostname validation bypass using fullwidth IP digits CVE-2026-106069 - TLS hostname validation bypass with noncanonical IP addresses For information about Splunk products and offerings, including AppDynamics, see Vulnerabilities in Node.js (CVE-2026-111497, CVE-2026-105482, CVE-2026-105483, CVE-2026-106069) on Splunk Products - October 2026 This investigation was expanded to cover Brotli outside of Node.js on October 30, 2026. The Brotli decoder flaw (CVE-2026-111497), which is in the Google Brotli C decoder, is often bundled with or linked to other software, so products beyond Node.js may be affected. For software that may be affected, see Broccoli2Shell . Important: If a product is not listed within this advisory, Cisco's review indicates that the product is not affected by this vulnerability. This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u Security Impact Rating: High CVE: CVE-2026-105482,CVE-2026-105483,CVE-2026-106069,CVE-2026-111497",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1",
+      "published": "2026-11-17T23:53:12+00:00",
+      "source": "Cisco Security Advisories (PSIRT)",
       "tags": [
-        "cisa",
-        "ics"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-november-2026/",
-      "title": "November 2026 Patch Tuesday: 1,252 CVEs Include One Zero-Day and 68 Critical Vulnerabilities",
-      "summary": "",
-      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-november-2026/",
-      "published": "Nov 10, 2026 00:00:00-0600",
-      "source": "CrowdStrike Blog",
-      "tags": [
-        "cloud",
-        "threat-intel",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-129235",
-      "title": "Kubeshark: MCP `download_file` writes fetched bytes to an unvalidated destination path",
-      "summary": "**Ecosystem / package:** Go \u2014 `github.com/kubeshark/kubeshark` (the `kubeshark`\nCLI, `kubeshark mcp` subcommand)\n**Affected component:** `cmd/mcpRunner.go`, MCP tool `download_file`\n**Affected versions:** `>= v53.1.0`, `< v53.4.0` (the flaw shipped with the\ntool's first release; v53.3.0 was the last affected release)\n**Patched version:** `v53.4.0`\n**Credit:** novice-22 (Urim), via private coordinated disclosure.\n\n## Summary\nThe `download_file` MCP tool fetches a caller-supplied `path` from the Kubeshark\nHub API and writes the response body to a caller-supplied `dest` on the local\nfilesystem with no validation of `dest`. An attacker who can influence the MCP\ntool arguments \u2014 e.g. via indirect prompt injection against an AI agent driving\n`kubeshark mcp` \u2014 can write attacker-controlled bytes to an arbitrary path\nwritable by the user running the MCP server (e.g. `~/.ssh/authorized_keys`,\n`~/.kube/config`, `~/.bashrc`), and can request arbitrary Hub API endpoints.\n`download_file` is registered unconditionally (available in the default,\nnon-`--allow-destructive` posture).\n\n## Introduced in\nCommit `eb7dc42b` \u2014 \"Add get_file_url and download_file MCP tools (#1853)\",\n2026-03-04 \u2014 first released in **v53.1.0** (`v53.1.0~1`). An earlier attempt\n(`dbfd17d9`) was reverted (`a46f05c4`) before any release, so no tag before\nv53.1.0 is affected.\n\n## Details\nIn `callDownloadFile` (`cmd/mcpRunner.go`), both `path` and `dest` come straight\nfrom the tool arguments:\n- `dest` was passed directly to `os.Create(dest)` with no confinement \u2014 no\n  `filepath.Clean`, no base-directory containment, no rejection of absolute\n  paths or `../` traversal. Any path the process can write is reachable.\n- `path` was concatenated onto the Hub API base URL with no allowlist, so any\n  Hub endpoint (including captured-traffic exports) is reachable.\n\n## Auth context (CWE-306 / CWE-200)\nThe tool originally issued the fetch with no authentication. The authentication\ngap was addressed by the gated-Hub authenticat",
-      "link": "https://github.com/advisories/GHSA-gj7r-p794-hhq5",
-      "published": "2026-11-16T22:18:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
+        "network",
+        "cisco",
+        "psirt",
+        "advisory"
       ],
       "cve_ids": [
-        "CVE-2026-129235"
+        "CVE-2026-111497",
+        "CVE-2026-105482",
+        "CVE-2026-105483",
+        "CVE-2026-106069"
       ],
+      "in_kev": true,
+      "kev_date_added": "2026-10-27",
+      "kev_due_date": "2026-11-10",
+      "kev_vendor": "Google",
+      "kev_product": "Brotli",
+      "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.82641,
+      "epss_percentile": 0.99673,
+      "stack_match": [
+        "node.js"
+      ]
     },
     {
-      "id": "CVE-2026-129236",
-      "title": "Kubeshark: MCP `start_kubeshark` argument injection via `pod_regex` \u2192 image redirect \u2192 cluster takeover",
-      "summary": "**Ecosystem / package:** Go \u2014 `github.com/kubeshark/kubeshark` (the `kubeshark`\nCLI, `kubeshark mcp` subcommand)\n**Affected component:** `cmd/mcpRunner.go`, MCP tool `start_kubeshark`\n**Affected versions:** `>= v53.1.0`, `< v53.4.0` (the flaw shipped with the MCP\ncommand's first release; v53.3.0 was the last affected release)\n**Patched version:** `v53.4.0`\n**Credit:** novice-22 (Urim), via private coordinated disclosure.\n\n## Summary\nThe `start_kubeshark` MCP tool builds a `kubeshark tap` command by appending the\ncaller-supplied `pod_regex` as a bare positional argument, with no `--`\nend-of-options separator. Because `tap` is a cobra command, a `pod_regex` that\nbegins with `-`/`--set=` is parsed as a **flag**, not as the pod regex. An\nattacker who can influence the tool arguments (e.g. indirect prompt injection\nagainst an agent driving `kubeshark mcp --allow-destructive`) can inject\narbitrary `--set` Helm value overrides \u2014 notably `tap.docker.registry` /\n`tap.docker.tag` \u2014 redirecting the deployed worker/hub/front images to an\nattacker-controlled registry. The worker DaemonSet runs privileged with\n`hostNetwork` and the host filesystem mounted, so an attacker image yields node\nand cluster-admin compromise.\n\n## Introduced in\nCommit `0bbbb473` \u2014 \"[1] Add MCP (Model Context Protocol) server command\n(#1832)\", 2026-02-06 \u2014 first released in **v53.1.0** (`v53.1.0~23`). The\n`pod_regex` argument has been appended as a bare positional since the tool's\nintroduction; there is no regression window, every MCP-capable release is\naffected.\n\n## Details\nIn `callStartKubeshark` (`cmd/mcpRunner.go`), the command was built as\n`[\"tap\", <pod_regex>, \"-n\", \u2026, \"--set\", \u2026, \"--set\", \"headless=true\"]` with\n`pod_regex` inserted as a raw element. cobra parses flags positionally-agnostic\nand there was no `--` guard, so `pod_regex=\"--set=tap.docker.registry=\u2026,tap.docker.tag=\u2026\"`\nbecame a real `--set`. The tool is only registered when\n`kubeshark mcp --allow-destructive` is set.\n\n## Proof of concept (",
-      "link": "https://github.com/advisories/GHSA-8vf2-hxg5-crqh",
-      "published": "2026-11-16T22:17:32Z",
-      "source": "GitHub Security Advisories",
+      "id": "https://www.securityweek.com/msp-screenconnect-servers-targeted-in-month-long-campaign/",
+      "title": "MSP ScreenConnect Servers Targeted in Month-Long Campaign",
+      "summary": "More than 40 servers received over 688,000 requests exploiting CVE-2026-84869 to execute guest-pushed files. The post MSP ScreenConnect Servers Targeted in Month-Long Campaign appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/msp-screenconnect-servers-targeted-in-month-long-campaign/",
+      "published": "2026-11-17T13:24:43+00:00",
+      "source": "SecurityWeek",
       "tags": [
-        "github",
-        "advisories",
-        "oss"
+        "news",
+        "research"
       ],
       "cve_ids": [
-        "CVE-2026-129236"
+        "CVE-2026-84869"
       ],
+      "in_kev": true,
+      "kev_date_added": "2026-09-11",
+      "kev_due_date": "2026-09-14",
+      "kev_vendor": "ConnectWise",
+      "kev_product": "ScreenConnect",
+      "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/etr-rapid7-detected-exploitation-of-cve-2026-90436-against-atlassian-confluence-data-center-n-able-n-central-also-exploited",
-      "title": "Rapid7 Detected Exploitation of CVE-2026-90436 against Atlassian Confluence Data Center, N-able N-central also Exploited",
-      "summary": "Overview On November 6, 2026, the Apache Software Foundation disclosed CVE-2026-90436 , a critical unsafe reflection vulnerability ( CWE-470 ) in Axis 1.x that allows for unauthenticated remote code execution (RCE). Apache Axis is a Simple Object Access Protocol (SOAP) implementation used for the creation of Java Web services. CISA has assigned CVE-2026-90436 a CVSS score of 9.8 Critical . Since the initial November 6 disclosure, it has transpired that some versions of Atlassian Confluence Data Center and N-able N-central use the affected Axis library and are vulnerable to CVE-2026-90436. Both products require a non-default configuration in order to be vulnerable. CVE-2026-90436 is now being actively exploited in the wild against both known affected products. On November 13, 2026, Rapid7 MDR detected exploitation of CVE-2026-90436 against Atlassian Confluence Data Center in a customer environment. Separately, on November 13, 2026, N-able reported exploitation in the wild against N-central for a vulnerability that strongly correlates to CVE-2026-90436. A proof-of-concept exploit that leverages CVE-2026-90436 and targets N-central was published on November 12, 2026, as part of a series of public zero-day disclosures against N-central. Rapid7 recommends remediating exposed systems on an emergency basis outside of normal patching cycles. Mitigation guidance Prioritize internet-accessible instances with the relevant APIs enabled, and check internal deployments as well. Apply the product-specific actions below, then investigate systems that were exposed for evidence of compromise. Axis 1.x through 1.4 is affected but has reached end of life (EOL) and Apache does not plan to publish a fixed Axis 1.x release. Apache recommends moving to another SOAP engine (for example, Apache Axis 2) or using an Axis 1.x build with this patch applied. Organizations using products that are affected by this issue should follow the product vendor's specific remediation instructions. Atlassian",
-      "link": "https://www.rapid7.com/blog/post/etr-rapid7-detected-exploitation-of-cve-2026-90436-against-atlassian-confluence-data-center-n-able-n-central-also-exploited",
-      "published": "2026-11-16T18:14:14+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-90436"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
-      "title": "AI threats in the wild: The current state of prompt injections on the web",
-      "summary": "Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise AI agents. But while the danger of IPI is widely discussed, are threat actors actually exploiting this vector today \u2013 and if so, how? To answer these questions and to uncover real-world abuse, we initiated a broad sweep of the public web to monitor for known indirect prompt injection patterns. This is what we found. The threat of indirect prompt injection Unlike a direct injection where a user \"jailbreaks\" a chatbot, IPI occurs when an AI system processes content\u2014like a website, email, or document\u2014that contains malicious instructions. When the AI reads this poisoned content, it may silently follow the attacker's commands instead of the user's original intent. This is not a new area of concern for us and Google has been working tirelessly to combat these threats. Our efforts involve cross-functional collaboration between researchers at Google DeepMind (GDM) and defenders like the Google Threat Intelligence Group (GTIG). We have previously detailed our work in this area and researchers have further highlighted the evolving nature of these vulnerabilities. Despite this collective focus, a fundamental question remains: to what degree are real-world malicious actors currently operationalizing these attacks? Proactive monitoring at Google The landscape of IPI on the web There are many channels through which attackers might try to send prompt injections. However, one location is particularly easy to observe - the public web. Here, threat actors may simply seed prompt injections on websites in hope of corrupting AI systems that browse them. Public research confirms these attacks ar",
-      "link": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html",
-      "published": "2026-04-23T17:38:00.001-04:00",
-      "source": "Google Security Blog",
-      "tags": [
-        "cloud",
-        "google",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-7611943504123181983",
-      "title": "Google Workspace\u2019s continuous approach to mitigating indirect prompt injections",
-      "summary": "Posted by Adam Gavish, Google GenAI Security Team Indirect prompt injection (IPI) is an evolving threat vector targeting users of complex AI applications with multiple data sources, such as Workspace with Gemini. This technique enables the attacker to influence the behavior of an LLM by injecting malicious instructions into the data or tools used by the LLM as it completes the user\u2019s query. This may even be possible without any input directly from the user. IPI is not the kind of technical problem you \u201csolve\u201d and move on. Sophisticated LLMs with increasing use of agentic automation combined with a wide range of content create an ultra-dynamic and evolving playground for adversarial attacks. That\u2019s why Google takes a sophisticated and comprehensive approach to these attacks. We\u2019re continuously improving LLM resistance to IPI attacks and launching AI application capabilities with ever-improving defenses. Staying ahead of the latest indirect prompt injection attacks is critical to our mission of securing Workspace with Gemini. In our previous blog \u201c Mitigating prompt injection attacks with a layered defense strategy \u201d, we reviewed the layered architecture of our IPI defenses. In this blog, we\u2019ll share more detail on the continuous approach we take to improve these defenses and to solve for new attacks. New attack discovery By proactively discovering and cataloging new attack vectors through internal and external programs, we can identify vulnerabilities and deploy robust defenses ahead of adversarial activity. Human Red-Teaming Human Red-Teaming uses adversarial simulations to uncover security and safety vulnerabilities. Specialized teams execute attacks based on realistic user profiles to exploit weaknesses, coordinating with product teams to resolve identified issues. Automated Red-Teaming Automated Red-Teaming is done via dynamic, machine-learning-driven frameworks to stress-test environments. By algorithmically generating and iterating on attack payloads, we can mi",
-      "link": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html",
-      "published": "2026-04-02T12:00:00.003-04:00",
-      "source": "Google Security Blog",
-      "tags": [
-        "cloud",
-        "google",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-5444043768676554819",
-      "title": "Architecting Security for Agentic Capabilities in Chrome",
-      "summary": "Posted by Nathan Parker, Chrome security team Chrome has been advancing the web\u2019s security for well over 15 years, and we\u2019re committed to meeting new challenges and opportunities with AI. Billions of people trust Chrome to keep them safe by default, and this is a responsibility we take seriously. Following the recent launch of Gemini in Chrome and the preview of agentic capabilities , we want to share our approach and some new innovations to improve the safety of agentic browsing. The primary new threat facing all agentic browsers is indirect prompt injection . It can appear in malicious sites, third-party content in iframes, or from user-generated content like user reviews, and can cause the agent to take unwanted actions such as initiating financial transactions or exfiltrating sensitive data. Given this open challenge, we are investing in a layered defense that includes both deterministic and probabilistic defenses to make it difficult and costly for attackers to cause harm. Designing safe agentic browsing for Chrome has involved deep collaboration of security experts across Google. We built on Gemini's existing protections and agent security principles and have implemented several new layers for Chrome. We\u2019re introducing a user alignment critic where the agent\u2019s actions are vetted by a separate model that is isolated from untrusted content. We\u2019re also extending Chrome\u2019s origin-isolation capabilities to constrain what origins the agent can interact with, to just those that are relevant to the task. Our layered defense also includes user confirmations for critical steps, real-time detection of threats , and red-teaming and response . We\u2019ll step through these layers below. Checking agent outputs with User Alignment Critic The main planning model for Gemini uses page content shared in Chrome to decide what action to take next. Exposure to untrusted web content means it is inherently vulnerable to indirect prompt injection. We use techniques like spotlighting that di",
-      "link": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
-      "published": "2025-12-08T13:03:00.001-05:00",
-      "source": "Google Security Blog",
-      "tags": [
-        "cloud",
-        "google",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
-      "title": "Rust in Android: move fast and fix things",
-      "summary": "Posted by Jeff Vander Stoep, Android Last year, we wrote about why a memory safety strategy that focuses on vulnerability prevention in new code quickly yields durable and compounding gains. This year we look at how this approach isn\u2019t just fixing things, but helping us move faster . The 2025 data continues to validate the approach, with memory safety vulnerabilities falling below 20% of total vulnerabilities for the first time. Updated data for 2025. This data covers first-party and third-party (open source) code changes to the Android platform across C, C++, Java, Kotlin, and Rust. This post is published a couple of months before the end of 2025, but Android\u2019s industry-standard 90-day patch window means that these results are very likely close to final. We can and will accelerate patching when necessary. We adopted Rust for its security and are seeing a 1000x reduction in memory safety vulnerability density compared to Android\u2019s C and C++ code . But the biggest surprise was Rust's impact on software delivery. With Rust changes having a 4x lower rollback rate and spending 25% less time in code review , the safer path is now also the faster one. In this post, we dig into the data behind this shift and also cover: How we\u2019re expanding our reach: We're pushing to make secure code the default across our entire software stack. We have updates on Rust adoption in first-party apps, the Linux kernel, and firmware. Our first rust memory safety vulnerability...almost: We'll analyze a near-miss memory safety bug in unsafe Rust: how it happened, how it was mitigated, and steps we're taking to prevent recurrence. It\u2019s also a good chance to answer the question \u201cif Rust can have memory safety issues, why bother at all?\u201d Building Better Software, Faster Developing an operating system requires the low-level control and predictability of systems programming languages like C, C++, and Rust. While Java and Kotlin are important for Android platform development, their role is complementa",
-      "link": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html",
-      "published": "2025-11-13T11:59:00.001-05:00",
-      "source": "Google Security Blog",
-      "tags": [
-        "cloud",
-        "google",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
-      "title": "Mitigating prompt injection attacks with a layered defense strategy",
-      "summary": "Posted by Adam Gavish, Google GenAI Security Team With the rapid adoption of generative AI, a new wave of threats is emerging across the industry with the aim of manipulating the AI systems themselves. One such emerging attack vector is indirect prompt injections. Unlike direct prompt injections, where an attacker directly inputs malicious commands into a prompt, indirect prompt injections involve hidden malicious instructions within external data sources. These may include emails, documents, or calendar invites that instruct AI to exfiltrate user data or execute other rogue actions. As more governments, businesses, and individuals adopt generative AI to get more done, this subtle yet potentially potent attack becomes increasingly pertinent across the industry, demanding immediate attention and robust security measures. At Google, our teams have a longstanding precedent of investing in a defense-in-depth strategy, including robust evaluation, threat analysis, AI security best practices , AI red-teaming , adversarial training, and model hardening for generative AI tools. This approach enables safer adoption of Gemini in Google Workspace and the Gemini app (we refer to both in this blog as \u201cGemini\u201d for simplicity). Below we describe our prompt injection mitigation product strategy based on extensive research, development, and deployment of improved security mitigations. A layered security approach Google has taken a layered security approach introducing security measures designed for each stage of the prompt lifecycle. From Gemini 2.5 model hardening, to purpose-built machine learning (ML) models detecting malicious instructions, to system-level safeguards, we are meaningfully elevating the difficulty, expense, and complexity faced by an attacker. This approach compels adversaries to resort to methods that are either more easily identified or demand greater resources. Our model training with adversarial data significantly enhanced our defenses against indirect prompt ",
-      "link": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
-      "published": "2025-06-13T12:03:00.009-04:00",
-      "source": "Google Security Blog",
-      "tags": [
-        "cloud",
-        "google",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
-      "title": "Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite",
-      "summary": "Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat (APT) group\u2019s activity is tracked in the cybersecurity community under several names (see Cybersecurity industry tracking ), primarily as \u201cLAUNDRY BEAR,\u201d a name initially coined by the Netherlands General Intelligence and Security Service (AIVD) and Defence Intelligence and Security Service (MIVD) [ 1 ]. LAUNDRY BEAR\u2019s targeting is almost certainly to gather sensitive information for the Russian Federation, with these actors primarily focusing on the covert acquisition of email data. Previous campaigns indicated LAUNDRY BEAR relied on unsophisticated initial access techniques\u2014including password spraying, phishing, and pass-the-cookie\u2014allowing the group to successfully run high-volume operations. The latest campaign targeting ZCS uses a novel exploit that was a zero-day vulnerability when first exploited and continues to be successfully exploited. The vulnerability, Common Vulnerabilities and Exposures (CVE) CVE-2025-66376 , was patched in November 2025. This demonstrates LAUNDRY BEAR\u2019s intent and ability to deploy increasingly sophisticated technical capabilities. Unlike traditional phishing campaigns that persuade a user into taking an action, such as clicking a link or opening a file, LAUNDRY BEAR\u2019s latest campaign leverages a view-based exploit that only requires a user to view a malicious email within a vulnerable version of the webmail service. Once viewed, the exploit attempts to exfiltrate the victim\u2019s last 90 days of email communications, the organization email directory (i.e., Global Address List [GAL]), and other sensitive information to servers controlled by LAUN",
-      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
-      "published": "Tue, 21 Jul 2026 15:08:02 EDT",
-      "source": "CISA US-CERT Alerts",
-      "tags": [
-        "cisa",
-        "ics"
-      ],
-      "cve_ids": [
-        "CVE-2025-66376"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": 0.01173,
+      "epss_percentile": 0.68014,
+      "stack_match": []
     },
     {
       "id": "https://www.securityweek.com/n-able-kills-legacy-apis-patches-17-n-central-zero-days/",
@@ -198,13 +82,23 @@
         "research"
       ],
       "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
     },
     {
       "id": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html",
       "title": "ConnectWise Warns ScreenConnect Attacks Continue as SCKit Targets Unpatched Systems",
-      "summary": "ConnectWise on Monday said it completed its investigation into unauthorized access targeting partner ScreenConnect environments, and recommended customers to ensure that the technician client is running version 26.6.5 or later.\n\nThe company said additional activity targeting on-premises environments continues to be reported where the identified third-party extensions remain enabled, and",
+      "summary": "ConnectWise on Monday said it completed its investigation into unauthorized access targeting partner ScreenConnect environments, and recommended customers to ensure that the technician client is running version 26.6.5 or later.\n\nThe company said additional activity targeting on-premises environments continues to be reported where the identified third-party extensions remain enabled and",
       "link": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html",
       "published": "2026-11-17T06:29:27+00:00",
       "source": "The Hacker News Security",
@@ -213,158 +107,287 @@
         "zeroday"
       ],
       "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/",
-      "title": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
-      "summary": "Hackers who breached the cloud environment of network and email security company Barracuda earlier this month used a stolen cloud access key and the ARTEX AI penetration testing framework. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/",
-      "published": "2026-11-16T19:57:13+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
-      "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
-      "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
-      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
-      "published": "Tue, 06 Oct 2026 12:22:53 EDT",
-      "source": "CISA US-CERT Alerts",
-      "tags": [
-        "cisa",
-        "ics"
-      ],
-      "cve_ids": [
-        "CVE-2014-6278",
-        "CVE-2015-3306",
-        "CVE-2015-5477",
-        "CVE-2016-3081",
-        "CVE-2019-11510",
-        "CVE-2021-22205",
-        "CVE-2021-3199",
-        "CVE-2023-22894"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
-      "title": "#StopRansomware: SafePay Ransomware",
-      "summary": "Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to networks by stealing or guessing passwords, exploiting vulnerabilities in security systems, and using phishing tactics. Once inside the network, SafePay actors establish control by creating new accounts or taking over existing ones. They then use legitimate system tools to move through the network, identify valuable files, and disable security protections to avoid detection. Next, they encrypt the victim\u2019s files, making them inaccessible, and leave a ransom note demanding payment in cryptocurrency. This advisory urges organizations to follow recommended security measures to reduce the risk and impact of SafePay ransomware attacks. Affected Products CVE-2020-3259 [ Common Weakness Enumeration (CWE)-200: Exposure of Sensitive Information to an Unauthorized Actor ] CVE-2023-20269 [ CWE-288: Authentication Bypass Using an Alternate Path or Channel ] CVE-2023-27532 [ CWE-306: Missing Authentication for Critical Function ] CVE-2024-40711 [ CWE-502: Deserialization of Untrusted Data ] CVE-2024-40766 [ CWE-284: Improper Access Control ] Key Actions Regularly patch and update systems, especially firewalls, and other edge devices. Implement Zero Trust Principle. Restrict administrative tools and privileges to necessary users only. Strengthen account security by implementing identity, credential, and access management (ICAM) policies and multifactor authentication (MFA). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-293A STIX XML (40 KB) AA26-293A STIX JSON (38 KB) Intended Audience Organizations: Government; Federal Civilian Executive Branch (FC",
-      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
-      "published": "Mon, 19 Oct 2026 15:18:07 EDT",
-      "source": "CISA US-CERT Alerts",
-      "tags": [
-        "cisa",
-        "ics"
-      ],
-      "cve_ids": [
-        "CVE-2020-3259",
-        "CVE-2023-20269",
-        "CVE-2023-27532",
-        "CVE-2024-40711",
-        "CVE-2024-40766"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-91112",
-      "title": "Silverstripe Framework: CMS_ACCESS_SecurityAdmin privilege escalation",
-      "summary": "### Impact\nA user with access to the Security section (CMS_ACCESS_SecurityAdmin) but without the ADMIN permission could edit a group that grants ADMIN through a role or a parent group, and use it to escalate their own privileges.\n\n### Reported by\nLachlan Davidson, Carapace",
-      "link": "https://github.com/advisories/GHSA-rg72-5958-c65m",
-      "published": "2026-11-16T22:30:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-91112"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-68934",
-      "title": "code-review-mcp-server: Command injection via unsanitized folderPath/baseBranch parameters",
-      "summary": "### Impact\n\n`code-review-mcp-server` exposes MCP tools (`getLocalGitDiff`, `codeReview`, `createPR`, `getPRTemplate`) that accept `folderPath` and `baseBranch` string parameters. These caller-controlled values were interpolated directly into shell command strings executed via `child_process.execSync()`, which runs commands through `/bin/sh`.\n\nA crafted value such as `baseBranch = \"main; <arbitrary command> #\"` (or a `$(...)` command substitution, or a `folderPath` that breaks out of the surrounding quotes) results in **arbitrary command execution** on the host running the MCP server.\n\n### Patches\n\nFixed in **1.5.3**. Every `execSync()` call was replaced with `execFileSync()` using argument arrays, so inputs are passed directly to `git` / `gh` without going through a shell, eliminating the injection at its root.\n\n### Workarounds\n\nNone. Upgrade to `code-review-mcp-server@1.5.3` or later.",
-      "link": "https://github.com/advisories/GHSA-jq3q-62jc-fqq9",
-      "published": "2026-11-16T22:09:06Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-68934"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-119790",
-      "title": "Next.js: Information disclosure across root params when a 'use cache' function is called through unstable_cache()",
-      "summary": "Next.js applications with `'use cache'` can disclose cached data across root params when the same `'use cache'` function is called both directly during rendering and through `unstable_cache()`, and that function reads a root param. Root params are route parameters of the root layout, and applications commonly use them to scope data, for example per locale.\n\nDuring a cold process start, a cross-request deduplication race allowed an `unstable_cache()` call to join the in-flight fill of a concurrent direct call and receive its result, bypassing the root param check that would normally reject it. `unstable_cache()` then stored that result under a cache key without root params, so subsequent requests for other root param values received the same entry until it is revalidated or evicted. Cached data produced for one root param value is returned to requests for other values.\n\nExploitation requires the `unstable_cache()` request to arrive while the function's first fill after a process start is still in flight. Outside this race, the nesting already throws an error: `'use cache' inside unstable_cache() is unsupported`, and avoiding it is a complete workaround.",
-      "link": "https://github.com/advisories/GHSA-mfr8-8qww-v76h",
-      "published": "2026-11-16T18:51:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-119790"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-128134",
-      "title": "NLTK dot2img runs Graphviz 'dot' without the trusted-exec chokepoint, enabling local code execution via a writable PATH element",
-      "summary": "## Summary\n\n`nltk.parse.dependencygraph.dot2img` invokes the Graphviz `dot` executable without the trusted-execution guarantees that NLTK applies to its other native-tool wrappers. The function resolves `dot` by bare name and then runs the resolved absolute path with a raw `subprocess.run`, omitting the ownership/writability check and the loader-environment scrub that `nltk.pathsec.spawn_trusted` provides. On a POSIX host, a local, unprivileged actor who can write to any group/world-writable directory that appears on the victim's `PATH` can plant a trojan `dot`; when the victim later renders a `DependencyGraph` (for example in a Jupyter notebook, which auto-invokes `_repr_svg_`) or calls `dot2img` directly, the planted binary executes as the victim. The advisory GHSA-6hwm-xvph-95vm (CVE-2026-78680) addressed the same untrusted-search-path class for the Graphviz `dot` invoker in `nltk/translate/api.py`, but `dot2img` received only part of that remediation and remains exploitable.\n\n## Root Cause\n\nNLTK's native-tool security model layers four defenses (documented in `nltk/EXTERNAL_TOOL_SECURITY.md`): (1) `find_binary` refuses a current-working-directory-relative match; (2) `resolve_trusted_executable` verifies the resolved file is a regular file that no other unprivileged user can replace (private parent directories, owner is the user or root, no group/world write bit); (3) shell execution is refused; (4) `safe_env` scrubs loader and interpreter environment variables before exec. Layers 2, 3, and 4 are reached only through `nltk.pathsec.spawn_trusted`. `dot2img` calls `find_binary(\"dot\")` (layer 1 only), then executes the result with `subprocess.run([dot_binary, ...])` and no `env=` argument. Layer 1 rejects only non-absolute matches, so an absolute path returned by the `which` search stage survives even when the file lives in a writable directory. Because `dot2img` never calls `spawn_trusted`, the ownership check and environment scrub never run.\n\n```text\nnltk/parse/de",
-      "link": "https://github.com/advisories/GHSA-7mxv-7h3q-9324",
-      "published": "2026-11-16T18:45:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-128134"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
-      "title": "Bringing Rust to the Pixel Baseband",
-      "summary": "Posted by Jiacheng Lu, Software Engineer, Google Pixel Team Google is continuously advancing the security of Pixel devices. We have been focusing on hardening the cellular baseband modem against exploitation. Recognizing the risks associated within the complex modem firmware, Pixel 9 shipped with mitigations against a range of memory-safety vulnerabilities. For Pixel 10, Google is advancing its proactive security measures further. Following our previous discussion on \"Deploying Rust in Existing Firmware Codebases\" , this post shares a concrete application: integrating a memory-safe Rust DNS(Domain Name System) parser into the modem firmware. The new Rust-based DNS parser significantly reduces our security risk by mitigating an entire class of vulnerabilities in a risky area, while also laying the foundation for broader adoption of memory-safe code in other areas. Here we share our experience of working on it, and hope it can inspire the use of more memory safe languages in low-level environments. Why Modem Memory Safety Can\u2019t Wait In recent years, we have seen increasing interest in the cellular modem from attackers and security researchers. For example, Google's Project Zero gained remote code execution on Pixel modems over the Internet. Pixel modem has tens of Megabytes of executable code. Given the complexity and remote attack surface of the modem, other critical memory safety vulnerabilities may remain in the predominantly memory-unsafe firmware code. Why DNS? The DNS protocol is most commonly known in the context of browsers finding websites. With the evolution of cellular technology, modern cellular communications have migrated to digital data networks; consequently, even basic operations such as call forwarding rely on DNS services. DNS is a complex protocol and requires parsing of untrusted data, which can lead to vulnerabilities, particularly when implemented in a memory-unsafe language (example: CVE-2024-27227 ). Implementing the DNS parser in Rust offers ",
-      "link": "http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html",
-      "published": "2026-04-10T11:12:00.001-04:00",
-      "source": "Google Security Blog",
+      "id": "https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk",
+      "title": "CVE-2026-114938 RCE in OpenJDK: Everything You Need to Know",
+      "summary": "Detect and mitigate Java4Shell (CVE-2026-114938), a critical 9.2 RCE vulnerability affecting OpenJDK and major Java-based applications.",
+      "link": "https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk",
+      "published": "2026-11-17T22:29:57+00:00",
+      "source": "Wiz Research",
       "tags": [
         "cloud",
-        "google",
-        "research"
+        "research",
+        "misconfig"
       ],
       "cve_ids": [
-        "CVE-2024-27227"
+        "CVE-2026-114938"
       ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
       "is_zero_day": false,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-110789",
+      "title": "libp2p: ASN.1 DER decoder drives an unbounded synchronous loop on attacker-controlled length fields, stalling the Node event loop pre-auth",
+      "summary": "### Summary\nA remote peer can stall a js-libp2p node's entire event loop for ~4\u20135 seconds per connection (and transiently allocate ~2 GB) by sending a ~15-byte crafted `publicKey` inside an Identify message. The malformed key reaches the DER decoder before any peer-id/signature check, so the attack is pre-auth and repeatable indefinitely by reconnecting.\n\n### Details\n`packages/crypto/src/keys/rsa/der.ts` `readLength()` parses DER long-form lengths with no comparison to `buf.byteLength`, and `readInteger()` then loops over the attacker-claimed length:\n\n```ts\nfunction readInteger (buf, context) {\n  const length = readLength(buf, context)   // attacker-controlled, claims up to 2^64\n  const end = context.offset + length\n  for (let i = context.offset; i < end; i++) // runs far past buf.byteLength\n    vals.push(buf[i])                         // pushes `undefined` past the end\n}\n```\n\nThe blob reaches the parser pre-auth: Identify runs on every `connection:open` and calls `publicKeyFromProtobuf(publicKey)` (`packages/protocol-identify/src/identify.ts:85`) before the `connection.remotePeer.equals(id)` check at `identify.ts:88`. The `MAX_RSA_JWK_SIZE` guard in `pkixToRSAPublicKey` only bounds the total blob size, not the inner length field, so a 15-byte payload defeats it; the ECDSA path (`unmarshalECDSAPublicKey`) has no cap at all. The decode runs in a single synchronous tick, so no `AbortSignal` \u2014 including Identify's 5 s timeout \u2014 can interrupt it. Verified on js-libp2p commit `a04f5e0`, where `@libp2p/crypto` reads `5.1.21`.\n\n### PoC\nFull PoC attached (`libp2p-crypto-der-eventloop-dos-poc.tar.gz`). Build the js-libp2p monorepo at the affected version (`npm install --ignore-scripts && npm run build`), extract the package inside the monorepo root (sibling of `packages/`), then `cd libp2p-crypto-der-eventloop-dos-poc && node attack.mjs`. Expected:\n\n```\n[*] round 1: payload sent=true, victim event-loop stall = 4s, peak RSS ~1980 MB\n[*] round 2: payload sent=true, victim eve",
+      "link": "https://github.com/advisories/GHSA-rvfr-cqwq-rc4j",
+      "published": "2026-11-17T21:05:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-110789"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-110782",
+      "title": "SAML2: Incomplete fix of CVE-2026-49283: unsigned embedded Response bypasses HTTP-Artifact signature verification (no embedded-Issuer binding)",
+      "summary": "## Summary\nCVE-2026-49283 / GHSA-6929-8p9f-26jx (\"HTTP-Artifact TLS validator confusion allows cross-IdP authentication bypass\") was fixed so that `HTTPArtifact::receive()` verifies the embedded SAML `Response` using the IdP metadata signing keys. The current implementation (master `31c72c1d`, released **v6.2.3**) reaches that verification **only when the embedded Response is signed**:\n\n```php\n// src/Binding/HTTPArtifact.php  (receive())\nif (!$samlResponse->isSigned()) {\n    return $samlResponse;                         // \u2190 unsigned embedded Response returned UNVERIFIED\n}\nreturn $this->verifyMessageSignature($samlResponse, $idpMetadata);   // only runs when signed\n```\n\nAn attacker who controls one trusted-federation IdP therefore returns a **validly-signed outer `ArtifactResponse`** (signed with their own real key, which passes the mandatory outer check) that **wraps an *unsigned* `<samlp:Response>` whose `<Issuer>` names a *different* IdP**. `isSigned()` is false, so `verifyMessageSignature()` never runs and the forged Response is returned as successfully received. Additionally, even on the signed path `verifyMessageSignature()` verifies against the **artifact issuer's** metadata keys but **never asserts that the embedded Response's `<Issuer>` equals the artifact issuer** \u2014 the same cross-IdP confusion the CVE was assigned for is not closed by identity binding.\n\nThis is an incomplete implementation of the fix's own stated goal (\"verify signatures using IdP metadata signing keys\", commit `dac0b4b6` / #419), and a regression introduced by the `#414` refactor (v6.2.2) \u2014 the official CVE fix in **v6.2.1 did not contain this short-circuit**.\n\n## Affected component\n- `src/Binding/HTTPArtifact.php`\n  - `receive()` line **206-207**: `if (!$samlResponse->isSigned()) { return $samlResponse; }` \u2014 the bypassed guard.\n  - `receive()` line 210: `verifyMessageSignature($samlResponse, $idpMetadata)` \u2014 only reached when signed.\n  - `verifyMessageSignature()` lines 230-286: verifie",
+      "link": "https://github.com/advisories/GHSA-r7hw-jx6r-756g",
+      "published": "2026-11-17T21:00:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-110782"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-63389",
+      "title": "Filament Curator: Cross-tenant media metadata disclosure via Curator picker search",
+      "summary": "Summary\n\n  In multitenant Filament panels, an authenticated user could retrieve media metadata belonging to other tenants\n  by typing in the Curator media-picker search box. The search query omitted the tenant ownership scope that the\n  normal file listing applies.\n\n  Details\n\n  CuratorPanel::updatedSearch() built its Eloquent query independently of getFiles() and did not apply the\n  filament()->hasTenancy() && $isTenantAware tenant-ownership where clause. As a result, the search matched media\n  across all tenants. A secondary flaw compounded it: the orWhere('title'\u2026) chain was not wrapped in a nested\n  group, so the OR conditions also broke out of the isLimitedToDirectory constraint.\n\n  The issue was introduced in v3.2.4, when multitenancy support was added to the media picker.\n\n  Impact\n\n  - Who: any authenticated user with access to a panel that uses the Curator picker.\n  - What: disclosure of other tenants' media metadata (name, title, alt, caption, description, path, etc.)\n  returned by the search.\n  - Conditions: only affects deployments using Filament multitenancy with Curator's tenant awareness enabled.\n  Single-tenant installs are not affected.\n\n  Patches\n\n  Fixed in 3.7.8, 4.1.1, and 5.1.1 by applying the tenant scope to the search query and grouping the search terms\n  so they cannot escape the directory/tenant constraints. Upgrade to a patched version.\n\n  Workarounds\n\n  None other than upgrading. Disabling tenant awareness does not help (it removes the boundary entirely).\n\n  Credit\n\n  Reported via coordinated disclosure by [Afsana Alijabarova](https://github.com/afa114).",
+      "link": "https://github.com/advisories/GHSA-828w-6qgx-3rcf",
+      "published": "2026-11-17T20:49:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63389"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-62336",
+      "title": "qbee-agent: Local Privilege Escalation and Arbitrary File Tampering via Symlink Following in createFile helper",
+      "summary": "This is a Local Privilege Escalation (LPE) vulnerability stemming from improper symlink handling (CWE-59: Link Following) and improper ownership management (CWE-282) inside the qbee-agent file manager logic.\n\n### Impact\n\nAny managed device running qbee-agent up to the affected versions. The impact manifests in three distinct vectors:\n\n1. **Primary Vector (Full Privilege Escalation to Root - Default Configuration)**: If an unprivileged user's account is managed by the SSH Keys bundle, they can replace or remove their own `~/.ssh` directory and create a symlink pointing to `/root/.ssh`. On the next configuration apply, qbee-agent follows the symlink and writes the user's server-provisioned public key directly into `/root/.ssh/authorized_keys`. Since the symlink resides inside the user's own home directory, kernel protections like `fs.protected_symlinks` do not block this execution. The attacker can then instantly log in as root via SSH.\n\n2. **Secondary Vector (Arbitrary File Overwrite / DoS via RAUC Staging)**: On devices utilizing RAUC download mode, the agent uses a predictable, world-writable staging path (`/tmp/.bundle.raucb.part`). If `fs.protected_symlinks` is disabled `(0)`, an unprivileged user can symlink this path to a vital system file (e.g., `/etc/shadow` or `/etc/pam.d/*`), causing the agent to truncate or overwrite it with server-supplied update data during a RAUC update deployment.\n\n3. **Tertiary Vector (Arbitrary File Re-ownership via File Distribution)**: If an operator configures a file-distribution/template destination under a directory owned by an unprivileged user, the attacker can create a symlink at the partial download path targeting a sensitive system file. The agent will then inadvertently execute `file.Chown()` on the targeted file, handing ownership over to the unprivileged attacker.\n\n### Patches\n\nThe vulnerability has been addressed by hardening file creation and directory traversal inside `app/configuration/file_manager.go`. Specifically,",
+      "link": "https://github.com/advisories/GHSA-xhv5-8fpq-g7hf",
+      "published": "2026-11-17T20:48:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62336"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.001,
+      "epss_percentile": 0.00844,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-14265",
+      "title": "AWS-advanced-jdbc-wrapper: Java Deserialization RCE via Cache Poisoning",
+      "summary": "### Impact\nThe AWS Advanced JDBC Wrapper is an open-source JDBC driver wrapper that extends a JDBC driver to enable Amazon Aurora and AWS Cloud features such as failover handling and caching. We identified CVE-2026-14265, an issue in the RemoteQueryCachePlugin of the AWS Advanced JDBC Wrapper. When this plugin is enabled, query results read from the shared Redis/Valkey cache are deserialized without class filtering. An actor with write access to the shared cache infrastructure could insert a crafted serialized Java object that, when read by an application, results in execution of arbitrary code on the application server.\n\n### Workarounds\nThe RemoteQueryCachePlugin is not enabled by default. Customers who cannot immediately upgrade can mitigate this issue by disabling the RemoteQueryCachePlugin, and by restricting write access to the Redis/Valkey cache infrastructure to trusted principals.",
+      "link": "https://github.com/advisories/GHSA-c5q4-97jw-jggh",
+      "published": "2026-11-17T20:39:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-14265"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00727,
+      "epss_percentile": 0.54779,
+      "stack_match": [
+        "aws",
+        "redis",
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-53998",
+      "title": "Phoenix: Format String Injection in applyChatTemplate",
+      "summary": "- Summary\n\nA format string injection vulnerability in the applyChatTemplate GraphQL endpoint allows an attacker to read server-side environment variables, cryptographic secrets, and internal module attributes directly from the API response. On default Phoenix installations where authentication is disabled the endpoint is reachable with no credentials. On auth-enabled deployments, any account regardless of privilege level is sufficient to exploit it.\n\n- Impact\nServer filesystem paths, loaded Python module names, and internal configuration constants are fully disclosed, an attacker with network access can read the full server `os.environ` including the admin credentials hardcoded in `phoenix.auth`.\n\nSuccessful exploitation allows an attacker to extract PHOENIX_SECRET, the master key used to sign all JWTs and derive the Fernet encryption key protecting stored credentials (LLM API keys, OAuth tokens). With this key, an attacker can forge admin-level session tokens and decrypt all secrets stored in the database.\n\n- Affected Versions\n\nFirst vulnerable release: arize-phoenix-v13.0.0 (2026-02-13)\nLatest confirmed vulnerable release: arize-phoenix-v14.8.0 (2026-04-17)\n\n- Affected Component\n `applyChatTemplate` GraphQL query endpoint (`src/phoenix/server/api/queries.py:1638`)\n `FStringTemplateFormatter._format()` template rendering function (`src/phoenix/utilities/template_formatters.py:272`)\n `DotDict.__getattr__()` ineffective attribute access control (`src/phoenix/utilities/template_formatters.py:90`)\n\n- Proof of Concept\npayload as txt with an image performing the exploit below.\n<img width=\"1574\" height=\"766\" alt=\"PoC-Phoenix\" src=\"https://github.com/user-attachments/assets/55f56325-4c26-4c96-8aa9-89e44ff1ba53\" />\n- Payload:\n\n```\n{\n  \"query\": \"query($t: PromptChatTemplateInput!, $o: PromptTemplateOptions!) { applyChatTemplate(template: $t, templateOptions: $o) { messages { content { ... on TextContentPart { text { text } } } } } }\",\n  \"variables\": {\n    \"t\": { \"messages\": ",
+      "link": "https://github.com/advisories/GHSA-gfv3-m769-5xm3",
+      "published": "2026-11-17T20:02:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-53998"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00356,
+      "epss_percentile": 0.29858,
+      "stack_match": [
+        "python",
+        "github"
+      ]
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Nov/36",
+      "title": "SAPBleed: Pre-Auth Memory Disclosure and RCE in SAP NetWeaver, Web Dispatcher and HANA XS (CVE-2026-76964, CVE-2026-89126)",
+      "summary": "Posted by Raschin Tavakoli via Fulldisclosure on Nov 17 nullFaktor Security Advisory < 2026-11-12 > =========================================================== Title: SAPBleed: Pre-Auth Process Memory Leak and RCE in SAP ICM and Web Dispatcher, including the internal Web Dispatcher in SAP HANA XS Vulnerability: Heap Buffer Overflow / Memory Leak / RCE CVE (ICM): CVE-2026-76964 CVE (Web Disp): CVE-2026-89126 Impact:...",
+      "link": "https://seclists.org/fulldisclosure/2026/Nov/36",
+      "published": "2026-11-17T19:15:53+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-76964",
+        "CVE-2026-89126"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00431,
+      "epss_percentile": 0.37875,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-119351",
+      "title": "Next.js: Cache leak across root param values in nested 'use cache' functions via delayed inner stream metadata",
+      "summary": "With Cache Components enabled, an outer `'use cache'` function can be keyed incorrectly even when its inner `'use cache'` call generates a fresh entry. If the inner function reads a root param (via `next/root-params`) and returns a value that still contains pending promises \u2014 for example an object with data that is ready immediately alongside slower data \u2014 React Flight delivers the ready portion to the outer function before the inner entry has finished publishing its root param dependencies. The outer function can then finish, and its cache entry is persisted under a key that omits that root param. The entry is written once and reused for all root param values, so a response for one root param value can serve content produced for a different value. Entries written this way can also ignore tag invalidation and cache lifetimes of the nested caches they consumed.\n\nWhat values are leaked cannot be attacker controlled. Which value's content is served depends only on which invocation wrote the entry first.\n\nThis is a variant of https://github.com/advisories/GHSA-h694-7cp9-m8p3 that the fix for that advisory does not cover: it does not require the inner call to be served from an existing entry, and it does not depend on a slow cache handler.",
+      "link": "https://github.com/advisories/GHSA-vc7v-qv4w-wrv8",
+      "published": "2026-11-17T16:13:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119351"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.0024,
+      "epss_percentile": 0.15279,
+      "stack_match": [
+        "github"
+      ]
     }
   ]
 }
