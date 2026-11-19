@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T04:48:34.244821+00:00",
+  "generated_at": "2026-11-19T14:49:22.247068+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -123,7 +123,7 @@
     }
   ],
   "run": {
-    "new_signals": 1,
+    "new_signals": 0,
     "new_rows": 0,
     "capped_entries": 1
   }

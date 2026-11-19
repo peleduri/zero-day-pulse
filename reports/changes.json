@@ -1,207 +1,24 @@
 {
-  "run_id": "44460758343",
-  "generated_at": "2026-11-19T04:48:46.316744+00:00",
+  "run_id": "44547770823",
+  "generated_at": "2026-11-19T14:49:36.866020+00:00",
   "changes": [
     {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-113425",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-40217",
+      "title": null,
+      "link": null,
+      "threshold": 0.5,
+      "old_epss": 0.1702,
+      "new_epss": 0.61911
     },
     {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-118899",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-120967",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-120993",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-121810",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-123634",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-123640",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-125283",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-130001",
-      "title": "Mustache for Ruby: RCE using built-in method access",
-      "link": "https://github.com/advisories/GHSA-5hrj-7fc3-cmx9",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63129",
-      "title": "mssql-mcp-core: SQL injection in mssql-mcp write tools via unparameterized table names and WHERE clauses",
-      "link": "https://github.com/advisories/GHSA-2m9m-6cr5-9x25",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63496",
-      "title": "augment-virShell allows Command Injection in `grep()` via Unsanitized `searchPattern`",
-      "link": "https://github.com/advisories/GHSA-xvcc-vqjv-phqh",
-      "stack_match": [
-        "node.js",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-68903",
-      "title": "LLMKube: Arbitrary Host File Read via Model.spec.source hostPath Injection",
-      "link": "https://github.com/advisories/GHSA-jw3m-8q7m-f35r",
-      "stack_match": [
-        "kubernetes",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69156",
-      "title": "Atomic Server: Arbitrary file read via user-controlled `internalId` in the `/download` handler (leaks root agent private key)",
-      "link": "https://github.com/advisories/GHSA-8vc4-8hjq-988p",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69157",
-      "title": "Atomic Server: Unauthenticated `/setup` invite grants write access to the entire Drive",
-      "link": "https://github.com/advisories/GHSA-pfwx-xjp4-qxcj",
-      "stack_match": [
-        "docker",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69158",
-      "title": "Atomic Server: Unauthenticated full-response SSRF in Atomic-Server /bookmark endpoint",
-      "link": "https://github.com/advisories/GHSA-ff87-73jp-f3v4",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-71481",
-      "title": "ALTCHA PHP: verifySolution bypasses HMAC signature check when challenge signature is absent",
-      "link": "https://github.com/advisories/GHSA-82w8-65qw-gch6",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-71861",
-      "title": "Chainguard SDK: AWS SigV4 token replay in auth/aws.VerifyToken \u2014 Chainguard-Audience/Chainguard-Identity binding headers not required in SignedHeaders",
-      "link": "https://github.com/advisories/GHSA-wq26-3j2m-4hvv",
-      "stack_match": [
-        "aws",
-        "kubernetes",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-75506",
-      "title": "OliveTin: Second-Order OS Command Injection via shellAfterCompleted",
-      "link": "https://github.com/advisories/GHSA-vc6p-m6vx-6cwq",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-75521",
-      "title": "Miren Runtime: Authentication bypass in RPC layer: unverified TLS client certificates grant cluster superuser access",
-      "link": "https://github.com/advisories/GHSA-8fh7-7q4q-cq52",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-76088",
-      "title": "PGPainless: Unbounded Compressed Packet Descent in inline-detach and MessageInspector leads to Denial of Service (DoS)",
-      "link": "https://github.com/advisories/GHSA-cvx8-9ff6-54xq",
-      "stack_match": [
-        "github"
-      ]
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-90817",
+      "title": null,
+      "link": null,
+      "threshold": 0.1,
+      "old_epss": 0.03749,
+      "new_epss": 0.25187
     }
   ]
 }

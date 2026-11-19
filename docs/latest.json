@@ -1,241 +1,88 @@
 {
-  "generated": "2026-11-19T04:48:46.316744+00:00",
-  "total": 18,
-  "kev": 2,
+  "generated": "2026-11-19T14:49:36.866020+00:00",
+  "total": 20,
+  "kev": 3,
   "zero_day": 3,
   "enriched": 0,
-  "high_epss": 1,
+  "high_epss": 3,
   "my_stack": 14,
-  "run_id": "44460758343",
+  "run_id": "44547770823",
   "changes": [
     {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-113425",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-40217",
+      "title": null,
+      "link": null,
+      "threshold": 0.5,
+      "old_epss": 0.1702,
+      "new_epss": 0.61911
     },
     {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-118899",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-120967",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-120993",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-121810",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-123634",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-123640",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-125283",
-      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
-      "stack_match": [
-        "linux",
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-130001",
-      "title": "Mustache for Ruby: RCE using built-in method access",
-      "link": "https://github.com/advisories/GHSA-5hrj-7fc3-cmx9",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63129",
-      "title": "mssql-mcp-core: SQL injection in mssql-mcp write tools via unparameterized table names and WHERE clauses",
-      "link": "https://github.com/advisories/GHSA-2m9m-6cr5-9x25",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63496",
-      "title": "augment-virShell allows Command Injection in `grep()` via Unsanitized `searchPattern`",
-      "link": "https://github.com/advisories/GHSA-xvcc-vqjv-phqh",
-      "stack_match": [
-        "node.js",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-68903",
-      "title": "LLMKube: Arbitrary Host File Read via Model.spec.source hostPath Injection",
-      "link": "https://github.com/advisories/GHSA-jw3m-8q7m-f35r",
-      "stack_match": [
-        "kubernetes",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69156",
-      "title": "Atomic Server: Arbitrary file read via user-controlled `internalId` in the `/download` handler (leaks root agent private key)",
-      "link": "https://github.com/advisories/GHSA-8vc4-8hjq-988p",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69157",
-      "title": "Atomic Server: Unauthenticated `/setup` invite grants write access to the entire Drive",
-      "link": "https://github.com/advisories/GHSA-pfwx-xjp4-qxcj",
-      "stack_match": [
-        "docker",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69158",
-      "title": "Atomic Server: Unauthenticated full-response SSRF in Atomic-Server /bookmark endpoint",
-      "link": "https://github.com/advisories/GHSA-ff87-73jp-f3v4",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-71481",
-      "title": "ALTCHA PHP: verifySolution bypasses HMAC signature check when challenge signature is absent",
-      "link": "https://github.com/advisories/GHSA-82w8-65qw-gch6",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-71861",
-      "title": "Chainguard SDK: AWS SigV4 token replay in auth/aws.VerifyToken \u2014 Chainguard-Audience/Chainguard-Identity binding headers not required in SignedHeaders",
-      "link": "https://github.com/advisories/GHSA-wq26-3j2m-4hvv",
-      "stack_match": [
-        "aws",
-        "kubernetes",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-75506",
-      "title": "OliveTin: Second-Order OS Command Injection via shellAfterCompleted",
-      "link": "https://github.com/advisories/GHSA-vc6p-m6vx-6cwq",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-75521",
-      "title": "Miren Runtime: Authentication bypass in RPC layer: unverified TLS client certificates grant cluster superuser access",
-      "link": "https://github.com/advisories/GHSA-8fh7-7q4q-cq52",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-76088",
-      "title": "PGPainless: Unbounded Compressed Packet Descent in inline-detach and MessageInspector leads to Denial of Service (DoS)",
-      "link": "https://github.com/advisories/GHSA-cvx8-9ff6-54xq",
-      "stack_match": [
-        "github"
-      ]
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-90817",
+      "title": null,
+      "link": null,
+      "threshold": 0.1,
+      "old_epss": 0.03749,
+      "new_epss": 0.25187
     }
   ],
   "findings": [
     {
-      "id": "https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html",
-      "title": "Hackers Exploiting Critical Puppet RCE Flaw Affecting Enterprise Management Servers",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a critical security flaw impacting Perforce Puppet, an enterprise infrastructure-as-code (IaC) and configuration management platform, to its Known Exploited Vulnerabilities (KEV) catalog, citing reports of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-115731 (CVSS score: 9.4), is a case of",
-      "link": "https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html",
-      "published": "2026-11-18T08:24:31+00:00",
+      "id": "https://thehackernews.com/2026/11/everything-is-web-application-including.html",
+      "title": "Everything Is a Web Application, Including Your Firewall",
+      "summary": "One of the early targets of PHP2Shell exploitation was the firewall. On October 28, Palo Alto Networks confirmed that attackers were exploiting the two PHP vulnerabilities, CVE-2026-109618 and CVE-2026-109619, against PAN-OS management interfaces exposed to the internet. Both flaws let anyone execute code on the web server without authentication. The disclosure itself went a little wrong.",
+      "link": "https://thehackernews.com/2026/11/everything-is-web-application-including.html",
+      "published": "2026-11-19T11:52:23+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-115731"
+        "CVE-2026-109618",
+        "CVE-2026-109619"
       ],
       "in_kev": true,
-      "kev_date_added": "2026-11-17",
-      "kev_due_date": "2026-12-01",
-      "kev_vendor": "Perforce",
-      "kev_product": "Puppet Enterprise",
+      "kev_date_added": "2026-10-26",
+      "kev_due_date": "2026-10-29",
+      "kev_vendor": "PHP Group",
+      "kev_product": "PHP",
       "kev_ransomware": false,
       "is_zero_day": true,
       "is_high_severity": true,
+      "is_priority_product": true,
+      "epss": 0.99999,
+      "epss_percentile": 0.99999,
+      "stack_match": []
+    },
+    {
+      "id": "https://research.checkpoint.com/2026/30-years-of-gatekeeper-asymmetry-doom-the-paradox-that-makes-powerful-llms-more-vulnerable/",
+      "title": "30 Years of Gatekeeper Asymmetry Doom: The Paradox that Makes Powerful LLMs More Vulnerable",
+      "summary": "Abstract We give an exposition for a principle of gatekeeper asymmetry doom in information security, which states that \u201cIf the system vetting adversarial input has strictly less power than the system processing that input, without leveraging some hard problem, this will inevitably lead to doom.\u201d We list a variety of examples where one can see [\u2026] The post 30 Years of Gatekeeper Asymmetry Doom: The Paradox that Makes Powerful LLMs More Vulnerable appeared first on Check Point Research .",
+      "link": "https://research.checkpoint.com/2026/30-years-of-gatekeeper-asymmetry-doom-the-paradox-that-makes-powerful-llms-more-vulnerable/",
+      "published": "2026-11-19T13:19:10+00:00",
+      "source": "Check Point Research",
+      "tags": [
+        "network",
+        "checkpoint",
+        "research",
+        "threat-intel"
+      ],
+      "cve_ids": [
+        "CVE-2021-44228"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2021-12-10",
+      "kev_due_date": "2021-12-24",
+      "kev_vendor": "Apache",
+      "kev_product": "Log4j2",
+      "kev_ransomware": true,
+      "is_zero_day": true,
+      "is_high_severity": false,
       "is_priority_product": false,
-      "epss": 0.00691,
-      "epss_percentile": 0.53546,
+      "epss": 0.99999,
+      "epss_percentile": 1.0,
       "stack_match": []
     },
     {
@@ -298,8 +145,8 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.06532,
+      "epss_percentile": 0.9393,
       "stack_match": [
         "linux",
         "nginx",
@@ -329,8 +176,8 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.0164,
-      "epss_percentile": 0.7686,
+      "epss": 0.01191,
+      "epss_percentile": 0.68625,
       "stack_match": []
     },
     {
@@ -357,11 +204,38 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00553,
+      "epss_percentile": 0.46999,
       "stack_match": [
         "github"
       ]
+    },
+    {
+      "id": "https://www.securityweek.com/php-readies-critical-security-updates-to-patch-another-rce-flaw/",
+      "title": "PHP Readies Critical Security Updates to Patch Another RCE Flaw",
+      "summary": "Affecting the session upload progress, CVE-2026-115560 was publicly disclosed two days after PHP2Shell patches landed. The post PHP Readies Critical Security Updates to Patch Another RCE Flaw appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/php-readies-critical-security-updates-to-patch-another-rce-flaw/",
+      "published": "2026-11-19T07:45:17+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-115560"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
     },
     {
       "id": "CVE-2026-76088",
@@ -387,8 +261,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00717,
+      "epss_percentile": 0.5458,
       "stack_match": [
         "github"
       ]
@@ -417,8 +291,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00286,
+      "epss_percentile": 0.21453,
       "stack_match": [
         "github"
       ]
@@ -447,8 +321,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00619,
+      "epss_percentile": 0.50458,
       "stack_match": [
         "github"
       ]
@@ -477,8 +351,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.005,
+      "epss_percentile": 0.43584,
       "stack_match": [
         "kubernetes",
         "github"
@@ -508,8 +382,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00214,
+      "epss_percentile": 0.11915,
       "stack_match": [
         "aws",
         "kubernetes",
@@ -541,8 +415,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00734,
-      "epss_percentile": 0.55119,
+      "epss": 0.00753,
+      "epss_percentile": 0.55858,
       "stack_match": []
     },
     {
@@ -569,8 +443,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00262,
+      "epss_percentile": 0.18203,
       "stack_match": [
         "github"
       ]
@@ -599,8 +473,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00482,
-      "epss_percentile": 0.42232,
+      "epss": 0.00289,
+      "epss_percentile": 0.21854,
       "stack_match": [
         "github"
       ]
@@ -629,8 +503,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00512,
-      "epss_percentile": 0.44329,
+      "epss": 0.00382,
+      "epss_percentile": 0.32951,
       "stack_match": [
         "docker",
         "github"
@@ -660,8 +534,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00491,
-      "epss_percentile": 0.42903,
+      "epss": 0.00349,
+      "epss_percentile": 0.29173,
       "stack_match": [
         "github"
       ]
@@ -721,7 +595,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.00184,
-      "epss_percentile": 0.08065,
+      "epss_percentile": 0.08097,
       "stack_match": [
         "node.js",
         "github"
@@ -752,8 +626,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.06532,
+      "epss_percentile": 0.9393,
       "stack_match": [
         "nginx"
       ]
