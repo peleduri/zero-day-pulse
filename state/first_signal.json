@@ -10,5 +10,17 @@
     "observed_at": "2026-11-19T04:48:34.227734+00:00",
     "published": "2026-11-19T00:46:38+00:00",
     "source": "GitHub Security Advisories"
+  },
+  "CVE-2026-83816": {
+    "link": "https://github.com/advisories/GHSA-3mgh-93r5-r7jf",
+    "observed_at": "2026-11-19T23:58:44.944617+00:00",
+    "published": "2026-11-19T22:48:14+00:00",
+    "source": "GitHub Security Advisories"
+  },
+  "CVE-2026-83817": {
+    "link": "https://github.com/advisories/GHSA-8hp3-xxrg-v9c8",
+    "observed_at": "2026-11-19T23:58:44.944617+00:00",
+    "published": "2026-11-19T22:47:33+00:00",
+    "source": "GitHub Security Advisories"
   }
 }
