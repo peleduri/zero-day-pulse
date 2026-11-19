@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T23:40:03.317649+00:00",
+  "generated_at": "2026-11-19T04:48:34.244821+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -74,57 +74,57 @@
   "total_rows": 4,
   "rows": [
     {
+      "bucket": "missed",
       "cve": "CVE-2024-10441",
-      "kev_date_added": "2026-11-18",
-      "vendor": "Synology",
-      "product": "DiskStation Manager (DSM)",
       "cve_year": 2024,
-      "observed_at": null,
-      "source": null,
-      "link": null,
+      "kev_date_added": "2026-11-18",
       "lead_days": null,
-      "bucket": "missed"
+      "link": null,
+      "observed_at": null,
+      "product": "DiskStation Manager (DSM)",
+      "source": null,
+      "vendor": "Synology"
     },
     {
+      "bucket": "missed",
       "cve": "CVE-2026-40217",
+      "cve_year": 2026,
       "kev_date_added": "2026-11-18",
-      "vendor": "BerriAI",
+      "lead_days": null,
+      "link": null,
+      "observed_at": null,
       "product": "LiteLLM",
-      "cve_year": 2026,
-      "observed_at": null,
       "source": null,
-      "link": null,
-      "lead_days": null,
-      "bucket": "missed"
+      "vendor": "BerriAI"
     },
     {
+      "bucket": "missed",
       "cve": "CVE-2026-90436",
-      "kev_date_added": "2026-11-18",
-      "vendor": "Apache",
-      "product": "Axis",
       "cve_year": 2026,
-      "observed_at": null,
-      "source": null,
-      "link": null,
+      "kev_date_added": "2026-11-18",
       "lead_days": null,
-      "bucket": "missed"
+      "link": null,
+      "observed_at": null,
+      "product": "Axis",
+      "source": null,
+      "vendor": "Apache"
     },
     {
+      "bucket": "missed",
       "cve": "CVE-2026-90817",
-      "kev_date_added": "2026-11-18",
-      "vendor": "Vanderbilt University",
-      "product": "Research Electronic Data Capture (REDCap)",
       "cve_year": 2026,
-      "observed_at": null,
-      "source": null,
-      "link": null,
+      "kev_date_added": "2026-11-18",
       "lead_days": null,
-      "bucket": "missed"
+      "link": null,
+      "observed_at": null,
+      "product": "Research Electronic Data Capture (REDCap)",
+      "source": null,
+      "vendor": "Vanderbilt University"
     }
   ],
   "run": {
     "new_signals": 1,
-    "new_rows": 4,
-    "capped_entries": 0
+    "new_rows": 0,
+    "capped_entries": 1
   }
 }

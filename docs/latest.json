@@ -1,29 +1,212 @@
 {
-  "generated": "2026-11-18T23:40:14.042703+00:00",
-  "total": 9,
-  "kev": 7,
-  "zero_day": 1,
+  "generated": "2026-11-19T04:48:46.316744+00:00",
+  "total": 18,
+  "kev": 2,
+  "zero_day": 3,
   "enriched": 0,
-  "high_epss": 2,
-  "my_stack": 3,
-  "run_id": "44422574189",
+  "high_epss": 1,
+  "my_stack": 14,
+  "run_id": "44460758343",
   "changes": [
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-123007",
-      "title": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
-      "link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+      "cve": "CVE-2026-113425",
+      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
       "stack_match": [
-        "nginx"
+        "linux",
+        "nginx",
+        "github"
       ]
     },
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-123633",
-      "title": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
-      "link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+      "cve": "CVE-2026-118899",
+      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
       "stack_match": [
-        "nginx"
+        "linux",
+        "nginx",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-120967",
+      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
+      "stack_match": [
+        "linux",
+        "nginx",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-120993",
+      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
+      "stack_match": [
+        "linux",
+        "nginx",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-121810",
+      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
+      "stack_match": [
+        "linux",
+        "nginx",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-123634",
+      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
+      "stack_match": [
+        "linux",
+        "nginx",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-123640",
+      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
+      "stack_match": [
+        "linux",
+        "nginx",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-125283",
+      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
+      "stack_match": [
+        "linux",
+        "nginx",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-130001",
+      "title": "Mustache for Ruby: RCE using built-in method access",
+      "link": "https://github.com/advisories/GHSA-5hrj-7fc3-cmx9",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-63129",
+      "title": "mssql-mcp-core: SQL injection in mssql-mcp write tools via unparameterized table names and WHERE clauses",
+      "link": "https://github.com/advisories/GHSA-2m9m-6cr5-9x25",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-63496",
+      "title": "augment-virShell allows Command Injection in `grep()` via Unsanitized `searchPattern`",
+      "link": "https://github.com/advisories/GHSA-xvcc-vqjv-phqh",
+      "stack_match": [
+        "node.js",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-68903",
+      "title": "LLMKube: Arbitrary Host File Read via Model.spec.source hostPath Injection",
+      "link": "https://github.com/advisories/GHSA-jw3m-8q7m-f35r",
+      "stack_match": [
+        "kubernetes",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-69156",
+      "title": "Atomic Server: Arbitrary file read via user-controlled `internalId` in the `/download` handler (leaks root agent private key)",
+      "link": "https://github.com/advisories/GHSA-8vc4-8hjq-988p",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-69157",
+      "title": "Atomic Server: Unauthenticated `/setup` invite grants write access to the entire Drive",
+      "link": "https://github.com/advisories/GHSA-pfwx-xjp4-qxcj",
+      "stack_match": [
+        "docker",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-69158",
+      "title": "Atomic Server: Unauthenticated full-response SSRF in Atomic-Server /bookmark endpoint",
+      "link": "https://github.com/advisories/GHSA-ff87-73jp-f3v4",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-71481",
+      "title": "ALTCHA PHP: verifySolution bypasses HMAC signature check when challenge signature is absent",
+      "link": "https://github.com/advisories/GHSA-82w8-65qw-gch6",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-71861",
+      "title": "Chainguard SDK: AWS SigV4 token replay in auth/aws.VerifyToken \u2014 Chainguard-Audience/Chainguard-Identity binding headers not required in SignedHeaders",
+      "link": "https://github.com/advisories/GHSA-wq26-3j2m-4hvv",
+      "stack_match": [
+        "aws",
+        "kubernetes",
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-75506",
+      "title": "OliveTin: Second-Order OS Command Injection via shellAfterCompleted",
+      "link": "https://github.com/advisories/GHSA-vc6p-m6vx-6cwq",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-75521",
+      "title": "Miren Runtime: Authentication bypass in RPC layer: unverified TLS client certificates grant cluster superuser access",
+      "link": "https://github.com/advisories/GHSA-8fh7-7q4q-cq52",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-76088",
+      "title": "PGPainless: Unbounded Compressed Packet Descent in inline-detach and MessageInspector leads to Denial of Service (DoS)",
+      "link": "https://github.com/advisories/GHSA-cvx8-9ff6-54xq",
+      "stack_match": [
+        "github"
       ]
     }
   ],
@@ -56,11 +239,38 @@
       "stack_match": []
     },
     {
-      "id": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-      "summary": "Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Change log Update November 18: Added reports of exploitation attempts and a working exploit, alerts from CISA and the Canadian Centre for Cyber Security, fixed builds from other Java distributions, mitigation guidance from Keycloak and an example Tenable Hexa AI prompt. Click here to review the change log history Update November 18: Added reports of exploitation attempts and a working exploit, alerts from CISA and the Canadian Centre for Cyber Security, fixed builds from other Java distributions, mitigation guidance from Keycloak and an example Tenable Hexa AI prompt. November 17: Original publication. Key takeaways CVE-2026-114938, dubbed Java4Shell, is an OpenJDK memory corruption vulnerability that Oracle scores 8.1 on CVSS 3.1, and Calif says its testing showed attackers could run code without logging in on applications such as Atlassian Jira and Jenkins. As of November 18, GreyNoise has reported exploitation attempts against this flaw but has not confirmed any successful exploitation against its sensors, and VulnCheck says a working exploit is available to its customers, while Kevin Breen of Immersive reports building one. Oracle released fixed builds on November 17, and according to Calif, only systems running an affected Java version on x86-64 processors that support AVX-512 VBMI can be affected. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding Java4Shell, a vulnerability in OpenJDK that was patched on November 17, 2026. FAQ When was Java4Shell first disclosed? On November 17, security firm Calif said on X that it had found and reported the flaw, and that details of Java4Shell, as Calif na",
-      "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
-      "published": "2026-11-18T02:49:16+00:00",
+      "id": "https://isc.sans.edu/diary/rss/33534",
+      "title": "Treat Your Honeypot Analysis Like Code: Git, Pull Requests and a Human Gate for AI [Guest Diary], (Wed, Nov 18th)",
+      "summary": "[This is a Guest Diary by Kevin Truong, an ISC intern as part of the SANS.edu BACS program]",
+      "link": "https://isc.sans.edu/diary/rss/33534",
+      "published": "2026-11-19T01:53:48+00:00",
+      "source": "SANS Internet Storm Center",
+      "tags": [
+        "sans",
+        "isc"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-10-26",
+      "kev_due_date": "2026-10-29",
+      "kev_vendor": "PHP Group",
+      "kev_product": "PHP",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": 0.99999,
+      "epss_percentile": 0.99999,
+      "stack_match": []
+    },
+    {
+      "id": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
+      "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+      "summary": "Frequently asked questions about five critical NGINX remote code execution vulnerabilities and five additional flaws fixed in F5\u2019s November 18 out-of-band release. Key takeaways NGINX2Root is associated with five critical remote code execution vulnerabilities in NGINX, and a separate, unpatched Linux kernel local privilege escalation (LPE) flaw that can be chained with the NGINX bugs to gain root. CVE-2026-123007 is the most urgent of the five. It is an unauthenticated RCE flaw in NGINX\u2019s HTTP/2 implementation and requires only HTTP/2 over TLS to be enabled. A PoC is publicly available on GitHub. F5\u2019s November 18 release fixed the five NGINX2Root vulnerabilities and five additional NGINX flaws. Background Tenable\u2019s Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding NGINX2Root, a set of five critical remote code execution vulnerabilities in NGINX, and five additional NGINX flaws that F5 fixed in an out-of-band security release on November 18, 2026. FAQ What is NGINX2Root? NGINX2Root is the name Xint (Theori) gave to five critical remote code execution vulnerabilities in NGINX, and a separate, unpatched Linux kernel local privilege escalation (LPE) flaw that Xint says can be chained with the NGINX bugs to gain root. The NGINX flaws are memory-corruption bugs in HTTP/2, HTTP/3, the resolver, and the mail proxy module. Exploitation depends on the specific feature being active, and achieving code execution generally requires ASLR to be absent or defeated. The name is not used by F5 or nginx.org . What are the vulnerabilities associated with NGINX2Root? CVE Description CVSSv4 (F5) CVE-2026-123007 NGINX ngx_http_v2_module vulnerability 9.2 CVE-2026-123633 NGINX ngx_http_v2_module vulnerability 9.2 CVE-2026-123634 NGINX resolver vulnerability 9.2 CVE-2026-121810 NGINX ngx_http_v3_module vulnerability 9.2 CVE-2026-113425 NGINX ngx_mail_proxy_module vulnerability 9.2 Xint also identified a separate, unpatched Lin",
+      "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
+      "published": "2026-11-19T00:18:05+00:00",
       "source": "Tenable Security Research",
       "tags": [
         "cloud",
@@ -68,179 +278,33 @@
         "vuln"
       ],
       "cve_ids": [
-        "CVE-2026-114938",
-        "CVE-2013-0431",
-        "CVE-2013-0422",
-        "CVE-2013-2465",
-        "CVE-2012-4681",
-        "CVE-2012-1723",
-        "CVE-2012-0507"
+        "CVE-2026-123007",
+        "CVE-2026-123633",
+        "CVE-2026-123634",
+        "CVE-2026-121810",
+        "CVE-2026-113425",
+        "CVE-2026-118899",
+        "CVE-2026-120993",
+        "CVE-2026-125283",
+        "CVE-2026-123640",
+        "CVE-2026-120967"
       ],
-      "in_kev": true,
-      "kev_date_added": "2022-03-03",
-      "kev_due_date": "2022-03-24",
-      "kev_vendor": "Oracle",
-      "kev_product": "Java SE",
-      "kev_ransomware": true,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.98773,
-      "epss_percentile": 0.99927,
-      "stack_match": [
-        "jenkins",
-        "jira"
-      ]
-    },
-    {
-      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1",
-      "title": "Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026",
-      "summary": "On October 21, 2026, Node.js announced the availability of fixes for multiple vulnerabilities across the following supported release lines: 22.x, 24.x, and 26.x. These vulnerabilities impact critical operations such as the Brotli decoder, DNS resolution, and TLS certificate validation. The vulnerabilities pose risks for remote code execution and traffic interception. For more information, see Node.js Security Release . The following vulnerabilities have a Security Impact Rating (SIR) of High and are addressed in this advisory: CVE-2026-111497 - Brotli decoder out-of-bounds write; potential remote code execution CVE-2026-105482 - DNS resolution truncation involving embedded NUL characters CVE-2026-105483 - TLS hostname validation bypass using fullwidth IP digits CVE-2026-106069 - TLS hostname validation bypass with noncanonical IP addresses For information about Splunk products and offerings, including AppDynamics, see Vulnerabilities in Node.js (CVE-2026-111497, CVE-2026-105482, CVE-2026-105483, CVE-2026-106069) on Splunk Products - October 2026 This investigation was expanded to cover Brotli outside of Node.js on October 30, 2026. The Brotli decoder flaw (CVE-2026-111497), which is in the Google Brotli C decoder, is often bundled with or linked to other software, so products beyond Node.js may be affected. For software that may be affected, see Broccoli2Shell . Important: If a product is not listed within this advisory, Cisco's review indicates that the product is not affected by this vulnerability. This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u Security Impact Rating: High CVE: CVE-2026-105482,CVE-2026-105483,CVE-2026-106069,CVE-2026-111497",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1",
-      "published": "2026-11-17T23:53:12+00:00",
-      "source": "Cisco Security Advisories (PSIRT)",
-      "tags": [
-        "network",
-        "cisco",
-        "psirt",
-        "advisory"
-      ],
-      "cve_ids": [
-        "CVE-2026-111497",
-        "CVE-2026-105482",
-        "CVE-2026-105483",
-        "CVE-2026-106069"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-10-27",
-      "kev_due_date": "2026-11-10",
-      "kev_vendor": "Google",
-      "kev_product": "Brotli",
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.82641,
-      "epss_percentile": 0.99674,
+      "epss": null,
+      "epss_percentile": null,
       "stack_match": [
-        "node.js"
+        "linux",
+        "nginx",
+        "github"
       ]
-    },
-    {
-      "id": "CVE-2024-10441",
-      "title": "CVE-2024-10441 \u2014 Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
-      "summary": "Vendor: Synology | Product: DiskStation Manager (DSM). Synology DSM contains an improper encoding or escaping of output vulnerability in the system plugin daemon in Synology BeeStation OS (BSM) that could allow a remote attacker to execute arbitrary code via unspecified vectors. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2024-10441",
-      "published": "2026-11-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2024-10441"
-      ],
-      "is_kev": true,
-      "in_kev": true,
-      "kev_date_added": "2026-11-18",
-      "kev_due_date": "2026-11-21",
-      "kev_vendor": "Synology",
-      "kev_product": "DiskStation Manager (DSM)",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": 0.01251,
-      "epss_percentile": 0.70014,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-40217",
-      "title": "CVE-2026-40217 \u2014 BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
-      "summary": "Vendor: BerriAI | Product: LiteLLM. BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-12-02)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-40217",
-      "published": "2026-11-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-40217"
-      ],
-      "is_kev": true,
-      "in_kev": true,
-      "kev_date_added": "2026-11-18",
-      "kev_due_date": "2026-12-02",
-      "kev_vendor": "BerriAI",
-      "kev_product": "LiteLLM",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": 0.1702,
-      "epss_percentile": 0.97134,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-90817",
-      "title": "CVE-2026-90817 \u2014 Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability",
-      "summary": "Vendor: Vanderbilt University | Product: Research Electronic Data Capture (REDCap). Vanderbilt University Research Electronic Data Capture (REDCap) contains a code injection vulnerability which could allow an unauthenticated attacker to execute arbitrary code on the server. An attacker could exploit this via crafted HTTP requests that access an unintended controller route from a public survey context and supply a crafted file-path or stream parameter during data import processing. Exploitation requires knowledge of a valid public survey hash. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-90817",
-      "published": "2026-11-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-90817"
-      ],
-      "is_kev": true,
-      "in_kev": true,
-      "kev_date_added": "2026-11-18",
-      "kev_due_date": "2026-11-21",
-      "kev_vendor": "Vanderbilt University",
-      "kev_product": "Research Electronic Data Capture (REDCap)",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": 0.03749,
-      "epss_percentile": 0.90092,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-90436",
-      "title": "CVE-2026-90436 \u2014 Apache Axis Unsafe Reflection Vulnerability",
-      "summary": "Vendor: Apache | Product: Axis. Apache Axis contains an unsafe reflection vulnerability that could allow an unauthenticated remote attacker to execute arbitrary code via a crafted SOAP fault message that causes Axis to load and instantiate an attacker-specified class when a suitable class is available on the application classpath. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-90436",
-      "published": "2026-11-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-90436"
-      ],
-      "is_kev": true,
-      "in_kev": true,
-      "kev_date_added": "2026-11-18",
-      "kev_due_date": "2026-11-21",
-      "kev_vendor": "Apache",
-      "kev_product": "Axis",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": 0.01128,
-      "epss_percentile": 0.67007,
-      "stack_match": []
     },
     {
       "id": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
@@ -268,6 +332,400 @@
       "epss": 0.0164,
       "epss_percentile": 0.7686,
       "stack_match": []
+    },
+    {
+      "id": "CVE-2026-63129",
+      "title": "mssql-mcp-core: SQL injection in mssql-mcp write tools via unparameterized table names and WHERE clauses",
+      "summary": "Several tools in `mssql-mcp-core` built T-SQL by string-interpolating caller-supplied identifiers and predicates directly into the statement passed to the node-mssql `Request.query()` batch API. Only data values were parameterized.\n\nAffected tools and inputs:\n- `update_data`, `delete_data`: `tableName` and the free-form `whereClause` were interpolated raw.\n- `insert_data`: `tableName` and column names (object keys) were interpolated raw.\n- `execute_transaction`: the same raw `tableName`/`whereClause` interpolation per operation.\n- `create_table`, `create_index`, `drop_table`: table/column/index/schema identifiers were interpolated with no or insufficient validation.\n- `list_databases` (reader tier): the `stateFilter` argument was interpolated raw into the query, with only a non-enforced inputSchema enum guarding it.\n\nThe only check on `whereClause` was that it was non-empty. Because the row-count and preview queries run before the `confirmUpdate`/`confirmDelete` step, a malicious `whereClause` or `tableName` executed on the first call, bypassing the preview/confirmation and `maxRows` safety controls. `Request.query()` submits a multi-statement T-SQL batch, so a crafted input enabled stacked statements (arbitrary DDL/DML), sub-selects, and (with a privileged login and `xp_cmdshell` enabled) OS command execution. Because `list_databases` is a read-only tool, the `stateFilter` sink makes the reader package injectable as well.\n\n## Impact\n\nAn actor who can supply tool arguments (a malicious or compromised MCP client, or an LLM agent steered via indirect prompt injection) could read, modify, or drop arbitrary data, bypass the `read_data` allow/deny validation and the preview/confirmation/`maxRows` safeguards, and conditionally achieve OS command execution.\n\n## Patches\n\nFixed in `@connorbritain/mssql-mcp-core` 0.6.0:\n- All identifiers are validated against a strict allowlist and bracket-quoted via a shared helper.\n- The free-form `whereClause` string parameter is removed (",
+      "link": "https://github.com/advisories/GHSA-2m9m-6cr5-9x25",
+      "published": "2026-11-19T00:46:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63129"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-76088",
+      "title": "PGPainless: Unbounded Compressed Packet Descent in inline-detach and MessageInspector leads to Denial of Service (DoS)",
+      "summary": "### Summary\nAn architectural security boundary bypass in inline-detach and MessageInspector allows remote, unauthenticated attackers to force unbounded recursive decompression routines. By supplying a specially crafted OpenPGP message containing deeply nested compressed packet structures, an attacker can completely bypass the library's built-in DoS protections (MAX_LAYER_DEPTH = 16), leading to resource exhaustion, thread blocking, and potential Out-of-Memory (OOM) application crashes.\n\n### Details\nThe pg-painless core processing pipeline implements a defensive threshold constraint to prevent decompression bomb sequences (Zip Bombs) and arbitrary resource consumption:\n\n    Enforcement Location: pgpainless-main/pgpainless-core/src/main/kotlin/org/pgpainless/decryption_verification/MessageMetadata.kt\n\n    Threshold Constant: MAX_LAYER_DEPTH = 16\n\nHowever, a code architecture review revealed two specific packet-walking implementations that unpack and step through PGPCompressedData packets manually, entirely failing to track or increment a layer depth index counter against the static compliance limits:\n\n    In InlineDetachImpl.kt (Line ~78-93): The logic loops over data packets via compressedData.dataStream. Because it processes the incoming data block-by-block without leveraging or passing constraints down to the guarded OpenPgpMessageInputStream tracking mechanism, it accepts infinite nesting.\n\n    In MessageInspector.kt (Line ~95): The inspector utility descends recursively down nested compressed packet layouts to ascertain inner content classification markers (e.g., determining encryption states) without referencing or respecting maximum layer depth boundaries.\n\n### PoC\nThe vulnerability can be verified by constructing an inline-signed binary message wrapped recursively inside multiple layers of compression packets:\n\n    Generate a standard, valid OpenPGP public/private keypair.\n\n    Sign a plaintext document sample utilizing binary inline-signing configurations (.n",
+      "link": "https://github.com/advisories/GHSA-cvx8-9ff6-54xq",
+      "published": "2026-11-19T00:53:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-76088"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-75521",
+      "title": "Miren Runtime: Authentication bypass in RPC layer: unverified TLS client certificates grant cluster superuser access",
+      "summary": "### Summary\n\n  The Miren Runtime RPC server (QUIC/HTTP3, default port `:8443`) requested TLS\n  client certificates but never verified that a presented certificate chained to\n  the cluster Certificate Authority. Because a client-certificate identity is\n  granted a blanket RBAC bypass, any party able to reach the RPC listener could\n  present a forged, self-signed certificate and be authenticated as a cluster\n  **superuser** \u2014 no valid CA signature, credential, or prior authorization\n  required.\n\n### Impact\n\n  This is a complete, unauthenticated authentication bypass against the cluster\n  control plane. An attacker who can reach the RPC port can perform any RPC\n  operation with full privileges: enumerate and manipulate entities, apps,\n  sandboxes, disks, and other cluster resources. This yields full compromise of\n  confidentiality, integrity, and availability of the cluster and everything it\n  orchestrates.\n\n  Exposure is network-reachability\u2013gated only. Deployments that expose `:8443`\n  beyond a trusted network (e.g. `0.0.0.0/0`) are remotely exploitable from the\n  internet by anyone; deployments that restrict `:8443` to a trusted network are\n  exploitable by any party with access to that network.\n\nDue to a lack of ability to detect if the RPC has been accessed unauthorized,\nMiren recommends that all applications are redeployed and any credentials reference\nin environment variables are rotated. A read-only script to help review standing access,\nrecent changes, and the exact secrets to rotate is available at https://github.com/mirendev/runtime/tree/089582a132f7fc1e1d5b5c0aee1e0911535fed53/scripts/security/audit-exposure.\n\n\n### Details\n\n  Three independent factors combined to produce the bypass:\n\n  1. **The listener never verified the client-certificate chain.** When a cluster\n     CA was configured, the RPC listener used `tls.RequestClientCert`, which\n     requests a client certificate but does not verify it against the configured\n     `ClientCAs`. `tls.ConnectionState",
+      "link": "https://github.com/advisories/GHSA-8fh7-7q4q-cq52",
+      "published": "2026-11-19T00:45:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75521"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-75506",
+      "title": "OliveTin: Second-Order OS Command Injection via shellAfterCompleted",
+      "summary": "## Summary\n\nOliveTin's `shellAfterCompleted` post-execution hook injects unsanitized variables \u2014 including arbitrary command output (`output`), the authenticated username (`ot_username`), and the exit code (`exitCode`) \u2014 directly into a shell command template processed by `sh -c`. Unlike the main action's argument handling, **no `checkShellArgumentSafety` validation is applied** to these variables. An attacker who can influence the output of a command (e.g., via user-supplied arguments that reflect in stdout, or through trusted-header username spoofing) can inject arbitrary OS commands into the post-execution shell.\n\nThis is a **distinct** finding from CVE-2026-27626 (OS command injection via `password` type in webhooks). That CVE addressed argument types bypassing shell safety checks in the primary execution step. This vulnerability exists in the **post-execution step** (`stepExecAfter`), which has **zero** safety checks on any of its template variables.\n\n## Affected Versions\n\n- All versions containing `shellAfterCompleted` functionality (current codebase through latest)\n\n## Details\n\n### Vulnerable Code Path\n\nIn `service/internal/executor/executor.go`, the `stepExecAfter` function handles post-execution commands:\n\n```go\nfunc stepExecAfter(req *ExecutionRequest) bool {\n    if req.Binding.Action.ShellAfterCompleted == \"\" {\n        return true\n    }\n\n    // These variables are injected WITHOUT any type checking or sanitization\n    args := map[string]string{\n        \"output\":                 req.logEntry.Output,           // Arbitrary command stdout/stderr\n        \"exitCode\":               fmt.Sprintf(\"%v\", req.logEntry.ExitCode),\n        \"ot_executionTrackingId\": req.TrackingID,\n        \"ot_username\":            req.AuthenticatedUser.Username, // User-controlled via trusted headers\n    }\n\n    // Template rendered with unsanitized args\n    finalParsedCommand, err := tpl.ParseTemplateWithActionContext(\n        req.Binding.Action.ShellAfterCompleted,\n        req.Binding.",
+      "link": "https://github.com/advisories/GHSA-vc6p-m6vx-6cwq",
+      "published": "2026-11-18T21:55:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75506"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-68903",
+      "title": "LLMKube: Arbitrary Host File Read via Model.spec.source hostPath Injection",
+      "summary": "### Summary\n\nLLMKube's `ModelReconciler` accepts arbitrary absolute paths and `file://` URIs in the `Model.spec.source` field and propagates them to two distinct sinks without path allowlisting: (1) `os.Open()` inside the controller pod itself (`copyLocalModel`), and (2) a Kubernetes `HostPathVolumeSource` that mounts the attacker-supplied path into the inference pod's init container. Any namespace user with permission to create or update `Model` and `InferenceService` custom resources can read arbitrary files accessible to the controller pod (e.g., the controller's own Kubernetes service-account token) or arbitrary files on the node where the inference pod is scheduled (e.g., `/etc/kubernetes/kubelet.conf`). Model caching, the feature that activates the `hostPath` sink, is **enabled by default** in both the CLI and the official Helm chart. CVSS v3.1 Base Score: **7.7 (High)**.\n\n### Details\n\n**Entry point \u2014 `Model.spec.source` field**\n\nThe `Source` field in `api/v1alpha1/model_types.go:47-48` carries a `kubebuilder` validation pattern that explicitly permits absolute paths:\n\n```go\n// +kubebuilder:validation:Pattern=`^(https?|file|pvc|hf)://.*|^/[^\\s]+$|^[a-zA-Z0-9][\\w\\-\\.\\/]+$`\nSource string `json:\"source\"`\n```\n\nThe branch `^/[^\\s]+$` matches any non-whitespace absolute path on the host.\n\n**Sink 1 \u2014 Controller-pod arbitrary file read (`copyLocalModel`)**\n\n`internal/controller/source.go:93-103` classifies a source as local and extracts the path with no sanitization:\n\n```go\n// isLocalSource: returns true for any \"/\" prefix or \"file://\" prefix\nfunc isLocalSource(source string) bool {\n    return strings.HasPrefix(source, \"/\") || strings.HasPrefix(source, \"file://\")\n}\n\n// getLocalPath: strips \"file://\" prefix only; no canonicalization, no allowlist\nfunc getLocalPath(source string) string {\n    return strings.TrimPrefix(source, \"file://\")\n}\n```\n\n`internal/controller/model_controller.go:241` passes the attacker-controlled source into `fetchModel`, which reaches `copyLocalM",
+      "link": "https://github.com/advisories/GHSA-jw3m-8q7m-f35r",
+      "published": "2026-11-18T21:18:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-68903"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "kubernetes",
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-71861",
+      "title": "Chainguard SDK: AWS SigV4 token replay in auth/aws.VerifyToken \u2014 Chainguard-Audience/Chainguard-Identity binding headers not required in SignedHeaders",
+      "summary": "### Summary\n\nThe `auth/aws` package of the `chainguard.dev/sdk` Go library provides Chainguard's AWS-backed identity federation (an AWS workload proves its identity to Chainguard by signing an AWS STS `GetCallerIdentity` request). Its verifier, `VerifyToken`, reads the `Chainguard-Audience` and `Chainguard-Identity` binding headers from a presented token but does not require them to be covered by the SigV4 signature. AWS STS validates only the headers listed in `SignedHeaders` and ignores all others, so an attacker can take a `GetCallerIdentity` request that a victim signed for a *different* relying party, inject or rewrite those two headers *after* signing (without invalidating the signature), and replay it to any service that authenticates callers with `VerifyToken`. The binding those headers were meant to provide is therefore forgeable \u2014 a verifier-side (relying-party) authentication bypass / cross-service token replay.\n\n### Background\n\nThe package uses the standard \"signed `GetCallerIdentity`\" pattern \u2014 the same approach HashiCorp Vault's AWS auth method and Kubernetes `aws-iam-authenticator` use: the caller signs an AWS STS `GetCallerIdentity` request with its AWS credentials to prove who it is, and presents that signed request as a bearer token. It has two halves:\n\n- `GenerateToken` (client): builds the `GetCallerIdentity` request, adds the `Chainguard-Audience` and `Chainguard-Identity` headers that bind the proof to a specific Chainguard audience (issuer) and assumable identity, SigV4-signs it, and serializes it into a token.\n- `VerifyToken` (relying party): decodes the token, checks those two binding headers, forwards the request to AWS STS to confirm the caller's real AWS identity (ARN), and returns it so a Chainguard token can be issued for that identity.\n\nThe binding headers exist so a proof minted for one audience/identity cannot be reused for another \u2014 a defense against cross-service replay \u2014 and their security depends entirely on being covered by the ",
+      "link": "https://github.com/advisories/GHSA-wq26-3j2m-4hvv",
+      "published": "2026-11-18T21:16:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71861"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "aws",
+        "kubernetes",
+        "github"
+      ]
+    },
+    {
+      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
+      "summary": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z Security Impact Rating: High CVE: CVE-2026-114938",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "published": "2026-11-18T21:16:38+00:00",
+      "source": "Cisco Security Advisories (PSIRT)",
+      "tags": [
+        "network",
+        "cisco",
+        "psirt",
+        "advisory"
+      ],
+      "cve_ids": [
+        "CVE-2026-114938"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00734,
+      "epss_percentile": 0.55119,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-71481",
+      "title": "ALTCHA PHP: verifySolution bypasses HMAC signature check when challenge signature is absent",
+      "summary": "In altcha-org/altcha v2, the verifySolution method skips HMAC signature verification when the signature field is absent from the challenge payload, even when hmacSignatureSecret is configured.\n\nAn attacker who strips the signature key from the challenge JSON passes the condition as false, bypassing tamper-detection entirely. The PoW solution check then runs against unverified parameters \u2014 allowing an attacker to self-issue a low-difficulty challenge, solve it trivially, and submit a payload that verifies as true.\n\nImpact:\nComplete CAPTCHA bypass on any deployment that sets hmacSignatureSecret (the recommended production configuration).\n\nFix:\nThe check was split so that a missing signature is explicitly rejected when a secret is configured.",
+      "link": "https://github.com/advisories/GHSA-82w8-65qw-gch6",
+      "published": "2026-11-18T20:48:18Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71481"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-69158",
+      "title": "Atomic Server: Unauthenticated full-response SSRF in Atomic-Server /bookmark endpoint",
+      "summary": "## Summary\n\nAtomic-Server exposes a `GET /bookmark` endpoint that fetches an attacker-supplied URL server-side, parses the response, and reflects the fetched content back to the caller. The endpoint requires no authentication and performs no authorization of its own, and the underlying fetch helper applies no allow-list or private-IP deny-list. An unauthenticated attacker with network reach to the server can force it to issue arbitrary outbound HTTP GET requests to internal-only hosts (loopback services, internal admin panels, link-local cloud-metadata) and read the response body back. This is a full-response SSRF, not a blind one.\n\n## Root cause (source trace)\n\n1. The bookmark endpoint is registered unconditionally for every server: `server/src/appstate.rs:69` (`store.add_endpoint(plugins::bookmark::bookmark_endpoint())`).\n2. An unauthenticated caller on the standard GET route becomes `ForAgent::Public`: `server/src/helpers.rs:168-183` (`get_client_agent`).\n3. In `get_resource_extended`, when the subject matches an endpoint path the function returns via `call_endpoint` BEFORE the `hierarchy::check_read` authorization call: `lib/src/db.rs:1010-1017` (`if is_endpoint { return self.call_endpoint(...) }`, and `check_read` sits just after at :1017, never reached).\n4. `call_endpoint` performs no authorization itself; it only matches the path and invokes the handler: `lib/src/db.rs:662-706`.\n5. The bookmark handler discards the caller (`for_agent: _`) and fetches the `url` query parameter directly: `server/src/plugins/bookmark.rs:45-76` (`let content = fetch_data(&path)?;`).\n6. `fetch_body` validates only `url.starts_with(\"http\")`: `lib/src/client/helpers.rs:78-91`. A repo-wide grep finds no `is_loopback` / `is_private` / `127.0.0.1` / `169.254` / `localhost` deny-list anywhere in `lib/src` or `server/src`, and no host allow-list.\n7. The fetched body is HTML-parsed and written into the resource `name`, `description`, `image` and `preview` (markdown) fields, which are retu",
+      "link": "https://github.com/advisories/GHSA-ff87-73jp-f3v4",
+      "published": "2026-11-18T20:42:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69158"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00482,
+      "epss_percentile": 0.42232,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-69157",
+      "title": "Atomic Server: Unauthenticated `/setup` invite grants write access to the entire Drive",
+      "summary": "## Summary\n\natomic-server provisions a well-known invite at `{server}/setup` with `write = true`, `target` = the Drive root, and `usagesLeft = 1`. Invite redemption **ignores the redeemer's identity** (`for_agent: _` in `server/src/plugins/invite.rs:22`), so possession of the URL is the only requirement. An **unauthenticated** attacker who sends `GET /setup?public-key=<attacker_key>` has the server create a new Agent and grant it **write access to the entire Drive**. On a freshly deployed (not-yet-claimed) instance this is a full server takeover with no credentials.\n\n## Severity\n\n**Critical \u2014 CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H (9.8).** No authentication required; grants attacker-controlled write over all resources in the Drive.\n\n## Affected component\n\n- `server/src/appstate.rs` \u2014 creates the `/setup` invite targeting the Drive root with `write=true`, `usagesLeft=1`.\n- `server/src/plugins/invite.rs:14-173` \u2014 `construct_invite_redirect` destructures `for_agent: _` (redeemer identity discarded); `?public-key=` \u2192 `Agent::new_from_public_key` \u2192 `add_rights(agent, target, write=true)`.\n\n## Steps to Reproduce\n\nEnvironment: `joepmeneer/atomic-server:develop` in Docker, `http://localhost:9883`, fresh store. No auth headers are used.\n\n1. Confirm the invite is live \u2014 `GET /setup` (Accept: `application/ad+json`) shows `invite/write = true`, `invite/target = http://localhost:9883` (Drive root), `usagesLeft = 1`.\n\n2. Redeem it anonymously with an attacker-generated ed25519 public key:\n\n```http\nGET /setup?public-key=q2UkizMX0Go4mHwW2BXepqkzpP5FHlagEft8M32t0EM%3D HTTP/1.1\nHost: localhost:9883\nAccept: application/ad+json\n```\n\nResponse `200 OK` returns a `Redirect` confirming the new agent:\n\n```json\n{\n  \"https://atomicdata.dev/properties/invite/redirectAgent\":\n      \"http://localhost:9883/agents/q2UkizMX0Go4mHwW2BXepqkzpP5FHlagEft8M32t0EM=\",\n  \"https://atomicdata.dev/properties/isA\": [\"https://atomicdata.dev/classes/Redirect\"]\n}\n```\n\n3. `GET /` shows the attacker is now in ",
+      "link": "https://github.com/advisories/GHSA-pfwx-xjp4-qxcj",
+      "published": "2026-11-18T20:42:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69157"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00512,
+      "epss_percentile": 0.44329,
+      "stack_match": [
+        "docker",
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-69156",
+      "title": "Atomic Server: Arbitrary file read via user-controlled `internalId` in the `/download` handler (leaks root agent private key)",
+      "summary": "## Summary\n\nThe Commit apply path enforces **no allowlist of writable properties**, so any authenticated Agent can set the `internalId` string (datatype `string`, no character validation) on a resource it owns. The `/download` handler then uses that value **verbatim** as a filesystem path \u2014 `file_path.push(internal_id); NamedFile::open(file_path)` \u2014 with **no sanitization and no containment check** (`server/src/handlers/download.rs:56-65`). By setting `internalId` to a traversal path (`../../../../etc/passwd`) or an absolute path (`PathBuf::push` of an absolute path replaces the buffer), an attacker reads **any file on the host**. The highest-value target is the server config file storing the **root agent private key**, which yields full server compromise. Only the *upload* path sanitizes filenames (`sanitize_filename`); the *download* path trusts the stored value. The handler also never checks that the resource is a `File`.\n\n## Affected component\n\n- `server/src/handlers/download.rs:56-65` \u2014 `file_path.push(internal_id)` + `NamedFile::open`, no sanitization, no `File`-class check.\n- `lib/src/commit.rs` (`apply_changes`) \u2014 sets any property; no server-managed-property denylist.\n\n## Steps to Reproduce\n\nEnvironment: `joepmeneer/atomic-server:develop`, `http://localhost:9883`. Attacker is any Agent with write on a parent (self-signup, or via the `/setup` issue reported separately).\n\n1. Create a resource and set `internalId` to a traversal path \u2014 sign the Commit and `POST /commit` (200):\n\n```\nsubject = http://localhost:9883/pwnfile\nset = {\n  \"https://atomicdata.dev/properties/parent\": \"http://localhost:9883\",\n  \"https://atomicdata.dev/properties/internalId\": \"../../../../../../../../etc/passwd\"\n}\n```\n\n2. Download it. The auth signature is over the **resolved subject** (the server strips the `/download` prefix \u2192 `http://localhost:9883/pwnfile`):\n\n```http\nGET /download/pwnfile HTTP/1.1\nHost: localhost:9883\nx-atomic-public-key: <pubkey>\nx-atomic-agent: http://localhost:9883",
+      "link": "https://github.com/advisories/GHSA-8vc4-8hjq-988p",
+      "published": "2026-11-18T20:42:15Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69156"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00491,
+      "epss_percentile": 0.42903,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-130001",
+      "title": "Mustache for Ruby: RCE using built-in method access",
+      "summary": "> [!NOTE]\n> The vulnerability was fully disclosed to the maintainer in private prior to security advisories were enabled for the project.\n> This advisory presents a limited information for initial release to provide a time window for installing updates. Full information with PoCs would be added later.\n\n## Summary\nMustache template engine for Ruby in versions 1.1.2 and earlier allows remote attackers to achieve arbitrary code execution through accessing specific built-in methods in an attacker-supplied template.\n\n## Details\nMustache is often suggested as a safe simple template language to avoid SSTI vulnerabilities.[^1] [^2]\n\nMustache for Ruby up to version 1.1.2 did not properly restrict method access which allowed chaining multiple built-in methods to achieve arbitrary code execution.\n\n> [!IMPORTANT]\n> Successful exploitation of this vulnerability does not depend on any configuration or objects passed to the template engine.\n> An attacker controlling the template string can achieve arbitrary code execution without any additional requirements.\n\nAdditional methods provided by the application or installed gems can further expand the attack surface but exploitation was proven without them.\n\n## PoC\nAll discovered payloads were tested using `ruby -e` shell commands with `mustache` as the only explicitly required gem:\n\n```bash\nruby -e 'require \"mustache\"; puts Mustache.render(\"PAYLOAD GOES HERE\", key: \"value\")'\n```\n\nFor initial information release, only the descriptions of the most important discovered payloads would be provided:\n- Universal RCE for a major Ruby version\n- File upload to RCE (3 different payloads)\n- Infinite memory consumption DoS\n- Infinite sleep DoS\n\nUniversal RCE payloads for other major Ruby versions and other payloads could exist, as the attack surface is very large. The presented list only contains payloads discovered using a fairly primitive approach.\n\n> [!CAUTION]\n> Exploitation is not limited to the discovered Exploits/PoCs and real-life web appli",
+      "link": "https://github.com/advisories/GHSA-5hrj-7fc3-cmx9",
+      "published": "2026-11-18T16:28:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-130001"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-63496",
+      "title": "augment-virShell allows Command Injection in `grep()` via Unsanitized `searchPattern`",
+      "summary": "## Shell Command Injection in `grep()` via Unsanitized `searchPattern`\n\n### Summary\n\nThe `grep()` function exported by `@augment-vir/node` inserts caller-controlled search patterns directly into a double-quoted shell command string without sanitization (`grep.ts:310`). When the constructed command is passed to `spawn()` with `shell: 'bash'` (`shell.ts:98-99`), bash evaluates `$()` command substitution expressions embedded in the pattern, resulting in arbitrary OS command execution as the Node.js process user. Any downstream application that passes untrusted input to `grep()`'s `pattern` or `patterns` field is vulnerable to unauthenticated local (and potentially remote) code execution. CVSS Base Score: **7.8 (High)**.\n\n### Details\n\n**Root cause:** `packages/node/src/augments/fs/grep.ts:310` maps each search pattern into the shell fragment `-e \"${searchPattern}\"` with no sanitization:\n\n```ts\n// grep.ts:310\n...searchPatterns.map((searchPattern) => `-e \"${searchPattern}\"`),\n```\n\nThe resulting full command string is forwarded to `runShellCommand` (`grep.ts:320`), which calls `streamShellCommand` (`shell.ts:221-224`), which ultimately calls:\n\n```ts\n// shell.ts:98-99\nconst childProcess = spawn(command, {\n    shell,   // defaults to 'bash' (shell.ts:92)\n```\n\nBecause `shell` is `'bash'`, bash interprets `$()` within the double-quoted pattern as a command substitution and executes it before `grep` ever runs.\n\n**Incomplete sanitization:** An `escape()` helper exists at `grep.ts:178-180` but only replaces `\"` with `\\\"` and removes newlines. It is applied to `excludePatterns`, `excludeDirs`, and `includeFiles` (`grep.ts:297-308`) but **not** to `searchPatterns`. Even if it were applied, double-quote escaping does not prevent `$()` or backtick substitution inside bash double-quote contexts.\n\n**Data flow (source \u2192 sink):**\n\n| Step | Location | Description |\n|------|----------|-------------|\n| 1 | `packages/node/src/index.ts:3` | `export * from './augments/fs/grep.js'` \u2014 exposes `g",
+      "link": "https://github.com/advisories/GHSA-xvcc-vqjv-phqh",
+      "published": "2026-11-18T16:15:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63496"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00184,
+      "epss_percentile": 0.08065,
+      "stack_match": [
+        "node.js",
+        "github"
+      ]
     },
     {
       "id": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
