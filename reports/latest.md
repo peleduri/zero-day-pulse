@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-20 14:30 UTC &nbsp;|&nbsp; **Total:** 58 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 📈 High EPSS: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 47 &nbsp;|&nbsp; 🎯 My Stack: 47 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-20 23:27 UTC &nbsp;|&nbsp; **Total:** 45 &nbsp;|&nbsp; 🔴 KEV: 6 &nbsp;|&nbsp; 📈 High EPSS: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 6 &nbsp;|&nbsp; 🟡 High: 33 &nbsp;|&nbsp; 🎯 My Stack: 34 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -9,66 +9,66 @@
 **Last 30 days**  
 - All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
 - Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
-- Excluded: 4 warm-up, 0 old CVEs
+- Excluded: 8 warm-up, 0 old CVEs
 
 **Last 90 days**  
 - All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
 - Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
-- Excluded: 4 warm-up, 0 old CVEs
+- Excluded: 8 warm-up, 0 old CVEs
 
 _Zero-days reported before a CVE ID exists can't be matched and count as missed._
 
 ---
 
+## ⚡ Changed since last run (8)
+
+- 🔴 CVE-2026-123890 entered KEV (due 2026-11-23) — CVE-2026-123890 — VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability <https://nvd.nist.gov/vuln/detail/CVE-2026-123890>
+- 🔴 CVE-2026-129448 entered KEV (due 2026-11-23) — CVE-2026-129448 — Apache Roller Deserialization of Untrusted Data Vulnerability <https://nvd.nist.gov/vuln/detail/CVE-2026-129448>
+- 🔴 CVE-2026-76466 entered KEV (due 2026-11-23) — CVE-2026-76466 — Cisco Expressway Series Use of Hard-coded Credentials Vulnerability <https://nvd.nist.gov/vuln/detail/CVE-2026-76466>
+- 🎯 New My Stack hit: CVE-2026-103035 [github] — TeamPass folder re-parenting authorization bypass <https://github.com/advisories/GHSA-66q9-mxf2-xqw6>
+- 🎯 New My Stack hit: CVE-2026-115565 [github] — storyblok-backup: Stored path traversal via unsanitized Storyblok component names in backup output <https://github.com/advisories/GHSA-vcx7-pfrh-mcfg>
+- 🎯 New My Stack hit: CVE-2026-123007 [nginx] — How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities <https://www.tenable.com/blog/public-sector-exposure-management-php2shell>
+- 🎯 New My Stack hit: CVE-2026-63184 [github] — Refitter: Unrestricted OpenAPI references permit build-host SSRF and file inclusion <https://github.com/advisories/GHSA-x6w4-f264-3vvr>
+- 🎯 New My Stack hit: CVE-2026-69133 [github, exchange] — netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges <https://github.com/advisories/GHSA-cg26-4c6j-2x8h>
+
+---
+
 ## 🎯 My Stack Highlights
 
+- 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026 — `CVE-2026-113425`, `CVE-2026-121810`, `CVE-2026-123007`, `CVE-2026-123633`, `CVE-2026-123634` — EPSS 6% — `nginx`
+- 🟡 High Severity — Etherpad: Pre-auth arbitrary file read — `CVE-2026-114516` — EPSS 1% — `linux`, `github`, `windows`
+- 🟠 Zero-Day — baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass) — `CVE-2026-62955` — EPSS 1% — `github`
+- 🟡 High Severity — Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429) — `CVE-2026-77312` — EPSS 1% — `github`
 - 🟡 High Severity — NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets — `CVE-2026-58210` — EPSS 1% — `github`
-- 🟠 Zero-Day — CodeWhale: exec_shell parallel-readonly classifier auto-approves fd/rg/git grep exec flags enabling silent RCE — `CVE-2026-83816` — EPSS 1% — `github`
-- 🟡 High Severity — Mistune: Quadratic-time DoS in parse_link_href via unbounded parenthesis scan on empty-label links — `CVE-2026-97698` — EPSS 1% — `python`, `github`
-- 🟠 Zero-Day — CodeWhale: Automation auto_approve defaults to true, bypassing the task-path hardening fix for silent recurring agent execution — `CVE-2026-83817` — EPSS 1% — `github`
-- 🟡 High Severity — Mistune: Quadratic-time DoS in inline image parsing (precedence_scan) bypasses not-is-image guards — `CVE-2026-97699` — EPSS 1% — `python`, `github`
-- 🟡 High Severity — October: Media Library Crop Handler Bypasses Upload Extension Allowlist — `CVE-2026-63193` — EPSS 1% — `nginx`, `github`
-- 🟡 High Severity — NATS Server: MQTT SUBSCRIBE Protocol Injection via Leaf Node/Route Forwarding allows arbitrary NATS command injection — `CVE-2026-58213` — EPSS <1% — `github`
-- 🟡 High Severity — containerd image-triggered daemon crash via malformed digest in subject-annotated descriptor — `CVE-2026-95839` — EPSS <1% — `kubernetes`, `github`
-- 🟡 High Severity — Next.js: Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments — `CVE-2026-119349` — EPSS <1% — `github`
-- 🟡 High Severity — k8s-mcp-server: Missing authentication on default SSE/HTTP transport allows unauthenticated Kubernetes tool execution — `CVE-2026-130007` — EPSS <1% — `kubernetes`, `github`
+- 🟡 High Severity — Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode — `CVE-2026-77318` — EPSS 1% — `python`, `github`
+- 🟡 High Severity — Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes — `CVE-2026-77359` — EPSS 1% — `python`, `github`
+- 🟡 High Severity — NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains — `CVE-2026-129225` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — NLTK: Uncontrolled recursion in Toolbox settings helpers causes denial of service via deeply nested input — `CVE-2026-129228` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS — `CVE-2026-59988` — EPSS <1% — `github`
+- 🟡 High Severity — NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels — `CVE-2026-129221` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings — `CVE-2026-129226` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — NLTK: Uncontrolled recursion in Tree.fromlist causes denial of service via deeply nested list input — `CVE-2026-129227` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — Refitter: Unrestricted OpenAPI references permit build-host SSRF and file inclusion — `CVE-2026-63184` — EPSS <1% — `github`
+- 🟡 High Severity — Bolt: Prevent SSRF due to unchecked followed redirects — `CVE-2026-77380` — EPSS <1% — `github`
+- 🟡 High Severity — storyblok-backup: Stored path traversal via unsanitized Storyblok component names in backup output — `CVE-2026-115565` — EPSS <1% — `github`
+- 🟡 High Severity — Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation — `CVE-2026-77315` — EPSS <1% — `github`
 - 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI content-type values — `CVE-2026-63344` — EPSS <1% — `github`
 - 🟡 High Severity — Refitter allows code execution through unescaped OpenAPI header parameter names — `CVE-2026-63346` — EPSS <1% — `github`
 - 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI paths — `CVE-2026-63345` — EPSS <1% — `github`
 - 🟡 High Severity — Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php) — `CVE-2026-63415` — EPSS <1% — `github`
-- 🟡 High Severity — Model Context Protocol Python SDK: OAuth client could send credentials to an authorization server chosen by the MCP server — `CVE-2026-115563` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning) — `CVE-2026-77316` — EPSS <1% — `github`
+- 🟡 High Severity — NLTK: StreamBackedCorpusView constructor os.stat leaks out-of-root file existence, size, and mtime bypassing pathsec ENFORCE — `CVE-2026-129233` — EPSS <1% — `github`
+- 🟡 High Severity — ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData — `CVE-2026-103033` — EPSS <1% — `github`
+- 🟡 High Severity — netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges — `CVE-2026-69133` — EPSS <1% — `github`, `exchange`
 - 🟡 High Severity — snark-verifier: Halo 2 aggregation circuit mishandles point-at-infinity proof elements — `CVE-2026-62337` — EPSS <1% — `github`
-- 🟡 High Severity — Effect: ReDoS in Schema.TemplateLiteral compiled regex — `CVE-2026-121707` — EPSS <1% — `github`
-- 🟡 High Severity — gosaml2: Unauthenticated panic decrypting an EncryptedAssertion with a short or empty CipherValue — `CVE-2026-128073` — EPSS <1% — `github`
-- 🟡 High Severity — Next.js: Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params — `CVE-2026-119350` — EPSS <1% — `github`
-- 🟡 High Severity — Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server — `CVE-2026-76807` — EPSS <1% — `github`
-- 🟡 High Severity — fzf: Predictable FIFO path in zsh completion allows local symlink attack / arbitrary file overwrite as the victim user (_fzf_feed_fifo) — `CVE-2026-121717` — EPSS <1% — `github`
-- 🟡 High Severity — iSponsorBlockTV: SSRF via Malicious SSDP Response Spoofing in Local Device Discovery — `CVE-2026-77597` — EPSS <1% — `github`
-- 🟡 High Severity — Gortex: Arbitrary file write / repo-confinement escape in `write_file` / `edit_file` / `move_inline` MCP tools → code execution — `CVE-2026-62964` — EPSS <1% — `github`
-- 🟡 High Severity — DOMShell: domshell_eval classified as read-tier can execute side-effecting JavaScript without --allow-write — `CVE-2026-75518` — EPSS <1% — `github`
-- 🟡 High Severity — Mareforma: Unsigned Claims Can Be Promoted to REPLICATED via Missing Signature Enforcement in Convergence Path — `CVE-2026-71535` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints — `CVE-2026-77377` — EPSS <1% — `github`
+- 🟡 High Severity — Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU — `CVE-2026-77313` — EPSS <1% — `github`
+- 🟡 High Severity — falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon&#x27;s requirement (reference KAT vectors no longer pass) — `CVE-2026-77382` — EPSS <1% — `github`
+- 🟡 High Severity — TeamPass folder re-parenting authorization bypass — `CVE-2026-103035` — EPSS <1% — `github`
+- 🟡 High Severity — NLTK: Uncontrolled recursion in WordNet Synset hypernym walkers (max_depth/min_depth/hypernym_paths/hypernym_distances) causes DoS — `CVE-2026-129230` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — NLTK: Untrusted search path in prover9/mace4 config allows local code execution via relative binary_location — `CVE-2026-129234` — EPSS <1% — `python`, `github`
+- 🟠 Zero-Day — Chinese-nexus actor’s Cairn AI agents found a zero-day on their own — _No CVE_ — EPSS n/a — `aws`
 - 🟠 Zero-Day — New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It — _No CVE_ — EPSS n/a — `windows`
-- 🟠 Zero-Day — baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass) — `CVE-2026-62955` — EPSS n/a — `github`
-- 🟡 High Severity — Etherpad: Pre-auth arbitrary file read — `CVE-2026-114516` — EPSS n/a — `linux`, `github`, `windows`
-- 🟡 High Severity — ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData — `CVE-2026-103033` — EPSS n/a — `github`
-- 🟡 High Severity — falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon&#x27;s requirement (reference KAT vectors no longer pass) — `CVE-2026-77382` — EPSS n/a — `github`
-- 🟡 High Severity — Bolt: Prevent SSRF due to unchecked followed redirects — `CVE-2026-77380` — EPSS n/a — `github`
-- 🟡 High Severity — Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints — `CVE-2026-77377` — EPSS n/a — `github`
-- 🟡 High Severity — Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes — `CVE-2026-77359` — EPSS n/a — `python`, `github`
-- 🟡 High Severity — Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode — `CVE-2026-77318` — EPSS n/a — `python`, `github`
-- 🟡 High Severity — Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning) — `CVE-2026-77316` — EPSS n/a — `github`
-- 🟡 High Severity — Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation — `CVE-2026-77315` — EPSS n/a — `github`
-- 🟡 High Severity — Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU — `CVE-2026-77313` — EPSS n/a — `github`
-- 🟡 High Severity — Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429) — `CVE-2026-77312` — EPSS n/a — `github`
-- 🟡 High Severity — django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS — `CVE-2026-59988` — EPSS n/a — `github`
-- 🟡 High Severity — NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels — `CVE-2026-129221` — EPSS n/a — `python`, `github`
-- 🟡 High Severity — NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains — `CVE-2026-129225` — EPSS n/a — `python`, `github`
-- 🟡 High Severity — NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings — `CVE-2026-129226` — EPSS n/a — `python`, `github`
-- 🟡 High Severity — NLTK: Uncontrolled recursion in Tree.fromlist causes denial of service via deeply nested list input — `CVE-2026-129227` — EPSS n/a — `python`, `github`
-- 🟡 High Severity — NLTK: Uncontrolled recursion in Toolbox settings helpers causes denial of service via deeply nested input — `CVE-2026-129228` — EPSS n/a — `python`, `github`
-- 🟡 High Severity — NLTK: Uncontrolled recursion in WordNet Synset hypernym walkers (max_depth/min_depth/hypernym_paths/hypernym_distances) causes DoS — `CVE-2026-129230` — EPSS n/a — `python`, `github`
-- 🟡 High Severity — NLTK: StreamBackedCorpusView constructor os.stat leaks out-of-root file existence, size, and mtime bypassing pathsec ENFORCE — `CVE-2026-129233` — EPSS n/a — `github`
-- 🟡 High Severity — NLTK: Untrusted search path in prover9/mace4 config allows local code execution via relative binary_location — `CVE-2026-129234` — EPSS n/a — `python`, `github`
 
 ---
 
@@ -83,7 +83,18 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
-## 2. 🔴 CISA KEV — Metasploit Wrap Up: Breaking Zimbra&#x27;s Identity Boundaries
+## 2. 🔴 CISA KEV — CVE-2026-123890 — VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability
+
+**CVE:** `CVE-2026-123890` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.8% (percentile 59%)
+**KEV:** in catalog, due 2026-11-23
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-123890>
+
+> Vendor: Broadcom | Product: VMware vCenter. Broadcom VMware vCenter contains an authentication bypass using an alternate path or channel vulnerability in the VMware Directory Service that allows an unauthenticated attacker with network access to vCenter to bypass authentication and gain unauthorized access to the system. Required action: Apply mitigations in accordance with vendor instructions, en…
+
+---
+
+## 3. 🔴 CISA KEV — Metasploit Wrap Up: Breaking Zimbra&#x27;s Identity Boundaries
 
 **CVE:** `CVE-2026-73571` | `CVE-2026-93637` | `CVE-2026-102764` | `CVE-2024-25420` | `CVE-2026-76519` | `CVE-2026-76461` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-11-20
 **EPSS:** 50.7% (percentile 99%)
@@ -94,18 +105,50 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
-## 3. 🟠 Zero-Day — China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data
+## 4. 🔴 CISA KEV — CVE-2026-129448 — Apache Roller Deserialization of Untrusted Data Vulnerability
 
-**CVE:** `CVE-2026-123890` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-20
-**Reference:** <https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html>
+**CVE:** `CVE-2026-129448` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 1.2% (percentile 69%)
+**KEV:** in catalog, due 2026-11-23
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-129448>
 
-> The suspected China-nexus cyber espionage group known as Armory Castle (formerly UNC5221) has been attributed to the zero-day exploitation of a critical security flaw in VMware vCenter Server in early September 2026.
-
-The vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of authentication bypass in the VMware Directory Service that could be exploited to gain unauthorized
+> Vendor: Apache | Product: Roller. Apache Roller contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via the XML-RPC endpoint, which accepts and deserializes vendor extension types before authentication. This CVE covers the same underlying vulnerability as CVE-2026-82384 but applies to a broader range of affected versio…
 
 ---
 
-## 4. 🟠 Zero-Day — VMware patches vCenter zero-day exploited in attacks since September
+## 5. 🔴 CISA KEV — CVE-2025-42884 — SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability
+
+**CVE:** `CVE-2025-42884` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.3% (percentile 20%)
+**KEV:** in catalog, due 2026-11-23
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2025-42884>
+
+> Vendor: SAP | Product: NetWeaver. SAP NetWeaver Enterprise Portal contains an improper neutralization of special elements in data query logic vulnerability that allows an unauthenticated attacker to disclose or modify server information via injected JNDI environment properties or a URL used during JNDI lookup operations. Required action: Apply mitigations in accordance with vendor instructions, en…
+
+---
+
+## 6. 🔴 CISA KEV — CVE-2026-76466 — Cisco Expressway Series Use of Hard-coded Credentials Vulnerability
+
+**CVE:** `CVE-2026-76466` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.4% (percentile 37%)
+**KEV:** in catalog, due 2026-11-23
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-76466>
+
+> Vendor: Cisco | Product: Expressway Series. Cisco Expressway Series contains a use of hard-coded credentials vulnerability that allows an unauthenticated, remote attacker with persistent cookies and network access to execute commands as root on a clustered device via the database service. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD…
+
+---
+
+## 7. 🟠 Zero-Day — Chinese-nexus actor’s Cairn AI agents found a zero-day on their own
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `aws`
+**Reference:** <https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/>
+
+> Amazon Threat Intelligence is sharing findings from an investigation into a Chinese-nexus threat actor using autonomous AI agents to conduct hacking operations with minimal human involvement. The actor gave the agents a simple goal: “obtain shell access.” During the campaign, the agents found a zero-day in an open-source application and used it to gain full […]
+
+---
+
+## 8. 🟠 Zero-Day — VMware patches vCenter zero-day exploited in attacks since September
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-20
 **Reference:** <https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/>
@@ -114,9 +157,10 @@ The vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of au
 
 ---
 
-## 5. 🟠 Zero-Day — baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass)
+## 9. 🟠 Zero-Day — baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass)
 
 **CVE:** `CVE-2026-62955` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 1.1% (percentile 65%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-2pj4-v76f-wjvx>
 
@@ -126,40 +170,25 @@ The security patch introduced in baserCMS 5.2.3 to address CVE-2026-30940 / [GHS
 
 ---
 
-## 6. 🟠 Zero-Day — Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT
+## 10. 🟠 Zero-Day — Hackers use autonomous AI tool Cairn to find zero-day, take over server
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-19
-**Reference:** <https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-20
+**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/>
 
-> Google says a China-linked espionage group exploited a critical VMware vCenter authentication bypass before Broadcom released a patch. The post Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT appeared first on SecurityWeek .
-
----
-
-## 7. 🟠 Zero-Day — ThreatsDay: GPT-6.2 Jailbreak Flaws, BubbleLoader PNG Malware, $500M Ransom Demands + 17 More Stories
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-19
-**Reference:** <https://thehackernews.com/2026/11/threatsday-gpt-62-jailbreak-flaws.html>
-
-> The easiest way to fool someone is to give them something they already expect. A job offer. A message about a service outage. A familiar app. Nothing looks strange at first. And that&#x27;s the problem. This week&#x27;s stories show how ordinary things are being used to steal data, spread malware, and get people to hand over access.
-
-There&#x27;s another shift worth watching. AI is making some att…
+> Threat actors used the open-source AI penetration-testing framework Cairn to find a previously unknown vulnerability in a medical imaging application. [...]
 
 ---
 
-## 8. 🟠 Zero-Day — Critical VMware vCenter Zero-Day Flaw Lets Network Attackers Bypass Authentication
+## 11. 🟠 Zero-Day — Amazon says Chinese hackers used Cairn AI tool to discover apparent zero-day during attack on university
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-19
-**Reference:** <https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-11-20
+**Reference:** <https://therecord.media/amazon-research-cairn-ai-university-attacks-possible-zero-day>
 
-> A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today.
-
-Fixed versions are out for all supported branches, and the company lists no workaround. vCenter is the central console for managing an organization&#x27;s ESX hosts and virtual machines.
-
-The
+> A China-linked threat actor used the open source AI penetration testing tool Cairn to persistently attack two universities, and in one case, possibly discover a zero-day bug, researchers said.
 
 ---
 
-## 9. 🟠 Zero-Day — New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It
+## 12. 🟠 Zero-Day — New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-20
 **My Stack:** `windows`
@@ -171,63 +200,102 @@ The method was posted yesterday by a researcher who uses the handles MSNightmare
 
 ---
 
-## 10. 🟠 Zero-Day — CodeWhale: exec_shell parallel-readonly classifier auto-approves fd/rg/git grep exec flags enabling silent RCE
+## 13. 🟡 High Severity — WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams
 
-**CVE:** `CVE-2026-83816` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.7% (percentile 55%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-3mgh-93r5-r7jf>
+**CVE:** `CVE-2026-23871` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-20
+**Reference:** <https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html>
 
-> ### Maintainer resolution
+> Meta-owned WhatsApp has addressed security vulnerabilities, including one impacting its Android app that it suspects may have been exploited in connection with scam messages.
 
-The CodeWhale maintainers validated this report. CodeWhale 0.8.67 and earlier are affected. Version 0.9.0 contains the fix in commit 208421b9d23d81cea3311a1eeb2a2ea81d637686. Users should upgrade to 0.9.0 or later. The original reporter analysis is preserved below.
+The vulnerability, tracked as CVE-2026-23871, has been described as a case of incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4.
 
-## Summary
-The interactive Agent profile of DeepSeek-TUI (CodeWhale) is explicitly documented to gate **ev…
+The issue could
 
 ---
 
-## 11. 🟠 Zero-Day — CodeWhale: Automation auto_approve defaults to true, bypassing the task-path hardening fix for silent recurring agent execution
+## 14. 🟡 High Severity — netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges
 
-**CVE:** `CVE-2026-83817` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.7% (percentile 54%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-8hp3-xxrg-v9c8>
+**CVE:** `CVE-2026-69133` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.3% (percentile 24%)
+**My Stack:** `github`, `exchange`
+**Reference:** <https://github.com/advisories/GHSA-cg26-4c6j-2x8h>
 
-> ### Maintainer resolution
+> ## Summary:
 
-The CodeWhale maintainers validated this report. CodeWhale 0.8.67 and earlier are affected. Version 0.9.0 contains the fix in commit 208421b9d23d81cea3311a1eeb2a2ea81d637686. Users should upgrade to 0.9.0 or later. The original reporter analysis is preserved below.
-
-## Summary
-CVE-2026-45374 (GHSA-72w5-pf8h-xfp4) hardened the task path so auto-approval must be opted into…
+OHttpClientCodec and OHttpServerCodec retain the encrypted outer HttpContent in a handler-level cumulationBuffer. After a valid OHTTP exchange completes, the OHTTP request/response context is destroyed, but the outer cumulationBuffer is not released or reset. It remains referenced by the codec until a later inbound content frame replaces it or the handler is removed/channel is closed.…
 
 ---
 
-## 12. 🟡 High Severity — Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE
+## 15. 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026
+
+**CVE:** `CVE-2026-113425` | `CVE-2026-121810` | `CVE-2026-123007` | `CVE-2026-123633` | `CVE-2026-123634` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 6.1% (percentile 94%)
+**My Stack:** `nginx`
+**Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1>
+
+> On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerabilit…
+
+---
+
+## 16. 🟡 High Severity — storyblok-backup: Stored path traversal via unsanitized Storyblok component names in backup output
+
+**CVE:** `CVE-2026-115565` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.4% (percentile 30%)
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-vcx7-pfrh-mcfg>
+
+> ### Summary
+storyblok-backup writes files using unsanitized names for Storyblok components, which are content type or schema definitions. This allows a component name containing path traversal sequences to cause backup files to be written outside the intended backup directory. Anyone with component management access in the source Storyblok space, not server access, can plant a malicious component …
+
+---
+
+## 17. 🟡 High Severity — TeamPass folder re-parenting authorization bypass
+
+**CVE:** `CVE-2026-103035` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.2% (percentile 15%)
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-66q9-mxf2-xqw6>
+
+> ## Summary
+
+Missing authorization in the update_folder action: any authenticated non-read-only user can rename, re-parent and convert to personal any folder in the instance, moving another team&#x27;s credential subtree into their own personal space and removing it from the organization. Confirmed at HEAD 2f271cdd (3.2.1.1), and present at 3.1.3.1 and 3.1.7.6.
+
+## The defect
+
+The folder-management…
+
+---
+
+## 18. 🟡 High Severity — Refitter: Unrestricted OpenAPI references permit build-host SSRF and file inclusion
+
+**CVE:** `CVE-2026-63184` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.4% (percentile 36%)
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-x6w4-f264-3vvr>
+
+> ### Summary
+
+Refitter (the `refitter` dotnet tool, built on NJsonSchema for `$ref` resolution) fetches remote
+`http(s)` URLs and reads local files (including absolute paths and `../` traversal outside the input
+directory), inlining the referenced schema into the generated Refit interface/contracts. Running
+`refitter &lt;spec&gt; --output Out.cs` on a spec whose `$ref` points at an attacker/interna…
+
+---
+
+## 19. 🟡 High Severity — Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE
 
 **CVE:** `CVE-2026-132825` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-20
-**EPSS:** 0.2% (percentile 7%)
+**EPSS:** 0.2% (percentile 9%)
 **Reference:** <https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/>
 
 > Tracked as CVE-2026-132825, the bug is a heap-based buffer overflow that could lead to remote code execution (RCE). The post Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE appeared first on SecurityWeek .
 
 ---
 
-## 13. 🟡 High Severity — Hackers Exploit Critical Cisco Expressway Flaw, Breach Four Devices and Reach Internal Network
-
-**CVE:** `CVE-2026-76466` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-20
-**EPSS:** 0.4% (percentile 37%)
-**Reference:** <https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html>
-
-> Threat actors have been observed exploiting a recently disclosed critical security flaw in Cisco Expressway to breach a Russian organization shortly after the public release of a proof-of-concept (PoC) exploit.
-
-The activity involves the exploitation of CVE-2026-76466 (CVSS score: 9.8), a vulnerability that could allow an unauthenticated, remote attacker with network access to a Cisco Expressway
-
----
-
-## 14. 🟡 High Severity — Etherpad: Pre-auth arbitrary file read
+## 20. 🟡 High Severity — Etherpad: Pre-auth arbitrary file read
 
 **CVE:** `CVE-2026-114516` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 1.5% (percentile 75%)
 **My Stack:** `linux`, `github`, `windows`
 **Reference:** <https://github.com/advisories/GHSA-mc8w-wjhw-45x5>
 
@@ -237,9 +305,10 @@ An unauthenticated path‑traversal / arbitrary file read vulnerability in Ether
 
 ---
 
-## 15. 🟡 High Severity — ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData
+## 21. 🟡 High Severity — ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData
 
 **CVE:** `CVE-2026-103033` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.3% (percentile 27%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-gfwj-45pc-w6r5>
 
@@ -249,9 +318,10 @@ An unauthenticated path‑traversal / arbitrary file read vulnerability in Ether
 
 ---
 
-## 16. 🟡 High Severity — falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon&#x27;s requirement (reference KAT vectors no longer pass)
+## 22. 🟡 High Severity — falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon&#x27;s requirement (reference KAT vectors no longer pass)
 
 **CVE:** `CVE-2026-77382` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.3% (percentile 20%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-25rm-9wvm-m38v>
 
@@ -263,9 +333,10 @@ An unauthenticated path‑traversal / arbitrary file read vulnerability in Ether
 
 ---
 
-## 17. 🟡 High Severity — Bolt: Prevent SSRF due to unchecked followed redirects
+## 23. 🟡 High Severity — Bolt: Prevent SSRF due to unchecked followed redirects
 
 **CVE:** `CVE-2026-77380` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.4% (percentile 31%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-3xjf-9q55-vxw4>
 
@@ -279,9 +350,10 @@ The `/bolt/async/upload-url` and `/bolt/async/embed` endpoints validated only th
 
 ---
 
-## 18. 🟡 High Severity — Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints
+## 24. 🟡 High Severity — Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints
 
 **CVE:** `CVE-2026-77377` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.3% (percentile 21%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-2535-j2pq-qq4r>
 
@@ -295,9 +367,10 @@ This has been patched in Bolt 6.1.4.
 
 ---
 
-## 19. 🟡 High Severity — Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes
+## 25. 🟡 High Severity — Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes
 
 **CVE:** `CVE-2026-77359` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.5% (percentile 44%)
 **My Stack:** `python`, `github`
 **Reference:** <https://github.com/advisories/GHSA-9x8x-crjq-g64h>
 
@@ -305,9 +378,10 @@ This has been patched in Bolt 6.1.4.
 
 ---
 
-## 20. 🟡 High Severity — Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode
+## 26. 🟡 High Severity — Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode
 
 **CVE:** `CVE-2026-77318` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.5% (percentile 44%)
 **My Stack:** `python`, `github`
 **Reference:** <https://github.com/advisories/GHSA-24pw-rf5p-mgp7>
 
@@ -315,9 +389,10 @@ This has been patched in Bolt 6.1.4.
 
 ---
 
-## 21. 🟡 High Severity — Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning)
+## 27. 🟡 High Severity — Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning)
 
 **CVE:** `CVE-2026-77316` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.3% (percentile 29%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-6pm8-6f34-9v3g>
 
@@ -328,9 +403,10 @@ This has been patched in Bolt 6.1.4.
 
 ---
 
-## 22. 🟡 High Severity — Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation
+## 28. 🟡 High Severity — Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation
 
 **CVE:** `CVE-2026-77315` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.4% (percentile 30%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-2mr3-rxrq-238c>
 
@@ -339,9 +415,10 @@ This has been patched in Bolt 6.1.4.
 
 ---
 
-## 23. 🟡 High Severity — Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU
+## 29. 🟡 High Severity — Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU
 
 **CVE:** `CVE-2026-77313` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.3% (percentile 21%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-pfg2-w999-497v>
 
@@ -350,9 +427,10 @@ This has been patched in Bolt 6.1.4.
 
 ---
 
-## 24. 🟡 High Severity — Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429)
+## 30. 🟡 High Severity — Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429)
 
 **CVE:** `CVE-2026-77312` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.7% (percentile 56%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-p34x-fmph-9fjx>
 
@@ -363,9 +441,10 @@ This has been patched in Bolt 6.1.4.
 
 ---
 
-## 25. 🟡 High Severity — django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS
+## 31. 🟡 High Severity — django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS
 
 **CVE:** `CVE-2026-59988` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.4% (percentile 39%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-86mf-q4h5-69gp>
 
@@ -375,7 +454,7 @@ django-docutils before `0.30.0` rendered reStructuredText through Docutils witho
 
 ---
 
-## 26. 🟡 High Severity — Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php)
+## 32. 🟡 High Severity — Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php)
 
 **CVE:** `CVE-2026-63415` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
 **EPSS:** 0.3% (percentile 29%)
@@ -387,7 +466,7 @@ jane-php resolves external `$ref` targets at code-generation time via `file_get_
 
 ---
 
-## 27. 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI content-type values
+## 33. 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI content-type values
 
 **CVE:** `CVE-2026-63344` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
 **EPSS:** 0.4% (percentile 29%)
@@ -402,7 +481,7 @@ the enclosing interface + namespace, injects a …
 
 ---
 
-## 28. 🟡 High Severity — Refitter allows code execution through unescaped OpenAPI header parameter names
+## 34. 🟡 High Severity — Refitter allows code execution through unescaped OpenAPI header parameter names
 
 **CVE:** `CVE-2026-63346` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
 **EPSS:** 0.4% (percentile 29%)
@@ -417,7 +496,7 @@ the enclosing interface + namespace, injects a top-level `file class` with a `[M
 
 ---
 
-## 29. 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI paths
+## 35. 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI paths
 
 **CVE:** `CVE-2026-63345` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
 **EPSS:** 0.4% (percentile 29%)
@@ -433,10 +512,10 @@ interface + namespace, injects a top-level `file class` with a …
 
 ---
 
-## 30. 🟡 High Severity — NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets
+## 36. 🟡 High Severity — NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets
 
 **CVE:** `CVE-2026-58210` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
-**EPSS:** 0.7% (percentile 55%)
+**EPSS:** 0.7% (percentile 56%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-r72h-j7qq-v6qg>
 
@@ -452,7 +531,7 @@ An unauthenticated MQTT client could cause the server to retain large incomplete
 
 ---
 
-## 31. 🟡 High Severity — snark-verifier: Halo 2 aggregation circuit mishandles point-at-infinity proof elements
+## 37. 🟡 High Severity — snark-verifier: Halo 2 aggregation circuit mishandles point-at-infinity proof elements
 
 **CVE:** `CVE-2026-62337` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
 **EPSS:** 0.3% (percentile 23%)
@@ -466,9 +545,10 @@ When an assigned proof point appeared in an MSM term with constant scalar one, t
 
 ---
 
-## 32. 🟡 High Severity — NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels
+## 38. 🟡 High Severity — NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels
 
 **CVE:** `CVE-2026-129221` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
+**EPSS:** 0.4% (percentile 39%)
 **My Stack:** `python`, `github`
 **Reference:** <https://github.com/advisories/GHSA-9ffx-rrgx-mhgx>
 
@@ -480,9 +560,10 @@ When an assigned proof point appeared in an MSM term with constant scalar one, t
 
 ---
 
-## 33. 🟡 High Severity — NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains
+## 39. 🟡 High Severity — NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains
 
 **CVE:** `CVE-2026-129225` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
+**EPSS:** 0.5% (percentile 42%)
 **My Stack:** `python`, `github`
 **Reference:** <https://github.com/advisories/GHSA-xfcv-m889-fmqg>
 
@@ -495,9 +576,10 @@ over dependencies. The neighbouring `c…
 
 ---
 
-## 34. 🟡 High Severity — NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings
+## 40. 🟡 High Severity — NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings
 
 **CVE:** `CVE-2026-129226` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
+**EPSS:** 0.4% (percentile 37%)
 **My Stack:** `python`, `github`
 **Reference:** <https://github.com/advisories/GHSA-w3pv-xfw4-ghr7>
 
@@ -510,9 +592,10 @@ parser but never runs on the `rea…
 
 ---
 
-## 35. 🟡 High Severity — NLTK: Uncontrolled recursion in Tree.fromlist causes denial of service via deeply nested list input
+## 41. 🟡 High Severity — NLTK: Uncontrolled recursion in Tree.fromlist causes denial of service via deeply nested list input
 
 **CVE:** `CVE-2026-129227` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
+**EPSS:** 0.4% (percentile 37%)
 **My Stack:** `python`, `github`
 **Reference:** <https://github.com/advisories/GHSA-63wh-5r5m-wxr7>
 
@@ -525,9 +608,10 @@ input with a bounde…
 
 ---
 
-## 36. 🟡 High Severity — NLTK: Uncontrolled recursion in Toolbox settings helpers causes denial of service via deeply nested input
+## 42. 🟡 High Severity — NLTK: Uncontrolled recursion in Toolbox settings helpers causes denial of service via deeply nested input
 
 **CVE:** `CVE-2026-129228` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
+**EPSS:** 0.5% (percentile 41%)
 **My Stack:** `python`, `github`
 **Reference:** <https://github.com/advisories/GHSA-f2h2-f4fc-p978>
 
@@ -540,9 +624,10 @@ per element level with no depth counter or expli…
 
 ---
 
-## 37. 🟡 High Severity — NLTK: Uncontrolled recursion in WordNet Synset hypernym walkers (max_depth/min_depth/hypernym_paths/hypernym_distances) causes DoS
+## 43. 🟡 High Severity — NLTK: Uncontrolled recursion in WordNet Synset hypernym walkers (max_depth/min_depth/hypernym_paths/hypernym_distances) causes DoS
 
 **CVE:** `CVE-2026-129230` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
+**EPSS:** 0.2% (percentile 15%)
 **My Stack:** `python`, `github`
 **Reference:** <https://github.com/advisories/GHSA-53pg-5qp8-mhvr>
 
@@ -552,9 +637,10 @@ Four hypernym-walking methods on the WordNet `Synset` class in `nltk/corpus/read
 
 ---
 
-## 38. 🟡 High Severity — NLTK: StreamBackedCorpusView constructor os.stat leaks out-of-root file existence, size, and mtime bypassing pathsec ENFORCE
+## 44. 🟡 High Severity — NLTK: StreamBackedCorpusView constructor os.stat leaks out-of-root file existence, size, and mtime bypassing pathsec ENFORCE
 
 **CVE:** `CVE-2026-129233` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
+**EPSS:** 0.3% (percentile 28%)
 **My Stack:** `github`
 **Reference:** <https://github.com/advisories/GHSA-w674-vqhw-g3pg>
 
@@ -564,293 +650,14 @@ Four hypernym-walking methods on the WordNet `Synset` class in `nltk/corpus/read
 
 ---
 
-## 39. 🟡 High Severity — NLTK: Untrusted search path in prover9/mace4 config allows local code execution via relative binary_location
+## 45. 🟡 High Severity — NLTK: Untrusted search path in prover9/mace4 config allows local code execution via relative binary_location
 
 **CVE:** `CVE-2026-129234` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
+**EPSS:** 0.2% (percentile 14%)
 **My Stack:** `python`, `github`
 **Reference:** <https://github.com/advisories/GHSA-cc5r-64rf-75hg>
 
 > ## Summary
 `Prover9Parent.config_prover9(binary_location=...)` (and `Mace`, which inherits it) accepts a relative `binary_location` and passes it as `path_to_bin` to `find_binary`, which disables the CWD-relative rejection guard. Unlike the boxer/senna/malt/repp siblings, prover9/mace apply no `os.path.isabs()` filter, so the resolved relative program path (e.g. `./prover9`) is executed from the c…
-
----
-
-## 40. 🟡 High Severity — k8s-mcp-server: Missing authentication on default SSE/HTTP transport allows unauthenticated Kubernetes tool execution
-
-**CVE:** `CVE-2026-130007` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.4% (percentile 32%)
-**My Stack:** `kubernetes`, `github`
-**Reference:** <https://github.com/advisories/GHSA-m932-63jc-4jqq>
-
-> ## Summary
-When k8s-mcp-server runs in its default SSE transport mode, the MCP `tools/call`
-endpoint is dispatched with no authentication, session token, or Origin check.
-Any client that can reach the listening port can enumerate and invoke the
-server&#x27;s Kubernetes tools (including destructive/write tools) without credentials,
-executing with the server&#x27;s configured cluster privileges.
-
-##…
-
----
-
-## 41. 🟡 High Severity — containerd image-triggered daemon crash via malformed digest in subject-annotated descriptor
-
-**CVE:** `CVE-2026-95839` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.4% (percentile 35%)
-**My Stack:** `kubernetes`, `github`
-**Reference:** <https://github.com/advisories/GHSA-vwhp-8p66-mq4f>
-
-> ### Impact
-
-A bug in containerd&#x27;s image manifest processing causes an unrecovered panic when a child descriptor contains the `io.containerd.manifest.subject` annotation and a malformed digest. Pulling or importing such an image through the transfer service (including default CRI `PullImage` requests) crashes the containerd daemon. In Kubernetes environments, `kubelet` retries failed image pul…
-
----
-
-## 42. 🟡 High Severity — Model Context Protocol Python SDK: OAuth client could send credentials to an authorization server chosen by the MCP server
-
-**CVE:** `CVE-2026-115563` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.3% (percentile 26%)
-**My Stack:** `python`, `github`
-**Reference:** <https://github.com/advisories/GHSA-qx49-fqc8-xw99>
-
-> ### Summary
-In affected versions, the SDK&#x27;s OAuth client support (`mcp.client.auth`) let the MCP server a client connected to decide where the client&#x27;s OAuth credentials were sent:
-
-- the authorization server metadata `issuer` was not validated on every discovery path, and
-- stored or pre-provisioned client credentials were not bound to the authorization server they belong to.
-
-A malicio…
-
----
-
-## 43. 🟡 High Severity — Mistune: Quadratic-time DoS in parse_link_href via unbounded parenthesis scan on empty-label links
-
-**CVE:** `CVE-2026-97698` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.7% (percentile 55%)
-**My Stack:** `python`, `github`
-**Reference:** <https://github.com/advisories/GHSA-phmp-hrw4-r36r>
-
-> ## Resolution
-
-**Fixed in Mistune 3.3.4.** Upgrade to 3.3.4 or later.
-
-- Affected versions: `&lt; 3.3.4`
-- First patched version: `3.3.4`
-- Fix: https://github.com/lepture/mistune/compare/v3.3.3...v3.3.4
-
-The reported payload was reproduced against the 3.3.3 release tag and verified to scale approximately linearly against the 3.3.4 release tag.
-
-## Original report
-
-The following report describes t…
-
----
-
-## 44. 🟡 High Severity — Mistune: Quadratic-time DoS in inline image parsing (precedence_scan) bypasses not-is-image guards
-
-**CVE:** `CVE-2026-97699` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.7% (percentile 53%)
-**My Stack:** `python`, `github`
-**Reference:** <https://github.com/advisories/GHSA-ww7q-mxrj-5ffg>
-
-> ## Resolution
-
-**Fixed in Mistune 3.3.4.** Upgrade to 3.3.4 or later.
-
-- Affected versions: `&lt; 3.3.4`
-- First patched version: `3.3.4`
-- Fix: https://github.com/lepture/mistune/compare/v3.3.3...v3.3.4
-
-The reported payload was reproduced against the 3.3.3 release tag and verified to scale approximately linearly against the 3.3.4 release tag.
-
-## Original report
-
-The following report describes t…
-
----
-
-## 45. 🟡 High Severity — fzf: Predictable FIFO path in zsh completion allows local symlink attack / arbitrary file overwrite as the victim user (_fzf_feed_fifo)
-
-**CVE:** `CVE-2026-121717` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.2% (percentile 7%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-7rj6-7pqx-v7rm>
-
-> ### Summary
-
-`shell/completion.zsh` feeds every trigger-driven zsh completion through a FIFO at a predictable, PID-based path in shared `/tmp` (`fzf-complete-fifo-$$`), without checking the failure of `rm -f`/`mkfifo`. On a multi-user host, another local user can pre-create that path as a symlink to a victim-writable file (e.g. `~/.bashrc`), causing the victim&#x27;s own completion to overwrite it…
-
----
-
-## 46. 🟡 High Severity — Next.js: Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments
-
-**CVE:** `CVE-2026-119349` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.4% (percentile 34%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-rhh4-g77r-r9qj>
-
-> Next.js App Router applications that pass binary arguments (such as Uint8Array or Blob values) to functions using the `use cache` directive can produce identical cache keys for distinct arguments, allowing cached results to be shared across users — cross-user disclosure of cached data or cache poisoning. This affects applications using `use cache` with binary arguments.
-
----
-
-## 47. 🟡 High Severity — Next.js: Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params
-
-**CVE:** `CVE-2026-119350` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.2% (percentile 13%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-vvgp-ww4w-46vf>
-
-> Self-hosted Next.js applications served with `next start` and built with `cacheComponents: true` but without Partial Prefetching accept a request-supplied route param value as a prerender placeholder. One unauthenticated GET request can poison the fallback shell cache entry that a family of routes shares.
-
-Such a route is served from a shell that keeps its never-prerenderable params as placeholder…
-
----
-
-## 48. 🟡 High Severity — phpAfterShell and Critical PHP RCE Vulnerabilities: Everything You Need To Know
-
-**CVE:** `CVE-2026-126714` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-11-19
-**Reference:** <https://www.wiz.io/blog/phpaftershell-critical-php-rce-vulnerabilities-cve-2026-126714>
-
-> Detect and mitigate phpAfterShell, and additional critical vulnerabilities from PHP&#x27;s November release that may enable remote code execution.
-
----
-
-## 49. 🟡 High Severity — CVE-2026-123890: Critical Authentication Bypass in VMware vCenter
-
-**CVE:** `CVE-2026-123890` | `CVE-2026-59309` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 22.9% (percentile 98%)
-**Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-123890-critical-authentication-bypass-vmware-vcenter>
-
-> Overview On November 19, 2026, Broadcom published VMware Security Advisory VMSA-2026-0009 , addressing five vulnerabilities in VMware products. The most severe of these, CVE-2026-123890 , is an authentication bypass using an alternate path or channel ( CWE-288 ) in the VMware Directory Service component of vCenter. Broadcom assigned the vulnerability a critical CVSSv3 score of 9.8 . A malicious ac…
-
----
-
-## 50. 🟡 High Severity — Effect: ReDoS in Schema.TemplateLiteral compiled regex
-
-**CVE:** `CVE-2026-121707` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.3% (percentile 23%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-7589-6fvf-x4pw>
-
-> ### Impact
-
-`Schema.TemplateLiteral` compiles each `Schema.String` span to the lazy wildcard `[\s\S]*?` and decodes input by running the resulting regular expression against it. When a template has two or more `Schema.String` spans, for example:
-
-```ts
-Schema.TemplateLiteral(Schema.String, &quot;:&quot;, Schema.String, &quot;:&quot;, Schema.String, &quot;X&quot;)
-```
-
-the regex contains several am…
-
----
-
-## 51. 🟡 High Severity — iSponsorBlockTV: SSRF via Malicious SSDP Response Spoofing in Local Device Discovery
-
-**CVE:** `CVE-2026-77597` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.2% (percentile 5%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-56v3-jrq2-4q9m>
-
-> ### Summary
-iSponsorBlockTV discovers local smart TV devices via SSDP (Simple Service Discovery Protocol). The `LOCATION` URL from SSDP responses is used to fetch device capabilities without URL validation. A local network attacker can craft a malicious SSDP response with a `LOCATION` pointing to any internal HTTP service, causing SSRF when the application fetches device information.
-
-### Details
-…
-
----
-
-## 52. 🟡 High Severity — gosaml2: Unauthenticated panic decrypting an EncryptedAssertion with a short or empty CipherValue
-
-**CVE:** `CVE-2026-128073` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.2% (percentile 14%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-5hj8-q7fv-qrj6>
-
-> ### Summary
-
-An attacker who can supply a crafted SAML Response for parsing can crash a `gosaml2` service provider by sending an `EncryptedAssertion` with AES-GCM encryption metadata and a `CipherValue` shorter than the GCM nonce size (12 bytes). The library panics with `slice bounds out of range` before any validation completes.
-
-This is a **distinct issue from [GHSA-hwqm-qvj9-4jr2](https://githu…
-
----
-
-## 53. 🟡 High Severity — October: Media Library Crop Handler Bypasses Upload Extension Allowlist
-
-**CVE:** `CVE-2026-63193` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.6% (percentile 47%)
-**My Stack:** `nginx`, `github`
-**Reference:** <https://github.com/advisories/GHSA-mqwx-84vv-mp26>
-
-> The Media Library upload handler validates the destination filename against an extension allowlist (`default_extensions`), rejecting types such as `php`, `phtml`, `html`, and `htm`. The image crop handler (`MediaManager::onCropImage` / `cropImage`) did not perform this check. The destination filename was taken from user input, the extension was extracted from it, and the staged bytes were written …
-
----
-
-## 54. 🟡 High Severity — Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server
-
-**CVE:** `CVE-2026-76807` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.2% (percentile 12%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-833v-v58w-294h>
-
-> The self-hosted `todoist-mcp-http` server accepts browser-origin MCP requests with attacker-controlled `Host` and `Origin` headers. A malicious website can use DNS rebinding to route its own origin to a victim&#x27;s local `127.0.0.1` MCP server, then invoke Todoist MCP tools without a caller credential.
-
-This affects `github.com/Doist/todoist-mcp` at commit `d2903e0d945d2a559d71c091337ad6380511e6…
-
----
-
-## 55. 🟡 High Severity — Gortex: Arbitrary file write / repo-confinement escape in `write_file` / `edit_file` / `move_inline` MCP tools → code execution
-
-**CVE:** `CVE-2026-62964` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.2% (percentile 5%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-w42c-h7hr-f67p>
-
-> ### Summary
-Gortex is an MCP server exposing `write_file`, `edit_file`, and `move_inline` tools. `resolveFilePath` **exempts absolute paths** from confinement, and the write handlers — unlike `read_file` / `get_symbol_source` — **never call `guardSymlinkWithinRepo`**. A single MCP `write_file` call with an absolute path writes any file the daemon user can, **outside every indexed repo root** (`Ato…
-
----
-
-## 56. 🟡 High Severity — DOMShell: domshell_eval classified as read-tier can execute side-effecting JavaScript without --allow-write
-
-**CVE:** `CVE-2026-75518` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.1% (percentile 1%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-vg83-hcp4-5qcc>
-
-> ### Summary
-
-The `domshell_eval` MCP tool (and the `eval` command inside `domshell_execute`) was classified as **read-tier**, allowing it to run without the `--allow-write` server flag. However, `eval` and the write-tier `js` command dispatch to the same handler in the extension and call CDP `Runtime.evaluate` with the raw expression string and no side-effect gate. Any JavaScript expression could …
-
----
-
-## 57. 🟡 High Severity — Mareforma: Unsigned Claims Can Be Promoted to REPLICATED via Missing Signature Enforcement in Convergence Path
-
-**CVE:** `CVE-2026-71535` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.1% (percentile 0%)
-**My Stack:** `python`, `github`
-**Reference:** <https://github.com/advisories/GHSA-8776-qf3h-26r3>
-
-> ### Summary
-
-`mareforma` 0.3.3 contains a critical integrity flaw in the REPLICATED convergence logic (`_maybe_update_replicated_unlocked()` in `mareforma/db/core.py:1300-1319`). The peer-selection SQL query that determines whether two independent claims &quot;agree&quot; on the same anchor does not verify that either claim carries a valid cryptographic signature from an enrolled validator key. Be…
-
----
-
-## 58. 🟡 High Severity — NATS Server: MQTT SUBSCRIBE Protocol Injection via Leaf Node/Route Forwarding allows arbitrary NATS command injection
-
-**CVE:** `CVE-2026-58213` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.4% (percentile 39%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-qrcv-3558-gj4f>
-
-> ### Background
-
-NATS.io is a high performance open source pub-sub distributed communication technology, built for the cloud, on-premise, IoT and edge computing.
-
-The NATS Server supports MQTT clients and can bridge MQTT activity into NATS subjects across routes and leafnode connections.
-
-### Problem Description
-
-An MQTT client could include protocol control characters in subscription filters that …
 
 ---

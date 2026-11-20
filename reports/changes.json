@@ -1,5 +1,79 @@
 {
-  "run_id": "44753961988",
-  "generated_at": "2026-11-20T14:30:34.289896+00:00",
-  "changes": []
+  "run_id": "44836847754",
+  "generated_at": "2026-11-20T23:27:42.035732+00:00",
+  "changes": [
+    {
+      "kind": "entered_kev",
+      "cve": "CVE-2026-123890",
+      "title": "CVE-2026-123890 \u2014 VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_ransomware": false
+    },
+    {
+      "kind": "entered_kev",
+      "cve": "CVE-2026-129448",
+      "title": "CVE-2026-129448 \u2014 Apache Roller Deserialization of Untrusted Data Vulnerability",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-129448",
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_ransomware": false
+    },
+    {
+      "kind": "entered_kev",
+      "cve": "CVE-2026-76466",
+      "title": "CVE-2026-76466 \u2014 Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76466",
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_ransomware": false
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-103035",
+      "title": "TeamPass folder re-parenting authorization bypass",
+      "link": "https://github.com/advisories/GHSA-66q9-mxf2-xqw6",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-115565",
+      "title": "storyblok-backup: Stored path traversal via unsanitized Storyblok component names in backup output",
+      "link": "https://github.com/advisories/GHSA-vcx7-pfrh-mcfg",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-123007",
+      "title": "How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities",
+      "link": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
+      "stack_match": [
+        "nginx"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-63184",
+      "title": "Refitter: Unrestricted OpenAPI references permit build-host SSRF and file inclusion",
+      "link": "https://github.com/advisories/GHSA-x6w4-f264-3vvr",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-69133",
+      "title": "netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges",
+      "link": "https://github.com/advisories/GHSA-cg26-4c6j-2x8h",
+      "stack_match": [
+        "github",
+        "exchange"
+      ]
+    }
+  ]
 }

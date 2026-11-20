@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T14:30:22.802528+00:00",
+  "generated_at": "2026-11-20T23:27:31.501855+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -38,7 +38,7 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 4,
+        "warm_up": 8,
         "old_cve": 0
       }
     },
@@ -64,14 +64,14 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 4,
+        "warm_up": 8,
         "old_cve": 0
       }
     }
   },
   "top_leads_window": 90,
   "top_leads": [],
-  "total_rows": 4,
+  "total_rows": 8,
   "rows": [
     {
       "bucket": "missed",
@@ -120,11 +120,59 @@
       "product": "Research Electronic Data Capture (REDCap)",
       "source": null,
       "vendor": "Vanderbilt University"
+    },
+    {
+      "cve": "CVE-2025-42884",
+      "kev_date_added": "2026-11-20",
+      "vendor": "SAP",
+      "product": "NetWeaver",
+      "cve_year": 2025,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-123890",
+      "kev_date_added": "2026-11-20",
+      "vendor": "Broadcom",
+      "product": "VMware vCenter",
+      "cve_year": 2026,
+      "observed_at": "2026-11-20T14:30:22.785728+00:00",
+      "source": "The Hacker News Security",
+      "link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
+      "lead_days": 0,
+      "bucket": "same_day_or_late"
+    },
+    {
+      "cve": "CVE-2026-129448",
+      "kev_date_added": "2026-11-20",
+      "vendor": "Apache",
+      "product": "Roller",
+      "cve_year": 2026,
+      "observed_at": "2026-11-18T23:40:03.305427+00:00",
+      "source": "The Hacker News Security",
+      "link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
+      "lead_days": 2,
+      "bucket": "earlier"
+    },
+    {
+      "cve": "CVE-2026-76466",
+      "kev_date_added": "2026-11-20",
+      "vendor": "Cisco",
+      "product": "Expressway Series",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
     }
   ],
   "run": {
-    "new_signals": 1,
-    "new_rows": 0,
+    "new_signals": 0,
+    "new_rows": 4,
     "capped_entries": 0
   }
 }

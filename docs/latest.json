@@ -1,13 +1,87 @@
 {
-  "generated": "2026-11-20T14:30:34.289896+00:00",
-  "total": 58,
-  "kev": 2,
-  "zero_day": 9,
+  "generated": "2026-11-20T23:27:42.035732+00:00",
+  "total": 45,
+  "kev": 6,
+  "zero_day": 6,
   "enriched": 0,
   "high_epss": 2,
-  "my_stack": 47,
-  "run_id": "44753961988",
-  "changes": [],
+  "my_stack": 34,
+  "run_id": "44836847754",
+  "changes": [
+    {
+      "kind": "entered_kev",
+      "cve": "CVE-2026-123890",
+      "title": "CVE-2026-123890 \u2014 VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_ransomware": false
+    },
+    {
+      "kind": "entered_kev",
+      "cve": "CVE-2026-129448",
+      "title": "CVE-2026-129448 \u2014 Apache Roller Deserialization of Untrusted Data Vulnerability",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-129448",
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_ransomware": false
+    },
+    {
+      "kind": "entered_kev",
+      "cve": "CVE-2026-76466",
+      "title": "CVE-2026-76466 \u2014 Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76466",
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_ransomware": false
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-103035",
+      "title": "TeamPass folder re-parenting authorization bypass",
+      "link": "https://github.com/advisories/GHSA-66q9-mxf2-xqw6",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-115565",
+      "title": "storyblok-backup: Stored path traversal via unsanitized Storyblok component names in backup output",
+      "link": "https://github.com/advisories/GHSA-vcx7-pfrh-mcfg",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-123007",
+      "title": "How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities",
+      "link": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
+      "stack_match": [
+        "nginx"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-63184",
+      "title": "Refitter: Unrestricted OpenAPI references permit build-host SSRF and file inclusion",
+      "link": "https://github.com/advisories/GHSA-x6w4-f264-3vvr",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-69133",
+      "title": "netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges",
+      "link": "https://github.com/advisories/GHSA-cg26-4c6j-2x8h",
+      "stack_match": [
+        "github",
+        "exchange"
+      ]
+    }
+  ],
   "findings": [
     {
       "id": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
@@ -44,6 +118,35 @@
       "stack_match": []
     },
     {
+      "id": "CVE-2026-123890",
+      "title": "CVE-2026-123890 \u2014 VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "summary": "Vendor: Broadcom | Product: VMware vCenter. Broadcom VMware vCenter contains an authentication bypass using an alternate path or channel vulnerability in the VMware Directory Service that allows an unauthenticated attacker with network access to vCenter to bypass authentication and gain unauthorized access to the system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines (due 2026-11-23)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
+      "published": "2026-11-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-123890"
+      ],
+      "is_kev": true,
+      "in_kev": true,
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_vendor": "Broadcom",
+      "kev_product": "VMware vCenter",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00843,
+      "epss_percentile": 0.58845,
+      "stack_match": []
+    },
+    {
       "id": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-breaking-zimbra-s-identity-boundaries",
       "title": "Metasploit Wrap Up: Breaking Zimbra's Identity Boundaries",
       "summary": "This release we have three pull requests from jburgess-r7 building out coverage for the identity-boundary issues detailed in Rapid7's Breaking Zimbra Identity Boundaries, Part One research. First up is a new shared mixin, Msf::Exploit::Remote::HTTP::Zimbra , which gives every current and future Zimbra module a common foundation for account/admin SOAP authentication, canonical identity resolution, mailbox-server lookup, and version parsing, allowing future modules to stay focused on the vulnerability instead of re-implementing Zimbra's SOAP plumbing. Built on top of that mixin are two new modules targeting CVEs from the same research track: CVE-2026-73571 ( #22080 ) It's an authorization bypass in Zimbra's SaveDraftRequest handling that lets an ordinary authenticated user send mail as another local mailbox without a delegation grant, landing a message in the victim's own Sent folder in the process. CVE-2026-93637 ( #22070 ) Is a rate-limit bypass in Zimbra's Network Edition GraphQL authentication endpoint, which lets credential-stuffing attempts skip the source-IP lockout counter that normally protects the SOAP login path. Both modules were validated against live Zimbra 10.1.16 Network Edition instances. Super cool contributions from our very own jburgess-r7 . New module content (6) Zimbra SaveDraftRequest Email Impersonation Authors: Ayoub Nabil Boubagrat and Crypto-Cat Type: Auxiliary Pull request: #22080 contributed by jburgess-r7 Path: admin/http/zimbra_email_impersonation CVE reference: CVE-2026-73571 Description: Adds an auxiliary module for CVE-2026-73571, allowing an authenticated user to send email as another local mailbox on Zimbra 10.1.16. The module supports optional Inbox delivery verification. Zimbra GraphQL Authentication Rate Limit Bypass Author: Crypto-Cat Type: Auxiliary Pull request: #22070 contributed by jburgess-r7 Path: scanner/http/zimbra_graphql_brute CVE reference: CVE-2026-93637 Description: This adds an auxiliary scanner for CVE-2026-93637 ",
@@ -72,23 +175,109 @@
       "is_high_severity": false,
       "is_priority_product": false,
       "epss": 0.50694,
-      "epss_percentile": 0.98944,
+      "epss_percentile": 0.98947,
       "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
-      "title": "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data",
-      "summary": "The suspected China-nexus cyber espionage group known as Armory Castle (formerly UNC5221) has been attributed to the zero-day exploitation of a critical security flaw in VMware vCenter Server in early September 2026.\n\nThe vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of authentication bypass in the VMware Directory Service that could be exploited to gain unauthorized",
-      "link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
-      "published": "2026-11-20T09:38:15+00:00",
-      "source": "The Hacker News Security",
+      "id": "CVE-2026-129448",
+      "title": "CVE-2026-129448 \u2014 Apache Roller Deserialization of Untrusted Data Vulnerability",
+      "summary": "Vendor: Apache | Product: Roller. Apache Roller contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via the XML-RPC endpoint, which accepts and deserializes vendor extension types before authentication. This CVE covers the same underlying vulnerability as CVE-2026-82384 but applies to a broader range of affected versions. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-23)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-129448",
+      "published": "2026-11-20",
+      "source": "CISA KEV",
       "tags": [
-        "news",
-        "zeroday"
+        "cisa",
+        "kev",
+        "actively-exploited"
       ],
       "cve_ids": [
-        "CVE-2026-123890"
+        "CVE-2026-129448"
       ],
+      "is_kev": true,
+      "in_kev": true,
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_vendor": "Apache",
+      "kev_product": "Roller",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": 0.01191,
+      "epss_percentile": 0.68723,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2025-42884",
+      "title": "CVE-2025-42884 \u2014 SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
+      "summary": "Vendor: SAP | Product: NetWeaver. SAP NetWeaver Enterprise Portal contains an improper neutralization of special elements in data query logic vulnerability that allows an unauthenticated attacker to disclose or modify server information via injected JNDI environment properties or a URL used during JNDI lookup operations. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-23)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-42884",
+      "published": "2026-11-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2025-42884"
+      ],
+      "is_kev": true,
+      "in_kev": true,
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_vendor": "SAP",
+      "kev_product": "NetWeaver",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": 0.00276,
+      "epss_percentile": 0.2048,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-76466",
+      "title": "CVE-2026-76466 \u2014 Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
+      "summary": "Vendor: Cisco | Product: Expressway Series. Cisco Expressway Series contains a use of hard-coded credentials vulnerability that allows an unauthenticated, remote attacker with persistent cookies and network access to execute commands as root on a clustered device via the database service. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-23)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76466",
+      "published": "2026-11-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-76466"
+      ],
+      "is_kev": true,
+      "in_kev": true,
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_vendor": "Cisco",
+      "kev_product": "Expressway Series",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": 0.00417,
+      "epss_percentile": 0.36836,
+      "stack_match": []
+    },
+    {
+      "id": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+      "title": "Chinese-nexus actor\u2019s Cairn AI agents found a zero-day on their own",
+      "summary": "Amazon Threat Intelligence is sharing findings from an investigation into a Chinese-nexus threat actor using autonomous AI agents to conduct hacking operations with minimal human involvement. The actor gave the agents a simple goal: \u201cobtain shell access.\u201d During the campaign, the agents found a zero-day in an open-source application and used it to gain full [\u2026]",
+      "link": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+      "published": "2026-11-20T17:30:13+00:00",
+      "source": "AWS Security Blog",
+      "tags": [
+        "cloud",
+        "aws",
+        "blog"
+      ],
+      "cve_ids": [],
       "in_kev": false,
       "kev_date_added": null,
       "kev_due_date": null,
@@ -100,7 +289,9 @@
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": []
+      "stack_match": [
+        "aws"
+      ]
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/",
@@ -151,22 +342,22 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.01062,
+      "epss_percentile": 0.65412,
       "stack_match": [
         "github"
       ]
     },
     {
-      "id": "https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/",
-      "title": "Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT",
-      "summary": "Google says a China-linked espionage group exploited a critical VMware vCenter authentication bypass before Broadcom released a patch. The post Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/",
-      "published": "2026-11-19T19:21:06+00:00",
-      "source": "SecurityWeek",
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/",
+      "title": "Hackers use autonomous AI tool Cairn to find zero-day, take over server",
+      "summary": "Threat actors used the open-source AI penetration-testing framework Cairn to find a previously unknown vulnerability in a medical imaging application. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/",
+      "published": "2026-11-20T17:30:00+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "research"
+        "malware"
       ],
       "cve_ids": [],
       "in_kev": false,
@@ -176,22 +367,22 @@
       "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": true,
+      "is_high_severity": false,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
       "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/threatsday-gpt-62-jailbreak-flaws.html",
-      "title": "ThreatsDay: GPT-6.2 Jailbreak Flaws, BubbleLoader PNG Malware, $500M Ransom Demands + 17 More Stories",
-      "summary": "The easiest way to fool someone is to give them something they already expect. A job offer. A message about a service outage. A familiar app. Nothing looks strange at first. And that's the problem. This week's stories show how ordinary things are being used to steal data, spread malware, and get people to hand over access.\n\nThere's another shift worth watching. AI is making some attacks easier",
-      "link": "https://thehackernews.com/2026/11/threatsday-gpt-62-jailbreak-flaws.html",
-      "published": "2026-11-19T18:47:58+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://therecord.media/amazon-research-cairn-ai-university-attacks-possible-zero-day",
+      "title": "Amazon says Chinese hackers used Cairn AI tool to discover apparent zero-day during attack on university",
+      "summary": "A China-linked threat actor used the open source AI penetration testing tool Cairn to persistently attack two universities, and in one case, possibly discover a zero-day bug, researchers said.",
+      "link": "https://therecord.media/amazon-research-cairn-ai-university-attacks-possible-zero-day",
+      "published": "2026-11-20T17:30:00+00:00",
+      "source": "The Record by Recorded Future",
       "tags": [
         "news",
-        "zeroday"
+        "threat-intel"
       ],
       "cve_ids": [],
       "in_kev": false,
@@ -201,32 +392,7 @@
       "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html",
-      "title": "Critical VMware vCenter Zero-Day Flaw Lets Network Attackers Bypass Authentication",
-      "summary": "A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today.\n\nFixed versions are out for all supported branches, and the company lists no workaround. vCenter is the central console for managing an organization's ESX hosts and virtual machines.\n\nThe",
-      "link": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html",
-      "published": "2026-11-19T15:11:06+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
+      "is_high_severity": false,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
@@ -260,19 +426,18 @@
       ]
     },
     {
-      "id": "CVE-2026-83816",
-      "title": "CodeWhale: exec_shell parallel-readonly classifier auto-approves fd/rg/git grep exec flags enabling silent RCE",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. CodeWhale 0.8.67 and earlier are affected. Version 0.9.0 contains the fix in commit 208421b9d23d81cea3311a1eeb2a2ea81d637686. Users should upgrade to 0.9.0 or later. The original reporter analysis is preserved below.\n\n## Summary\nThe interactive Agent profile of DeepSeek-TUI (CodeWhale) is explicitly documented to gate **every** shell command behind an approval prompt (config.rs:3725-3736). However, `ExecShellTool::approval_requirement_for(&tool_input)` downgrades the requirement from `Required` to `Auto` for any command the classifier deems \"parallel read-only\" (shell.rs:2314-2320). `registered_tool_approval_required` returns `false` for `Auto` **before** the `auto_approve` check runs (turn_loop.rs:37-38), so no prompt is shown even for a user who never enabled YOLO. The classifier `is_parallel_readonly_command` (command_safety.rs:389) rejects only shell metacharacters and then matches the flag-stripped base command name against an allowlist that includes `fd`, `rg`, and `git grep`. Those tools execute arbitrary external programs through documented flags (`fd -x/--exec`, `rg --pre`, `git grep --open-files-in-pager`) that need **no** shell metacharacters \u2014 yielding silent arbitrary-program execution in the default profile. Same silent-RCE class as CVE-2026-45311 (run_tests) but via a different, unpatched tool and code path.\n\n## Root Cause\n`approval_requirement_for` downgrades `exec_shell` to `Auto` when `exec_shell_input_is_parallel_readonly` returns true (shell.rs:2314-2320). The classifier strips all flags and matches the base command name against `PARALLEL_READONLY_PREFIXES` (command_safety.rs:363-385, 419-433). `fd`/`rg` are absent from `COMMAND_ARITY`, so `fd -x cp {} /tmp/exfil` canonicalizes to `\"fd\"` \u2208 allowlist. The only remaining gate at the execute sink is `analyze_command`, which rates `fd`/`rg` as `Safe` (SAFE_COMMANDS command_safety.rs:527,530), so the `SafetyLevel::Dangerous`-o",
-      "link": "https://github.com/advisories/GHSA-3mgh-93r5-r7jf",
-      "published": "2026-11-19T22:48:14Z",
-      "source": "GitHub Security Advisories",
+      "id": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html",
+      "title": "WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams",
+      "summary": "Meta-owned WhatsApp has addressed security vulnerabilities, including one impacting its Android app that it suspects may have been exploited in connection with scam messages.\n\nThe vulnerability, tracked as CVE-2026-23871, has been described as a case of incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4.\n\nThe issue could",
+      "link": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html",
+      "published": "2026-11-20T17:57:20+00:00",
+      "source": "The Hacker News Security",
       "tags": [
-        "github",
-        "advisories",
-        "oss"
+        "news",
+        "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-83816"
+        "CVE-2026-23871"
       ],
       "in_kev": false,
       "kev_date_added": null,
@@ -280,21 +445,115 @@
       "kev_vendor": null,
       "kev_product": null,
       "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00737,
-      "epss_percentile": 0.55283,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-69133",
+      "title": "netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges",
+      "summary": "## Summary:\n\nOHttpClientCodec and OHttpServerCodec retain the encrypted outer HttpContent in a handler-level cumulationBuffer. After a valid OHTTP exchange completes, the OHTTP request/response context is destroyed, but the outer cumulationBuffer is not released or reset. It remains referenced by the codec until a later inbound content frame replaces it or the handler is removed/channel is closed.\n\nThis can pin attacker-influenced pooled/direct buffer capacity on idle keep-alive channels. Across many long-lived idle connections, this can create availability pressure.\n\nAffected components:\n\n* codec-ohttp/src/main/java/io/netty/incubator/codec/ohttp/OHttpClientCodec.java\n* codec-ohttp/src/main/java/io/netty/incubator/codec/ohttp/OHttpServerCodec.java\n* codec-ohttp/src/main/java/io/netty/incubator/codec/ohttp/OHttpRequestResponseContext.java\n\n## Root cause:\n\nOHttpClientCodec retains inbound content into a handler-level cumulationBuffer. On LastHttpContent, it destroys only the OHttpRequestResponseContextHolder. The cumulationBuffer is released in handlerRemoved(), not immediately after successful exchange completion.\n\nOHttpServerCodec follows the same pattern: it retains inbound content into a handler-level cumulationBuffer, and on completed request/response it destroys the OHttpRequestResponseContext. The outer cumulationBuffer remains owned by the codec and is released only when the handler is removed.\n\nOHttpRequestResponseContext.parse() consumes bytes from the caller-provided outer cumulation buffer, but its destroy() path releases only the inner binary HTTP cumulation, not the codec-level outer cumulationBuffer.\n\n## PoC:\n\nA local test only:\n\n```\ncodec-ohttp/src/test/java/io/netty/incubator/codec/ohttp/OHttpCumulationBufferRetentionTest.java\n```\n\nThe test reuses existing OHTTP test helpers and BouncyCastle crypto provider to perform valid completed OHTTP exchanges over EmbeddedChannel pairs. It sends both a small and a large request/response exchange, confirms comp",
+      "link": "https://github.com/advisories/GHSA-cg26-4c6j-2x8h",
+      "published": "2026-11-20T16:22:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69133"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00304,
+      "epss_percentile": 0.23817,
+      "stack_match": [
+        "github",
+        "exchange"
+      ]
+    },
+    {
+      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s Security Impact Rating: Critical CVE: CVE-2026-113425,CVE-2026-121810,CVE-2026-123007,CVE-2026-123633,CVE-2026-123634",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "published": "2026-11-20T16:00:00+00:00",
+      "source": "Cisco Security Advisories (PSIRT)",
+      "tags": [
+        "network",
+        "cisco",
+        "psirt",
+        "advisory"
+      ],
+      "cve_ids": [
+        "CVE-2026-113425",
+        "CVE-2026-121810",
+        "CVE-2026-123007",
+        "CVE-2026-123633",
+        "CVE-2026-123634"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.06086,
+      "epss_percentile": 0.93583,
+      "stack_match": [
+        "nginx"
+      ]
+    },
+    {
+      "id": "CVE-2026-115565",
+      "title": "storyblok-backup: Stored path traversal via unsanitized Storyblok component names in backup output",
+      "summary": "### Summary\nstoryblok-backup writes files using unsanitized names for Storyblok components, which are content type or schema definitions. This allows a component name containing path traversal sequences to cause backup files to be written outside the intended backup directory. Anyone with component management access in the source Storyblok space, not server access, can plant a malicious component name that causes arbitrary file writes on the machine of anyone who later runs a backup against that space.\n\n### Details\nThe writeJson function, which takes a folder, a file name, and content, builds the output file path by directly concatenating the backup directory, the folder, and the file name as strings, with no path sanitization or containment check.\n\nFor the components resource type specifically, the file name used is the component's own name field, which is free text and editable by anyone with component management access in the Storyblok CMS.\n\nOther resource types are not affected by this same issue. Stories and datasources use their numeric IDs as filenames, and assets have their filename derived by splitting on the slash character and taking the last segment, which strips path separators. This issue is scoped specifically to components.\n\nSince the component name is stored in Storyblok and only read back later when the backup tool runs, this is a stored, second order vulnerability. The malicious value is planted once, then triggers on every subsequent backup run performed by anyone using this tool against that Storyblok space.\n\n### PoC\n\n**Step 1 \u2014 plant the malicious component name via Storyblok's Management API:**\n\ncurl -X POST \"https://mapi.storyblok.com/v1/spaces/<SPACE_ID>/components/\" \\\n  -H \"Authorization: <MANAGEMENT_API_TOKEN>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"component\": {\n      \"name\": \"../../../../tmp/evil-storyblok-backup\",\n      \"schema\": {}\n    }\n  }'\n\nAny Storyblok user with component-management permission in the space (not ser",
+      "link": "https://github.com/advisories/GHSA-vcx7-pfrh-mcfg",
+      "published": "2026-11-20T14:55:18Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-115565"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00359,
+      "epss_percentile": 0.30464,
       "stack_match": [
         "github"
       ]
     },
     {
-      "id": "CVE-2026-83817",
-      "title": "CodeWhale: Automation auto_approve defaults to true, bypassing the task-path hardening fix for silent recurring agent execution",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. CodeWhale 0.8.67 and earlier are affected. Version 0.9.0 contains the fix in commit 208421b9d23d81cea3311a1eeb2a2ea81d637686. Users should upgrade to 0.9.0 or later. The original reporter analysis is preserved below.\n\n## Summary\nCVE-2026-45374 (GHSA-72w5-pf8h-xfp4) hardened the task path so auto-approval must be opted into explicitly: `add_task` uses `req.auto_approve.unwrap_or(false)` (task_manager.rs:868). The automation subsystem was not hardened in kind. `AutomationRecord::task_auto_approve()` resolves an omitted `auto_approve` to `DEFAULT_AUTOMATION_AUTO_APPROVE = true` (automation_manager.rs:29, 101-103), and `enqueue_run_task` builds the `NewTaskRequest` with `auto_approve: Some(automation.task_auto_approve())` \u2014 i.e. an explicit `Some(true)` (automation_manager.rs:766). Because the field is `Some`, `unwrap_or(false)` returns `true` and the seed-2 default is bypassed. That `true` propagates to `ApprovalMode::Bypass` (runtime_threads.rs:2253), where the background approval loop auto-approves every tool call with no human present (runtime_threads.rs:3383-3416). One approved `automation_create` becomes a durable, recurring, fully auto-approved agent. Same insecure-default class as CVE-2026-45374, on a different, unpatched subsystem.\n\n## Root Cause\nSibling durable defaults in the same struct are safe \u2014 `DEFAULT_AUTOMATION_ALLOW_SHELL = false` and `DEFAULT_AUTOMATION_TRUST_MODE = false` (automation_manager.rs:27-28) \u2014 while `DEFAULT_AUTOMATION_AUTO_APPROVE` alone defaults `true` (:29). `create_automation` stores `auto_approve: None` when omitted (:422); `task_auto_approve()` resolves `None`\u2192`true` (:101-103); `enqueue_run_task` passes `Some(true)` (:766), defeating `add_task`'s `unwrap_or(false)` seed fix. The `automation_create` tool schema also declares `\"auto_approve\": {\"type\":\"boolean\",\"default\":true}` (tools/automation.rs:49) while sibling `allow_shell`/`trust_mode` default `false`.\n\n",
-      "link": "https://github.com/advisories/GHSA-8hp3-xxrg-v9c8",
-      "published": "2026-11-19T22:47:33Z",
+      "id": "CVE-2026-103035",
+      "title": "TeamPass folder re-parenting authorization bypass",
+      "summary": "## Summary\n\nMissing authorization in the update_folder action: any authenticated non-read-only user can rename, re-parent and convert to personal any folder in the instance, moving another team's credential subtree into their own personal space and removing it from the organization. Confirmed at HEAD 2f271cdd (3.2.1.1), and present at 3.1.3.1 and 3.1.7.6.\n\n## The defect\n\nThe folder-management endpoint dispatches an update_folder action that renames and re-parents a folder. Unlike its sibling actions in the same file, it never checks the edited folder id or the submitted parent id against the caller's accessible-folder set, and the file itself performs no session/authorization gate at all. By pointing the new parent at their own personal folder, an authenticated low-privilege user takes ownership of any folder in the instance.\n\napp/sources/folders.queries.php:\n- The file never calls the session/authorization helpers: a grep for checkSession and userAccessPage across the whole file returns zero hits.\n- case 'update_folder' (lines 294-662) contains no reference to the caller's user-accessible_folders set. The only access-related logic is the personal-folder computation at lines 428-468 and the guard at line 503, which short-circuits on `(int) $isPersonal === 1`.\n- The sibling actions do carry the check: case 'add_folder' validates against user-accessible_folders at line 743, case 'delete_folders' at line 904, and case 'copy_folder' applies the equivalent parent check.\n\nSo update_folder is the one folder-mutating action in the file without an authorization predicate on either the target folder id or the new parent id.\n\n## Attacker model and trace\n\nAn authenticated TeamPass user who is not read-only (no administrative role required). The attacker submits update_folder with the victim folder's id and a parentId pointing at their own personal folder. Because the new parent is personal, the personal-folder computation sets $isPersonal = 1, which satisfies the line 503 guard",
+      "link": "https://github.com/advisories/GHSA-66q9-mxf2-xqw6",
+      "published": "2026-11-20T14:45:04Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -302,7 +561,7 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-83817"
+        "CVE-2026-103035"
       ],
       "in_kev": false,
       "kev_date_added": null,
@@ -310,11 +569,41 @@
       "kev_vendor": null,
       "kev_product": null,
       "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.0069,
-      "epss_percentile": 0.53584,
+      "epss": 0.00239,
+      "epss_percentile": 0.15276,
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "id": "CVE-2026-63184",
+      "title": "Refitter: Unrestricted OpenAPI references permit build-host SSRF and file inclusion",
+      "summary": "### Summary\n\nRefitter (the `refitter` dotnet tool, built on NJsonSchema for `$ref` resolution) fetches remote\n`http(s)` URLs and reads local files (including absolute paths and `../` traversal outside the input\ndirectory), inlining the referenced schema into the generated Refit interface/contracts. Running\n`refitter <spec> --output Out.cs` on a spec whose `$ref` points at an attacker/internal URL or an\narbitrary local file yields SSRF, remote file inclusion, and local file inclusion. Verified on\nRefitter 2.0.0.\n\n### Details\n\n- `$ref: http://attacker-or-internal/evil.json#/...` -> build host fetches (SSRF) and inlines the\n  remote schema (RFI); confirmed property `REMOTE_REFIT_PROP`.\n- `$ref: /abs/path.json#/...` or `../../secret.json#/...` -> out-of-tree local file read + inlined\n  (LFI); confirmed property `REFIT_LFI_MARKER`. Both absolute and relative traversal work.\n\nNo RCE: Refitter emits Refit interfaces with no baseUrl string literal (Refit sets the base address at\nruntime), enum values use C# verbatim-string doubling, and string defaults are escaped. The chain\nstops at SSRF + RFI + LFI.\n\nThe `$ref` resolution is performed by Refitter's NJsonSchema dependency, which Refitter ships and\ninvokes with these unsafe defaults.\n\n### PoC\n\n`reproduce.sh` (+ `make_spec.py`, `listener.py`) attached: installs the .NET SDK + Refitter if needed,\nconfirms LFI (out-of-tree read), SSRF (listener hit during generation), and RFI (remote schema\ninlined). Verified on 2.0.0.\n\n### Impact\n\nBuild-time SSRF (CWE-918) from the developer or CI host, disclosure of arbitrary local files\n(CWE-22), and inclusion of untrusted remote content (CWE-829), from running Refitter on an\nattacker-controlled or attacker-influenced OpenAPI description. No code execution. Estimated\nMedium-High, e.g. `[reproduce.sh](https://github.com/user-attachments/files/29395269/reproduce.sh)` (the CNA sets the final score).\n\n### Suggested fix\n\nDon't resolve remote `$ref`s by default (opt-in + host allowlist); confine ",
+      "link": "https://github.com/advisories/GHSA-x6w4-f264-3vvr",
+      "published": "2026-11-20T14:35:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63184"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00411,
+      "epss_percentile": 0.36278,
       "stack_match": [
         "github"
       ]
@@ -342,35 +631,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00174,
-      "epss_percentile": 0.07031,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html",
-      "title": "Hackers Exploit Critical Cisco Expressway Flaw, Breach Four Devices and Reach Internal Network",
-      "summary": "Threat actors have been observed exploiting a recently disclosed critical security flaw in Cisco Expressway to breach a Russian organization shortly after the public release of a proof-of-concept (PoC) exploit.\n\nThe activity involves the exploitation of CVE-2026-76466 (CVSS score: 9.8), a vulnerability that could allow an unauthenticated, remote attacker with network access to a Cisco Expressway",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html",
-      "published": "2026-11-20T10:32:50+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-76466"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00417,
-      "epss_percentile": 0.36701,
+      "epss": 0.00191,
+      "epss_percentile": 0.08933,
       "stack_match": []
     },
     {
@@ -397,8 +659,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.01485,
+      "epss_percentile": 0.74647,
       "stack_match": [
         "linux",
         "github",
@@ -429,8 +691,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00332,
+      "epss_percentile": 0.27042,
       "stack_match": [
         "github"
       ]
@@ -459,8 +721,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00274,
+      "epss_percentile": 0.20213,
       "stack_match": [
         "github"
       ]
@@ -489,8 +751,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00366,
+      "epss_percentile": 0.31252,
       "stack_match": [
         "github"
       ]
@@ -519,8 +781,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00283,
+      "epss_percentile": 0.21281,
       "stack_match": [
         "github"
       ]
@@ -549,8 +811,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00503,
+      "epss_percentile": 0.43944,
       "stack_match": [
         "python",
         "github"
@@ -580,8 +842,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00505,
+      "epss_percentile": 0.44078,
       "stack_match": [
         "python",
         "github"
@@ -611,8 +873,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00347,
+      "epss_percentile": 0.29053,
       "stack_match": [
         "github"
       ]
@@ -641,8 +903,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00355,
+      "epss_percentile": 0.29999,
       "stack_match": [
         "github"
       ]
@@ -671,8 +933,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.0028,
+      "epss_percentile": 0.21015,
       "stack_match": [
         "github"
       ]
@@ -701,8 +963,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00748,
+      "epss_percentile": 0.5582,
       "stack_match": [
         "github"
       ]
@@ -731,8 +993,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.0044,
+      "epss_percentile": 0.39151,
       "stack_match": [
         "github"
       ]
@@ -762,7 +1024,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.00348,
-      "epss_percentile": 0.29077,
+      "epss_percentile": 0.29216,
       "stack_match": [
         "github"
       ]
@@ -792,7 +1054,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.0035,
-      "epss_percentile": 0.2932,
+      "epss_percentile": 0.2946,
       "stack_match": [
         "github"
       ]
@@ -822,7 +1084,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.0035,
-      "epss_percentile": 0.2932,
+      "epss_percentile": 0.2946,
       "stack_match": [
         "github"
       ]
@@ -852,7 +1114,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.0035,
-      "epss_percentile": 0.29319,
+      "epss_percentile": 0.29459,
       "stack_match": [
         "github"
       ]
@@ -882,7 +1144,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.00742,
-      "epss_percentile": 0.55457,
+      "epss_percentile": 0.55591,
       "stack_match": [
         "github"
       ]
@@ -912,7 +1174,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.00301,
-      "epss_percentile": 0.23299,
+      "epss_percentile": 0.23428,
       "stack_match": [
         "github"
       ]
@@ -941,8 +1203,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00439,
+      "epss_percentile": 0.39059,
       "stack_match": [
         "python",
         "github"
@@ -972,8 +1234,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00479,
+      "epss_percentile": 0.42285,
       "stack_match": [
         "python",
         "github"
@@ -1003,8 +1265,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00419,
+      "epss_percentile": 0.37124,
       "stack_match": [
         "python",
         "github"
@@ -1034,8 +1296,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00419,
+      "epss_percentile": 0.37124,
       "stack_match": [
         "python",
         "github"
@@ -1065,8 +1327,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00469,
+      "epss_percentile": 0.41452,
       "stack_match": [
         "python",
         "github"
@@ -1096,8 +1358,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00237,
+      "epss_percentile": 0.15055,
       "stack_match": [
         "python",
         "github"
@@ -1127,8 +1389,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.0034,
+      "epss_percentile": 0.28146,
       "stack_match": [
         "github"
       ]
@@ -1157,583 +1419,10 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00232,
+      "epss_percentile": 0.14322,
       "stack_match": [
         "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-130007",
-      "title": "k8s-mcp-server: Missing authentication on default SSE/HTTP transport allows unauthenticated Kubernetes tool execution",
-      "summary": "## Summary\nWhen k8s-mcp-server runs in its default SSE transport mode, the MCP `tools/call`\nendpoint is dispatched with no authentication, session token, or Origin check.\nAny client that can reach the listening port can enumerate and invoke the\nserver's Kubernetes tools (including destructive/write tools) without credentials,\nexecuting with the server's configured cluster privileges.\n\n## Affected\nCommit be87a6dd72bb6ec1d4886b8548843b99a4638b12 (Merge PR #130)\nMCP library: github.com/mark3labs/mcp-go v0.57.0\nDefault mode: sse (SERVER_MODE default), default port 8080, bind 0.0.0.0\n\n## Root cause (static trace: handleSSE -> handleMessage -> tools/call)\n- main.go L129: `server.NewSSEServer(s)` is created with no auth option and no\n  contextFunc; L130 `sse.Start(\":\"+port)` binds all interfaces (0.0.0.0).\n- mcp-go sse.go handleSSE (GET /sse): no auth header check; the server mints a\n  sessionId for any caller. The sessionId is a correlation value, not a credential.\n- handleMessage (POST /message): the only gates are method==POST and a loadable\n  sessionId. No Authorization/Bearer/token/Origin/CSRF check before\n  `s.server.HandleMessage(ctx, rawMessage)` dispatches to the tools/call handler.\n- Only `Access-Control-Allow-Origin: *` is present (CORS relaxation, not auth).\nWrite tools (Create/Delete/RolloutRestart, Helm Install/Upgrade/Uninstall/Rollback)\nare all registered unless `-read-only` is set (default readOnly=false).\n\n## Runtime reproduction (no auth headers on any request)\nStarted: `k8s-mcp-server -mode sse -port 8080` with a dummy non-routable\nKUBERNETES_SERVER=https://127.0.0.1:1 (no real cluster touched).\n\n  GET  /sse                         -> HTTP 200; server mints /message?sessionId=93b3...\n  POST /message initialize          -> HTTP 202; result returned over SSE\n  POST /message tools/list          -> HTTP 202; FULL tool list returned (incl. destructive)\n  POST /message tools/call getAPIResources -> HTTP 202; handler EXECUTED:\n        error -32603 \"... Get htt",
-      "link": "https://github.com/advisories/GHSA-m932-63jc-4jqq",
-      "published": "2026-11-19T22:48:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-130007"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0037,
-      "epss_percentile": 0.31603,
-      "stack_match": [
-        "kubernetes",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-95839",
-      "title": "containerd image-triggered daemon crash via malformed digest in subject-annotated descriptor",
-      "summary": "### Impact\n\nA bug in containerd's image manifest processing causes an unrecovered panic when a child descriptor contains the `io.containerd.manifest.subject` annotation and a malformed digest. Pulling or importing such an image through the transfer service (including default CRI `PullImage` requests) crashes the containerd daemon. In Kubernetes environments, `kubelet` retries failed image pulls with backoff, allowing a pod referencing an untrusted image to repeatedly crash containerd and disrupt container operations on the worker node.\n\n### Patches\n\nThis bug has been fixed in containerd 2.4.2, 2.3.7, and 2.2.10. Users should update to these versions to resolve the issue.\n\n### Workarounds\n\nRestrict pod image references to trusted registries (for example, using a Kubernetes `ValidatingAdmissionPolicy` or admission webhook) and only pull or import images from trusted sources.\n\n### Credits\n\nThe containerd project would like to thank @melihgurlek, LEI WANG (@ssst0n3) and Haoyuan Zhang (@zj1ng7), and OpenSec Intelligence who independently discovered and responsibly disclosed this issue in accordance with the [containerd security policy](https://github.com/containerd/project/blob/main/SECURITY.md).\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n* Open an issue in [containerd](https://github.com/containerd/containerd/issues/new/choose)\n* Email us at [security@containerd.io](mailto:security@containerd.io)\n\nTo report a security issue in containerd:\n* [Report a new vulnerability](https://github.com/containerd/containerd/security/advisories/new)\n* Email us at [security@containerd.io](mailto:security@containerd.io)",
-      "link": "https://github.com/advisories/GHSA-vwhp-8p66-mq4f",
-      "published": "2026-11-19T22:46:24Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-95839"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00398,
-      "epss_percentile": 0.3477,
-      "stack_match": [
-        "kubernetes",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-115563",
-      "title": "Model Context Protocol Python SDK: OAuth client could send credentials to an authorization server chosen by the MCP server",
-      "summary": "### Summary\nIn affected versions, the SDK's OAuth client support (`mcp.client.auth`) let the MCP server a client connected to decide where the client's OAuth credentials were sent:\n\n- the authorization server metadata `issuer` was not validated on every discovery path, and\n- stored or pre-provisioned client credentials were not bound to the authorization server they belong to.\n\nA malicious or compromised MCP server could therefore direct them to a token endpoint of its choosing:\n\n- by naming its own authorization server in its protected resource metadata, or\n- by publishing none and serving metadata that presents the user's real authorization server as the `issuer`.\n\nIt would then receive the `client_secret`, authorization code and PKCE `code_verifier` meant for that real server (or, with `PrivateKeyJWTOAuthProvider`, a signed client assertion).\n\n### Am I affected?\nYes, if both of these hold:\n\n- your application uses the SDK as an MCP client over HTTP with `OAuthClientProvider`, `ClientCredentialsOAuthProvider`, `PrivateKeyJWTOAuthProvider` or the deprecated 1.x `RFC7523OAuthClientProvider` as the transport's `auth` handler;\n- it may connect to an MCP server you do not fully trust while holding credentials for a legitimate authorization server (a pre-provisioned secret or signing key, or a stored client registration).\n\nAffected versions:\n\n- 1.9.1 through 1.29.1: no `issuer` check and no credential binding on any path.\n- 2.0.0 through 2.1.1: both missing whenever the server publishes no protected resource metadata (the legacy fallback) or answers `403 insufficient_scope`.\n- Both lines, on every path: `ClientCredentialsOAuthProvider` and `PrivateKeyJWTOAuthProvider` had no way to name the authorization server their credentials belong to.\n\nNot affected:\n\n- MCP servers built with the SDK\n- stdio clients\n- clients that attach their own tokens or headers\n\nThe rating is scored for the unattended providers. With the interactive `OAuthClientProvider` a person has to start th",
-      "link": "https://github.com/advisories/GHSA-qx49-fqc8-xw99",
-      "published": "2026-11-19T22:45:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115563"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00321,
-      "epss_percentile": 0.25684,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-97698",
-      "title": "Mistune: Quadratic-time DoS in parse_link_href via unbounded parenthesis scan on empty-label links",
-      "summary": "## Resolution\n\n**Fixed in Mistune 3.3.4.** Upgrade to 3.3.4 or later.\n\n- Affected versions: `< 3.3.4`\n- First patched version: `3.3.4`\n- Fix: https://github.com/lepture/mistune/compare/v3.3.3...v3.3.4\n\nThe reported payload was reproduced against the 3.3.3 release tag and verified to scale approximately linearly against the 3.3.4 release tag.\n\n## Original report\n\nThe following report describes the issue before the fix.\n\n## Summary\n`parse_link_href` in mistune performs an unbounded parenthesis-balancing scan that runs to end-of-document on each unmatched `(`. Because the empty label `[]` bypasses the `no_close_bracket_before` high-water-mark guard, a single small document of the form `\"[](\" * N` causes O(N) openers to each drive an O(N) scan, producing O(N\u00b2) CPU on the **default** `mistune.html()` renderer with no plugins.\n\n## Root Cause\n`parse_link` matches the empty label `[]` (`parse_link_label(\"[](\",1)` returns `('', 2)`), so it reaches the `(` branch and calls `parse_link_href`. That function's scan loop (helpers.py:143-159) advances past characters and increments `level` on each `(`, never finding an unescaped `)` at `level==0`, so it runs to EOF and returns `None`. The cursor then advances only ~2 chars to the next `[](`. The `no_close_bracket_before` high-water mark that keeps the balanced-bracket link path linear is never entered because the empty label matches before that branch; `_mark_no_link_before` only advances past the 2-char label, not the href region.\n\n## Impact\nA single unauthenticated request rendering untrusted markdown pins a worker at 100% CPU for tens of seconds. Measured on default `mistune.html`, no plugins: 6KB->0.80s, 12KB->3.15s, 24KB->12.5s, 48KB->49.8s (2x input -> ~3.9x time, clean O(n\u00b2)). This is the most severe of the mistune quadratic-DoS findings.\n\n## Proof of Concept\n```python\nimport mistune\nmd = mistune.create_markdown()   # default HTML renderer, no plugins\nmd(\"[](\" * 16000)                # ~48KB input stalls a worker ~50s\n```\n\n",
-      "link": "https://github.com/advisories/GHSA-phmp-hrw4-r36r",
-      "published": "2026-11-19T22:44:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-97698"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00719,
-      "epss_percentile": 0.54644,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-97699",
-      "title": "Mistune: Quadratic-time DoS in inline image parsing (precedence_scan) bypasses not-is-image guards",
-      "summary": "## Resolution\n\n**Fixed in Mistune 3.3.4.** Upgrade to 3.3.4 or later.\n\n- Affected versions: `< 3.3.4`\n- First patched version: `3.3.4`\n- Fix: https://github.com/lepture/mistune/compare/v3.3.3...v3.3.4\n\nThe reported payload was reproduced against the 3.3.3 release tag and verified to scale approximately linearly against the 3.3.4 release tag.\n\n## Original report\n\nThe following report describes the issue before the fix.\n\n## Summary\nmistune's inline image parsing reaches `precedence_scan` for `![` openers because the two guards that keep the link path linear are both gated behind `not is_image`. A small default-renderer document of the form `\"![\" * N + \"x\" + \"]\" * N` produces O(N\u00b2) CPU with no plugins.\n\n## Root Cause\nFor `![` openers, `is_image` is True, so both linearizing guards are skipped: `if not is_image and pos <= state.no_link_before` (inline_parser.py:141) and `has_nested_link = not is_image and _label_contains_link(...)` (:171). Execution reaches `precedence_scan` (:179) which runs `sc.search(state.src, mark_pos, end_pos)` over the whole image body \u2014 O(n) per outer opener, x O(n) openers -> O(n\u00b2). `max_image_depth` never fires because the failing scans never produce an image token (`image_depth` stays 0).\n\n## Impact\nA single unauthenticated request pins a worker at 100% CPU. Measured on default `mistune.html`, no plugins: 6KB->0.28s, 12KB->1.07s, 24KB->4.20s, 48KB->15.8s (2x input -> ~3.8x time).\n\n## Proof of Concept\n```python\nimport mistune\nmd = mistune.create_markdown()   # default, no plugins\nmd(\"![\" * 16000 + \"x\" + \"]\" * 16000)\n```\n\n## Attack Chain\n1. Entry: rendered markdown -> `\"![\"*N + \"x\" + \"]\"*N` (no plugins). Guard: none on input size. Bypass proof: no global cap.\n2. Check: `not is_image` guards at inline_parser.py:141 (`no_link_before`) and :171 (`_label_contains_link`). Guard: high-water mark + nested-link short-circuit. Bypass proof: `is_image` is True for `![`, so BOTH guards are gated out; `max_image_depth` (:checked after) measured flat across",
-      "link": "https://github.com/advisories/GHSA-ww7q-mxrj-5ffg",
-      "published": "2026-11-19T22:44:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-97699"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00668,
-      "epss_percentile": 0.52708,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-121717",
-      "title": "fzf: Predictable FIFO path in zsh completion allows local symlink attack / arbitrary file overwrite as the victim user (_fzf_feed_fifo)",
-      "summary": "### Summary\n\n`shell/completion.zsh` feeds every trigger-driven zsh completion through a FIFO at a predictable, PID-based path in shared `/tmp` (`fzf-complete-fifo-$$`), without checking the failure of `rm -f`/`mkfifo`. On a multi-user host, another local user can pre-create that path as a symlink to a victim-writable file (e.g. `~/.bashrc`), causing the victim's own completion to overwrite it with the completion stream \u2014 with attacker-influenced content (e.g. via process names in `ps` output), escalating to code execution at the victim's next login. A pre-created plain FIFO instead leaks/blocks on the completion stream.\n\n### Reporter / Credits:\nSai Sreewathsa Kovalluri, Shon Babu and Kannan K (Researchers), Innspark Solutions https://innspark.in/\n\n### Details\n\n`shell/completion.zsh` (tag 0.74.4, commit a140afeb):\n\n- line ~246: `fifo=\"${TMPDIR:-/tmp}/fzf-complete-fifo-$$\"` \u2014 predictable name; shell PIDs are low/guessable and a wide range can be pre-created.\n- lines 216-220, verbatim:\n\n```zsh\n_fzf_feed_fifo() {\n  command rm -f \"$1\"     # fails (EPERM) on an attacker-owned entry in sticky /tmp \u2014 error ignored\n  mkfifo \"$1\"            # fails (EEXIST) \u2014 exit status unchecked\n  cat <&0 > \"$1\" &|      # follows the attacker symlink / blocks on the attacker FIFO\n}\n```\n\nAttack modes (no race required):\n\n1. **File clobber \u2192 code execution:** `> \"$1\"` follows a pre-created symlink, truncating/overwriting a victim-writable file with the completion input stream using the victim's privileges. For kill-completion the stream includes attacker-influenced process names, so planted lines can land in the victim's startup file.\n2. **Information leak / hang:** a pre-created plain FIFO makes the victim's `cat` block until the attacker reads the stream (full `ps` output, host lists, variable names).\n\n### PoC\n\nMechanism verified with the function extracted byte-for-byte from `shell/completion.zsh` (only `&|` \u2192 `&`, a syntax port irrelevant to the flaw), reproducing the cross-user `/tmp` pr",
-      "link": "https://github.com/advisories/GHSA-7rj6-7pqx-v7rm",
-      "published": "2026-11-19T22:43:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-121717"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00172,
-      "epss_percentile": 0.06683,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-119349",
-      "title": "Next.js: Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments",
-      "summary": "Next.js App Router applications that pass binary arguments (such as Uint8Array or Blob values) to functions using the `use cache` directive can produce identical cache keys for distinct arguments, allowing cached results to be shared across users \u2014 cross-user disclosure of cached data or cache poisoning. This affects applications using `use cache` with binary arguments.",
-      "link": "https://github.com/advisories/GHSA-rhh4-g77r-r9qj",
-      "published": "2026-11-19T22:20:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-119349"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00391,
-      "epss_percentile": 0.33977,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-119350",
-      "title": "Next.js: Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params",
-      "summary": "Self-hosted Next.js applications served with `next start` and built with `cacheComponents: true` but without Partial Prefetching accept a request-supplied route param value as a prerender placeholder. One unauthenticated GET request can poison the fallback shell cache entry that a family of routes shares.\n\nSuch a route is served from a shell that keeps its never-prerenderable params as placeholders, so every value of those params shares one cache entry. A path segment equal to the percent-encoded, bracketed name of its own route param is treated as an unresolved placeholder, and only that param is deferred. A layout above it then renders its concrete value into the shell during the blocking render, and the result, including its HTTP status, is stored under the shared key.\n\nDepending on the application, the stored entry is one of the following:\n\n- A persistent 404, when the layout rejects the value with `notFound()`: served to every URL under the shell key with `\"revalidate\": false`, across server restarts, with no error logged.\n- A substituted param value, when the layout renders the value: the server-rendered HTML renders the attacker's value for that param in place of the visitor's own. A JavaScript client corrects it on hydration. No markup or script injection is possible, and no data is disclosed.\n\n### Preconditions\n\n1. `cacheComponents: true` with `partialPrefetching` unset or `false`.\n2. Self-hosted serving with `next start`.\n3. A dynamic route with a prerenderable param (`generateStaticParams`) whose requested value was not generated at build time.\n4. At least two never-prerenderable params below it: a layout reading the shallower one inside a Suspense boundary, and a deeper one the request supplies as the placeholder.\n5. A blocking fallback shell.\n\n### Workarounds\n\nSet `partialPrefetching: true` in `next.config`. Otherwise, apps should upgrade to the patched version as soon as possible.",
-      "link": "https://github.com/advisories/GHSA-vvgp-ww4w-46vf",
-      "published": "2026-11-19T22:18:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-119350"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00219,
-      "epss_percentile": 0.1258,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "https://www.wiz.io/blog/phpaftershell-critical-php-rce-vulnerabilities-cve-2026-126714",
-      "title": "phpAfterShell and Critical PHP RCE Vulnerabilities: Everything You Need To Know",
-      "summary": "Detect and mitigate phpAfterShell, and additional critical vulnerabilities from PHP's November release that may enable remote code execution.",
-      "link": "https://www.wiz.io/blog/phpaftershell-critical-php-rce-vulnerabilities-cve-2026-126714",
-      "published": "2026-11-19T21:46:23+00:00",
-      "source": "Wiz Research",
-      "tags": [
-        "cloud",
-        "research",
-        "misconfig"
-      ],
-      "cve_ids": [
-        "CVE-2026-126714"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-123890-critical-authentication-bypass-vmware-vcenter",
-      "title": "CVE-2026-123890: Critical Authentication Bypass in VMware vCenter",
-      "summary": "Overview On November 19, 2026, Broadcom published VMware Security Advisory VMSA-2026-0009 , addressing five vulnerabilities in VMware products. The most severe of these, CVE-2026-123890 , is an authentication bypass using an alternate path or channel ( CWE-288 ) in the VMware Directory Service component of vCenter. Broadcom assigned the vulnerability a critical CVSSv3 score of 9.8 . A malicious actor with network access to an affected vCenter deployment may exploit CVE-2026-123890 without credentials to bypass authentication and gain unauthorized access to the system as the Administrator user. Mandiant privately reported the issue to Broadcom. Also, Mandiant/Google Threat Intelligence confirmed in-the-wild exploitation of CVE-2026-123890 by Chinese state-linked threat actor ARMORY CASTLE as early as September 2026. CVE-2026-123890 is distinct from the vCenter authentication bypass vulnerability CVE-2026-59309 that Broadcom addressed earlier in 2026. The vendor FAQ states that all vCenter systems below the versions fixed by VMSA-2026-0009 require the new update, including systems that already received the earlier fix. Broadcom characterizes the vCenter update as an emergency change requiring prompt action. Mitigation guidance Vendor-provided updates are available for CVE-2026-123890. Broadcom lists no workaround, and the patches cannot be applied using vCenter Quick Patch. Organizations should prioritize upgrading vCenter on an emergency basis, outside of normal patch cycles, using the standard update mechanism for their deployment. VMware Product Affected Version Fixed Version / Patch VMware Cloud Foundation / vSphere Foundation 9.1.x.x 9.1.1.0200 VMware Cloud Foundation / vSphere Foundation 9.0.x.x 9.0.2.0200 VMware vCenter Server 8.0 8.0 U3m VMware vCenter Server 7.0 Contact Broadcom Support (extended-support customers) VMware Cloud Foundation 5.x 5.2.5 VMware Telco Cloud Platform 3.0, 4.x, 5.0.x, 5.1.x, 5.2 8.0 U3m \u2014 KB463116 VMware Telco Cloud Infrastructure 3.0",
-      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-123890-critical-authentication-bypass-vmware-vcenter",
-      "published": "2026-11-19T21:06:24+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-123890",
-        "CVE-2026-59309"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.2286,
-      "epss_percentile": 0.97782,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-121707",
-      "title": "Effect: ReDoS in Schema.TemplateLiteral compiled regex",
-      "summary": "### Impact\n\n`Schema.TemplateLiteral` compiles each `Schema.String` span to the lazy wildcard `[\\s\\S]*?` and decodes input by running the resulting regular expression against it. When a template has two or more `Schema.String` spans, for example:\n\n```ts\nSchema.TemplateLiteral(Schema.String, \":\", Schema.String, \":\", Schema.String, \"X\")\n```\n\nthe regex contains several ambiguous wildcards. A non-matching input makes the backtracking engine try combinations across all of them, so matching time grows cubically with input length. A 5,000-character string of `:` characters blocks the event loop for about 15 seconds.\n\nApplications that decode untrusted input with such a schema are affected. That includes `Schema.decodeUnknown`, `Schema.decodeUnknownSync` and `Schema.is`, and anything built on them, such as `HttpApi` request payloads and `@effect/rpc` payloads.\n\n### Patches\n\nFixed in `effect@3.22.1` (#6761). Template literals whose spans are all `Schema.String` are now matched with a linear left-to-right scan instead of a regular expression.\n\n### Workarounds\n\nIf you can't upgrade, check the input length before the template literal runs. Adding `Schema.maxLength` with `.pipe` doesn't help, because the filter runs after the regex. Put the length check on the input side instead:\n\n```ts\nSchema.compose(Schema.String.pipe(Schema.maxLength(256)), MyTemplateLiteral)\n```\n\nRejecting oversized request bodies before they reach the schema also works.",
-      "link": "https://github.com/advisories/GHSA-7589-6fvf-x4pw",
-      "published": "2026-11-19T20:51:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-121707"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00301,
-      "epss_percentile": 0.233,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77597",
-      "title": "iSponsorBlockTV: SSRF via Malicious SSDP Response Spoofing in Local Device Discovery",
-      "summary": "### Summary\niSponsorBlockTV discovers local smart TV devices via SSDP (Simple Service Discovery Protocol). The `LOCATION` URL from SSDP responses is used to fetch device capabilities without URL validation. A local network attacker can craft a malicious SSDP response with a `LOCATION` pointing to any internal HTTP service, causing SSRF when the application fetches device information.\n\n### Details\nIn `src/iSponsorBlockTV/dial_client.py:92-96`, upon receiving an SSDP M-SEARCH response, the code extracts the `LOCATION` header and makes an HTTP GET request to that URL to retrieve DIAL device description XML. The URL is not validated against expected device IP ranges, expected schemes, or private/internal IP blocklists. Any device on the LAN (or a rogue WiFi access point) can respond to SSDP M-SEARCH queries with a `LOCATION` pointing to internal services.\n\n### Impact\nBlind SSRF against internal network services; access to home router admin interfaces, smart home controllers, NAS admin pages, and other local services; potential credential disclosure from fetched responses.\nIt'd be able to either:\n- show a debug log  line `- __main__ - DEBUG - Discovered device at <attacker controlled URL>, processing...` (which is normally disabled and won't be shown in the actual configurator since textual doesn't show logs unless running in dev mode and launching a second terminal to inspect log output), and make a single GET request to an \"attacker controlled\" url which does not leak any information back to iSponsorBlockTV itself and swallows any sort of error (parsing or an invalid response from not being a real DIAL server) (`dial_client.py` L131-L133) \n- make single POST request to a partly \"attacker controlled\" url since it'll always have the suffix `/YouTube` appended (`dial_client.py` L139) , with predefined headers `{\"Origin\": \"https://www.youtube.com\",\"Content-Type\": \"application/x-www-form-urlencoded\",}` (`dial_client.py` L158-L161) and a predefined payload `{\"pairingCode\": <",
-      "link": "https://github.com/advisories/GHSA-56v3-jrq2-4q9m",
-      "published": "2026-11-19T20:50:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77597"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00159,
-      "epss_percentile": 0.05103,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-128073",
-      "title": "gosaml2: Unauthenticated panic decrypting an EncryptedAssertion with a short or empty CipherValue",
-      "summary": "### Summary\n\nAn attacker who can supply a crafted SAML Response for parsing can crash a `gosaml2` service provider by sending an `EncryptedAssertion` with AES-GCM encryption metadata and a `CipherValue` shorter than the GCM nonce size (12 bytes). The library panics with `slice bounds out of range` before any validation completes.\n\nThis is a **distinct issue from [GHSA-hwqm-qvj9-4jr2](https://github.com/russellhaering/gosaml2/security/advisories/GHSA-hwqm-qvj9-4jr2)**, which addressed panics in the AES-CBC decryption path (commit [`3418f9ae09063ff8df0ce1bd93f24e538e614def`](https://github.com/russellhaering/gosaml2/commit/3418f9ae09063ff8df0ce1bd93f24e538e614def), included in `v0.10.0`). That fix added a block-size check for CBC but left the AES-GCM path completely unprotected.\n\n### Details\n\n`ValidateEncodedResponse()` decrypts `EncryptedAssertion` nodes before signature or content validation completes. There are two call sites:\n\n1. **Signed Response branch** -- [`decode_response.go#L341`](https://github.com/russellhaering/gosaml2/blob/636e7dda202a4d669644e72404a82616ffcbe004/decode_response.go#L341)\n2. **Unsigned Response branch** -- [`decode_response.go#L388`](https://github.com/russellhaering/gosaml2/blob/636e7dda202a4d669644e72404a82616ffcbe004/decode_response.go#L388)\n\nBoth call `decryptAssertions()` ([`decode_response.go#L150-L200`](https://github.com/russellhaering/gosaml2/blob/636e7dda202a4d669644e72404a82616ffcbe004/decode_response.go#L150-L200)), which calls `EncryptedAssertion.DecryptBytes()` at [`decode_response.go#L176`](https://github.com/russellhaering/gosaml2/blob/636e7dda202a4d669644e72404a82616ffcbe004/decode_response.go#L176).\n\nInside `DecryptBytes()` ([`types/encrypted_assertion.go#L34-L92`](https://github.com/russellhaering/gosaml2/blob/636e7dda202a4d669644e72404a82616ffcbe004/types/encrypted_assertion.go#L34-L92)), the AES-GCM branch ([line 53, `case MethodAES128GCM, MethodAES192GCM, MethodAES256GCM:`](https://github.com/russellhaering/gosaml2/b",
-      "link": "https://github.com/advisories/GHSA-5hj8-q7fv-qrj6",
-      "published": "2026-11-19T20:49:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-128073"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00231,
-      "epss_percentile": 0.14099,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-63193",
-      "title": "October: Media Library Crop Handler Bypasses Upload Extension Allowlist",
-      "summary": "The Media Library upload handler validates the destination filename against an extension allowlist (`default_extensions`), rejecting types such as `php`, `phtml`, `html`, and `htm`. The image crop handler (`MediaManager::onCropImage` / `cropImage`) did not perform this check. The destination filename was taken from user input, the extension was extracted from it, and the staged bytes were written to the public media folder under that attacker-chosen extension. Combined with the fact that upload accepts any file contents under an allowlisted extension (a PHP payload disguised as `.jpg`), and that the zero-dimension crop branch performs a byte-for-byte `File::copy` rather than re-encoding the pixels, an authenticated backend user with the `media.library.create` permission could write a file with arbitrary extension and arbitrary contents into the public media folder.\n\n**Scope of impact depends on web server configuration.** On a default October CMS install (using the shipped Apache `.htaccess` or `nginx.conf`), PHP execution from the media folder is blocked, so the realistic outcome is stored XSS via `.html` or `.svg` files served from the application origin. On a server that is configured to execute PHP inside the media directory (a non-default but real-world misconfiguration), the same bug becomes remote code execution.\n\n### Impact\n- Bypass of the Media Library extension allowlist that the upload path enforces\n- Stored XSS on default installs: attacker can write `.html` or `.svg` files served from the application origin, executing script in the browser of any backend user or visitor who opens the file\n- SVG sanitizer bypass: the `Html::cleanVector` step only runs on the upload path, so uploading malicious SVG content as a `.jpg` and then cropping it to `.svg` skips the sanitizer entirely\n- Remote code execution on deployments that execute PHP inside the media folder (non-default)\n- Requires authenticated backend access with the `media.library.create` permission\n\n###",
-      "link": "https://github.com/advisories/GHSA-mqwx-84vv-mp26",
-      "published": "2026-11-19T20:46:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63193"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0056,
-      "epss_percentile": 0.47359,
-      "stack_match": [
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-76807",
-      "title": "Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server",
-      "summary": "The self-hosted `todoist-mcp-http` server accepts browser-origin MCP requests with attacker-controlled `Host` and `Origin` headers. A malicious website can use DNS rebinding to route its own origin to a victim's local `127.0.0.1` MCP server, then invoke Todoist MCP tools without a caller credential.\n\nThis affects `github.com/Doist/todoist-mcp` at commit `d2903e0d945d2a559d71c091337ad6380511e62f`, package version `10.3.1`, when the optional Streamable HTTP server is running. The stdio entrypoint is not browser-reachable. The vulnerable browser-reachable component is `todoist-mcp-http`.\n\nThe documented HTTP server mode runs all MCP tools with the operator's `TODOIST_API_KEY` and binds to loopback by default:\n\n```bash\nTODOIST_API_KEY=your-key npx -p @doist/todoist-mcp todoist-mcp-http\n```\n\n`src/main-http.ts:28-30` sets the HTTP bind host and port:\n\n```ts\nconst PORT = Number.parseInt(process.env.PORT || '3000', 10)\nconst HOST = process.env.HOST || '127.0.0.1'\nconst LISTEN_HOST = normalizeListenHost(HOST)\n```\n\n`src/main-http.ts:88-99` dispatches `POST /mcp` to `StreamableHTTPServerTransport` without validating `Host` or `Origin`:\n\n```ts\napp.post(\n    '/mcp',\n    requireValidTodoistToken({ type: 'static', apiKey: todoistApiKey, baseUrl }),\n    async (req: Request, res: Response) => {\n        const transport = new StreamableHTTPServerTransport({\n            sessionIdGenerator: undefined,\n        })\n\n        const server = getMcpServer({ todoistApiKey, baseUrl })\n        await server.connect(transport)\n        await transport.handleRequest(req, res, req.body)\n    },\n)\n```\n\n`src/middleware/require-valid-todoist-token.ts:105-117` validates the configured server-side Todoist token and then forwards the request. It does not authenticate the browser caller:\n\n```ts\nconst valid = await getValidation()\n\nif (valid) {\n    next()\n    return\n}\n```\n\n`src/mcp-server.ts:215-285` registers Todoist read and write tools against the server-side Todoist API client, including `add-tasks`, `comp",
-      "link": "https://github.com/advisories/GHSA-833v-v58w-294h",
-      "published": "2026-11-19T20:38:35Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-76807"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00216,
-      "epss_percentile": 0.12102,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-62964",
-      "title": "Gortex: Arbitrary file write / repo-confinement escape in `write_file` / `edit_file` / `move_inline` MCP tools \u2192 code execution",
-      "summary": "### Summary\nGortex is an MCP server exposing `write_file`, `edit_file`, and `move_inline` tools. `resolveFilePath` **exempts absolute paths** from confinement, and the write handlers \u2014 unlike `read_file` / `get_symbol_source` \u2014 **never call `guardSymlinkWithinRepo`**. A single MCP `write_file` call with an absolute path writes any file the daemon user can, **outside every indexed repo root** (`AtomicWriteFile`'s `MkdirAll` auto-creates missing parents). Writing `~/.zshrc`, `~/.bashrc`, `.git/hooks/pre-commit`, or a cron/systemd unit yields code execution on the next shell/commit. This directly violates the project's own `SECURITY.md` invariant *\"File-path resolution is **confined to indexed repository roots**\"*\n\n### Affected\n`internal/mcp/tools_fileops.go` (+ `tools_move_inline.go`), HEAD `28fa017` (v0.53.0).\n**CWE-22** (Path Traversal) / **CWE-73** (External Control of File Name/Path) \u2192 **CWE-94** (code execution).\n\n### Vulnerable code\n`internal/mcp/tools_fileops.go:54-62` `resolveFilePath` exempts absolute paths from the repo-root confinement; the write sink at `:793` (`AtomicWriteFile`, `write_file`) and `:676` (`edit_file`) run with **no** `guardSymlinkWithinRepo`. The asymmetry is the bug: `read_file` (`:940`) and `get_symbol_source` **do** call `guardSymlinkWithinRepo`; the write path does not.\n\n### PoC (executed)\nThe PoC (`internal/mcp/poc_arbitrary_write_test.go`, package `mcp`) builds the server via the repo's **own** `newSingleRepoServer(t)` harness and invokes the real `srv.handleWriteFile` through the genuine `mcplib.CallToolRequest` shape:\n```\n=== RUN   TestPoC_ArbitraryWrite_AbsolutePathEscapesEveryRepoRoot\n  indexed repo root (confinement boundary): /var/folders/.../myrepo\n  handler status=created path=/var/folders/.../003/pwn.txt bytes_written=50\n  PROOF: /var/folders/.../003/pwn.txt now exists with attacker bytes \"OWNED-by-gortex-write_file-outside-every-repo-root\"\n  RCE-PATH PROOF: wrote /var/folders/.../004/victim-home/.zshrc (parent dir auto-crea",
-      "link": "https://github.com/advisories/GHSA-w42c-h7hr-f67p",
-      "published": "2026-11-19T20:36:31Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62964"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00154,
-      "epss_percentile": 0.04655,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-75518",
-      "title": "DOMShell: domshell_eval classified as read-tier can execute side-effecting JavaScript without --allow-write",
-      "summary": "### Summary\n\nThe `domshell_eval` MCP tool (and the `eval` command inside `domshell_execute`) was classified as **read-tier**, allowing it to run without the `--allow-write` server flag. However, `eval` and the write-tier `js` command dispatch to the same handler in the extension and call CDP `Runtime.evaluate` with the raw expression string and no side-effect gate. Any JavaScript expression could therefore mutate DOM, window, or global state through `domshell_eval` without the operator's `--allow-write` authorization.\n\nThe tool description explicitly promised \"(read-only) ... always available in read-only mode\" \u2014 the misclassification contradicted the documented contract, not just an implicit one.\n\n### Impact\n\nNo new capability was exposed \u2014 the same write access was already available via `domshell_js` with `--allow-write` \u2014 but the tier misclassification meant:\n\n- MCP hosts (Claude Desktop, Cursor, etc.) rendered the wrong approval UI (`readOnlyHint: true`)\n- Server-side tier flags (`--allow-write`) misrepresented what an AI agent was actually authorized to do\n- Audit logs and deny messages labeled write-tier activity as read-tier\n- Downstream tools and analysis relying on the tier separation could over-trust an `eval` call\n\nFraming: OWASP LLM Top 10 LLM06 (Excessive Agency), NIST AI RMF (tool permission boundary + human-approval fidelity), CWE-863 (Incorrect Authorization).\n\nThe reporter's main framing: **the MCP approval UI and server-side permission model can misrepresent the actual agency being granted to an AI agent.**\n\n### Affected code paths\n\n- `mcp-server/index.ts:113` \u2014 `WRITE_COMMANDS` excluded `eval`\n- `mcp-server/index.ts:879-887` \u2014 `domshell_eval` registered with `ANNO_READ` and description asserting read-only\n- `src/background/index.ts:1849-1854` \u2014 `js` and `eval` both dispatch to `handleJs(rawCode)`\n- `src/background/index.ts:3282` \u2014 `handleJs` calls `cdp.evaluateJs(code)`\n- `src/background/cdp_client.ts:660-667` \u2014 `evaluateJs` sends `Runtime.evaluat",
-      "link": "https://github.com/advisories/GHSA-vg83-hcp4-5qcc",
-      "published": "2026-11-19T16:10:53Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75518"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00109,
-      "epss_percentile": 0.01252,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-71535",
-      "title": "Mareforma: Unsigned Claims Can Be Promoted to REPLICATED via Missing Signature Enforcement in Convergence Path",
-      "summary": "### Summary\n\n`mareforma` 0.3.3 contains a critical integrity flaw in the REPLICATED convergence logic (`_maybe_update_replicated_unlocked()` in `mareforma/db/core.py:1300-1319`). The peer-selection SQL query that determines whether two independent claims \"agree\" on the same anchor does not verify that either claim carries a valid cryptographic signature from an enrolled validator key. Because `rekor_enabled=False` is the default and automatically sets `transparency_logged=1` at insert time, every claim \u2014 signed or not \u2014 immediately satisfies the convergence precondition. An attacker with no Mareforma key can write an unsigned claim to a shared graph, cause it to converge with a legitimate signed peer claim, and have it promoted to `REPLICATED` status. The forged `REPLICATED` row is then returned by the default trust query (`graph.query(min_support=\"REPLICATED\")`), allowing the attacker to inject false trust signals into any downstream consumer relying on `REPLICATED` as a multi-party endorsement guarantee.\n\n### Details\n\n**Root cause \u2014 `mareforma/db/core.py:1300-1319`**\n\nThe convergence function `_maybe_update_replicated_unlocked()` selects peer claims using a SQL query that filters on `status`, `unresolved`, `transparency_logged`, and `artifact_hash`, but contains no predicate on `signature_bundle` or enrolled-key identity:\n\n```python\n# mareforma/db/core.py:1300-1319\nrows = conn.execute(\n    f\"\"\"\n    SELECT DISTINCT c.claim_id, c.generated_by\n    FROM claims c, json_each(c.supports_json) j\n    WHERE j.value IN ({placeholders})\n      AND c.claim_id != ?\n      AND c.generated_by != ?\n      AND c.support_level != 'ESTABLISHED'\n      AND c.status = 'open'\n      AND c.unresolved = 0\n      AND c.transparency_logged = 1\n      AND (\n          c.artifact_hash IS NULL\n          OR ? IS NULL\n          OR c.artifact_hash = ?\n      )\n    \"\"\",\n```\n\nOnce peer rows are collected, the sink at `core.py:1324-1334` promotes all matching claim IDs \u2014 including the attacker's \u2014 to `REPLIC",
-      "link": "https://github.com/advisories/GHSA-8776-qf3h-26r3",
-      "published": "2026-11-19T16:07:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71535"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00088,
-      "epss_percentile": 0.00385,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-58213",
-      "title": "NATS Server: MQTT SUBSCRIBE Protocol Injection via Leaf Node/Route Forwarding allows arbitrary NATS command injection",
-      "summary": "### Background\n\nNATS.io is a high performance open source pub-sub distributed communication technology, built for the cloud, on-premise, IoT and edge computing.\n\nThe NATS Server supports MQTT clients and can bridge MQTT activity into NATS subjects across routes and leafnode connections.\n\n### Problem Description\n\nAn MQTT client could include protocol control characters in subscription filters that were later forwarded as NATS protocol data to route or leafnode connections.\n\nThis could corrupt the forwarded protocol stream and allow injection of unintended NATS protocol operations, potentially across cluster nodes or accounts where route or gateway connections are present.\n\nAnonymous MQTT deployments are higher risk because no credentials are required to reach the affected parser. Authenticated deployments are still affected for clients allowed to create MQTT subscriptions.\n\n### Affected Versions\n\nVersions v2.14.0, v2.12.8 and below are vulnerable. The issue is fixed in v2.14.1 and v2.12.9.\n\n### Workarounds\n\nDisable anonymous MQTT access where it is not required. Deployments that need MQTT have no known complete workaround other than upgrading.\n\n### References\n\n * GHSA advisory: <https://github.com/nats-io/nats-server/security/advisories/GHSA-qrcv-3558-gj4f>\n * Credit: @thesecguy45",
-      "link": "https://github.com/advisories/GHSA-qrcv-3558-gj4f",
-      "published": "2026-11-19T15:56:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-58213"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00441,
-      "epss_percentile": 0.39072,
-      "stack_match": [
         "github"
       ]
     }
