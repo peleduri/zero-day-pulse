@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-19 23:58 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 3 &nbsp;|&nbsp; 📈 High EPSS: 3 &nbsp;|&nbsp; 🟠 Zero-Day: 7 &nbsp;|&nbsp; 🟡 High: 31 &nbsp;|&nbsp; 🎯 My Stack: 31 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-20 05:32 UTC &nbsp;|&nbsp; **Total:** 57 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 📈 High EPSS: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 47 &nbsp;|&nbsp; 🎯 My Stack: 46 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,55 +20,49 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
-## ⚡ Changed since last run (27)
+## ⚡ Changed since last run (19)
 
-- 🎯 New My Stack hit: CVE-2026-115563 [python, github] — Model Context Protocol Python SDK: OAuth client could send credentials to an authorization server chosen by the MCP server <https://github.com/advisories/GHSA-qx49-fqc8-xw99>
-- 🎯 New My Stack hit: CVE-2026-119349 [github] — Next.js: Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments <https://github.com/advisories/GHSA-rhh4-g77r-r9qj>
-- 🎯 New My Stack hit: CVE-2026-119350 [github] — Next.js: Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params <https://github.com/advisories/GHSA-vvgp-ww4w-46vf>
-- 🎯 New My Stack hit: CVE-2026-121707 [github] — Effect: ReDoS in Schema.TemplateLiteral compiled regex <https://github.com/advisories/GHSA-7589-6fvf-x4pw>
-- 🎯 New My Stack hit: CVE-2026-121717 [github] — fzf: Predictable FIFO path in zsh completion allows local symlink attack / arbitrary file overwrite as the victim user (_fzf_feed_fifo) <https://github.com/advisories/GHSA-7rj6-7pqx-v7rm>
-- 🎯 New My Stack hit: CVE-2026-128073 [github] — gosaml2: Unauthenticated panic decrypting an EncryptedAssertion with a short or empty CipherValue <https://github.com/advisories/GHSA-5hj8-q7fv-qrj6>
-- 🎯 New My Stack hit: CVE-2026-129221 [python, github] — NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels <https://github.com/advisories/GHSA-9ffx-rrgx-mhgx>
-- 🎯 New My Stack hit: CVE-2026-129225 [python, github] — NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains <https://github.com/advisories/GHSA-xfcv-m889-fmqg>
-- 🎯 New My Stack hit: CVE-2026-129226 [python, github] — NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings <https://github.com/advisories/GHSA-w3pv-xfw4-ghr7>
-- 🎯 New My Stack hit: CVE-2026-129227 [python, github] — NLTK: Uncontrolled recursion in Tree.fromlist causes denial of service via deeply nested list input <https://github.com/advisories/GHSA-63wh-5r5m-wxr7>
-- 🎯 New My Stack hit: CVE-2026-129228 [python, github] — NLTK: Uncontrolled recursion in Toolbox settings helpers causes denial of service via deeply nested input <https://github.com/advisories/GHSA-f2h2-f4fc-p978>
-- 🎯 New My Stack hit: CVE-2026-129230 [python, github] — NLTK: Uncontrolled recursion in WordNet Synset hypernym walkers (max_depth/min_depth/hypernym_paths/hypernym_distances) causes DoS <https://github.com/advisories/GHSA-53pg-5qp8-mhvr>
-- 🎯 New My Stack hit: CVE-2026-129233 [github] — NLTK: StreamBackedCorpusView constructor os.stat leaks out-of-root file existence, size, and mtime bypassing pathsec ENFORCE <https://github.com/advisories/GHSA-w674-vqhw-g3pg>
-- 🎯 New My Stack hit: CVE-2026-129234 [python, github] — NLTK: Untrusted search path in prover9/mace4 config allows local code execution via relative binary_location <https://github.com/advisories/GHSA-cc5r-64rf-75hg>
-- 🎯 New My Stack hit: CVE-2026-130007 [kubernetes, github] — k8s-mcp-server: Missing authentication on default SSE/HTTP transport allows unauthenticated Kubernetes tool execution <https://github.com/advisories/GHSA-m932-63jc-4jqq>
-- 🎯 New My Stack hit: CVE-2026-58213 [github] — NATS Server: MQTT SUBSCRIBE Protocol Injection via Leaf Node/Route Forwarding allows arbitrary NATS command injection <https://github.com/advisories/GHSA-qrcv-3558-gj4f>
-- 🎯 New My Stack hit: CVE-2026-62964 [github] — Gortex: Arbitrary file write / repo-confinement escape in `write_file` / `edit_file` / `move_inline` MCP tools → code execution <https://github.com/advisories/GHSA-w42c-h7hr-f67p>
-- 🎯 New My Stack hit: CVE-2026-63193 [nginx, github] — October: Media Library Crop Handler Bypasses Upload Extension Allowlist <https://github.com/advisories/GHSA-mqwx-84vv-mp26>
-- 🎯 New My Stack hit: CVE-2026-71535 [python, github] — Mareforma: Unsigned Claims Can Be Promoted to REPLICATED via Missing Signature Enforcement in Convergence Path <https://github.com/advisories/GHSA-8776-qf3h-26r3>
-- 🎯 New My Stack hit: CVE-2026-75518 [github] — DOMShell: domshell_eval classified as read-tier can execute side-effecting JavaScript without --allow-write <https://github.com/advisories/GHSA-vg83-hcp4-5qcc>
-- 🎯 New My Stack hit: CVE-2026-76807 [github] — Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server <https://github.com/advisories/GHSA-833v-v58w-294h>
-- 🎯 New My Stack hit: CVE-2026-77597 [github] — iSponsorBlockTV: SSRF via Malicious SSDP Response Spoofing in Local Device Discovery <https://github.com/advisories/GHSA-56v3-jrq2-4q9m>
-- 🎯 New My Stack hit: CVE-2026-83816 [github] — CodeWhale: exec_shell parallel-readonly classifier auto-approves fd/rg/git grep exec flags enabling silent RCE <https://github.com/advisories/GHSA-3mgh-93r5-r7jf>
-- 🎯 New My Stack hit: CVE-2026-83817 [github] — CodeWhale: Automation auto_approve defaults to true, bypassing the task-path hardening fix for silent recurring agent execution <https://github.com/advisories/GHSA-8hp3-xxrg-v9c8>
-- 🎯 New My Stack hit: CVE-2026-95839 [kubernetes, github] — containerd image-triggered daemon crash via malformed digest in subject-annotated descriptor <https://github.com/advisories/GHSA-vwhp-8p66-mq4f>
-- 🎯 New My Stack hit: CVE-2026-97698 [python, github] — Mistune: Quadratic-time DoS in parse_link_href via unbounded parenthesis scan on empty-label links <https://github.com/advisories/GHSA-phmp-hrw4-r36r>
-- 🎯 New My Stack hit: CVE-2026-97699 [python, github] — Mistune: Quadratic-time DoS in inline image parsing (precedence_scan) bypasses not-is-image guards <https://github.com/advisories/GHSA-ww7q-mxrj-5ffg>
+- 🎯 New My Stack hit: CVE-2026-103033 [github] — ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData <https://github.com/advisories/GHSA-gfwj-45pc-w6r5>
+- 🎯 New My Stack hit: CVE-2026-114516 [linux, github, windows] — Etherpad: Pre-auth arbitrary file read <https://github.com/advisories/GHSA-mc8w-wjhw-45x5>
+- 🎯 New My Stack hit: CVE-2026-58210 [github] — NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets <https://github.com/advisories/GHSA-r72h-j7qq-v6qg>
+- 🎯 New My Stack hit: CVE-2026-59988 [github] — django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS <https://github.com/advisories/GHSA-86mf-q4h5-69gp>
+- 🎯 New My Stack hit: CVE-2026-62337 [github] — snark-verifier: Halo 2 aggregation circuit mishandles point-at-infinity proof elements <https://github.com/advisories/GHSA-x26x-7f4v-cqx7>
+- 🎯 New My Stack hit: CVE-2026-62955 [github] — baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass) <https://github.com/advisories/GHSA-2pj4-v76f-wjvx>
+- 🎯 New My Stack hit: CVE-2026-63344 [github] — Refitter allows arbitrary code execution through unescaped OpenAPI content-type values <https://github.com/advisories/GHSA-p32v-8v8j-j534>
+- 🎯 New My Stack hit: CVE-2026-63345 [github] — Refitter allows arbitrary code execution through unescaped OpenAPI paths <https://github.com/advisories/GHSA-3fhm-p725-h3g3>
+- 🎯 New My Stack hit: CVE-2026-63346 [github] — Refitter allows code execution through unescaped OpenAPI header parameter names <https://github.com/advisories/GHSA-58x9-vjvp-6mx8>
+- 🎯 New My Stack hit: CVE-2026-63415 [github] — Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php) <https://github.com/advisories/GHSA-c3cj-3p6p-j822>
+- 🎯 New My Stack hit: CVE-2026-77312 [github] — Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429) <https://github.com/advisories/GHSA-p34x-fmph-9fjx>
+- 🎯 New My Stack hit: CVE-2026-77313 [github] — Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU <https://github.com/advisories/GHSA-pfg2-w999-497v>
+- 🎯 New My Stack hit: CVE-2026-77315 [github] — Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation <https://github.com/advisories/GHSA-2mr3-rxrq-238c>
+- 🎯 New My Stack hit: CVE-2026-77316 [github] — Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning) <https://github.com/advisories/GHSA-6pm8-6f34-9v3g>
+- 🎯 New My Stack hit: CVE-2026-77318 [python, github] — Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode <https://github.com/advisories/GHSA-24pw-rf5p-mgp7>
+- 🎯 New My Stack hit: CVE-2026-77359 [python, github] — Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes <https://github.com/advisories/GHSA-9x8x-crjq-g64h>
+- 🎯 New My Stack hit: CVE-2026-77377 [github] — Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints <https://github.com/advisories/GHSA-2535-j2pq-qq4r>
+- 🎯 New My Stack hit: CVE-2026-77380 [github] — Bolt: Prevent SSRF due to unchecked followed redirects <https://github.com/advisories/GHSA-3xjf-9q55-vxw4>
+- 🎯 New My Stack hit: CVE-2026-77382 [github] — falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon&#x27;s requirement (reference KAT vectors no longer pass) <https://github.com/advisories/GHSA-25rm-9wvm-m38v>
 
 ---
 
 ## 🎯 My Stack Highlights
 
-- 🟠 Zero-Day — NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities — `CVE-2026-123007`, `CVE-2026-123633`, `CVE-2026-123634`, `CVE-2026-121810`, `CVE-2026-113425`, `CVE-2026-118899`, `CVE-2026-120993`, `CVE-2026-125283`, `CVE-2026-123640`, `CVE-2026-120967` — EPSS 7% — `linux`, `nginx`, `github`
+- 🟡 High Severity — NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets — `CVE-2026-58210` — EPSS 1% — `github`
 - 🟠 Zero-Day — CodeWhale: exec_shell parallel-readonly classifier auto-approves fd/rg/git grep exec flags enabling silent RCE — `CVE-2026-83816` — EPSS 1% — `github`
 - 🟡 High Severity — Mistune: Quadratic-time DoS in parse_link_href via unbounded parenthesis scan on empty-label links — `CVE-2026-97698` — EPSS 1% — `python`, `github`
-- 🟡 High Severity — PGPainless: Unbounded Compressed Packet Descent in inline-detach and MessageInspector leads to Denial of Service (DoS) — `CVE-2026-76088` — EPSS 1% — `github`
 - 🟠 Zero-Day — CodeWhale: Automation auto_approve defaults to true, bypassing the task-path hardening fix for silent recurring agent execution — `CVE-2026-83817` — EPSS 1% — `github`
 - 🟡 High Severity — Mistune: Quadratic-time DoS in inline image parsing (precedence_scan) bypasses not-is-image guards — `CVE-2026-97699` — EPSS 1% — `python`, `github`
 - 🟡 High Severity — October: Media Library Crop Handler Bypasses Upload Extension Allowlist — `CVE-2026-63193` — EPSS 1% — `nginx`, `github`
-- 🟠 Zero-Day — mssql-mcp-core: SQL injection in mssql-mcp write tools via unparameterized table names and WHERE clauses — `CVE-2026-63129` — EPSS 1% — `github`
 - 🟡 High Severity — NATS Server: MQTT SUBSCRIBE Protocol Injection via Leaf Node/Route Forwarding allows arbitrary NATS command injection — `CVE-2026-58213` — EPSS <1% — `github`
 - 🟡 High Severity — containerd image-triggered daemon crash via malformed digest in subject-annotated descriptor — `CVE-2026-95839` — EPSS <1% — `kubernetes`, `github`
 - 🟡 High Severity — Next.js: Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments — `CVE-2026-119349` — EPSS <1% — `github`
 - 🟡 High Severity — k8s-mcp-server: Missing authentication on default SSE/HTTP transport allows unauthenticated Kubernetes tool execution — `CVE-2026-130007` — EPSS <1% — `kubernetes`, `github`
+- 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI content-type values — `CVE-2026-63344` — EPSS <1% — `github`
+- 🟡 High Severity — Refitter allows code execution through unescaped OpenAPI header parameter names — `CVE-2026-63346` — EPSS <1% — `github`
+- 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI paths — `CVE-2026-63345` — EPSS <1% — `github`
+- 🟡 High Severity — Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php) — `CVE-2026-63415` — EPSS <1% — `github`
 - 🟡 High Severity — Model Context Protocol Python SDK: OAuth client could send credentials to an authorization server chosen by the MCP server — `CVE-2026-115563` — EPSS <1% — `python`, `github`
+- 🟡 High Severity — snark-verifier: Halo 2 aggregation circuit mishandles point-at-infinity proof elements — `CVE-2026-62337` — EPSS <1% — `github`
 - 🟡 High Severity — Effect: ReDoS in Schema.TemplateLiteral compiled regex — `CVE-2026-121707` — EPSS <1% — `github`
-- 🟡 High Severity — Miren Runtime: Authentication bypass in RPC layer: unverified TLS client certificates grant cluster superuser access — `CVE-2026-75521` — EPSS <1% — `github`
 - 🟡 High Severity — gosaml2: Unauthenticated panic decrypting an EncryptedAssertion with a short or empty CipherValue — `CVE-2026-128073` — EPSS <1% — `github`
 - 🟡 High Severity — Next.js: Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params — `CVE-2026-119350` — EPSS <1% — `github`
 - 🟡 High Severity — Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server — `CVE-2026-76807` — EPSS <1% — `github`
@@ -77,6 +71,19 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 - 🟡 High Severity — Gortex: Arbitrary file write / repo-confinement escape in `write_file` / `edit_file` / `move_inline` MCP tools → code execution — `CVE-2026-62964` — EPSS <1% — `github`
 - 🟡 High Severity — DOMShell: domshell_eval classified as read-tier can execute side-effecting JavaScript without --allow-write — `CVE-2026-75518` — EPSS <1% — `github`
 - 🟡 High Severity — Mareforma: Unsigned Claims Can Be Promoted to REPLICATED via Missing Signature Enforcement in Convergence Path — `CVE-2026-71535` — EPSS <1% — `python`, `github`
+- 🟠 Zero-Day — baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass) — `CVE-2026-62955` — EPSS n/a — `github`
+- 🟡 High Severity — Etherpad: Pre-auth arbitrary file read — `CVE-2026-114516` — EPSS n/a — `linux`, `github`, `windows`
+- 🟡 High Severity — ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData — `CVE-2026-103033` — EPSS n/a — `github`
+- 🟡 High Severity — falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon&#x27;s requirement (reference KAT vectors no longer pass) — `CVE-2026-77382` — EPSS n/a — `github`
+- 🟡 High Severity — Bolt: Prevent SSRF due to unchecked followed redirects — `CVE-2026-77380` — EPSS n/a — `github`
+- 🟡 High Severity — Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints — `CVE-2026-77377` — EPSS n/a — `github`
+- 🟡 High Severity — Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes — `CVE-2026-77359` — EPSS n/a — `python`, `github`
+- 🟡 High Severity — Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode — `CVE-2026-77318` — EPSS n/a — `python`, `github`
+- 🟡 High Severity — Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning) — `CVE-2026-77316` — EPSS n/a — `github`
+- 🟡 High Severity — Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation — `CVE-2026-77315` — EPSS n/a — `github`
+- 🟡 High Severity — Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU — `CVE-2026-77313` — EPSS n/a — `github`
+- 🟡 High Severity — Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429) — `CVE-2026-77312` — EPSS n/a — `github`
+- 🟡 High Severity — django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS — `CVE-2026-59988` — EPSS n/a — `github`
 - 🟡 High Severity — NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels — `CVE-2026-129221` — EPSS n/a — `python`, `github`
 - 🟡 High Severity — NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains — `CVE-2026-129225` — EPSS n/a — `python`, `github`
 - 🟡 High Severity — NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings — `CVE-2026-129226` — EPSS n/a — `python`, `github`
@@ -110,18 +117,28 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
-## 3. 🔴 CISA KEV — Treat Your Honeypot Analysis Like Code: Git, Pull Requests and a Human Gate for AI [Guest Diary], (Wed, Nov 18th)
+## 3. 🟠 Zero-Day — VMware patches vCenter zero-day exploited in attacks since September
 
-**CVE:** `CVE-2026-109618` &nbsp;|&nbsp; **Source:** SANS Internet Storm Center &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 100.0% (percentile 100%)
-**KEV:** in catalog, due 2026-10-29
-**Reference:** <https://isc.sans.edu/diary/rss/33534>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-20
+**Reference:** <https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/>
 
-> [This is a Guest Diary by Kevin Truong, an ISC intern as part of the SANS.edu BACS program]
+> Broadcom has released security updates to fix a critical VMware vCenter Server authentication bypass vulnerability that Chinese-linked hackers have exploited in zero-day attacks since September 2026. [...]
 
 ---
 
-## 4. 🟠 Zero-Day — Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT
+## 4. 🟠 Zero-Day — baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass)
+
+**CVE:** `CVE-2026-62955` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-2pj4-v76f-wjvx>
+
+> ### Summary
+
+The security patch introduced in baserCMS 5.2.3 to address CVE-2026-30940 / [GHSA-c5c6-37vq-pjcq](https://github.com/baserproject/basercms/security/advisories/GHSA-c5c6-37vq-pjcq) is **incomplete**. The patch added a `realpath()`-based directory traversal check in `BcThemeFileService::getFullpath()`, but the check is **entirely skipped** when `realpath($baseDir)` returns `false` — whi…
+
+---
+
+## 5. 🟠 Zero-Day — Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-19
 **Reference:** <https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/>
@@ -130,7 +147,7 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
-## 5. 🟠 Zero-Day — ThreatsDay: GPT-6.2 Jailbreak Flaws, BubbleLoader PNG Malware, $500M Ransom Demands + 17 More Stories
+## 6. 🟠 Zero-Day — ThreatsDay: GPT-6.2 Jailbreak Flaws, BubbleLoader PNG Malware, $500M Ransom Demands + 17 More Stories
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-19
 **Reference:** <https://thehackernews.com/2026/11/threatsday-gpt-62-jailbreak-flaws.html>
@@ -141,18 +158,20 @@ There&#x27;s another shift worth watching. AI is making some att…
 
 ---
 
-## 6. 🟠 Zero-Day — NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities
+## 7. 🟠 Zero-Day — Critical VMware vCenter Zero-Day Flaw Lets Network Attackers Bypass Authentication
 
-**CVE:** `CVE-2026-123007` | `CVE-2026-123633` | `CVE-2026-123634` | `CVE-2026-121810` | `CVE-2026-113425` | `CVE-2026-118899` | `CVE-2026-120993` | `CVE-2026-125283` | `CVE-2026-123640` | `CVE-2026-120967` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 6.5% (percentile 94%)
-**My Stack:** `linux`, `nginx`, `github`
-**Reference:** <https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-19
+**Reference:** <https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html>
 
-> Frequently asked questions about five critical NGINX remote code execution vulnerabilities and five additional flaws fixed in F5’s November 18 out-of-band release. Change log Update November 19: Added the Censys exposure data, test and lab reproductions and refined proof-of-concept details and added Tenable’s Vulnerability Watch classifications. Click here to review the change log history Update N…
+> A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today.
+
+Fixed versions are out for all supported branches, and the company lists no workaround. vCenter is the central console for managing an organization&#x27;s ESX hosts and virtual machines.
+
+The
 
 ---
 
-## 7. 🟠 Zero-Day — CodeWhale: exec_shell parallel-readonly classifier auto-approves fd/rg/git grep exec flags enabling silent RCE
+## 8. 🟠 Zero-Day — CodeWhale: exec_shell parallel-readonly classifier auto-approves fd/rg/git grep exec flags enabling silent RCE
 
 **CVE:** `CVE-2026-83816` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.7% (percentile 55%)
@@ -168,7 +187,7 @@ The interactive Agent profile of DeepSeek-TUI (CodeWhale) is explicitly document
 
 ---
 
-## 8. 🟠 Zero-Day — CodeWhale: Automation auto_approve defaults to true, bypassing the task-path hardening fix for silent recurring agent execution
+## 9. 🟠 Zero-Day — CodeWhale: Automation auto_approve defaults to true, bypassing the task-path hardening fix for silent recurring agent execution
 
 **CVE:** `CVE-2026-83817` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.7% (percentile 54%)
@@ -184,7 +203,7 @@ CVE-2026-45374 (GHSA-72w5-pf8h-xfp4) hardened the task path so auto-approval mus
 
 ---
 
-## 9. 🟠 Zero-Day — European Commission confirms cyberattack, says hackers used AI tool
+## 10. 🟠 Zero-Day — European Commission confirms cyberattack, says hackers used AI tool
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-11-19
 **Reference:** <https://therecord.media/european-commission-confirms-cyberattack-using-ai>
@@ -193,22 +212,248 @@ CVE-2026-45374 (GHSA-72w5-pf8h-xfp4) hardened the task path so auto-approval mus
 
 ---
 
-## 10. 🟠 Zero-Day — mssql-mcp-core: SQL injection in mssql-mcp write tools via unparameterized table names and WHERE clauses
+## 11. 🟡 High Severity — Etherpad: Pre-auth arbitrary file read
 
-**CVE:** `CVE-2026-63129` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.6% (percentile 47%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-2m9m-6cr5-9x25>
+**CVE:** `CVE-2026-114516` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `linux`, `github`, `windows`
+**Reference:** <https://github.com/advisories/GHSA-mc8w-wjhw-45x5>
 
-> Several tools in `mssql-mcp-core` built T-SQL by string-interpolating caller-supplied identifiers and predicates directly into the statement passed to the node-mssql `Request.query()` batch API. Only data values were parameterized.
+> ### Summary
 
-Affected tools and inputs:
-- `update_data`, `delete_data`: `tableName` and the free-form `whereClause` were interpolated raw.
-- `insert_data`: `tableName` and column n…
+An unauthenticated path‑traversal / arbitrary file read vulnerability in Etherpad&#x27;s /static/* handler allows any remote, unauthenticated user to read any file on the server&#x27;s filesystem (e.g. GET /static/plugins/ep_etherpad-lite/static/..%5C..%5C..%5C..%5C..%5C..%5C..%5Cetc/passwd returns /etc/passwd) available to the user running the etherpad software. Because the endpoint …
 
 ---
 
-## 11. 🟡 High Severity — NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels
+## 12. 🟡 High Severity — ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData
+
+**CVE:** `CVE-2026-103033` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-gfwj-45pc-w6r5>
+
+> ### Summary
+
+`parseServerSignature` in the v1 module only initializes `ServerSignatureVerificationData.Extra` inside the `if err == nil` branch after `url.ParseQuery(parsedPayload.VerificationData)`. Go&#x27;s `url.ParseQuery` returns the successfully-parsed pairs together with a non-nil error when the query string contains a malformed percent-escape. A subsequent loop unconditionally writes unkno…
+
+---
+
+## 13. 🟡 High Severity — falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon&#x27;s requirement (reference KAT vectors no longer pass)
+
+**CVE:** `CVE-2026-77382` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-25rm-9wvm-m38v>
+
+> **Reporter:** Connor Webber
+**Package:** `falcon-rust` (crates.io), repository `github.com/aszepieniec/falcon-rust`
+**Affected:** v0.1.3 and the current `master` (HEAD `cfa1b35`). Regression introduced in commit `bf2cf00`.
+**Component:** discrete-Gaussian sampler, `src/samplerz.rs` (`approx_exp`, `ber_exp`, `sampler_z`)
+**Status:** Confirmed by source review and by empirical measurement of the cra…
+
+---
+
+## 14. 🟡 High Severity — Bolt: Prevent SSRF due to unchecked followed redirects
+
+**CVE:** `CVE-2026-77380` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-3xjf-9q55-vxw4>
+
+> ### Impact
+
+The `/bolt/async/upload-url` and `/bolt/async/embed` endpoints validated only the **submitted** URL before fetching it server-side, but the fetch then **followed redirects to destinations that were never re-validated**. This allowed an authenticated user to bypass the SSRF guard (`UrlSafetyChecker`) and make the server issue requests to internal/cloud-metadata addresses.
+
+### Patches
+
+…
+
+---
+
+## 15. 🟡 High Severity — Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints
+
+**CVE:** `CVE-2026-77377` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-2535-j2pq-qq4r>
+
+> ### Impact
+
+Two authenticated backend endpoints fetched a user-supplied URL server-side with no protection against internal targets.
+
+### Patches
+
+This has been patched in Bolt 6.1.4.
+
+---
+
+## 16. 🟡 High Severity — Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes
+
+**CVE:** `CVE-2026-77359` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `python`, `github`
+**Reference:** <https://github.com/advisories/GHSA-9x8x-crjq-g64h>
+
+> Standalone `streamable-http` mode in `datalayer/jupyter-mcp-server` rejects forged `Host` and `Origin` headers on `/mcp`, but custom management routes mounted on the same application do not get the same browser-origin protection. A malicious website can keep an attacker origin while its hostname resolves to `127.0.0.1` or a private target address, then send `PUT /api/connect` to replace the MCP se…
+
+---
+
+## 17. 🟡 High Severity — Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode
+
+**CVE:** `CVE-2026-77318` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `python`, `github`
+**Reference:** <https://github.com/advisories/GHSA-24pw-rf5p-mgp7>
+
+> Standalone `streamable-http` mode in `datalayer/jupyter-mcp-server` requires `MCP_TOKEN` for `/mcp`, but the custom management routes mounted on the same application do not enforce that token. An unauthenticated network caller can invoke `PUT /api/connect`, choose the Jupyter backend URL and token fields, reset the server context, and make the MCP server start a kernel client against attacker-cont…
+
+---
+
+## 18. 🟡 High Severity — Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning)
+
+**CVE:** `CVE-2026-77316` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-6pm8-6f34-9v3g>
+
+> # [MEDIUM] SSRF guard bypass via DNS rebinding — validate_url_ssrf resolves-then-connects without pinning
+
+- **CWE:** CWE-918 (SSRF) / CWE-367 (TOCTOU).
+- **CVSS v3.1:** `AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:N` = **6.8 Medium** (AC:H — needs attacker-controlled DNS with a low/zero TTL and to flip the answer between the guard&#x27;s lookup and the connection&#x27;s lookup; S:C — reaches internal/metad…
+
+---
+
+## 19. 🟡 High Severity — Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation
+
+**CVE:** `CVE-2026-77315` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-2mr3-rxrq-238c>
+
+> ## Summary
+`http.paginate` validates only the initial `base_url`, then follows server-supplied pagination targets (RFC 5988 `Link: rel=&quot;next&quot;` headers, cursor/offset URLs) in a loop **without revalidating each follow-up URL**. An attacker&#x27;s first-page response can point `next` at an internal address, causing a second-order SSRF whose internal body is aggregated into the returned ite…
+
+---
+
+## 20. 🟡 High Severity — Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU
+
+**CVE:** `CVE-2026-77313` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-pfg2-w999-497v>
+
+> ## Summary
+`validate_url_ssrf` resolves the hostname, checks the IP against private ranges, then **discards the IP and returns the hostname URL string**. aiohttp performs a fresh, independent DNS resolution at connect time. An attacker controlling DNS for a hostname (TTL 0, alternating public IP and internal IP) passes validation on the first lookup and connects to the internal IP on the second — …
+
+---
+
+## 21. 🟡 High Severity — Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429)
+
+**CVE:** `CVE-2026-77312` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-p34x-fmph-9fjx>
+
+> # [CRITICAL] Arbitrary file write via unguarded `data.*` / `file.*` write modules — incomplete fix of GHSA-2956
+
+- **CWE:** CWE-22 (Path Traversal) / CWE-73 (External Control of File Name or Path); impact reaches CWE-94 (code execution via file overwrite).
+- **CVSS v3.1:** `AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H` = **9.3 Critical** (S:C because a write escapes the intended sandbox confinement into th…
+
+---
+
+## 22. 🟡 High Severity — django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS
+
+**CVE:** `CVE-2026-59988` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-86mf-q4h5-69gp>
+
+> ## Summary
+
+django-docutils before `0.30.0` rendered reStructuredText through Docutils without protected web-safe defaults. Public rendering paths, including `publish_doctree`, `publish_html_from_source`, `publish_html_from_doctree`, `publish_parts_from_doctree`, the `{% rst %}` template tag, the `rst` template filter, `DocutilsTemplates`, and `DocutilsView`, could process attacker-controlled RST …
+
+---
+
+## 23. 🟡 High Severity — Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php)
+
+**CVE:** `CVE-2026-63415` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.3% (percentile 29%)
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-c3cj-3p6p-j822>
+
+> ### Summary
+jane-php resolves external `$ref` targets at code-generation time via `file_get_contents($ref)` (jane-php/json-schema-runtime/Reference.php::doResolve) with no scheme/path restriction. An attacker-controlled OpenAPI document can therefore cause: `$ref: &#x27;http://attacker/x&#x27;` -&gt; SSRF (HTTP GET at gen time; response inlined = RFI); `$ref: &#x27;/abs/file&#x27;` -&gt; LFI; `$re…
+
+---
+
+## 24. 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI content-type values
+
+**CVE:** `CVE-2026-63344` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.4% (percentile 29%)
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-p32v-8v8j-j534>
+
+> ### Summary
+
+Refitter emits the spec&#x27;s content-type key (content map key in requestBody/responses) verbatim into a Refit `[Headers(&quot;Accept: &lt;ct&gt;&quot;, &quot;Content-Type: &lt;ct&gt;&quot;)]` attribute string without escaping
+`&quot;`. A crafted value survives Refitter&#x27;s default OpenAPI validation, breaks out of the attribute and
+the enclosing interface + namespace, injects a …
+
+---
+
+## 25. 🟡 High Severity — Refitter allows code execution through unescaped OpenAPI header parameter names
+
+**CVE:** `CVE-2026-63346` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.4% (percentile 29%)
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-58x9-vjvp-6mx8>
+
+> ### Summary
+
+Refitter emits the spec&#x27;s header parameter name (parameters[].name with in: header) verbatim into a Refit `[Header(&quot;&lt;name&gt;&quot;)]` attribute string without escaping
+`&quot;`. A crafted value survives Refitter&#x27;s default OpenAPI validation, breaks out of the attribute and
+the enclosing interface + namespace, injects a top-level `file class` with a `[ModuleInitializ…
+
+---
+
+## 26. 🟡 High Severity — Refitter allows arbitrary code execution through unescaped OpenAPI paths
+
+**CVE:** `CVE-2026-63345` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.4% (percentile 29%)
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-3fhm-p725-h3g3>
+
+> ### Summary
+
+Refitter emits each OpenAPI path (the paths-object key) verbatim into a Refit `[Get(&quot;&lt;path&gt;&quot;)]`
+attribute string, without escaping `&quot;` or restricting characters. A crafted single-line, /-prefixed
+path survives Refitter&#x27;s default OpenAPI validation yet closes the attribute string and the enclosing
+interface + namespace, injects a top-level `file class` with a …
+
+---
+
+## 27. 🟡 High Severity — NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets
+
+**CVE:** `CVE-2026-58210` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.7% (percentile 55%)
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-r72h-j7qq-v6qg>
+
+> ### Background
+
+NATS.io is a high performance open source pub-sub distributed communication technology, built for the cloud, on-premise, IoT and edge computing.
+
+The NATS Server supports MQTT clients, including authentication and parsing of MQTT `CONNECT` packets.
+
+### Problem Description
+
+An unauthenticated MQTT client could cause the server to retain large incomplete MQTT `CONNECT` packets befor…
+
+---
+
+## 28. 🟡 High Severity — snark-verifier: Halo 2 aggregation circuit mishandles point-at-infinity proof elements
+
+**CVE:** `CVE-2026-62337` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-20
+**EPSS:** 0.3% (percentile 23%)
+**My Stack:** `github`
+**Reference:** <https://github.com/advisories/GHSA-x26x-7f4v-cqx7>
+
+> ### Summary
+The Halo 2 aggregation circuit could mishandle proof elements encoded as the point at infinity.
+
+When an assigned proof point appeared in an MSM term with constant scalar one, the Halo 2 loader used a scalar-one shortcut that passed the assigned point directly into the EC sum helper. The EC sum implementation used by that path assumed its inputs were non-identity points, while assigned…
+
+---
+
+## 29. 🟡 High Severity — NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels
 
 **CVE:** `CVE-2026-129221` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **My Stack:** `python`, `github`
@@ -222,7 +467,7 @@ Affected tools and inputs:
 
 ---
 
-## 12. 🟡 High Severity — NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains
+## 30. 🟡 High Severity — NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains
 
 **CVE:** `CVE-2026-129225` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **My Stack:** `python`, `github`
@@ -237,7 +482,7 @@ over dependencies. The neighbouring `c…
 
 ---
 
-## 13. 🟡 High Severity — NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings
+## 31. 🟡 High Severity — NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings
 
 **CVE:** `CVE-2026-129226` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **My Stack:** `python`, `github`
@@ -252,7 +497,7 @@ parser but never runs on the `rea…
 
 ---
 
-## 14. 🟡 High Severity — NLTK: Uncontrolled recursion in Tree.fromlist causes denial of service via deeply nested list input
+## 32. 🟡 High Severity — NLTK: Uncontrolled recursion in Tree.fromlist causes denial of service via deeply nested list input
 
 **CVE:** `CVE-2026-129227` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **My Stack:** `python`, `github`
@@ -267,7 +512,7 @@ input with a bounde…
 
 ---
 
-## 15. 🟡 High Severity — NLTK: Uncontrolled recursion in Toolbox settings helpers causes denial of service via deeply nested input
+## 33. 🟡 High Severity — NLTK: Uncontrolled recursion in Toolbox settings helpers causes denial of service via deeply nested input
 
 **CVE:** `CVE-2026-129228` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **My Stack:** `python`, `github`
@@ -282,7 +527,7 @@ per element level with no depth counter or expli…
 
 ---
 
-## 16. 🟡 High Severity — NLTK: Uncontrolled recursion in WordNet Synset hypernym walkers (max_depth/min_depth/hypernym_paths/hypernym_distances) causes DoS
+## 34. 🟡 High Severity — NLTK: Uncontrolled recursion in WordNet Synset hypernym walkers (max_depth/min_depth/hypernym_paths/hypernym_distances) causes DoS
 
 **CVE:** `CVE-2026-129230` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **My Stack:** `python`, `github`
@@ -294,7 +539,7 @@ Four hypernym-walking methods on the WordNet `Synset` class in `nltk/corpus/read
 
 ---
 
-## 17. 🟡 High Severity — NLTK: StreamBackedCorpusView constructor os.stat leaks out-of-root file existence, size, and mtime bypassing pathsec ENFORCE
+## 35. 🟡 High Severity — NLTK: StreamBackedCorpusView constructor os.stat leaks out-of-root file existence, size, and mtime bypassing pathsec ENFORCE
 
 **CVE:** `CVE-2026-129233` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **My Stack:** `github`
@@ -306,7 +551,7 @@ Four hypernym-walking methods on the WordNet `Synset` class in `nltk/corpus/read
 
 ---
 
-## 18. 🟡 High Severity — NLTK: Untrusted search path in prover9/mace4 config allows local code execution via relative binary_location
+## 36. 🟡 High Severity — NLTK: Untrusted search path in prover9/mace4 config allows local code execution via relative binary_location
 
 **CVE:** `CVE-2026-129234` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **My Stack:** `python`, `github`
@@ -317,7 +562,15 @@ Four hypernym-walking methods on the WordNet `Synset` class in `nltk/corpus/read
 
 ---
 
-## 19. 🟡 High Severity — k8s-mcp-server: Missing authentication on default SSE/HTTP transport allows unauthenticated Kubernetes tool execution
+## 37. 🟡 High Severity — CVE-2026-114938 Portfolio Status: Impact of Java Vulnerability (CVE-2026-114938) on Palo Alto Networks Products (Severity: CRITICAL)
+
+**CVE:** `CVE-2026-114938` &nbsp;|&nbsp; **Source:** Palo Alto Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
+**EPSS:** 0.8% (percentile 56%)
+**Reference:** <https://security.paloaltonetworks.com/CVE-2026-114938>
+
+---
+
+## 38. 🟡 High Severity — k8s-mcp-server: Missing authentication on default SSE/HTTP transport allows unauthenticated Kubernetes tool execution
 
 **CVE:** `CVE-2026-130007` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.4% (percentile 32%)
@@ -335,7 +588,7 @@ executing with the server&#x27;s configured cluster privileges.
 
 ---
 
-## 20. 🟡 High Severity — containerd image-triggered daemon crash via malformed digest in subject-annotated descriptor
+## 39. 🟡 High Severity — containerd image-triggered daemon crash via malformed digest in subject-annotated descriptor
 
 **CVE:** `CVE-2026-95839` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.4% (percentile 35%)
@@ -348,7 +601,7 @@ A bug in containerd&#x27;s image manifest processing causes an unrecovered panic
 
 ---
 
-## 21. 🟡 High Severity — Model Context Protocol Python SDK: OAuth client could send credentials to an authorization server chosen by the MCP server
+## 40. 🟡 High Severity — Model Context Protocol Python SDK: OAuth client could send credentials to an authorization server chosen by the MCP server
 
 **CVE:** `CVE-2026-115563` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.3% (percentile 26%)
@@ -365,7 +618,7 @@ A malicio…
 
 ---
 
-## 22. 🟡 High Severity — Mistune: Quadratic-time DoS in parse_link_href via unbounded parenthesis scan on empty-label links
+## 41. 🟡 High Severity — Mistune: Quadratic-time DoS in parse_link_href via unbounded parenthesis scan on empty-label links
 
 **CVE:** `CVE-2026-97698` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.7% (percentile 55%)
@@ -388,7 +641,7 @@ The following report describes t…
 
 ---
 
-## 23. 🟡 High Severity — Mistune: Quadratic-time DoS in inline image parsing (precedence_scan) bypasses not-is-image guards
+## 42. 🟡 High Severity — Mistune: Quadratic-time DoS in inline image parsing (precedence_scan) bypasses not-is-image guards
 
 **CVE:** `CVE-2026-97699` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.7% (percentile 53%)
@@ -411,7 +664,7 @@ The following report describes t…
 
 ---
 
-## 24. 🟡 High Severity — fzf: Predictable FIFO path in zsh completion allows local symlink attack / arbitrary file overwrite as the victim user (_fzf_feed_fifo)
+## 43. 🟡 High Severity — fzf: Predictable FIFO path in zsh completion allows local symlink attack / arbitrary file overwrite as the victim user (_fzf_feed_fifo)
 
 **CVE:** `CVE-2026-121717` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.2% (percentile 7%)
@@ -424,7 +677,7 @@ The following report describes t…
 
 ---
 
-## 25. 🟡 High Severity — Next.js: Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments
+## 44. 🟡 High Severity — Next.js: Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments
 
 **CVE:** `CVE-2026-119349` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.4% (percentile 34%)
@@ -435,7 +688,7 @@ The following report describes t…
 
 ---
 
-## 26. 🟡 High Severity — Next.js: Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params
+## 45. 🟡 High Severity — Next.js: Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params
 
 **CVE:** `CVE-2026-119350` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.2% (percentile 13%)
@@ -448,7 +701,7 @@ Such a route is served from a shell that keeps its never-prerenderable params as
 
 ---
 
-## 27. 🟡 High Severity — phpAfterShell and Critical PHP RCE Vulnerabilities: Everything You Need To Know
+## 46. 🟡 High Severity — phpAfterShell and Critical PHP RCE Vulnerabilities: Everything You Need To Know
 
 **CVE:** `CVE-2026-126714` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-11-19
 **Reference:** <https://www.wiz.io/blog/phpaftershell-critical-php-rce-vulnerabilities-cve-2026-126714>
@@ -457,7 +710,7 @@ Such a route is served from a shell that keeps its never-prerenderable params as
 
 ---
 
-## 28. 🟡 High Severity — CVE-2026-123890: Critical Authentication Bypass in VMware vCenter
+## 47. 🟡 High Severity — CVE-2026-123890: Critical Authentication Bypass in VMware vCenter
 
 **CVE:** `CVE-2026-123890` | `CVE-2026-59309` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 22.9% (percentile 98%)
@@ -467,7 +720,7 @@ Such a route is served from a shell that keeps its never-prerenderable params as
 
 ---
 
-## 29. 🟡 High Severity — Effect: ReDoS in Schema.TemplateLiteral compiled regex
+## 48. 🟡 High Severity — Effect: ReDoS in Schema.TemplateLiteral compiled regex
 
 **CVE:** `CVE-2026-121707` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.3% (percentile 23%)
@@ -486,7 +739,7 @@ the regex contains several am…
 
 ---
 
-## 30. 🟡 High Severity — iSponsorBlockTV: SSRF via Malicious SSDP Response Spoofing in Local Device Discovery
+## 49. 🟡 High Severity — iSponsorBlockTV: SSRF via Malicious SSDP Response Spoofing in Local Device Discovery
 
 **CVE:** `CVE-2026-77597` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.2% (percentile 5%)
@@ -501,7 +754,7 @@ iSponsorBlockTV discovers local smart TV devices via SSDP (Simple Service Discov
 
 ---
 
-## 31. 🟡 High Severity — gosaml2: Unauthenticated panic decrypting an EncryptedAssertion with a short or empty CipherValue
+## 50. 🟡 High Severity — gosaml2: Unauthenticated panic decrypting an EncryptedAssertion with a short or empty CipherValue
 
 **CVE:** `CVE-2026-128073` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.2% (percentile 14%)
@@ -516,7 +769,7 @@ This is a **distinct issue from [GHSA-hwqm-qvj9-4jr2](https://githu…
 
 ---
 
-## 32. 🟡 High Severity — October: Media Library Crop Handler Bypasses Upload Extension Allowlist
+## 51. 🟡 High Severity — October: Media Library Crop Handler Bypasses Upload Extension Allowlist
 
 **CVE:** `CVE-2026-63193` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.6% (percentile 47%)
@@ -527,7 +780,7 @@ This is a **distinct issue from [GHSA-hwqm-qvj9-4jr2](https://githu…
 
 ---
 
-## 33. 🟡 High Severity — Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server
+## 52. 🟡 High Severity — Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server
 
 **CVE:** `CVE-2026-76807` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.2% (percentile 12%)
@@ -540,7 +793,7 @@ This affects `github.com/Doist/todoist-mcp` at commit `d2903e0d945d2a559d71c0913
 
 ---
 
-## 34. 🟡 High Severity — Gortex: Arbitrary file write / repo-confinement escape in `write_file` / `edit_file` / `move_inline` MCP tools → code execution
+## 53. 🟡 High Severity — Gortex: Arbitrary file write / repo-confinement escape in `write_file` / `edit_file` / `move_inline` MCP tools → code execution
 
 **CVE:** `CVE-2026-62964` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.2% (percentile 5%)
@@ -552,17 +805,7 @@ Gortex is an MCP server exposing `write_file`, `edit_file`, and `move_inline` to
 
 ---
 
-## 35. 🟡 High Severity — Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026
-
-**CVE:** `CVE-2026-114938` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.8% (percentile 56%)
-**Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1>
-
-> On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnera…
-
----
-
-## 36. 🟡 High Severity — DOMShell: domshell_eval classified as read-tier can execute side-effecting JavaScript without --allow-write
+## 54. 🟡 High Severity — DOMShell: domshell_eval classified as read-tier can execute side-effecting JavaScript without --allow-write
 
 **CVE:** `CVE-2026-75518` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.1% (percentile 1%)
@@ -575,7 +818,7 @@ The `domshell_eval` MCP tool (and the `eval` command inside `domshell_execute`) 
 
 ---
 
-## 37. 🟡 High Severity — Mareforma: Unsigned Claims Can Be Promoted to REPLICATED via Missing Signature Enforcement in Convergence Path
+## 55. 🟡 High Severity — Mareforma: Unsigned Claims Can Be Promoted to REPLICATED via Missing Signature Enforcement in Convergence Path
 
 **CVE:** `CVE-2026-71535` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.1% (percentile 0%)
@@ -588,7 +831,7 @@ The `domshell_eval` MCP tool (and the `eval` command inside `domshell_execute`) 
 
 ---
 
-## 38. 🟡 High Severity — NATS Server: MQTT SUBSCRIBE Protocol Injection via Leaf Node/Route Forwarding allows arbitrary NATS command injection
+## 56. 🟡 High Severity — NATS Server: MQTT SUBSCRIBE Protocol Injection via Leaf Node/Route Forwarding allows arbitrary NATS command injection
 
 **CVE:** `CVE-2026-58213` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
 **EPSS:** 0.4% (percentile 39%)
@@ -607,7 +850,7 @@ An MQTT client could include protocol control characters in subscription filters
 
 ---
 
-## 39. 🟡 High Severity — PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution
+## 57. 🟡 High Severity — PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution
 
 **CVE:** `CVE-2026-115560` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-19
 **Reference:** <https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html>
@@ -615,34 +858,5 @@ An MQTT client could include protocol control characters in subscription filters
 > The PHP Foundation has released security updates to address multiple critical security flaws that could be exploited to achieve remote code execution on affected deployments, including CVE-2026-115560.
 
 The release of the patch follows an advance notice in which the project maintainers alerted users to multiple critical vulnerabilities affecting all supported PHP versions under specific
-
----
-
-## 40. 🟡 High Severity — PGPainless: Unbounded Compressed Packet Descent in inline-detach and MessageInspector leads to Denial of Service (DoS)
-
-**CVE:** `CVE-2026-76088` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.7% (percentile 55%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-cvx8-9ff6-54xq>
-
-> ### Summary
-An architectural security boundary bypass in inline-detach and MessageInspector allows remote, unauthenticated attackers to force unbounded recursive decompression routines. By supplying a specially crafted OpenPGP message containing deeply nested compressed packet structures, an attacker can completely bypass the library&#x27;s built-in DoS protections (MAX_LAYER_DEPTH = 16), leading …
-
----
-
-## 41. 🟡 High Severity — Miren Runtime: Authentication bypass in RPC layer: unverified TLS client certificates grant cluster superuser access
-
-**CVE:** `CVE-2026-75521` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-19
-**EPSS:** 0.3% (percentile 21%)
-**My Stack:** `github`
-**Reference:** <https://github.com/advisories/GHSA-8fh7-7q4q-cq52>
-
-> ### Summary
-
-  The Miren Runtime RPC server (QUIC/HTTP3, default port `:8443`) requested TLS
-  client certificates but never verified that a presented certificate chained to
-  the cluster Certificate Authority. Because a client-certificate identity is
-  granted a blanket RBAC bypass, any party able to reach the RPC listener could
-  present a forged, self-signed certificate and be authenticated as …
 
 ---

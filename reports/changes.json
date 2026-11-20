@@ -1,12 +1,140 @@
 {
-  "run_id": "44641959108",
-  "generated_at": "2026-11-19T23:58:56.869382+00:00",
+  "run_id": "44681603266",
+  "generated_at": "2026-11-20T05:32:39.819251+00:00",
   "changes": [
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-115563",
-      "title": "Model Context Protocol Python SDK: OAuth client could send credentials to an authorization server chosen by the MCP server",
-      "link": "https://github.com/advisories/GHSA-qx49-fqc8-xw99",
+      "cve": "CVE-2026-103033",
+      "title": "ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData",
+      "link": "https://github.com/advisories/GHSA-gfwj-45pc-w6r5",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-114516",
+      "title": "Etherpad: Pre-auth arbitrary file read",
+      "link": "https://github.com/advisories/GHSA-mc8w-wjhw-45x5",
+      "stack_match": [
+        "linux",
+        "github",
+        "windows"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-58210",
+      "title": "NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets",
+      "link": "https://github.com/advisories/GHSA-r72h-j7qq-v6qg",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-59988",
+      "title": "django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS",
+      "link": "https://github.com/advisories/GHSA-86mf-q4h5-69gp",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-62337",
+      "title": "snark-verifier: Halo 2 aggregation circuit mishandles point-at-infinity proof elements",
+      "link": "https://github.com/advisories/GHSA-x26x-7f4v-cqx7",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-62955",
+      "title": "baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass)",
+      "link": "https://github.com/advisories/GHSA-2pj4-v76f-wjvx",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-63344",
+      "title": "Refitter allows arbitrary code execution through unescaped OpenAPI content-type values",
+      "link": "https://github.com/advisories/GHSA-p32v-8v8j-j534",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-63345",
+      "title": "Refitter allows arbitrary code execution through unescaped OpenAPI paths",
+      "link": "https://github.com/advisories/GHSA-3fhm-p725-h3g3",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-63346",
+      "title": "Refitter allows code execution through unescaped OpenAPI header parameter names",
+      "link": "https://github.com/advisories/GHSA-58x9-vjvp-6mx8",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-63415",
+      "title": "Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php)",
+      "link": "https://github.com/advisories/GHSA-c3cj-3p6p-j822",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-77312",
+      "title": "Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429)",
+      "link": "https://github.com/advisories/GHSA-p34x-fmph-9fjx",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-77313",
+      "title": "Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU",
+      "link": "https://github.com/advisories/GHSA-pfg2-w999-497v",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-77315",
+      "title": "Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation",
+      "link": "https://github.com/advisories/GHSA-2mr3-rxrq-238c",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-77316",
+      "title": "Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning)",
+      "link": "https://github.com/advisories/GHSA-6pm8-6f34-9v3g",
+      "stack_match": [
+        "github"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-77318",
+      "title": "Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode",
+      "link": "https://github.com/advisories/GHSA-24pw-rf5p-mgp7",
       "stack_match": [
         "python",
         "github"
@@ -14,54 +142,9 @@
     },
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-119349",
-      "title": "Next.js: Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments",
-      "link": "https://github.com/advisories/GHSA-rhh4-g77r-r9qj",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-119350",
-      "title": "Next.js: Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params",
-      "link": "https://github.com/advisories/GHSA-vvgp-ww4w-46vf",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-121707",
-      "title": "Effect: ReDoS in Schema.TemplateLiteral compiled regex",
-      "link": "https://github.com/advisories/GHSA-7589-6fvf-x4pw",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-121717",
-      "title": "fzf: Predictable FIFO path in zsh completion allows local symlink attack / arbitrary file overwrite as the victim user (_fzf_feed_fifo)",
-      "link": "https://github.com/advisories/GHSA-7rj6-7pqx-v7rm",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-128073",
-      "title": "gosaml2: Unauthenticated panic decrypting an EncryptedAssertion with a short or empty CipherValue",
-      "link": "https://github.com/advisories/GHSA-5hj8-q7fv-qrj6",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-129221",
-      "title": "NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels",
-      "link": "https://github.com/advisories/GHSA-9ffx-rrgx-mhgx",
+      "cve": "CVE-2026-77359",
+      "title": "Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes",
+      "link": "https://github.com/advisories/GHSA-9x8x-crjq-g64h",
       "stack_match": [
         "python",
         "github"
@@ -69,193 +152,28 @@
     },
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-129225",
-      "title": "NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains",
-      "link": "https://github.com/advisories/GHSA-xfcv-m889-fmqg",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-129226",
-      "title": "NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings",
-      "link": "https://github.com/advisories/GHSA-w3pv-xfw4-ghr7",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-129227",
-      "title": "NLTK: Uncontrolled recursion in Tree.fromlist causes denial of service via deeply nested list input",
-      "link": "https://github.com/advisories/GHSA-63wh-5r5m-wxr7",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-129228",
-      "title": "NLTK: Uncontrolled recursion in Toolbox settings helpers causes denial of service via deeply nested input",
-      "link": "https://github.com/advisories/GHSA-f2h2-f4fc-p978",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-129230",
-      "title": "NLTK: Uncontrolled recursion in WordNet Synset hypernym walkers (max_depth/min_depth/hypernym_paths/hypernym_distances) causes DoS",
-      "link": "https://github.com/advisories/GHSA-53pg-5qp8-mhvr",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-129233",
-      "title": "NLTK: StreamBackedCorpusView constructor os.stat leaks out-of-root file existence, size, and mtime bypassing pathsec ENFORCE",
-      "link": "https://github.com/advisories/GHSA-w674-vqhw-g3pg",
+      "cve": "CVE-2026-77377",
+      "title": "Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints",
+      "link": "https://github.com/advisories/GHSA-2535-j2pq-qq4r",
       "stack_match": [
         "github"
       ]
     },
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-129234",
-      "title": "NLTK: Untrusted search path in prover9/mace4 config allows local code execution via relative binary_location",
-      "link": "https://github.com/advisories/GHSA-cc5r-64rf-75hg",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-130007",
-      "title": "k8s-mcp-server: Missing authentication on default SSE/HTTP transport allows unauthenticated Kubernetes tool execution",
-      "link": "https://github.com/advisories/GHSA-m932-63jc-4jqq",
-      "stack_match": [
-        "kubernetes",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-58213",
-      "title": "NATS Server: MQTT SUBSCRIBE Protocol Injection via Leaf Node/Route Forwarding allows arbitrary NATS command injection",
-      "link": "https://github.com/advisories/GHSA-qrcv-3558-gj4f",
+      "cve": "CVE-2026-77380",
+      "title": "Bolt: Prevent SSRF due to unchecked followed redirects",
+      "link": "https://github.com/advisories/GHSA-3xjf-9q55-vxw4",
       "stack_match": [
         "github"
       ]
     },
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-62964",
-      "title": "Gortex: Arbitrary file write / repo-confinement escape in `write_file` / `edit_file` / `move_inline` MCP tools \u2192 code execution",
-      "link": "https://github.com/advisories/GHSA-w42c-h7hr-f67p",
+      "cve": "CVE-2026-77382",
+      "title": "falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon's requirement (reference KAT vectors no longer pass)",
+      "link": "https://github.com/advisories/GHSA-25rm-9wvm-m38v",
       "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63193",
-      "title": "October: Media Library Crop Handler Bypasses Upload Extension Allowlist",
-      "link": "https://github.com/advisories/GHSA-mqwx-84vv-mp26",
-      "stack_match": [
-        "nginx",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-71535",
-      "title": "Mareforma: Unsigned Claims Can Be Promoted to REPLICATED via Missing Signature Enforcement in Convergence Path",
-      "link": "https://github.com/advisories/GHSA-8776-qf3h-26r3",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-75518",
-      "title": "DOMShell: domshell_eval classified as read-tier can execute side-effecting JavaScript without --allow-write",
-      "link": "https://github.com/advisories/GHSA-vg83-hcp4-5qcc",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-76807",
-      "title": "Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server",
-      "link": "https://github.com/advisories/GHSA-833v-v58w-294h",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77597",
-      "title": "iSponsorBlockTV: SSRF via Malicious SSDP Response Spoofing in Local Device Discovery",
-      "link": "https://github.com/advisories/GHSA-56v3-jrq2-4q9m",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-83816",
-      "title": "CodeWhale: exec_shell parallel-readonly classifier auto-approves fd/rg/git grep exec flags enabling silent RCE",
-      "link": "https://github.com/advisories/GHSA-3mgh-93r5-r7jf",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-83817",
-      "title": "CodeWhale: Automation auto_approve defaults to true, bypassing the task-path hardening fix for silent recurring agent execution",
-      "link": "https://github.com/advisories/GHSA-8hp3-xxrg-v9c8",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-95839",
-      "title": "containerd image-triggered daemon crash via malformed digest in subject-annotated descriptor",
-      "link": "https://github.com/advisories/GHSA-vwhp-8p66-mq4f",
-      "stack_match": [
-        "kubernetes",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-97698",
-      "title": "Mistune: Quadratic-time DoS in parse_link_href via unbounded parenthesis scan on empty-label links",
-      "link": "https://github.com/advisories/GHSA-phmp-hrw4-r36r",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-97699",
-      "title": "Mistune: Quadratic-time DoS in inline image parsing (precedence_scan) bypasses not-is-image guards",
-      "link": "https://github.com/advisories/GHSA-ww7q-mxrj-5ffg",
-      "stack_match": [
-        "python",
         "github"
       ]
     }
