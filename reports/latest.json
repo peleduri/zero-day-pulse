@@ -1,204 +1,34 @@
 {
-  "generated": "2026-11-20T05:32:39.819251+00:00",
-  "total": 57,
+  "generated": "2026-11-20T14:30:34.289896+00:00",
+  "total": 58,
   "kev": 2,
-  "zero_day": 8,
+  "zero_day": 9,
   "enriched": 0,
   "high_epss": 2,
-  "my_stack": 46,
-  "run_id": "44681603266",
-  "changes": [
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-103033",
-      "title": "ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData",
-      "link": "https://github.com/advisories/GHSA-gfwj-45pc-w6r5",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-114516",
-      "title": "Etherpad: Pre-auth arbitrary file read",
-      "link": "https://github.com/advisories/GHSA-mc8w-wjhw-45x5",
-      "stack_match": [
-        "linux",
-        "github",
-        "windows"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-58210",
-      "title": "NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets",
-      "link": "https://github.com/advisories/GHSA-r72h-j7qq-v6qg",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-59988",
-      "title": "django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS",
-      "link": "https://github.com/advisories/GHSA-86mf-q4h5-69gp",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-62337",
-      "title": "snark-verifier: Halo 2 aggregation circuit mishandles point-at-infinity proof elements",
-      "link": "https://github.com/advisories/GHSA-x26x-7f4v-cqx7",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-62955",
-      "title": "baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass)",
-      "link": "https://github.com/advisories/GHSA-2pj4-v76f-wjvx",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63344",
-      "title": "Refitter allows arbitrary code execution through unescaped OpenAPI content-type values",
-      "link": "https://github.com/advisories/GHSA-p32v-8v8j-j534",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63345",
-      "title": "Refitter allows arbitrary code execution through unescaped OpenAPI paths",
-      "link": "https://github.com/advisories/GHSA-3fhm-p725-h3g3",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63346",
-      "title": "Refitter allows code execution through unescaped OpenAPI header parameter names",
-      "link": "https://github.com/advisories/GHSA-58x9-vjvp-6mx8",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63415",
-      "title": "Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php)",
-      "link": "https://github.com/advisories/GHSA-c3cj-3p6p-j822",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77312",
-      "title": "Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429)",
-      "link": "https://github.com/advisories/GHSA-p34x-fmph-9fjx",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77313",
-      "title": "Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU",
-      "link": "https://github.com/advisories/GHSA-pfg2-w999-497v",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77315",
-      "title": "Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation",
-      "link": "https://github.com/advisories/GHSA-2mr3-rxrq-238c",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77316",
-      "title": "Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning)",
-      "link": "https://github.com/advisories/GHSA-6pm8-6f34-9v3g",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77318",
-      "title": "Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode",
-      "link": "https://github.com/advisories/GHSA-24pw-rf5p-mgp7",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77359",
-      "title": "Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes",
-      "link": "https://github.com/advisories/GHSA-9x8x-crjq-g64h",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77377",
-      "title": "Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints",
-      "link": "https://github.com/advisories/GHSA-2535-j2pq-qq4r",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77380",
-      "title": "Bolt: Prevent SSRF due to unchecked followed redirects",
-      "link": "https://github.com/advisories/GHSA-3xjf-9q55-vxw4",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77382",
-      "title": "falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon's requirement (reference KAT vectors no longer pass)",
-      "link": "https://github.com/advisories/GHSA-25rm-9wvm-m38v",
-      "stack_match": [
-        "github"
-      ]
-    }
-  ],
+  "my_stack": 47,
+  "run_id": "44753961988",
+  "changes": [],
   "findings": [
     {
-      "id": "https://thehackernews.com/2026/11/everything-is-web-application-including.html",
-      "title": "Everything Is a Web Application, Including Your Firewall",
-      "summary": "One of the early targets of PHP2Shell exploitation was the firewall. On October 28, Palo Alto Networks confirmed that attackers were exploiting the two PHP vulnerabilities, CVE-2026-109618 and CVE-2026-109619, against PAN-OS management interfaces exposed to the internet. Both flaws let anyone execute code on the web server without authentication. The disclosure itself went a little wrong.",
-      "link": "https://thehackernews.com/2026/11/everything-is-web-application-including.html",
-      "published": "2026-11-19T11:52:23+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
+      "title": "How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities",
+      "summary": "PHP2Shell showed how fast a runtime-level flaw can go from disclosure to confirmed exploitation. Here\u2019s how federal, state, local, and education teams can prepare for PHP2Shell-like flaws. Key takeaways PHP2Shell went from disclosure to confirmed exploitation within days. With AI shortening the disclosure-to-exploitation window, new critical flaws will likely move just as fast. Most security teams\u2019 primary challenge with PHP2Shell was knowing where the vulnerabilities were in their environment. Teams that already knew where PHP ran across their IT infrastructure, web applications, and cloud assets were in a position to act quickly. Initial access flaws will continue to impact your network edge, so work backward from the foothold. Map what an attacker could reach after breaching an edge device, such as root access, management servers, and directory services. Then close those escalation paths by patching kernels and restricting unprivileged user namespaces. To prioritize, factor in exploitation evidence, not severity alone. Weigh KEV status, exploit prediction scores, and your own internet exposure, as well as pre-approve a plan for systems you can\u2019t patch immediately. When two critical PHP vulnerabilities, nicknamed PHP2Shell , leaked ahead of their coordinated disclosure date on Oct. 20, and their alarming scope and severity became clear, cybersecurity teams sprung into \u201call hands on deck\u201d mode, much in the same way they did in late 2021 in response to the Log4Shell bug. Many organizations, including government agencies, rushed to take down their websites as an early, stopgap preventive measure against attackers\u2019 already active attempts to exploit these two memory management vulnerabilities, which were cataloged as CVE-2026-109618 and CVE-2026-109619 and given a CVSS score of 9.2. Thrust into a furious race against time, security teams scrambled to detect and patch their instances of PHP, the popular server-side scripting language that around 70% of websites use . I",
+      "link": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
+      "published": "2026-11-20T14:00:00+00:00",
+      "source": "Tenable Security Research",
       "tags": [
-        "news",
-        "zeroday"
+        "cloud",
+        "research",
+        "vuln"
       ],
       "cve_ids": [
         "CVE-2026-109618",
-        "CVE-2026-109619"
+        "CVE-2026-109619",
+        "CVE-2026-115560",
+        "CVE-2026-46300",
+        "CVE-2026-111497",
+        "CVE-2026-123007",
+        "CVE-2026-114938"
       ],
       "in_kev": true,
       "kev_date_added": "2026-10-26",
@@ -208,38 +38,68 @@
       "kev_ransomware": false,
       "is_zero_day": true,
       "is_high_severity": true,
-      "is_priority_product": true,
+      "is_priority_product": false,
       "epss": 0.99999,
       "epss_percentile": 0.99999,
       "stack_match": []
     },
     {
-      "id": "https://research.checkpoint.com/2026/30-years-of-gatekeeper-asymmetry-doom-the-paradox-that-makes-powerful-llms-more-vulnerable/",
-      "title": "30 Years of Gatekeeper Asymmetry Doom: The Paradox that Makes Powerful LLMs More Vulnerable",
-      "summary": "Abstract We give an exposition for a principle of gatekeeper asymmetry doom in information security, which states that \u201cIf the system vetting adversarial input has strictly less power than the system processing that input, without leveraging some hard problem, this will inevitably lead to doom.\u201d We list a variety of examples where one can see [\u2026] The post 30 Years of Gatekeeper Asymmetry Doom: The Paradox that Makes Powerful LLMs More Vulnerable appeared first on Check Point Research .",
-      "link": "https://research.checkpoint.com/2026/30-years-of-gatekeeper-asymmetry-doom-the-paradox-that-makes-powerful-llms-more-vulnerable/",
-      "published": "2026-11-19T13:19:10+00:00",
-      "source": "Check Point Research",
+      "id": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-breaking-zimbra-s-identity-boundaries",
+      "title": "Metasploit Wrap Up: Breaking Zimbra's Identity Boundaries",
+      "summary": "This release we have three pull requests from jburgess-r7 building out coverage for the identity-boundary issues detailed in Rapid7's Breaking Zimbra Identity Boundaries, Part One research. First up is a new shared mixin, Msf::Exploit::Remote::HTTP::Zimbra , which gives every current and future Zimbra module a common foundation for account/admin SOAP authentication, canonical identity resolution, mailbox-server lookup, and version parsing, allowing future modules to stay focused on the vulnerability instead of re-implementing Zimbra's SOAP plumbing. Built on top of that mixin are two new modules targeting CVEs from the same research track: CVE-2026-73571 ( #22080 ) It's an authorization bypass in Zimbra's SaveDraftRequest handling that lets an ordinary authenticated user send mail as another local mailbox without a delegation grant, landing a message in the victim's own Sent folder in the process. CVE-2026-93637 ( #22070 ) Is a rate-limit bypass in Zimbra's Network Edition GraphQL authentication endpoint, which lets credential-stuffing attempts skip the source-IP lockout counter that normally protects the SOAP login path. Both modules were validated against live Zimbra 10.1.16 Network Edition instances. Super cool contributions from our very own jburgess-r7 . New module content (6) Zimbra SaveDraftRequest Email Impersonation Authors: Ayoub Nabil Boubagrat and Crypto-Cat Type: Auxiliary Pull request: #22080 contributed by jburgess-r7 Path: admin/http/zimbra_email_impersonation CVE reference: CVE-2026-73571 Description: Adds an auxiliary module for CVE-2026-73571, allowing an authenticated user to send email as another local mailbox on Zimbra 10.1.16. The module supports optional Inbox delivery verification. Zimbra GraphQL Authentication Rate Limit Bypass Author: Crypto-Cat Type: Auxiliary Pull request: #22070 contributed by jburgess-r7 Path: scanner/http/zimbra_graphql_brute CVE reference: CVE-2026-93637 Description: This adds an auxiliary scanner for CVE-2026-93637 ",
+      "link": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-breaking-zimbra-s-identity-boundaries",
+      "published": "2026-11-20T10:30:36+00:00",
+      "source": "Rapid7 Blog",
       "tags": [
-        "network",
-        "checkpoint",
         "research",
-        "threat-intel"
+        "metasploit"
       ],
       "cve_ids": [
-        "CVE-2021-44228"
+        "CVE-2026-73571",
+        "CVE-2026-93637",
+        "CVE-2026-102764",
+        "CVE-2024-25420",
+        "CVE-2026-76519",
+        "CVE-2026-76461"
       ],
       "in_kev": true,
-      "kev_date_added": "2021-12-10",
-      "kev_due_date": "2021-12-24",
-      "kev_vendor": "Apache",
-      "kev_product": "Log4j2",
-      "kev_ransomware": true,
+      "kev_date_added": "2026-09-14",
+      "kev_due_date": "2026-09-17",
+      "kev_vendor": "Cisco",
+      "kev_product": "Secure Email Gateway",
+      "kev_ransomware": false,
       "is_zero_day": true,
       "is_high_severity": false,
       "is_priority_product": false,
-      "epss": 0.99999,
-      "epss_percentile": 1.0,
+      "epss": 0.50694,
+      "epss_percentile": 0.98944,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
+      "title": "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data",
+      "summary": "The suspected China-nexus cyber espionage group known as Armory Castle (formerly UNC5221) has been attributed to the zero-day exploitation of a critical security flaw in VMware vCenter Server in early September 2026.\n\nThe vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of authentication bypass in the VMware Directory Service that could be exploited to gain unauthorized",
+      "link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
+      "published": "2026-11-20T09:38:15+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-123890"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
       "stack_match": []
     },
     {
@@ -373,6 +233,33 @@
       "stack_match": []
     },
     {
+      "id": "https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html",
+      "title": "New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It",
+      "summary": "A newly disclosed unpatched zero-day technique called FastUnlock lets someone with physical access to a locked Windows computer start programs without signing in. Whoever uses it gets only a limited account, not administrator control of the machine.\n\nThe method was posted yesterday by a researcher who uses the handles MSNightmare and Nightmare Eclipse, and the endpoint-security firm ThreatLocker",
+      "link": "https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html",
+      "published": "2026-11-20T05:30:01+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "windows"
+      ]
+    },
+    {
       "id": "CVE-2026-83816",
       "title": "CodeWhale: exec_shell parallel-readonly classifier auto-approves fd/rg/git grep exec flags enabling silent RCE",
       "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. CodeWhale 0.8.67 and earlier are affected. Version 0.9.0 contains the fix in commit 208421b9d23d81cea3311a1eeb2a2ea81d637686. Users should upgrade to 0.9.0 or later. The original reporter analysis is preserved below.\n\n## Summary\nThe interactive Agent profile of DeepSeek-TUI (CodeWhale) is explicitly documented to gate **every** shell command behind an approval prompt (config.rs:3725-3736). However, `ExecShellTool::approval_requirement_for(&tool_input)` downgrades the requirement from `Required` to `Auto` for any command the classifier deems \"parallel read-only\" (shell.rs:2314-2320). `registered_tool_approval_required` returns `false` for `Auto` **before** the `auto_approve` check runs (turn_loop.rs:37-38), so no prompt is shown even for a user who never enabled YOLO. The classifier `is_parallel_readonly_command` (command_safety.rs:389) rejects only shell metacharacters and then matches the flag-stripped base command name against an allowlist that includes `fd`, `rg`, and `git grep`. Those tools execute arbitrary external programs through documented flags (`fd -x/--exec`, `rg --pre`, `git grep --open-files-in-pager`) that need **no** shell metacharacters \u2014 yielding silent arbitrary-program execution in the default profile. Same silent-RCE class as CVE-2026-45311 (run_tests) but via a different, unpatched tool and code path.\n\n## Root Cause\n`approval_requirement_for` downgrades `exec_shell` to `Auto` when `exec_shell_input_is_parallel_readonly` returns true (shell.rs:2314-2320). The classifier strips all flags and matches the base command name against `PARALLEL_READONLY_PREFIXES` (command_safety.rs:363-385, 419-433). `fd`/`rg` are absent from `COMMAND_ARITY`, so `fd -x cp {} /tmp/exfil` canonicalizes to `\"fd\"` \u2208 allowlist. The only remaining gate at the execute sink is `analyze_command`, which rates `fd`/`rg` as `Safe` (SAFE_COMMANDS command_safety.rs:527,530), so the `SafetyLevel::Dangerous`-o",
@@ -433,28 +320,57 @@
       ]
     },
     {
-      "id": "https://therecord.media/european-commission-confirms-cyberattack-using-ai",
-      "title": "European Commission confirms cyberattack, says hackers used AI tool",
-      "summary": "POLITICO had reported CERT-EU had identified the attackers\u2019 use of ARTEX, an open-source AI hacking platform that the FBI last week warned was being used both by criminals and state-sponsored groups.",
-      "link": "https://therecord.media/european-commission-confirms-cyberattack-using-ai",
-      "published": "2026-11-19T15:15:00+00:00",
-      "source": "The Record by Recorded Future",
+      "id": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
+      "title": "Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE",
+      "summary": "Tracked as CVE-2026-132825, the bug is a heap-based buffer overflow that could lead to remote code execution (RCE). The post Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
+      "published": "2026-11-20T10:34:10+00:00",
+      "source": "SecurityWeek",
       "tags": [
         "news",
-        "threat-intel"
+        "research"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-132825"
+      ],
       "in_kev": false,
       "kev_date_added": null,
       "kev_due_date": null,
       "kev_vendor": null,
       "kev_product": null,
       "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00174,
+      "epss_percentile": 0.07031,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html",
+      "title": "Hackers Exploit Critical Cisco Expressway Flaw, Breach Four Devices and Reach Internal Network",
+      "summary": "Threat actors have been observed exploiting a recently disclosed critical security flaw in Cisco Expressway to breach a Russian organization shortly after the public release of a proof-of-concept (PoC) exploit.\n\nThe activity involves the exploitation of CVE-2026-76466 (CVSS score: 9.8), a vulnerability that could allow an unauthenticated, remote attacker with network access to a Cisco Expressway",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html",
+      "published": "2026-11-20T10:32:50+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-76466"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00417,
+      "epss_percentile": 0.36701,
       "stack_match": []
     },
     {
@@ -1249,35 +1165,6 @@
       ]
     },
     {
-      "id": "https://security.paloaltonetworks.com/CVE-2026-114938",
-      "title": "CVE-2026-114938 Portfolio Status: Impact of Java Vulnerability (CVE-2026-114938) on Palo Alto Networks Products (Severity: CRITICAL)",
-      "summary": "",
-      "link": "https://security.paloaltonetworks.com/CVE-2026-114938",
-      "published": "2026-11-19T23:00:00+00:00",
-      "source": "Palo Alto Security Advisories",
-      "tags": [
-        "network",
-        "paloalto",
-        "psirt",
-        "advisory"
-      ],
-      "cve_ids": [
-        "CVE-2026-114938"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00753,
-      "epss_percentile": 0.55858,
-      "stack_match": []
-    },
-    {
       "id": "CVE-2026-130007",
       "title": "k8s-mcp-server: Missing authentication on default SSE/HTTP transport allows unauthenticated Kubernetes tool execution",
       "summary": "## Summary\nWhen k8s-mcp-server runs in its default SSE transport mode, the MCP `tools/call`\nendpoint is dispatched with no authentication, session token, or Origin check.\nAny client that can reach the listening port can enumerate and invoke the\nserver's Kubernetes tools (including destructive/write tools) without credentials,\nexecuting with the server's configured cluster privileges.\n\n## Affected\nCommit be87a6dd72bb6ec1d4886b8548843b99a4638b12 (Merge PR #130)\nMCP library: github.com/mark3labs/mcp-go v0.57.0\nDefault mode: sse (SERVER_MODE default), default port 8080, bind 0.0.0.0\n\n## Root cause (static trace: handleSSE -> handleMessage -> tools/call)\n- main.go L129: `server.NewSSEServer(s)` is created with no auth option and no\n  contextFunc; L130 `sse.Start(\":\"+port)` binds all interfaces (0.0.0.0).\n- mcp-go sse.go handleSSE (GET /sse): no auth header check; the server mints a\n  sessionId for any caller. The sessionId is a correlation value, not a credential.\n- handleMessage (POST /message): the only gates are method==POST and a loadable\n  sessionId. No Authorization/Bearer/token/Origin/CSRF check before\n  `s.server.HandleMessage(ctx, rawMessage)` dispatches to the tools/call handler.\n- Only `Access-Control-Allow-Origin: *` is present (CORS relaxation, not auth).\nWrite tools (Create/Delete/RolloutRestart, Helm Install/Upgrade/Uninstall/Rollback)\nare all registered unless `-read-only` is set (default readOnly=false).\n\n## Runtime reproduction (no auth headers on any request)\nStarted: `k8s-mcp-server -mode sse -port 8080` with a dummy non-routable\nKUBERNETES_SERVER=https://127.0.0.1:1 (no real cluster touched).\n\n  GET  /sse                         -> HTTP 200; server mints /message?sessionId=93b3...\n  POST /message initialize          -> HTTP 202; result returned over SSE\n  POST /message tools/list          -> HTTP 202; FULL tool list returned (incl. destructive)\n  POST /message tools/call getAPIResources -> HTTP 202; handler EXECUTED:\n        error -32603 \"... Get htt",
@@ -1849,33 +1736,6 @@
       "stack_match": [
         "github"
       ]
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html",
-      "title": "PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution",
-      "summary": "The PHP Foundation has released security updates to address multiple critical security flaws that could be exploited to achieve remote code execution on affected deployments, including CVE-2026-115560.\n\nThe release of the patch follows an advance notice in which the project maintainers alerted users to multiple critical vulnerabilities affecting all supported PHP versions under specific",
-      "link": "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html",
-      "published": "2026-11-19T15:18:07+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-115560"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
     }
   ]
 }
