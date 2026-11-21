@@ -1,5 +1,60 @@
 {
-  "run_id": "44910699820",
-  "generated_at": "2026-11-21T13:49:30.237623+00:00",
-  "changes": []
+  "run_id": "44957104050",
+  "generated_at": "2026-11-21T22:31:27.791061+00:00",
+  "changes": [
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-113425",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.01503,
+      "new_epss": 0.1386
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-114938",
+      "title": null,
+      "link": null,
+      "threshold": 0.1,
+      "old_epss": 0.00907,
+      "new_epss": 0.45636
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-121810",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.01663,
+      "new_epss": 0.16404
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-123007",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.06033,
+      "new_epss": 0.29863
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-123633",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.06086,
+      "new_epss": 0.17525
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-123634",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.01512,
+      "new_epss": 0.17103
+    }
+  ]
 }

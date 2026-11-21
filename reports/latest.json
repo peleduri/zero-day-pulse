@@ -1,13 +1,68 @@
 {
-  "generated": "2026-11-21T13:49:30.237623+00:00",
-  "total": 17,
-  "kev": 2,
-  "zero_day": 5,
+  "generated": "2026-11-21T22:31:27.791061+00:00",
+  "total": 8,
+  "kev": 1,
+  "zero_day": 2,
   "enriched": 0,
-  "high_epss": 1,
-  "my_stack": 9,
-  "run_id": "44910699820",
-  "changes": [],
+  "high_epss": 0,
+  "my_stack": 3,
+  "run_id": "44957104050",
+  "changes": [
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-113425",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.01503,
+      "new_epss": 0.1386
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-114938",
+      "title": null,
+      "link": null,
+      "threshold": 0.1,
+      "old_epss": 0.00907,
+      "new_epss": 0.45636
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-121810",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.01663,
+      "new_epss": 0.16404
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-123007",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.06033,
+      "new_epss": 0.29863
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-123633",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.06086,
+      "new_epss": 0.17525
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-123634",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "threshold": 0.1,
+      "old_epss": 0.01512,
+      "new_epss": 0.17103
+    }
+  ],
   "findings": [
     {
       "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html",
@@ -32,42 +87,8 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.01191,
-      "epss_percentile": 0.68723,
-      "stack_match": []
-    },
-    {
-      "id": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
-      "title": "How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities",
-      "summary": "PHP2Shell showed how fast a runtime-level flaw can go from disclosure to confirmed exploitation. Here\u2019s how federal, state, local, and education teams can prepare for PHP2Shell-like flaws. Key takeaways PHP2Shell went from disclosure to confirmed exploitation within days. With AI shortening the disclosure-to-exploitation window, new critical flaws will likely move just as fast. Most security teams\u2019 primary challenge with PHP2Shell was knowing where the vulnerabilities were in their environment. Teams that already knew where PHP ran across their IT infrastructure, web applications, and cloud assets were in a position to act quickly. Initial access flaws will continue to impact your network edge, so work backward from the foothold. Map what an attacker could reach after breaching an edge device, such as root access, management servers, and directory services. Then close those escalation paths by patching kernels and restricting unprivileged user namespaces. To prioritize, factor in exploitation evidence, not severity alone. Weigh KEV status, exploit prediction scores, and your own internet exposure, as well as pre-approve a plan for systems you can\u2019t patch immediately. When two critical PHP vulnerabilities, nicknamed PHP2Shell , leaked ahead of their coordinated disclosure date on Oct. 20, and their alarming scope and severity became clear, cybersecurity teams sprung into \u201call hands on deck\u201d mode, much in the same way they did in late 2021 in response to the Log4Shell bug. Many organizations, including government agencies, rushed to take down their websites as an early, stopgap preventive measure against attackers\u2019 already active attempts to exploit these two memory management vulnerabilities, which were cataloged as CVE-2026-109618 and CVE-2026-109619 and given a CVSS score of 9.2. Thrust into a furious race against time, security teams scrambled to detect and patch their instances of PHP, the popular server-side scripting language that around 70% of websites use . I",
-      "link": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
-      "published": "2026-11-20T14:00:00+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619",
-        "CVE-2026-115560",
-        "CVE-2026-46300",
-        "CVE-2026-111497",
-        "CVE-2026-123007",
-        "CVE-2026-114938"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-10-26",
-      "kev_due_date": "2026-10-29",
-      "kev_vendor": "PHP Group",
-      "kev_product": "PHP",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.99999,
-      "epss_percentile": 0.99999,
+      "epss": 0.05459,
+      "epss_percentile": 0.92934,
       "stack_match": []
     },
     {
@@ -121,82 +142,39 @@
       "stack_match": []
     },
     {
-      "id": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
-      "title": "Chinese-nexus actor\u2019s Cairn AI agents found a zero-day on their own",
-      "summary": "Amazon Threat Intelligence is sharing findings from an investigation into a Chinese-nexus threat actor using autonomous AI agents to conduct hacking operations with minimal human involvement. The actor gave the agents a simple goal: \u201cobtain shell access.\u201d During the campaign, the agents found a zero-day in an open-source application and used it to gain full [\u2026]",
-      "link": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
-      "published": "2026-11-20T17:30:13+00:00",
-      "source": "AWS Security Blog",
+      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s Security Impact Rating: Critical CVE: CVE-2026-113425,CVE-2026-121810,CVE-2026-123007,CVE-2026-123633,CVE-2026-123634",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "published": "2026-11-21T17:52:10+00:00",
+      "source": "Cisco Security Advisories (PSIRT)",
       "tags": [
-        "cloud",
-        "aws",
-        "blog"
+        "network",
+        "cisco",
+        "psirt",
+        "advisory"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-113425",
+        "CVE-2026-121810",
+        "CVE-2026-123007",
+        "CVE-2026-123633",
+        "CVE-2026-123634"
+      ],
       "in_kev": false,
       "kev_date_added": null,
       "kev_due_date": null,
       "kev_vendor": null,
       "kev_product": null,
       "kev_ransomware": false,
-      "is_zero_day": true,
+      "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.29863,
+      "epss_percentile": 0.98243,
       "stack_match": [
-        "aws"
+        "nginx"
       ]
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/",
-      "title": "Hackers use autonomous AI tool Cairn to find zero-day, take over server",
-      "summary": "Threat actors used the open-source AI penetration-testing framework Cairn to find a previously unknown vulnerability in a medical imaging application. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/",
-      "published": "2026-11-20T17:30:00+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "https://therecord.media/amazon-research-cairn-ai-university-attacks-possible-zero-day",
-      "title": "Amazon says Chinese hackers used Cairn AI tool to discover apparent zero-day during attack on university",
-      "summary": "A China-linked threat actor used the open source AI penetration testing tool Cairn to persistently attack two universities, and in one case, possibly discover a zero-day bug, researchers said.",
-      "link": "https://therecord.media/amazon-research-cairn-ai-university-attacks-possible-zero-day",
-      "published": "2026-11-20T17:30:00+00:00",
-      "source": "The Record by Recorded Future",
-      "tags": [
-        "news",
-        "threat-intel"
-      ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
     },
     {
       "id": "https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html",
@@ -249,12 +227,9 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": [
-        "github",
-        "exchange"
-      ]
+      "epss": 0.00192,
+      "epss_percentile": 0.08853,
+      "stack_match": []
     },
     {
       "id": "CVE-2026-77309",
@@ -280,11 +255,10 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.01051,
+      "epss_percentile": 0.65111,
       "stack_match": [
-        "python",
-        "github"
+        "python"
       ]
     },
     {
@@ -313,193 +287,10 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.06086,
-      "epss_percentile": 0.93583,
+      "epss": 0.29863,
+      "epss_percentile": 0.98243,
       "stack_match": [
         "nginx"
-      ]
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html",
-      "title": "WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams",
-      "summary": "Meta-owned WhatsApp has addressed security vulnerabilities, including one impacting its Android app that it suspects may have been exploited in connection with scam messages.\n\nThe vulnerability, tracked as CVE-2026-23871 (CVSS score: 3.5), has been described as a case of incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4.",
-      "link": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html",
-      "published": "2026-11-20T17:57:20+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-23871"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-69133",
-      "title": "netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges",
-      "summary": "## Summary:\n\nOHttpClientCodec and OHttpServerCodec retain the encrypted outer HttpContent in a handler-level cumulationBuffer. After a valid OHTTP exchange completes, the OHTTP request/response context is destroyed, but the outer cumulationBuffer is not released or reset. It remains referenced by the codec until a later inbound content frame replaces it or the handler is removed/channel is closed.\n\nThis can pin attacker-influenced pooled/direct buffer capacity on idle keep-alive channels. Across many long-lived idle connections, this can create availability pressure.\n\nAffected components:\n\n* codec-ohttp/src/main/java/io/netty/incubator/codec/ohttp/OHttpClientCodec.java\n* codec-ohttp/src/main/java/io/netty/incubator/codec/ohttp/OHttpServerCodec.java\n* codec-ohttp/src/main/java/io/netty/incubator/codec/ohttp/OHttpRequestResponseContext.java\n\n## Root cause:\n\nOHttpClientCodec retains inbound content into a handler-level cumulationBuffer. On LastHttpContent, it destroys only the OHttpRequestResponseContextHolder. The cumulationBuffer is released in handlerRemoved(), not immediately after successful exchange completion.\n\nOHttpServerCodec follows the same pattern: it retains inbound content into a handler-level cumulationBuffer, and on completed request/response it destroys the OHttpRequestResponseContext. The outer cumulationBuffer remains owned by the codec and is released only when the handler is removed.\n\nOHttpRequestResponseContext.parse() consumes bytes from the caller-provided outer cumulation buffer, but its destroy() path releases only the inner binary HTTP cumulation, not the codec-level outer cumulationBuffer.\n\n## PoC:\n\nA local test only:\n\n```\ncodec-ohttp/src/test/java/io/netty/incubator/codec/ohttp/OHttpCumulationBufferRetentionTest.java\n```\n\nThe test reuses existing OHTTP test helpers and BouncyCastle crypto provider to perform valid completed OHTTP exchanges over EmbeddedChannel pairs. It sends both a small and a large request/response exchange, confirms comp",
-      "link": "https://github.com/advisories/GHSA-cg26-4c6j-2x8h",
-      "published": "2026-11-20T16:22:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69133"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00304,
-      "epss_percentile": 0.23817,
-      "stack_match": [
-        "github",
-        "exchange"
-      ]
-    },
-    {
-      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
-      "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s Security Impact Rating: Critical CVE: CVE-2026-113425,CVE-2026-121810,CVE-2026-123007,CVE-2026-123633,CVE-2026-123634",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "published": "2026-11-20T16:00:00+00:00",
-      "source": "Cisco Security Advisories (PSIRT)",
-      "tags": [
-        "network",
-        "cisco",
-        "psirt",
-        "advisory"
-      ],
-      "cve_ids": [
-        "CVE-2026-113425",
-        "CVE-2026-121810",
-        "CVE-2026-123007",
-        "CVE-2026-123633",
-        "CVE-2026-123634"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.06086,
-      "epss_percentile": 0.93583,
-      "stack_match": [
-        "nginx"
-      ]
-    },
-    {
-      "id": "CVE-2026-115565",
-      "title": "storyblok-backup: Stored path traversal via unsanitized Storyblok component names in backup output",
-      "summary": "### Summary\nstoryblok-backup writes files using unsanitized names for Storyblok components, which are content type or schema definitions. This allows a component name containing path traversal sequences to cause backup files to be written outside the intended backup directory. Anyone with component management access in the source Storyblok space, not server access, can plant a malicious component name that causes arbitrary file writes on the machine of anyone who later runs a backup against that space.\n\n### Details\nThe writeJson function, which takes a folder, a file name, and content, builds the output file path by directly concatenating the backup directory, the folder, and the file name as strings, with no path sanitization or containment check.\n\nFor the components resource type specifically, the file name used is the component's own name field, which is free text and editable by anyone with component management access in the Storyblok CMS.\n\nOther resource types are not affected by this same issue. Stories and datasources use their numeric IDs as filenames, and assets have their filename derived by splitting on the slash character and taking the last segment, which strips path separators. This issue is scoped specifically to components.\n\nSince the component name is stored in Storyblok and only read back later when the backup tool runs, this is a stored, second order vulnerability. The malicious value is planted once, then triggers on every subsequent backup run performed by anyone using this tool against that Storyblok space.\n\n### PoC\n\n**Step 1 \u2014 plant the malicious component name via Storyblok's Management API:**\n\ncurl -X POST \"https://mapi.storyblok.com/v1/spaces/<SPACE_ID>/components/\" \\\n  -H \"Authorization: <MANAGEMENT_API_TOKEN>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"component\": {\n      \"name\": \"../../../../tmp/evil-storyblok-backup\",\n      \"schema\": {}\n    }\n  }'\n\nAny Storyblok user with component-management permission in the space (not ser",
-      "link": "https://github.com/advisories/GHSA-vcx7-pfrh-mcfg",
-      "published": "2026-11-20T14:55:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115565"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00359,
-      "epss_percentile": 0.30464,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-103035",
-      "title": "TeamPass folder re-parenting authorization bypass",
-      "summary": "## Summary\n\nMissing authorization in the update_folder action: any authenticated non-read-only user can rename, re-parent and convert to personal any folder in the instance, moving another team's credential subtree into their own personal space and removing it from the organization. Confirmed at HEAD 2f271cdd (3.2.1.1), and present at 3.1.3.1 and 3.1.7.6.\n\n## The defect\n\nThe folder-management endpoint dispatches an update_folder action that renames and re-parents a folder. Unlike its sibling actions in the same file, it never checks the edited folder id or the submitted parent id against the caller's accessible-folder set, and the file itself performs no session/authorization gate at all. By pointing the new parent at their own personal folder, an authenticated low-privilege user takes ownership of any folder in the instance.\n\napp/sources/folders.queries.php:\n- The file never calls the session/authorization helpers: a grep for checkSession and userAccessPage across the whole file returns zero hits.\n- case 'update_folder' (lines 294-662) contains no reference to the caller's user-accessible_folders set. The only access-related logic is the personal-folder computation at lines 428-468 and the guard at line 503, which short-circuits on `(int) $isPersonal === 1`.\n- The sibling actions do carry the check: case 'add_folder' validates against user-accessible_folders at line 743, case 'delete_folders' at line 904, and case 'copy_folder' applies the equivalent parent check.\n\nSo update_folder is the one folder-mutating action in the file without an authorization predicate on either the target folder id or the new parent id.\n\n## Attacker model and trace\n\nAn authenticated TeamPass user who is not read-only (no administrative role required). The attacker submits update_folder with the victim folder's id and a parentId pointing at their own personal folder. Because the new parent is personal, the personal-folder computation sets $isPersonal = 1, which satisfies the line 503 guard",
-      "link": "https://github.com/advisories/GHSA-66q9-mxf2-xqw6",
-      "published": "2026-11-20T14:45:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-103035"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00239,
-      "epss_percentile": 0.15276,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-63184",
-      "title": "Refitter: Unrestricted OpenAPI references permit build-host SSRF and file inclusion",
-      "summary": "### Summary\n\nRefitter (the `refitter` dotnet tool, built on NJsonSchema for `$ref` resolution) fetches remote\n`http(s)` URLs and reads local files (including absolute paths and `../` traversal outside the input\ndirectory), inlining the referenced schema into the generated Refit interface/contracts. Running\n`refitter <spec> --output Out.cs` on a spec whose `$ref` points at an attacker/internal URL or an\narbitrary local file yields SSRF, remote file inclusion, and local file inclusion. Verified on\nRefitter 2.0.0.\n\n### Details\n\n- `$ref: http://attacker-or-internal/evil.json#/...` -> build host fetches (SSRF) and inlines the\n  remote schema (RFI); confirmed property `REMOTE_REFIT_PROP`.\n- `$ref: /abs/path.json#/...` or `../../secret.json#/...` -> out-of-tree local file read + inlined\n  (LFI); confirmed property `REFIT_LFI_MARKER`. Both absolute and relative traversal work.\n\nNo RCE: Refitter emits Refit interfaces with no baseUrl string literal (Refit sets the base address at\nruntime), enum values use C# verbatim-string doubling, and string defaults are escaped. The chain\nstops at SSRF + RFI + LFI.\n\nThe `$ref` resolution is performed by Refitter's NJsonSchema dependency, which Refitter ships and\ninvokes with these unsafe defaults.\n\n### PoC\n\n`reproduce.sh` (+ `make_spec.py`, `listener.py`) attached: installs the .NET SDK + Refitter if needed,\nconfirms LFI (out-of-tree read), SSRF (listener hit during generation), and RFI (remote schema\ninlined). Verified on 2.0.0.\n\n### Impact\n\nBuild-time SSRF (CWE-918) from the developer or CI host, disclosure of arbitrary local files\n(CWE-22), and inclusion of untrusted remote content (CWE-829), from running Refitter on an\nattacker-controlled or attacker-influenced OpenAPI description. No code execution. Estimated\nMedium-High, e.g. `[reproduce.sh](https://github.com/user-attachments/files/29395269/reproduce.sh)` (the CNA sets the final score).\n\n### Suggested fix\n\nDon't resolve remote `$ref`s by default (opt-in + host allowlist); confine ",
-      "link": "https://github.com/advisories/GHSA-x6w4-f264-3vvr",
-      "published": "2026-11-20T14:35:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63184"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00411,
-      "epss_percentile": 0.36278,
-      "stack_match": [
-        "github"
       ]
     }
   ]
