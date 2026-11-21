@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T23:27:31.501855+00:00",
+  "generated_at": "2026-11-21T04:33:22.118761+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -122,57 +122,57 @@
       "vendor": "Vanderbilt University"
     },
     {
+      "bucket": "missed",
       "cve": "CVE-2025-42884",
-      "kev_date_added": "2026-11-20",
-      "vendor": "SAP",
-      "product": "NetWeaver",
       "cve_year": 2025,
-      "observed_at": null,
-      "source": null,
-      "link": null,
+      "kev_date_added": "2026-11-20",
       "lead_days": null,
-      "bucket": "missed"
+      "link": null,
+      "observed_at": null,
+      "product": "NetWeaver",
+      "source": null,
+      "vendor": "SAP"
     },
     {
+      "bucket": "same_day_or_late",
       "cve": "CVE-2026-123890",
-      "kev_date_added": "2026-11-20",
-      "vendor": "Broadcom",
-      "product": "VMware vCenter",
       "cve_year": 2026,
-      "observed_at": "2026-11-20T14:30:22.785728+00:00",
-      "source": "The Hacker News Security",
-      "link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
+      "kev_date_added": "2026-11-20",
       "lead_days": 0,
-      "bucket": "same_day_or_late"
-    },
-    {
-      "cve": "CVE-2026-129448",
-      "kev_date_added": "2026-11-20",
-      "vendor": "Apache",
-      "product": "Roller",
-      "cve_year": 2026,
-      "observed_at": "2026-11-18T23:40:03.305427+00:00",
+      "link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
+      "observed_at": "2026-11-20T14:30:22.785728+00:00",
+      "product": "VMware vCenter",
       "source": "The Hacker News Security",
-      "link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
-      "lead_days": 2,
-      "bucket": "earlier"
+      "vendor": "Broadcom"
     },
     {
-      "cve": "CVE-2026-76466",
-      "kev_date_added": "2026-11-20",
-      "vendor": "Cisco",
-      "product": "Expressway Series",
+      "bucket": "earlier",
+      "cve": "CVE-2026-129448",
       "cve_year": 2026,
-      "observed_at": null,
-      "source": null,
-      "link": null,
+      "kev_date_added": "2026-11-20",
+      "lead_days": 2,
+      "link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
+      "observed_at": "2026-11-18T23:40:03.305427+00:00",
+      "product": "Roller",
+      "source": "The Hacker News Security",
+      "vendor": "Apache"
+    },
+    {
+      "bucket": "missed",
+      "cve": "CVE-2026-76466",
+      "cve_year": 2026,
+      "kev_date_added": "2026-11-20",
       "lead_days": null,
-      "bucket": "missed"
+      "link": null,
+      "observed_at": null,
+      "product": "Expressway Series",
+      "source": null,
+      "vendor": "Cisco"
     }
   ],
   "run": {
     "new_signals": 0,
-    "new_rows": 4,
+    "new_rows": 0,
     "capped_entries": 0
   }
 }

@@ -86,7 +86,7 @@
       "epss": 0.06465,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -102,7 +102,7 @@
       "epss": 0.50694,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -120,7 +120,7 @@
       "epss": 0.00239,
       "first_seen": "2026-11-20T23:27:42.035093+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [
         "github"
       ],
@@ -160,7 +160,7 @@
       "epss": 0.99999,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -168,7 +168,7 @@
       "epss": 0.99999,
       "first_seen": "2026-11-19T14:49:36.865587+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -196,7 +196,7 @@
       "epss": 0.8237,
       "first_seen": "2026-11-18T00:07:12.176714+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -204,7 +204,7 @@
       "epss": 0.01503,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -226,7 +226,7 @@
       "epss": 0.00907,
       "first_seen": "2026-11-18T00:07:12.176714+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -234,7 +234,7 @@
       "epss": 0.56429,
       "first_seen": "2026-11-19T14:49:36.865587+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -253,7 +253,7 @@
       "epss": 0.00359,
       "first_seen": "2026-11-20T23:27:42.035093+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [
         "github"
       ],
@@ -357,7 +357,7 @@
       "epss": 0.01663,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -367,7 +367,7 @@
       "epss": 0.06033,
       "first_seen": "2026-11-18T23:40:14.042412+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -377,7 +377,7 @@
       "epss": 0.06086,
       "first_seen": "2026-11-18T23:40:14.042412+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -387,7 +387,7 @@
       "epss": 0.01512,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -409,7 +409,7 @@
       "epss": 0.00843,
       "first_seen": "2026-11-19T23:58:56.868888+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -563,7 +563,7 @@
       "epss": 0.00191,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -583,7 +583,7 @@
       "epss": null,
       "first_seen": "2026-11-20T23:27:42.035093+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -599,7 +599,7 @@
       "epss": 0.1613,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -706,7 +706,7 @@
       "epss": 0.00411,
       "first_seen": "2026-11-20T23:27:42.035093+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [
         "github"
       ],
@@ -799,7 +799,7 @@
       "epss": 0.00304,
       "first_seen": "2026-11-20T23:27:42.035093+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [
         "github",
         "exchange"
@@ -874,7 +874,7 @@
       "epss": 0.00631,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -922,7 +922,7 @@
       "epss": 0.4016,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -930,7 +930,7 @@
       "epss": 0.00417,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -938,7 +938,7 @@
       "epss": 0.06227,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -958,6 +958,17 @@
       "in_kev": false,
       "last_seen": "2026-11-18T14:42:46.250457+00:00",
       "stack_match": [],
+      "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
+    },
+    "CVE-2026-77309": {
+      "epss": null,
+      "first_seen": "2026-11-21T04:33:35.658850+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
+      "stack_match": [
+        "python",
+        "github"
+      ],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
     "CVE-2026-77312": {
@@ -1008,6 +1019,17 @@
       "stack_match": [
         "python",
         "github"
+      ],
+      "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
+    },
+    "CVE-2026-77331": {
+      "epss": null,
+      "first_seen": "2026-11-21T04:33:35.658850+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
+      "stack_match": [
+        "github",
+        "exchange"
       ],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -1118,7 +1140,7 @@
       "epss": 0.01033,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T23:27:42.035093+00:00",
+      "last_seen": "2026-11-21T04:33:35.658850+00:00",
       "stack_match": [],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
@@ -1156,7 +1178,7 @@
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     }
   },
-  "generated_at": "2026-11-20T23:27:42.035093+00:00",
-  "run_id": "44836847754",
+  "generated_at": "2026-11-21T04:33:35.658850+00:00",
+  "run_id": "44866620028",
   "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
 }

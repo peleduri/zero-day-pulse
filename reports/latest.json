@@ -1,81 +1,28 @@
 {
-  "generated": "2026-11-20T23:27:42.035732+00:00",
-  "total": 45,
-  "kev": 6,
-  "zero_day": 6,
+  "generated": "2026-11-21T04:33:35.659357+00:00",
+  "total": 18,
+  "kev": 4,
+  "zero_day": 4,
   "enriched": 0,
   "high_epss": 2,
-  "my_stack": 34,
-  "run_id": "44836847754",
+  "my_stack": 10,
+  "run_id": "44866620028",
   "changes": [
     {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-123890",
-      "title": "CVE-2026-123890 \u2014 VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_ransomware": false
-    },
-    {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-129448",
-      "title": "CVE-2026-129448 \u2014 Apache Roller Deserialization of Untrusted Data Vulnerability",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-129448",
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_ransomware": false
-    },
-    {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-76466",
-      "title": "CVE-2026-76466 \u2014 Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76466",
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_ransomware": false
-    },
-    {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-103035",
-      "title": "TeamPass folder re-parenting authorization bypass",
-      "link": "https://github.com/advisories/GHSA-66q9-mxf2-xqw6",
+      "cve": "CVE-2026-77309",
+      "title": "AIT-GUI route chain allows unauthenticated Python execution in server process",
+      "link": "https://github.com/advisories/GHSA-jrjx-9jjw-747m",
       "stack_match": [
+        "python",
         "github"
       ]
     },
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-115565",
-      "title": "storyblok-backup: Stored path traversal via unsanitized Storyblok component names in backup output",
-      "link": "https://github.com/advisories/GHSA-vcx7-pfrh-mcfg",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-123007",
-      "title": "How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities",
-      "link": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
-      "stack_match": [
-        "nginx"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-63184",
-      "title": "Refitter: Unrestricted OpenAPI references permit build-host SSRF and file inclusion",
-      "link": "https://github.com/advisories/GHSA-x6w4-f264-3vvr",
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69133",
-      "title": "netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges",
-      "link": "https://github.com/advisories/GHSA-cg26-4c6j-2x8h",
+      "cve": "CVE-2026-77331",
+      "title": "memtomem-stm: Concurrent LTM recovery can duplicate reconnects or reuse a cancelled transport session",
+      "link": "https://github.com/advisories/GHSA-72jh-722p-rqr3",
       "stack_match": [
         "github",
         "exchange"
@@ -118,21 +65,46 @@
       "stack_match": []
     },
     {
-      "id": "CVE-2026-123890",
-      "title": "CVE-2026-123890 \u2014 VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "summary": "Vendor: Broadcom | Product: VMware vCenter. Broadcom VMware vCenter contains an authentication bypass using an alternate path or channel vulnerability in the VMware Directory Service that allows an unauthenticated attacker with network access to vCenter to bypass authentication and gain unauthorized access to the system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines (due 2026-11-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
-      "published": "2026-11-20",
-      "source": "CISA KEV",
+      "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html",
+      "title": "Hackers Exploit Critical Cisco Expressway Flaw, Breach Four Devices and Reach Internal Network",
+      "summary": "Threat actors have been observed exploiting a recently disclosed critical security flaw in Cisco Expressway to breach a Russian organization shortly after the public release of a proof-of-concept (PoC) exploit.\n\nThe activity involves the exploitation of CVE-2026-76466 (CVSS score: 9.8), a vulnerability that could allow an unauthenticated, remote attacker with network access to a Cisco Expressway",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html",
+      "published": "2026-11-20T10:32:50+00:00",
+      "source": "The Hacker News Security",
       "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-76466"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_vendor": "Cisco",
+      "kev_product": "Expressway Series",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00417,
+      "epss_percentile": 0.36836,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
+      "title": "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data",
+      "summary": "The suspected China-nexus cyber espionage group known as Armory Castle (formerly UNC5221) has been attributed to the zero-day exploitation of a critical security flaw in VMware vCenter Server in early September 2026.\n\nThe vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of authentication bypass in the VMware Directory Service that could be exploited to gain unauthorized",
+      "link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
+      "published": "2026-11-20T09:38:15+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [
         "CVE-2026-123890"
       ],
-      "is_kev": true,
       "in_kev": true,
       "kev_date_added": "2026-11-20",
       "kev_due_date": "2026-11-23",
@@ -179,93 +151,6 @@
       "stack_match": []
     },
     {
-      "id": "CVE-2026-129448",
-      "title": "CVE-2026-129448 \u2014 Apache Roller Deserialization of Untrusted Data Vulnerability",
-      "summary": "Vendor: Apache | Product: Roller. Apache Roller contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via the XML-RPC endpoint, which accepts and deserializes vendor extension types before authentication. This CVE covers the same underlying vulnerability as CVE-2026-82384 but applies to a broader range of affected versions. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-129448",
-      "published": "2026-11-20",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-129448"
-      ],
-      "is_kev": true,
-      "in_kev": true,
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_vendor": "Apache",
-      "kev_product": "Roller",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": 0.01191,
-      "epss_percentile": 0.68723,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2025-42884",
-      "title": "CVE-2025-42884 \u2014 SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
-      "summary": "Vendor: SAP | Product: NetWeaver. SAP NetWeaver Enterprise Portal contains an improper neutralization of special elements in data query logic vulnerability that allows an unauthenticated attacker to disclose or modify server information via injected JNDI environment properties or a URL used during JNDI lookup operations. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-42884",
-      "published": "2026-11-20",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2025-42884"
-      ],
-      "is_kev": true,
-      "in_kev": true,
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_vendor": "SAP",
-      "kev_product": "NetWeaver",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": 0.00276,
-      "epss_percentile": 0.2048,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-76466",
-      "title": "CVE-2026-76466 \u2014 Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
-      "summary": "Vendor: Cisco | Product: Expressway Series. Cisco Expressway Series contains a use of hard-coded credentials vulnerability that allows an unauthenticated, remote attacker with persistent cookies and network access to execute commands as root on a clustered device via the database service. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76466",
-      "published": "2026-11-20",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-76466"
-      ],
-      "is_kev": true,
-      "in_kev": true,
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_vendor": "Cisco",
-      "kev_product": "Expressway Series",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": 0.00417,
-      "epss_percentile": 0.36836,
-      "stack_match": []
-    },
-    {
       "id": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
       "title": "Chinese-nexus actor\u2019s Cairn AI agents found a zero-day on their own",
       "summary": "Amazon Threat Intelligence is sharing findings from an investigation into a Chinese-nexus threat actor using autonomous AI agents to conduct hacking operations with minimal human involvement. The actor gave the agents a simple goal: \u201cobtain shell access.\u201d During the campaign, the agents found a zero-day in an open-source application and used it to gain full [\u2026]",
@@ -291,61 +176,6 @@
       "epss_percentile": null,
       "stack_match": [
         "aws"
-      ]
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/",
-      "title": "VMware patches vCenter zero-day exploited in attacks since September",
-      "summary": "Broadcom has released security updates to fix a critical VMware vCenter Server authentication bypass vulnerability that Chinese-linked hackers have exploited in zero-day attacks since September 2026. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/",
-      "published": "2026-11-20T00:26:25+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-62955",
-      "title": "baserCMS: Path Traversal Bypass via realpath() in BcThemeFileService (CVE-2026-30940 Patch Bypass)",
-      "summary": "### Summary\n\nThe security patch introduced in baserCMS 5.2.3 to address CVE-2026-30940 / [GHSA-c5c6-37vq-pjcq](https://github.com/baserproject/basercms/security/advisories/GHSA-c5c6-37vq-pjcq) is **incomplete**. The patch added a `realpath()`-based directory traversal check in `BcThemeFileService::getFullpath()`, but the check is **entirely skipped** when `realpath($baseDir)` returns `false` \u2014 which occurs whenever the target subdirectory does not physically exist on disk.\n\nAn authenticated administrator can bypass the patch by supplying a `type` value (e.g., `js`) that maps to a non-existent directory in the theme. The absence of the directory causes `realpath()` to return `false`, the validation block is skipped, and the raw `path` parameter containing `../` sequences is returned unvalidated. This enables arbitrary file write and remote code execution (RCE) \u2014 the exact same impact as the original CVE.\n\n**This vulnerability was verified exploitable on baserCMS 5.2.3 (the \"patched\" version of CVE-2026-30940).**\n\n### Details\n\nThe vulnerability exists in `BcThemeFileService::getFullpath()` at [`plugins/bc-theme-file/src/Service/BcThemeFileService.php` lines 70\u201382](https://github.com/baserproject/basercms/blob/5.2.x/plugins/bc-theme-file/src/Service/BcThemeFileService.php#L70):\n\n```php\npublic function getFullpath(string $theme, string $plugin, string $type, string $path)\n{\n    // ...build $baseDir and $fullPath from $theme, $type, $path...\n    $baseDir  = $viewPath . $type . DS;      // e.g. .../BcThemeSample/webroot/js/\n    $fullPath = $baseDir  . $path;           // e.g. .../webroot/js/../../../../webroot/\n\n    $resolvedBase = realpath($baseDir);\n    if ($resolvedBase !== false) {           // \u2190 BYPASS: entire block skipped when dir absent\n        $resolvedBase = rtrim($resolvedBase, DS) . DS;\n        $targetDir = realpath(dirname($fullPath));\n        if ($targetDir === false) {\n            $targetDir = $this->normalizePath(dirname($fullPath));\n        }\n        if (",
-      "link": "https://github.com/advisories/GHSA-2pj4-v76f-wjvx",
-      "published": "2026-11-20T00:17:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62955"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.01062,
-      "epss_percentile": 0.65412,
-      "stack_match": [
-        "github"
       ]
     },
     {
@@ -423,6 +253,100 @@
       "epss_percentile": null,
       "stack_match": [
         "windows"
+      ]
+    },
+    {
+      "id": "CVE-2026-77331",
+      "title": "memtomem-stm: Concurrent LTM recovery can duplicate reconnects or reuse a cancelled transport session",
+      "summary": "Concurrent surfacing RPC failures can trigger more than one reconnect for the same dirty session, and cancellation during a post-reconnect retry can leave the replacement session reusable despite an interrupted protocol exchange. The private fix introduces monotonic session generations, one shielded shared reconnect flight per dirty generation, and generation-aware cancellation handling across search, access-count, and scratch RPCs. The duplicate-reconnect subcase was introduced in 0.1.24; cancellation recovery affects the broader listed range.",
+      "link": "https://github.com/advisories/GHSA-72jh-722p-rqr3",
+      "published": "2026-11-20T23:38:15Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77331"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "github",
+        "exchange"
+      ]
+    },
+    {
+      "id": "CVE-2026-77309",
+      "title": "AIT-GUI route chain allows unauthenticated Python execution in server process",
+      "summary": "## Summary\nA security issue exists where unauthenticated callers can instruct the AIT-GUI server to execute arbitrary Python scripts. The attack vector involves obtaining a session cookie through GET /, followed by a malicious POST /script/run request containing an absolute file path that bypasses the configured script directory restrictions.\n\n### Patches\n* 2.5.1\n\n### Impact\nThis vulnerability allows unauthenticated remote code execution on the AIT-GUI server. Any attacker with network access can execute arbitrary Python code with daemon privileges.\n\n## Details\n_Chain:_\n1. `POST /tlm/query` writes the user-controlled `fields` value into `fields_in.txt` under the AIT-GUI static directory.\n   *  If the supplied `dataDir` has no `.pcap` files, the route returns the expected `400 Bad Request` before deleting that file.\n2. `POST /script/run` accepts `scriptPath=../static/fields_in.txt`.\n   * AIT-GUI reads that file and runs it as Python.\n\n_Relevant code:_\n- `ait/gui/__init__.py:930,935,942-944`: `/tlm/query` writes `fields` to `fields_in.txt`.\n- `ait/gui/__init__.py:952-958,978`: the no-PCAP error path aborts before cleanup.\n- `ait/gui/__init__.py:1130-1136`: `/script/run` joins `scriptPath` with `ScriptRoot` and only checks that the path exists.\n- `ait/gui/__init__.py:1186-1191`: the selected file is read and executed as Python.\n- `ait/gui/__init__.py:1105-1108`: nearby `/scripts/load/<name>` has a path containment check, but `/script/run` does not.\n\n### Fix Information\nRestricted script execution paths and avoided using static temp files.\n\n## PoC\n1. `POST /tlm/query` writes the user-controlled `fields` value into `fields_in.txt` under the AIT-GUI static directory.\n   *  If the supplied `dataDir` has no `.pcap` files, the route returns the expected `400 Bad Request` before deleting that file.\n```\n# Remove file to ensure nothing exists\nAIT-GUI % rm <path>/fields_in.txt\n\n# With server started, send POST request to /tlm/query endpoint\nAIT-GUI % curl -X POST http://localhos",
+      "link": "https://github.com/advisories/GHSA-jrjx-9jjw-747m",
+      "published": "2026-11-20T23:36:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77309"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "python",
+        "github"
+      ]
+    },
+    {
+      "id": "https://security.paloaltonetworks.com/CVE-2026-123633",
+      "title": "CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products (Severity: CRITICAL)",
+      "summary": "",
+      "link": "https://security.paloaltonetworks.com/CVE-2026-123633",
+      "published": "2026-11-20T23:00:00+00:00",
+      "source": "Palo Alto Security Advisories",
+      "tags": [
+        "network",
+        "paloalto",
+        "psirt",
+        "advisory"
+      ],
+      "cve_ids": [
+        "CVE-2026-123633",
+        "CVE-2026-123007"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.06086,
+      "epss_percentile": 0.93583,
+      "stack_match": [
+        "nginx"
       ]
     },
     {
@@ -634,797 +558,6 @@
       "epss": 0.00191,
       "epss_percentile": 0.08933,
       "stack_match": []
-    },
-    {
-      "id": "CVE-2026-114516",
-      "title": "Etherpad: Pre-auth arbitrary file read",
-      "summary": "### Summary\n\nAn unauthenticated path\u2011traversal / arbitrary file read vulnerability in Etherpad's /static/* handler allows any remote, unauthenticated user to read any file on the server's filesystem (e.g. GET /static/plugins/ep_etherpad-lite/static/..%5C..%5C..%5C..%5C..%5C..%5C..%5Cetc/passwd returns /etc/passwd) available to the user running the etherpad software. Because the endpoint is mounted before the authentication middleware, no credentials, session, or configuration change are required. The read primitive could escalate to a full server compromise: on a typical deployment by disclosing settings.json / credentials.json / /proc/self/environ, which contain the admin password, giving an attacker an admin session and, through the admin plugin installer, remote code execution.\n\n### Details\n\nEtherpad serves plugin static assets through src/node/utils/Minify.ts. The request path is first passed through the canonical sanitizer src/node/utils/sanitizePathname.ts, which is careful to convert backslashes to forward slashes only on Windows:\n\n```\n// src/node/utils/sanitizePathname.ts:11-20\np = pathApi.normalize(p);\nif (pathApi.isAbsolute(p)) throw new Error(`absolute paths are forbidden: ${p}`);\nif (p.split(pathApi.sep)[0] === '..') throw new Error(`directory traversal: ${p}`);\n// THIS CONVERSION MUST ONLY BE DONE ON WINDOWS, otherwise on POSIXish systems '..\\\\' in the input\n// pathname would not be normalized away before being converted to '../'.\nif (pathApi.sep === '\\\\') p = p.replace(/\\\\/g, '/');\n```\n\nOn Linux a backslash is an ordinary filename byte, so an input segment like ..\\..\\..\\test contains no ./.. path components and passes every check in sanitizePathname unchanged. The project's own test suite confirms this: src/tests/backend-new/specs/sanitizePathname.ts:62 lists ['posix', '..\\\\foo'] among the accepted paths (returned unchanged).\n\nThe vulnerability is that Minify.ts then performs that Windows\u2011only conversion unconditionally, after the sanitizer has run, ju",
-      "link": "https://github.com/advisories/GHSA-mc8w-wjhw-45x5",
-      "published": "2026-11-20T00:23:45Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-114516"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.01485,
-      "epss_percentile": 0.74647,
-      "stack_match": [
-        "linux",
-        "github",
-        "windows"
-      ]
-    },
-    {
-      "id": "CVE-2026-103033",
-      "title": "ALTCHA: Nil-map panic (pre-verification DoS) in v1 parseServerSignature on malformed VerificationData",
-      "summary": "### Summary\n\n`parseServerSignature` in the v1 module only initializes `ServerSignatureVerificationData.Extra` inside the `if err == nil` branch after `url.ParseQuery(parsedPayload.VerificationData)`. Go's `url.ParseQuery` returns the successfully-parsed pairs together with a non-nil error when the query string contains a malformed percent-escape. A subsequent loop unconditionally writes unknown keys into `Extra`, regardless of `err`, causing a nil-map write panic (assignment to entry in nil map) whenever an attacker supplies a `VerificationData` string with a bad %-escape (e.g. `x=1&%zz=2`).\n\nThis is reachable pre-authentication: `parseServerSignature` is called by the exported `VerifyServerSignature` / `VerifyServerSignatureSafe` before any HMAC/signature check, and `VerificationData` is attacker-controlled data forwarded by the client as part of the ALTCHA server-signature payload.\n\n### Impact\n\nAny application calling `VerifyServerSignature` or `VerifyServerSignatureSafe` on unauthenticated input can be made to panic by submitting a crafted payload. Under standard net/http, the per-request goroutine panic is recovered and the request aborts (a log-flood / per-request DoS); it escalates to a full process crash if verification runs in an application-spawned goroutine or a non-recovering framework.\n\n### Proof Of Concept\n\n```go\npayload, _ := json.Marshal(ServerSignaturePayload{\n    Algorithm:        SHA256,\n    VerificationData: \"x=1&%zz=2\",\n    Signature:        \"irrelevant\",\n    Verified:         true,\n})\nencoded := base64.StdEncoding.EncodeToString(payload)\nVerifyServerSignature(encoded, \"some-secret\") // panics: assignment to entry in nil map\n\n```\n\n### Patch\n\n`Extra` is now initialized unconditionally before the `url.ParseQuery` error check, so it's always safe to write into regardless of parse errors.\n\n### Workarounds\n\nRecover from panics around calls to `VerifyServerSignature`/`VerifyServerSignatureSafe`, or reject/sanitize `VerificationData` before calling them",
-      "link": "https://github.com/advisories/GHSA-gfwj-45pc-w6r5",
-      "published": "2026-11-20T00:21:19Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-103033"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00332,
-      "epss_percentile": 0.27042,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77382",
-      "title": "falcon-rust: Discrete-Gaussian sampler runs at 2^-33 precision, far below Falcon's requirement (reference KAT vectors no longer pass)",
-      "summary": "**Reporter:** Connor Webber\n**Package:** `falcon-rust` (crates.io), repository `github.com/aszepieniec/falcon-rust`\n**Affected:** v0.1.3 and the current `master` (HEAD `cfa1b35`). Regression introduced in commit `bf2cf00`.\n**Component:** discrete-Gaussian sampler, `src/samplerz.rs` (`approx_exp`, `ber_exp`, `sampler_z`)\n**Status:** Confirmed by source review and by empirical measurement of the crate's own compiled code.\n\n## Summary\n\nfalcon-rust's discrete-Gaussian rejection sampler evaluates its `exp()` acceptance step at only 32 bits of fractional precision. Measured directly against the crate's own compiled code, `approx_exp` has a maximum relative error of 2^-33. For comparison, the Falcon reference implementation achieves about 2^-63, and the f64 code this crate replaced achieved about 2^-52. The current sampler is therefore roughly 2^19 (about 500,000x) less precise than the version it replaced, and about 2^30 less precise than the reference.\n\nFalcon's security proof relies on the sampled signatures being statistically indistinguishable from an ideal discrete Gaussian, so the signature transcript leaks nothing about the secret trapdoor. That guarantee holds only when the sampler's relative error stays small enough, over the roughly 2^64 signature budget, to keep the Renyi divergence between the real and ideal distributions negligible. The precision the security analysis relies on is cited in the literature between roughly 2^-40 and 2^-46 (for example the FACCT and isochronous-sampling analyses). At 2^-33 the sampler is below every value in that range, roughly 128x to 4096x too coarse depending on which bound you take, so the precondition the proof depends on is not met.\n\nThere is a second, bound-independent piece of evidence that removes any ambiguity: the crate's sampler can no longer reproduce Falcon's known-answer test (KAT) vectors, which are the authoritative correctness oracle. Rather than restore the precision, the maintainers loosened their own test tol",
-      "link": "https://github.com/advisories/GHSA-25rm-9wvm-m38v",
-      "published": "2026-11-20T00:17:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77382"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00274,
-      "epss_percentile": 0.20213,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77380",
-      "title": "Bolt: Prevent SSRF due to unchecked followed redirects",
-      "summary": "### Impact\n\nThe `/bolt/async/upload-url` and `/bolt/async/embed` endpoints validated only the **submitted** URL before fetching it server-side, but the fetch then **followed redirects to destinations that were never re-validated**. This allowed an authenticated user to bypass the SSRF guard (`UrlSafetyChecker`) and make the server issue requests to internal/cloud-metadata addresses.\n\n### Patches\n\nThis issue has been patched with Bolt 6.1.5.",
-      "link": "https://github.com/advisories/GHSA-3xjf-9q55-vxw4",
-      "published": "2026-11-20T00:15:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77380"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00366,
-      "epss_percentile": 0.31252,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77377",
-      "title": "Bolt: Server-Side Request Forgery (SSRF) in URL-upload and embed endpoints",
-      "summary": "### Impact\n\nTwo authenticated backend endpoints fetched a user-supplied URL server-side with no protection against internal targets.\n\n### Patches\n\nThis has been patched in Bolt 6.1.4.",
-      "link": "https://github.com/advisories/GHSA-2535-j2pq-qq4r",
-      "published": "2026-11-20T00:14:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77377"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00283,
-      "epss_percentile": 0.21281,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77359",
-      "title": "Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes",
-      "summary": "Standalone `streamable-http` mode in `datalayer/jupyter-mcp-server` rejects forged `Host` and `Origin` headers on `/mcp`, but custom management routes mounted on the same application do not get the same browser-origin protection. A malicious website can keep an attacker origin while its hostname resolves to `127.0.0.1` or a private target address, then send `PUT /api/connect` to replace the MCP server's active Jupyter backend. The route accepts the browser-shaped request and makes the server start a kernel client against attacker-controlled infrastructure.\n\nThe protected `/mcp` endpoint shows the intended browser-origin boundary. With `MCP_TOKEN` configured, `/mcp` rejects forged browser headers:\n\n```text\nPOST /mcp with Authorization: Bearer SCAN_MCP_TOKEN\nHost: attacker.example:8142\nOrigin: http://attacker.example:8142\n\nHTTP 421 Invalid Host header\n```\n\nThe vulnerable route is `jupyter_mcp_server/server.py:143-187`. It parses caller JSON, updates the active Jupyter backend configuration, resets `ServerContext`, and starts the kernel without applying the `/mcp` Host/Origin rejection to the custom route:\n\n```python\n@mcp.custom_route(\"/api/connect\", [\"PUT\"])\nasync def connect(request: Request):\n    data = await request.json()\n\n    document_runtime = DocumentRuntime(**data)\n\n    set_config(\n        provider=document_runtime.provider,\n        runtime_url=document_runtime.runtime_url,\n        runtime_id=document_runtime.runtime_id,\n        runtime_token=document_runtime.runtime_token,\n        document_url=document_runtime.document_url,\n        document_id=document_runtime.document_id,\n        document_token=document_runtime.document_token,\n        allowed_jupyter_tools=document_runtime.allowed_jupyter_tools or \"notebook_run-all-cells,notebook_get-selected-cell\"\n    )\n\n    ServerContext.reset()\n\n    try:\n        __start_kernel()\n        return JSONResponse({\"success\": True})\n```\n\n`/api/stop` is also state-changing and accepts the same browser-origin route shape:\n\n```pytho",
-      "link": "https://github.com/advisories/GHSA-9x8x-crjq-g64h",
-      "published": "2026-11-20T00:12:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77359"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00503,
-      "epss_percentile": 0.43944,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77318",
-      "title": "Jupyter MCP Server: Unauthenticated management routes can hijack the Jupyter backend in standalone HTTP mode",
-      "summary": "Standalone `streamable-http` mode in `datalayer/jupyter-mcp-server` requires `MCP_TOKEN` for `/mcp`, but the custom management routes mounted on the same application do not enforce that token. An unauthenticated network caller can invoke `PUT /api/connect`, choose the Jupyter backend URL and token fields, reset the server context, and make the MCP server start a kernel client against attacker-controlled infrastructure. The same missing authentication affects the state-changing `DELETE /api/stop` route.\n\nThe intended authentication boundary is documented in the security guide and enforced during startup:\n\n```text\ndocs/docs/reference/security/index.mdx:15\nAll MCP endpoints require Bearer token authentication.\n\ndocs/docs/reference/security/index.mdx:25\nStarting with version 1.0.0, MCP client authentication is required for the streamable-http transport.\n```\n\nThe CLI enforces that boundary for the MCP endpoint:\n\n```python\n# jupyter_mcp_server/CLI.py:203-209\nif transport == \"streamable-http\" and not mcp_token and not insecure_mcp_noauth:\n    raise click.UsageError(\n        \"streamable-http transport requires MCP client authentication. \"\n        \"Set --mcp-token / MCP_TOKEN, or pass --insecure-mcp-noauth to \"\n        \"explicitly allow unauthenticated access.\"\n    )\n```\n\n```python\n# jupyter_mcp_server/CLI.py:285-290\nif transport == \"streamable-http\":\n    if mcp_token:\n        from jupyter_mcp_server.server import RuntimeTokenVerifier\n        mcp._token_verifier = RuntimeTokenVerifier(mcp_token)\n        logger.info(\"MCP endpoint token authentication enabled (using MCP_TOKEN)\")\n```\n\nThe vulnerable route is `jupyter_mcp_server/server.py:143-187`:\n\n```python\n@mcp.custom_route(\"/api/connect\", [\"PUT\"])\nasync def connect(request: Request):\n    data = await request.json()\n\n    document_runtime = DocumentRuntime(**data)\n\n    set_config(\n        provider=document_runtime.provider,\n        runtime_url=document_runtime.runtime_url,\n        runtime_id=document_runtime.runtime_id,\n      ",
-      "link": "https://github.com/advisories/GHSA-24pw-rf5p-mgp7",
-      "published": "2026-11-20T00:12:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77318"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00505,
-      "epss_percentile": 0.44078,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77316",
-      "title": "Flyto2 Core: SSRF guard bypass via DNS rebinding (validate_url_ssrf resolves-then-connects without pinning)",
-      "summary": "# [MEDIUM] SSRF guard bypass via DNS rebinding \u2014 validate_url_ssrf resolves-then-connects without pinning\n\n- **CWE:** CWE-918 (SSRF) / CWE-367 (TOCTOU).\n- **CVSS v3.1:** `AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:N` = **6.8 Medium** (AC:H \u2014 needs attacker-controlled DNS with a low/zero TTL and to flip the answer between the guard's lookup and the connection's lookup; S:C \u2014 reaches internal/metadata services the guard is meant to block; C:H \u2014 e.g. cloud metadata credentials at 169.254.169.254).\n- **Affected component:** `flyto-core` (PyPI `flyto-core`), HEAD `ae2b38e` (v2.26.7). `src/core/utils.py::validate_url_ssrf` (resolution at `getaddrinfo` ~L512, `is_private_ip` check ~L515) and every consumer: `guarded_aiohttp_request()`, `enforce_outbound_url()`/`validate_url_with_env_config()` \u2014 i.e. `http.get/request/batch`, `graphql.query/mutation`, `monitor.http_check`, `notification.{slack,discord,teams}`, `ai.vision_analyze`, `verify.visual_diff`, `browser.proxy_rotate`, etc.\n- **Relationship:** Incomplete hardening of the SSRF-guard family (**GHSA-pgwh-4jj4-qm8v**, **GHSA-c9hr-64h3-gxpc**, **GHSA-794r-5rp2-fpg8**/CVE-2026-55787). Those fixes added per-module coverage, redirect revalidation, and IPv6-transition range-checks \u2014 but none pins the resolved address, so the guard's resolve-then-connect gap defeats all of them.\n\n## Root cause\n`validate_url_ssrf()` resolves the hostname with `socket.getaddrinfo()` and rejects the URL if any resolved IP is private. It then returns the **URL string** (hostname intact). The caller (`guarded_aiohttp_request`: `validate_url_with_env_config(url)` then `session.request(method, url, ...)`) hands the hostname to aiohttp, which performs an **independent second DNS resolution** at connect time. The validated IP is never pinned for the connection, so an attacker whose authoritative DNS returns a public A record for the guard's lookup and a private/loopback/metadata address for the connection's lookup reaches internal space. aiohttp resolves via it",
-      "link": "https://github.com/advisories/GHSA-6pm8-6f34-9v3g",
-      "published": "2026-11-20T00:11:24Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77316"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00347,
-      "epss_percentile": 0.29053,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77315",
-      "title": "Flyto2 Core: http.paginate follows server-supplied next-page URLs (Link header / cursor) without SSRF revalidation",
-      "summary": "## Summary\n`http.paginate` validates only the initial `base_url`, then follows server-supplied pagination targets (RFC 5988 `Link: rel=\"next\"` headers, cursor/offset URLs) in a loop **without revalidating each follow-up URL**. An attacker's first-page response can point `next` at an internal address, causing a second-order SSRF whose internal body is aggregated into the returned items.\n\n## Root Cause\n`src/core/modules/atomic/http/paginate.py:495` validates `base_url` (first URL only). The pagination loop `_paginate_link_header` reads `next_url` via `_parse_link_header` (:203), sets `url=next_url` (:208), and calls `session.request(method, url)` (:196) with NO validate call in the loop (:186-208 has zero guard calls).\n\n## Impact\nReadable second-order SSRF that bypasses the SSRF control; internal/metadata body aggregated into `all_items` and returned to the caller (C:H, S:C).\n\n## Proof of Concept\nVerified live: `http.paginate` with allowlisted base `127.0.0.1` followed a `Link: <http://127.0.0.3/...>; rel=\"next\"` (non-allowlisted) and returned `INTERNAL-NEXTPAGE-SECRET` in the aggregated items.\n```\nexecute_module http.paginate {\"url\":\"http://attacker.tld/p1\",\"strategy\":\"link_header\"}\nattacker p1 response header: Link: <http://<cloud-metadata-ip>/latest/meta-data/>; rel=\"next\"\n```\n\n## Attack Chain\n1. Entry: `http.paginate {url:\"http://attacker.tld/p1\", strategy:\"link_header\"}`. Guard: `validate_url_with_env_config(base_url)` (paginate.py:495) \u2014 validates the FIRST url only.\n2. Sink: `_paginate_link_header` reads `next_url` (`_parse_link_header` :203), `url=next_url` (:208), `session.request(method,url)` (:196) \u2014 NO validate call in the loop. Bypass proof: only :495 validates; loop at :186-208 has zero guard calls.\n3. Impact: internal body aggregated into `all_items` and returned \u2192 readable second-order SSRF.\n\n## Bypass Evidence\nLive PoC followed a `Link` header into non-allowlisted loopback and returned the internal marker in aggregated results. Only `base_url` is vali",
-      "link": "https://github.com/advisories/GHSA-2mr3-rxrq-238c",
-      "published": "2026-11-20T00:10:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77315"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00355,
-      "epss_percentile": 0.29999,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77313",
-      "title": "Flyto2 Core: SSRF guard validates the resolved IP but connects by hostname, allowing DNS-rebinding TOCTOU",
-      "summary": "## Summary\n`validate_url_ssrf` resolves the hostname, checks the IP against private ranges, then **discards the IP and returns the hostname URL string**. aiohttp performs a fresh, independent DNS resolution at connect time. An attacker controlling DNS for a hostname (TTL 0, alternating public IP and internal IP) passes validation on the first lookup and connects to the internal IP on the second \u2014 a classic check-then-use race. SECURITY_SSRF.md line 63 explicitly claims DNS-rebinding is prevented; it is not.\n\n## Root Cause\n`src/core/utils.py:523` returns the hostname URL after validation; the resolved IP is never pinned. A repo grep of `http/` and `utils.py` for `TCPConnector` / `resolver` / `response.history` / `on_request_redirect` / IP-pinning returns NONE. Each module builds a fresh `ClientSession` per call \u2192 the connect-time `getaddrinfo` is independent of the validation-time lookup.\n\n## Impact\nDefeats the SSRF guard on ALL modules that call it (readable internal fetch). Independent of IP-range completeness \u2014 the private IP is never presented to `is_private_ip`. Requires attacker DNS control + winning the resolution race \u2192 AC:H.\n\n## Proof of Concept\nCode-proven: `validate_url_ssrf` returns the hostname (utils.py:523); no pinned-IP connector anywhere. Two independent resolutions occur (validation-time and aiohttp connect-time).\n```\nattacker DNS: rebind.attacker.tld TTL 0, alternating public IP and the cloud metadata IP\nexecute_module http.get {\"url\":\"http://rebind.attacker.tld/latest/meta-data/...\"}\n```\n\n## Attack Chain\n1. Entry: `http.get {url:\"http://rebind.attacker.tld/...\"}`. Guard: `validate_url_with_env_config`. Bypass proof: `getaddrinfo(rebind.attacker.tld)` returns the public IP, `is_private_ip=False` (utils.py:511-519); returns the hostname URL (:523) \u2014 the IP is discarded.\n2. Sink: `session.get(\"http://rebind.attacker.tld/...\")` (get.py:116). aiohttp performs a FRESH independent `getaddrinfo` at connect \u2192 now resolves to the internal IP. Bypass proof: ",
-      "link": "https://github.com/advisories/GHSA-pfg2-w999-497v",
-      "published": "2026-11-20T00:09:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77313"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0028,
-      "epss_percentile": 0.21015,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-77312",
-      "title": "Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429)",
-      "summary": "# [CRITICAL] Arbitrary file write via unguarded `data.*` / `file.*` write modules \u2014 incomplete fix of GHSA-2956\n\n- **CWE:** CWE-22 (Path Traversal) / CWE-73 (External Control of File Name or Path); impact reaches CWE-94 (code execution via file overwrite).\n- **CVSS v3.1:** `AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H` = **9.3 Critical** (S:C because a write escapes the intended sandbox confinement into the host filesystem / other components).\n  - AV:N \u2014 reachable via the MCP server / recipe engine (`execute_module`). AC:L \u2014 deterministic. PR:L \u2014 any client able to run a module/recipe (the same attacker model as GHSA-2956; unauthenticated on the HTTP MCP surface per CVE-2026-55786). UI:N. S:C \u2014 escapes `FLYTO_SANDBOX_DIR`. C/I/A:H \u2014 arbitrary-content write to any absolute path \u2192 overwrite app code / recipes / `~/.bashrc` / cron / `authorized_keys` \u2192 RCE.\n- **Affected component:** `flyto-core` (PyPI `flyto-core`), HEAD `ae2b38e` (v2.26.7 line). Modules `data.csv.write` (`src/core/modules/atomic/data/csv_write.py`), `data.json_to_csv` (`.../data/json_to_csv.py`), `file.copy` (`.../file/copy.py`), `file.move` (`.../file/move.py`) \u2014 and the broader `data.*`/`file.*`/report-writer families that do not call the path guard.\n- **Relationship:** **Incomplete fix of GHSA-2956-977x-2w3r** (Critical arbitrary file write, patched in v2.26.6 by commit `d5f89d7`). That fix routed a hand-picked module list (`image.download/convert/resize/crop/compress/rotate/watermark/qrcode_generate`, `document.excel_write/pdf_fill_form/word_to_pdf/pdf_to_word`, `browser.pagination` checkpoint) through `validate_path_with_env_config()`. It did **not** cover the `data.*` and `file.*` write families, which still write a client-controlled path with no confinement.\n\n## Reachability (hop-by-hop, guards resolved)\n1. Client invokes a module via the recipe engine / MCP `execute_module` (`src/core/mcp_handler.py`, `mcp_server.py`) \u2014 the same surface as GHSA-2956 / CVE-2026-55786.\n2. `data.csv.write` reads `file_pat",
-      "link": "https://github.com/advisories/GHSA-p34x-fmph-9fjx",
-      "published": "2026-11-20T00:09:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77312"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00748,
-      "epss_percentile": 0.5582,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-59988",
-      "title": "django-docutils unsafe Docutils defaults allow local file disclosure, SSRF, and stored XSS",
-      "summary": "## Summary\n\ndjango-docutils before `0.30.0` rendered reStructuredText through Docutils without protected web-safe defaults. Public rendering paths, including `publish_doctree`, `publish_html_from_source`, `publish_html_from_doctree`, `publish_parts_from_doctree`, the `{% rst %}` template tag, the `rst` template filter, `DocutilsTemplates`, and `DocutilsView`, could process attacker-controlled RST with Docutils directives that read local files, fetch URL-backed content, or emit raw HTML.\n\nThe issue is fixed in `0.30.0` by disabling Docutils file insertion, raw directives, local `docutils.conf` processing, and unsafe URI schemes by default, and by sanitizing doctrees before HTML is emitted.\n\nApplications are affected when they render attacker-controlled or lower-trust RST through django-docutils without their own safe Docutils configuration. Applications that only render trusted static RST are not affected unless that content can be influenced by an attacker.\n\n## Impact\n\nAn attacker who can influence RST rendered by a vulnerable django-docutils integration may be able to read files readable by the Django worker process, trigger server-side requests through URL-backed directives, or inject raw HTML/JavaScript into rendered output.\n\nExamples of affected application patterns include comments, wiki pages, blog bodies, profile or biography fields, CMS fields, uploaded RST documents, API-supplied RST, or overridden view content methods that return user-supplied RST.\n\nPotential impact includes disclosure of application configuration, environment files, credentials, source files, templates, mounted secrets, and logs readable by the process. UI escaping after rendering is not sufficient for file disclosure because the server-side read occurs before HTML reaches the client.\n\n## Affected versions\n\nAffected package: `django-docutils` on PyPI\n\nAffected versions: `<= 0.29.0`\n\nPatched versions: `>= 0.30.0`\n\n## Technical details\n\nBefore `0.30.0`, django-docutils handed RST content to",
-      "link": "https://github.com/advisories/GHSA-86mf-q4h5-69gp",
-      "published": "2026-11-20T00:08:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59988"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0044,
-      "epss_percentile": 0.39151,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-63415",
-      "title": "Jane: $ref resolution performs SSRF + LFI (path traversal) at code-generation time (jane-php)",
-      "summary": "### Summary\njane-php resolves external `$ref` targets at code-generation time via `file_get_contents($ref)` (jane-php/json-schema-runtime/Reference.php::doResolve) with no scheme/path restriction. An attacker-controlled OpenAPI document can therefore cause: `$ref: 'http://attacker/x'` -> SSRF (HTTP GET at gen time; response inlined = RFI); `$ref: '/abs/file'` -> LFI; `$ref: '../secret.yaml'` -> path-traversal LFI (CWE-22, arbitrary local JSON/YAML read). Verified 7.11.2/PHP8.1 (listener records the fetch; remote + `../` local content inlined into the generated code). `file://` rejected. CWE-918/CWE-98/CWE-611/CWE-22.\n\n### Details\n```php\n// Reference.php::doResolve()\n$contents = file_get_contents($fragment); // $fragment = attacker-controlled $ref URI\n```\n\n### Impact\nGenerating PHP with jane from an attacker-influenced OpenAPI document issues HTTP requests to attacker-chosen URLs (SSRF \u2014 internal services, cloud metadata) and reads arbitrary local files (LFI via `../`), at build/CI time, inlining results into the output.\n\n### PoC\n`reproduce.sh` (+ `make_spec.py`, `gen.php`): runs jane on a remote-$ref spec (local listener records the SSRF, output checked for the inlined response) and a `../`-traversal local-$ref spec (output checked for the leaked file).\n\n### Suggested fix\nDisable remote `$ref` fetching by default (or allow-list); confine local `$ref` to the spec directory (reject absolute paths and `..`). Don't `file_get_contents($ref)` on attacker-controlled URIs.\n\n[maintainer-report.txt](https://github.com/user-attachments/files/29497381/maintainer-report.txt)\n[reproduce.sh](https://github.com/user-attachments/files/29497382/reproduce.sh)\n[gen.php](https://github.com/user-attachments/files/29497384/gen.php)\n[make_spec.py](https://github.com/user-attachments/files/29497385/make_spec.py)",
-      "link": "https://github.com/advisories/GHSA-c3cj-3p6p-j822",
-      "published": "2026-11-20T00:07:32Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63415"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00348,
-      "epss_percentile": 0.29216,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-63344",
-      "title": "Refitter allows arbitrary code execution through unescaped OpenAPI content-type values",
-      "summary": "### Summary\n\nRefitter emits the spec's content-type key (content map key in requestBody/responses) verbatim into a Refit `[Headers(\"Accept: <ct>\", \"Content-Type: <ct>\")]` attribute string without escaping\n`\"`. A crafted value survives Refitter's default OpenAPI validation, breaks out of the attribute and\nthe enclosing interface + namespace, injects a top-level `file class` with a `[ModuleInitializer]`\nmethod, and reopens so the file stays valid. .NET runs `[ModuleInitializer]` methods at assembly\nload, so the attacker's code executes at application startup. Verified on Refitter 2.0.0 / .NET 8.\n\nThe malicious input is a content-type KEY such as: content: { 'application/<breakout>': {schema} }.\nNo `--skip-validation` is required.\n\n### PoC\n\n`reproduce.sh` (+ `make_spec.py`) attached: generates with default validation, compiles into a\nconsole app, runs it (Main does not touch the client), and shows a marker written at assembly load.\n\n### Impact\n\nCode execution at assembly load (process startup) in any application that compiles a Refitter client\ngenerated from an attacker-controlled or attacker-influenced OpenAPI description. Estimated Critical, e.g.\n`CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N` (the CNA sets the final score).\n\n### Suggested fix\n\nEscape every spec-derived string before emitting it into a Refit attribute (escape `\"`, `\\`,\nreject newlines) and validate characters. We recommend auditing all attribute emissions that embed\nspec-derived values, using one shared encoder.\n[reproduce.sh](https://github.com/user-attachments/files/29394848/reproduce.sh)\n[maintainer-report.txt](https://github.com/user-attachments/files/29394851/maintainer-report.txt)\n[make_spec.py](https://github.com/user-attachments/files/29394853/make_spec.py)",
-      "link": "https://github.com/advisories/GHSA-p32v-8v8j-j534",
-      "published": "2026-11-20T00:06:52Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63344"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0035,
-      "epss_percentile": 0.2946,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-63346",
-      "title": "Refitter allows code execution through unescaped OpenAPI header parameter names",
-      "summary": "### Summary\n\nRefitter emits the spec's header parameter name (parameters[].name with in: header) verbatim into a Refit `[Header(\"<name>\")]` attribute string without escaping\n`\"`. A crafted value survives Refitter's default OpenAPI validation, breaks out of the attribute and\nthe enclosing interface + namespace, injects a top-level `file class` with a `[ModuleInitializer]`\nmethod, and reopens so the file stays valid. .NET runs `[ModuleInitializer]` methods at assembly\nload, so the attacker's code executes at application startup. Verified on Refitter 2.0.0 / .NET 8.\n\nNotable: the breakout starts from a PARAMETER-LIST position (it closes the params and method first).\nThe malicious input is a header parameter name. No `--skip-validation` is required. The query\n`AliasAs` and value sinks (enum, default) are escaped; the gap is in the attribute-string emission.\n\n### PoC\n\n`reproduce.sh` (+ `make_spec.py`) attached: generates with default validation, compiles into a\nconsole app, runs it (Main does not touch the client), and shows a marker written at assembly load.\n\n### Impact\n\nCode execution at assembly load (process startup) in any application that compiles a Refitter client\ngenerated from an attacker-controlled or attacker-influenced OpenAPI description. Estimated Critical, e.g.\n`CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N` (the CNA sets the final score).\n\n### Suggested fix\n\nEscape every spec-derived string before emitting it into a Refit attribute (escape `\"`, `\\`,\nreject newlines) and validate characters. We recommend auditing all attribute emissions that embed\nspec-derived values, using one shared encoder.\n[maintainer-report.txt](https://github.com/user-attachments/files/29395048/maintainer-report.txt)\n[make_spec.py](https://github.com/user-attachments/files/29395050/make_spec.py)\n[reproduce.sh](https://github.com/user-attachments/files/29395051/reproduce.sh)",
-      "link": "https://github.com/advisories/GHSA-58x9-vjvp-6mx8",
-      "published": "2026-11-20T00:06:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63346"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0035,
-      "epss_percentile": 0.2946,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-63345",
-      "title": "Refitter allows arbitrary code execution through unescaped OpenAPI paths",
-      "summary": "### Summary\n\nRefitter emits each OpenAPI path (the paths-object key) verbatim into a Refit `[Get(\"<path>\")]`\nattribute string, without escaping `\"` or restricting characters. A crafted single-line, /-prefixed\npath survives Refitter's default OpenAPI validation yet closes the attribute string and the enclosing\ninterface + namespace, injects a top-level `file class` with a `[ModuleInitializer]` method, and\nreopens a namespace + interface so the file stays valid. .NET runs `[ModuleInitializer]` methods when\nthe generated assembly is loaded, so the attacker's code executes at application startup. Verified on\nRefitter 2.0.0 / .NET 8.\n\n### Details\n\n```\n[Get(\"/p\")] Task<string> Dummy(); } }\nfile class Evil { [System.Runtime.CompilerServices.ModuleInitializer]\n  internal static void Init(){ /* attacker code */ } }\nnamespace N2 { public partial interface I2 { [Get(\"/q\")]\n        Task<string> GetU(string id);\n    }\n}\n```\n\nNo `--skip-validation` is needed (the payload is a valid single-line path). The generated `.cs` is\ncompiled into the victim application; the module initializer runs at assembly load. This is distinct\nfrom the value sinks (enum/default), which are escaped; the path sink has no escaping. The\n`[Header(\"<name>\")]` attribute is likewise emitted raw (header parameter names), at minimum a\nbuild-breaking DoS.\n\n### PoC\n\n`reproduce.sh` (+ `make_spec.py`) attached: generates with default validation, compiles into a console\napp, runs it (Main does not touch the client), and shows a marker written at assembly load. Verified\non 2.0.0.\n\n### Impact\n\nCode execution at assembly load (process startup) in any application that compiles a Refitter client\ngenerated from an attacker-controlled or attacker-influenced OpenAPI description.\n\n### Suggested fix\n\nEscape the route template before emitting it into `[Get(\"\u2026\")]` (escape `\"`, `\\`, reject newlines) and\nvalidate that paths contain only legal URI-template characters. Apply the same encoding to\n`[Header(\u2026)]`, `[Post/Put/Delete(\u2026)]",
-      "link": "https://github.com/advisories/GHSA-3fhm-p725-h3g3",
-      "published": "2026-11-20T00:06:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63345"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0035,
-      "epss_percentile": 0.29459,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-58210",
-      "title": "NATS Server allows unauthenticated memory exhaustion through incomplete MQTT CONNECT packets",
-      "summary": "### Background\n\nNATS.io is a high performance open source pub-sub distributed communication technology, built for the cloud, on-premise, IoT and edge computing.\n\nThe NATS Server supports MQTT clients, including authentication and parsing of MQTT `CONNECT` packets.\n\n### Problem Description\n\nAn unauthenticated MQTT client could cause the server to retain large incomplete MQTT `CONNECT` packets before authentication completed.\n\nThe parser retained partial pre-authentication packet data while waiting for the advertised MQTT packet length to be completed. An attacker could therefore consume server memory until authentication timeouts closed the connections.\n\n### Affected Versions\n\nVersions v2.14.2, v2.12.11 and below are vulnerable. The issue is fixed in v2.14.3 and v2.12.12.\n\n### Workarounds\n\nDeployments not using MQTT are not affected. Deployments that need MQTT should upgrade to a fixed release.\n\n### References\n\n * GHSA advisory: <https://github.com/nats-io/nats-server/security/advisories/GHSA-r72h-j7qq-v6qg>\n * Credit: Asritha Bodepudi, Trail of Bits",
-      "link": "https://github.com/advisories/GHSA-r72h-j7qq-v6qg",
-      "published": "2026-11-20T00:04:46Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-58210"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00742,
-      "epss_percentile": 0.55591,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-62337",
-      "title": "snark-verifier: Halo 2 aggregation circuit mishandles point-at-infinity proof elements",
-      "summary": "### Summary\nThe Halo 2 aggregation circuit could mishandle proof elements encoded as the point at infinity.\n\nWhen an assigned proof point appeared in an MSM term with constant scalar one, the Halo 2 loader used a scalar-one shortcut that passed the assigned point directly into the EC sum helper. The EC sum implementation used by that path assumed its inputs were non-identity points, while assigned proof points could represent the encoded identity `(0, 0)`.\n\n### Details\n`EcPointLoader::multi_scalar_multiplication` partitions MSM terms by scalar and base type. For `(Value::Constant(ONE), Value::Assigned(_))`, the loader placed the assigned base into the non-scaled variable-base list and later passed those points to `sum_with_const`.\n\nThe default Halo 2 shim delegates `sum_with_const` to halo2-lib `EccChip::sum`. In affected versions, that sum helper used incomplete affine addition and assumed that every input point was non-identity. A prover-controlled proof point encoded as `(0, 0)` could therefore enter the final aggregation sum through the scalar-one shortcut and affect the MSM or accumulator computation.\n\nThe issue was fixed in halo2-lib by updating `EccChip::sum` to treat encoded identity inputs as no-ops and to return `(0, 0)` when the total sum is the identity. This removes the non-identity input precondition from callers such as the Halo 2 aggregation loader.\n\n### Impact\nRecursive aggregation circuits using the Halo 2 loader could compute an MSM or accumulator with an identity proof element in a path whose implementation assumed non-identity inputs. This breaks the expected handling of point-at-infinity proof elements in aggregation.\n\nPractical exploitability depends on the surrounding aggregation and final-decider checks, so this is rated medium severity.",
-      "link": "https://github.com/advisories/GHSA-x26x-7f4v-cqx7",
-      "published": "2026-11-20T00:01:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62337"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00301,
-      "epss_percentile": 0.23428,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-129221",
-      "title": "NLTK: ARFF_Formatter Injects Weka ARFF Schema Directives via Attacker-Controlled Class Labels",
-      "summary": "## Description\n\n### Summary\n\n`nltk.classify.weka.ARFF_Formatter` writes class labels directly into the Weka ARFF `@ATTRIBUTE '-label-' {...}` declaration without any ARFF quoting or escaping. An attacker who can contribute class labels to a training dataset can include ARFF metacharacters such as `}`, newlines, `@ATTRIBUTE`, and `@DATA` to break out of the nominal label list and inject attacker\u2011controlled ARFF schema and data directives.\n\nThis vulnerability is reachable in any application that calls `WekaClassifier.train()` or `ARFF_Formatter.from_train()` with attacker\u2011influenced training data. The victim does not need to manually edit the ARFF file; the normal training workflow writes the malformed ARFF automatically.\n\n### Technical Details\n\nThe vulnerable code path is:\n\n1. `WekaClassifier.train()` calls `ARFF_Formatter.from_train(featuresets)`.\n2. `from_train()` extracts labels from the training data and passes them to `ARFF_Formatter(labels, features)`.\n3. `header_section()` uses `\",\".join(self._labels)` directly, embedding attacker\u2011controlled strings into the ARFF header without sanitization.\n\nBecause the label names are not escaped, a label containing `safe}\\n@ATTRIBUTE injected NUMERIC\\n@DATA\\n0,owned\\n%` will close the label set, inject a new attribute, start a premature data section, and comment out the remaining header.\n\n### Proof of Concept\n\nThe following self\u2011contained Python script demonstrates the vulnerability. It requires only NLTK and does **not** need Weka to be installed, because the attack is carried out purely by generating the ARFF string.\n\n```python\nfrom nltk.classify.weka import ARFF_Formatter\n\n# Attacker\u2011controlled label containing ARFF metacharacters.\n# The `}` closes the label set, the `@ATTRIBUTE` injects a new attribute,\n# `@DATA` starts the data section early, and `%` comments out the rest.\nmalicious_label = \"safe}\\n@ATTRIBUTE injected NUMERIC\\n@DATA\\n0,owned\\n%\"\n\nfeaturesets = [\n    ({\"f\": \"benign\"}, \"legit\"),          # legitimate exa",
-      "link": "https://github.com/advisories/GHSA-9ffx-rrgx-mhgx",
-      "published": "2026-11-19T23:54:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-129221"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00439,
-      "epss_percentile": 0.39059,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-129225",
-      "title": "NLTK: Uncontrolled recursion in DependencyGraph traversal causes denial of service via deep dependency chains",
-      "summary": "## Root Cause\nThe dependency-graph traversal helpers recurse over dependency links without any depth\nbound or visited set. `DependencyGraph._tree` (`nltk/parse/dependencygraph.py:404`)\nrecurses once per dependency link, `triples` (`nltk/parse/dependencygraph.py:432`) is a\nrecursive generator, and `get_cycle_path` (`nltk/parse/dependencygraph.py:520`) recurses\nover dependencies. The neighbouring `contains_cycle` method was deliberately rewritten as\nan iterative depth-first search, but these sibling helpers on the public traversal path\nwere left recursive with no depth counter.\n\n## Impact\nAn application that parses an untrusted CoNLL/Malt-TAB dependency structure and then walks\nit via `tree()` or `triples()` aborts with an unhandled `RecursionError`, terminating the\naffected operation or request worker (denial of service, CWE-674). The recursion is pure\nPython, so the result is a catchable `RecursionError`, not memory corruption or code\nexecution. Confidentiality and integrity are unaffected. `get_cycle_path` additionally\nlacks a visited set and will not terminate on a genuine cycle.\n\n## Attack Chain\n1. The application constructs `DependencyGraph(conll_str)` from attacker-supplied text\n   where token *k*'s head is token *k+1*, forming a linear dependency chain of length *N*.\n   Graph construction (`_parse`) is iterative and completes without error.\n2. The application calls the public `DependencyGraph.tree()`\n   (`nltk/parse/dependencygraph.py:408`), which invokes `_tree(root)`.\n3. `_tree` recurses once per chain link with no depth guard and no visited set, consuming\n   one stack frame per link (the list comprehension costs roughly two frames per level).\n4. Once the chain length exceeds the interpreter recursion limit, an unhandled\n   `RecursionError` propagates out of the public API. `triples()` fails the same way.\n\n## Bypass Evidence\nAgainst the shipped source at the default recursion limit, a chain of length 5 walks\ncleanly through `tree()`, while a chain of length ",
-      "link": "https://github.com/advisories/GHSA-xfcv-m889-fmqg",
-      "published": "2026-11-19T23:52:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-129225"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00479,
-      "epss_percentile": 0.42285,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-129226",
-      "title": "NLTK: Uncontrolled recursion in semantic-logic type parser causes denial of service via nested type strings",
-      "summary": "## Root Cause\nThe semantic-logic type parser `read_type` (`nltk/sem/logic.py:866`) recurses on both\nhalves of every `<a,b>` complex type (`nltk/sem/logic.py:882-884`) with no depth or length\nbound \u2014 only an `isinstance` assertion and a parenthesis-balance assertion. The\n`LogicParser.MAX_PARSE_DEPTH` guard (`nltk/sem/logic.py:107,294`) protects the expression\nparser but never runs on the `read_type` path, which is reached directly by the public\n`Type.fromstring` classmethod and by signature-string type checking.\n\n## Impact\nAn application that parses an untrusted type string, or type-checks an expression against\nan attacker-influenced signature, aborts with an unhandled `RecursionError`, terminating\nthe affected operation or request worker (denial of service, CWE-674). The recursion is\npure Python, yielding a catchable `RecursionError` rather than memory corruption or code\nexecution. Confidentiality and integrity are unaffected. Exposure is narrower than a\ngeneral-purpose parser because the input must reach a type-string or signature parameter.\n\n## Attack Chain\n1. The application calls `nltk.sem.logic.Type.fromstring(s)` (`nltk/sem/logic.py:736`) \u2014 or\n   `Expression.typecheck(signature)` / `Expression.fromstring(expr, type_check=True,\n   signature=...)`, which reach `read_type` for each type-string signature value\n   (`nltk/sem/logic.py:1080`) \u2014 with a deeply nested type string such as\n   `\"<\" * n + \"e,e\" + \">\" * n`.\n2. `Type.fromstring` passes the string straight to `read_type` with no length or depth\n   check (only assertions on type and parenthesis balance).\n3. `read_type` recurses on both halves of each `<a,b>` level, consuming one stack frame per\n   nesting level; the `MAX_PARSE_DEPTH` guard on the separate `LogicParser` class does not\n   execute here.\n4. Once the depth exceeds the interpreter recursion limit, an unhandled `RecursionError`\n   propagates out of the public API.\n\n## Bypass Evidence\nRunning the shipped `read_type`/`ComplexType`/`Type` source verbatim",
-      "link": "https://github.com/advisories/GHSA-w3pv-xfw4-ghr7",
-      "published": "2026-11-19T23:51:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-129226"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00419,
-      "epss_percentile": 0.37124,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-129227",
-      "title": "NLTK: Uncontrolled recursion in Tree.fromlist causes denial of service via deeply nested list input",
-      "summary": "## Root Cause\n`Tree.fromlist` (`nltk/tree/tree.py:767`) converts a nested list into a `Tree` by recursing\nonce per nesting level (`nltk/tree/tree.py:780`) with no depth bound \u2014 its only validation\nis `type(l) == list and len(l) > 0`. The sibling constructor `Tree.fromstring` was hardened\nwith a `MAX_TREE_DEPTH` cap (`nltk/tree/tree.py:31,695`) that rejects adversarially deep\ninput with a bounded `ValueError`, but that guard was not applied to `fromlist`, which\nbuilds `Tree` objects identically.\n\n## Impact\nAn application that builds a `Tree` from an attacker-controlled nested list \u2014 for example\n`Tree.fromlist(json.loads(untrusted))` \u2014 aborts with an unhandled `RecursionError`,\nterminating the affected operation or request worker (denial of service, CWE-674). Any\nlater recursive traversal of an over-deep tree (`height`, `pformat`, equality) fails the\nsame way. The recursion is pure Python, yielding a catchable `RecursionError` rather than\nmemory corruption or code execution. Confidentiality and integrity are unaffected.\n\n## Attack Chain\n1. The application obtains an attacker-controlled deeply nested list, typically by decoding\n   an untrusted JSON payload, and calls `nltk.tree.Tree.fromlist(l)`.\n2. `fromlist` checks only that the argument is a non-empty list; it applies no depth cap.\n3. `fromlist` recurses once per nesting level, consuming call-stack frames; the\n   `MAX_TREE_DEPTH` guard used by `fromstring` is never invoked on this path.\n4. Once the nesting depth exceeds the interpreter recursion limit, an unhandled\n   `RecursionError` propagates out of the public API.\n\n## Bypass Evidence\nRunning the shipped `fromlist` body verbatim at the default recursion limit: depth 5 builds\ncleanly while depth 5000 raises an unhandled `RecursionError`. The realistic JSON-delivery\nobjection does not hold: CPython's C JSON decoder tolerates far deeper nesting than the\npure-Python `fromlist` recursion, so there is a wide window (measured from roughly depth 500\nup to ~1500 at the de",
-      "link": "https://github.com/advisories/GHSA-63wh-5r5m-wxr7",
-      "published": "2026-11-19T23:51:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-129227"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00419,
-      "epss_percentile": 0.37124,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-129228",
-      "title": "NLTK: Uncontrolled recursion in Toolbox settings helpers causes denial of service via deeply nested input",
-      "summary": "## Root Cause\nThe Toolbox settings-tree helpers recurse over the parsed element tree without any depth\nbound. `_to_settings_string` (`nltk/toolbox.py:418`), `remove_blanks`\n(`nltk/toolbox.py:432`), `add_default_fields` (`nltk/toolbox.py:451`), `_sort_fields`\n(`nltk/toolbox.py:484`), and `add_blank_lines` (`nltk/toolbox.py:502,516`) each recurse once\nper element level with no depth counter or explicit stack. The producer\n`ToolboxSettings.parse` builds the element tree iteratively, so nesting depth is driven\nentirely by attacker-supplied `\\+marker` / `\\-marker` pairs.\n\n## Impact\nAn application that parses an untrusted Toolbox settings file and then serialises or\ntransforms it through any of the public helper functions aborts with an unhandled\n`RecursionError`, terminating the affected operation or request worker (denial of service,\nCWE-674). The recursion is pure Python, yielding a catchable `RecursionError` rather than\nmemory corruption or code execution. Confidentiality and integrity are unaffected.\n\n## Attack Chain\n1. The application parses an untrusted settings file via `ToolboxSettings.open_string` /\n   `open` plus `parse`, producing an *N*-deep element tree; parsing is iterative and\n   completes without error.\n2. The application passes the tree to a public helper \u2014 `to_settings_string`,\n   `remove_blanks`, `add_default_fields`, `sort_fields`, or `add_blank_lines` \u2014 as in the\n   module's own parse-then-serialise round trip.\n3. The helper recurses once per element level with no depth guard, consuming call-stack\n   frames. This holds even when the helper's configuration dictionaries are empty.\n4. Once the nesting depth exceeds the interpreter recursion limit, an unhandled\n   `RecursionError` propagates out of the public API.\n\n## Bypass Evidence\nAgainst the shipped source at the default recursion limit, a settings input nested 5 levels\ndeep traverses cleanly through every helper, while a well-formed input nested 5000 levels\ndeep drives each of the five helpers to an",
-      "link": "https://github.com/advisories/GHSA-f2h2-f4fc-p978",
-      "published": "2026-11-19T23:50:37Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-129228"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00469,
-      "epss_percentile": 0.41452,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-129230",
-      "title": "NLTK: Uncontrolled recursion in WordNet Synset hypernym walkers (max_depth/min_depth/hypernym_paths/hypernym_distances) causes DoS",
-      "summary": "## Summary\n\nFour hypernym-walking methods on the WordNet `Synset` class in `nltk/corpus/reader/wordnet.py` (`max_depth`, `min_depth`, `hypernym_paths`, and `hypernym_distances`) traverse the hypernym pointer graph by direct recursion with no visited-node set and no depth cap. WordNet `data.<pos>` file content is untrusted corpus input in NLTK, the same trust boundary the project already treats as attacker-controlled across its corpus-content hardening work. When the parsed hypernym graph contains a cycle, or a chain deeper than the interpreter recursion limit, these methods recurse without bound and raise an uncaught `RecursionError`, aborting the traversal and any worker that does not catch it. No special privileges are needed; the victim only has to load an attacker-supplied corpus and call any of several shipped public methods that reach these walkers.\n\n## Root Cause\n\n`Synset.max_depth` computes `1 + max(h.max_depth() for h in hypernyms)` and only assigns its `_max_depth` memo after that recursive expression fully returns. Because Python evaluates the right-hand side completely before binding the left-hand side, the memo is never set on a node that is still on the recursion stack, so a cyclic graph re-enters the same not-yet-memoized node indefinitely. `min_depth`, `hypernym_paths`, and `hypernym_distances` follow the same recursive descent with no cycle detection. The security invariant that graph traversal over untrusted corpus data must terminate is violated: the pointer offsets parsed from the data file are stored verbatim with no graph-shape validation, so the attacker controls the graph topology. The sibling walkers in the same class (`closure`, `tree`, `_shortest_hypernym_paths`) were hardened with acyclic/visited guards, which shows cyclic hypernym graphs are an in-scope threat that these four methods simply were not converted to handle.\n\n```text\nAffected functions in nltk/corpus/reader/wordnet.py:\n  Synset.max_depth          (nltk/corpus/reader/wordnet.p",
-      "link": "https://github.com/advisories/GHSA-53pg-5qp8-mhvr",
-      "published": "2026-11-19T23:49:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-129230"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00237,
-      "epss_percentile": 0.15055,
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-129233",
-      "title": "NLTK: StreamBackedCorpusView constructor os.stat leaks out-of-root file existence, size, and mtime bypassing pathsec ENFORCE",
-      "summary": "## Summary\n\n`StreamBackedCorpusView`, a public API in `nltk/corpus/reader/util.py`, applies the pathsec sandbox to the file content it reads but not to the file metadata it probes in its constructor. When the view is created with a plain string fileid, `__init__` calls `os.stat(self._fileid).st_size` with no pathsec validation, so an application that passes an attacker influenced path to the constructor discloses whether an arbitrary out of root file exists and, if it does, its exact byte size and modification time, even when `nltk.pathsec.ENFORCE` is `True`. This is the residual metadata channel left open by the fix for CVE-2026-63312 (GHSA-x5ph-mj9p-rfr8), which closed arbitrary content read on the same code path but did not bring the sibling `os.stat` under the sandbox.\n\n## Root Cause\n\nThe pathsec sandbox is intended to confine all NLTK filesystem access to allowed data roots. The fix for CVE-2026-63312 enforced this for content reads by routing `StreamBackedCorpusView._open` through `nltk.pathsec.open` (`_secure_open`). The constructor, however, computes the end of file position eagerly, and on the non `PathPointer` branch it stats the caller supplied path directly. The `PathPointer` branch is validated (it calls `PathPointer.file_size()`), but the plain string branch reaches `os.stat` with no `validate_path`, `_secure_open`, or `required_root` check. The security invariant \"no filesystem access outside allowed roots under ENFORCE\" is therefore violated for the metadata channel: `os.stat` is filesystem access, and it is performed on the same untrusted string entry point that the content read fix protected.\n\n```text\nAffected component: nltk.corpus.reader.util.StreamBackedCorpusView.__init__\nSink:   nltk/corpus/reader/util.py, os.stat(self._fileid).st_size on the plain-string branch\nGuarded sibling: _open() (routes through nltk.pathsec.open); the constructor os.stat is not guarded\n```\n\n## Impact\n\nAn attacker who can influence the fileid string passed to `StreamBac",
-      "link": "https://github.com/advisories/GHSA-w674-vqhw-g3pg",
-      "published": "2026-11-19T23:47:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-129233"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0034,
-      "epss_percentile": 0.28146,
-      "stack_match": [
-        "github"
-      ]
-    },
-    {
-      "id": "CVE-2026-129234",
-      "title": "NLTK: Untrusted search path in prover9/mace4 config allows local code execution via relative binary_location",
-      "summary": "## Summary\n`Prover9Parent.config_prover9(binary_location=...)` (and `Mace`, which inherits it) accepts a relative `binary_location` and passes it as `path_to_bin` to `find_binary`, which disables the CWD-relative rejection guard. Unlike the boxer/senna/malt/repp siblings, prover9/mace apply no `os.path.isabs()` filter, so the resolved relative program path (e.g. `./prover9`) is executed from the current working directory via `subprocess.Popen`. A local attacker who can plant `./prover9` (or `./mace4`) in the resolved directory achieves local code execution.\n\n## Root Cause\n`nltk/inference/prover9.py:121-135` calls `find_binary(name, path_to_bin=binary_location, env_vars=[\"PROVER9\"], ...)`. A truthy `path_to_bin` sets `searching_bare_name = not path_to_bin and ...` \u2192 False (`internals.py:935`), so the guard `if searching_bare_name and not os.path.isabs(path): continue` (`internals.py:940`) never runs. The result is stored in `self._prover9_bin`; on the next `prove()`, `_call` \u2192 `subprocess.Popen([binary]+args, ...)` (`prover9.py:207`) execs it. `Mace(Prover9Parent)` inherits `config_prover9` (`mace.py:229`). By contrast boxer's `_find_binary` (`sem/boxer.py:251-266`) iterates `find_binary_iter` and returns only the first `os.path.isabs()` result; repp/malt/senna similarly reject a relative explicit bin dir. prover9/mace have no such filter.\n\n## Impact\nLocal arbitrary code execution: an attacker-planted `./prover9`/`./mace4` runs as the invoking user when the application is configured with a relative `binary_location` and the attacker can write to the resolved directory.\n\n## Proof of Concept\nIn a directory containing an executable `./prover9`:\n```python\nfrom nltk.inference.prover9 import Prover9\np = Prover9(); p.config_prover9(binary_location='.')\n# p._prover9_bin == './prover9'; subsequent prove() Popens it from CWD\n```\nRuntime-confirmed: `find_binary('prover9', path_to_bin='.')` \u2192 `'./prover9'`; bare `find_binary('prover9')` and relative `PROVER9='.'` via default `_f",
-      "link": "https://github.com/advisories/GHSA-cc5r-64rf-75hg",
-      "published": "2026-11-19T23:46:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-129234"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00232,
-      "epss_percentile": 0.14322,
-      "stack_match": [
-        "python",
-        "github"
-      ]
     }
   ]
 }
