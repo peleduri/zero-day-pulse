@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-21 04:33 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 4 &nbsp;|&nbsp; 📈 High EPSS: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 4 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; 🎯 My Stack: 10 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-21 13:49 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 📈 High EPSS: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 5 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; 🎯 My Stack: 9 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,13 +20,6 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
-## ⚡ Changed since last run (2)
-
-- 🎯 New My Stack hit: CVE-2026-77309 [python, github] — AIT-GUI route chain allows unauthenticated Python execution in server process <https://github.com/advisories/GHSA-jrjx-9jjw-747m>
-- 🎯 New My Stack hit: CVE-2026-77331 [github, exchange] — memtomem-stm: Concurrent LTM recovery can duplicate reconnects or reuse a cancelled transport session <https://github.com/advisories/GHSA-72jh-722p-rqr3>
-
----
-
 ## 🎯 My Stack Highlights
 
 - 🟡 High Severity — CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products (Severity: CRITICAL) — `CVE-2026-123633`, `CVE-2026-123007` — EPSS 6% — `nginx`
@@ -36,13 +29,28 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 - 🟡 High Severity — netty-incubator-codec-ohttp: OHTTP codecs retain consumed outer cumulation buffers after completed exchanges — `CVE-2026-69133` — EPSS <1% — `github`, `exchange`
 - 🟡 High Severity — TeamPass folder re-parenting authorization bypass — `CVE-2026-103035` — EPSS <1% — `github`
 - 🟠 Zero-Day — Chinese-nexus actor’s Cairn AI agents found a zero-day on their own — _No CVE_ — EPSS n/a — `aws`
-- 🟠 Zero-Day — New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It — _No CVE_ — EPSS n/a — `windows`
 - 🟡 High Severity — memtomem-stm: Concurrent LTM recovery can duplicate reconnects or reuse a cancelled transport session — `CVE-2026-77331` — EPSS n/a — `github`, `exchange`
 - 🟡 High Severity — AIT-GUI route chain allows unauthenticated Python execution in server process — `CVE-2026-77309` — EPSS n/a — `python`, `github`
 
 ---
 
-## 1. 🔴 CISA KEV — How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities
+## 1. 🔴 CISA KEV — Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge
+
+**CVE:** `CVE-2026-129448` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-21
+**EPSS:** 1.2% (percentile 69%)
+**KEV:** in catalog, due 2026-11-23
+**Reference:** <https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added four flaws impacting Apache Roller, Cisco Expressway, SAP NetWeaver, and Broadcom VMware vCenter to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation.
+
+The vulnerabilities are listed below -
+
+
+  CVE-2026-129448 (CVSS score: 9.8) - A deserialization of untrusted data vulnerability in
+
+---
+
+## 2. 🔴 CISA KEV — How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities
 
 **CVE:** `CVE-2026-109618` | `CVE-2026-109619` | `CVE-2026-115560` | `CVE-2026-46300` | `CVE-2026-111497` | `CVE-2026-123007` | `CVE-2026-114938` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-11-20
 **EPSS:** 100.0% (percentile 100%)
@@ -53,40 +61,23 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
-## 2. 🔴 CISA KEV — Hackers Exploit Critical Cisco Expressway Flaw, Breach Four Devices and Reach Internal Network
+## 3. 🟠 Zero-Day — Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day
 
-**CVE:** `CVE-2026-76466` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-20
-**EPSS:** 0.4% (percentile 37%)
-**KEV:** in catalog, due 2026-11-23
-**Reference:** <https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-21
+**Reference:** <https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/>
 
-> Threat actors have been observed exploiting a recently disclosed critical security flaw in Cisco Expressway to breach a Russian organization shortly after the public release of a proof-of-concept (PoC) exploit.
-
-The activity involves the exploitation of CVE-2026-76466 (CVSS score: 9.8), a vulnerability that could allow an unauthenticated, remote attacker with network access to a Cisco Expressway
+> A threat actor used autonomous Cairn AI agents to discover and exploit a critical MONAI Label vulnerability. The post Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day appeared first on SecurityWeek .
 
 ---
 
-## 3. 🔴 CISA KEV — China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data
+## 4. 🟠 Zero-Day — Attackers&#x27; AI Agents Found a Zero-Day in Medical-Imaging Software and Gained Root Access
 
-**CVE:** `CVE-2026-123890` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-20
-**EPSS:** 0.8% (percentile 59%)
-**KEV:** in catalog, due 2026-11-23
-**Reference:** <https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-21
+**Reference:** <https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html>
 
-> The suspected China-nexus cyber espionage group known as Armory Castle (formerly UNC5221) has been attributed to the zero-day exploitation of a critical security flaw in VMware vCenter Server in early September 2026.
+> Suspected China-linked hackers used autonomous AI agents to find a previously unknown flaw in MONAI Label, an open-source medical imaging server, and gain root access to a university server, Amazon Threat Intelligence said this week.
 
-The vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of authentication bypass in the VMware Directory Service that could be exploited to gain unauthorized
-
----
-
-## 4. 🔴 CISA KEV — Metasploit Wrap Up: Breaking Zimbra&#x27;s Identity Boundaries
-
-**CVE:** `CVE-2026-73571` | `CVE-2026-93637` | `CVE-2026-102764` | `CVE-2024-25420` | `CVE-2026-76519` | `CVE-2026-76461` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-11-20
-**EPSS:** 50.7% (percentile 99%)
-**KEV:** in catalog, due 2026-09-17
-**Reference:** <https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-breaking-zimbra-s-identity-boundaries>
-
-> This release we have three pull requests from jburgess-r7 building out coverage for the identity-boundary issues detailed in Rapid7&#x27;s Breaking Zimbra Identity Boundaries, Part One research. First up is a new shared mixin, Msf::Exploit::Remote::HTTP::Zimbra , which gives every current and future Zimbra module a common foundation for account/admin SOAP authentication, canonical identity resolut…
+The flaw allows an attacker with no account to write files outside the server&#x27;s storage folder, and it affects MONAI Label 0.8.5 and earlier in the default setu…
 
 ---
 
@@ -118,15 +109,16 @@ The vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of au
 
 ---
 
-## 8. 🟠 Zero-Day — New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It
+## 8. 🟡 High Severity — GnuPG Warns Critical GPGME Flaw Could Expose App Data via Malicious OpenPGP Keys
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-20
-**My Stack:** `windows`
-**Reference:** <https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html>
+**CVE:** `CVE-2026-129975` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-21
+**Reference:** <https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html>
 
-> A newly disclosed unpatched zero-day technique called FastUnlock lets someone with physical access to a locked Windows computer start programs without signing in. Whoever uses it gets only a limited account, not administrator control of the machine.
+> A malicious OpenPGP key with an unusually long user ID can trigger a critical memory bug in GPGME, the standard library that programs use to work with GnuPG.
 
-The method was posted yesterday by a researcher who uses the handles MSNightmare and Nightmare Eclipse, and the endpoint-security firm ThreatLocker
+The GnuPG project warned yesterday that the flaw could be used to steal data from affected applications and has released fixed versions.
+
+The bug, tracked as CVE-2026-129975, affects all software that uses GPGME before version 2.3.0,
 
 ---
 
@@ -173,9 +165,7 @@ This vulnerability all…
 
 > Meta-owned WhatsApp has addressed security vulnerabilities, including one impacting its Android app that it suspects may have been exploited in connection with scam messages.
 
-The vulnerability, tracked as CVE-2026-23871, has been described as a case of incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4.
-
-The issue could
+The vulnerability, tracked as CVE-2026-23871 (CVSS score: 3.5), has been described as a case of incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4.
 
 ---
 
@@ -245,15 +235,5 @@ Refitter (the `refitter` dotnet tool, built on NJsonSchema for `$ref` resolution
 `http(s)` URLs and reads local files (including absolute paths and `../` traversal outside the input
 directory), inlining the referenced schema into the generated Refit interface/contracts. Running
 `refitter &lt;spec&gt; --output Out.cs` on a spec whose `$ref` points at an attacker/interna…
-
----
-
-## 18. 🟡 High Severity — Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE
-
-**CVE:** `CVE-2026-132825` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-20
-**EPSS:** 0.2% (percentile 9%)
-**Reference:** <https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/>
-
-> Tracked as CVE-2026-132825, the bug is a heap-based buffer overflow that could lead to remote code execution (RCE). The post Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE appeared first on SecurityWeek .
 
 ---

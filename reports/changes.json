@@ -1,26 +1,5 @@
 {
-  "run_id": "44866620028",
-  "generated_at": "2026-11-21T04:33:35.659357+00:00",
-  "changes": [
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77309",
-      "title": "AIT-GUI route chain allows unauthenticated Python execution in server process",
-      "link": "https://github.com/advisories/GHSA-jrjx-9jjw-747m",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77331",
-      "title": "memtomem-stm: Concurrent LTM recovery can duplicate reconnects or reuse a cancelled transport session",
-      "link": "https://github.com/advisories/GHSA-72jh-722p-rqr3",
-      "stack_match": [
-        "github",
-        "exchange"
-      ]
-    }
-  ]
+  "run_id": "44910699820",
+  "generated_at": "2026-11-21T13:49:30.237623+00:00",
+  "changes": []
 }

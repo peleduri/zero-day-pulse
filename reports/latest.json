@@ -1,35 +1,41 @@
 {
-  "generated": "2026-11-21T04:33:35.659357+00:00",
-  "total": 18,
-  "kev": 4,
-  "zero_day": 4,
+  "generated": "2026-11-21T13:49:30.237623+00:00",
+  "total": 17,
+  "kev": 2,
+  "zero_day": 5,
   "enriched": 0,
-  "high_epss": 2,
-  "my_stack": 10,
-  "run_id": "44866620028",
-  "changes": [
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77309",
-      "title": "AIT-GUI route chain allows unauthenticated Python execution in server process",
-      "link": "https://github.com/advisories/GHSA-jrjx-9jjw-747m",
-      "stack_match": [
-        "python",
-        "github"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-77331",
-      "title": "memtomem-stm: Concurrent LTM recovery can duplicate reconnects or reuse a cancelled transport session",
-      "link": "https://github.com/advisories/GHSA-72jh-722p-rqr3",
-      "stack_match": [
-        "github",
-        "exchange"
-      ]
-    }
-  ],
+  "high_epss": 1,
+  "my_stack": 9,
+  "run_id": "44910699820",
+  "changes": [],
   "findings": [
+    {
+      "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html",
+      "title": "Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added four flaws impacting Apache Roller, Cisco Expressway, SAP NetWeaver, and Broadcom VMware vCenter to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-129448 (CVSS score: 9.8) - A deserialization of untrusted data vulnerability in",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html",
+      "published": "2026-11-21T08:49:13+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-129448"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_vendor": "Apache",
+      "kev_product": "Roller",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.01191,
+      "epss_percentile": 0.68723,
+      "stack_match": []
+    },
     {
       "id": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
       "title": "How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities",
@@ -65,89 +71,53 @@
       "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html",
-      "title": "Hackers Exploit Critical Cisco Expressway Flaw, Breach Four Devices and Reach Internal Network",
-      "summary": "Threat actors have been observed exploiting a recently disclosed critical security flaw in Cisco Expressway to breach a Russian organization shortly after the public release of a proof-of-concept (PoC) exploit.\n\nThe activity involves the exploitation of CVE-2026-76466 (CVSS score: 9.8), a vulnerability that could allow an unauthenticated, remote attacker with network access to a Cisco Expressway",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html",
-      "published": "2026-11-20T10:32:50+00:00",
+      "id": "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/",
+      "title": "Amazon: China-Linked Hackers\u2019 AI Agents Exploited Medical Software Zero-Day",
+      "summary": "A threat actor used autonomous Cairn AI agents to discover and exploit a critical MONAI Label vulnerability. The post Amazon: China-Linked Hackers\u2019 AI Agents Exploited Medical Software Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/",
+      "published": "2026-11-21T12:08:50+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html",
+      "title": "Attackers' AI Agents Found a Zero-Day in Medical-Imaging Software and Gained Root Access",
+      "summary": "Suspected China-linked hackers used autonomous AI agents to find a previously unknown flaw in MONAI Label, an open-source medical imaging server, and gain root access to a university server, Amazon Threat Intelligence said this week.\n\nThe flaw allows an attacker with no account to write files outside the server's storage folder, and it affects MONAI Label 0.8.5 and earlier in the default setup,",
+      "link": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html",
+      "published": "2026-11-21T11:03:17+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
-      "cve_ids": [
-        "CVE-2026-76466"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_vendor": "Cisco",
-      "kev_product": "Expressway Series",
+      "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00417,
-      "epss_percentile": 0.36836,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
-      "title": "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data",
-      "summary": "The suspected China-nexus cyber espionage group known as Armory Castle (formerly UNC5221) has been attributed to the zero-day exploitation of a critical security flaw in VMware vCenter Server in early September 2026.\n\nThe vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of authentication bypass in the VMware Directory Service that could be exploited to gain unauthorized",
-      "link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
-      "published": "2026-11-20T09:38:15+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-123890"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_vendor": "Broadcom",
-      "kev_product": "VMware vCenter",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00843,
-      "epss_percentile": 0.58845,
-      "stack_match": []
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-breaking-zimbra-s-identity-boundaries",
-      "title": "Metasploit Wrap Up: Breaking Zimbra's Identity Boundaries",
-      "summary": "This release we have three pull requests from jburgess-r7 building out coverage for the identity-boundary issues detailed in Rapid7's Breaking Zimbra Identity Boundaries, Part One research. First up is a new shared mixin, Msf::Exploit::Remote::HTTP::Zimbra , which gives every current and future Zimbra module a common foundation for account/admin SOAP authentication, canonical identity resolution, mailbox-server lookup, and version parsing, allowing future modules to stay focused on the vulnerability instead of re-implementing Zimbra's SOAP plumbing. Built on top of that mixin are two new modules targeting CVEs from the same research track: CVE-2026-73571 ( #22080 ) It's an authorization bypass in Zimbra's SaveDraftRequest handling that lets an ordinary authenticated user send mail as another local mailbox without a delegation grant, landing a message in the victim's own Sent folder in the process. CVE-2026-93637 ( #22070 ) Is a rate-limit bypass in Zimbra's Network Edition GraphQL authentication endpoint, which lets credential-stuffing attempts skip the source-IP lockout counter that normally protects the SOAP login path. Both modules were validated against live Zimbra 10.1.16 Network Edition instances. Super cool contributions from our very own jburgess-r7 . New module content (6) Zimbra SaveDraftRequest Email Impersonation Authors: Ayoub Nabil Boubagrat and Crypto-Cat Type: Auxiliary Pull request: #22080 contributed by jburgess-r7 Path: admin/http/zimbra_email_impersonation CVE reference: CVE-2026-73571 Description: Adds an auxiliary module for CVE-2026-73571, allowing an authenticated user to send email as another local mailbox on Zimbra 10.1.16. The module supports optional Inbox delivery verification. Zimbra GraphQL Authentication Rate Limit Bypass Author: Crypto-Cat Type: Auxiliary Pull request: #22070 contributed by jburgess-r7 Path: scanner/http/zimbra_graphql_brute CVE reference: CVE-2026-93637 Description: This adds an auxiliary scanner for CVE-2026-93637 ",
-      "link": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-breaking-zimbra-s-identity-boundaries",
-      "published": "2026-11-20T10:30:36+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-73571",
-        "CVE-2026-93637",
-        "CVE-2026-102764",
-        "CVE-2024-25420",
-        "CVE-2026-76519",
-        "CVE-2026-76461"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-09-14",
-      "kev_due_date": "2026-09-17",
-      "kev_vendor": "Cisco",
-      "kev_product": "Secure Email Gateway",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": 0.50694,
-      "epss_percentile": 0.98947,
+      "epss": null,
+      "epss_percentile": null,
       "stack_match": []
     },
     {
@@ -229,31 +199,31 @@
       "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html",
-      "title": "New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It",
-      "summary": "A newly disclosed unpatched zero-day technique called FastUnlock lets someone with physical access to a locked Windows computer start programs without signing in. Whoever uses it gets only a limited account, not administrator control of the machine.\n\nThe method was posted yesterday by a researcher who uses the handles MSNightmare and Nightmare Eclipse, and the endpoint-security firm ThreatLocker",
-      "link": "https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html",
-      "published": "2026-11-20T05:30:01+00:00",
+      "id": "https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html",
+      "title": "GnuPG Warns Critical GPGME Flaw Could Expose App Data via Malicious OpenPGP Keys",
+      "summary": "A malicious OpenPGP key with an unusually long user ID can trigger a critical memory bug in GPGME, the standard library that programs use to work with GnuPG.\n\nThe GnuPG project warned yesterday that the flaw could be used to steal data from affected applications and has released fixed versions.\n\nThe bug, tracked as CVE-2026-129975, affects all software that uses GPGME before version 2.3.0,",
+      "link": "https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html",
+      "published": "2026-11-21T11:05:53+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-129975"
+      ],
       "in_kev": false,
       "kev_date_added": null,
       "kev_due_date": null,
       "kev_vendor": null,
       "kev_product": null,
       "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": [
-        "windows"
-      ]
+      "stack_match": []
     },
     {
       "id": "CVE-2026-77331",
@@ -352,7 +322,7 @@
     {
       "id": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html",
       "title": "WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams",
-      "summary": "Meta-owned WhatsApp has addressed security vulnerabilities, including one impacting its Android app that it suspects may have been exploited in connection with scam messages.\n\nThe vulnerability, tracked as CVE-2026-23871, has been described as a case of incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4.\n\nThe issue could",
+      "summary": "Meta-owned WhatsApp has addressed security vulnerabilities, including one impacting its Android app that it suspects may have been exploited in connection with scam messages.\n\nThe vulnerability, tracked as CVE-2026-23871 (CVSS score: 3.5), has been described as a case of incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4.",
       "link": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html",
       "published": "2026-11-20T17:57:20+00:00",
       "source": "The Hacker News Security",
@@ -531,33 +501,6 @@
       "stack_match": [
         "github"
       ]
-    },
-    {
-      "id": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
-      "title": "Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE",
-      "summary": "Tracked as CVE-2026-132825, the bug is a heap-based buffer overflow that could lead to remote code execution (RCE). The post Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
-      "published": "2026-11-20T10:34:10+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-132825"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00191,
-      "epss_percentile": 0.08933,
-      "stack_match": []
     }
   ]
 }
