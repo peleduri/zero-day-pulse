@@ -332,12 +332,14 @@ my_stack:
   # Languages & build
   - python
   - node.js
-  - github
+  - github actions
+  - github enterprise
   - jenkins
   # Corporate IT
   - windows
   - outlook
-  - exchange
+  - exchange server
+  - microsoft exchange
   - chrome
   - chromium
   - okta
