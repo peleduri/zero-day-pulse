@@ -1,48 +1,12 @@
 {
-  "generated": "2026-11-22T13:42:54.047138+00:00",
-  "total": 1,
+  "generated": "2026-11-22T22:54:53.649538+00:00",
+  "total": 0,
   "kev": 0,
   "zero_day": 0,
   "enriched": 0,
   "high_epss": 0,
-  "my_stack": 1,
-  "run_id": "45028841469",
+  "my_stack": 0,
+  "run_id": "45080273039",
   "changes": [],
-  "findings": [
-    {
-      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
-      "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s Security Impact Rating: Critical CVE: CVE-2026-113425,CVE-2026-121810,CVE-2026-123007,CVE-2026-123633,CVE-2026-123634",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "published": "2026-11-21T17:52:10+00:00",
-      "source": "Cisco Security Advisories (PSIRT)",
-      "tags": [
-        "network",
-        "cisco",
-        "psirt",
-        "advisory"
-      ],
-      "cve_ids": [
-        "CVE-2026-113425",
-        "CVE-2026-121810",
-        "CVE-2026-123007",
-        "CVE-2026-123633",
-        "CVE-2026-123634"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.29863,
-      "epss_percentile": 0.98243,
-      "stack_match": [
-        "nginx"
-      ]
-    }
-  ]
+  "findings": []
 }
