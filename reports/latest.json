@@ -1,68 +1,13 @@
 {
-  "generated": "2026-11-21T22:31:27.791061+00:00",
-  "total": 8,
+  "generated": "2026-11-22T03:48:12.054158+00:00",
+  "total": 5,
   "kev": 1,
   "zero_day": 2,
   "enriched": 0,
   "high_epss": 0,
-  "my_stack": 3,
-  "run_id": "44957104050",
-  "changes": [
-    {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-113425",
-      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "threshold": 0.1,
-      "old_epss": 0.01503,
-      "new_epss": 0.1386
-    },
-    {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-114938",
-      "title": null,
-      "link": null,
-      "threshold": 0.1,
-      "old_epss": 0.00907,
-      "new_epss": 0.45636
-    },
-    {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-121810",
-      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "threshold": 0.1,
-      "old_epss": 0.01663,
-      "new_epss": 0.16404
-    },
-    {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-123007",
-      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "threshold": 0.1,
-      "old_epss": 0.06033,
-      "new_epss": 0.29863
-    },
-    {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-123633",
-      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "threshold": 0.1,
-      "old_epss": 0.06086,
-      "new_epss": 0.17525
-    },
-    {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-123634",
-      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "threshold": 0.1,
-      "old_epss": 0.01512,
-      "new_epss": 0.17103
-    }
-  ],
+  "my_stack": 1,
+  "run_id": "44982202429",
+  "changes": [],
   "findings": [
     {
       "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html",
@@ -202,96 +147,6 @@
       "epss": null,
       "epss_percentile": null,
       "stack_match": []
-    },
-    {
-      "id": "CVE-2026-77331",
-      "title": "memtomem-stm: Concurrent LTM recovery can duplicate reconnects or reuse a cancelled transport session",
-      "summary": "Concurrent surfacing RPC failures can trigger more than one reconnect for the same dirty session, and cancellation during a post-reconnect retry can leave the replacement session reusable despite an interrupted protocol exchange. The private fix introduces monotonic session generations, one shielded shared reconnect flight per dirty generation, and generation-aware cancellation handling across search, access-count, and scratch RPCs. The duplicate-reconnect subcase was introduced in 0.1.24; cancellation recovery affects the broader listed range.",
-      "link": "https://github.com/advisories/GHSA-72jh-722p-rqr3",
-      "published": "2026-11-20T23:38:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77331"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00192,
-      "epss_percentile": 0.08853,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-77309",
-      "title": "AIT-GUI route chain allows unauthenticated Python execution in server process",
-      "summary": "## Summary\nA security issue exists where unauthenticated callers can instruct the AIT-GUI server to execute arbitrary Python scripts. The attack vector involves obtaining a session cookie through GET /, followed by a malicious POST /script/run request containing an absolute file path that bypasses the configured script directory restrictions.\n\n### Patches\n* 2.5.1\n\n### Impact\nThis vulnerability allows unauthenticated remote code execution on the AIT-GUI server. Any attacker with network access can execute arbitrary Python code with daemon privileges.\n\n## Details\n_Chain:_\n1. `POST /tlm/query` writes the user-controlled `fields` value into `fields_in.txt` under the AIT-GUI static directory.\n   *  If the supplied `dataDir` has no `.pcap` files, the route returns the expected `400 Bad Request` before deleting that file.\n2. `POST /script/run` accepts `scriptPath=../static/fields_in.txt`.\n   * AIT-GUI reads that file and runs it as Python.\n\n_Relevant code:_\n- `ait/gui/__init__.py:930,935,942-944`: `/tlm/query` writes `fields` to `fields_in.txt`.\n- `ait/gui/__init__.py:952-958,978`: the no-PCAP error path aborts before cleanup.\n- `ait/gui/__init__.py:1130-1136`: `/script/run` joins `scriptPath` with `ScriptRoot` and only checks that the path exists.\n- `ait/gui/__init__.py:1186-1191`: the selected file is read and executed as Python.\n- `ait/gui/__init__.py:1105-1108`: nearby `/scripts/load/<name>` has a path containment check, but `/script/run` does not.\n\n### Fix Information\nRestricted script execution paths and avoided using static temp files.\n\n## PoC\n1. `POST /tlm/query` writes the user-controlled `fields` value into `fields_in.txt` under the AIT-GUI static directory.\n   *  If the supplied `dataDir` has no `.pcap` files, the route returns the expected `400 Bad Request` before deleting that file.\n```\n# Remove file to ensure nothing exists\nAIT-GUI % rm <path>/fields_in.txt\n\n# With server started, send POST request to /tlm/query endpoint\nAIT-GUI % curl -X POST http://localhos",
-      "link": "https://github.com/advisories/GHSA-jrjx-9jjw-747m",
-      "published": "2026-11-20T23:36:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77309"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.01051,
-      "epss_percentile": 0.65111,
-      "stack_match": [
-        "python"
-      ]
-    },
-    {
-      "id": "https://security.paloaltonetworks.com/CVE-2026-123633",
-      "title": "CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products (Severity: CRITICAL)",
-      "summary": "",
-      "link": "https://security.paloaltonetworks.com/CVE-2026-123633",
-      "published": "2026-11-20T23:00:00+00:00",
-      "source": "Palo Alto Security Advisories",
-      "tags": [
-        "network",
-        "paloalto",
-        "psirt",
-        "advisory"
-      ],
-      "cve_ids": [
-        "CVE-2026-123633",
-        "CVE-2026-123007"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.29863,
-      "epss_percentile": 0.98243,
-      "stack_match": [
-        "nginx"
-      ]
     }
   ]
 }
