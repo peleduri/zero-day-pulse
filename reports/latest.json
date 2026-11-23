@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-22T22:54:53.649538+00:00",
+  "generated": "2026-11-23T04:25:38.445383+00:00",
   "total": 0,
   "kev": 0,
   "zero_day": 0,
   "enriched": 0,
   "high_epss": 0,
   "my_stack": 0,
-  "run_id": "45080273039",
+  "run_id": "45111707448",
   "changes": [],
   "findings": []
 }

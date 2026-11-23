@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-22 22:54 UTC &nbsp;|&nbsp; **Total:** 0 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 📈 High EPSS: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 0 &nbsp;|&nbsp; 🟡 High: 0 &nbsp;|&nbsp; 🎯 My Stack: 0 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-23 04:25 UTC &nbsp;|&nbsp; **Total:** 0 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 📈 High EPSS: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 0 &nbsp;|&nbsp; 🟡 High: 0 &nbsp;|&nbsp; 🎯 My Stack: 0 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
