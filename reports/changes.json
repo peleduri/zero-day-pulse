@@ -1,5 +1,24 @@
 {
-  "run_id": "45111707448",
-  "generated_at": "2026-11-23T04:25:38.445383+00:00",
-  "changes": []
+  "run_id": "45219245403",
+  "generated_at": "2026-11-23T16:42:04.715323+00:00",
+  "changes": [
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-114938",
+      "title": null,
+      "link": null,
+      "threshold": 0.5,
+      "old_epss": 0.45636,
+      "new_epss": 0.57324
+    },
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-115731",
+      "title": null,
+      "link": null,
+      "threshold": 0.1,
+      "old_epss": 0.01231,
+      "new_epss": 0.12839
+    }
+  ]
 }
