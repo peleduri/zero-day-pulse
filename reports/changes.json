@@ -1,33 +1,24 @@
 {
-  "run_id": "45320215721",
-  "generated_at": "2026-11-24T03:33:42.183775+00:00",
+  "run_id": "45439201260",
+  "generated_at": "2026-11-24T16:38:06.154811+00:00",
   "changes": [
     {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-134624",
-      "title": "N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation",
-      "link": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
-      "kev_date_added": "2026-11-23",
-      "kev_due_date": "2026-11-26",
-      "kev_ransomware": false
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-129448",
+      "title": null,
+      "link": null,
+      "threshold": 0.1,
+      "old_epss": 0.05459,
+      "new_epss": 0.40069
     },
     {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-108398",
-      "title": "VirtualBox Process Hardening on Windows 2026 Edition: What\u2019s a Single Bit Between Friends?",
-      "link": "https://projectzero.google/2026/11/virtualbox-process-hardening.html",
-      "stack_match": [
-        "windows"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-87268",
-      "title": "VirtualBox Process Hardening on Windows 2026 Edition: What\u2019s a Single Bit Between Friends?",
-      "link": "https://projectzero.google/2026/11/virtualbox-process-hardening.html",
-      "stack_match": [
-        "windows"
-      ]
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-59309",
+      "title": null,
+      "link": null,
+      "threshold": 0.5,
+      "old_epss": 0.30867,
+      "new_epss": 0.56032
     }
   ]
 }

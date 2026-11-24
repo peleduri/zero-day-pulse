@@ -1,104 +1,66 @@
 {
-  "generated": "2026-11-24T03:33:42.183775+00:00",
-  "total": 14,
-  "kev": 3,
+  "generated": "2026-11-24T16:38:06.154811+00:00",
+  "total": 11,
+  "kev": 2,
   "zero_day": 4,
   "enriched": 0,
   "high_epss": 1,
-  "my_stack": 2,
-  "run_id": "45320215721",
+  "my_stack": 4,
+  "run_id": "45439201260",
   "changes": [
     {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-134624",
-      "title": "N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation",
-      "link": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
-      "kev_date_added": "2026-11-23",
-      "kev_due_date": "2026-11-26",
-      "kev_ransomware": false
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-129448",
+      "title": null,
+      "link": null,
+      "threshold": 0.1,
+      "old_epss": 0.05459,
+      "new_epss": 0.40069
     },
     {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-108398",
-      "title": "VirtualBox Process Hardening on Windows 2026 Edition: What\u2019s a Single Bit Between Friends?",
-      "link": "https://projectzero.google/2026/11/virtualbox-process-hardening.html",
-      "stack_match": [
-        "windows"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-87268",
-      "title": "VirtualBox Process Hardening on Windows 2026 Edition: What\u2019s a Single Bit Between Friends?",
-      "link": "https://projectzero.google/2026/11/virtualbox-process-hardening.html",
-      "stack_match": [
-        "windows"
-      ]
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-59309",
+      "title": null,
+      "link": null,
+      "threshold": 0.5,
+      "old_epss": 0.30867,
+      "new_epss": 0.56032
     }
   ],
   "findings": [
     {
-      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20Expressway%20Series%20Remote%20Code%20Execution%20Vulnerability%26vs_k=1",
-      "title": "Cisco Expressway Series Remote Code Execution Vulnerability",
-      "summary": "A vulnerability in the database service feature of Cisco Expressway Series could allow an unauthenticated, remote attacker with network access to a Cisco Expressway device to execute arbitrary operating system commands as root . This vulnerability is due to the use of persistent cookies. Additionally, there is insufficient validation of client certificates when the TLS Verify Mode is set to Enabled for clustering, which means that client certificates are not validated. An attacker with possession of the cookies could exploit this vulnerability by connecting to the database service and invoking specific remote procedure call (RPC) commands. A successful exploit could allow the attacker to execute arbitrary commands as root on the underlying operating system of an affected device. Note: Cisco Expressway Series refers to Cisco Expressway Core (Expressway-C) devices and Cisco Expressway Edge (Expressway-E) devices. Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t This advisory is part of a group of advisories. For a complete list of the advisories and links to them, see Cisco Advance Notification for Publication of October 21, 2026, Security Advisories . In addition, for further documentation of improvements and fixes in Cisco Expressway Series see Cisco Expressway Series Security Hardening Release: October 2026 . Security Impact Rating: Critical CVE: CVE-2026-76466",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20Expressway%20Series%20Remote%20Code%20Execution%20Vulnerability%26vs_k=1",
-      "published": "2026-11-23T15:51:28+00:00",
-      "source": "Cisco Security Advisories (PSIRT)",
+      "id": "https://www.rapid7.com/blog/post/ra-rapid7-analysis-vmware-vcenter-srp-authentication-bypass-to-root-cve-2026-123890",
+      "title": "Rapid7 Analysis: VMware vCenter SRP Authentication Bypass to Root (CVE-2026-123890)",
+      "summary": "Overview An unauthenticated attacker can retrieve the session key for an in-progress administrator login to VMware vCenter's directory service. The attacker then uses that key to complete the login without knowing the account's password. The vulnerable interface is exposed through DCE/RPC on TCP port 2012. The issue, tracked as CVE-2026-123890 , combines a Secure Remote Password (SRP) session-key getter that is callable before authentication with an RPC context lookup that does not enforce ownership. The context handles use predictable UUIDv1 values. By creating two reference contexts around a pending login, an attacker can narrow the hidden login handle to a short timestamp window and ask the server for its key. We reproduced the bypass against vCenter Server Appliance 8.0.2.00400, build 23929136 , running Photon OS 4.0, and leveraged the resulting administrator connection through to root command execution. SSH and Bash access were initially disabled. The attack recovered the directory database and its Security Token Service (STS) signing key, forged an administrator API session, and used appliance administration features to create an account and enable SSH. Neither the existing SSO password nor the root password was an input to that chain. Impact The attacker needs network access to TCP 2012 and the name of an existing SSO principal. Our PoC uses the default SSO administrator principal, administrator@vsphere.local ; deployments using a different SSO domain need the corresponding account name. The attack does not depend on an existing authenticated connection or an administrator being online. The attacker initiates the login attempt in order to recover its session key. The authenticated connection can call the directory database-copy interface. Its raw database contains the STS private signing key, allowing the attacker to sign administrator assertions that vCenter trusts. Our attack workflow used a forged assertion to create a local appliance superAdmin account, e",
+      "link": "https://www.rapid7.com/blog/post/ra-rapid7-analysis-vmware-vcenter-srp-authentication-bypass-to-root-cve-2026-123890",
+      "published": "2026-11-24T13:01:25+00:00",
+      "source": "Rapid7 Blog",
       "tags": [
-        "network",
-        "cisco",
-        "psirt",
-        "advisory"
+        "research",
+        "metasploit"
       ],
       "cve_ids": [
-        "CVE-2026-76466"
+        "CVE-2026-123890"
       ],
       "in_kev": true,
       "kev_date_added": "2026-11-20",
       "kev_due_date": "2026-11-23",
-      "kev_vendor": "Cisco",
-      "kev_product": "Expressway Series",
+      "kev_vendor": "Broadcom",
+      "kev_product": "VMware vCenter",
       "kev_ransomware": false,
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.02187,
-      "epss_percentile": 0.82879,
+      "epss": 0.03526,
+      "epss_percentile": 0.89444,
       "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html",
-      "title": "Hackers Exploit Critical ScreenConnect Flaw to Hijack MSP Technician PCs Without Warning",
-      "summary": "Threat actors are exploiting a now-patched security flaw in ConnectWise ScreenConnect to target managed service provider (MSP) servers.\n\nThe activity revolves around CVE-2026-84869 (CVSS score: 9.9), a critical ScreenConnect client flaw that allows a guest to transfer and execute a malicious payload on a connecting technician's host.\n\n\"On November 12, 2026, we observed one managed service",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html",
-      "published": "2026-11-23T12:41:04+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-84869"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-09-11",
-      "kev_due_date": "2026-09-14",
-      "kev_vendor": "ConnectWise",
-      "kev_product": "ScreenConnect",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.01173,
-      "epss_percentile": 0.68278,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
-      "title": "N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation",
-      "summary": "N-able yesterday disclosed a critical flaw it found while investigating the breach of its Mail Assure and SpamExperts Hosted Cloud, an email filtering service it runs for managed service providers.\n\nThe bug, tracked as CVE-2026-134624, is a server-side request forgery (SSRF) flaw. It allowed a user with high-level API access to open connections to internal systems of the user's choosing on the",
-      "link": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
-      "published": "2026-11-23T12:28:09+00:00",
+      "id": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html",
+      "title": "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added two flaws impacting N-able MailAssure and MONAI Label to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe critical vulnerabilities are listed below -\n\n\n  CVE-2026-134624 (CVSS score: 9.3) - A server-side request forgery (SSRF) vulnerability in N-able MailAssure's LDAP",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html",
+      "published": "2026-11-24T06:02:45+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
@@ -116,23 +78,23 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00354,
-      "epss_percentile": 0.2969,
+      "epss": 0.00617,
+      "epss_percentile": 0.50289,
       "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html",
-      "title": "Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE",
-      "summary": "Cybersecurity researchers have urged users to discontinue using a legacy ASP.NET anti-CSRF library named Idunno.AntiCsrf (\"Idunno.AntiCsrf.dll\") following the discovery of a critical vulnerability that has been exploited in the wild.\n\nThe vulnerability, tracked as CVE-2026-131914, carries a CVSS score of 9.3 out of 10.0. The issue affects versions 0.9.1.0 and 0.9.1 Beta, and relates to an",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html",
-      "published": "2026-11-23T09:11:56+00:00",
+      "id": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html",
+      "title": "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation",
+      "summary": "Broadcom has shipped patches to address 23 vulnerabilities impacting VMware ESX, vCenter, Workstation, Fusion, and Avi Load Balancer, including one critical bug that could be abused to bypass authentication.\n\nThe critical vulnerability, tracked as CVE-2026-123903, is rated 9.8 out of 10.0 on the CVSS scoring system. It resides in the VMware Directory Service (\"vmdir\").\n\n\"A malicious actor with",
+      "link": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html",
+      "published": "2026-11-24T13:28:26+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-131914"
+        "CVE-2026-123903"
       ],
       "in_kev": false,
       "kev_date_added": null,
@@ -143,16 +105,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00614,
-      "epss_percentile": 0.50367,
+      "epss": null,
+      "epss_percentile": null,
       "stack_match": []
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/",
-      "title": "CISA flags critical Cisco RCE flaw as actively exploited in attacks",
-      "summary": "The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers are now exploiting a recently patched critical Cisco Expressway vulnerability in the wild. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/",
-      "published": "2026-11-23T07:44:19+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/new-shirudo-tool-uses-ai-to-shield-unpatched-linux-systems-from-exploits/",
+      "title": "New Shirudo tool uses AI to shield unpatched Linux systems from exploits",
+      "summary": "OpenAI and Cisco launched an open-source Linux security tool named Shirudo that deploys temporary runtime protections to block vulnerability exploitation while administrators prepare and roll out patches, without restarting services. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-shirudo-tool-uses-ai-to-shield-unpatched-linux-systems-from-exploits/",
+      "published": "2026-11-24T13:34:23+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
@@ -166,18 +128,47 @@
       "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": true,
+      "is_high_severity": false,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": []
+      "stack_match": [
+        "linux"
+      ]
     },
     {
-      "id": "https://thehackernews.com/2026/11/weekly-recap-vmware-0-day-java4shell.html",
-      "title": "\u26a1 Weekly Recap: VMware 0-Day, Java4Shell, NGINX2Root, Ruby2Shell, and a Whole Lot of Shell Trouble",
-      "summary": "A stolen key. A trusted message. A routine update. None of these looks like the start of a major security problem. That's partly why they work. Attackers don't always need to break down a door. Sometimes they just use one that's already open.\n\nThis week's stories show how quickly a small opening can turn into a much bigger mess. One breach helps attackers reach another target. Tools people rely",
-      "link": "https://thehackernews.com/2026/11/weekly-recap-vmware-0-day-java4shell.html",
-      "published": "2026-11-23T15:10:48+00:00",
+      "id": "https://www.securityweek.com/openai-cisco-unveil-open-source-tool-to-shield-unpatched-linux-systems/",
+      "title": "OpenAI, Cisco Unveil Open Source Tool to Shield Unpatched Linux Systems",
+      "summary": "OpenAI and Cisco\u2019s Shirudo uses AI-generated shields to block Linux exploits while patches are prepared, but it\u2019s not yet production-ready. The post OpenAI, Cisco Unveil Open Source Tool to Shield Unpatched Linux Systems appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/openai-cisco-unveil-open-source-tool-to-shield-unpatched-linux-systems/",
+      "published": "2026-11-24T12:20:41+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": [
+        "linux"
+      ]
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/openai-and-cisco-unveil-ai-assisted.html",
+      "title": "OpenAI and Cisco Unveil AI-Assisted Linux Security Tool to Block Exploits Before Patching",
+      "summary": "OpenAI and Cisco have teamed up to launch Shirudo (meaning \"shield\" in Japanese), an open-source Linux runtime that allows artificial intelligence (AI) agents to defend systems without downtime.\n\n\"It lets agents write dynamic eBPF controls to shield systems from exploits, giving defenders more time to test and roll out patches,\" OpenAI said in a post on X.\n\nThe AI upstart called the initiative a",
+      "link": "https://thehackernews.com/2026/11/openai-and-cisco-unveil-ai-assisted.html",
+      "published": "2026-11-24T06:02:57+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
@@ -195,33 +186,9 @@
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "https://www.wiz.io/blog/agentic-attacks-artex-offensive-ai-frameworks",
-      "title": "Agentic Attacks: In The Wild",
-      "summary": "Agentic offensive frameworks like ARTEX are driving a surge in cloud intrusions. Wiz Research shares cases from the wild, including both sides of one attack via the operator's leaked logs, an update on Black October, and the detections that catch these noisy, machine-speed attacks.",
-      "link": "https://www.wiz.io/blog/agentic-attacks-artex-offensive-ai-frameworks",
-      "published": "2026-11-23T14:46:19+00:00",
-      "source": "Wiz Research",
-      "tags": [
-        "cloud",
-        "research",
-        "misconfig"
-      ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
+      "stack_match": [
+        "linux"
+      ]
     },
     {
       "id": "CVE-2026-63492",
@@ -276,7 +243,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.00281,
-      "epss_percentile": 0.20876,
+      "epss_percentile": 0.20691,
       "stack_match": []
     },
     {
@@ -304,8 +271,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.57324,
-      "epss_percentile": 0.99096,
+      "epss": 0.59265,
+      "epss_percentile": 0.99133,
       "stack_match": []
     },
     {
@@ -334,7 +301,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.13297,
-      "epss_percentile": 0.96489,
+      "epss_percentile": 0.96466,
       "stack_match": []
     },
     {
@@ -366,67 +333,10 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.27785,
-      "epss_percentile": 0.98136,
+      "epss": 0.447,
+      "epss_percentile": 0.98792,
       "stack_match": [
         "nginx"
-      ]
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/critical-binary-parser-flaw-enables.html",
-      "title": "Critical binary-parser Flaw Enables JavaScript Injection via Malicious Parser Definitions",
-      "summary": "A critical security flaw has been disclosed in the popular binary-parser library that could allow an attacker who controls parser definitions to execute arbitrary code.\n\nThe vulnerability, tracked as CVE-2026-134814 (CVSS score: 9.2 / 8.1), is a case of code injection impacting binary-parser versions prior to 2.3.1.\n\n\"Binary-parser before 2.3.1 contains a code injection vulnerability that allows",
-      "link": "https://thehackernews.com/2026/11/critical-binary-parser-flaw-enables.html",
-      "published": "2026-11-23T13:22:20+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-134814"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00608,
-      "epss_percentile": 0.50077,
-      "stack_match": []
-    },
-    {
-      "id": "https://projectzero.google/2026/11/virtualbox-process-hardening",
-      "title": "VirtualBox Process Hardening on Windows 2026 Edition: What\u2019s a Single Bit Between Friends?",
-      "summary": "Back in 2017 I did some research into Oracle VirtualBox on Windows. Specifically I focussed on their mechanism to protect their VM processes from the user on the host. The protection was to gate who could open the kernel driver, which might allow for privilege escalation due to the way it was designed. At the time I found 3 ways of bypassing the protection, with an additional issue in COM\u2019s runtime I reported in 2020. These issues were all written up in this post . Fast forward to 2026 and I decided to look at VirtualBox again to see if much had changed. This time I found 3 new bypasses for protected processes, with an additional bug which was a broken fix for the 2020 bypass breaking due to changes in Windows. In this blog post I want to focus on one specific issue CVE-2026-87268 which abused a feature of the .NET Framework which, when combined with the implementation of the DLL loader hooks implemented by VirtualBox, permitted a bypass of the checks and allowed me to load arbitrary code into the protected process. Let\u2019s dig into the root cause of the issue in .NET first, before moving on to exploitation in VirtualBox. .NET Assembly Loading The .NET Framework is interesting when it comes to bypassing process hardening as it supports loading assemblies from a memory buffer as long as you stick to only using managed code. This is obviously useful if the hardened process is maintained through verifying what DLLs can or cannot be loaded as it bypasses the traditional image mapping process. As the .NET runtime implementation is Microsoft signed, it\u2019s usually permitted to load by any such checks. The canonical way to load from a memory buffer is to use the Assembly::Load static method which accepts a byte array. This does require you to run some .NET code first, or find a confused deputy to do the work for you. I used this API method to bypass VirtualBox process hardening back in 2017, I was able to get to the API through the JScript script engine, culminating in me rele",
-      "link": "https://projectzero.google/2026/11/virtualbox-process-hardening.html",
-      "published": "2026-11-23T08:00:00+00:00",
-      "source": "Google Project Zero",
-      "tags": [
-        "research",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-87268",
-        "CVE-2026-108398"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00779,
-      "epss_percentile": 0.56826,
-      "stack_match": [
-        "windows"
       ]
     }
   ]

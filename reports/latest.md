@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-24 03:33 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 3 &nbsp;|&nbsp; 📈 High EPSS: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 4 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; 🎯 My Stack: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-24 16:38 UTC &nbsp;|&nbsp; **Total:** 11 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 📈 High EPSS: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 4 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; 🎯 My Stack: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,102 +20,97 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ---
 
-## ⚡ Changed since last run (3)
+## ⚡ Changed since last run (2)
 
-- 🔴 CVE-2026-134624 entered KEV (due 2026-11-26) — N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation <https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html>
-- 🎯 New My Stack hit: CVE-2026-108398 [windows] — VirtualBox Process Hardening on Windows 2026 Edition: What’s a Single Bit Between Friends? <https://projectzero.google/2026/11/virtualbox-process-hardening.html>
-- 🎯 New My Stack hit: CVE-2026-87268 [windows] — VirtualBox Process Hardening on Windows 2026 Edition: What’s a Single Bit Between Friends? <https://projectzero.google/2026/11/virtualbox-process-hardening.html>
+- 📈 CVE-2026-129448 EPSS 5% → 40% (crossed 10%)
+- 📈 CVE-2026-59309 EPSS 31% → 56% (crossed 50%)
 
 ---
 
 ## 🎯 My Stack Highlights
 
-- 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026 — `CVE-2026-113425`, `CVE-2026-121810`, `CVE-2026-123007`, `CVE-2026-123633`, `CVE-2026-123634` — EPSS 28% — `nginx`
-- 🟡 High Severity — VirtualBox Process Hardening on Windows 2026 Edition: What’s a Single Bit Between Friends? — `CVE-2026-87268`, `CVE-2026-108398` — EPSS 1% — `windows`
+- 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026 — `CVE-2026-113425`, `CVE-2026-121810`, `CVE-2026-123007`, `CVE-2026-123633`, `CVE-2026-123634` — EPSS 45% — `nginx`
+- 🟠 Zero-Day — New Shirudo tool uses AI to shield unpatched Linux systems from exploits — _No CVE_ — EPSS n/a — `linux`
+- 🟠 Zero-Day — OpenAI, Cisco Unveil Open Source Tool to Shield Unpatched Linux Systems — _No CVE_ — EPSS n/a — `linux`
+- 🟠 Zero-Day — OpenAI and Cisco Unveil AI-Assisted Linux Security Tool to Block Exploits Before Patching — _No CVE_ — EPSS n/a — `linux`
 
 ---
 
-## 1. 🔴 CISA KEV — Cisco Expressway Series Remote Code Execution Vulnerability
+## 1. 🔴 CISA KEV — Rapid7 Analysis: VMware vCenter SRP Authentication Bypass to Root (CVE-2026-123890)
 
-**CVE:** `CVE-2026-76466` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-23
-**EPSS:** 2.2% (percentile 83%)
+**CVE:** `CVE-2026-123890` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-11-24
+**EPSS:** 3.5% (percentile 89%)
 **KEV:** in catalog, due 2026-11-23
-**Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20Expressway%20Series%20Remote%20Code%20Execution%20Vulnerability%26vs_k=1>
+**Reference:** <https://www.rapid7.com/blog/post/ra-rapid7-analysis-vmware-vcenter-srp-authentication-bypass-to-root-cve-2026-123890>
 
-> A vulnerability in the database service feature of Cisco Expressway Series could allow an unauthenticated, remote attacker with network access to a Cisco Expressway device to execute arbitrary operating system commands as root . This vulnerability is due to the use of persistent cookies. Additionally, there is insufficient validation of client certificates when the TLS Verify Mode is set to Enable…
-
----
-
-## 2. 🔴 CISA KEV — Hackers Exploit Critical ScreenConnect Flaw to Hijack MSP Technician PCs Without Warning
-
-**CVE:** `CVE-2026-84869` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-23
-**EPSS:** 1.2% (percentile 68%)
-**KEV:** in catalog, due 2026-09-14
-**Reference:** <https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html>
-
-> Threat actors are exploiting a now-patched security flaw in ConnectWise ScreenConnect to target managed service provider (MSP) servers.
-
-The activity revolves around CVE-2026-84869 (CVSS score: 9.9), a critical ScreenConnect client flaw that allows a guest to transfer and execute a malicious payload on a connecting technician&#x27;s host.
-
-&quot;On November 12, 2026, we observed one managed servic…
+> Overview An unauthenticated attacker can retrieve the session key for an in-progress administrator login to VMware vCenter&#x27;s directory service. The attacker then uses that key to complete the login without knowing the account&#x27;s password. The vulnerable interface is exposed through DCE/RPC on TCP port 2012. The issue, tracked as CVE-2026-123890 , combines a Secure Remote Password (SRP) se…
 
 ---
 
-## 3. 🔴 CISA KEV — N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation
+## 2. 🔴 CISA KEV — Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day
 
-**CVE:** `CVE-2026-134624` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-23
-**EPSS:** 0.4% (percentile 30%)
-**KEV:** in catalog, due 2026-11-26
-**Reference:** <https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html>
-
-> N-able yesterday disclosed a critical flaw it found while investigating the breach of its Mail Assure and SpamExperts Hosted Cloud, an email filtering service it runs for managed service providers.
-
-The bug, tracked as CVE-2026-134624, is a server-side request forgery (SSRF) flaw. It allowed a user with high-level API access to open connections to internal systems of the user&#x27;s choosing on th…
-
----
-
-## 4. 🟠 Zero-Day — Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE
-
-**CVE:** `CVE-2026-131914` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-23
+**CVE:** `CVE-2026-134624` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-24
 **EPSS:** 0.6% (percentile 50%)
-**Reference:** <https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html>
+**KEV:** in catalog, due 2026-11-26
+**Reference:** <https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html>
 
-> Cybersecurity researchers have urged users to discontinue using a legacy ASP.NET anti-CSRF library named Idunno.AntiCsrf (&quot;Idunno.AntiCsrf.dll&quot;) following the discovery of a critical vulnerability that has been exploited in the wild.
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added two flaws impacting N-able MailAssure and MONAI Label to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
 
-The vulnerability, tracked as CVE-2026-131914, carries a CVSS score of 9.3 out of 10.0. The issue affects versions 0.9.1.0 and 0.9.1 Beta, and relates to a…
+The critical vulnerabilities are listed below -
 
----
 
-## 5. 🟠 Zero-Day — CISA flags critical Cisco RCE flaw as actively exploited in attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-23
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/>
-
-> The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers are now exploiting a recently patched critical Cisco Expressway vulnerability in the wild. [...]
+  CVE-2026-134624 (CVSS score: 9.3) - A server-side request forgery (SSRF) vulnerability in N-able MailAssure&#x27;s LDA…
 
 ---
 
-## 6. 🟠 Zero-Day — ⚡ Weekly Recap: VMware 0-Day, Java4Shell, NGINX2Root, Ruby2Shell, and a Whole Lot of Shell Trouble
+## 3. 🟠 Zero-Day — VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-23
-**Reference:** <https://thehackernews.com/2026/11/weekly-recap-vmware-0-day-java4shell.html>
+**CVE:** `CVE-2026-123903` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-24
+**Reference:** <https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html>
 
-> A stolen key. A trusted message. A routine update. None of these looks like the start of a major security problem. That&#x27;s partly why they work. Attackers don&#x27;t always need to break down a door. Sometimes they just use one that&#x27;s already open.
+> Broadcom has shipped patches to address 23 vulnerabilities impacting VMware ESX, vCenter, Workstation, Fusion, and Avi Load Balancer, including one critical bug that could be abused to bypass authentication.
 
-This week&#x27;s stories show how quickly a small opening can turn into a much bigger mess. One breach helps attackers reach another target. …
+The critical vulnerability, tracked as CVE-2026-123903, is rated 9.8 out of 10.0 on the CVSS scoring system. It resides in the VMware Directory Service (&quot;vmdir&quot;).
 
----
-
-## 7. 🟠 Zero-Day — Agentic Attacks: In The Wild
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-11-23
-**Reference:** <https://www.wiz.io/blog/agentic-attacks-artex-offensive-ai-frameworks>
-
-> Agentic offensive frameworks like ARTEX are driving a surge in cloud intrusions. Wiz Research shares cases from the wild, including both sides of one attack via the operator&#x27;s leaked logs, an update on Black October, and the detections that catch these noisy, machine-speed attacks.
+&quot;A malicious…
 
 ---
 
-## 8. 🟡 High Severity — AVideo API vulnerable to OS command injection through an unescaped FFmpeg process keyword
+## 4. 🟠 Zero-Day — New Shirudo tool uses AI to shield unpatched Linux systems from exploits
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-24
+**My Stack:** `linux`
+**Reference:** <https://www.bleepingcomputer.com/news/security/new-shirudo-tool-uses-ai-to-shield-unpatched-linux-systems-from-exploits/>
+
+> OpenAI and Cisco launched an open-source Linux security tool named Shirudo that deploys temporary runtime protections to block vulnerability exploitation while administrators prepare and roll out patches, without restarting services. [...]
+
+---
+
+## 5. 🟠 Zero-Day — OpenAI, Cisco Unveil Open Source Tool to Shield Unpatched Linux Systems
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-24
+**My Stack:** `linux`
+**Reference:** <https://www.securityweek.com/openai-cisco-unveil-open-source-tool-to-shield-unpatched-linux-systems/>
+
+> OpenAI and Cisco’s Shirudo uses AI-generated shields to block Linux exploits while patches are prepared, but it’s not yet production-ready. The post OpenAI, Cisco Unveil Open Source Tool to Shield Unpatched Linux Systems appeared first on SecurityWeek .
+
+---
+
+## 6. 🟠 Zero-Day — OpenAI and Cisco Unveil AI-Assisted Linux Security Tool to Block Exploits Before Patching
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-24
+**My Stack:** `linux`
+**Reference:** <https://thehackernews.com/2026/11/openai-and-cisco-unveil-ai-assisted.html>
+
+> OpenAI and Cisco have teamed up to launch Shirudo (meaning &quot;shield&quot; in Japanese), an open-source Linux runtime that allows artificial intelligence (AI) agents to defend systems without downtime.
+
+&quot;It lets agents write dynamic eBPF controls to shield systems from exploits, giving defenders more time to test and roll out patches,&quot; OpenAI said in a post on X.
+
+The AI upstart calle…
+
+---
+
+## 7. 🟡 High Severity — AVideo API vulnerable to OS command injection through an unescaped FFmpeg process keyword
 
 **CVE:** `CVE-2026-63492` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-23
 **Reference:** <https://github.com/advisories/GHSA-j44m-77cc-p3cc>
@@ -133,7 +128,7 @@ The two callers in `plugin/API/standAlone/ffmpeg.json.php` (the `list` mode and 
 
 ---
 
-## 9. 🟡 High Severity — secp256k1-native has a compiler-induced timing side channel in scalar multiplication
+## 8. 🟡 High Severity — secp256k1-native has a compiler-induced timing side channel in scalar multiplication
 
 **CVE:** `CVE-2026-63410` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-23
 **EPSS:** 0.3% (percentile 21%)
@@ -147,17 +142,17 @@ The Montgomery ladder selects between p…
 
 ---
 
-## 10. 🟡 High Severity — Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026
+## 9. 🟡 High Severity — Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026
 
 **CVE:** `CVE-2026-114938` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-23
-**EPSS:** 57.3% (percentile 99%)
+**EPSS:** 59.3% (percentile 99%)
 **Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1>
 
 > On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnera…
 
 ---
 
-## 11. 🟡 High Severity — Vulnerability in PHP Affecting Cisco Products: November 2026
+## 10. 🟡 High Severity — Vulnerability in PHP Affecting Cisco Products: November 2026
 
 **CVE:** `CVE-2026-126714` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-23
 **EPSS:** 13.3% (percentile 96%)
@@ -167,38 +162,13 @@ The Montgomery ladder selects between p…
 
 ---
 
-## 12. 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026
+## 11. 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026
 
 **CVE:** `CVE-2026-113425` | `CVE-2026-121810` | `CVE-2026-123007` | `CVE-2026-123633` | `CVE-2026-123634` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-23
-**EPSS:** 27.8% (percentile 98%)
+**EPSS:** 44.7% (percentile 99%)
 **My Stack:** `nginx`
 **Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1>
 
 > On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerabilit…
-
----
-
-## 13. 🟡 High Severity — Critical binary-parser Flaw Enables JavaScript Injection via Malicious Parser Definitions
-
-**CVE:** `CVE-2026-134814` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-23
-**EPSS:** 0.6% (percentile 50%)
-**Reference:** <https://thehackernews.com/2026/11/critical-binary-parser-flaw-enables.html>
-
-> A critical security flaw has been disclosed in the popular binary-parser library that could allow an attacker who controls parser definitions to execute arbitrary code.
-
-The vulnerability, tracked as CVE-2026-134814 (CVSS score: 9.2 / 8.1), is a case of code injection impacting binary-parser versions prior to 2.3.1.
-
-&quot;Binary-parser before 2.3.1 contains a code injection vulnerability that all…
-
----
-
-## 14. 🟡 High Severity — VirtualBox Process Hardening on Windows 2026 Edition: What’s a Single Bit Between Friends?
-
-**CVE:** `CVE-2026-87268` | `CVE-2026-108398` &nbsp;|&nbsp; **Source:** Google Project Zero &nbsp;|&nbsp; **Published:** 2026-11-23
-**EPSS:** 0.8% (percentile 57%)
-**My Stack:** `windows`
-**Reference:** <https://projectzero.google/2026/11/virtualbox-process-hardening.html>
-
-> Back in 2017 I did some research into Oracle VirtualBox on Windows. Specifically I focussed on their mechanism to protect their VM processes from the user on the host. The protection was to gate who could open the kernel driver, which might allow for privilege escalation due to the way it was designed. At the time I found 3 ways of bypassing the protection, with an additional issue in COM’s runtim…
 
 ---
