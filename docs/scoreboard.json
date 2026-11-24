@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T16:41:49.103324+00:00",
+  "generated_at": "2026-11-24T03:33:14.001838+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -38,7 +38,7 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 8,
+        "warm_up": 10,
         "old_cve": 0
       }
     },
@@ -64,14 +64,14 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 8,
+        "warm_up": 10,
         "old_cve": 0
       }
     }
   },
   "top_leads_window": 90,
   "top_leads": [],
-  "total_rows": 8,
+  "total_rows": 10,
   "rows": [
     {
       "bucket": "missed",
@@ -168,11 +168,35 @@
       "product": "Expressway Series",
       "source": null,
       "vendor": "Cisco"
+    },
+    {
+      "cve": "CVE-2026-133968",
+      "kev_date_added": "2026-11-23",
+      "vendor": "Project MONAI",
+      "product": "MONAI Label",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-134624",
+      "kev_date_added": "2026-11-23",
+      "vendor": "N-able",
+      "product": "MailAssure",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
     }
   ],
   "run": {
-    "new_signals": 1,
-    "new_rows": 0,
+    "new_signals": 0,
+    "new_rows": 2,
     "capped_entries": 0
   }
 }

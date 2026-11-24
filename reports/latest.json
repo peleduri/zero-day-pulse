@@ -1,30 +1,39 @@
 {
-  "generated": "2026-11-23T16:42:04.715323+00:00",
-  "total": 8,
-  "kev": 2,
+  "generated": "2026-11-24T03:33:42.183775+00:00",
+  "total": 14,
+  "kev": 3,
   "zero_day": 4,
   "enriched": 0,
-  "high_epss": 0,
-  "my_stack": 0,
-  "run_id": "45219245403",
+  "high_epss": 1,
+  "my_stack": 2,
+  "run_id": "45320215721",
   "changes": [
     {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-114938",
-      "title": null,
-      "link": null,
-      "threshold": 0.5,
-      "old_epss": 0.45636,
-      "new_epss": 0.57324
+      "kind": "entered_kev",
+      "cve": "CVE-2026-134624",
+      "title": "N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation",
+      "link": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
+      "kev_date_added": "2026-11-23",
+      "kev_due_date": "2026-11-26",
+      "kev_ransomware": false
     },
     {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-115731",
-      "title": null,
-      "link": null,
-      "threshold": 0.1,
-      "old_epss": 0.01231,
-      "new_epss": 0.12839
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-108398",
+      "title": "VirtualBox Process Hardening on Windows 2026 Edition: What\u2019s a Single Bit Between Friends?",
+      "link": "https://projectzero.google/2026/11/virtualbox-process-hardening.html",
+      "stack_match": [
+        "windows"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-87268",
+      "title": "VirtualBox Process Hardening on Windows 2026 Edition: What\u2019s a Single Bit Between Friends?",
+      "link": "https://projectzero.google/2026/11/virtualbox-process-hardening.html",
+      "stack_match": [
+        "windows"
+      ]
     }
   ],
   "findings": [
@@ -82,6 +91,33 @@
       "is_priority_product": false,
       "epss": 0.01173,
       "epss_percentile": 0.68278,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
+      "title": "N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation",
+      "summary": "N-able yesterday disclosed a critical flaw it found while investigating the breach of its Mail Assure and SpamExperts Hosted Cloud, an email filtering service it runs for managed service providers.\n\nThe bug, tracked as CVE-2026-134624, is a server-side request forgery (SSRF) flaw. It allowed a user with high-level API access to open connections to internal systems of the user's choosing on the",
+      "link": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
+      "published": "2026-11-23T12:28:09+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-134624"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-23",
+      "kev_due_date": "2026-11-26",
+      "kev_vendor": "N-able",
+      "kev_product": "MailAssure",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00354,
+      "epss_percentile": 0.2969,
       "stack_match": []
     },
     {
@@ -188,6 +224,155 @@
       "stack_match": []
     },
     {
+      "id": "CVE-2026-63492",
+      "title": "AVideo API vulnerable to OS command injection through an unescaped FFmpeg process keyword",
+      "summary": "### Summary\n\nThe helper `listFFmpegProcesses($keyword)` in `plugin/API/standAlone/functions.php` builds a shell pipeline by interpolating `$keyword` inside single quotes and running it with `exec()`:\n\n```php\n$command .= \" | grep '$keyword'\";\nexec($command, $output, $status);\n```\n\nThe two callers in `plugin/API/standAlone/ffmpeg.json.php` (the `list` mode and the `isKeywordRunning` mode) pass the RAW decrypted `codeToExec` field, not the sanitized `$keyword` variable that the endpoint allowlists elsewhere. Because the value is placed inside a single-quoted shell context with no escaping, a payload that closes the quote (for example `x'; touch /tmp/marker #`) breaks out and injects an arbitrary command that runs via `exec()`'s `/bin/sh -c`. An attacker who can craft a valid encrypted payload achieves OS command execution as the web-server user.\n\n### Vulnerable code\n\nSink \u2014 `plugin/API/standAlone/functions.php`, `listFFmpegProcesses()` (around lines 139-147):\n\n```php\nfunction listFFmpegProcesses($keyword = '')\n{\n    $command = \"ps -eo pid,etime,%cpu,%mem,cmd | grep '[f]fmpeg'\";\n\n    if (!empty($keyword)) {\n        $command .= \" | grep '$keyword'\";   // $keyword interpolated inside single quotes, unescaped\n    }\n\n    exec($command, $output, $status);       // runs via /bin/sh -c\n```\n\nCallers \u2014 `plugin/API/standAlone/ffmpeg.json.php` pass the RAW decrypted field, bypassing the allowlisting applied to the local `$keyword` variable. That local variable is built at line ~136 as `$keyword = preg_replace('/[^a-zA-Z0-9_-]/', '', $codeToExec->keyword)`, but the two callers below never use it:\n\n```php\n// list mode (line ~221)\n$list = listFFmpegProcesses($codeToExec->keyword);\n\n// isKeywordRunning mode (line ~341)\n$list = listFFmpegProcesses($codeToExec->isKeywordRunning);\n```\n\nNeither mode is gated by the `$isStandAlone` check that guards the `deleteFolder` / `deleteFile` modes, so both run on any AVideo instance.\n\n### Reachability\n\nReached by sending a `codeToExec` payload with",
+      "link": "https://github.com/advisories/GHSA-j44m-77cc-p3cc",
+      "published": "2026-11-23T22:06:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63492"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-63410",
+      "title": "secp256k1-native has a compiler-induced timing side channel in scalar multiplication",
+      "summary": "## Summary\n\n`Point#mul` \u2014 the default, constant-time scalar multiplication and the library's headline secret-scalar operation \u2014 could leak timing information about the secret scalar (a private key or ECDSA-style nonce in a downstream consumer) **not because of a source-level bug, but because the compiler reconstructed a branch from branchless source.**\n\nThe Montgomery ladder selects between point candidates with `uint256_select`, written deliberately branchlessly as `r = (a & ~mask) | (b & mask)` with a mask that is all-ones or all-zeros. GCC 15.2 at `-O2` recognises this select idiom, reconstructs the original boolean condition, and emits a secret-dependent conditional jump (`je`/`jne`). The branch's taken/not-taken timing correlates with the secret scalar bits flowing through the ladder.\n\nThis silently undid the 0.17.0 fix for the historical |t|=875 infinity-branch leak, which had relied on `uint256_select` compiling to branchless code.\n\n## Impact\n\nA timing side-channel on the secret scalar in constant-time scalar multiplication. For a consumer that calls `Point#mul` (or the native `scalar_multiply_ct`) on a secret key or nonce and exposes timing to an attacker (e.g. an online signing oracle), repeated measurements can statistically recover scalar bits \u2014 the classic ECC private-key/nonce timing-attack setting (cf. Brumley\u2013Boneh). The leak is in the *compiled binary*; the source is correct, so source review and the deterministic ctgrind check on a *non-reconstructing* toolchain do not reveal it.\n\nPre-1.0 with no published RubyGems dependents, so this is handled as fix-publish-and-document: full GHSA + CVE record without a coordinated downstream-notification timeline. The CVE is filed for citability so the empirical record (paper \u2192 review \u2192 compiler regression \u2192 fix) is permanent and searchable.\n\n## Affected configurations\n\nThe defect is a property of the (source, compiler, flags) triple, not the source alone:\n\n- **Source:** any pre-`0.18.0` build. The branchless `u",
+      "link": "https://github.com/advisories/GHSA-vp2j-gqfm-r3cf",
+      "published": "2026-11-23T20:59:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63410"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00281,
+      "epss_percentile": 0.20876,
+      "stack_match": []
+    },
+    {
+      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
+      "summary": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z Security Impact Rating: High CVE: CVE-2026-114938",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "published": "2026-11-23T20:32:33+00:00",
+      "source": "Cisco Security Advisories (PSIRT)",
+      "tags": [
+        "network",
+        "cisco",
+        "psirt",
+        "advisory"
+      ],
+      "cve_ids": [
+        "CVE-2026-114938"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.57324,
+      "epss_percentile": 0.99096,
+      "stack_match": []
+    },
+    {
+      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-phpaftershell-nov-2026-kT9pL4Xe?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20PHP%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "title": "Vulnerability in PHP Affecting Cisco Products: November 2026",
+      "summary": "On November 19, 2026, the PHP Foundation announced the availability of security fixes that address a critical vulnerability that could lead to remote code execution. This vulnerability is identified by CVE-2026-126714. For information about this vulnerability, see the advisory GHSA-fm2m-fjf5-v3cp . This vulnerability is being referenced as phpAfterShell . For information about Splunk products and offerings, see Vulnerabilities in PHP affecting Splunk Products - November 2026 . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-phpaftershell-nov-2026-kT9pL4Xe Security Impact Rating: Critical CVE: CVE-2026-126714",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-phpaftershell-nov-2026-kT9pL4Xe?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20PHP%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "published": "2026-11-23T20:20:00+00:00",
+      "source": "Cisco Security Advisories (PSIRT)",
+      "tags": [
+        "network",
+        "cisco",
+        "psirt",
+        "advisory"
+      ],
+      "cve_ids": [
+        "CVE-2026-126714"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.13297,
+      "epss_percentile": 0.96489,
+      "stack_match": []
+    },
+    {
+      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s Security Impact Rating: High CVE: CVE-2026-113425,CVE-2026-121810,CVE-2026-123007,CVE-2026-123633,CVE-2026-123634",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "published": "2026-11-23T20:14:39+00:00",
+      "source": "Cisco Security Advisories (PSIRT)",
+      "tags": [
+        "network",
+        "cisco",
+        "psirt",
+        "advisory"
+      ],
+      "cve_ids": [
+        "CVE-2026-113425",
+        "CVE-2026-121810",
+        "CVE-2026-123007",
+        "CVE-2026-123633",
+        "CVE-2026-123634"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.27785,
+      "epss_percentile": 0.98136,
+      "stack_match": [
+        "nginx"
+      ]
+    },
+    {
       "id": "https://thehackernews.com/2026/11/critical-binary-parser-flaw-enables.html",
       "title": "Critical binary-parser Flaw Enables JavaScript Injection via Malicious Parser Definitions",
       "summary": "A critical security flaw has been disclosed in the popular binary-parser library that could allow an attacker who controls parser definitions to execute arbitrary code.\n\nThe vulnerability, tracked as CVE-2026-134814 (CVSS score: 9.2 / 8.1), is a case of code injection impacting binary-parser versions prior to 2.3.1.\n\n\"Binary-parser before 2.3.1 contains a code injection vulnerability that allows",
@@ -215,18 +400,19 @@
       "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
-      "title": "N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation",
-      "summary": "N-able yesterday disclosed a critical flaw it found while investigating the breach of its Mail Assure and SpamExperts Hosted Cloud, an email filtering service it runs for managed service providers.\n\nThe bug, tracked as CVE-2026-134624, is a server-side request forgery (SSRF) flaw. It allowed a user with high-level API access to open connections to internal systems of the user's choosing on the",
-      "link": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
-      "published": "2026-11-23T12:28:09+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://projectzero.google/2026/11/virtualbox-process-hardening",
+      "title": "VirtualBox Process Hardening on Windows 2026 Edition: What\u2019s a Single Bit Between Friends?",
+      "summary": "Back in 2017 I did some research into Oracle VirtualBox on Windows. Specifically I focussed on their mechanism to protect their VM processes from the user on the host. The protection was to gate who could open the kernel driver, which might allow for privilege escalation due to the way it was designed. At the time I found 3 ways of bypassing the protection, with an additional issue in COM\u2019s runtime I reported in 2020. These issues were all written up in this post . Fast forward to 2026 and I decided to look at VirtualBox again to see if much had changed. This time I found 3 new bypasses for protected processes, with an additional bug which was a broken fix for the 2020 bypass breaking due to changes in Windows. In this blog post I want to focus on one specific issue CVE-2026-87268 which abused a feature of the .NET Framework which, when combined with the implementation of the DLL loader hooks implemented by VirtualBox, permitted a bypass of the checks and allowed me to load arbitrary code into the protected process. Let\u2019s dig into the root cause of the issue in .NET first, before moving on to exploitation in VirtualBox. .NET Assembly Loading The .NET Framework is interesting when it comes to bypassing process hardening as it supports loading assemblies from a memory buffer as long as you stick to only using managed code. This is obviously useful if the hardened process is maintained through verifying what DLLs can or cannot be loaded as it bypasses the traditional image mapping process. As the .NET runtime implementation is Microsoft signed, it\u2019s usually permitted to load by any such checks. The canonical way to load from a memory buffer is to use the Assembly::Load static method which accepts a byte array. This does require you to run some .NET code first, or find a confused deputy to do the work for you. I used this API method to bypass VirtualBox process hardening back in 2017, I was able to get to the API through the JScript script engine, culminating in me rele",
+      "link": "https://projectzero.google/2026/11/virtualbox-process-hardening.html",
+      "published": "2026-11-23T08:00:00+00:00",
+      "source": "Google Project Zero",
       "tags": [
-        "news",
+        "research",
         "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-134624"
+        "CVE-2026-87268",
+        "CVE-2026-108398"
       ],
       "in_kev": false,
       "kev_date_added": null,
@@ -237,9 +423,11 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.00354,
-      "epss_percentile": 0.2969,
-      "stack_match": []
+      "epss": 0.00779,
+      "epss_percentile": 0.56826,
+      "stack_match": [
+        "windows"
+      ]
     }
   ]
 }

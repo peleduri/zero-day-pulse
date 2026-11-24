@@ -156,6 +156,16 @@
       ],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
+    "CVE-2026-108398": {
+      "epss": 0.00779,
+      "first_seen": "2026-11-24T03:33:42.183228+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
+      "stack_match": [
+        "windows"
+      ],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
+    },
     "CVE-2026-109618": {
       "epss": 0.99999,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
@@ -204,7 +214,7 @@
       "epss": 0.1386,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-22T13:42:54.046605+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -226,9 +236,9 @@
       "epss": 0.57324,
       "first_seen": "2026-11-18T00:07:12.176714+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-21T13:49:30.236989+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [],
-      "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
     "CVE-2026-115560": {
       "epss": 0.73107,
@@ -357,7 +367,7 @@
       "epss": 0.16404,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-22T13:42:54.046605+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -367,7 +377,7 @@
       "epss": 0.27785,
       "first_seen": "2026-11-18T23:40:14.042412+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-22T13:42:54.046605+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -377,7 +387,7 @@
       "epss": 0.17525,
       "first_seen": "2026-11-18T23:40:14.042412+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-22T13:42:54.046605+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -387,7 +397,7 @@
       "epss": 0.17103,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-22T13:42:54.046605+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -429,9 +439,9 @@
       "epss": 0.13297,
       "first_seen": "2026-11-19T23:58:56.868888+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-20T14:30:34.289309+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [],
-      "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
     "CVE-2026-128073": {
       "epss": 0.00357,
@@ -571,7 +581,7 @@
       "epss": 0.00614,
       "first_seen": "2026-11-23T16:42:04.714781+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-23T16:42:04.714781+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -586,8 +596,8 @@
     "CVE-2026-134624": {
       "epss": 0.00354,
       "first_seen": "2026-11-23T16:42:04.714781+00:00",
-      "in_kev": false,
-      "last_seen": "2026-11-23T16:42:04.714781+00:00",
+      "in_kev": true,
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -595,7 +605,7 @@
       "epss": 0.00608,
       "first_seen": "2026-11-23T16:42:04.714781+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-23T16:42:04.714781+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -795,6 +805,14 @@
       ],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     },
+    "CVE-2026-63410": {
+      "epss": 0.00281,
+      "first_seen": "2026-11-24T03:33:42.183228+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
+      "stack_match": [],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
+    },
     "CVE-2026-63415": {
       "epss": 0.00519,
       "first_seen": "2026-11-20T05:32:39.818841+00:00",
@@ -804,6 +822,14 @@
         "github"
       ],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
+    },
+    "CVE-2026-63492": {
+      "epss": null,
+      "first_seen": "2026-11-24T03:33:42.183228+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
+      "stack_match": [],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
     "CVE-2026-63496": {
       "epss": 0.00368,
@@ -962,7 +988,7 @@
       "epss": 0.02187,
       "first_seen": "2026-11-20T14:30:34.289309+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-23T16:42:04.714781+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -1136,8 +1162,18 @@
       "epss": 0.01173,
       "first_seen": "2026-11-18T00:07:12.176714+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-23T16:42:04.714781+00:00",
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
       "stack_match": [],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
+    },
+    "CVE-2026-87268": {
+      "epss": 0.00161,
+      "first_seen": "2026-11-24T03:33:42.183228+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-24T03:33:42.183228+00:00",
+      "stack_match": [
+        "windows"
+      ],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
     "CVE-2026-89126": {
@@ -1206,7 +1242,7 @@
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     }
   },
-  "generated_at": "2026-11-23T16:42:04.714781+00:00",
-  "run_id": "45219245403",
+  "generated_at": "2026-11-24T03:33:42.183228+00:00",
+  "run_id": "45320215721",
   "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
 }
