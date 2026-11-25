@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T16:37:56.242659+00:00",
+  "generated_at": "2026-11-25T01:42:01.522351+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -38,7 +38,7 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 10,
+        "warm_up": 13,
         "old_cve": 0
       }
     },
@@ -64,14 +64,14 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 10,
+        "warm_up": 13,
         "old_cve": 0
       }
     }
   },
   "top_leads_window": 90,
   "top_leads": [],
-  "total_rows": 10,
+  "total_rows": 13,
   "rows": [
     {
       "bucket": "missed",
@@ -192,11 +192,47 @@
       "product": "MailAssure",
       "source": null,
       "vendor": "N-able"
+    },
+    {
+      "cve": "CVE-2026-131914",
+      "kev_date_added": "2026-11-24",
+      "vendor": "Idunno",
+      "product": "AntiCsrf",
+      "cve_year": 2026,
+      "observed_at": "2026-11-23T16:41:49.035609+00:00",
+      "source": "The Hacker News Security",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html",
+      "lead_days": 1,
+      "bucket": "earlier"
+    },
+    {
+      "cve": "CVE-2026-132165",
+      "kev_date_added": "2026-11-24",
+      "vendor": "Drupal",
+      "product": "Core",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-132224",
+      "kev_date_added": "2026-11-24",
+      "vendor": "Optimizely",
+      "product": "Web Experimentation",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
     }
   ],
   "run": {
-    "new_signals": 1,
-    "new_rows": 0,
+    "new_signals": 0,
+    "new_rows": 3,
     "capped_entries": 0
   }
 }

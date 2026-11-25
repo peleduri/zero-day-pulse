@@ -1,24 +1,15 @@
 {
-  "run_id": "45439201260",
-  "generated_at": "2026-11-24T16:38:06.154811+00:00",
+  "run_id": "45527553523",
+  "generated_at": "2026-11-25T01:42:11.914711+00:00",
   "changes": [
     {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-129448",
+      "kind": "entered_kev",
+      "cve": "CVE-2026-131914",
       "title": null,
       "link": null,
-      "threshold": 0.1,
-      "old_epss": 0.05459,
-      "new_epss": 0.40069
-    },
-    {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-59309",
-      "title": null,
-      "link": null,
-      "threshold": 0.5,
-      "old_epss": 0.30867,
-      "new_epss": 0.56032
+      "kev_date_added": "2026-11-24",
+      "kev_due_date": "2026-11-27",
+      "kev_ransomware": false
     }
   ]
 }
