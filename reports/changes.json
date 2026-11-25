@@ -1,15 +1,15 @@
 {
-  "run_id": "45527553523",
-  "generated_at": "2026-11-25T01:42:11.914711+00:00",
+  "run_id": "45652592203",
+  "generated_at": "2026-11-25T16:20:18.082506+00:00",
   "changes": [
     {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-131914",
-      "title": null,
-      "link": null,
-      "kev_date_added": "2026-11-24",
-      "kev_due_date": "2026-11-27",
-      "kev_ransomware": false
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-59726",
+      "title": "ruflo MCP bridge allows unauthenticated remote code execution in default Docker Compose deployments",
+      "link": "https://github.com/advisories/GHSA-c4hm-4h84-2cf3",
+      "stack_match": [
+        "docker"
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T01:42:01.522351+00:00",
+  "generated_at": "2026-11-25T16:20:07.746204+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -38,7 +38,7 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 13,
+        "warm_up": 14,
         "old_cve": 0
       }
     },
@@ -64,14 +64,14 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 13,
+        "warm_up": 14,
         "old_cve": 0
       }
     }
   },
   "top_leads_window": 90,
   "top_leads": [],
-  "total_rows": 13,
+  "total_rows": 14,
   "rows": [
     {
       "bucket": "missed",
@@ -194,34 +194,46 @@
       "vendor": "N-able"
     },
     {
+      "bucket": "earlier",
       "cve": "CVE-2026-131914",
-      "kev_date_added": "2026-11-24",
-      "vendor": "Idunno",
-      "product": "AntiCsrf",
       "cve_year": 2026,
-      "observed_at": "2026-11-23T16:41:49.035609+00:00",
-      "source": "The Hacker News Security",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html",
+      "kev_date_added": "2026-11-24",
       "lead_days": 1,
-      "bucket": "earlier"
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html",
+      "observed_at": "2026-11-23T16:41:49.035609+00:00",
+      "product": "AntiCsrf",
+      "source": "The Hacker News Security",
+      "vendor": "Idunno"
     },
     {
+      "bucket": "missed",
       "cve": "CVE-2026-132165",
-      "kev_date_added": "2026-11-24",
-      "vendor": "Drupal",
-      "product": "Core",
       "cve_year": 2026,
-      "observed_at": null,
-      "source": null,
-      "link": null,
+      "kev_date_added": "2026-11-24",
       "lead_days": null,
-      "bucket": "missed"
+      "link": null,
+      "observed_at": null,
+      "product": "Core",
+      "source": null,
+      "vendor": "Drupal"
     },
     {
+      "bucket": "missed",
       "cve": "CVE-2026-132224",
+      "cve_year": 2026,
       "kev_date_added": "2026-11-24",
-      "vendor": "Optimizely",
+      "lead_days": null,
+      "link": null,
+      "observed_at": null,
       "product": "Web Experimentation",
+      "source": null,
+      "vendor": "Optimizely"
+    },
+    {
+      "cve": "CVE-2026-103406",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Hewlett Packard Enterprise (HPE)",
+      "product": "Juniper Session Smart Conductor and Session Smart Router",
       "cve_year": 2026,
       "observed_at": null,
       "source": null,
@@ -232,7 +244,7 @@
   ],
   "run": {
     "new_signals": 0,
-    "new_rows": 3,
-    "capped_entries": 0
+    "new_rows": 1,
+    "capped_entries": 1
   }
 }

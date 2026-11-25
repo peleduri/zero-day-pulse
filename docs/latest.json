@@ -1,24 +1,141 @@
 {
-  "generated": "2026-11-25T01:42:11.914711+00:00",
-  "total": 10,
-  "kev": 3,
-  "zero_day": 4,
+  "generated": "2026-11-25T16:20:18.082506+00:00",
+  "total": 15,
+  "kev": 5,
+  "zero_day": 2,
   "enriched": 0,
-  "high_epss": 1,
-  "my_stack": 6,
-  "run_id": "45527553523",
+  "high_epss": 0,
+  "my_stack": 4,
+  "run_id": "45652592203",
   "changes": [
     {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-131914",
-      "title": null,
-      "link": null,
-      "kev_date_added": "2026-11-24",
-      "kev_due_date": "2026-11-27",
-      "kev_ransomware": false
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-59726",
+      "title": "ruflo MCP bridge allows unauthenticated remote code execution in default Docker Compose deployments",
+      "link": "https://github.com/advisories/GHSA-c4hm-4h84-2cf3",
+      "stack_match": [
+        "docker"
+      ]
     }
   ],
   "findings": [
+    {
+      "id": "CVE-2026-103406",
+      "title": "CVE-2026-103406 \u2014 Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability",
+      "summary": "Vendor: Hewlett Packard Enterprise (HPE) | Product: Juniper Session Smart Conductor and Session Smart Router. Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router contain an OS command injection vulnerability that could allow a remote attacker to execute arbitrary commands as root via a specially crafted salt minion ID. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-28)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-103406",
+      "published": "2026-11-25",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-103406"
+      ],
+      "is_kev": true,
+      "in_kev": true,
+      "kev_date_added": "2026-11-25",
+      "kev_due_date": "2026-11-28",
+      "kev_vendor": "Hewlett Packard Enterprise (HPE)",
+      "kev_product": "Juniper Session Smart Conductor and Session Smart Router",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": true,
+      "epss": 0.0086,
+      "epss_percentile": 0.56019,
+      "stack_match": []
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-123903-critical-vmware-directory-service-authentication-bypass-affects-vcenter",
+      "title": "CVE-2026-123903: Critical VMware Directory Service Authentication Bypass affects vCenter",
+      "summary": "Overview On November 24, 2026, Broadcom released VMware Security Advisory VMSA-2026-0011 to address several new vulnerabilities, including CVE-2026-123903 , a critical authentication bypass in the VMware Directory Service component of vCenter. Broadcom assigned it a CVSSv3.1 score of 9.8 Critical . An attacker who can reach an affected vCenter\u2019s VMware Directory Service (vmdir) over the network can gain access without authenticating. Broadcom's supplemental FAQ distinguishes CVE-2026-123903 from an older vulnerability CVE-2026-123890 , which Rapid7 covered previously when CVE-2026-123890 was reported as being exploited in the wild. Both of these vulnerabilities affect the VMware Directory Service in vCenter and can give an attacker access to the vCenter without credentials. CVE-2026-123890 was reachable over RPC while CVE-2026-123903 is reachable over LDAP. As of this writing, there are no known public reports of exploitation of CVE-2026-123903 in the wild. A public proof-of-concept exploit is available and has been validated by Rapid7 to successfully achieve an authentication bypass. Attackers are known to be targeting vulnerabilities in the VMware Directory Service, therefore Rapid7 recommends remediating exposed systems on an urgent basis outside of normal patching cycles. Mitigation guidance Vendor updates are available for CVE-2026-123903. Broadcom lists no workaround , and these vCenter updates are not eligible for Quick Patch. Rapid7 recommends updating affected deployments on an urgent basis, outside normal patch cycles, using the standard update mechanism for the deployment. Broadcom lists the following available fixed versions to remediating CVE-2026-123903. These fixed versions also remediate several other high and medium severity CVEs from the same advisory (CVE-2026-123904, CVE-2026-123905, CVE-2026-123906, CVE-2026-123907, CVE-2026-123908, CVE-2026-123909): VMware Product Affected Version Fixed Version / Patch VMware Cloud Foundation, VMware vSphere Fo",
+      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-123903-critical-vmware-directory-service-authentication-bypass-affects-vcenter",
+      "published": "2026-11-25T12:19:20+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-123903",
+        "CVE-2026-123890",
+        "CVE-2026-123904",
+        "CVE-2026-123905",
+        "CVE-2026-123906",
+        "CVE-2026-123907",
+        "CVE-2026-123908",
+        "CVE-2026-123909"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-20",
+      "kev_due_date": "2026-11-23",
+      "kev_vendor": "Broadcom",
+      "kev_product": "VMware vCenter",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.05009,
+      "epss_percentile": 0.93012,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html",
+      "title": "Drupal Fail2Install Exploit Details Emerge as Critical RCE Flaw Faces Active Exploitation",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a critical flaw impacting Drupal to its Known Exploited Vulnerabilities (KEV) catalog, requiring federal agencies to apply the fixes by November 27, 2026.\n\nThe vulnerability, tracked as CVE-2026-132165 aka Fail2Install (CVSS score: 9.8), is a case of remote code execution (RCE) impacting Drupal core.\n\n\"Drupal Core",
+      "link": "https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html",
+      "published": "2026-11-25T11:23:26+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-132165"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-24",
+      "kev_due_date": "2026-11-27",
+      "kev_vendor": "Drupal",
+      "kev_product": "Core",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
+    },
+    {
+      "id": "https://www.securityweek.com/hackers-exploit-unpatched-flaw-in-defunct-idunno-anticsrf-library/",
+      "title": "Hackers Exploit Unpatched Flaw in Defunct Idunno AntiCsrf Library",
+      "summary": "Attackers can exploit CVE-2026-131914 to achieve remote code execution via a single web request containing specially crafted data. The post Hackers Exploit Unpatched Flaw in Defunct Idunno AntiCsrf Library appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/hackers-exploit-unpatched-flaw-in-defunct-idunno-anticsrf-library/",
+      "published": "2026-11-25T09:05:13+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-131914"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-24",
+      "kev_due_date": "2026-11-27",
+      "kev_vendor": "Idunno",
+      "kev_product": "AntiCsrf",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.04292,
+      "epss_percentile": 0.9189,
+      "stack_match": []
+    },
     {
       "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1",
       "title": "Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026",
@@ -47,99 +164,18 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.99987,
-      "epss_percentile": 0.99983,
+      "epss": 0.32976,
+      "epss_percentile": 0.98749,
       "stack_match": [
         "node.js"
       ]
     },
     {
-      "id": "https://www.rapid7.com/blog/post/ra-rapid7-analysis-vmware-vcenter-srp-authentication-bypass-to-root-cve-2026-123890",
-      "title": "Rapid7 Analysis: VMware vCenter SRP Authentication Bypass to Root (CVE-2026-123890)",
-      "summary": "Overview An unauthenticated attacker can retrieve the session key for an in-progress administrator login to VMware vCenter's directory service. The attacker then uses that key to complete the login without knowing the account's password. The vulnerable interface is exposed through DCE/RPC on TCP port 2012. The issue, tracked as CVE-2026-123890 , combines a Secure Remote Password (SRP) session-key getter that is callable before authentication with an RPC context lookup that does not enforce ownership. The context handles use predictable UUIDv1 values. By creating two reference contexts around a pending login, an attacker can narrow the hidden login handle to a short timestamp window and ask the server for its key. We reproduced the bypass against vCenter Server Appliance 8.0.2.00400, build 23929136 , running Photon OS 4.0, and leveraged the resulting administrator connection through to root command execution. SSH and Bash access were initially disabled. The attack recovered the directory database and its Security Token Service (STS) signing key, forged an administrator API session, and used appliance administration features to create an account and enable SSH. Neither the existing SSO password nor the root password was an input to that chain. Impact The attacker needs network access to TCP 2012 and the name of an existing SSO principal. Our PoC uses the default SSO administrator principal, administrator@vsphere.local ; deployments using a different SSO domain need the corresponding account name. The attack does not depend on an existing authenticated connection or an administrator being online. The attacker initiates the login attempt in order to recover its session key. The authenticated connection can call the directory database-copy interface. Its raw database contains the STS private signing key, allowing the attacker to sign administrator assertions that vCenter trusts. Our attack workflow used a forged assertion to create a local appliance superAdmin account, e",
-      "link": "https://www.rapid7.com/blog/post/ra-rapid7-analysis-vmware-vcenter-srp-authentication-bypass-to-root-cve-2026-123890",
-      "published": "2026-11-24T13:01:25+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-123890"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_vendor": "Broadcom",
-      "kev_product": "VMware vCenter",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.03526,
-      "epss_percentile": 0.89444,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html",
-      "title": "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added two flaws impacting N-able MailAssure and MONAI Label to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe critical vulnerabilities are listed below -\n\n\n  CVE-2026-134624 (CVSS score: 9.3) - A server-side request forgery (SSRF) vulnerability in N-able MailAssure's LDAP",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html",
-      "published": "2026-11-24T06:02:45+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-134624"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-23",
-      "kev_due_date": "2026-11-26",
-      "kev_vendor": "N-able",
-      "kev_product": "MailAssure",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00617,
-      "epss_percentile": 0.50289,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html",
-      "title": "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation",
-      "summary": "Broadcom has shipped patches to address 23 vulnerabilities impacting VMware ESX, vCenter, Workstation, Fusion, and Avi Load Balancer, including one critical bug that could be abused to bypass authentication.\n\nThe critical vulnerability, tracked as CVE-2026-123903, is rated 9.8 out of 10.0 on the CVSS scoring system. It resides in the VMware Directory Service (\"vmdir\").\n\n\"A malicious actor with",
-      "link": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html",
-      "published": "2026-11-24T13:28:26+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-123903"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/new-shirudo-tool-uses-ai-to-shield-unpatched-linux-systems-from-exploits/",
-      "title": "New Shirudo tool uses AI to shield unpatched Linux systems from exploits",
-      "summary": "OpenAI and Cisco launched an open-source Linux security tool named Shirudo that deploys temporary runtime protections to block vulnerability exploitation while administrators prepare and roll out patches, without restarting services. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-shirudo-tool-uses-ai-to-shield-unpatched-linux-systems-from-exploits/",
-      "published": "2026-11-24T13:34:23+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/",
+      "title": "CISA warns of critical unpatched flaw in Danfoss refrigeration controllers",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is warning about a critical vulnerability in Danfoss AK-SM 8xxA Series controllers used by food retailers to manage commercial refrigeration, HVAC, and lighting systems. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/",
+      "published": "2026-11-25T16:13:40+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
@@ -153,24 +189,22 @@
       "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": false,
+      "is_high_severity": true,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": [
-        "linux"
-      ]
+      "stack_match": []
     },
     {
-      "id": "https://www.securityweek.com/openai-cisco-unveil-open-source-tool-to-shield-unpatched-linux-systems/",
-      "title": "OpenAI, Cisco Unveil Open Source Tool to Shield Unpatched Linux Systems",
-      "summary": "OpenAI and Cisco\u2019s Shirudo uses AI-generated shields to block Linux exploits while patches are prepared, but it\u2019s not yet production-ready. The post OpenAI, Cisco Unveil Open Source Tool to Shield Unpatched Linux Systems appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/openai-cisco-unveil-open-source-tool-to-shield-unpatched-linux-systems/",
-      "published": "2026-11-24T12:20:41+00:00",
-      "source": "SecurityWeek",
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/",
+      "title": "Hackers now exploit critical Drupal RCE flaw to hijack sites",
+      "summary": "The Drupal security team has confirmed that a critical vulnerability that lets attackers hijack unpatched sites has been actively exploited since at least Thursday. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/",
+      "published": "2026-11-25T10:10:20+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "research"
+        "malware"
       ],
       "cve_ids": [],
       "in_kev": false,
@@ -180,40 +214,39 @@
       "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": false,
+      "is_high_severity": true,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": [
-        "linux"
-      ]
+      "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/openai-and-cisco-unveil-ai-assisted.html",
-      "title": "OpenAI and Cisco Unveil AI-Assisted Linux Security Tool to Block Exploits Before Patching",
-      "summary": "OpenAI and Cisco have teamed up to launch Shirudo (meaning \"shield\" in Japanese), an open-source Linux runtime that allows artificial intelligence (AI) agents to defend systems without downtime.\n\n\"It lets agents write dynamic eBPF controls to shield systems from exploits, giving defenders more time to test and roll out patches,\" OpenAI said in a post on X.\n\nThe AI upstart called the initiative a",
-      "link": "https://thehackernews.com/2026/11/openai-and-cisco-unveil-ai-assisted.html",
-      "published": "2026-11-24T06:02:57+00:00",
+      "id": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html",
+      "title": "Hackers Exploit Two GeoServer Flaws as Researchers Warn of Unauthenticated RCE Chains",
+      "summary": "Threat actors are actively exploiting two newly patched security flaws in GeoServer, according to watchTowr.\n\nThe vulnerabilities in question are CVE-2026-120705 and CVE-2026-129243, details of which are below -\n\n\n  CVE-2026-120705 (CVSS score: 8.6) - An arbitrary file read vulnerability that could enable an attacker to access local text files readable by the GeoServer process or fetch",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html",
+      "published": "2026-11-25T12:48:54+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-120705",
+        "CVE-2026-129243"
+      ],
       "in_kev": false,
       "kev_date_added": null,
       "kev_due_date": null,
       "kev_vendor": null,
       "kev_product": null,
       "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": [
-        "linux"
-      ]
+      "stack_match": []
     },
     {
       "id": "https://security.paloaltonetworks.com/CVE-2026-123633",
@@ -241,11 +274,67 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.447,
-      "epss_percentile": 0.98792,
+      "epss": 0.45588,
+      "epss_percentile": 0.9909,
       "stack_match": [
         "nginx"
       ]
+    },
+    {
+      "id": "CVE-2026-64855",
+      "title": "soapbar: verify_envelope_bsp accepts an unauthenticated embedded certificate (signature forgery / authentication bypass)",
+      "summary": "### Impact\n\n`verify_envelope_bsp()` derived its trust anchor from the message it was\nverifying. It read the X.509 certificate out of the caller-untrusted\n`wsse:BinarySecurityToken`, validated **only** that certificate's not-before /\nnot-after dates, and then verified the signature against that same certificate.\nThere was no CA-chain validation, no issuer/subject allowlist, and no pinning.\n\nA successful `verify_envelope_bsp()` therefore proved only that the envelope was\nsigned by *whoever supplied the embedded certificate* \u2014 never that it was signed\nby a *trusted* party. An attacker who mints their own certificate, signs a\nforged envelope, and embeds that certificate in the token passes verification.\nAny consumer that treats a successful BSP verification as authentication can be\nimpersonated (signature forgery / authentication bypass).\n\n`verify_envelope()` (which pins a caller-supplied `x509_cert`) was **not**\naffected \u2014 the flaw was specific to the BSP variant whose trust anchor came\nfrom the message.\n\n### Affected versions\n\nsoapbar `< 0.13.0` (all published versions exposing `verify_envelope_bsp`).\n\n### Patches\n\nFixed in **0.13.0**. `verify_envelope_bsp` now fails closed unless the caller\nanchors trust:\n\n- `trusted_certs=[...]` \u2014 pin the expected signer certificate(s); the embedded\n  certificate must equal one of them.\n- `ca_certs=[...]` \u2014 accept certificates directly issued by trusted CA(s).\n\nWith neither supplied, verification raises instead of trusting the message's own\ncertificate. The trust anchor is checked before the signature is relied upon.\n`verify_cert_trust=False` restores the old (insecure) behaviour explicitly.\n\n### Workarounds\n\nBefore upgrading:\n\n- Do not treat a successful `verify_envelope_bsp()` as authentication.\n- Prefer `verify_envelope(..., x509_cert=<pinned cert>)`, which pins the\n  expected certificate.\n- If BSP is required, validate the embedded certificate against your own trust\n  store before acting on the verification result.",
+      "link": "https://github.com/advisories/GHSA-859w-52fx-hcm6",
+      "published": "2026-11-24T22:41:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-64855"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00227,
+      "epss_percentile": 0.07969,
+      "stack_match": []
+    },
+    {
+      "id": "CVE-2026-59831",
+      "title": "GitHub CLI gh codespace jupyter may allow code execution via unvalidated URLs from malicious Codespaces",
+      "summary": "### Summary\n\nA security vulnerability has been identified in GitHub CLI that could allow remote code execution when users connect to a malicious Codespace using the `gh codespace jupyter` command. The command opens JupyterLab by launching a URL in the user's browser, but that URL is supplied by a process running inside the Codespace and the CLI opens it without validating it.\n\nThe browser launcher accepts `vscode://` and `vscode-insiders://` links, so a malicious Codespace can return a crafted `vscode://` URL. The CLI opens the link, the operating system hands it to VS Code, and VS Code acts on it, which can lead to code execution on the user's workstation.\n\nThis is a variant of [CVE-2024-52308](https://github.com/advisories/GHSA-p2h2-3vg9-4p87). That remediation validated the SSH connection details for `gh codespace ssh` and `gh codespace logs`, but did not cover the equivalent Jupyter code path.\n\n### Details\n\nThe vulnerability stems from the way GitHub CLI handles the server URL returned when starting a remote JupyterLab server:\n\n1. A user runs `gh codespace jupyter -c <name>`, expecting a normal `https://` JupyterLab page.\n2. The CLI retrieves a server URL from a process inside the Codespace and opens it in the user's browser without confirming that it is a web address.\n3. A malicious Codespace returns a `vscode://` link in place of the expected JupyterLab address. The operating system passes the link to VS Code.\n4. VS Code acts on the link. With a single trust prompt, this can result in code execution on the user's workstation.\n\nThe CLI trusts the URL provided by the Codespace and opens it as-is, without confirming that it is a loopback JupyterLab web address. The equivalent SSH commands received this validation in the CVE-2024-52308 fix, but the Jupyter command was not covered.\n\nIn `v2.96.0`, the GitHub CLI validates the Jupyter server URL before opening it, accepting only loopback `http` and `https` addresses.\n\n### Impact\n\nAny user who runs `gh codespace jupyt",
+      "link": "https://github.com/advisories/GHSA-8cg3-r6g9-fpg2",
+      "published": "2026-11-24T22:26:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59831"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00326,
+      "epss_percentile": 0.18192,
+      "stack_match": []
     },
     {
       "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
@@ -276,11 +365,69 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.447,
-      "epss_percentile": 0.98792,
+      "epss": 0.45588,
+      "epss_percentile": 0.9909,
       "stack_match": [
         "nginx"
       ]
+    },
+    {
+      "id": "CVE-2026-59726",
+      "title": "ruflo MCP bridge allows unauthenticated remote code execution in default Docker Compose deployments",
+      "summary": "The MCP bridge shipping in ruflo/docker-compose.yml exposed POST /mcp with no authentication. The docker-compose defaults bound the bridge and MongoDB to all interfaces. Combined, an unauthenticated network attacker could invoke tools/call \u2192 terminal_execute inside the bridge container, obtain a shell as node (uid 1000), read every provider API key from the container env, spawn attacker-controlled swarms on the victim's keys, and persist a poisoned pattern into the AgentDB learning store that steers future AI outputs for all users of the instance.\n\nThe tool blocklist that mentions terminal_execute was enforced only in the autopilot flow. POST /mcp and POST /mcp/:group bypassed it.\n\nFixed in ADR-166 Phase 1-3 (branch security/adr-166-mcp-bridge-rce, PR #2521):\n- Bind loopback by default; fail-closed on public-bind opt-in without MCP_AUTH_TOKEN\n- Bearer auth middleware (timingSafeEqual constant-time compare)\n- Server-side executeTool gate for terminal_execute (MCP_ENABLE_TERMINAL=true opt-in)\n- MongoDB --auth on by default; MONGO_INITDB_ROOT_PASSWORD required to boot\n- read_only container + tmpfs\n- CORS allowlist wiring\n- CI regression locks (static + runtime + compose defaults)\n\nOperators of any exposed instance MUST:\n1. Firewall :3001 and :27017 immediately\n2. Rotate OPENAI / GOOGLE / OPENROUTER / ANTHROPIC keys\n3. Audit the AgentDB pattern store for injected agentdb_pattern-store entries; purge poisoned patterns. A patched redeploy alone does NOT undo poisoning.\n4. Audit MongoDB for tampering\n\nCredit: [Eli Ainhorn](https://www.linkedin.com/in/eli-ainhorn), Senior AI Vulnerability Researcher @ [Noma Security](https://noma.security) \n\nReviewed by Dragan Spiridonov (ADR-166 co-author).",
+      "link": "https://github.com/advisories/GHSA-c4hm-4h84-2cf3",
+      "published": "2026-11-24T21:01:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59726"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.06244,
+      "epss_percentile": 0.9433,
+      "stack_match": [
+        "docker"
+      ]
+    },
+    {
+      "id": "CVE-2026-63305",
+      "title": "AVideo API FFmpeg process permits OS command injection via notifyCode/callback",
+      "summary": "### Summary\n\nThe standalone FFmpeg execution endpoint `plugin/API/standAlone/ffmpeg.json.php` builds a shell command string that is passed to `execAsync()` and run via `nohup sh -c \"<command>\"`. When the decrypted `codeToExec` payload produces a non-empty `avideoPath`, the endpoint appends a completion hook of the form:\n\n```\n && php <script> notify=<escaped-json> notifyCode=<codeToExec->notifyCode> callback=<codeToExec->callback>\n```\n\nThe `notify` value on this line is wrapped with `escapeshellarg()`, but the two adjacent fields `notifyCode` and `callback` are concatenated raw. Both fields originate from the same decrypted, attacker-controlled `codeToExec` object as `ffmpegCommand`, but neither passes through the `sanitizeFFmpegCommand()` denylist (only `ffmpegCommand` does) and neither is shell-escaped. An attacker who can craft a valid encrypted payload can therefore inject arbitrary shell commands into the `sh -c` context by placing shell metacharacters in `callback` or `notifyCode`, achieving OS command execution as the web-server user.\n\nThis is a residual sibling of the recently hardened `sanitizeFFmpegCommand()` denylist: the denylist now strips `; | ` < > & $ ( ) \\n \\r { }` from `ffmpegCommand`, but the two sibling fields on the same completion-hook line were never routed through it nor escaped, even though the `notify` value beside them on the very same line already is escaped.\n\n### Vulnerable code\n\n`plugin/API/standAlone/ffmpeg.json.php` (master HEAD, around lines 406-412):\n\n```php\nif (!empty($output['avideoPath'])) {\n    if (file_exists($output['avideoPath'])) {\n        unlink($output['avideoPath']);\n    }\n    $outputJson = escapeshellarg(json_encode($output));\n    $ffmpegCommand .= \" && php \" . escapeshellarg(__DIR__ . \"/ffmpeg.json.php\") . \" notify={$outputJson} notifyCode={$codeToExec->notifyCode} callback={$codeToExec->callback}\";\n}\n```\n\n`$outputJson` is escaped; `$codeToExec->notifyCode` and `$codeToExec->callback` are interpolated raw.\n\nThe only fiel",
+      "link": "https://github.com/advisories/GHSA-g9x9-q7qj-6mv5",
+      "published": "2026-11-24T20:53:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63305"
+      ],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.02455,
+      "epss_percentile": 0.85116,
+      "stack_match": []
     },
     {
       "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-phpaftershell-nov-2026-kT9pL4Xe?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20PHP%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
@@ -307,8 +454,8 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.13297,
-      "epss_percentile": 0.96466,
+      "epss": 0.33772,
+      "epss_percentile": 0.98774,
       "stack_match": []
     }
   ]
