@@ -23,6 +23,12 @@
     "published": "2026-11-23T09:11:56+00:00",
     "source": "The Hacker News Security"
   },
+  "CVE-2026-136716": {
+    "link": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
+    "observed_at": "2026-11-26T15:55:19.891094+00:00",
+    "published": "2026-11-26T07:02:34+00:00",
+    "source": "The Hacker News Security"
+  },
   "CVE-2026-62955": {
     "link": "https://github.com/advisories/GHSA-2pj4-v76f-wjvx",
     "observed_at": "2026-11-20T05:32:30.002099+00:00",

@@ -156,17 +156,16 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">4</span><span class="stat-label">In KEV</span></div>
               <div class="stat"><span class="stat-value epss">1</span><span class="stat-label">High EPSS</span></div>
-              <div class="stat"><span class="stat-value zeroday">2</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value stack">6</span><span class="stat-label">My Stack</span></div>
+              <div class="stat"><span class="stat-value zeroday">3</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value stack">7</span><span class="stat-label">My Stack</span></div>
               <div class="stat"><span class="stat-value">13</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-26 01:15 UTC</div>
+            <div class="generated">Updated 2026-11-26 15:55 UTC</div>
           </header>
           <main>
             <section class="section scoreboard-section"><h2 class="section-head scoreboard-head">🏁 Beat KEV</h2><div class="scoreboard"><div class="sb-window"><div class="sb-title">Last 30 days</div><div class="sb-line">All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-line">Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-muted">Excluded: 23 warm-up, 0 old CVEs</div></div><div class="sb-window"><div class="sb-title">Last 90 days</div><div class="sb-line">All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-line">Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-muted">Excluded: 23 warm-up, 0 old CVEs</div></div><div class="sb-muted">Zero-days reported before a CVE ID exists can&#x27;t be matched and count as missed.</div></div></section>
-<section class="section changes-section"><h2 class="section-head changes-head">⚡ Changed since last run <span class="section-count">4</span></h2><ul class="changes"><li class="change change-new_stack_hit"><span class="change-icon">🎯</span> New My Stack hit: CVE-2026-65973 [node.js] — <a href="https://github.com/advisories/GHSA-h746-qpxh-ph7g" target="_blank" rel="noopener noreferrer">laradocs  Command injection via unescaped Node.js binary path in KaTeX SSR</a></li><li class="change change-new_stack_hit"><span class="change-icon">🎯</span> New My Stack hit: CVE-2026-69178 [linux, chrome, chromium] — <a href="https://github.com/advisories/GHSA-743w-g9pf-8p94" target="_blank" rel="noopener noreferrer">TastyIgniter mail template editor allows remote code execution via server-side template injection</a></li><li class="change change-new_stack_hit"><span class="change-icon">🎯</span> New My Stack hit: CVE-2026-69179 [linux, chrome, chromium] — <a href="https://github.com/advisories/GHSA-7wwv-x6mc-pxqx" target="_blank" rel="noopener noreferrer">TastyIgniter allows Remote Code Execution (RCE) via Unrestricted file upload in Media Manager</a></li><li class="change change-new_stack_hit"><span class="change-icon">🎯</span> New My Stack hit: CVE-2026-69181 [linux, chrome, chromium] — <a href="https://github.com/advisories/GHSA-rj59-9f77-mvg5" target="_blank" rel="noopener noreferrer">TastyIgniter permits Path Traversal in Media Upload</a></li></ul></section>
-<section class="section stack-section"><h2 class="section-head stack-head">🎯 My Stack <span class="section-count">6</span></h2><article class="card card-kev">
+<section class="section stack-section"><h2 class="section-head stack-head">🎯 My Stack <span class="section-count">7</span></h2><article class="card card-kev">
   <div class="card-top">
     <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-red">EPSS 87%</span><span class="badge badge-kevdue">KEV due 2026-10-29</span><span class="badge badge-stack">aws</span></div>
     <h2 class="card-title"><a href="https://aws.amazon.com/blogs/security/icymi-october-2026-aws-security/" target="_blank" rel="noopener noreferrer">ICYMI: October 2026 @AWS Security</a></h2>
@@ -226,6 +225,23 @@ When rendering KaTeX math **server-side**, Laradocs invoked Node via `proc_open(
 
 
         </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">chrome</span></div>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/" target="_blank" rel="noopener noreferrer">Remus malware steals Gmail messages via fake Google Sheets extension</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-26</span>
+  </div>
+  <p class='summary'>The Remus infostealer is stealing Gmail messages through a stealthy malicious Chrome extension, a capability the malware operators marketed as a zero-day exploit in Google&#x27;s email service. [...]</p>
+
+
+</article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -322,6 +338,64 @@ The Mail templates is vulnerable to SSTI and did not perform an validation and s
 </section>
 <section class="section"><h2 class="section-head">All Findings <span class="section-count">13</span></h2><article class="card card-kev">
   <div class="card-top">
+    <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-grey">EPSS 2%</span><span class="badge badge-kevdue">KEV due 2026-11-28</span></div>
+    <h2 class="card-title"><a href="https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/" target="_blank" rel="noopener noreferrer">Critical Juniper Session Smart Conductor Flaw Exploited in Attacks</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-103406</code>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-26</span>
+  </div>
+  <p class='summary'>Tracked as CVE-2026-103406, the vulnerability allows remote attackers to execute arbitrary commands as root. The post Critical Juniper Session Smart Conductor Flaw Exploited in Attacks appeared first on SecurityWeek .</p>
+
+
+</article>
+
+        <article class="card card-kev">
+          <div class="card-top">
+            <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-yellow">EPSS 11%</span><span class="badge badge-kevdue">KEV due 2026-11-27</span></div>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html" target="_blank" rel="noopener noreferrer">Drupal Warns of New Highly Critical Site Takeover Vulnerability Under Active Exploitation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-136716</code> <code class="cve">CVE-2026-132165</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-26</span>
+          </div>
+          <p class='summary'>Drupal has warned of a new &quot;highly critical&quot; security flaw impacting Drupal core that it said has been exploited in the wild.
+
+The vulnerability, tracked as CVE-2026-136716 (CVSS score: N/A), has been described as a case of improper checking for unusual or exceptional conditions. It also relates to CVE-2026-132165 aka Fail2Install in that it addresses remaining vulnerable installation states</p>
+
+
+        </article>
+
+        <article class="card card-kev">
+          <div class="card-top">
+            <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-grey">EPSS 1%</span><span class="badge badge-kevdue">KEV due 2026-11-28</span></div>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html" target="_blank" rel="noopener noreferrer">Hackers Exploit 10 Vulnerabilities Across Mitel, Juniper, Vates, and Danfoss Products</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-133275</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-26</span>
+          </div>
+          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added 10 security flaws to its Known Exploited Vulnerabilities (KEV) catalog, including five vulnerabilities impacting Mitel MiCollab that were disclosed last week.
+
+The Mitel MiCollab vulnerabilities are listed below -
+
+
+  CVE-2026-133275 (CVSS score: 5.3) - An arbitrary file upload vulnerability in the Audio, Web and</p>
+
+
+        </article>
+
+<article class="card card-kev">
+  <div class="card-top">
     <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-red">EPSS 87%</span><span class="badge badge-kevdue">KEV due 2026-10-29</span><span class="badge badge-stack">aws</span></div>
     <h2 class="card-title"><a href="https://aws.amazon.com/blogs/security/icymi-october-2026-aws-security/" target="_blank" rel="noopener noreferrer">ICYMI: October 2026 @AWS Security</a></h2>
   </div>
@@ -337,57 +411,19 @@ The Mail templates is vulnerable to SSTI and did not perform an validation and s
 
 </article>
 
-<article class="card card-kev">
+<article class="card card-zeroday">
   <div class="card-top">
-    <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-grey">EPSS 5%</span><span class="badge badge-kevdue">KEV due 2026-11-23</span></div>
-    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-cve-2026-123903-critical-vmware-directory-service-authentication-bypass-affects-vcenter" target="_blank" rel="noopener noreferrer">CVE-2026-123903: Critical VMware Directory Service Authentication Bypass affects vCenter</a></h2>
+    <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span></div>
+    <h2 class="card-title"><a href="https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/" target="_blank" rel="noopener noreferrer">Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks</a></h2>
   </div>
   <div class="card-meta">
-    <code class="cve">CVE-2026-123903</code> <code class="cve">CVE-2026-123890</code> <code class="cve">CVE-2026-123904</code> <code class="cve">CVE-2026-123905</code> <code class="cve">CVE-2026-123906</code> <code class="cve">CVE-2026-123907</code> <code class="cve">CVE-2026-123908</code> <code class="cve">CVE-2026-123909</code>
-    <span class="meta-sep">·</span>
-    <span>Rapid7 Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-25</span>
-  </div>
-  <p class='summary'>Overview On November 24, 2026, Broadcom released VMware Security Advisory VMSA-2026-0011 to address several new vulnerabilities, including CVE-2026-123903 , a critical authentication bypass in the VMware Directory Service component of vCenter. Broadcom assigned it a CVSSv3.1 score of 9.8 Critical . An attacker who can reach an affected vCenter’s VMware Directory Service (vmdir) over the network ca…</p>
-
-
-</article>
-
-        <article class="card card-kev">
-          <div class="card-top">
-            <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-kevdue">KEV due 2026-11-27</span></div>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html" target="_blank" rel="noopener noreferrer">Drupal Fail2Install Exploit Details Emerge as Critical RCE Flaw Faces Active Exploitation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-132165</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-25</span>
-          </div>
-          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a critical flaw impacting Drupal to its Known Exploited Vulnerabilities (KEV) catalog, requiring federal agencies to apply the fixes by November 27, 2026.
-
-The vulnerability, tracked as CVE-2026-132165 aka Fail2Install (CVSS score: 9.8), is a case of remote code execution (RCE) impacting Drupal core.
-
-&quot;Drupal Core</p>
-
-
-        </article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-grey">EPSS 4%</span><span class="badge badge-kevdue">KEV due 2026-11-27</span></div>
-    <h2 class="card-title"><a href="https://www.securityweek.com/hackers-exploit-unpatched-flaw-in-defunct-idunno-anticsrf-library/" target="_blank" rel="noopener noreferrer">Hackers Exploit Unpatched Flaw in Defunct Idunno AntiCsrf Library</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-131914</code>
+    <span class="no-cve">No CVE</span>
     <span class="meta-sep">·</span>
     <span>SecurityWeek</span>
     <span class="meta-sep">·</span>
-    <span>2026-11-25</span>
+    <span>2026-11-26</span>
   </div>
-  <p class='summary'>Attackers can exploit CVE-2026-131914 to achieve remote code execution via a single web request containing specially crafted data. The post Hackers Exploit Unpatched Flaw in Defunct Idunno AntiCsrf Library appeared first on SecurityWeek .</p>
+  <p class='summary'>Accenture says hackers exploited MiCollab flaws before Mitel’s advisory, likely aided by AI, in a suspected extortion campaign. The post Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks appeared first on SecurityWeek .</p>
 
 
 </article>
@@ -411,17 +447,17 @@ The vulnerability, tracked as CVE-2026-132165 aka Fail2Install (CVSS score: 9.8)
 
 <article class="card card-zeroday">
   <div class="card-top">
-    <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span></div>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/" target="_blank" rel="noopener noreferrer">Hackers now exploit critical Drupal RCE flaw to hijack sites</a></h2>
+    <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">chrome</span></div>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/" target="_blank" rel="noopener noreferrer">Remus malware steals Gmail messages via fake Google Sheets extension</a></h2>
   </div>
   <div class="card-meta">
     <span class="no-cve">No CVE</span>
     <span class="meta-sep">·</span>
     <span>Bleeping Computer</span>
     <span class="meta-sep">·</span>
-    <span>2026-11-25</span>
+    <span>2026-11-26</span>
   </div>
-  <p class='summary'>The Drupal security team has confirmed that a critical vulnerability that lets attackers hijack unpatched sites has been actively exploited since at least Thursday. [...]</p>
+  <p class='summary'>The Remus infostealer is stealing Gmail messages through a stealthy malicious Chrome extension, a capability the malware operators marketed as a zero-day exploit in Google&#x27;s email service. [...]</p>
 
 
 </article>
@@ -581,28 +617,6 @@ Local command injection (CWE-78) in server-side KaTeX rendering via an unescaped
 
 ### Impact
 When rendering KaTeX math **server-side**, Laradocs invoked Node via `proc_open()` with a command string in which the Node binary argument w…</p>
-
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS n/a</span></div>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html" target="_blank" rel="noopener noreferrer">Hackers Exploit Two GeoServer Flaws as Researchers Warn of Unauthenticated RCE Chains</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-120705</code> <code class="cve">CVE-2026-129243</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-25</span>
-          </div>
-          <p class='summary'>Threat actors are actively exploiting two newly patched security flaws in GeoServer, according to watchTowr.
-
-The vulnerabilities in question are CVE-2026-120705 and CVE-2026-129243, details of which are below -
-
-
-  CVE-2026-120705 (CVSS score: 8.6) - An arbitrary file read vulnerability that could enable an attacker to access local text files readable by the GeoServer process or fetch</p>
 
 
         </article>

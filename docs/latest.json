@@ -1,57 +1,96 @@
 {
-  "generated": "2026-11-26T01:15:12.647139+00:00",
+  "generated": "2026-11-26T15:55:29.868212+00:00",
   "total": 13,
   "kev": 4,
-  "zero_day": 2,
+  "zero_day": 3,
   "enriched": 0,
   "high_epss": 1,
-  "my_stack": 6,
-  "run_id": "45734372823",
-  "changes": [
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-65973",
-      "title": "laradocs  Command injection via unescaped Node.js binary path in KaTeX SSR",
-      "link": "https://github.com/advisories/GHSA-h746-qpxh-ph7g",
-      "stack_match": [
-        "node.js"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69178",
-      "title": "TastyIgniter mail template editor allows remote code execution via server-side template injection",
-      "link": "https://github.com/advisories/GHSA-743w-g9pf-8p94",
-      "stack_match": [
-        "linux",
-        "chrome",
-        "chromium"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69179",
-      "title": "TastyIgniter allows Remote Code Execution (RCE) via Unrestricted file upload in Media Manager",
-      "link": "https://github.com/advisories/GHSA-7wwv-x6mc-pxqx",
-      "stack_match": [
-        "linux",
-        "chrome",
-        "chromium"
-      ]
-    },
-    {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-69181",
-      "title": "TastyIgniter permits Path Traversal in Media Upload",
-      "link": "https://github.com/advisories/GHSA-rj59-9f77-mvg5",
-      "stack_match": [
-        "linux",
-        "chrome",
-        "chromium"
-      ]
-    }
-  ],
+  "my_stack": 7,
+  "run_id": "45853704446",
+  "changes": [],
   "findings": [
+    {
+      "id": "https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/",
+      "title": "Critical Juniper Session Smart Conductor Flaw Exploited in Attacks",
+      "summary": "Tracked as CVE-2026-103406, the vulnerability allows remote attackers to execute arbitrary commands as root. The post Critical Juniper Session Smart Conductor Flaw Exploited in Attacks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/",
+      "published": "2026-11-26T13:04:06+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-103406"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-25",
+      "kev_due_date": "2026-11-28",
+      "kev_vendor": "Hewlett Packard Enterprise (HPE)",
+      "kev_product": "Juniper Session Smart Conductor and Session Smart Router",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.01535,
+      "epss_percentile": 0.75157,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
+      "title": "Drupal Warns of New Highly Critical Site Takeover Vulnerability Under Active Exploitation",
+      "summary": "Drupal has warned of a new \"highly critical\" security flaw impacting Drupal core that it said has been exploited in the wild.\n\nThe vulnerability, tracked as CVE-2026-136716 (CVSS score: N/A), has been described as a case of improper checking for unusual or exceptional conditions. It also relates to CVE-2026-132165 aka Fail2Install in that it addresses remaining vulnerable installation states",
+      "link": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
+      "published": "2026-11-26T07:02:34+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-136716",
+        "CVE-2026-132165"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-24",
+      "kev_due_date": "2026-11-27",
+      "kev_vendor": "Drupal",
+      "kev_product": "Core",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.11053,
+      "epss_percentile": 0.96627,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html",
+      "title": "Hackers Exploit 10 Vulnerabilities Across Mitel, Juniper, Vates, and Danfoss Products",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added 10 security flaws to its Known Exploited Vulnerabilities (KEV) catalog, including five vulnerabilities impacting Mitel MiCollab that were disclosed last week.\n\nThe Mitel MiCollab vulnerabilities are listed below -\n\n\n  CVE-2026-133275 (CVSS score: 5.3) - An arbitrary file upload vulnerability in the Audio, Web and",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html",
+      "published": "2026-11-26T06:44:46+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-133275"
+      ],
+      "in_kev": true,
+      "kev_date_added": "2026-11-25",
+      "kev_due_date": "2026-11-28",
+      "kev_vendor": "Mitel",
+      "kev_product": "MiCollab",
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": 0.00771,
+      "epss_percentile": 0.52058,
+      "stack_match": []
+    },
     {
       "id": "https://aws.amazon.com/blogs/security/icymi-october-2026-aws-security/",
       "title": "ICYMI: October 2026 @AWS Security",
@@ -85,91 +124,28 @@
       ]
     },
     {
-      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-123903-critical-vmware-directory-service-authentication-bypass-affects-vcenter",
-      "title": "CVE-2026-123903: Critical VMware Directory Service Authentication Bypass affects vCenter",
-      "summary": "Overview On November 24, 2026, Broadcom released VMware Security Advisory VMSA-2026-0011 to address several new vulnerabilities, including CVE-2026-123903 , a critical authentication bypass in the VMware Directory Service component of vCenter. Broadcom assigned it a CVSSv3.1 score of 9.8 Critical . An attacker who can reach an affected vCenter\u2019s VMware Directory Service (vmdir) over the network can gain access without authenticating. Broadcom's supplemental FAQ distinguishes CVE-2026-123903 from an older vulnerability CVE-2026-123890 , which Rapid7 covered previously when CVE-2026-123890 was reported as being exploited in the wild. Both of these vulnerabilities affect the VMware Directory Service in vCenter and can give an attacker access to the vCenter without credentials. CVE-2026-123890 was reachable over RPC while CVE-2026-123903 is reachable over LDAP. As of this writing, there are no known public reports of exploitation of CVE-2026-123903 in the wild. A public proof-of-concept exploit is available and has been validated by Rapid7 to successfully achieve an authentication bypass. Attackers are known to be targeting vulnerabilities in the VMware Directory Service, therefore Rapid7 recommends remediating exposed systems on an urgent basis outside of normal patching cycles. Mitigation guidance Vendor updates are available for CVE-2026-123903. Broadcom lists no workaround , and these vCenter updates are not eligible for Quick Patch. Rapid7 recommends updating affected deployments on an urgent basis, outside normal patch cycles, using the standard update mechanism for the deployment. Broadcom lists the following available fixed versions to remediating CVE-2026-123903. These fixed versions also remediate several other high and medium severity CVEs from the same advisory (CVE-2026-123904, CVE-2026-123905, CVE-2026-123906, CVE-2026-123907, CVE-2026-123908, CVE-2026-123909): VMware Product Affected Version Fixed Version / Patch VMware Cloud Foundation, VMware vSphere Fo",
-      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-123903-critical-vmware-directory-service-authentication-bypass-affects-vcenter",
-      "published": "2026-11-25T12:19:20+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-123903",
-        "CVE-2026-123890",
-        "CVE-2026-123904",
-        "CVE-2026-123905",
-        "CVE-2026-123906",
-        "CVE-2026-123907",
-        "CVE-2026-123908",
-        "CVE-2026-123909"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-20",
-      "kev_due_date": "2026-11-23",
-      "kev_vendor": "Broadcom",
-      "kev_product": "VMware vCenter",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.05009,
-      "epss_percentile": 0.93012,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html",
-      "title": "Drupal Fail2Install Exploit Details Emerge as Critical RCE Flaw Faces Active Exploitation",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a critical flaw impacting Drupal to its Known Exploited Vulnerabilities (KEV) catalog, requiring federal agencies to apply the fixes by November 27, 2026.\n\nThe vulnerability, tracked as CVE-2026-132165 aka Fail2Install (CVSS score: 9.8), is a case of remote code execution (RCE) impacting Drupal core.\n\n\"Drupal Core",
-      "link": "https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html",
-      "published": "2026-11-25T11:23:26+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/",
+      "title": "Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks",
+      "summary": "Accenture says hackers exploited MiCollab flaws before Mitel\u2019s advisory, likely aided by AI, in a suspected extortion campaign. The post Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/",
+      "published": "2026-11-26T11:35:25+00:00",
+      "source": "SecurityWeek",
       "tags": [
         "news",
-        "zeroday"
+        "research"
       ],
-      "cve_ids": [
-        "CVE-2026-132165"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-24",
-      "kev_due_date": "2026-11-27",
-      "kev_vendor": "Drupal",
-      "kev_product": "Core",
+      "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "https://www.securityweek.com/hackers-exploit-unpatched-flaw-in-defunct-idunno-anticsrf-library/",
-      "title": "Hackers Exploit Unpatched Flaw in Defunct Idunno AntiCsrf Library",
-      "summary": "Attackers can exploit CVE-2026-131914 to achieve remote code execution via a single web request containing specially crafted data. The post Hackers Exploit Unpatched Flaw in Defunct Idunno AntiCsrf Library appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/hackers-exploit-unpatched-flaw-in-defunct-idunno-anticsrf-library/",
-      "published": "2026-11-25T09:05:13+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-131914"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-24",
-      "kev_due_date": "2026-11-27",
-      "kev_vendor": "Idunno",
-      "kev_product": "AntiCsrf",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.04292,
-      "epss_percentile": 0.9189,
       "stack_match": []
     },
     {
@@ -198,11 +174,11 @@
       "stack_match": []
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/",
-      "title": "Hackers now exploit critical Drupal RCE flaw to hijack sites",
-      "summary": "The Drupal security team has confirmed that a critical vulnerability that lets attackers hijack unpatched sites has been actively exploited since at least Thursday. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/",
-      "published": "2026-11-25T10:10:20+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
+      "title": "Remus malware steals Gmail messages via fake Google Sheets extension",
+      "summary": "The Remus infostealer is stealing Gmail messages through a stealthy malicious Chrome extension, a capability the malware operators marketed as a zero-day exploit in Google's email service. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
+      "published": "2026-11-26T15:23:28+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
@@ -216,18 +192,20 @@
       "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": true,
+      "is_high_severity": false,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": []
+      "stack_match": [
+        "chrome"
+      ]
     },
     {
       "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
       "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
       "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s Security Impact Rating: High CVE: CVE-2026-113425,CVE-2026-121810,CVE-2026-123007,CVE-2026-123633,CVE-2026-123634",
       "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "published": "2026-11-26T00:36:59+00:00",
+      "published": "2026-11-26T01:48:13+00:00",
       "source": "Cisco Security Advisories (PSIRT)",
       "tags": [
         "network",
@@ -378,7 +356,7 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.00684,
-      "epss_percentile": 0.47777,
+      "epss_percentile": 0.47787,
       "stack_match": []
     },
     {
@@ -406,38 +384,10 @@
       "is_high_severity": true,
       "is_priority_product": false,
       "epss": 0.0063,
-      "epss_percentile": 0.44633,
+      "epss_percentile": 0.44648,
       "stack_match": [
         "node.js"
       ]
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html",
-      "title": "Hackers Exploit Two GeoServer Flaws as Researchers Warn of Unauthenticated RCE Chains",
-      "summary": "Threat actors are actively exploiting two newly patched security flaws in GeoServer, according to watchTowr.\n\nThe vulnerabilities in question are CVE-2026-120705 and CVE-2026-129243, details of which are below -\n\n\n  CVE-2026-120705 (CVSS score: 8.6) - An arbitrary file read vulnerability that could enable an attacker to access local text files readable by the GeoServer process or fetch",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html",
-      "published": "2026-11-25T12:48:54+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-120705",
-        "CVE-2026-129243"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
     }
   ]
 }
