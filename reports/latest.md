@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-25 16:20 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 5 &nbsp;|&nbsp; 📈 High EPSS: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 2 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; 🎯 My Stack: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-26 01:15 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 4 &nbsp;|&nbsp; 📈 High EPSS: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 2 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; 🎯 My Stack: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -9,40 +9,46 @@
 **Last 30 days**  
 - All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
 - Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
-- Excluded: 14 warm-up, 0 old CVEs
+- Excluded: 23 warm-up, 0 old CVEs
 
 **Last 90 days**  
 - All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
 - Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0
-- Excluded: 14 warm-up, 0 old CVEs
+- Excluded: 23 warm-up, 0 old CVEs
 
 _Zero-days reported before a CVE ID exists can't be matched and count as missed._
 
 ---
 
-## ⚡ Changed since last run (1)
+## ⚡ Changed since last run (4)
 
-- 🎯 New My Stack hit: CVE-2026-59726 [docker] — ruflo MCP bridge allows unauthenticated remote code execution in default Docker Compose deployments <https://github.com/advisories/GHSA-c4hm-4h84-2cf3>
+- 🎯 New My Stack hit: CVE-2026-65973 [node.js] — laradocs  Command injection via unescaped Node.js binary path in KaTeX SSR <https://github.com/advisories/GHSA-h746-qpxh-ph7g>
+- 🎯 New My Stack hit: CVE-2026-69178 [linux, chrome, chromium] — TastyIgniter mail template editor allows remote code execution via server-side template injection <https://github.com/advisories/GHSA-743w-g9pf-8p94>
+- 🎯 New My Stack hit: CVE-2026-69179 [linux, chrome, chromium] — TastyIgniter allows Remote Code Execution (RCE) via Unrestricted file upload in Media Manager <https://github.com/advisories/GHSA-7wwv-x6mc-pxqx>
+- 🎯 New My Stack hit: CVE-2026-69181 [linux, chrome, chromium] — TastyIgniter permits Path Traversal in Media Upload <https://github.com/advisories/GHSA-rj59-9f77-mvg5>
 
 ---
 
 ## 🎯 My Stack Highlights
 
-- 🔴 CISA KEV — Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026 — `CVE-2026-111497`, `CVE-2026-105482`, `CVE-2026-105483`, `CVE-2026-106069` — EPSS 33% — `node.js`
-- 🟡 High Severity — CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products (Severity: CRITICAL) — `CVE-2026-123633`, `CVE-2026-123007` — EPSS 46% — `nginx`
+- 🔴 CISA KEV — ICYMI: October 2026 @AWS Security — `CVE-2026-109618`, `CVE-2026-109619`, `CVE-2026-115560` — EPSS 87% — `aws`
 - 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026 — `CVE-2026-113425`, `CVE-2026-121810`, `CVE-2026-123007`, `CVE-2026-123633`, `CVE-2026-123634` — EPSS 46% — `nginx`
-- 🟡 High Severity — ruflo MCP bridge allows unauthenticated remote code execution in default Docker Compose deployments — `CVE-2026-59726` — EPSS 6% — `docker`
+- 🟡 High Severity — laradocs  Command injection via unescaped Node.js binary path in KaTeX SSR — `CVE-2026-65973` — EPSS 1% — `node.js`
+- 🟡 High Severity — TastyIgniter permits Path Traversal in Media Upload — `CVE-2026-69181` — EPSS n/a — `linux`, `chrome`, `chromium`
+- 🟡 High Severity — TastyIgniter allows Remote Code Execution (RCE) via Unrestricted file upload in Media Manager — `CVE-2026-69179` — EPSS n/a — `linux`, `chrome`, `chromium`
+- 🟡 High Severity — TastyIgniter mail template editor allows remote code execution via server-side template injection — `CVE-2026-69178` — EPSS n/a — `linux`, `chrome`, `chromium`
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-103406 — Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability
+## 1. 🔴 CISA KEV — ICYMI: October 2026 @AWS Security
 
-**CVE:** `CVE-2026-103406` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-25
-**EPSS:** 0.9% (percentile 56%)
-**KEV:** in catalog, due 2026-11-28
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-103406>
+**CVE:** `CVE-2026-109618` | `CVE-2026-109619` | `CVE-2026-115560` &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-11-25
+**EPSS:** 86.6% (percentile 100%)
+**KEV:** in catalog, due 2026-10-29
+**My Stack:** `aws`
+**Reference:** <https://aws.amazon.com/blogs/security/icymi-october-2026-aws-security/>
 
-> Vendor: Hewlett Packard Enterprise (HPE) | Product: Juniper Session Smart Conductor and Session Smart Router. Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router contain an OS command injection vulnerability that could allow a remote attacker to execute arbitrary commands as root via a specially crafted salt minion ID. Required action: Apply mitigations in acc…
+> Welcome to this month’s AWS Security news! Organizations need current information about AWS Security developments to maintain their cloud security. This monthly digest covers key AWS Security updates. Each month, we compile new announcements, features, and resources to help you improve your security. Based on AWS Security developments, you’ll find expert perspectives in blogs, announcements […]
 
 ---
 
@@ -82,19 +88,7 @@ The vulnerability, tracked as CVE-2026-132165 aka Fail2Install (CVSS score: 9.8)
 
 ---
 
-## 5. 🔴 CISA KEV — Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026
-
-**CVE:** `CVE-2026-111497` | `CVE-2026-105482` | `CVE-2026-105483` | `CVE-2026-106069` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-24
-**EPSS:** 33.0% (percentile 99%)
-**KEV:** in catalog, due 2026-11-10
-**My Stack:** `node.js`
-**Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1>
-
-> On October 21, 2026, Node.js announced the availability of fixes for multiple vulnerabilities across the following supported release lines: 22.x, 24.x, and 26.x. These vulnerabilities impact critical operations such as the Brotli decoder, DNS resolution, and TLS certificate validation. The vulnerabilities pose risks for remote code execution and traffic interception. For more information, see Node…
-
----
-
-## 6. 🟠 Zero-Day — CISA warns of critical unpatched flaw in Danfoss refrigeration controllers
+## 5. 🟠 Zero-Day — CISA warns of critical unpatched flaw in Danfoss refrigeration controllers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-25
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/>
@@ -103,7 +97,7 @@ The vulnerability, tracked as CVE-2026-132165 aka Fail2Install (CVSS score: 9.8)
 
 ---
 
-## 7. 🟠 Zero-Day — Hackers now exploit critical Drupal RCE flaw to hijack sites
+## 6. 🟠 Zero-Day — Hackers now exploit critical Drupal RCE flaw to hijack sites
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-25
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/>
@@ -112,7 +106,125 @@ The vulnerability, tracked as CVE-2026-132165 aka Fail2Install (CVSS score: 9.8)
 
 ---
 
-## 8. 🟡 High Severity — Hackers Exploit Two GeoServer Flaws as Researchers Warn of Unauthenticated RCE Chains
+## 7. 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026
+
+**CVE:** `CVE-2026-113425` | `CVE-2026-121810` | `CVE-2026-123007` | `CVE-2026-123633` | `CVE-2026-123634` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-26
+**EPSS:** 45.6% (percentile 99%)
+**My Stack:** `nginx`
+**Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1>
+
+> On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerabilit…
+
+---
+
+## 8. 🟡 High Severity — TastyIgniter permits Path Traversal in Media Upload
+
+**CVE:** `CVE-2026-69181` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
+**My Stack:** `linux`, `chrome`, `chromium`
+**Reference:** <https://github.com/advisories/GHSA-rj59-9f77-mvg5>
+
+> ### Summary
+Arbitrary file write outside `media/uploads/`
+
+### Details
+It is possible to perform Path Traversal in Media Manager file upload function as admin.
+
+
+### PoC
+- login as admin
+- upload a image but in the request, change the path from `/` to `/../../`.
+
+Request
+```http
+POST /admin/media_manager HTTP/1.1
+Host: localhost:8888
+Content-Length: 302
+sec-ch-ua-platform: &quot;Linux&quot;
+X-CSRF…
+
+---
+
+## 9. 🟡 High Severity — TastyIgniter allows Remote Code Execution (RCE) via Unrestricted file upload in Media Manager
+
+**CVE:** `CVE-2026-69179` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
+**My Stack:** `linux`, `chrome`, `chromium`
+**Reference:** <https://github.com/advisories/GHSA-7wwv-x6mc-pxqx>
+
+> ### Summary
+Media manager accepts `.htaccess` file which can be used to perform RCE.
+
+### Details
+The file upload functionality from media manager somehow accepts `.htaccess` file. This file could be used to allow any extension to run PHP command. By doing so, it is possible to perform RCE.
+
+### PoC
+- Login as Admin
+- Create a `.htaccess` file with the following code.
+
+```
+&lt;FilesMatch &quot;\.j…
+
+---
+
+## 10. 🟡 High Severity — TastyIgniter mail template editor allows remote code execution via server-side template injection
+
+**CVE:** `CVE-2026-69178` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
+**My Stack:** `linux`, `chrome`, `chromium`
+**Reference:** <https://github.com/advisories/GHSA-743w-g9pf-8p94>
+
+> ### Summary
+**Where:** `POST /admin/mail_templates/edit/{id}` → body field  
+**Who can trigger:** Any admin user with `Admin.MailTemplates` permission  
+**Impact:** Arbitrary PHP execution on the server — full RCE
+
+### Details
+The Mail templates is vulnerable to SSTI and did not perform an validation and sanitization.
+
+### PoC
+
+- login as admin
+- create new mail template with following command
+
+``…
+
+---
+
+## 11. 🟡 High Severity — fulgur allows Unbounded string-set value accumulation causes memory/CPU exhaustion (denial of service)
+
+**CVE:** `CVE-2026-68539` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
+**EPSS:** 0.7% (percentile 48%)
+**Reference:** <https://github.com/advisories/GHSA-vw2v-g4x7-xcqg>
+
+> `fulgur` converts untrusted HTML/CSS into PDF, commonly on a server that
+processes input supplied by many tenants. In versions from 0.4.4 up to (but not
+including) the patched release, the CSS `string-set` named-string values
+resolved from a document were accumulated per element with no memory budget,
+letting a small crafted document amplify into large retained memory (and the CPU
+to copy it) — a …
+
+---
+
+## 12. 🟡 High Severity — laradocs  Command injection via unescaped Node.js binary path in KaTeX SSR
+
+**CVE:** `CVE-2026-65973` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
+**EPSS:** 0.6% (percentile 45%)
+**My Stack:** `node.js`
+**Reference:** <https://github.com/advisories/GHSA-h746-qpxh-ph7g>
+
+> ### Summary
+Local command injection (CWE-78) in server-side KaTeX rendering via an unescaped Node.js binary path in a `proc_open()` command string.
+
+### Affected versions
+&gt;= 0.4.0, &lt; 1.0.0
+
+### Patched versions
+&gt;= 1.0.0 (fixed in commit `100cb1e`)
+
+### Impact
+When rendering KaTeX math **server-side**, Laradocs invoked Node via `proc_open()` with a command string in which the Node binary a…
+
+---
+
+## 13. 🟡 High Severity — Hackers Exploit Two GeoServer Flaws as Researchers Warn of Unauthenticated RCE Chains
 
 **CVE:** `CVE-2026-120705` | `CVE-2026-129243` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-25
 **Reference:** <https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html>
@@ -123,93 +235,5 @@ The vulnerabilities in question are CVE-2026-120705 and CVE-2026-129243, details
 
 
   CVE-2026-120705 (CVSS score: 8.6) - An arbitrary file read vulnerability that could enable an attacker to access local text files readable by the GeoServer process or fetch
-
----
-
-## 9. 🟡 High Severity — CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products (Severity: CRITICAL)
-
-**CVE:** `CVE-2026-123633` | `CVE-2026-123007` &nbsp;|&nbsp; **Source:** Palo Alto Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-24
-**EPSS:** 45.6% (percentile 99%)
-**My Stack:** `nginx`
-**Reference:** <https://security.paloaltonetworks.com/CVE-2026-123633>
-
----
-
-## 10. 🟡 High Severity — soapbar: verify_envelope_bsp accepts an unauthenticated embedded certificate (signature forgery / authentication bypass)
-
-**CVE:** `CVE-2026-64855` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-24
-**EPSS:** 0.2% (percentile 8%)
-**Reference:** <https://github.com/advisories/GHSA-859w-52fx-hcm6>
-
-> ### Impact
-
-`verify_envelope_bsp()` derived its trust anchor from the message it was
-verifying. It read the X.509 certificate out of the caller-untrusted
-`wsse:BinarySecurityToken`, validated **only** that certificate&#x27;s not-before /
-not-after dates, and then verified the signature against that same certificate.
-There was no CA-chain validation, no issuer/subject allowlist, and no pinning.
-
-A …
-
----
-
-## 11. 🟡 High Severity — GitHub CLI gh codespace jupyter may allow code execution via unvalidated URLs from malicious Codespaces
-
-**CVE:** `CVE-2026-59831` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-24
-**EPSS:** 0.3% (percentile 18%)
-**Reference:** <https://github.com/advisories/GHSA-8cg3-r6g9-fpg2>
-
-> ### Summary
-
-A security vulnerability has been identified in GitHub CLI that could allow remote code execution when users connect to a malicious Codespace using the `gh codespace jupyter` command. The command opens JupyterLab by launching a URL in the user&#x27;s browser, but that URL is supplied by a process running inside the Codespace and the CLI opens it without validating it.
-
-The browser lau…
-
----
-
-## 12. 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026
-
-**CVE:** `CVE-2026-113425` | `CVE-2026-121810` | `CVE-2026-123007` | `CVE-2026-123633` | `CVE-2026-123634` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-24
-**EPSS:** 45.6% (percentile 99%)
-**My Stack:** `nginx`
-**Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1>
-
-> On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerabilit…
-
----
-
-## 13. 🟡 High Severity — ruflo MCP bridge allows unauthenticated remote code execution in default Docker Compose deployments
-
-**CVE:** `CVE-2026-59726` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-24
-**EPSS:** 6.2% (percentile 94%)
-**My Stack:** `docker`
-**Reference:** <https://github.com/advisories/GHSA-c4hm-4h84-2cf3>
-
-> The MCP bridge shipping in ruflo/docker-compose.yml exposed POST /mcp with no authentication. The docker-compose defaults bound the bridge and MongoDB to all interfaces. Combined, an unauthenticated network attacker could invoke tools/call → terminal_execute inside the bridge container, obtain a shell as node (uid 1000), read every provider API key from the container env, spawn attacker-controlled…
-
----
-
-## 14. 🟡 High Severity — AVideo API FFmpeg process permits OS command injection via notifyCode/callback
-
-**CVE:** `CVE-2026-63305` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-24
-**EPSS:** 2.5% (percentile 85%)
-**Reference:** <https://github.com/advisories/GHSA-g9x9-q7qj-6mv5>
-
-> ### Summary
-
-The standalone FFmpeg execution endpoint `plugin/API/standAlone/ffmpeg.json.php` builds a shell command string that is passed to `execAsync()` and run via `nohup sh -c &quot;&lt;command&gt;&quot;`. When the decrypted `codeToExec` payload produces a non-empty `avideoPath`, the endpoint appends a completion hook of the form:
-
-```
- &amp;&amp; php &lt;script&gt; notify=&lt;escaped-json&gt…
-
----
-
-## 15. 🟡 High Severity — Vulnerability in PHP Affecting Cisco Products: November 2026
-
-**CVE:** `CVE-2026-126714` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-24
-**EPSS:** 33.8% (percentile 99%)
-**Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-phpaftershell-nov-2026-kT9pL4Xe?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20PHP%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1>
-
-> On November 19, 2026, the PHP Foundation announced the availability of security fixes that address a critical vulnerability that could lead to remote code execution. This vulnerability is identified by CVE-2026-126714. For information about this vulnerability, see the advisory GHSA-fm2m-fjf5-v3cp . This vulnerability is being referenced as phpAfterShell . For information about Splunk products and …
 
 ---

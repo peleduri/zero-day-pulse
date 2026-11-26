@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T16:20:07.746204+00:00",
+  "generated_at": "2026-11-26T01:15:03.436627+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -38,7 +38,7 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 14,
+        "warm_up": 23,
         "old_cve": 0
       }
     },
@@ -64,14 +64,14 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 14,
+        "warm_up": 23,
         "old_cve": 0
       }
     }
   },
   "top_leads_window": 90,
   "top_leads": [],
-  "total_rows": 14,
+  "total_rows": 23,
   "rows": [
     {
       "bucket": "missed",
@@ -230,10 +230,118 @@
       "vendor": "Optimizely"
     },
     {
+      "bucket": "missed",
       "cve": "CVE-2026-103406",
+      "cve_year": 2026,
       "kev_date_added": "2026-11-25",
-      "vendor": "Hewlett Packard Enterprise (HPE)",
+      "lead_days": null,
+      "link": null,
+      "observed_at": null,
       "product": "Juniper Session Smart Conductor and Session Smart Router",
+      "source": null,
+      "vendor": "Hewlett Packard Enterprise (HPE)"
+    },
+    {
+      "cve": "CVE-2023-25914",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Danfoss",
+      "product": "AK-SM 800A Series",
+      "cve_year": 2023,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2023-25915",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Danfoss",
+      "product": "AK-SM 800A Series",
+      "cve_year": 2023,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2025-41450",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Danfoss",
+      "product": "AK-SM 800A Series",
+      "cve_year": 2025,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-133275",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-133303",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-133311",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-133323",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-133324",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Mitel",
+      "product": "MiCollab",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-133469",
+      "kev_date_added": "2026-11-25",
+      "vendor": "Vates",
+      "product": "Xen Orchestra",
       "cve_year": 2026,
       "observed_at": null,
       "source": null,
@@ -244,7 +352,7 @@
   ],
   "run": {
     "new_signals": 0,
-    "new_rows": 1,
+    "new_rows": 9,
     "capped_entries": 1
   }
 }

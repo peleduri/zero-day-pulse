@@ -1,14 +1,47 @@
 {
-  "run_id": "45652592203",
-  "generated_at": "2026-11-25T16:20:18.082506+00:00",
+  "run_id": "45734372823",
+  "generated_at": "2026-11-26T01:15:12.647139+00:00",
   "changes": [
     {
       "kind": "new_stack_hit",
-      "cve": "CVE-2026-59726",
-      "title": "ruflo MCP bridge allows unauthenticated remote code execution in default Docker Compose deployments",
-      "link": "https://github.com/advisories/GHSA-c4hm-4h84-2cf3",
+      "cve": "CVE-2026-65973",
+      "title": "laradocs  Command injection via unescaped Node.js binary path in KaTeX SSR",
+      "link": "https://github.com/advisories/GHSA-h746-qpxh-ph7g",
       "stack_match": [
-        "docker"
+        "node.js"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-69178",
+      "title": "TastyIgniter mail template editor allows remote code execution via server-side template injection",
+      "link": "https://github.com/advisories/GHSA-743w-g9pf-8p94",
+      "stack_match": [
+        "linux",
+        "chrome",
+        "chromium"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-69179",
+      "title": "TastyIgniter allows Remote Code Execution (RCE) via Unrestricted file upload in Media Manager",
+      "link": "https://github.com/advisories/GHSA-7wwv-x6mc-pxqx",
+      "stack_match": [
+        "linux",
+        "chrome",
+        "chromium"
+      ]
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-69181",
+      "title": "TastyIgniter permits Path Traversal in Media Upload",
+      "link": "https://github.com/advisories/GHSA-rj59-9f77-mvg5",
+      "stack_match": [
+        "linux",
+        "chrome",
+        "chromium"
       ]
     }
   ]

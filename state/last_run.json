@@ -178,17 +178,21 @@
       "epss": 0.45083,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-21T13:49:30.236989+00:00",
-      "stack_match": [],
-      "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
+      "stack_match": [
+        "aws"
+      ],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
     "CVE-2026-109619": {
       "epss": 0.20754,
       "first_seen": "2026-11-19T14:49:36.865587+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-21T13:49:30.236989+00:00",
-      "stack_match": [],
-      "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
+      "stack_match": [
+        "aws"
+      ],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
     "CVE-2026-110782": {
       "epss": 0.00335,
@@ -224,7 +228,7 @@
       "epss": 0.15289,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -254,9 +258,11 @@
       "epss": 0.86584,
       "first_seen": "2026-11-19T14:49:36.865587+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-21T13:49:30.236989+00:00",
-      "stack_match": [],
-      "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
+      "stack_match": [
+        "aws"
+      ],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
     "CVE-2026-115563": {
       "epss": 0.00321,
@@ -333,7 +339,7 @@
       "epss": null,
       "first_seen": "2026-11-25T16:20:18.082006+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -385,7 +391,7 @@
       "epss": 0.18075,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -395,7 +401,7 @@
       "epss": 0.45588,
       "first_seen": "2026-11-18T23:40:14.042412+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -405,7 +411,7 @@
       "epss": 0.2211,
       "first_seen": "2026-11-18T23:40:14.042412+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -415,7 +421,7 @@
       "epss": 0.18839,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [
         "nginx"
       ],
@@ -437,7 +443,7 @@
       "epss": 0.05009,
       "first_seen": "2026-11-19T23:58:56.868888+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -445,7 +451,7 @@
       "epss": null,
       "first_seen": "2026-11-24T16:38:06.154361+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -453,7 +459,7 @@
       "epss": null,
       "first_seen": "2026-11-25T16:20:18.082006+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -461,7 +467,7 @@
       "epss": null,
       "first_seen": "2026-11-25T16:20:18.082006+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -469,7 +475,7 @@
       "epss": null,
       "first_seen": "2026-11-25T16:20:18.082006+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -477,7 +483,7 @@
       "epss": null,
       "first_seen": "2026-11-25T16:20:18.082006+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -485,7 +491,7 @@
       "epss": null,
       "first_seen": "2026-11-25T16:20:18.082006+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -493,7 +499,7 @@
       "epss": null,
       "first_seen": "2026-11-25T16:20:18.082006+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -618,7 +624,7 @@
       "epss": null,
       "first_seen": "2026-11-25T16:20:18.082006+00:00",
       "in_kev": false,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -663,7 +669,7 @@
       "epss": 0.04292,
       "first_seen": "2026-11-23T16:42:04.714781+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -671,7 +677,7 @@
       "epss": null,
       "first_seen": "2026-11-25T16:20:18.082006+00:00",
       "in_kev": true,
-      "last_seen": "2026-11-25T16:20:18.082006+00:00",
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
@@ -966,6 +972,24 @@
       "stack_match": [],
       "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
+    "CVE-2026-65973": {
+      "epss": 0.0063,
+      "first_seen": "2026-11-26T01:15:12.646581+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
+      "stack_match": [
+        "node.js"
+      ],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
+    },
+    "CVE-2026-68539": {
+      "epss": 0.00684,
+      "first_seen": "2026-11-26T01:15:12.646581+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
+      "stack_match": [],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
+    },
     "CVE-2026-68903": {
       "epss": 0.00481,
       "first_seen": "2026-11-19T04:48:46.316329+00:00",
@@ -1018,6 +1042,42 @@
         "github"
       ],
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
+    },
+    "CVE-2026-69178": {
+      "epss": null,
+      "first_seen": "2026-11-26T01:15:12.646581+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
+      "stack_match": [
+        "linux",
+        "chrome",
+        "chromium"
+      ],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
+    },
+    "CVE-2026-69179": {
+      "epss": null,
+      "first_seen": "2026-11-26T01:15:12.646581+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
+      "stack_match": [
+        "linux",
+        "chrome",
+        "chromium"
+      ],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
+    },
+    "CVE-2026-69181": {
+      "epss": null,
+      "first_seen": "2026-11-26T01:15:12.646581+00:00",
+      "in_kev": false,
+      "last_seen": "2026-11-26T01:15:12.646581+00:00",
+      "stack_match": [
+        "linux",
+        "chrome",
+        "chromium"
+      ],
+      "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
     },
     "CVE-2026-71481": {
       "epss": 0.00319,
@@ -1366,7 +1426,7 @@
       "stack_terms_hash": "13ac6d6bfb333624160631f43a642e1aee25ff7cd65ee15b3e08959604d9299f"
     }
   },
-  "generated_at": "2026-11-25T16:20:18.082006+00:00",
-  "run_id": "45652592203",
+  "generated_at": "2026-11-26T01:15:12.646581+00:00",
+  "run_id": "45734372823",
   "stack_terms_hash": "040431bbd3dc948589ea4dfd8236d679e346f48ae22a40dc2d06a44331ef8a6e"
 }
