@@ -154,30 +154,31 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">3</span><span class="stat-label">In KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">In KEV</span></div>
               <div class="stat"><span class="stat-value epss">0</span><span class="stat-label">High EPSS</span></div>
-              <div class="stat"><span class="stat-value zeroday">3</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value stack">3</span><span class="stat-label">My Stack</span></div>
-              <div class="stat"><span class="stat-value">7</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">4</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value stack">2</span><span class="stat-label">My Stack</span></div>
+              <div class="stat"><span class="stat-value">5</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-27 01:14 UTC</div>
+            <div class="generated">Updated 2026-11-27 15:44 UTC</div>
           </header>
           <main>
             <section class="section scoreboard-section"><h2 class="section-head scoreboard-head">🏁 Beat KEV</h2><div class="scoreboard"><div class="sb-window"><div class="sb-title">Last 30 days</div><div class="sb-line">All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-line">Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-muted">Excluded: 23 warm-up, 0 old CVEs</div></div><div class="sb-window"><div class="sb-title">Last 90 days</div><div class="sb-line">All: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-line">Edge devices: collecting data since 2026-11-18 — Counted 0 · Earlier 0 · Same day/late 0 · Missed 0</div><div class="sb-muted">Excluded: 23 warm-up, 0 old CVEs</div></div><div class="sb-muted">Zero-days reported before a CVE ID exists can&#x27;t be matched and count as missed.</div></div></section>
-<section class="section stack-section"><h2 class="section-head stack-head">🎯 My Stack <span class="section-count">3</span></h2><article class="card card-high">
+<section class="section changes-section"><h2 class="section-head changes-head">⚡ Changed since last run <span class="section-count">2</span></h2><ul class="changes"><li class="change change-epss_crossed"><span class="change-icon">📈</span> CVE-2026-111497 EPSS 33% → 100% (crossed 50%)</li><li class="change change-new_stack_hit"><span class="change-icon">🎯</span> New My Stack hit: CVE-2026-99362 [linux] — <a href="https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/" target="_blank" rel="noopener noreferrer">New NFS2ROOT Linux flaw can let attackers gain root privileges</a></li></ul></section>
+<section class="section stack-section"><h2 class="section-head stack-head">🎯 My Stack <span class="section-count">2</span></h2><article class="card card-high">
   <div class="card-top">
-    <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-yellow">EPSS 46%</span><span class="badge badge-stack">nginx</span></div>
-    <h2 class="card-title"><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1" target="_blank" rel="noopener noreferrer">Vulnerabilities in nginx Affecting Cisco Products: November 2026</a></h2>
+    <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS 1%</span><span class="badge badge-stack">linux</span></div>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/" target="_blank" rel="noopener noreferrer">New NFS2ROOT Linux flaw can let attackers gain root privileges</a></h2>
   </div>
   <div class="card-meta">
-    <code class="cve">CVE-2026-113425</code> <code class="cve">CVE-2026-121810</code> <code class="cve">CVE-2026-123007</code> <code class="cve">CVE-2026-123633</code> <code class="cve">CVE-2026-123634</code>
+    <code class="cve">CVE-2026-99362</code>
     <span class="meta-sep">·</span>
-    <span>Cisco Security Advisories (PSIRT)</span>
+    <span>Bleeping Computer</span>
     <span class="meta-sep">·</span>
-    <span>2026-11-26</span>
+    <span>2026-11-27</span>
   </div>
-  <p class='summary'>On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerabilit…</p>
+  <p class='summary'>​A 12-year-old critical vulnerability in the Linux kernel&#x27;s Network File System (NFS) server, tracked as CVE-2026-99362, allows remote attackers to gain root privileges. [...]</p>
 
 
 </article>
@@ -200,98 +201,61 @@ Then there’s the question of who gets to use what. Stolen logins are opening</
 
 
         </article>
-
-<article class="card card-zeroday">
+</section>
+<section class="section"><h2 class="section-head">All Findings <span class="section-count">5</span></h2><article class="card card-zeroday">
   <div class="card-top">
-    <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">chrome</span></div>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/" target="_blank" rel="noopener noreferrer">Remus malware steals Gmail messages via fake Google Sheets extension</a></h2>
+    <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span></div>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/your-firewall-isnt-enough-the-hidden-risk-of-unmanaged-vms/" target="_blank" rel="noopener noreferrer">Your Firewall Isn&#x27;t Enough: The Hidden Risk of Unmanaged VMs</a></h2>
   </div>
   <div class="card-meta">
     <span class="no-cve">No CVE</span>
     <span class="meta-sep">·</span>
     <span>Bleeping Computer</span>
     <span class="meta-sep">·</span>
-    <span>2026-11-26</span>
+    <span>2026-11-27</span>
   </div>
-  <p class='summary'>The Remus infostealer is stealing Gmail messages through a stealthy malicious Chrome extension, a capability the malware operators marketed as a zero-day exploit in Google&#x27;s email service. [...]</p>
+  <p class='summary'>Forgotten virtual machines, unpatched servers, and excessive access permissions can create security blind spots across IT infrastructure. ISPsystem explains how centralized infrastructure management, access controls, and resource lifecycle automation can help reduce these risks. [...]</p>
 
 
 </article>
-</section>
-<section class="section"><h2 class="section-head">All Findings <span class="section-count">7</span></h2><article class="card card-kev">
-  <div class="card-top">
-    <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-grey">EPSS 2%</span><span class="badge badge-kevdue">KEV due 2026-11-28</span></div>
-    <h2 class="card-title"><a href="https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/" target="_blank" rel="noopener noreferrer">Critical Juniper Session Smart Conductor Flaw Exploited in Attacks</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-103406</code>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-26</span>
-  </div>
-  <p class='summary'>Tracked as CVE-2026-103406, the vulnerability allows remote attackers to execute arbitrary commands as root. The post Critical Juniper Session Smart Conductor Flaw Exploited in Attacks appeared first on SecurityWeek .</p>
-
-
-</article>
-
-        <article class="card card-kev">
-          <div class="card-top">
-            <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-yellow">EPSS 11%</span><span class="badge badge-kevdue">KEV due 2026-11-27</span></div>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html" target="_blank" rel="noopener noreferrer">Drupal Warns of New Highly Critical Site Takeover Vulnerability Under Active Exploitation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-136716</code> <code class="cve">CVE-2026-132165</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-26</span>
-          </div>
-          <p class='summary'>Drupal has warned of a new &quot;highly critical&quot; security flaw impacting Drupal core that it said has been exploited in the wild.
-
-The vulnerability, tracked as CVE-2026-136716 (CVSS score: N/A), has been described as a case of improper checking for unusual or exceptional conditions. It also relates to CVE-2026-132165 aka Fail2Install in that it addresses remaining vulnerable installation states</p>
-
-
-        </article>
-
-        <article class="card card-kev">
-          <div class="card-top">
-            <div class="badges"><span class="badge badge-kev">🔴 CISA KEV</span><span class="badge badge-epss epss-grey">EPSS 1%</span><span class="badge badge-kevdue">KEV due 2026-11-28</span></div>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html" target="_blank" rel="noopener noreferrer">Hackers Exploit 10 Vulnerabilities Across Mitel, Juniper, Vates, and Danfoss Products</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-133275</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-26</span>
-          </div>
-          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added 10 security flaws to its Known Exploited Vulnerabilities (KEV) catalog, including five vulnerabilities impacting Mitel MiCollab that were disclosed last week.
-
-The Mitel MiCollab vulnerabilities are listed below -
-
-
-  CVE-2026-133275 (CVSS score: 5.3) - An arbitrary file upload vulnerability in the Audio, Web and</p>
-
-
-        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
     <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span></div>
-    <h2 class="card-title"><a href="https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/" target="_blank" rel="noopener noreferrer">Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks</a></h2>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/" target="_blank" rel="noopener noreferrer">Drupal warns of new site takeover flaw exploited in attacks</a></h2>
   </div>
   <div class="card-meta">
     <span class="no-cve">No CVE</span>
     <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
+    <span>Bleeping Computer</span>
     <span class="meta-sep">·</span>
-    <span>2026-11-26</span>
+    <span>2026-11-27</span>
   </div>
-  <p class='summary'>Accenture says hackers exploited MiCollab flaws before Mitel’s advisory, likely aided by AI, in a suspected extortion campaign. The post Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks appeared first on SecurityWeek .</p>
+  <p class='summary'>The Drupal security team says attackers are exploiting a second critical vulnerability that lets them breach and hijack unpatched websites. [...]</p>
 
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span></div>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html" target="_blank" rel="noopener noreferrer">Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-27</span>
+          </div>
+          <p class='summary'>Details have emerged about a new zero-day vulnerability in Cacti, an open-source network monitoring tool, that could be exploited to achieve remote code execution.
+
+The proof-of-concept (PoC) exploit, which has yet to be assigned a CVE identifier, has been tracked as 4HTTP2SHELL and 4HTTP2ROOT.
+
+&quot;I found a path from a fresh, unauthenticated HTTP session to command execution as the Cacti server</p>
+
+
+        </article>
 
         <article class="card card-zeroday">
           <div class="card-top">
@@ -312,36 +276,19 @@ Then there’s the question of who gets to use what. Stolen logins are opening</
 
         </article>
 
-<article class="card card-zeroday">
+<article class="card card-high">
   <div class="card-top">
-    <div class="badges"><span class="badge badge-zeroday">🟠 Zero-Day</span><span class="badge badge-epss epss-grey">EPSS n/a</span><span class="badge badge-stack">chrome</span></div>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/" target="_blank" rel="noopener noreferrer">Remus malware steals Gmail messages via fake Google Sheets extension</a></h2>
+    <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-grey">EPSS 1%</span><span class="badge badge-stack">linux</span></div>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/" target="_blank" rel="noopener noreferrer">New NFS2ROOT Linux flaw can let attackers gain root privileges</a></h2>
   </div>
   <div class="card-meta">
-    <span class="no-cve">No CVE</span>
+    <code class="cve">CVE-2026-99362</code>
     <span class="meta-sep">·</span>
     <span>Bleeping Computer</span>
     <span class="meta-sep">·</span>
-    <span>2026-11-26</span>
+    <span>2026-11-27</span>
   </div>
-  <p class='summary'>The Remus infostealer is stealing Gmail messages through a stealthy malicious Chrome extension, a capability the malware operators marketed as a zero-day exploit in Google&#x27;s email service. [...]</p>
-
-
-</article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <div class="badges"><span class="badge badge-high">🟡 High</span><span class="badge badge-epss epss-yellow">EPSS 46%</span><span class="badge badge-stack">nginx</span></div>
-    <h2 class="card-title"><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1" target="_blank" rel="noopener noreferrer">Vulnerabilities in nginx Affecting Cisco Products: November 2026</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-113425</code> <code class="cve">CVE-2026-121810</code> <code class="cve">CVE-2026-123007</code> <code class="cve">CVE-2026-123633</code> <code class="cve">CVE-2026-123634</code>
-    <span class="meta-sep">·</span>
-    <span>Cisco Security Advisories (PSIRT)</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-26</span>
-  </div>
-  <p class='summary'>On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerabilit…</p>
+  <p class='summary'>​A 12-year-old critical vulnerability in the Linux kernel&#x27;s Network File System (NFS) server, tracked as CVE-2026-99362, allows remote attackers to gain root privileges. [...]</p>
 
 
 </article>

@@ -1,5 +1,24 @@
 {
-  "run_id": "45921285149",
-  "generated_at": "2026-11-27T01:14:00.164441+00:00",
-  "changes": []
+  "run_id": "46027425506",
+  "generated_at": "2026-11-27T15:44:26.940480+00:00",
+  "changes": [
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-111497",
+      "title": null,
+      "link": null,
+      "threshold": 0.5,
+      "old_epss": 0.32976,
+      "new_epss": 0.99987
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-99362",
+      "title": "New NFS2ROOT Linux flaw can let attackers gain root privileges",
+      "link": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
+      "stack_match": [
+        "linux"
+      ]
+    }
+  ]
 }

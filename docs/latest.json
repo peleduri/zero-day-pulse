@@ -1,106 +1,93 @@
 {
-  "generated": "2026-11-27T01:14:00.164441+00:00",
-  "total": 7,
-  "kev": 3,
-  "zero_day": 3,
+  "generated": "2026-11-27T15:44:26.940480+00:00",
+  "total": 5,
+  "kev": 0,
+  "zero_day": 4,
   "enriched": 0,
   "high_epss": 0,
-  "my_stack": 3,
-  "run_id": "45921285149",
-  "changes": [],
+  "my_stack": 2,
+  "run_id": "46027425506",
+  "changes": [
+    {
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-111497",
+      "title": null,
+      "link": null,
+      "threshold": 0.5,
+      "old_epss": 0.32976,
+      "new_epss": 0.99987
+    },
+    {
+      "kind": "new_stack_hit",
+      "cve": "CVE-2026-99362",
+      "title": "New NFS2ROOT Linux flaw can let attackers gain root privileges",
+      "link": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
+      "stack_match": [
+        "linux"
+      ]
+    }
+  ],
   "findings": [
     {
-      "id": "https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/",
-      "title": "Critical Juniper Session Smart Conductor Flaw Exploited in Attacks",
-      "summary": "Tracked as CVE-2026-103406, the vulnerability allows remote attackers to execute arbitrary commands as root. The post Critical Juniper Session Smart Conductor Flaw Exploited in Attacks appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/",
-      "published": "2026-11-26T13:04:06+00:00",
-      "source": "SecurityWeek",
+      "id": "https://www.bleepingcomputer.com/news/security/your-firewall-isnt-enough-the-hidden-risk-of-unmanaged-vms/",
+      "title": "Your Firewall Isn't Enough: The Hidden Risk of Unmanaged VMs",
+      "summary": "Forgotten virtual machines, unpatched servers, and excessive access permissions can create security blind spots across IT infrastructure. ISPsystem explains how centralized infrastructure management, access controls, and resource lifecycle automation can help reduce these risks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/your-firewall-isnt-enough-the-hidden-risk-of-unmanaged-vms/",
+      "published": "2026-11-27T15:00:10+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "research"
+        "malware"
       ],
-      "cve_ids": [
-        "CVE-2026-103406"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-25",
-      "kev_due_date": "2026-11-28",
-      "kev_vendor": "Hewlett Packard Enterprise (HPE)",
-      "kev_product": "Juniper Session Smart Conductor and Session Smart Router",
+      "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.01535,
-      "epss_percentile": 0.75157,
+      "epss": null,
+      "epss_percentile": null,
       "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
-      "title": "Drupal Warns of New Highly Critical Site Takeover Vulnerability Under Active Exploitation",
-      "summary": "Drupal has warned of a new \"highly critical\" security flaw impacting Drupal core that it said has been exploited in the wild.\n\nThe vulnerability, tracked as CVE-2026-136716 (CVSS score: N/A), has been described as a case of improper checking for unusual or exceptional conditions. It also relates to CVE-2026-132165 aka Fail2Install in that it addresses remaining vulnerable installation states",
-      "link": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
-      "published": "2026-11-26T07:02:34+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/",
+      "title": "Drupal warns of new site takeover flaw exploited in attacks",
+      "summary": "The Drupal security team says attackers are exploiting a second critical vulnerability that lets them breach and hijack unpatched websites. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/",
+      "published": "2026-11-27T10:10:15+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
+      "title": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access",
+      "summary": "Details have emerged about a new zero-day vulnerability in Cacti, an open-source network monitoring tool, that could be exploited to achieve remote code execution.\n\nThe proof-of-concept (PoC) exploit, which has yet to be assigned a CVE identifier, has been tracked as 4HTTP2SHELL and 4HTTP2ROOT.\n\n\"I found a path from a fresh, unauthenticated HTTP session to command execution as the Cacti server",
+      "link": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
+      "published": "2026-11-27T05:48:20+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-136716",
-        "CVE-2026-132165"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-24",
-      "kev_due_date": "2026-11-27",
-      "kev_vendor": "Drupal",
-      "kev_product": "Core",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.11053,
-      "epss_percentile": 0.96627,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html",
-      "title": "Hackers Exploit 10 Vulnerabilities Across Mitel, Juniper, Vates, and Danfoss Products",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added 10 security flaws to its Known Exploited Vulnerabilities (KEV) catalog, including five vulnerabilities impacting Mitel MiCollab that were disclosed last week.\n\nThe Mitel MiCollab vulnerabilities are listed below -\n\n\n  CVE-2026-133275 (CVSS score: 5.3) - An arbitrary file upload vulnerability in the Audio, Web and",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html",
-      "published": "2026-11-26T06:44:46+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-133275"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-11-25",
-      "kev_due_date": "2026-11-28",
-      "kev_vendor": "Mitel",
-      "kev_product": "MiCollab",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00771,
-      "epss_percentile": 0.52058,
-      "stack_match": []
-    },
-    {
-      "id": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/",
-      "title": "Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks",
-      "summary": "Accenture says hackers exploited MiCollab flaws before Mitel\u2019s advisory, likely aided by AI, in a suspected extortion campaign. The post Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/",
-      "published": "2026-11-26T11:35:25+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
       ],
       "cve_ids": [],
       "in_kev": false,
@@ -144,51 +131,18 @@
       ]
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
-      "title": "Remus malware steals Gmail messages via fake Google Sheets extension",
-      "summary": "The Remus infostealer is stealing Gmail messages through a stealthy malicious Chrome extension, a capability the malware operators marketed as a zero-day exploit in Google's email service. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
-      "published": "2026-11-26T15:23:28+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
+      "title": "New NFS2ROOT Linux flaw can let attackers gain root privileges",
+      "summary": "\u200bA 12-year-old critical vulnerability in the Linux kernel's Network File System (NFS) server, tracked as CVE-2026-99362, allows remote attackers to gain root privileges. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
+      "published": "2026-11-27T08:06:58+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
         "malware"
       ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": [
-        "chrome"
-      ]
-    },
-    {
-      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
-      "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s Security Impact Rating: High CVE: CVE-2026-113425,CVE-2026-121810,CVE-2026-123007,CVE-2026-123633,CVE-2026-123634",
-      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-      "published": "2026-11-26T01:48:13+00:00",
-      "source": "Cisco Security Advisories (PSIRT)",
-      "tags": [
-        "network",
-        "cisco",
-        "psirt",
-        "advisory"
-      ],
       "cve_ids": [
-        "CVE-2026-113425",
-        "CVE-2026-121810",
-        "CVE-2026-123007",
-        "CVE-2026-123633",
-        "CVE-2026-123634"
+        "CVE-2026-99362"
       ],
       "in_kev": false,
       "kev_date_added": null,
@@ -199,10 +153,10 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "is_priority_product": false,
-      "epss": 0.45588,
-      "epss_percentile": 0.9909,
+      "epss": 0.00755,
+      "epss_percentile": 0.51398,
       "stack_match": [
-        "nginx"
+        "linux"
       ]
     }
   ]
