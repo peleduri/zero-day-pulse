@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-26 15:55 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 4 &nbsp;|&nbsp; 📈 High EPSS: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 3 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; 🎯 My Stack: 7 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-27 01:14 UTC &nbsp;|&nbsp; **Total:** 7 &nbsp;|&nbsp; 🔴 KEV: 3 &nbsp;|&nbsp; 📈 High EPSS: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 3 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; 🎯 My Stack: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,13 +22,9 @@ _Zero-days reported before a CVE ID exists can't be matched and count as missed.
 
 ## 🎯 My Stack Highlights
 
-- 🔴 CISA KEV — ICYMI: October 2026 @AWS Security — `CVE-2026-109618`, `CVE-2026-109619`, `CVE-2026-115560` — EPSS 87% — `aws`
 - 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026 — `CVE-2026-113425`, `CVE-2026-121810`, `CVE-2026-123007`, `CVE-2026-123633`, `CVE-2026-123634` — EPSS 46% — `nginx`
-- 🟡 High Severity — laradocs  Command injection via unescaped Node.js binary path in KaTeX SSR — `CVE-2026-65973` — EPSS 1% — `node.js`
+- 🟠 Zero-Day — ThreatsDay: 10M NGINX Services at Risk, 250+ Malicious Extensions, AI Server Hijacking + 17 More Stories — _No CVE_ — EPSS n/a — `nginx`
 - 🟠 Zero-Day — Remus malware steals Gmail messages via fake Google Sheets extension — _No CVE_ — EPSS n/a — `chrome`
-- 🟡 High Severity — TastyIgniter permits Path Traversal in Media Upload — `CVE-2026-69181` — EPSS n/a — `linux`, `chrome`, `chromium`
-- 🟡 High Severity — TastyIgniter allows Remote Code Execution (RCE) via Unrestricted file upload in Media Manager — `CVE-2026-69179` — EPSS n/a — `linux`, `chrome`, `chromium`
-- 🟡 High Severity — TastyIgniter mail template editor allows remote code execution via server-side template injection — `CVE-2026-69178` — EPSS n/a — `linux`, `chrome`, `chromium`
 
 ---
 
@@ -72,19 +68,7 @@ The Mitel MiCollab vulnerabilities are listed below -
 
 ---
 
-## 4. 🔴 CISA KEV — ICYMI: October 2026 @AWS Security
-
-**CVE:** `CVE-2026-109618` | `CVE-2026-109619` | `CVE-2026-115560` &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-11-25
-**EPSS:** 86.6% (percentile 100%)
-**KEV:** in catalog, due 2026-10-29
-**My Stack:** `aws`
-**Reference:** <https://aws.amazon.com/blogs/security/icymi-october-2026-aws-security/>
-
-> Welcome to this month’s AWS Security news! Organizations need current information about AWS Security developments to maintain their cloud security. This monthly digest covers key AWS Security updates. Each month, we compile new announcements, features, and resources to help you improve your security. Based on AWS Security developments, you’ll find expert perspectives in blogs, announcements […]
-
----
-
-## 5. 🟠 Zero-Day — Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks
+## 4. 🟠 Zero-Day — Mitel MiCollab Zero-Days Exploited in Suspected AI-Assisted Attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-26
 **Reference:** <https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/>
@@ -93,16 +77,19 @@ The Mitel MiCollab vulnerabilities are listed below -
 
 ---
 
-## 6. 🟠 Zero-Day — CISA warns of critical unpatched flaw in Danfoss refrigeration controllers
+## 5. 🟠 Zero-Day — ThreatsDay: 10M NGINX Services at Risk, 250+ Malicious Extensions, AI Server Hijacking + 17 More Stories
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-25
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-26
+**My Stack:** `nginx`
+**Reference:** <https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html>
 
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is warning about a critical vulnerability in Danfoss AK-SM 8xxA Series controllers used by food retailers to manage commercial refrigeration, HVAC, and lighting systems. [...]
+> A website can look perfectly fine to the person running it. Log out, visit the same page, and things might look different. Something similar is happening with browser extensions, where even the way you find and install one can change what it does. Checking whether software works as expected only tells you so much.
+
+Then there’s the question of who gets to use what. Stolen logins are opening
 
 ---
 
-## 7. 🟠 Zero-Day — Remus malware steals Gmail messages via fake Google Sheets extension
+## 6. 🟠 Zero-Day — Remus malware steals Gmail messages via fake Google Sheets extension
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-26
 **My Stack:** `chrome`
@@ -112,7 +99,7 @@ The Mitel MiCollab vulnerabilities are listed below -
 
 ---
 
-## 8. 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026
+## 7. 🟡 High Severity — Vulnerabilities in nginx Affecting Cisco Products: November 2026
 
 **CVE:** `CVE-2026-113425` | `CVE-2026-121810` | `CVE-2026-123007` | `CVE-2026-123633` | `CVE-2026-123634` &nbsp;|&nbsp; **Source:** Cisco Security Advisories (PSIRT) &nbsp;|&nbsp; **Published:** 2026-11-26
 **EPSS:** 45.6% (percentile 99%)
@@ -120,112 +107,5 @@ The Mitel MiCollab vulnerabilities are listed below -
 **Reference:** <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1>
 
 > On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerabilit…
-
----
-
-## 9. 🟡 High Severity — TastyIgniter permits Path Traversal in Media Upload
-
-**CVE:** `CVE-2026-69181` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
-**My Stack:** `linux`, `chrome`, `chromium`
-**Reference:** <https://github.com/advisories/GHSA-rj59-9f77-mvg5>
-
-> ### Summary
-Arbitrary file write outside `media/uploads/`
-
-### Details
-It is possible to perform Path Traversal in Media Manager file upload function as admin.
-
-
-### PoC
-- login as admin
-- upload a image but in the request, change the path from `/` to `/../../`.
-
-Request
-```http
-POST /admin/media_manager HTTP/1.1
-Host: localhost:8888
-Content-Length: 302
-sec-ch-ua-platform: &quot;Linux&quot;
-X-CSRF…
-
----
-
-## 10. 🟡 High Severity — TastyIgniter allows Remote Code Execution (RCE) via Unrestricted file upload in Media Manager
-
-**CVE:** `CVE-2026-69179` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
-**My Stack:** `linux`, `chrome`, `chromium`
-**Reference:** <https://github.com/advisories/GHSA-7wwv-x6mc-pxqx>
-
-> ### Summary
-Media manager accepts `.htaccess` file which can be used to perform RCE.
-
-### Details
-The file upload functionality from media manager somehow accepts `.htaccess` file. This file could be used to allow any extension to run PHP command. By doing so, it is possible to perform RCE.
-
-### PoC
-- Login as Admin
-- Create a `.htaccess` file with the following code.
-
-```
-&lt;FilesMatch &quot;\.j…
-
----
-
-## 11. 🟡 High Severity — TastyIgniter mail template editor allows remote code execution via server-side template injection
-
-**CVE:** `CVE-2026-69178` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
-**My Stack:** `linux`, `chrome`, `chromium`
-**Reference:** <https://github.com/advisories/GHSA-743w-g9pf-8p94>
-
-> ### Summary
-**Where:** `POST /admin/mail_templates/edit/{id}` → body field  
-**Who can trigger:** Any admin user with `Admin.MailTemplates` permission  
-**Impact:** Arbitrary PHP execution on the server — full RCE
-
-### Details
-The Mail templates is vulnerable to SSTI and did not perform an validation and sanitization.
-
-### PoC
-
-- login as admin
-- create new mail template with following command
-
-``…
-
----
-
-## 12. 🟡 High Severity — fulgur allows Unbounded string-set value accumulation causes memory/CPU exhaustion (denial of service)
-
-**CVE:** `CVE-2026-68539` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
-**EPSS:** 0.7% (percentile 48%)
-**Reference:** <https://github.com/advisories/GHSA-vw2v-g4x7-xcqg>
-
-> `fulgur` converts untrusted HTML/CSS into PDF, commonly on a server that
-processes input supplied by many tenants. In versions from 0.4.4 up to (but not
-including) the patched release, the CSS `string-set` named-string values
-resolved from a document were accumulated per element with no memory budget,
-letting a small crafted document amplify into large retained memory (and the CPU
-to copy it) — a …
-
----
-
-## 13. 🟡 High Severity — laradocs  Command injection via unescaped Node.js binary path in KaTeX SSR
-
-**CVE:** `CVE-2026-65973` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-25
-**EPSS:** 0.6% (percentile 45%)
-**My Stack:** `node.js`
-**Reference:** <https://github.com/advisories/GHSA-h746-qpxh-ph7g>
-
-> ### Summary
-Local command injection (CWE-78) in server-side KaTeX rendering via an unescaped Node.js binary path in a `proc_open()` command string.
-
-### Affected versions
-&gt;= 0.4.0, &lt; 1.0.0
-
-### Patched versions
-&gt;= 1.0.0 (fixed in commit `100cb1e`)
-
-### Impact
-When rendering KaTeX math **server-side**, Laradocs invoked Node via `proc_open()` with a command string in which the Node binary a…
 
 ---
