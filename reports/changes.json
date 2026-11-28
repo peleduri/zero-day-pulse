@@ -1,24 +1,33 @@
 {
-  "run_id": "46027425506",
-  "generated_at": "2026-11-27T15:44:26.940480+00:00",
+  "run_id": "46089610490",
+  "generated_at": "2026-11-28T00:46:39.160205+00:00",
   "changes": [
     {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-111497",
+      "kind": "entered_kev",
+      "cve": "CVE-2026-120705",
       "title": null,
       "link": null,
-      "threshold": 0.5,
-      "old_epss": 0.32976,
-      "new_epss": 0.99987
+      "kev_date_added": "2026-11-27",
+      "kev_due_date": "2026-11-30",
+      "kev_ransomware": false
     },
     {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-99362",
-      "title": "New NFS2ROOT Linux flaw can let attackers gain root privileges",
-      "link": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
-      "stack_match": [
-        "linux"
-      ]
+      "kind": "entered_kev",
+      "cve": "CVE-2026-129243",
+      "title": null,
+      "link": null,
+      "kev_date_added": "2026-11-27",
+      "kev_due_date": "2026-11-30",
+      "kev_ransomware": false
+    },
+    {
+      "kind": "entered_kev",
+      "cve": "CVE-2026-136716",
+      "title": null,
+      "link": null,
+      "kev_date_added": "2026-11-27",
+      "kev_due_date": "2026-11-30",
+      "kev_ransomware": false
     }
   ]
 }

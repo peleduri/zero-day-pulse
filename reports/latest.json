@@ -1,33 +1,67 @@
 {
-  "generated": "2026-11-27T15:44:26.940480+00:00",
-  "total": 5,
+  "generated": "2026-11-28T00:46:39.160205+00:00",
+  "total": 6,
   "kev": 0,
   "zero_day": 4,
   "enriched": 0,
   "high_epss": 0,
   "my_stack": 2,
-  "run_id": "46027425506",
+  "run_id": "46089610490",
   "changes": [
     {
-      "kind": "epss_crossed",
-      "cve": "CVE-2026-111497",
+      "kind": "entered_kev",
+      "cve": "CVE-2026-120705",
       "title": null,
       "link": null,
-      "threshold": 0.5,
-      "old_epss": 0.32976,
-      "new_epss": 0.99987
+      "kev_date_added": "2026-11-27",
+      "kev_due_date": "2026-11-30",
+      "kev_ransomware": false
     },
     {
-      "kind": "new_stack_hit",
-      "cve": "CVE-2026-99362",
-      "title": "New NFS2ROOT Linux flaw can let attackers gain root privileges",
-      "link": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
-      "stack_match": [
-        "linux"
-      ]
+      "kind": "entered_kev",
+      "cve": "CVE-2026-129243",
+      "title": null,
+      "link": null,
+      "kev_date_added": "2026-11-27",
+      "kev_due_date": "2026-11-30",
+      "kev_ransomware": false
+    },
+    {
+      "kind": "entered_kev",
+      "cve": "CVE-2026-136716",
+      "title": null,
+      "link": null,
+      "kev_date_added": "2026-11-27",
+      "kev_due_date": "2026-11-30",
+      "kev_ransomware": false
     }
   ],
   "findings": [
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/",
+      "title": "Unpatched Cacti zero-day with public PoC gives remote code execution",
+      "summary": "A zero-day vulnerability in the Cacti network monitoring platform has been publicly disclosed, along with a proof-of-concept exploit that lets unauthenticated attackers execute commands on vulnerable servers. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/",
+      "published": "2026-11-27T17:06:13+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "in_kev": false,
+      "kev_date_added": null,
+      "kev_due_date": null,
+      "kev_vendor": null,
+      "kev_product": null,
+      "kev_ransomware": false,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "is_priority_product": false,
+      "epss": null,
+      "epss_percentile": null,
+      "stack_match": []
+    },
     {
       "id": "https://www.bleepingcomputer.com/news/security/your-firewall-isnt-enough-the-hidden-risk-of-unmanaged-vms/",
       "title": "Your Firewall Isn't Enough: The Hidden Risk of Unmanaged VMs",
@@ -104,28 +138,36 @@
       "stack_match": []
     },
     {
-      "id": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html",
-      "title": "ThreatsDay: 10M NGINX Services at Risk, 250+ Malicious Extensions, AI Server Hijacking + 17 More Stories",
-      "summary": "A website can look perfectly fine to the person running it. Log out, visit the same page, and things might look different. Something similar is happening with browser extensions, where even the way you find and install one can change what it does. Checking whether software works as expected only tells you so much.\n\nThen there\u2019s the question of who gets to use what. Stolen logins are opening",
-      "link": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html",
-      "published": "2026-11-26T19:39:57+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+      "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s Security Impact Rating: High CVE: CVE-2026-113425,CVE-2026-121810,CVE-2026-123007,CVE-2026-123633,CVE-2026-123634",
+      "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+      "published": "2026-11-27T20:04:26+00:00",
+      "source": "Cisco Security Advisories (PSIRT)",
       "tags": [
-        "news",
-        "zeroday"
+        "network",
+        "cisco",
+        "psirt",
+        "advisory"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-113425",
+        "CVE-2026-121810",
+        "CVE-2026-123007",
+        "CVE-2026-123633",
+        "CVE-2026-123634"
+      ],
       "in_kev": false,
       "kev_date_added": null,
       "kev_due_date": null,
       "kev_vendor": null,
       "kev_product": null,
       "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": false,
+      "is_zero_day": false,
+      "is_high_severity": true,
       "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.46134,
+      "epss_percentile": 0.99104,
       "stack_match": [
         "nginx"
       ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T15:44:15.170062+00:00",
+  "generated_at": "2026-11-28T00:46:28.931444+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -38,7 +38,7 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 23,
+        "warm_up": 26,
         "old_cve": 0
       }
     },
@@ -64,14 +64,14 @@
         "collecting": true
       },
       "excluded": {
-        "warm_up": 23,
+        "warm_up": 26,
         "old_cve": 0
       }
     }
   },
   "top_leads_window": 90,
   "top_leads": [],
-  "total_rows": 23,
+  "total_rows": 26,
   "rows": [
     {
       "bucket": "missed",
@@ -348,11 +348,47 @@
       "product": "Xen Orchestra",
       "source": null,
       "vendor": "Vates"
+    },
+    {
+      "cve": "CVE-2026-120705",
+      "kev_date_added": "2026-11-27",
+      "vendor": "OSGeo",
+      "product": "GeoServer",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-129243",
+      "kev_date_added": "2026-11-27",
+      "vendor": "OSGeo",
+      "product": "GeoServer",
+      "cve_year": 2026,
+      "observed_at": null,
+      "source": null,
+      "link": null,
+      "lead_days": null,
+      "bucket": "missed"
+    },
+    {
+      "cve": "CVE-2026-136716",
+      "kev_date_added": "2026-11-27",
+      "vendor": "Drupal",
+      "product": "Core",
+      "cve_year": 2026,
+      "observed_at": "2026-11-26T15:55:19.891094+00:00",
+      "source": "The Hacker News Security",
+      "link": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
+      "lead_days": 1,
+      "bucket": "earlier"
     }
   ],
   "run": {
     "new_signals": 0,
-    "new_rows": 0,
+    "new_rows": 3,
     "capped_entries": 0
   }
 }
