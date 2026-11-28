@@ -1,39 +1,21 @@
 {
-  "generated": "2026-11-28T00:46:39.160205+00:00",
-  "total": 6,
+  "generated": "2026-11-28T14:40:32.940420+00:00",
+  "total": 3,
   "kev": 0,
-  "zero_day": 4,
+  "zero_day": 2,
   "enriched": 0,
   "high_epss": 0,
-  "my_stack": 2,
-  "run_id": "46089610490",
+  "my_stack": 1,
+  "run_id": "46155782104",
   "changes": [
     {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-120705",
+      "kind": "epss_crossed",
+      "cve": "CVE-2026-132165",
       "title": null,
       "link": null,
-      "kev_date_added": "2026-11-27",
-      "kev_due_date": "2026-11-30",
-      "kev_ransomware": false
-    },
-    {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-129243",
-      "title": null,
-      "link": null,
-      "kev_date_added": "2026-11-27",
-      "kev_due_date": "2026-11-30",
-      "kev_ransomware": false
-    },
-    {
-      "kind": "entered_kev",
-      "cve": "CVE-2026-136716",
-      "title": null,
-      "link": null,
-      "kev_date_added": "2026-11-27",
-      "kev_due_date": "2026-11-30",
-      "kev_ransomware": false
+      "threshold": 0.1,
+      "old_epss": 0.08381,
+      "new_epss": 0.13979
     }
   ],
   "findings": [
@@ -88,56 +70,6 @@
       "stack_match": []
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/",
-      "title": "Drupal warns of new site takeover flaw exploited in attacks",
-      "summary": "The Drupal security team says attackers are exploiting a second critical vulnerability that lets them breach and hijack unpatched websites. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/",
-      "published": "2026-11-27T10:10:15+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
-      "title": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access",
-      "summary": "Details have emerged about a new zero-day vulnerability in Cacti, an open-source network monitoring tool, that could be exploited to achieve remote code execution.\n\nThe proof-of-concept (PoC) exploit, which has yet to be assigned a CVE identifier, has been tracked as 4HTTP2SHELL and 4HTTP2ROOT.\n\n\"I found a path from a fresh, unauthenticated HTTP session to command execution as the Cacti server",
-      "link": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
-      "published": "2026-11-27T05:48:20+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": null,
-      "epss_percentile": null,
-      "stack_match": []
-    },
-    {
       "id": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
       "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
       "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s Security Impact Rating: High CVE: CVE-2026-113425,CVE-2026-121810,CVE-2026-123007,CVE-2026-123633,CVE-2026-123634",
@@ -170,35 +102,6 @@
       "epss_percentile": 0.99104,
       "stack_match": [
         "nginx"
-      ]
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
-      "title": "New NFS2ROOT Linux flaw can let attackers gain root privileges",
-      "summary": "\u200bA 12-year-old critical vulnerability in the Linux kernel's Network File System (NFS) server, tracked as CVE-2026-99362, allows remote attackers to gain root privileges. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
-      "published": "2026-11-27T08:06:58+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-99362"
-      ],
-      "in_kev": false,
-      "kev_date_added": null,
-      "kev_due_date": null,
-      "kev_vendor": null,
-      "kev_product": null,
-      "kev_ransomware": false,
-      "is_zero_day": false,
-      "is_high_severity": true,
-      "is_priority_product": false,
-      "epss": 0.00755,
-      "epss_percentile": 0.51398,
-      "stack_match": [
-        "linux"
       ]
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T00:46:28.931444+00:00",
+  "generated_at": "2026-11-28T14:40:19.433210+00:00",
   "go_live": "2026-11-18",
   "warmup_days": 14,
   "min_counted": 10,
@@ -350,45 +350,45 @@
       "vendor": "Vates"
     },
     {
+      "bucket": "missed",
       "cve": "CVE-2026-120705",
-      "kev_date_added": "2026-11-27",
-      "vendor": "OSGeo",
-      "product": "GeoServer",
       "cve_year": 2026,
-      "observed_at": null,
-      "source": null,
-      "link": null,
+      "kev_date_added": "2026-11-27",
       "lead_days": null,
-      "bucket": "missed"
+      "link": null,
+      "observed_at": null,
+      "product": "GeoServer",
+      "source": null,
+      "vendor": "OSGeo"
     },
     {
+      "bucket": "missed",
       "cve": "CVE-2026-129243",
-      "kev_date_added": "2026-11-27",
-      "vendor": "OSGeo",
-      "product": "GeoServer",
       "cve_year": 2026,
-      "observed_at": null,
-      "source": null,
-      "link": null,
+      "kev_date_added": "2026-11-27",
       "lead_days": null,
-      "bucket": "missed"
+      "link": null,
+      "observed_at": null,
+      "product": "GeoServer",
+      "source": null,
+      "vendor": "OSGeo"
     },
     {
+      "bucket": "earlier",
       "cve": "CVE-2026-136716",
-      "kev_date_added": "2026-11-27",
-      "vendor": "Drupal",
-      "product": "Core",
       "cve_year": 2026,
-      "observed_at": "2026-11-26T15:55:19.891094+00:00",
-      "source": "The Hacker News Security",
-      "link": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
+      "kev_date_added": "2026-11-27",
       "lead_days": 1,
-      "bucket": "earlier"
+      "link": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
+      "observed_at": "2026-11-26T15:55:19.891094+00:00",
+      "product": "Core",
+      "source": "The Hacker News Security",
+      "vendor": "Drupal"
     }
   ],
   "run": {
     "new_signals": 0,
-    "new_rows": 3,
+    "new_rows": 0,
     "capped_entries": 0
   }
 }
